@@ -1,0 +1,105 @@
+{{>licenseInfo}}
+package {{package}};
+
+import {{invokerPackage}}.ApiClient;
+{{#imports}}import {{import}};
+{{/imports}}
+import org.junit.Before;
+import org.junit.Test;
+
+{{#wiremock}}
+import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.core.WireMockConfiguration;
+import java.net.HttpURLConnection;
+import org.junit.AfterClass;
+{{/wiremock}}
+
+{{^fullJavaUtil}}
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+{{/fullJavaUtil}}
+
+{{#wiremock}}
+import static com.github.tomakehurst.wiremock.client.WireMock.*;
+{{/wiremock}}
+
+/**
+ * API tests for {{classname}}
+ */
+public class {{classname}}Test {
+
+    private {{classname}} api;
+
+    {{#wiremock}}
+    private static WireMockServer wireMockServer;
+
+    @Before
+    public void setup() {
+        wireMockServer = new WireMockServer(WireMockConfiguration.wireMockConfig().dynamicPort());
+        wireMockServer.start();
+        configureFor(wireMockServer.port());
+        api = new ApiClient().setBasePath("http://localhost:" + wireMockServer.port()).buildClient({{classname}}.class);
+    {{#operations}}{{#operation}}
+        stubFor({{toLowerCase httpMethod}}(urlPathMatching("{{{path}}}"))
+                .willReturn(aResponse()
+                        .withStatus(HttpURLConnection.HTTP_OK)));
+    {{/operation}}{{/operations}}
+    }
+
+    @AfterClass
+    public static void tearDown() {
+        wireMockServer.stop();
+    }
+    {{/wiremock}}
+    {{^wiremock}}
+    @Before
+    public void setup() {
+        api = new ApiClient().buildClient({{classname}}.class);
+    }
+    {{/wiremock}}
+
+    {{#operations}}{{#operation}}{{#contents}}{{#@first}}
+    /**
+     * {{summary}}
+     *
+     * {{notes}}
+     */
+    @Test
+    public void {{operationId}}Test() {
+        {{#parameters}}
+        {{{dataType}}} {{paramName}} = null;
+        {{/parameters}}
+        // {{#returnType}}{{{returnType}}} response = {{/returnType}}api.{{operationId}}({{#parameters}}{{paramName}}{{#has this 'more'}}, {{/has}}{{/parameters}});
+
+        // TODO: test validations
+    }
+
+        {{#hasQueryParams}}
+    /**
+     * {{summary}}
+     *
+     * {{notes}}
+     *
+     * This tests the overload of the method that uses a Map for query parameters instead of
+     * listing them out individually.
+     */
+    @Test
+    public void {{operationId}}TestQueryMap() {
+          {{#parameters}}
+            {{#isNot this 'query-param'}}
+        {{{dataType}}} {{paramName}} = null;
+            {{/isNot}}
+          {{/parameters}}
+        {{classname}}.{{operationIdCamelCase}}QueryParams queryParams = new {{classname}}.{{operationIdCamelCase}}QueryParams(){{^queryParams}};{{/queryParams}}
+          {{#queryParams}}
+            .{{paramName}}(null){{#hasNot this 'more'}};{{/hasNot}}
+          {{/queryParams}}
+        // {{#returnType}}{{{returnType}}} response = {{/returnType}}api.{{operationId}}({{#parameters}}{{#isNot this 'query-param'}}{{paramName}}, {{/isNot}}{{/parameters}}queryParams);
+
+    // TODO: test validations
+    }
+        {{/hasQueryParams}}
+    {{/@first}}{{/contents}}{{/operation}}{{/operations}}
+}

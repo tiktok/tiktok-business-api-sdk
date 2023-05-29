@@ -1,0 +1,9 @@
+from __future__ import absolute_import
+
+# flake8: noqa
+
+{{>license}}
+
+# import apis into api package
+{{#apiInfo}}{{#apis}}from {{importPath}} import {{classname}}
+{{/apis}}{{/apiInfo}}

@@ -1,5 +1,5 @@
 # TikTok Business API SDK - Java
-- API version: 0.1.0
+- API version: 0.1.0 Beta (in Beta Test)
 
 Comprehensive collection of client libraries that enable our developers to build software to integrate with Business API faster and in a more standardized way.
 
