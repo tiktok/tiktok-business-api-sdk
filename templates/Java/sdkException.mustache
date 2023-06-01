@@ -1,0 +1,31 @@
+{{>licenseInfo}}
+package {{invokerPackage}};
+
+import java.util.Map;
+import java.util.List;
+
+public class SDKException extends{{#useRuntimeException}} RuntimeException {{/useRuntimeException}}{{^useRuntimeException}} Exception {{/useRuntimeException}}{
+    private String request_id;
+    private long error_code;
+    private String message;
+    private String error_message;
+
+    public SDKException(String request_id, long error_code, String error_message) {
+        this.request_id = request_id;
+        this.error_code = error_code;
+        this.error_message = message;
+        this.message = String.format("request_id : %s, error_code: %d, message: %s", request_id, error_code, error_message);
+    }
+
+    public String getRequestId() {
+        return request_id;
+    }
+
+    public long getErrorCode() {
+        return error_code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+}
