@@ -186,6 +186,11 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
       }
     });
    ```
+   
+## Give feedback
+
+- If you want to report bugs or issues, please visit [TikTok API for Business Developer Portal](https://ads.tiktok.com/marketing_api/homepage) and click "?"  on the top 
+right to submit a ticket under Marketing API category.
 
 ## References
 
