@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * The text-only disclaimer that you want to add to the ad.  Required when &#x60;disclaimer_type&#x60; &#x3D; &#x60;TEXT_ONLY&#x60;.
  */
 @Schema(description = "The text-only disclaimer that you want to add to the ad.  Required when `disclaimer_type` = `TEXT_ONLY`.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-04-18T10:46:48.851395-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
 public class OpenApiv13adcreateDisclaimerText {
   @JsonProperty("text")
   private String text = null;

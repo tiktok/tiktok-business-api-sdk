@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The FilteringAdgroupGet model module.
  * @module model/FilteringAdgroupGet
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class FilteringAdgroupGet {
   /**

@@ -14,7 +14,7 @@ import {OpenApiv13creativeportfoliocreateStickerParam} from './OpenApiv13creativ
 /**
  * The OpenApiv13creativeportfoliocreatePortfolioContent model module.
  * @module model/OpenApiv13creativeportfoliocreatePortfolioContent
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13creativeportfoliocreatePortfolioContent {
   /**

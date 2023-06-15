@@ -10,7 +10,7 @@ import {OpenApiv13adgroupcreateAudienceRuleInclusionsRules} from './OpenApiv13ad
 /**
  * The OpenApiv13adgroupcreateAudienceRuleInclusions model module.
  * @module model/OpenApiv13adgroupcreateAudienceRuleInclusions
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13adgroupcreateAudienceRuleInclusions {
   /**

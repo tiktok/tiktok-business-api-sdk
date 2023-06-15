@@ -15,7 +15,7 @@ import {OpenApiv13bcadvertisercreateQualificationInfo} from './OpenApiv13bcadver
 /**
  * The AdvertiserCreateBody model module.
  * @module model/AdvertiserCreateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class AdvertiserCreateBody {
   /**

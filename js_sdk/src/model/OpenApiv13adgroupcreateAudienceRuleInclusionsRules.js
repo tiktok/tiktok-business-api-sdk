@@ -11,7 +11,7 @@ import {OpenApiv13adgroupcreateAudienceRuleExclusionsFilter} from './OpenApiv13a
 /**
  * The OpenApiv13adgroupcreateAudienceRuleInclusionsRules model module.
  * @module model/OpenApiv13adgroupcreateAudienceRuleInclusionsRules
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13adgroupcreateAudienceRuleInclusionsRules {
   /**

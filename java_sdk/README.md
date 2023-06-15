@@ -1,5 +1,5 @@
 # TikTok Business API SDK - Java
-- API version: 0.1.0 Beta (in Beta Test)
+- API version: 0.1.1 Beta (in Beta Test)
 
 Comprehensive collection of client libraries that enable our developers to build software to integrate with Business API faster and in a more standardized way.
 
@@ -105,6 +105,10 @@ Class | Method | HTTP request | Description
 *AdApi* | [**adGet**](docs/AdApi.md#adGet) | **GET** /open_api/v1.3/ad/get/ | Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1735735588640770)
 *AdApi* | [**adStatusUpdate**](docs/AdApi.md#adStatusUpdate) | **POST** /open_api/v1.3/ad/status/update/ | To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
 *AdApi* | [**adUpdate**](docs/AdApi.md#adUpdate) | **POST** /open_api/v1.3/ad/update/ | Modify your custom ad creatives such as call-to-action, ad name, text image and video material. To update ACO ads, use the /ad/aco/update/ endpoint. [Ad update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+*AdAcoApi* | [**adAcoCreate**](docs/AdAcoApi.md#adAcoCreate) | **POST** /open_api/v1.3/ad/aco/create/ | Create an ACO ad by uploading necessary ad creatives to the library. [Ad Aco Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739473063234626)
+*AdAcoApi* | [**adAcoGet**](docs/AdAcoApi.md#adAcoGet) | **GET** /open_api/v1.3/ad/aco/get/ | Get creative materials for an ACO ad, including call-to-actions, texts, ad names, images, or video materials. [Ad Aco Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739473020978177)
+*AdAcoApi* | [**adAcoMaterialStatusUpdate**](docs/AdAcoApi.md#adAcoMaterialStatusUpdate) | **POST** /open_api/v1.3/ad/aco/material_status/update/ | Update the status of creative materials for an ACO ad, including ad texts, images, and video materials [Update materials](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739506701165570)
+*AdAcoApi* | [**adAcoUpdate**](docs/AdAcoApi.md#adAcoUpdate) | **POST** /open_api/v1.3/ad/aco/update/ | Modify ACO ad creatives. [Update ACO](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739473077112833)
 *AdgroupApi* | [**adgroupCreate**](docs/AdgroupApi.md#adgroupCreate) | **POST** /open_api/v1.3/adgroup/create/ | Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739499616346114)
 *AdgroupApi* | [**adgroupGet**](docs/AdgroupApi.md#adgroupGet) | **GET** /open_api/v1.3/adgroup/get/ | Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739314558673922)
 *AdgroupApi* | [**adgroupStatusUpdate**](docs/AdgroupApi.md#adgroupStatusUpdate) | **POST** /open_api/v1.3/adgroup/status/update/ | Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
@@ -150,6 +154,23 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [AdAcoBody](docs/AdAcoBody.md)
+ - [AdAcoBodyAvatarIcon](docs/AdAcoBodyAvatarIcon.md)
+ - [AdAcoBodyAvatarIconList](docs/AdAcoBodyAvatarIconList.md)
+ - [AdAcoBodyCallToActionList](docs/AdAcoBodyCallToActionList.md)
+ - [AdAcoBodyCardList](docs/AdAcoBodyCardList.md)
+ - [AdAcoBodyCommonMaterial](docs/AdAcoBodyCommonMaterial.md)
+ - [AdAcoBodyCommonMaterialTrackingInfo](docs/AdAcoBodyCommonMaterialTrackingInfo.md)
+ - [AdAcoBodyDeeplinkList](docs/AdAcoBodyDeeplinkList.md)
+ - [AdAcoBodyDisplayNameList](docs/AdAcoBodyDisplayNameList.md)
+ - [AdAcoBodyLandingPageUrls](docs/AdAcoBodyLandingPageUrls.md)
+ - [AdAcoBodyMediaInfo](docs/AdAcoBodyMediaInfo.md)
+ - [AdAcoBodyMediaInfoImageInfo](docs/AdAcoBodyMediaInfoImageInfo.md)
+ - [AdAcoBodyMediaInfoList](docs/AdAcoBodyMediaInfoList.md)
+ - [AdAcoBodyMediaInfoVideoInfo](docs/AdAcoBodyMediaInfoVideoInfo.md)
+ - [AdAcoBodyPageList](docs/AdAcoBodyPageList.md)
+ - [AdAcoBodyTitleList](docs/AdAcoBodyTitleList.md)
+ - [AdAcoUpdateBody](docs/AdAcoUpdateBody.md)
  - [AdCreateBody](docs/AdCreateBody.md)
  - [AdStatusUpdateBody](docs/AdStatusUpdateBody.md)
  - [AdUpdateBody](docs/AdUpdateBody.md)
@@ -176,6 +197,7 @@ Class | Method | HTTP request | Description
  - [IdentityCreateBody](docs/IdentityCreateBody.md)
  - [ImageUploadBody](docs/ImageUploadBody.md)
  - [InlineResponse200](docs/InlineResponse200.md)
+ - [MaterialStatusUpdateBody](docs/MaterialStatusUpdateBody.md)
  - [Oauth2AccessTokenBody](docs/Oauth2AccessTokenBody.md)
  - [OpenApiv13adcreateCreatives](docs/OpenApiv13adcreateCreatives.md)
  - [OpenApiv13adcreateDisclaimerClickableTexts](docs/OpenApiv13adcreateDisclaimerClickableTexts.md)

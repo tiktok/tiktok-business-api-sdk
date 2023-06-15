@@ -14,7 +14,7 @@ import {OpenApiv13adgroupupdateAudienceRule} from './OpenApiv13adgroupupdateAudi
 /**
  * The AdgroupUpdateBody model module.
  * @module model/AdgroupUpdateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class AdgroupUpdateBody {
   /**

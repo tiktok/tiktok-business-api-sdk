@@ -10,7 +10,7 @@ import {OpenApiv13advertiserupdateQualificationImages} from './OpenApiv13adverti
 /**
  * The AdvertiserUpdateBody model module.
  * @module model/AdvertiserUpdateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class AdvertiserUpdateBody {
   /**

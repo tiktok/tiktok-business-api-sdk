@@ -12,7 +12,7 @@ import {InlineResponse200} from '../model/InlineResponse200';
 /**
 * BC service.
 * @module api/BCApi
-* @version 0.1.0
+* @version 0.1.1
 */
 export class BCApi {
 

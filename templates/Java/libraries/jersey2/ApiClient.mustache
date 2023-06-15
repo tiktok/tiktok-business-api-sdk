@@ -88,7 +88,7 @@ public class ApiClient {
     this.dateFormat = new RFC3339DateFormat();
     defaultHeaderMap.put("Business-SDK", "1");
     defaultHeaderMap.put("SDK-Language", "Java");
-    defaultHeaderMap.put("SDK-Version", "0.1.0");
+    defaultHeaderMap.put("SDK-Version", "0.1.1");
 
     // Set default User-Agent.
     setUserAgent("{{#httpUserAgent}}{{{.}}}{{/httpUserAgent}}{{^httpUserAgent}}Swagger-Codegen/{{{artifactVersion}}}/java{{/httpUserAgent}}");

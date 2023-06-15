@@ -10,7 +10,7 @@ import {OpenApiv13creativeportfoliocreatePortfolioContent} from './OpenApiv13cre
 /**
  * The PortfolioCreateBody model module.
  * @module model/PortfolioCreateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class PortfolioCreateBody {
   /**

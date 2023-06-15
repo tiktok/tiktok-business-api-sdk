@@ -14,7 +14,7 @@ import {InlineResponse200} from '../model/InlineResponse200';
 /**
 * BcPayment service.
 * @module api/BcPaymentApi
-* @version 0.1.0
+* @version 0.1.1
 */
 export class BcPaymentApi {
 

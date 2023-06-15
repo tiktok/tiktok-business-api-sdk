@@ -10,7 +10,7 @@ import {OpenApiv13adupdateCreatives} from './OpenApiv13adupdateCreatives';
 /**
  * The AdUpdateBody model module.
  * @module model/AdUpdateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class AdUpdateBody {
   /**

@@ -20,7 +20,7 @@ import java.util.List;
  * A set of exclusion rule object. Quantity range- 0 to 5, without repetition. For the format, see the \&quot;Rule set format\&quot; section below.[Audience Rule]((https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739566532187138)).
  */
 @Schema(description = "A set of exclusion rule object. Quantity range- 0 to 5, without repetition. For the format, see the \"Rule set format\" section below.[Audience Rule]((https://ads.tiktok.com/marketing_api/docs?id=1739566532187138)).")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-04-18T10:46:48.851395-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
 public class OpenApiv13adgroupupdateAudienceRuleExclusions {
   @JsonProperty("operator")
   private String operator = null;

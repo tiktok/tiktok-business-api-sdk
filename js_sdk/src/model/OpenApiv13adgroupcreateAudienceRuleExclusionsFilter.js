@@ -10,7 +10,7 @@ import {OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters} from './Open
 /**
  * The OpenApiv13adgroupcreateAudienceRuleExclusionsFilter model module.
  * @module model/OpenApiv13adgroupcreateAudienceRuleExclusionsFilter
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13adgroupcreateAudienceRuleExclusionsFilter {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters model module.
  * @module model/OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters {
   /**

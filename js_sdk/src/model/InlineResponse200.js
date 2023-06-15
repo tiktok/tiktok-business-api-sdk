@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The InlineResponse200 model module.
  * @module model/InlineResponse200
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class InlineResponse200 {
   /**

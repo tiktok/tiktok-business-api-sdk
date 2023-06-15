@@ -10,7 +10,7 @@ import {OpenApiv13adcreateCreatives} from './OpenApiv13adcreateCreatives';
 /**
  * The AdCreateBody model module.
  * @module model/AdCreateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class AdCreateBody {
   /**

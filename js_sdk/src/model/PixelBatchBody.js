@@ -10,7 +10,7 @@ import {OpenApiv13pixelbatchBatch} from './OpenApiv13pixelbatchBatch';
 /**
  * The PixelBatchBody model module.
  * @module model/PixelBatchBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class PixelBatchBody {
   /**

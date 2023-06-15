@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The OpenApiv13bcadvertisercreateCustomerInfo model module.
  * @module model/OpenApiv13bcadvertisercreateCustomerInfo
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13bcadvertisercreateCustomerInfo {
   /**

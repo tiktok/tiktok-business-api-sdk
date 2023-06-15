@@ -14,7 +14,7 @@ import {OpenApiv13adgroupcreateTargetingExpansion} from './OpenApiv13adgroupcrea
 /**
  * The AdgroupCreateBody model module.
  * @module model/AdgroupCreateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class AdgroupCreateBody {
   /**
