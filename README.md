@@ -36,7 +36,7 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
     git clone https://github.com/tiktok/tiktok-business-api-sdk.git
    ```
 2. Set up your local environment
-   - Add this dependency to your project's POM if you are using Maven, otherwise you could skip this step.
+   - Add this dependency to your project's POM and load the maven changes if you are using Maven, otherwise you could skip this step.
    ```
     <dependency>
       <groupId>io.swagger</groupId>
@@ -47,7 +47,7 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
    ```
    - Build the SDK jar file with following the commands
    ```
-    cd your_path/tiktok_business_api_sdk/java_sdk
+    cd your_path/tiktok-business-api-sdk/java_sdk
     mvn install package
    ```
    - Manually import the JAR files
@@ -110,9 +110,9 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
    ```
 3. Set Local env and install dependency with following commands
    ```
-    export PYTHONPATH=tiktok_business_api_sdk/python_sdk:tiktok_business_api_sdk/python_sdk/business_api_client
-    cd your_path/tiktok_business_api_sdk
-    pip install -r requirements.txt
+   export PYTHONPATH=your_path/tiktok-business-api-sdk:your_path/tiktok-business-api-sdk/python_sdk:your_path/tiktok-business-api-sdk/python_sdk/business_api_client
+   cd your_path/tiktok-business-api-sdk/python_sdk
+   pip install -r requirements.txt
    ```
 4. Run and test the Python SDK. Below are the sample codes for your reference.
    ```
@@ -153,13 +153,13 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
    - Install js-sdk dependencies
    
    ```
-    cd your_path/tiktok_business_api_sdk/js_sdk
+    cd your_path/tiktok-business-api-sdk/js_sdk
     npm install
    ```
    - In your project, run the following command 
    
    ```
-    npm install your_path/tiktok_business_api_sdk/js_sdk --save
+    npm install your_path/tiktok-business-api-sdk/js_sdk --save
    ```
    - In your project, add the following code in package.json to set js_sdk as module
    ```

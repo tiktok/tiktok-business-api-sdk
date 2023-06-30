@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The CampaignStatusUpdateBody model module.
  * @module model/CampaignStatusUpdateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class CampaignStatusUpdateBody {
   /**

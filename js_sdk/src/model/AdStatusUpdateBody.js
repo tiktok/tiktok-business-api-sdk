@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The AdStatusUpdateBody model module.
  * @module model/AdStatusUpdateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class AdStatusUpdateBody {
   /**

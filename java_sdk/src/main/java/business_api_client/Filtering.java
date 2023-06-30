@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * Filtering
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-04-18T10:46:48.851395-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
 public class Filtering {
   @JsonProperty("keyword")
   private String keyword = null;

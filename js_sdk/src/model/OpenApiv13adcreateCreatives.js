@@ -11,7 +11,7 @@ import {OpenApiv13adcreateDisclaimerText} from './OpenApiv13adcreateDisclaimerTe
 /**
  * The OpenApiv13adcreateCreatives model module.
  * @module model/OpenApiv13adcreateCreatives
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13adcreateCreatives {
   /**

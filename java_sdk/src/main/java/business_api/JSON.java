@@ -9,7 +9,7 @@ import java.text.DateFormat;
 
 import javax.ws.rs.ext.ContextResolver;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-04-18T10:46:48.851395-07:00[America/Los_Angeles]")public class JSON implements ContextResolver<ObjectMapper> {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")public class JSON implements ContextResolver<ObjectMapper> {
   private ObjectMapper mapper;
 
   public JSON() {

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The CampaignCreateBody model module.
  * @module model/CampaignCreateBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class CampaignCreateBody {
   /**

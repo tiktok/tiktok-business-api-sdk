@@ -11,7 +11,7 @@ import {PixelProperties} from './PixelProperties';
 /**
  * The PixelTrackBody model module.
  * @module model/PixelTrackBody
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class PixelTrackBody {
   /**

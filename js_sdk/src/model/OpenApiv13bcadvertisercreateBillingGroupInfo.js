@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The OpenApiv13bcadvertisercreateBillingGroupInfo model module.
  * @module model/OpenApiv13bcadvertisercreateBillingGroupInfo
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class OpenApiv13bcadvertisercreateBillingGroupInfo {
   /**

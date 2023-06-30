@@ -5,6 +5,23 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from './ApiClient';
+import {AdAcoBody} from './model/AdAcoBody';
+import {AdAcoBodyAvatarIcon} from './model/AdAcoBodyAvatarIcon';
+import {AdAcoBodyAvatarIconList} from './model/AdAcoBodyAvatarIconList';
+import {AdAcoBodyCallToActionList} from './model/AdAcoBodyCallToActionList';
+import {AdAcoBodyCardList} from './model/AdAcoBodyCardList';
+import {AdAcoBodyCommonMaterial} from './model/AdAcoBodyCommonMaterial';
+import {AdAcoBodyCommonMaterialTrackingInfo} from './model/AdAcoBodyCommonMaterialTrackingInfo';
+import {AdAcoBodyDeeplinkList} from './model/AdAcoBodyDeeplinkList';
+import {AdAcoBodyDisplayNameList} from './model/AdAcoBodyDisplayNameList';
+import {AdAcoBodyLandingPageUrls} from './model/AdAcoBodyLandingPageUrls';
+import {AdAcoBodyMediaInfo} from './model/AdAcoBodyMediaInfo';
+import {AdAcoBodyMediaInfoImageInfo} from './model/AdAcoBodyMediaInfoImageInfo';
+import {AdAcoBodyMediaInfoList} from './model/AdAcoBodyMediaInfoList';
+import {AdAcoBodyMediaInfoVideoInfo} from './model/AdAcoBodyMediaInfoVideoInfo';
+import {AdAcoBodyPageList} from './model/AdAcoBodyPageList';
+import {AdAcoBodyTitleList} from './model/AdAcoBodyTitleList';
+import {AdAcoUpdateBody} from './model/AdAcoUpdateBody';
 import {AdCreateBody} from './model/AdCreateBody';
 import {AdStatusUpdateBody} from './model/AdStatusUpdateBody';
 import {AdUpdateBody} from './model/AdUpdateBody';
@@ -31,6 +48,7 @@ import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch';
 import {IdentityCreateBody} from './model/IdentityCreateBody';
 import {ImageUploadBody} from './model/ImageUploadBody';
 import {InlineResponse200} from './model/InlineResponse200';
+import {MaterialStatusUpdateBody} from './model/MaterialStatusUpdateBody';
 import {Oauth2AccessTokenBody} from './model/Oauth2AccessTokenBody';
 import {OpenApiv13adcreateCreatives} from './model/OpenApiv13adcreateCreatives';
 import {OpenApiv13adcreateDisclaimerClickableTexts} from './model/OpenApiv13adcreateDisclaimerClickableTexts';
@@ -76,6 +94,7 @@ import {PortfolioCreateBody} from './model/PortfolioCreateBody';
 import {TargetingCategoryRecommendBody} from './model/TargetingCategoryRecommendBody';
 import {AccountApi} from './api/AccountApi';
 import {AdApi} from './api/AdApi';
+import {AdAcoApi} from './api/AdAcoApi';
 import {AdgroupApi} from './api/AdgroupApi';
 import {AudienceApi} from './api/AudienceApi';
 import {AuthenticationApi} from './api/AuthenticationApi';
@@ -120,7 +139,7 @@ import {ToolApi} from './api/ToolApi';
 * </pre>
 * </p>
 * @module index
-* @version 0.1.0
+* @version 0.1.1
 */
 export {
     /**
@@ -128,6 +147,108 @@ export {
      * @property {module:ApiClient}
      */
     ApiClient,
+
+    /**
+     * The AdAcoBody model constructor.
+     * @property {module:model/AdAcoBody}
+     */
+    AdAcoBody,
+
+    /**
+     * The AdAcoBodyAvatarIcon model constructor.
+     * @property {module:model/AdAcoBodyAvatarIcon}
+     */
+    AdAcoBodyAvatarIcon,
+
+    /**
+     * The AdAcoBodyAvatarIconList model constructor.
+     * @property {module:model/AdAcoBodyAvatarIconList}
+     */
+    AdAcoBodyAvatarIconList,
+
+    /**
+     * The AdAcoBodyCallToActionList model constructor.
+     * @property {module:model/AdAcoBodyCallToActionList}
+     */
+    AdAcoBodyCallToActionList,
+
+    /**
+     * The AdAcoBodyCardList model constructor.
+     * @property {module:model/AdAcoBodyCardList}
+     */
+    AdAcoBodyCardList,
+
+    /**
+     * The AdAcoBodyCommonMaterial model constructor.
+     * @property {module:model/AdAcoBodyCommonMaterial}
+     */
+    AdAcoBodyCommonMaterial,
+
+    /**
+     * The AdAcoBodyCommonMaterialTrackingInfo model constructor.
+     * @property {module:model/AdAcoBodyCommonMaterialTrackingInfo}
+     */
+    AdAcoBodyCommonMaterialTrackingInfo,
+
+    /**
+     * The AdAcoBodyDeeplinkList model constructor.
+     * @property {module:model/AdAcoBodyDeeplinkList}
+     */
+    AdAcoBodyDeeplinkList,
+
+    /**
+     * The AdAcoBodyDisplayNameList model constructor.
+     * @property {module:model/AdAcoBodyDisplayNameList}
+     */
+    AdAcoBodyDisplayNameList,
+
+    /**
+     * The AdAcoBodyLandingPageUrls model constructor.
+     * @property {module:model/AdAcoBodyLandingPageUrls}
+     */
+    AdAcoBodyLandingPageUrls,
+
+    /**
+     * The AdAcoBodyMediaInfo model constructor.
+     * @property {module:model/AdAcoBodyMediaInfo}
+     */
+    AdAcoBodyMediaInfo,
+
+    /**
+     * The AdAcoBodyMediaInfoImageInfo model constructor.
+     * @property {module:model/AdAcoBodyMediaInfoImageInfo}
+     */
+    AdAcoBodyMediaInfoImageInfo,
+
+    /**
+     * The AdAcoBodyMediaInfoList model constructor.
+     * @property {module:model/AdAcoBodyMediaInfoList}
+     */
+    AdAcoBodyMediaInfoList,
+
+    /**
+     * The AdAcoBodyMediaInfoVideoInfo model constructor.
+     * @property {module:model/AdAcoBodyMediaInfoVideoInfo}
+     */
+    AdAcoBodyMediaInfoVideoInfo,
+
+    /**
+     * The AdAcoBodyPageList model constructor.
+     * @property {module:model/AdAcoBodyPageList}
+     */
+    AdAcoBodyPageList,
+
+    /**
+     * The AdAcoBodyTitleList model constructor.
+     * @property {module:model/AdAcoBodyTitleList}
+     */
+    AdAcoBodyTitleList,
+
+    /**
+     * The AdAcoUpdateBody model constructor.
+     * @property {module:model/AdAcoUpdateBody}
+     */
+    AdAcoUpdateBody,
 
     /**
      * The AdCreateBody model constructor.
@@ -284,6 +405,12 @@ export {
      * @property {module:model/InlineResponse200}
      */
     InlineResponse200,
+
+    /**
+     * The MaterialStatusUpdateBody model constructor.
+     * @property {module:model/MaterialStatusUpdateBody}
+     */
+    MaterialStatusUpdateBody,
 
     /**
      * The Oauth2AccessTokenBody model constructor.
@@ -554,6 +681,12 @@ export {
     * @property {module:api/AdApi}
     */
     AdApi,
+
+    /**
+    * The AdAcoApi service constructor.
+    * @property {module:api/AdAcoApi}
+    */
+    AdAcoApi,
 
     /**
     * The AdgroupApi service constructor.

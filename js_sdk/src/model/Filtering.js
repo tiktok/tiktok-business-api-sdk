@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient';
 /**
  * The Filtering model module.
  * @module model/Filtering
- * @version 0.1.0
+ * @version 0.1.1
  */
 export class Filtering {
   /**

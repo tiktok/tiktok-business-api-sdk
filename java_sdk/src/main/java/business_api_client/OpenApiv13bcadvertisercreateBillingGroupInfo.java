@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * Billing group information
  */
 @Schema(description = "Billing group information")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-04-18T10:46:48.851395-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
 public class OpenApiv13bcadvertisercreateBillingGroupInfo {
   @JsonProperty("billing_group_id")
   private String billingGroupId = null;
