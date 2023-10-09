@@ -119,3 +119,11 @@ from business_api_client.models.pixel_properties import PixelProperties
 from business_api_client.models.pixel_track_body import PixelTrackBody
 from business_api_client.models.portfolio_create_body import PortfolioCreateBody
 from business_api_client.models.targeting_category_recommend_body import TargetingCategoryRecommendBody
+# import customized class into sdk package
+from business_api_client.tiktok_business.tiktok_code import *
+from business_api_client.tiktok_business.tiktok_exceptions import *
+from business_api_client.tiktok_business.tiktok_response import *
+from business_api_client.tiktok_business.tiktok_utils import *
+
+# sdk current version
+__version__ = '0.1.1'

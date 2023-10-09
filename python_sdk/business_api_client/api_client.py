@@ -23,7 +23,9 @@ from six.moves.urllib.parse import quote
 from business_api_client.configuration import Configuration
 import business_api_client.models
 from business_api_client import rest
-from business_api_client.response import ErrorCodes, SDKError, SDKResponse
+from business_api_client.tiktok_business.tiktok_exceptions import TiktokSDKError
+from business_api_client.tiktok_business.tiktok_code import NumericErrorCodes
+from business_api_client.tiktok_business.tiktok_response import TikTokSDKResponse
 
 
 class ApiClient(object):
@@ -319,13 +321,13 @@ class ApiClient(object):
                                    _preload_content, _request_timeout)
 
             #Error response
-            if response.code != ErrorCodes.SUCCESS_CODE:
+            if response.code != NumericErrorCodes.ERROR_CODE_OK:
                 if resource_path.startswith("/open_api/v1.3/pixel"):
-                    raise SDKError(message=response.message, error_code=response.code, log_id=response.request_id, data=response.data)
+                    raise TiktokSDKError(message=response.message, error_code=response.code, request_id=response.request_id, data=response.data)
                 else:
-                    raise SDKError(message=response.message, error_code=response.code, log_id=response.request_id)
+                    raise TiktokSDKError(message=response.message, error_code=response.code, request_id=response.request_id)
             else:
-                return SDKResponse(data=response.data, log_id=response.request_id).response()
+                return TikTokSDKResponse(data=response.data, request_id=response.request_id).response()
         else:
             thread = self.pool.apply_async(self.__call_api, (resource_path,
                                            method, path_params, query_params,
