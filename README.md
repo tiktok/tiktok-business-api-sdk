@@ -117,7 +117,7 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
 4. Run and test the Python SDK. Below are the sample codes for your reference.
    ```
     from __future__ import print_function
-    from Your_path.tiktok_business_api.python_sdk import business_api_client
+    import business_api_client
     from pprint import pprint
 
     TEST_ADVERTISER_ID = 'Your_advertiser_id'
