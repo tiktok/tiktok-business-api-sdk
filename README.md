@@ -113,6 +113,7 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
    export PYTHONPATH=your_path/tiktok-business-api-sdk:your_path/tiktok-business-api-sdk/python_sdk:your_path/tiktok-business-api-sdk/python_sdk/business_api_client
    cd your_path/tiktok-business-api-sdk/python_sdk
    pip install -r requirements.txt
+   python3 setup.py install
    ```
 4. Run and test the Python SDK. Below are the sample codes for your reference.
    ```
