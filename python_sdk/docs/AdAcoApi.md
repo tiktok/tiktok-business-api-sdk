@@ -66,7 +66,7 @@ No authorization required
 # **ad_aco_get**
 > InlineResponse200 ad_aco_get(advertiser_id, adgroup_ids, access_token, exclude_field_types_in_response=exclude_field_types_in_response)
 
-Get creative materials for an ACO ad, including call-to-actions, texts, ad names, images, or video materials. [Ad Aco Get](https://ads.tiktok.com/marketing_api/docs?id=1739473020978177)
+Get creative materials for an ACO ad, including calls to action, texts, ad names, images, or video materials. [Ad Aco Get](https://ads.tiktok.com/marketing_api/docs?id=1739473020978177)
 
 ### Example
 ```python
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
  **advertiser_id** | **str**| Advertiser ID. | [required]
  **adgroup_ids** | [**list[str]**](str.md)| A list of ad group IDs. Quantity- 1-100. | [required]
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **exclude_field_types_in_response** | [**list[str]**](str.md)| The type of fields that you want to remove from the response. | [optional] 
+ **exclude_field_types_in_response** | [**list[str]**](str.md)| The type of fields to remove from the response. | [optional] 
 
 ### Return type
 
