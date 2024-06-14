@@ -8,7 +8,7 @@
 """
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "python_sdk"
+NAME = "tiktok-business-api-sdk-official"
 VERSION = "1.0.0"
 # To install the library, run the following
 #
@@ -23,13 +23,18 @@ setup(
     name=NAME,
     version=VERSION,
     description="Tiktok Business API SDK",
-    author_email="",
-    url="",
+    author_email="jason.chen@tiktok.com",
+    url="https://github.com/tiktok/tiktok-business-api-sdk",
     keywords=["Swagger", "Tiktok Business API SDK"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
-    long_description="""\
-    Comprehensive collection of client libraries that enable our developers to build software to integrate with Business API faster and in a more standardized way.  # noqa: E501
-    """
+    long_description=open('README.md').read(),
+    long_description_content_type="text/markdown",
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: MIT License",
+        "Operating System :: OS Independent",
+    ],
+    python_requires='>=3.4',
 )
