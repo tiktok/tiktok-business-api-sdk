@@ -218,12 +218,12 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>${jackson-version}</version>
+      <version>${jackson-databind-version}</version>
     </dependency>
     <dependency>
       <groupId>com.github.joschi.jackson</groupId>
       <artifactId>jackson-datatype-threetenbp</artifactId>
-      <version>${jackson-version}</version>
+      <version>${jackson-datatype-threetenbp-version}</version>
     </dependency>
     <!-- Base64 encoding that works in both JVM and Android -->
     <dependency>
@@ -242,7 +242,9 @@
   <properties>
     <swagger-core-version>2.0.0</swagger-core-version>
     <jersey-version>2.29.1</jersey-version>
-    <jackson-version>2.12.7.1</jackson-version>
+    <jackson-version>2.12.0</jackson-version>
+    <jackson-datatype-threetenbp-version>2.6.4</jackson-datatype-threetenbp-version>
+    <jackson-databind-version>2.12.7.1</jackson-databind-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
     <junit-version>4.13.1</junit-version>
   </properties>
