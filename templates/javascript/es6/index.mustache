@@ -1,7 +1,7 @@
 {{>licenseInfo}}
-import {ApiClient} from './ApiClient';
-{{#models}}import {{braces "left"}}{{#model}}{{classFilename}}{{/model}}{{braces "right"}} from './{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{importPath}}';
-{{/models}}{{#apiInfo}}{{#apis}}import {{braces "left"}}{{importPath}}{{braces "right"}} from './{{#apiPackage}}{{apiPackage}}/{{/apiPackage}}{{importPath}}';
+import {ApiClient} from './ApiClient.js';
+{{#models}}import {{braces "left"}}{{#model}}{{classFilename}}{{/model}}{{braces "right"}} from './{{#modelPackage}}{{modelPackage}}/{{/modelPackage}}{{importPath}}.js';
+{{/models}}{{#apiInfo}}{{#apis}}import {{braces "left"}}{{importPath}}{{braces "right"}} from './{{#apiPackage}}{{apiPackage}}/{{/apiPackage}}{{importPath}}.js';
 {{/apis}}{{/apiInfo}}
 
 {{#emitJSDoc}}/**{{#projectDescription}}
