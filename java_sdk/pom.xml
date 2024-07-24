@@ -1,131 +1,185 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>io.swagger</groupId>
-  <artifactId>business_api_client</artifactId>
+  <groupId>io.github.jasonchentt</groupId>
+  <artifactId>tiktok-business-api-sdk-official</artifactId>
   <packaging>jar</packaging>
-  <name>business_api_client</name>
-  <version>1.0.0</version>
-  <url>https://github.com/swagger-api/swagger-codegen</url>
-  <description>Swagger Java</description>
-  <scm>
-    <connection>scm:git:git@github.com:swagger-api/swagger-codegen.git</connection>
-    <developerConnection>scm:git:git@github.com:swagger-api/swagger-codegen.git</developerConnection>
-    <url>https://github.com/swagger-api/swagger-codegen</url>
-  </scm>
-  <prerequisites>
-    <maven>2.2.0</maven>
-  </prerequisites>
-
+  <version>1.0.1</version>
+  <name>tiktok-business-api-sdk-official</name>
+  <description>SDK for TikTok Business API</description>
+  <url>https://github.com/tiktok/tiktok-business-api-sdk</url>
   <licenses>
     <license>
-      <name>Unlicense</name>
-      <url>http://unlicense.org</url>
+      <name>MIT License</name>
+      <url>https://opensource.org/licenses/MIT</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
-
   <developers>
     <developer>
-      <name>Swagger</name>
-      <email>apiteam@swagger.io</email>
-      <organization>Swagger</organization>
-      <organizationUrl>http://swagger.io</organizationUrl>
+      <id>jasonchentt</id>
+      <name>Jason Chen</name>
+      <email>jason.chen@tiktok.com</email>
+    </developer>
+    <developer>
+      <id>saivenkatmandava</id>
+      <name>Sai Venkat</name>
+      <email>sai.mandava@tiktok.com</email>
     </developer>
   </developers>
+  <scm>
+    <connection>scm:git:git@github.com:tiktok/tiktok-business-api-sdk.git</connection>
+    <developerConnection>scm:git:ssh://git@github.com:tiktok/tiktok-business-api-sdk.git</developerConnection>
+    <url>https://github.com/tiktok/tiktok-business-api-sdk</url>
+  </scm>
+  <properties>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <swagger.annotations.version>2.0.0</swagger.annotations.version>
+    <jackson.version>2.12.5</jackson.version>
+    <jersey.version>2.26</jersey.version>
+    <junit.version>4.13.2</junit.version>
+    <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+    <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
+    <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
+    <central-publishing-maven-plugin.version>0.3.0</central-publishing-maven-plugin.version>
+    <maven-gpg-plugin.version>1.6</maven-gpg-plugin.version>
+    <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
+  </properties>
+  <dependencies>
+    <!-- Existing Dependencies -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.12.0</version>
+    </dependency>
+    <dependency>
+      <groupId>io.swagger.core.v3</groupId>
+      <artifactId>swagger-annotations</artifactId>
+      <version>${swagger.annotations.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-multipart</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>${jersey.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-core</artifactId>
+      <version>2.12.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-annotations</artifactId>
+      <version>2.12.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.12.7.1</version>
+    </dependency>
+    <dependency>
+      <groupId>com.github.joschi.jackson</groupId>
+      <artifactId>jackson-datatype-threetenbp</artifactId>
+      <version>2.6.4</version>
+    </dependency>
+    <dependency>
+      <groupId>com.brsanthu</groupId>
+      <artifactId>migbase64</artifactId>
+      <version>2.2</version>
+    </dependency>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
 
+    <!-- Additional Dependencies from Test Project -->
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>2.33</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.inject</groupId>
+      <artifactId>jersey-hk2</artifactId>
+      <version>2.33</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>2.33</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.hk2</groupId>
+      <artifactId>hk2-api</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.hk2</groupId>
+      <artifactId>hk2-locator</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.hk2</groupId>
+      <artifactId>hk2-utils</artifactId>
+      <version>2.6.1</version>
+    </dependency>
+    <dependency>
+      <groupId>org.glassfish.hk2</groupId>
+      <artifactId>osgi-resource-locator</artifactId>
+      <version>1.0.3</version>
+    </dependency>
+  </dependencies>
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.12</version>
-        <configuration>
-          <systemProperties>
-            <property>
-              <name>loggerPath</name>
-              <value>conf/log4j.properties</value>
-            </property>
-          </systemProperties>
-          <argLine>-Xms512m -Xmx1500m</argLine>
-          <parallel>methods</parallel>
-          <forkMode>pertest</forkMode>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>copy-dependencies</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${project.build.directory}/lib</outputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-
-      <!-- attach test jar -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>3.0.2</version>
-        <executions>
-          <execution>
-            <goals>
-              <goal>test-jar</goal>
-            </goals>
-          </execution>
-        </executions>
-        <configuration>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>build-helper-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>add_sources</id>
-            <phase>generate-sources</phase>
-            <goals>
-              <goal>add-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>src/main/java</source>
-              </sources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>add_test_sources</id>
-            <phase>generate-test-sources</phase>
-            <goals>
-              <goal>add-test-source</goal>
-            </goals>
-            <configuration>
-              <sources>
-                <source>src/test/java</source>
-              </sources>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.6.1</version>
+        <version>${maven-compiler-plugin.version}</version>
         <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
+          <source>${maven.compiler.source}</source>
+          <target>${maven.compiler.target}</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.sonatype.central</groupId>
+        <artifactId>central-publishing-maven-plugin</artifactId>
+        <version>${central-publishing-maven-plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <publishingServerId>central</publishingServerId>
+          <tokenAuth>true</tokenAuth>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${maven-source-plugin.version}</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>3.2.0</version>
+        <version>${maven-javadoc-plugin.version}</version>
         <executions>
           <execution>
             <id>attach-javadocs</id>
@@ -137,115 +191,60 @@
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>2.2.1</version>
+        <artifactId>maven-gpg-plugin</artifactId>
+        <version>${maven-gpg-plugin.version}</version>
         <executions>
           <execution>
-            <id>attach-sources</id>
+            <id>sign-artifacts</id>
+            <phase>verify</phase>
             <goals>
-              <goal>jar-no-fork</goal>
+              <goal>sign</goal>
             </goals>
+            <configuration>
+              <keyname>0xC2D1C02C</keyname>
+              <gpgArguments>
+                <arg>--pinentry-mode</arg>
+                <arg>loopback</arg>
+              </gpgArguments>
+            </configuration>
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+        <version>${nexus-staging-maven-plugin.version}</version>
+        <extensions>true</extensions>
+        <configuration>
+          <serverId>ossrh</serverId>
+          <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
-
+  <distributionManagement>
+    <repository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
   <profiles>
     <profile>
-      <id>sign-artifacts</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <version>1.5</version>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
+      <id>ossrh</id>
+      <properties>
+        <gpg.keyname>0xC2D1C02C</gpg.keyname>
+        <gpg.executable>gpg</gpg.executable>
+        <gpg.passphrase>JasonandSai2024</gpg.passphrase>
+        <gpg.secretKeyring>${user.home}/.gnupg/secring.gpg</gpg.secretKeyring>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
     </profile>
   </profiles>
-
-  <dependencies>
-    <dependency>
-      <groupId>io.swagger.core.v3</groupId>
-      <artifactId>swagger-annotations</artifactId>
-      <version>${swagger-core-version}</version>
-    </dependency>
-
-    <!-- HTTP client: jersey-client -->
-    <dependency>
-      <groupId>org.glassfish.jersey.core</groupId>
-      <artifactId>jersey-client</artifactId>
-      <version>${jersey-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.media</groupId>
-      <artifactId>jersey-media-multipart</artifactId>
-      <version>${jersey-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.media</groupId>
-      <artifactId>jersey-media-json-jackson</artifactId>
-      <version>${jersey-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.glassfish.jersey.inject</groupId>
-      <artifactId>jersey-hk2</artifactId>
-      <version>2.29.1</version>
-    </dependency>
-
-    <!-- JSON processing: jackson -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>${jackson-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-      <version>${jackson-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson-databind-version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.github.joschi.jackson</groupId>
-      <artifactId>jackson-datatype-threetenbp</artifactId>
-      <version>${jackson-datatype-threetenbp-version}</version>
-    </dependency>
-    <!-- Base64 encoding that works in both JVM and Android -->
-    <dependency>
-      <groupId>com.brsanthu</groupId>
-      <artifactId>migbase64</artifactId>
-      <version>2.2</version>
-    </dependency>
-    <!-- test dependencies -->
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit-version}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-  <properties>
-    <swagger-core-version>2.0.0</swagger-core-version>
-    <jersey-version>2.29.1</jersey-version>
-    <jackson-version>2.12.0</jackson-version>
-    <jackson-datatype-threetenbp-version>2.6.4</jackson-datatype-threetenbp-version>
-    <jackson-databind-version>2.12.7.1</jackson-databind-version>
-    <maven-plugin-version>1.0.0</maven-plugin-version>
-    <junit-version>4.13.1</junit-version>
-  </properties>
 </project>
