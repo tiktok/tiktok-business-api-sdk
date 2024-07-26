@@ -4,12 +4,12 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {CampaignCreateBody} from '../model/CampaignCreateBody';
-import {CampaignStatusUpdateBody} from '../model/CampaignStatusUpdateBody';
-import {CampaignUpdateBody} from '../model/CampaignUpdateBody';
-import {FilteringCampaignGet} from '../model/FilteringCampaignGet';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {CampaignCreateBody} from '../model/CampaignCreateBody.js';
+import {CampaignStatusUpdateBody} from '../model/CampaignStatusUpdateBody.js';
+import {CampaignUpdateBody} from '../model/CampaignUpdateBody.js';
+import {FilteringCampaignGet} from '../model/FilteringCampaignGet.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * CampaignCreation service.

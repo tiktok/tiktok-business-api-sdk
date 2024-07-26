@@ -4,10 +4,10 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {InlineResponse200} from '../model/InlineResponse200';
-import {PixelBatchBody} from '../model/PixelBatchBody';
-import {PixelTrackBody} from '../model/PixelTrackBody';
+import {ApiClient} from "../ApiClient.js";
+import {InlineResponse200} from '../model/InlineResponse200.js';
+import {PixelBatchBody} from '../model/PixelBatchBody.js';
+import {PixelTrackBody} from '../model/PixelTrackBody.js';
 
 /**
 * EventCallback service.

@@ -4,9 +4,9 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13adgroupcreateAudienceRuleExclusions} from './OpenApiv13adgroupcreateAudienceRuleExclusions';
-import {OpenApiv13adgroupcreateAudienceRuleInclusions} from './OpenApiv13adgroupcreateAudienceRuleInclusions';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13adgroupcreateAudienceRuleExclusions} from './OpenApiv13adgroupcreateAudienceRuleExclusions.js';
+import {OpenApiv13adgroupcreateAudienceRuleInclusions} from './OpenApiv13adgroupcreateAudienceRuleInclusions.js';
 
 /**
  * The OpenApiv13adgroupcreateAudienceRule model module.
