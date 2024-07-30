@@ -4,11 +4,11 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {AdAcoBody} from '../model/AdAcoBody';
-import {AdAcoUpdateBody} from '../model/AdAcoUpdateBody';
-import {InlineResponse200} from '../model/InlineResponse200';
-import {MaterialStatusUpdateBody} from '../model/MaterialStatusUpdateBody';
+import {ApiClient} from "../ApiClient.js";
+import {AdAcoBody} from '../model/AdAcoBody.js';
+import {AdAcoUpdateBody} from '../model/AdAcoUpdateBody.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
+import {MaterialStatusUpdateBody} from '../model/MaterialStatusUpdateBody.js';
 
 /**
 * AdAco service.

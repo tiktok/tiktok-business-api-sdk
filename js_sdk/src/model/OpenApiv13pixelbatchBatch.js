@@ -4,9 +4,9 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {PixelContext} from './PixelContext';
-import {PixelProperties} from './PixelProperties';
+import {ApiClient} from '../ApiClient.js';
+import {PixelContext} from './PixelContext.js';
+import {PixelProperties} from './PixelProperties.js';
 
 /**
  * The OpenApiv13pixelbatchBatch model module.

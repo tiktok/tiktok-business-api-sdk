@@ -272,4 +272,3 @@ No authorization required
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
-

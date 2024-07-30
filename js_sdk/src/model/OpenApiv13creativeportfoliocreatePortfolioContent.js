@@ -4,12 +4,12 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13creativeportfoliocreateAdvancedAudioInfo} from './OpenApiv13creativeportfoliocreateAdvancedAudioInfo';
-import {OpenApiv13creativeportfoliocreateAdvancedGestureIcon} from './OpenApiv13creativeportfoliocreateAdvancedGestureIcon';
-import {OpenApiv13creativeportfoliocreateBadgeImageInfo} from './OpenApiv13creativeportfoliocreateBadgeImageInfo';
-import {OpenApiv13creativeportfoliocreateBadgePosition} from './OpenApiv13creativeportfoliocreateBadgePosition';
-import {OpenApiv13creativeportfoliocreateStickerParam} from './OpenApiv13creativeportfoliocreateStickerParam';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13creativeportfoliocreateAdvancedAudioInfo} from './OpenApiv13creativeportfoliocreateAdvancedAudioInfo.js';
+import {OpenApiv13creativeportfoliocreateAdvancedGestureIcon} from './OpenApiv13creativeportfoliocreateAdvancedGestureIcon.js';
+import {OpenApiv13creativeportfoliocreateBadgeImageInfo} from './OpenApiv13creativeportfoliocreateBadgeImageInfo.js';
+import {OpenApiv13creativeportfoliocreateBadgePosition} from './OpenApiv13creativeportfoliocreateBadgePosition.js';
+import {OpenApiv13creativeportfoliocreateStickerParam} from './OpenApiv13creativeportfoliocreateStickerParam.js';
 
 /**
  * The OpenApiv13creativeportfoliocreatePortfolioContent model module.
