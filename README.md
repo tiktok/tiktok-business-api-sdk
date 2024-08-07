@@ -14,7 +14,7 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
 
 ## Version
 
-- API version: 0.1.0 Beta (in Beta Test)
+- API version: 1.0.1 
 
 ## Prerequisites
   1.   [Create a TikTok For Business account](https://ads.tiktok.com/marketing_api/docs?id=1738855099573250)
@@ -146,6 +146,32 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
   - npm
  
 #### Integration Steps:
+Option 1(recommended)
+1. Download the TikTok Business API SDK within your project
+   ```
+    npm install tiktok-business-api-sdk-official
+   ```
+2. Import and use JavaScript SDK method, below is the sample code for reference
+   ```
+    import * as js_sdk from "tiktok-business-api-sdk-official";
+
+    let api = new js_sdk.ToolApi()
+    let advertiserId = "Your_advertiser_id"; 
+    let accessToken = "Your_accessToken_id"; 
+    let body = new js_sdk.AdvertiserUpdateBody(advertiserId);
+    let opts = {
+      'body': body
+    };
+    apiInstance.advertiserUpdate(accessToken, opts, (error, data, response) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log('advertiserUpdate called successfully.');
+      }
+    });
+   ```
+   
+Option 2
 1. Download the TikTok Business API SDK
    ```
     git clone https://github.com/tiktok/tiktok-business-api-sdk.git
