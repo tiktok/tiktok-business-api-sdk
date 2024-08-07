@@ -31,6 +31,45 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
   - Maven 
   
 #### Integration Steps:
+Option 1(recommended)
+1. Add the TikTok Business API SDK dependency to your project pom.xml file
+   ```
+     <dependency>
+        <groupId>io.github.jasonchentt</groupId>
+        <artifactId>tiktok-business-api-sdk-official</artifactId>
+        <version>1.0.1</version>
+    </dependency>
+   ```
+2. Run the following command to install the SDK
+   ```
+    mvn install
+   ```
+3. Import and use Java SDK method, below is the sample code for reference
+   ```
+    import io.swagger.client.api.ToolApi;
+    import business_api.Response;;
+
+    public class ToolTest {
+
+      public static void main(String[] args) {
+        ToolApi apiInstance = new ToolApi();
+        String accessToken = "Your_accessToken_id";
+        String advertiserId = "Your_advertiser_id";
+        
+        try {
+            Response result = apiInstance.toolLanguage(advertiserId, accessToken);
+            System.out.println(result);
+            System.out.println("Success ToolApi#toolLanguage");
+
+        } catch (Exception e) {
+            System.err.println("Exception when calling ToolApi#toolLanguage");
+            e.printStackTrace();
+        }
+      }
+    }
+   ```
+   
+Option 2
 1. Download the TikTok Business API SDK
    ```
     git clone https://github.com/tiktok/tiktok-business-api-sdk.git
@@ -99,6 +138,35 @@ Java, Python and Javascript are among the most popular languages for TikTok busi
   - Python 3.4+
 
 #### Integration Steps:
+Option 1(recommended)
+1. Download the TikTok Business API SDK within your project
+   ```
+    pip install tiktok-business-api-sdk-official
+   ```
+2. Import and use Python SDK method, below is the sample code for reference
+   ```
+    from __future__ import print_function
+    import business_api_client
+    from business_api_client.rest import ApiException
+    from pprint import pprint
+
+    def test_tool_language():
+    # create an instance of the API class
+        api_instance = business_api_client.ToolApi()
+        advertiser_id = TEST_ADVERTISER_ID # str |
+        access_token = TEST_ACCESS_TOKEN # str |
+
+        try:
+            api_response = api_instance.tool_language(advertiser_id, access_token)
+            pprint(api_response)
+        except ApiException as e:
+            print("Exception when calling ToolApi->tool_language: %s\n" % e)
+
+
+    test_tool_language()
+   ```
+   
+Option 2
 1. Download the TikTok Business API SDK
    ```
     git clone https://github.com/tiktok/tiktok-business-api-sdk.git
