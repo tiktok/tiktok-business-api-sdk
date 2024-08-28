@@ -4,12 +4,12 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {AdgroupCreateBody} from '../model/AdgroupCreateBody';
-import {AdgroupStatusUpdateBody} from '../model/AdgroupStatusUpdateBody';
-import {AdgroupUpdateBody} from '../model/AdgroupUpdateBody';
-import {FilteringAdgroupGet} from '../model/FilteringAdgroupGet';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {AdgroupCreateBody} from '../model/AdgroupCreateBody.js';
+import {AdgroupStatusUpdateBody} from '../model/AdgroupStatusUpdateBody.js';
+import {AdgroupUpdateBody} from '../model/AdgroupUpdateBody.js';
+import {FilteringAdgroupGet} from '../model/FilteringAdgroupGet.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * Adgroup service.

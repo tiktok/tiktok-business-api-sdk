@@ -4,8 +4,8 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * Measurement service.

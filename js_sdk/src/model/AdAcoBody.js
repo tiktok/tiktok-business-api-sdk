@@ -4,17 +4,17 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {AdAcoBodyAvatarIconList} from './AdAcoBodyAvatarIconList';
-import {AdAcoBodyCallToActionList} from './AdAcoBodyCallToActionList';
-import {AdAcoBodyCardList} from './AdAcoBodyCardList';
-import {AdAcoBodyCommonMaterial} from './AdAcoBodyCommonMaterial';
-import {AdAcoBodyDeeplinkList} from './AdAcoBodyDeeplinkList';
-import {AdAcoBodyDisplayNameList} from './AdAcoBodyDisplayNameList';
-import {AdAcoBodyLandingPageUrls} from './AdAcoBodyLandingPageUrls';
-import {AdAcoBodyMediaInfoList} from './AdAcoBodyMediaInfoList';
-import {AdAcoBodyPageList} from './AdAcoBodyPageList';
-import {AdAcoBodyTitleList} from './AdAcoBodyTitleList';
+import {ApiClient} from '../ApiClient.js';
+import {AdAcoBodyAvatarIconList} from './AdAcoBodyAvatarIconList.js';
+import {AdAcoBodyCallToActionList} from './AdAcoBodyCallToActionList.js';
+import {AdAcoBodyCardList} from './AdAcoBodyCardList.js';
+import {AdAcoBodyCommonMaterial} from './AdAcoBodyCommonMaterial.js';
+import {AdAcoBodyDeeplinkList} from './AdAcoBodyDeeplinkList.js';
+import {AdAcoBodyDisplayNameList} from './AdAcoBodyDisplayNameList.js';
+import {AdAcoBodyLandingPageUrls} from './AdAcoBodyLandingPageUrls.js';
+import {AdAcoBodyMediaInfoList} from './AdAcoBodyMediaInfoList.js';
+import {AdAcoBodyPageList} from './AdAcoBodyPageList.js';
+import {AdAcoBodyTitleList} from './AdAcoBodyTitleList.js';
 
 /**
  * The AdAcoBody model module.

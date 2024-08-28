@@ -4,9 +4,9 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {InlineResponse200} from '../model/InlineResponse200';
-import {Oauth2AccessTokenBody} from '../model/Oauth2AccessTokenBody';
+import {ApiClient} from "../ApiClient.js";
+import {InlineResponse200} from '../model/InlineResponse200.js';
+import {Oauth2AccessTokenBody} from '../model/Oauth2AccessTokenBody.js';
 
 /**
 * Authentication service.

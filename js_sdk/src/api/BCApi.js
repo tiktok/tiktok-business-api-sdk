@@ -4,10 +4,10 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {AdvertiserCreateBody} from '../model/AdvertiserCreateBody';
-import {Filtering} from '../model/Filtering';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {AdvertiserCreateBody} from '../model/AdvertiserCreateBody.js';
+import {Filtering} from '../model/Filtering.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * BC service.
