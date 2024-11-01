@@ -15,3 +15,11 @@ from {{packageName}}.configuration import Configuration
 # import models into sdk package
 {{#models}}{{#model}}from {{modelPackage}}.{{classFilename}} import {{classname}}
 {{/model}}{{/models}}
+# import customized class into sdk package
+from {{packageName}}.tiktok_business.tiktok_code import *
+from {{packageName}}.tiktok_business.tiktok_exceptions import *
+from {{packageName}}.tiktok_business.tiktok_response import *
+from {{packageName}}.tiktok_business.tiktok_utils import *
+
+# sdk current version
+__version__ = '{{version}}'
