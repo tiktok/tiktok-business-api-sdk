@@ -4,111 +4,142 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from './ApiClient';
-import {AdAcoBody} from './model/AdAcoBody';
-import {AdAcoBodyAvatarIcon} from './model/AdAcoBodyAvatarIcon';
-import {AdAcoBodyAvatarIconList} from './model/AdAcoBodyAvatarIconList';
-import {AdAcoBodyCallToActionList} from './model/AdAcoBodyCallToActionList';
-import {AdAcoBodyCardList} from './model/AdAcoBodyCardList';
-import {AdAcoBodyCommonMaterial} from './model/AdAcoBodyCommonMaterial';
-import {AdAcoBodyCommonMaterialTrackingInfo} from './model/AdAcoBodyCommonMaterialTrackingInfo';
-import {AdAcoBodyDeeplinkList} from './model/AdAcoBodyDeeplinkList';
-import {AdAcoBodyDisplayNameList} from './model/AdAcoBodyDisplayNameList';
-import {AdAcoBodyLandingPageUrls} from './model/AdAcoBodyLandingPageUrls';
-import {AdAcoBodyMediaInfo} from './model/AdAcoBodyMediaInfo';
-import {AdAcoBodyMediaInfoImageInfo} from './model/AdAcoBodyMediaInfoImageInfo';
-import {AdAcoBodyMediaInfoList} from './model/AdAcoBodyMediaInfoList';
-import {AdAcoBodyMediaInfoVideoInfo} from './model/AdAcoBodyMediaInfoVideoInfo';
-import {AdAcoBodyPageList} from './model/AdAcoBodyPageList';
-import {AdAcoBodyTitleList} from './model/AdAcoBodyTitleList';
-import {AdAcoUpdateBody} from './model/AdAcoUpdateBody';
-import {AdCreateBody} from './model/AdCreateBody';
-import {AdStatusUpdateBody} from './model/AdStatusUpdateBody';
-import {AdUpdateBody} from './model/AdUpdateBody';
-import {AdUploadBody} from './model/AdUploadBody';
-import {AdgroupCreateBody} from './model/AdgroupCreateBody';
-import {AdgroupStatusUpdateBody} from './model/AdgroupStatusUpdateBody';
-import {AdgroupUpdateBody} from './model/AdgroupUpdateBody';
-import {AdvertiserCreateBody} from './model/AdvertiserCreateBody';
-import {AdvertiserUpdateBody} from './model/AdvertiserUpdateBody';
-import {BcTransferBody} from './model/BcTransferBody';
-import {CampaignCreateBody} from './model/CampaignCreateBody';
-import {CampaignStatusUpdateBody} from './model/CampaignStatusUpdateBody';
-import {CampaignUpdateBody} from './model/CampaignUpdateBody';
-import {FileImageAdUpload} from './model/FileImageAdUpload';
-import {Filtering} from './model/Filtering';
-import {FilteringAdGet} from './model/FilteringAdGet';
-import {FilteringAdgroupGet} from './model/FilteringAdgroupGet';
-import {FilteringAdvertiserBalanceGet} from './model/FilteringAdvertiserBalanceGet';
-import {FilteringAdvertiserTransactionGet} from './model/FilteringAdvertiserTransactionGet';
-import {FilteringBCTransactionGet} from './model/FilteringBCTransactionGet';
-import {FilteringCampaignGet} from './model/FilteringCampaignGet';
-import {FilteringReportIntegratedGet} from './model/FilteringReportIntegratedGet';
-import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch';
-import {IdentityCreateBody} from './model/IdentityCreateBody';
-import {ImageUploadBody} from './model/ImageUploadBody';
-import {InlineResponse200} from './model/InlineResponse200';
-import {MaterialStatusUpdateBody} from './model/MaterialStatusUpdateBody';
-import {Oauth2AccessTokenBody} from './model/Oauth2AccessTokenBody';
-import {OpenApiv13adcreateCreatives} from './model/OpenApiv13adcreateCreatives';
-import {OpenApiv13adcreateDisclaimerClickableTexts} from './model/OpenApiv13adcreateDisclaimerClickableTexts';
-import {OpenApiv13adcreateDisclaimerText} from './model/OpenApiv13adcreateDisclaimerText';
-import {OpenApiv13adgroupcreateActions} from './model/OpenApiv13adgroupcreateActions';
-import {OpenApiv13adgroupcreateAudienceRule} from './model/OpenApiv13adgroupcreateAudienceRule';
-import {OpenApiv13adgroupcreateAudienceRuleExclusions} from './model/OpenApiv13adgroupcreateAudienceRuleExclusions';
-import {OpenApiv13adgroupcreateAudienceRuleExclusionsEventSources} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsEventSources';
-import {OpenApiv13adgroupcreateAudienceRuleExclusionsFilter} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsFilter';
-import {OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters';
-import {OpenApiv13adgroupcreateAudienceRuleExclusionsRules} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsRules';
-import {OpenApiv13adgroupcreateAudienceRuleInclusions} from './model/OpenApiv13adgroupcreateAudienceRuleInclusions';
-import {OpenApiv13adgroupcreateAudienceRuleInclusionsRules} from './model/OpenApiv13adgroupcreateAudienceRuleInclusionsRules';
-import {OpenApiv13adgroupcreateExcludedCustomActions} from './model/OpenApiv13adgroupcreateExcludedCustomActions';
-import {OpenApiv13adgroupcreateIncludedCustomActions} from './model/OpenApiv13adgroupcreateIncludedCustomActions';
-import {OpenApiv13adgroupcreateTargetingExpansion} from './model/OpenApiv13adgroupcreateTargetingExpansion';
-import {OpenApiv13adgroupupdateAudienceRule} from './model/OpenApiv13adgroupupdateAudienceRule';
-import {OpenApiv13adgroupupdateAudienceRuleExclusions} from './model/OpenApiv13adgroupupdateAudienceRuleExclusions';
-import {OpenApiv13adupdateCreatives} from './model/OpenApiv13adupdateCreatives';
-import {OpenApiv13advertiserupdateQualificationImages} from './model/OpenApiv13advertiserupdateQualificationImages';
-import {OpenApiv13bcadvertisercreateAdvertiserInfo} from './model/OpenApiv13bcadvertisercreateAdvertiserInfo';
-import {OpenApiv13bcadvertisercreateBillingGroupInfo} from './model/OpenApiv13bcadvertisercreateBillingGroupInfo';
-import {OpenApiv13bcadvertisercreateBillingInfo} from './model/OpenApiv13bcadvertisercreateBillingInfo';
-import {OpenApiv13bcadvertisercreateContactInfo} from './model/OpenApiv13bcadvertisercreateContactInfo';
-import {OpenApiv13bcadvertisercreateCustomerInfo} from './model/OpenApiv13bcadvertisercreateCustomerInfo';
-import {OpenApiv13bcadvertisercreateQualificationInfo} from './model/OpenApiv13bcadvertisercreateQualificationInfo';
-import {OpenApiv13creativeportfoliocreateAdvancedAudioInfo} from './model/OpenApiv13creativeportfoliocreateAdvancedAudioInfo';
-import {OpenApiv13creativeportfoliocreateAdvancedGestureIcon} from './model/OpenApiv13creativeportfoliocreateAdvancedGestureIcon';
-import {OpenApiv13creativeportfoliocreateBadgeImageInfo} from './model/OpenApiv13creativeportfoliocreateBadgeImageInfo';
-import {OpenApiv13creativeportfoliocreateBadgePosition} from './model/OpenApiv13creativeportfoliocreateBadgePosition';
-import {OpenApiv13creativeportfoliocreatePortfolioContent} from './model/OpenApiv13creativeportfoliocreatePortfolioContent';
-import {OpenApiv13creativeportfoliocreateStickerParam} from './model/OpenApiv13creativeportfoliocreateStickerParam';
-import {OpenApiv13pixelbatchBatch} from './model/OpenApiv13pixelbatchBatch';
-import {PixelBatchBody} from './model/PixelBatchBody';
-import {PixelContent} from './model/PixelContent';
-import {PixelContext} from './model/PixelContext';
-import {PixelContextAd} from './model/PixelContextAd';
-import {PixelContextPage} from './model/PixelContextPage';
-import {PixelContextUser} from './model/PixelContextUser';
-import {PixelProperties} from './model/PixelProperties';
-import {PixelTrackBody} from './model/PixelTrackBody';
-import {PortfolioCreateBody} from './model/PortfolioCreateBody';
-import {TargetingCategoryRecommendBody} from './model/TargetingCategoryRecommendBody';
-import {AccountApi} from './api/AccountApi';
-import {AdApi} from './api/AdApi';
-import {AdAcoApi} from './api/AdAcoApi';
-import {AdgroupApi} from './api/AdgroupApi';
-import {AudienceApi} from './api/AudienceApi';
-import {AuthenticationApi} from './api/AuthenticationApi';
-import {BCApi} from './api/BCApi';
-import {BcPaymentApi} from './api/BcPaymentApi';
-import {CampaignCreationApi} from './api/CampaignCreationApi';
-import {CreativeAssetApi} from './api/CreativeAssetApi';
-import {EventCallbackApi} from './api/EventCallbackApi';
-import {FileApi} from './api/FileApi';
-import {IdentityApi} from './api/IdentityApi';
-import {MeasurementApi} from './api/MeasurementApi';
-import {RecommendToolApi} from './api/RecommendToolApi';
-import {ReportingApi} from './api/ReportingApi';
-import {ToolApi} from './api/ToolApi';
+import {ApiClient} from './ApiClient.js';
+import {AdAcoBody} from './model/AdAcoBody.js';
+import {AdAcoBodyAvatarIcon} from './model/AdAcoBodyAvatarIcon.js';
+import {AdAcoBodyAvatarIconList} from './model/AdAcoBodyAvatarIconList.js';
+import {AdAcoBodyCallToActionList} from './model/AdAcoBodyCallToActionList.js';
+import {AdAcoBodyCardList} from './model/AdAcoBodyCardList.js';
+import {AdAcoBodyCommonMaterial} from './model/AdAcoBodyCommonMaterial.js';
+import {AdAcoBodyCommonMaterialTrackingInfo} from './model/AdAcoBodyCommonMaterialTrackingInfo.js';
+import {AdAcoBodyDeeplinkList} from './model/AdAcoBodyDeeplinkList.js';
+import {AdAcoBodyDisplayNameList} from './model/AdAcoBodyDisplayNameList.js';
+import {AdAcoBodyLandingPageUrls} from './model/AdAcoBodyLandingPageUrls.js';
+import {AdAcoBodyMediaInfo} from './model/AdAcoBodyMediaInfo.js';
+import {AdAcoBodyMediaInfoImageInfo} from './model/AdAcoBodyMediaInfoImageInfo.js';
+import {AdAcoBodyMediaInfoList} from './model/AdAcoBodyMediaInfoList.js';
+import {AdAcoBodyMediaInfoVideoInfo} from './model/AdAcoBodyMediaInfoVideoInfo.js';
+import {AdAcoBodyPageList} from './model/AdAcoBodyPageList.js';
+import {AdAcoBodyTitleList} from './model/AdAcoBodyTitleList.js';
+import {AdAcoUpdateBody} from './model/AdAcoUpdateBody.js';
+import {AdCreateBody} from './model/AdCreateBody.js';
+import {AdStatusUpdateBody} from './model/AdStatusUpdateBody.js';
+import {AdUpdateBody} from './model/AdUpdateBody.js';
+import {AdUploadBody} from './model/AdUploadBody.js';
+import {AdgroupCreateBody} from './model/AdgroupCreateBody.js';
+import {AdgroupStatusUpdateBody} from './model/AdgroupStatusUpdateBody.js';
+import {AdgroupUpdateBody} from './model/AdgroupUpdateBody.js';
+import {AdvertiserCreateBody} from './model/AdvertiserCreateBody.js';
+import {AdvertiserUpdateBody} from './model/AdvertiserUpdateBody.js';
+import {BcTransferBody} from './model/BcTransferBody.js';
+import {BidRecommendBody} from './model/BidRecommendBody.js';
+import {CampaignCreateBody} from './model/CampaignCreateBody.js';
+import {CampaignStatusUpdateBody} from './model/CampaignStatusUpdateBody.js';
+import {CampaignUpdateBody} from './model/CampaignUpdateBody.js';
+import {CustomAudienceApplyBody} from './model/CustomAudienceApplyBody.js';
+import {CustomAudienceCreateBody} from './model/CustomAudienceCreateBody.js';
+import {CustomAudienceDeleteBody} from './model/CustomAudienceDeleteBody.js';
+import {CustomAudienceShareBody} from './model/CustomAudienceShareBody.js';
+import {CustomAudienceUpdateBody} from './model/CustomAudienceUpdateBody.js';
+import {FileImageAdUpload} from './model/FileImageAdUpload.js';
+import {FileUploadBody} from './model/FileUploadBody.js';
+import {Filtering} from './model/Filtering.js';
+import {FilteringAdGet} from './model/FilteringAdGet.js';
+import {FilteringAdgroupGet} from './model/FilteringAdgroupGet.js';
+import {FilteringAdvertiserBalanceGet} from './model/FilteringAdvertiserBalanceGet.js';
+import {FilteringAdvertiserTransactionGet} from './model/FilteringAdvertiserTransactionGet.js';
+import {FilteringBCTransactionGet} from './model/FilteringBCTransactionGet.js';
+import {FilteringCampaignGet} from './model/FilteringCampaignGet.js';
+import {FilteringReportIntegratedGet} from './model/FilteringReportIntegratedGet.js';
+import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch.js';
+import {IdentityCreateBody} from './model/IdentityCreateBody.js';
+import {ImageUploadBody} from './model/ImageUploadBody.js';
+import {InlineResponse200} from './model/InlineResponse200.js';
+import {LookalikeCreateBody} from './model/LookalikeCreateBody.js';
+import {LookalikeUpdateBody} from './model/LookalikeUpdateBody.js';
+import {MaterialStatusUpdateBody} from './model/MaterialStatusUpdateBody.js';
+import {Oauth2AccessTokenBody} from './model/Oauth2AccessTokenBody.js';
+import {OpenApiv13adcreateCreatives} from './model/OpenApiv13adcreateCreatives.js';
+import {OpenApiv13adcreateDisclaimerClickableTexts} from './model/OpenApiv13adcreateDisclaimerClickableTexts.js';
+import {OpenApiv13adcreateDisclaimerText} from './model/OpenApiv13adcreateDisclaimerText.js';
+import {OpenApiv13adgroupcreateActions} from './model/OpenApiv13adgroupcreateActions.js';
+import {OpenApiv13adgroupcreateAudienceRule} from './model/OpenApiv13adgroupcreateAudienceRule.js';
+import {OpenApiv13adgroupcreateAudienceRuleExclusions} from './model/OpenApiv13adgroupcreateAudienceRuleExclusions.js';
+import {OpenApiv13adgroupcreateAudienceRuleExclusionsEventSources} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsEventSources.js';
+import {OpenApiv13adgroupcreateAudienceRuleExclusionsFilter} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsFilter.js';
+import {OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsFilterFilters.js';
+import {OpenApiv13adgroupcreateAudienceRuleExclusionsRules} from './model/OpenApiv13adgroupcreateAudienceRuleExclusionsRules.js';
+import {OpenApiv13adgroupcreateAudienceRuleInclusions} from './model/OpenApiv13adgroupcreateAudienceRuleInclusions.js';
+import {OpenApiv13adgroupcreateAudienceRuleInclusionsRules} from './model/OpenApiv13adgroupcreateAudienceRuleInclusionsRules.js';
+import {OpenApiv13adgroupcreateExcludedCustomActions} from './model/OpenApiv13adgroupcreateExcludedCustomActions.js';
+import {OpenApiv13adgroupcreateIncludedCustomActions} from './model/OpenApiv13adgroupcreateIncludedCustomActions.js';
+import {OpenApiv13adgroupcreateTargetingExpansion} from './model/OpenApiv13adgroupcreateTargetingExpansion.js';
+import {OpenApiv13adgroupupdateAudienceRule} from './model/OpenApiv13adgroupupdateAudienceRule.js';
+import {OpenApiv13adgroupupdateAudienceRuleExclusions} from './model/OpenApiv13adgroupupdateAudienceRuleExclusions.js';
+import {OpenApiv13adupdateCreatives} from './model/OpenApiv13adupdateCreatives.js';
+import {OpenApiv13advertiserupdateQualificationImages} from './model/OpenApiv13advertiserupdateQualificationImages.js';
+import {OpenApiv13bcadvertisercreateAdvertiserInfo} from './model/OpenApiv13bcadvertisercreateAdvertiserInfo.js';
+import {OpenApiv13bcadvertisercreateBillingGroupInfo} from './model/OpenApiv13bcadvertisercreateBillingGroupInfo.js';
+import {OpenApiv13bcadvertisercreateBillingInfo} from './model/OpenApiv13bcadvertisercreateBillingInfo.js';
+import {OpenApiv13bcadvertisercreateContactInfo} from './model/OpenApiv13bcadvertisercreateContactInfo.js';
+import {OpenApiv13bcadvertisercreateCustomerInfo} from './model/OpenApiv13bcadvertisercreateCustomerInfo.js';
+import {OpenApiv13bcadvertisercreateQualificationInfo} from './model/OpenApiv13bcadvertisercreateQualificationInfo.js';
+import {OpenApiv13creativeportfoliocreateAdvancedAudioInfo} from './model/OpenApiv13creativeportfoliocreateAdvancedAudioInfo.js';
+import {OpenApiv13creativeportfoliocreateAdvancedGestureIcon} from './model/OpenApiv13creativeportfoliocreateAdvancedGestureIcon.js';
+import {OpenApiv13creativeportfoliocreateBadgeImageInfo} from './model/OpenApiv13creativeportfoliocreateBadgeImageInfo.js';
+import {OpenApiv13creativeportfoliocreateBadgePosition} from './model/OpenApiv13creativeportfoliocreateBadgePosition.js';
+import {OpenApiv13creativeportfoliocreatePortfolioContent} from './model/OpenApiv13creativeportfoliocreatePortfolioContent.js';
+import {OpenApiv13creativeportfoliocreateStickerParam} from './model/OpenApiv13creativeportfoliocreateStickerParam.js';
+import {OpenApiv13dmpcustomAudienceapplyContextInfo} from './model/OpenApiv13dmpcustomAudienceapplyContextInfo.js';
+import {OpenApiv13dmpcustomAudiencefileuploadContextInfo} from './model/OpenApiv13dmpcustomAudiencefileuploadContextInfo.js';
+import {OpenApiv13dmpcustomAudiencelookalikecreateContextInfo} from './model/OpenApiv13dmpcustomAudiencelookalikecreateContextInfo.js';
+import {OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec} from './model/OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpec} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpec.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSet} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSet.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSet} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSet.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters.js';
+import {OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules} from './model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules.js';
+import {OpenApiv13dmpsavedAudiencecreateActions} from './model/OpenApiv13dmpsavedAudiencecreateActions.js';
+import {OpenApiv13pixelbatchBatch} from './model/OpenApiv13pixelbatchBatch.js';
+import {PixelBatchBody} from './model/PixelBatchBody.js';
+import {PixelContent} from './model/PixelContent.js';
+import {PixelContext} from './model/PixelContext.js';
+import {PixelContextAd} from './model/PixelContextAd.js';
+import {PixelContextPage} from './model/PixelContextPage.js';
+import {PixelContextUser} from './model/PixelContextUser.js';
+import {PixelProperties} from './model/PixelProperties.js';
+import {PixelTrackBody} from './model/PixelTrackBody.js';
+import {PortfolioCreateBody} from './model/PortfolioCreateBody.js';
+import {RuleCreateBody} from './model/RuleCreateBody.js';
+import {SavedAudienceCreateBody} from './model/SavedAudienceCreateBody.js';
+import {SavedAudienceDeleteBody} from './model/SavedAudienceDeleteBody.js';
+import {ShareCancelBody} from './model/ShareCancelBody.js';
+import {TargetingCategoryRecommendBody} from './model/TargetingCategoryRecommendBody.js';
+import {TargetingInfoBody} from './model/TargetingInfoBody.js';
+import {TargetingSearchBody} from './model/TargetingSearchBody.js';
+import {AccountApi} from './api/AccountApi.js';
+import {AdApi} from './api/AdApi.js';
+import {AdAcoApi} from './api/AdAcoApi.js';
+import {AdgroupApi} from './api/AdgroupApi.js';
+import {AudienceApi} from './api/AudienceApi.js';
+import {AuthenticationApi} from './api/AuthenticationApi.js';
+import {BCApi} from './api/BCApi.js';
+import {BcPaymentApi} from './api/BcPaymentApi.js';
+import {CampaignCreationApi} from './api/CampaignCreationApi.js';
+import {CreativeAssetApi} from './api/CreativeAssetApi.js';
+import {EventCallbackApi} from './api/EventCallbackApi.js';
+import {FileApi} from './api/FileApi.js';
+import {IdentityApi} from './api/IdentityApi.js';
+import {MeasurementApi} from './api/MeasurementApi.js';
+import {RecommendToolApi} from './api/RecommendToolApi.js';
+import {ReportingApi} from './api/ReportingApi.js';
+import {ToolApi} from './api/ToolApi.js';
 
 /**
 * Comprehensive_collection_of_client_libraries_that_enable_our_developers_to_build_software_to_integrate_with_Business_API_faster_and_in_a_more_standardized_way_.<br>
@@ -139,7 +170,7 @@ import {ToolApi} from './api/ToolApi';
 * </pre>
 * </p>
 * @module index
-* @version 0.1.1
+* @version 0.1.2
 */
 export {
     /**
@@ -311,6 +342,12 @@ export {
     BcTransferBody,
 
     /**
+     * The BidRecommendBody model constructor.
+     * @property {module:model/BidRecommendBody}
+     */
+    BidRecommendBody,
+
+    /**
      * The CampaignCreateBody model constructor.
      * @property {module:model/CampaignCreateBody}
      */
@@ -329,10 +366,46 @@ export {
     CampaignUpdateBody,
 
     /**
+     * The CustomAudienceApplyBody model constructor.
+     * @property {module:model/CustomAudienceApplyBody}
+     */
+    CustomAudienceApplyBody,
+
+    /**
+     * The CustomAudienceCreateBody model constructor.
+     * @property {module:model/CustomAudienceCreateBody}
+     */
+    CustomAudienceCreateBody,
+
+    /**
+     * The CustomAudienceDeleteBody model constructor.
+     * @property {module:model/CustomAudienceDeleteBody}
+     */
+    CustomAudienceDeleteBody,
+
+    /**
+     * The CustomAudienceShareBody model constructor.
+     * @property {module:model/CustomAudienceShareBody}
+     */
+    CustomAudienceShareBody,
+
+    /**
+     * The CustomAudienceUpdateBody model constructor.
+     * @property {module:model/CustomAudienceUpdateBody}
+     */
+    CustomAudienceUpdateBody,
+
+    /**
      * The FileImageAdUpload model constructor.
      * @property {module:model/FileImageAdUpload}
      */
     FileImageAdUpload,
+
+    /**
+     * The FileUploadBody model constructor.
+     * @property {module:model/FileUploadBody}
+     */
+    FileUploadBody,
 
     /**
      * The Filtering model constructor.
@@ -405,6 +478,18 @@ export {
      * @property {module:model/InlineResponse200}
      */
     InlineResponse200,
+
+    /**
+     * The LookalikeCreateBody model constructor.
+     * @property {module:model/LookalikeCreateBody}
+     */
+    LookalikeCreateBody,
+
+    /**
+     * The LookalikeUpdateBody model constructor.
+     * @property {module:model/LookalikeUpdateBody}
+     */
+    LookalikeUpdateBody,
 
     /**
      * The MaterialStatusUpdateBody model constructor.
@@ -605,6 +690,102 @@ export {
     OpenApiv13creativeportfoliocreateStickerParam,
 
     /**
+     * The OpenApiv13dmpcustomAudienceapplyContextInfo model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudienceapplyContextInfo}
+     */
+    OpenApiv13dmpcustomAudienceapplyContextInfo,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencefileuploadContextInfo model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencefileuploadContextInfo}
+     */
+    OpenApiv13dmpcustomAudiencefileuploadContextInfo,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencelookalikecreateContextInfo model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencelookalikecreateContextInfo}
+     */
+    OpenApiv13dmpcustomAudiencelookalikecreateContextInfo,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec}
+     */
+    OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpec model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpec}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpec,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSet model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSet}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSet,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSet model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSet}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSet,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters,
+
+    /**
+     * The OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules model constructor.
+     * @property {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules}
+     */
+    OpenApiv13dmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules,
+
+    /**
+     * The OpenApiv13dmpsavedAudiencecreateActions model constructor.
+     * @property {module:model/OpenApiv13dmpsavedAudiencecreateActions}
+     */
+    OpenApiv13dmpsavedAudiencecreateActions,
+
+    /**
      * The OpenApiv13pixelbatchBatch model constructor.
      * @property {module:model/OpenApiv13pixelbatchBatch}
      */
@@ -665,10 +846,46 @@ export {
     PortfolioCreateBody,
 
     /**
+     * The RuleCreateBody model constructor.
+     * @property {module:model/RuleCreateBody}
+     */
+    RuleCreateBody,
+
+    /**
+     * The SavedAudienceCreateBody model constructor.
+     * @property {module:model/SavedAudienceCreateBody}
+     */
+    SavedAudienceCreateBody,
+
+    /**
+     * The SavedAudienceDeleteBody model constructor.
+     * @property {module:model/SavedAudienceDeleteBody}
+     */
+    SavedAudienceDeleteBody,
+
+    /**
+     * The ShareCancelBody model constructor.
+     * @property {module:model/ShareCancelBody}
+     */
+    ShareCancelBody,
+
+    /**
      * The TargetingCategoryRecommendBody model constructor.
      * @property {module:model/TargetingCategoryRecommendBody}
      */
     TargetingCategoryRecommendBody,
+
+    /**
+     * The TargetingInfoBody model constructor.
+     * @property {module:model/TargetingInfoBody}
+     */
+    TargetingInfoBody,
+
+    /**
+     * The TargetingSearchBody model constructor.
+     * @property {module:model/TargetingSearchBody}
+     */
+    TargetingSearchBody,
 
     /**
     * The AccountApi service constructor.

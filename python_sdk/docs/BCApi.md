@@ -203,9 +203,8 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
-**bc_id** | **str** | Business Center ID | [required] 
-**image_file** | **str** | The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB | [required] 
-
+ **bc_id** | **str**|  | [optional] 
+ **image_file** | **str**|  | [optional] 
 
 ### Return type
 

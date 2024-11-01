@@ -4,14 +4,14 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {AdvertiserUpdateBody} from '../model/AdvertiserUpdateBody';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {AdvertiserUpdateBody} from '../model/AdvertiserUpdateBody.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * Account service.
 * @module api/AccountApi
-* @version 0.1.1
+* @version 0.1.2
 */
 export class AccountApi {
 

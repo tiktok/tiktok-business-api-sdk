@@ -12,6 +12,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adgroup_create**](AdgroupApi.md#adgroup_create) | **POST** /open_api/v1.3/adgroup/create/ | Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739499616346114)
 [**adgroup_get**](AdgroupApi.md#adgroup_get) | **GET** /open_api/v1.3/adgroup/get/ | Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739314558673922)
+[**adgroup_quota**](AdgroupApi.md#adgroup_quota) | **GET** /open_api/v1.3/adgroup/quota/ | Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1768463039162369)
 [**adgroup_status_update**](AdgroupApi.md#adgroup_status_update) | **POST** /open_api/v1.3/adgroup/status/update/ | Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
 [**adgroup_update**](AdgroupApi.md#adgroup_update) | **POST** /open_api/v1.3/adgroup/update/ | Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739586761631745)
 
@@ -103,6 +104,54 @@ Name | Type | Description  | Notes
  **page** | **int**| Current page number. Default value is &#x60;1&#x60; | [optional] 
  **page_size** | **int**| Page size. Default value is- &#x60;10&#x60;. Range of values- &#x60;1-1000&#x60; | [optional] 
  **fields** | [**list[str]**](str.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **adgroup_quota**
+> InlineResponse200 adgroup_quota(advertiser_id, access_token)
+
+Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id=1768463039162369)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.AdgroupApi()
+advertiser_id = 'advertiser_id_example' # str | Advertiser ID.
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+
+try:
+    # Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id=1768463039162369)
+    api_response = api_instance.adgroup_quota(advertiser_id, access_token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AdgroupApi->adgroup_quota: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**| Advertiser ID. | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
 
 ### Return type
 

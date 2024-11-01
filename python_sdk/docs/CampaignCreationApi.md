@@ -134,7 +134,7 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = business_api_client.CampaignCreationApi()
-access_token = 'access_token_example' # str | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 body = business_api_client.CampaignStatusUpdateBody() # CampaignStatusUpdateBody | Campaign status update body parameters (optional)
 
 try:
@@ -149,7 +149,7 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **access_token** | **str**|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
  **body** | [**CampaignStatusUpdateBody**](CampaignStatusUpdateBody.md)| Campaign status update body parameters | [optional] 
 
 ### Return type

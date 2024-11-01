@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * Billing information. Required if the place of registration of the ad account or the agency that owns the Business Center is France, Brazil, or Mexico
  */
 @Schema(description = "Billing information. Required if the place of registration of the ad account or the agency that owns the Business Center is France, Brazil, or Mexico")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class OpenApiv13bcadvertisercreateBillingInfo {
   @JsonProperty("address")
   private String address = null;

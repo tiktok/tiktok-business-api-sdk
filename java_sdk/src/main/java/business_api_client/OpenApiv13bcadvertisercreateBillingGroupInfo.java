@@ -17,16 +17,16 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * Billing group information
  */
 @Schema(description = "Billing group information")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class OpenApiv13bcadvertisercreateBillingGroupInfo {
   @JsonProperty("billing_group_id")
   private String billingGroupId = null;
 
-  @JsonProperty("invoice_payer")
-  private String invoicePayer = null;
-
   @JsonProperty("invoice_group_by")
   private String invoiceGroupBy = null;
+
+  @JsonProperty("invoice_payer")
+  private String invoicePayer = null;
 
   public OpenApiv13bcadvertisercreateBillingGroupInfo billingGroupId(String billingGroupId) {
     this.billingGroupId = billingGroupId;
@@ -44,24 +44,6 @@ public class OpenApiv13bcadvertisercreateBillingGroupInfo {
 
   public void setBillingGroupId(String billingGroupId) {
     this.billingGroupId = billingGroupId;
-  }
-
-  public OpenApiv13bcadvertisercreateBillingGroupInfo invoicePayer(String invoicePayer) {
-    this.invoicePayer = invoicePayer;
-    return this;
-  }
-
-   /**
-   * Party who pays the invoices. Enum values: &#x60;AGENCY&#x60;, &#x60;ADVERTISER&#x60;. This field is required when the registrated area of the ad account is &#x60;FR&#x60; (France)
-   * @return invoicePayer
-  **/
-  @Schema(description = "Party who pays the invoices. Enum values: `AGENCY`, `ADVERTISER`. This field is required when the registrated area of the ad account is `FR` (France)")
-  public String getInvoicePayer() {
-    return invoicePayer;
-  }
-
-  public void setInvoicePayer(String invoicePayer) {
-    this.invoicePayer = invoicePayer;
   }
 
   public OpenApiv13bcadvertisercreateBillingGroupInfo invoiceGroupBy(String invoiceGroupBy) {
@@ -82,6 +64,24 @@ public class OpenApiv13bcadvertisercreateBillingGroupInfo {
     this.invoiceGroupBy = invoiceGroupBy;
   }
 
+  public OpenApiv13bcadvertisercreateBillingGroupInfo invoicePayer(String invoicePayer) {
+    this.invoicePayer = invoicePayer;
+    return this;
+  }
+
+   /**
+   * Party who pays the invoices. Enum values: &#x60;AGENCY&#x60;, &#x60;ADVERTISER&#x60;. This field is required when the registrated area of the ad account is &#x60;FR&#x60; (France)
+   * @return invoicePayer
+  **/
+  @Schema(description = "Party who pays the invoices. Enum values: `AGENCY`, `ADVERTISER`. This field is required when the registrated area of the ad account is `FR` (France)")
+  public String getInvoicePayer() {
+    return invoicePayer;
+  }
+
+  public void setInvoicePayer(String invoicePayer) {
+    this.invoicePayer = invoicePayer;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,13 +93,13 @@ public class OpenApiv13bcadvertisercreateBillingGroupInfo {
     }
     OpenApiv13bcadvertisercreateBillingGroupInfo openApiv13bcadvertisercreateBillingGroupInfo = (OpenApiv13bcadvertisercreateBillingGroupInfo) o;
     return Objects.equals(this.billingGroupId, openApiv13bcadvertisercreateBillingGroupInfo.billingGroupId) &&
-        Objects.equals(this.invoicePayer, openApiv13bcadvertisercreateBillingGroupInfo.invoicePayer) &&
-        Objects.equals(this.invoiceGroupBy, openApiv13bcadvertisercreateBillingGroupInfo.invoiceGroupBy);
+        Objects.equals(this.invoiceGroupBy, openApiv13bcadvertisercreateBillingGroupInfo.invoiceGroupBy) &&
+        Objects.equals(this.invoicePayer, openApiv13bcadvertisercreateBillingGroupInfo.invoicePayer);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(billingGroupId, invoicePayer, invoiceGroupBy);
+    return Objects.hash(billingGroupId, invoiceGroupBy, invoicePayer);
   }
 
 
@@ -109,8 +109,8 @@ public class OpenApiv13bcadvertisercreateBillingGroupInfo {
     sb.append("class OpenApiv13bcadvertisercreateBillingGroupInfo {\n");
     
     sb.append("    billingGroupId: ").append(toIndentedString(billingGroupId)).append("\n");
-    sb.append("    invoicePayer: ").append(toIndentedString(invoicePayer)).append("\n");
     sb.append("    invoiceGroupBy: ").append(toIndentedString(invoiceGroupBy)).append("\n");
+    sb.append("    invoicePayer: ").append(toIndentedString(invoicePayer)).append("\n");
     sb.append("}");
     return sb.toString();
   }

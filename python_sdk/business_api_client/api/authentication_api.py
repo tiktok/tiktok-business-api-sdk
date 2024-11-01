@@ -132,7 +132,7 @@ class AuthenticationApi(object):
         :param async_req bool
         :param str app_id: The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
         :param str secret: The private key of the developer's application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
-        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162) (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -155,7 +155,7 @@ class AuthenticationApi(object):
         :param async_req bool
         :param str app_id: The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
         :param str secret: The private key of the developer's application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
-        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162) (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.

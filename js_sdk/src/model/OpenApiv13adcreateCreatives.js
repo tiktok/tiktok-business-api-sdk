@@ -4,14 +4,14 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13adcreateDisclaimerClickableTexts} from './OpenApiv13adcreateDisclaimerClickableTexts';
-import {OpenApiv13adcreateDisclaimerText} from './OpenApiv13adcreateDisclaimerText';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13adcreateDisclaimerClickableTexts} from './OpenApiv13adcreateDisclaimerClickableTexts.js';
+import {OpenApiv13adcreateDisclaimerText} from './OpenApiv13adcreateDisclaimerText.js';
 
 /**
  * The OpenApiv13adcreateCreatives model module.
  * @module model/OpenApiv13adcreateCreatives
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class OpenApiv13adcreateCreatives {
   /**

@@ -4,13 +4,13 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {AdAcoBodyMediaInfo} from './AdAcoBodyMediaInfo';
+import {ApiClient} from '../ApiClient.js';
+import {AdAcoBodyMediaInfo} from './AdAcoBodyMediaInfo.js';
 
 /**
  * The AdAcoBodyMediaInfoList model module.
  * @module model/AdAcoBodyMediaInfoList
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class AdAcoBodyMediaInfoList {
   /**

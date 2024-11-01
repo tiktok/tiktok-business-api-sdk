@@ -4,22 +4,22 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {AdAcoBodyAvatarIconList} from './AdAcoBodyAvatarIconList';
-import {AdAcoBodyCallToActionList} from './AdAcoBodyCallToActionList';
-import {AdAcoBodyCardList} from './AdAcoBodyCardList';
-import {AdAcoBodyCommonMaterial} from './AdAcoBodyCommonMaterial';
-import {AdAcoBodyDeeplinkList} from './AdAcoBodyDeeplinkList';
-import {AdAcoBodyDisplayNameList} from './AdAcoBodyDisplayNameList';
-import {AdAcoBodyLandingPageUrls} from './AdAcoBodyLandingPageUrls';
-import {AdAcoBodyMediaInfoList} from './AdAcoBodyMediaInfoList';
-import {AdAcoBodyPageList} from './AdAcoBodyPageList';
-import {AdAcoBodyTitleList} from './AdAcoBodyTitleList';
+import {ApiClient} from '../ApiClient.js';
+import {AdAcoBodyAvatarIconList} from './AdAcoBodyAvatarIconList.js';
+import {AdAcoBodyCallToActionList} from './AdAcoBodyCallToActionList.js';
+import {AdAcoBodyCardList} from './AdAcoBodyCardList.js';
+import {AdAcoBodyCommonMaterial} from './AdAcoBodyCommonMaterial.js';
+import {AdAcoBodyDeeplinkList} from './AdAcoBodyDeeplinkList.js';
+import {AdAcoBodyDisplayNameList} from './AdAcoBodyDisplayNameList.js';
+import {AdAcoBodyLandingPageUrls} from './AdAcoBodyLandingPageUrls.js';
+import {AdAcoBodyMediaInfoList} from './AdAcoBodyMediaInfoList.js';
+import {AdAcoBodyPageList} from './AdAcoBodyPageList.js';
+import {AdAcoBodyTitleList} from './AdAcoBodyTitleList.js';
 
 /**
  * The AdAcoBody model module.
  * @module model/AdAcoBody
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class AdAcoBody {
   /**
@@ -46,6 +46,8 @@ export class AdAcoBody {
         obj.adgroup_id = ApiClient.convertToType(data['adgroup_id'], 'String');
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
+      if (data.hasOwnProperty('avatar_icon_list'))
+        obj.avatar_icon_list = ApiClient.convertToType(data['avatar_icon_list'], [AdAcoBodyAvatarIconList]);
       if (data.hasOwnProperty('call_to_action_list'))
         obj.call_to_action_list = ApiClient.convertToType(data['call_to_action_list'], [AdAcoBodyCallToActionList]);
       if (data.hasOwnProperty('card_list'))
@@ -62,8 +64,6 @@ export class AdAcoBody {
         obj.media_info_list = ApiClient.convertToType(data['media_info_list'], [AdAcoBodyMediaInfoList]);
       if (data.hasOwnProperty('page_list'))
         obj.page_list = ApiClient.convertToType(data['page_list'], [AdAcoBodyPageList]);
-      if (data.hasOwnProperty('avatar_icon_list'))
-        obj.avatar_icon_list = ApiClient.convertToType(data['avatar_icon_list'], [AdAcoBodyAvatarIconList]);
       if (data.hasOwnProperty('title_list'))
         obj.title_list = ApiClient.convertToType(data['title_list'], [AdAcoBodyTitleList]);
     }
@@ -82,6 +82,12 @@ AdAcoBody.prototype.adgroup_id = undefined;
  * @member {String} advertiser_id
  */
 AdAcoBody.prototype.advertiser_id = undefined;
+
+/**
+ * Avatar image list.
+ * @member {Array.<module:model/AdAcoBodyAvatarIconList>} avatar_icon_list
+ */
+AdAcoBody.prototype.avatar_icon_list = undefined;
 
 /**
  * Call-to-action list. For TikTok ads, either this field or `call_to_action_id` must be specified. If both are specified, this field will be ignored.
@@ -129,12 +135,6 @@ AdAcoBody.prototype.media_info_list = undefined;
  * @member {Array.<module:model/AdAcoBodyPageList>} page_list
  */
 AdAcoBody.prototype.page_list = undefined;
-
-/**
- * Avatar image list.
- * @member {Array.<module:model/AdAcoBodyAvatarIconList>} avatar_icon_list
- */
-AdAcoBody.prototype.avatar_icon_list = undefined;
 
 /**
  * List of ad titles (also called ad texts). Ad titles are shown to your audience as part of your ad creative, to deliver the message you intend to communicate to them.

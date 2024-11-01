@@ -8,28 +8,28 @@
 """
 from setuptools import setup, find_packages  # noqa: H301
 
-NAME = "tiktok-business-api-sdk-official"
-VERSION = "1.0.1"
+NAME = "python_sdk"
+VERSION = "1.0.0"
+# To install the library, run the following
+#
+# python setup.py install
+#
+# prerequisite: setuptools
+# http://pypi.python.org/pypi/setuptools
 
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
 
 setup(
     name=NAME,
     version=VERSION,
-    description="TikTok Business API SDK",
-    author="TikTok Pte. Ltd.",
-    author_email="support@tiktok.com",
-    url="https://github.com/tiktok/tiktok-business-api-sdk",
-    keywords=["Swagger", "TikTok Business API SDK"],
+    description="Tiktok Business API SDK",
+    author_email="",
+    url="",
+    keywords=["Swagger", "Tiktok Business API SDK"],
     install_requires=REQUIRES,
     packages=find_packages(),
     include_package_data=True,
-    long_description=open('README.md').read(),
-    long_description_content_type="text/markdown",
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
-    ],
-    python_requires='>=3.4',
+    long_description="""\
+    Comprehensive collection of client libraries that enable our developers to build software to integrate with Business API faster and in a more standardized way.  # noqa: E501
+    """
 )

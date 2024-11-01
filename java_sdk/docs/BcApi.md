@@ -187,8 +187,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
-**bcId** | **String** | Business Center ID |[required]  
-**imageFile** | [**File**](File.md) | The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB |[required]
+ **bcId** | **String**|  | [optional]
+ **imageFile** | **File**|  | [optional]
 
 ### Return type
 
