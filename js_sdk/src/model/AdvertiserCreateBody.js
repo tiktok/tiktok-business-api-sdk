@@ -4,18 +4,18 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13bcadvertisercreateAdvertiserInfo} from './OpenApiv13bcadvertisercreateAdvertiserInfo';
-import {OpenApiv13bcadvertisercreateBillingGroupInfo} from './OpenApiv13bcadvertisercreateBillingGroupInfo';
-import {OpenApiv13bcadvertisercreateBillingInfo} from './OpenApiv13bcadvertisercreateBillingInfo';
-import {OpenApiv13bcadvertisercreateContactInfo} from './OpenApiv13bcadvertisercreateContactInfo';
-import {OpenApiv13bcadvertisercreateCustomerInfo} from './OpenApiv13bcadvertisercreateCustomerInfo';
-import {OpenApiv13bcadvertisercreateQualificationInfo} from './OpenApiv13bcadvertisercreateQualificationInfo';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13bcadvertisercreateAdvertiserInfo} from './OpenApiv13bcadvertisercreateAdvertiserInfo.js';
+import {OpenApiv13bcadvertisercreateBillingGroupInfo} from './OpenApiv13bcadvertisercreateBillingGroupInfo.js';
+import {OpenApiv13bcadvertisercreateBillingInfo} from './OpenApiv13bcadvertisercreateBillingInfo.js';
+import {OpenApiv13bcadvertisercreateContactInfo} from './OpenApiv13bcadvertisercreateContactInfo.js';
+import {OpenApiv13bcadvertisercreateCustomerInfo} from './OpenApiv13bcadvertisercreateCustomerInfo.js';
+import {OpenApiv13bcadvertisercreateQualificationInfo} from './OpenApiv13bcadvertisercreateQualificationInfo.js';
 
 /**
  * The AdvertiserCreateBody model module.
  * @module model/AdvertiserCreateBody
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class AdvertiserCreateBody {
   /**

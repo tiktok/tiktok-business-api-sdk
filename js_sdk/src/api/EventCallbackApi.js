@@ -4,15 +4,15 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {InlineResponse200} from '../model/InlineResponse200';
-import {PixelBatchBody} from '../model/PixelBatchBody';
-import {PixelTrackBody} from '../model/PixelTrackBody';
+import {ApiClient} from "../ApiClient.js";
+import {InlineResponse200} from '../model/InlineResponse200.js';
+import {PixelBatchBody} from '../model/PixelBatchBody.js';
+import {PixelTrackBody} from '../model/PixelTrackBody.js';
 
 /**
 * EventCallback service.
 * @module api/EventCallbackApi
-* @version 0.1.1
+* @version 0.1.2
 */
 export class EventCallbackApi {
 
@@ -38,7 +38,7 @@ export class EventCallbackApi {
 
     /**
      * Pixel Track server-to-server batch api
-     * @param {String} Access_Token Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets-&gt;Event-&gt; Website Pixel-&gt;Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162) 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/PixelBatchBody} opts.body Pixel batch update body parameters
      * @param {module:api/EventCallbackApi~pixelBatchCallback} callback The callback function, accepting three arguments: error, data, response
@@ -86,7 +86,7 @@ export class EventCallbackApi {
 
     /**
      * Pixel Track server-to-server api
-     * @param {String} Access_Token Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets-&gt;Event-&gt; Website Pixel-&gt;Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162) 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/PixelTrackBody} opts.body Pixel track body parameters
      * @param {module:api/EventCallbackApi~pixelTrackCallback} callback The callback function, accepting three arguments: error, data, response

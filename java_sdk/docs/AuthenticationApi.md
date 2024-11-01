@@ -66,7 +66,7 @@ Obtain a list of advertiser accounts that authorized an app. [Advertiser Get](ht
 AuthenticationApi apiInstance = new AuthenticationApi();
 String appId = "appId_example"; // String | The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page.
 String secret = "secret_example"; // String | The private key of the developer's application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page.
-String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162)
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 try {
     Response result = apiInstance.oauth2AdvertiserGet(appId, secret, accessToken);
     System.out.println(result);
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **String**| The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. |[required] 
  **secret** | **String**| The private key of the developer&#x27;s application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. |[required] 
- **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162) |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
 
 ### Return type
 

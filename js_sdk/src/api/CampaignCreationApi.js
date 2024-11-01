@@ -4,17 +4,17 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {CampaignCreateBody} from '../model/CampaignCreateBody';
-import {CampaignStatusUpdateBody} from '../model/CampaignStatusUpdateBody';
-import {CampaignUpdateBody} from '../model/CampaignUpdateBody';
-import {FilteringCampaignGet} from '../model/FilteringCampaignGet';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {CampaignCreateBody} from '../model/CampaignCreateBody.js';
+import {CampaignStatusUpdateBody} from '../model/CampaignStatusUpdateBody.js';
+import {CampaignUpdateBody} from '../model/CampaignUpdateBody.js';
+import {FilteringCampaignGet} from '../model/FilteringCampaignGet.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * CampaignCreation service.
 * @module api/CampaignCreationApi
-* @version 0.1.1
+* @version 0.1.2
 */
 export class CampaignCreationApi {
 
@@ -144,7 +144,7 @@ export class CampaignCreationApi {
 
     /**
      * Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
-     * @param {String} Access_Token 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/CampaignStatusUpdateBody} opts.body Campaign status update body parameters
      * @param {module:api/CampaignCreationApi~campaignStatusUpdateCallback} callback The callback function, accepting three arguments: error, data, response

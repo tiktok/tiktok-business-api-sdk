@@ -4,14 +4,14 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {InlineResponse200} from '../model/InlineResponse200';
-import {Oauth2AccessTokenBody} from '../model/Oauth2AccessTokenBody';
+import {ApiClient} from "../ApiClient.js";
+import {InlineResponse200} from '../model/InlineResponse200.js';
+import {Oauth2AccessTokenBody} from '../model/Oauth2AccessTokenBody.js';
 
 /**
 * Authentication service.
 * @module api/AuthenticationApi
-* @version 0.1.1
+* @version 0.1.2
 */
 export class AuthenticationApi {
 
@@ -82,7 +82,7 @@ export class AuthenticationApi {
      * Obtain a list of advertiser accounts that authorized an app. [Advertiser Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738455508553729)
      * @param {String} app_id The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page.
      * @param {String} secret The private key of the developer&#x27;s application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page.
-     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162)
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {module:api/AuthenticationApi~oauth2AdvertiserGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */

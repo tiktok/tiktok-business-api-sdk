@@ -4,17 +4,17 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13adgroupcreateActions} from './OpenApiv13adgroupcreateActions';
-import {OpenApiv13adgroupcreateExcludedCustomActions} from './OpenApiv13adgroupcreateExcludedCustomActions';
-import {OpenApiv13adgroupcreateIncludedCustomActions} from './OpenApiv13adgroupcreateIncludedCustomActions';
-import {OpenApiv13adgroupcreateTargetingExpansion} from './OpenApiv13adgroupcreateTargetingExpansion';
-import {OpenApiv13adgroupupdateAudienceRule} from './OpenApiv13adgroupupdateAudienceRule';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13adgroupcreateActions} from './OpenApiv13adgroupcreateActions.js';
+import {OpenApiv13adgroupcreateExcludedCustomActions} from './OpenApiv13adgroupcreateExcludedCustomActions.js';
+import {OpenApiv13adgroupcreateIncludedCustomActions} from './OpenApiv13adgroupcreateIncludedCustomActions.js';
+import {OpenApiv13adgroupcreateTargetingExpansion} from './OpenApiv13adgroupcreateTargetingExpansion.js';
+import {OpenApiv13adgroupupdateAudienceRule} from './OpenApiv13adgroupupdateAudienceRule.js';
 
 /**
  * The AdgroupUpdateBody model module.
  * @module model/AdgroupUpdateBody
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class AdgroupUpdateBody {
   /**
@@ -111,12 +111,12 @@ export class AdgroupUpdateBody {
         obj.gender = ApiClient.convertToType(data['gender'], 'String');
       if (data.hasOwnProperty('household_income'))
         obj.household_income = ApiClient.convertToType(data['household_income'], ['String']);
+      if (data.hasOwnProperty('identity_authorized_bc_id'))
+        obj.identity_authorized_bc_id = ApiClient.convertToType(data['identity_authorized_bc_id'], 'String');
       if (data.hasOwnProperty('identity_id'))
         obj.identity_id = ApiClient.convertToType(data['identity_id'], 'String');
       if (data.hasOwnProperty('identity_type'))
         obj.identity_type = ApiClient.convertToType(data['identity_type'], 'String');
-      if (data.hasOwnProperty('identity_authorized_bc_id'))
-        obj.identity_authorized_bc_id = ApiClient.convertToType(data['identity_authorized_bc_id'], 'String');
       if (data.hasOwnProperty('included_custom_actions'))
         obj.included_custom_actions = OpenApiv13adgroupcreateIncludedCustomActions.constructFromObject(data['included_custom_actions']);
       if (data.hasOwnProperty('included_pangle_audience_package_ids'))
@@ -387,6 +387,12 @@ AdgroupUpdateBody.prototype.gender = undefined;
 AdgroupUpdateBody.prototype.household_income = undefined;
 
 /**
+ * ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.
+ * @member {String} identity_authorized_bc_id
+ */
+AdgroupUpdateBody.prototype.identity_authorized_bc_id = undefined;
+
+/**
  * Identity ID. Required and only valid when `objective_type` is `SHOP_PURCHASES` or `PRODUCT_SALES`.
  * @member {String} identity_id
  */
@@ -397,12 +403,6 @@ AdgroupUpdateBody.prototype.identity_id = undefined;
  * @member {String} identity_type
  */
 AdgroupUpdateBody.prototype.identity_type = undefined;
-
-/**
- * ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.
- * @member {String} identity_authorized_bc_id
- */
-AdgroupUpdateBody.prototype.identity_authorized_bc_id = undefined;
 
 /**
  * @member {module:model/OpenApiv13adgroupcreateIncludedCustomActions} included_custom_actions

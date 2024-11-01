@@ -25,7 +25,7 @@ import java.util.List;
  * AdgroupUpdateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class AdgroupUpdateBody {
   @JsonProperty("actions")
   private List<OpenApiv13adgroupcreateActions> actions = null;
@@ -135,14 +135,14 @@ public class AdgroupUpdateBody {
   @JsonProperty("household_income")
   private List<String> householdIncome = null;
 
+  @JsonProperty("identity_authorized_bc_id")
+  private String identityAuthorizedBcId = null;
+
   @JsonProperty("identity_id")
   private String identityId = null;
 
   @JsonProperty("identity_type")
   private String identityType = null;
-
-  @JsonProperty("identity_authorized_bc_id")
-  private String identityAuthorizedBcId = null;
 
   @JsonProperty("included_custom_actions")
   private OpenApiv13adgroupcreateIncludedCustomActions includedCustomActions = null;
@@ -955,6 +955,24 @@ public class AdgroupUpdateBody {
     this.householdIncome = householdIncome;
   }
 
+  public AdgroupUpdateBody identityAuthorizedBcId(String identityAuthorizedBcId) {
+    this.identityAuthorizedBcId = identityAuthorizedBcId;
+    return this;
+  }
+
+   /**
+   * ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when &#x60;identity_type&#x60; is &#x60;BC_AUTH_TT&#x60;.
+   * @return identityAuthorizedBcId
+  **/
+  @Schema(description = "ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.")
+  public String getIdentityAuthorizedBcId() {
+    return identityAuthorizedBcId;
+  }
+
+  public void setIdentityAuthorizedBcId(String identityAuthorizedBcId) {
+    this.identityAuthorizedBcId = identityAuthorizedBcId;
+  }
+
   public AdgroupUpdateBody identityId(String identityId) {
     this.identityId = identityId;
     return this;
@@ -989,24 +1007,6 @@ public class AdgroupUpdateBody {
 
   public void setIdentityType(String identityType) {
     this.identityType = identityType;
-  }
-
-  public AdgroupUpdateBody identityAuthorizedBcId(String identityAuthorizedBcId) {
-    this.identityAuthorizedBcId = identityAuthorizedBcId;
-    return this;
-  }
-
-   /**
-   * ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when &#x60;identity_type&#x60; is &#x60;BC_AUTH_TT&#x60;.
-   * @return identityAuthorizedBcId
-  **/
-  @Schema(description = "ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.")
-  public String getIdentityAuthorizedBcId() {
-    return identityAuthorizedBcId;
-  }
-
-  public void setIdentityAuthorizedBcId(String identityAuthorizedBcId) {
-    this.identityAuthorizedBcId = identityAuthorizedBcId;
   }
 
   public AdgroupUpdateBody includedCustomActions(OpenApiv13adgroupcreateIncludedCustomActions includedCustomActions) {
@@ -1577,9 +1577,9 @@ public class AdgroupUpdateBody {
         Objects.equals(this.frequencySchedule, adgroupUpdateBody.frequencySchedule) &&
         Objects.equals(this.gender, adgroupUpdateBody.gender) &&
         Objects.equals(this.householdIncome, adgroupUpdateBody.householdIncome) &&
+        Objects.equals(this.identityAuthorizedBcId, adgroupUpdateBody.identityAuthorizedBcId) &&
         Objects.equals(this.identityId, adgroupUpdateBody.identityId) &&
         Objects.equals(this.identityType, adgroupUpdateBody.identityType) &&
-        Objects.equals(this.identityAuthorizedBcId, adgroupUpdateBody.identityAuthorizedBcId) &&
         Objects.equals(this.includedCustomActions, adgroupUpdateBody.includedCustomActions) &&
         Objects.equals(this.includedPangleAudiencePackageIds, adgroupUpdateBody.includedPangleAudiencePackageIds) &&
         Objects.equals(this.interestCategoryIds, adgroupUpdateBody.interestCategoryIds) &&
@@ -1609,7 +1609,7 @@ public class AdgroupUpdateBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(actions, adgroupId, adgroupName, advertiserId, ageGroups, appDownloadUrl, appId, audienceIds, audienceRule, audienceType, autoTargetingEnabled, bidPrice, bidType, billingEvent, blockedPangleAppIds, brandSafetyType, budget, carrierIds, catalogAuthorizedBcId, commentDisabled, contextualTagIds, conversionBidPrice, conversionId, creativeMaterialMode, dayparting, deepBidType, deepCpaBid, deviceModelIds, devicePriceRanges, excludedAudienceIds, excludedCustomActions, excludedPangleAudiencePackageIds, frequency, frequencySchedule, gender, householdIncome, identityId, identityType, identityAuthorizedBcId, includedCustomActions, includedPangleAudiencePackageIds, interestCategoryIds, interestKeywordIds, interestKeywords, ios14Targeting, isHfss, languages, locationIds, minAndroidVersion, minIosVersion, networkTypes, nextDayRetention, operatingSystems, pacing, purchaseIntentionKeywordIds, roasBid, scheduleEndTime, scheduleStartTime, scheduleType, secondaryOptimizationEvent, shoppingAdsRetargetingActionsDays, shoppingAdsRetargetingType, spendingPower, targetingExpansion);
+    return Objects.hash(actions, adgroupId, adgroupName, advertiserId, ageGroups, appDownloadUrl, appId, audienceIds, audienceRule, audienceType, autoTargetingEnabled, bidPrice, bidType, billingEvent, blockedPangleAppIds, brandSafetyType, budget, carrierIds, catalogAuthorizedBcId, commentDisabled, contextualTagIds, conversionBidPrice, conversionId, creativeMaterialMode, dayparting, deepBidType, deepCpaBid, deviceModelIds, devicePriceRanges, excludedAudienceIds, excludedCustomActions, excludedPangleAudiencePackageIds, frequency, frequencySchedule, gender, householdIncome, identityAuthorizedBcId, identityId, identityType, includedCustomActions, includedPangleAudiencePackageIds, interestCategoryIds, interestKeywordIds, interestKeywords, ios14Targeting, isHfss, languages, locationIds, minAndroidVersion, minIosVersion, networkTypes, nextDayRetention, operatingSystems, pacing, purchaseIntentionKeywordIds, roasBid, scheduleEndTime, scheduleStartTime, scheduleType, secondaryOptimizationEvent, shoppingAdsRetargetingActionsDays, shoppingAdsRetargetingType, spendingPower, targetingExpansion);
   }
 
 
@@ -1654,9 +1654,9 @@ public class AdgroupUpdateBody {
     sb.append("    frequencySchedule: ").append(toIndentedString(frequencySchedule)).append("\n");
     sb.append("    gender: ").append(toIndentedString(gender)).append("\n");
     sb.append("    householdIncome: ").append(toIndentedString(householdIncome)).append("\n");
+    sb.append("    identityAuthorizedBcId: ").append(toIndentedString(identityAuthorizedBcId)).append("\n");
     sb.append("    identityId: ").append(toIndentedString(identityId)).append("\n");
     sb.append("    identityType: ").append(toIndentedString(identityType)).append("\n");
-    sb.append("    identityAuthorizedBcId: ").append(toIndentedString(identityAuthorizedBcId)).append("\n");
     sb.append("    includedCustomActions: ").append(toIndentedString(includedCustomActions)).append("\n");
     sb.append("    includedPangleAudiencePackageIds: ").append(toIndentedString(includedPangleAudiencePackageIds)).append("\n");
     sb.append("    interestCategoryIds: ").append(toIndentedString(interestCategoryIds)).append("\n");

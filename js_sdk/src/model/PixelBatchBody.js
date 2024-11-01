@@ -4,13 +4,13 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13pixelbatchBatch} from './OpenApiv13pixelbatchBatch';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13pixelbatchBatch} from './OpenApiv13pixelbatchBatch.js';
 
 /**
  * The PixelBatchBody model module.
  * @module model/PixelBatchBody
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class PixelBatchBody {
   /**

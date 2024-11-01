@@ -21,7 +21,7 @@ Pixel Track server-to-server batch api
 
 
 EventCallbackApi apiInstance = new EventCallbackApi();
-String accessToken = "accessToken_example"; // String | Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets->Event-> Website Pixel->Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id=1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162) 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 PixelBatchBody body = new PixelBatchBody(); // PixelBatchBody | Pixel batch update body parameters
 try {
     Response result = apiInstance.pixelBatch(accessToken, body);
@@ -36,7 +36,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets-&gt;Event-&gt; Website Pixel-&gt;Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162)  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **body** | [**PixelBatchBody**](PixelBatchBody.md)| Pixel batch update body parameters | [optional]
 
 ### Return type
@@ -66,7 +66,7 @@ Pixel Track server-to-server api
 
 
 EventCallbackApi apiInstance = new EventCallbackApi();
-String accessToken = "accessToken_example"; // String | Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets->Event-> Website Pixel->Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id=1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162) 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 PixelTrackBody body = new PixelTrackBody(); // PixelTrackBody | Pixel track body parameters
 try {
     Response result = apiInstance.pixelTrack(accessToken, body);
@@ -81,7 +81,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **accessToken** | **String**| Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets-&gt;Event-&gt; Website Pixel-&gt;Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162)  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **body** | [**PixelTrackBody**](PixelTrackBody.md)| Pixel track body parameters | [optional]
 
 ### Return type

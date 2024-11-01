@@ -4,13 +4,13 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {AdAcoBodyCommonMaterialTrackingInfo} from './AdAcoBodyCommonMaterialTrackingInfo';
+import {ApiClient} from '../ApiClient.js';
+import {AdAcoBodyCommonMaterialTrackingInfo} from './AdAcoBodyCommonMaterialTrackingInfo.js';
 
 /**
  * The AdAcoBodyCommonMaterial model module.
  * @module model/AdAcoBodyCommonMaterial
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class AdAcoBodyCommonMaterial {
   /**

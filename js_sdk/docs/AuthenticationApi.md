@@ -62,7 +62,7 @@ import {js_sdk} from 'business_api_client';
 let apiInstance = new js_sdk.AuthenticationApi();
 let app_id = "app_id_example"; // String | The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page.
 let secret = "secret_example"; // String | The private key of the developer's application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page.
-let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162)
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 
 apiInstance.oauth2AdvertiserGet(app_id, secret, Access_Token, (error, data, response) => {
   if (error) {
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **app_id** | **String**| The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. |[required]  
  **secret** | **String**| The private key of the developer&#x27;s application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. |[required]  
- **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162) |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
 
 ### Return type
 

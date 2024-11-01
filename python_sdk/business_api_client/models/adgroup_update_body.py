@@ -60,9 +60,9 @@ class AdgroupUpdateBody(object):
         'frequency_schedule': 'int',
         'gender': 'str',
         'household_income': 'list[str]',
+        'identity_authorized_bc_id': 'str',
         'identity_id': 'str',
         'identity_type': 'str',
-        'identity_authorized_bc_id': 'str',
         'included_custom_actions': 'OpenApiv13adgroupcreateIncludedCustomActions',
         'included_pangle_audience_package_ids': 'list[str]',
         'interest_category_ids': 'list[str]',
@@ -127,9 +127,9 @@ class AdgroupUpdateBody(object):
         'frequency_schedule': 'frequency_schedule',
         'gender': 'gender',
         'household_income': 'household_income',
+        'identity_authorized_bc_id': 'identity_authorized_bc_id',
         'identity_id': 'identity_id',
         'identity_type': 'identity_type',
-        'identity_authorized_bc_id': 'identity_authorized_bc_id',
         'included_custom_actions': 'included_custom_actions',
         'included_pangle_audience_package_ids': 'included_pangle_audience_package_ids',
         'interest_category_ids': 'interest_category_ids',
@@ -157,7 +157,7 @@ class AdgroupUpdateBody(object):
         'targeting_expansion': 'targeting_expansion'
     }
 
-    def __init__(self, actions=None, adgroup_id=None, adgroup_name=None, advertiser_id=None, age_groups=None, app_download_url=None, app_id=None, audience_ids=None, audience_rule=None, audience_type=None, auto_targeting_enabled=None, bid_price=None, bid_type=None, billing_event=None, blocked_pangle_app_ids=None, brand_safety_type=None, budget=None, carrier_ids=None, catalog_authorized_bc_id=None, comment_disabled=None, contextual_tag_ids=None, conversion_bid_price=None, conversion_id=None, creative_material_mode=None, dayparting=None, deep_bid_type=None, deep_cpa_bid=None, device_model_ids=None, device_price_ranges=None, excluded_audience_ids=None, excluded_custom_actions=None, excluded_pangle_audience_package_ids=None, frequency=None, frequency_schedule=None, gender=None, household_income=None, identity_id=None, identity_type=None, identity_authorized_bc_id=None, included_custom_actions=None, included_pangle_audience_package_ids=None, interest_category_ids=None, interest_keyword_ids=None, interest_keywords=None, ios14_targeting=None, is_hfss=None, languages=None, location_ids=None, min_android_version=None, min_ios_version=None, network_types=None, next_day_retention=None, operating_systems=None, pacing=None, purchase_intention_keyword_ids=None, roas_bid=None, schedule_end_time=None, schedule_start_time=None, schedule_type=None, secondary_optimization_event=None, shopping_ads_retargeting_actions_days=None, shopping_ads_retargeting_type=None, spending_power=None, targeting_expansion=None):  # noqa: E501
+    def __init__(self, actions=None, adgroup_id=None, adgroup_name=None, advertiser_id=None, age_groups=None, app_download_url=None, app_id=None, audience_ids=None, audience_rule=None, audience_type=None, auto_targeting_enabled=None, bid_price=None, bid_type=None, billing_event=None, blocked_pangle_app_ids=None, brand_safety_type=None, budget=None, carrier_ids=None, catalog_authorized_bc_id=None, comment_disabled=None, contextual_tag_ids=None, conversion_bid_price=None, conversion_id=None, creative_material_mode=None, dayparting=None, deep_bid_type=None, deep_cpa_bid=None, device_model_ids=None, device_price_ranges=None, excluded_audience_ids=None, excluded_custom_actions=None, excluded_pangle_audience_package_ids=None, frequency=None, frequency_schedule=None, gender=None, household_income=None, identity_authorized_bc_id=None, identity_id=None, identity_type=None, included_custom_actions=None, included_pangle_audience_package_ids=None, interest_category_ids=None, interest_keyword_ids=None, interest_keywords=None, ios14_targeting=None, is_hfss=None, languages=None, location_ids=None, min_android_version=None, min_ios_version=None, network_types=None, next_day_retention=None, operating_systems=None, pacing=None, purchase_intention_keyword_ids=None, roas_bid=None, schedule_end_time=None, schedule_start_time=None, schedule_type=None, secondary_optimization_event=None, shopping_ads_retargeting_actions_days=None, shopping_ads_retargeting_type=None, spending_power=None, targeting_expansion=None):  # noqa: E501
         """AdgroupUpdateBody - a model defined in Swagger"""  # noqa: E501
         self._actions = None
         self._adgroup_id = None
@@ -195,9 +195,9 @@ class AdgroupUpdateBody(object):
         self._frequency_schedule = None
         self._gender = None
         self._household_income = None
+        self._identity_authorized_bc_id = None
         self._identity_id = None
         self._identity_type = None
-        self._identity_authorized_bc_id = None
         self._included_custom_actions = None
         self._included_pangle_audience_package_ids = None
         self._interest_category_ids = None
@@ -294,12 +294,12 @@ class AdgroupUpdateBody(object):
             self.gender = gender
         if household_income is not None:
             self.household_income = household_income
+        if identity_authorized_bc_id is not None:
+            self.identity_authorized_bc_id = identity_authorized_bc_id
         if identity_id is not None:
             self.identity_id = identity_id
         if identity_type is not None:
             self.identity_type = identity_type
-        if identity_authorized_bc_id is not None:
-            self.identity_authorized_bc_id = identity_authorized_bc_id
         if included_custom_actions is not None:
             self.included_custom_actions = included_custom_actions
         if included_pangle_audience_package_ids is not None:
@@ -1180,6 +1180,29 @@ class AdgroupUpdateBody(object):
         self._household_income = household_income
 
     @property
+    def identity_authorized_bc_id(self):
+        """Gets the identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
+
+        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
+
+        :return: The identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._identity_authorized_bc_id
+
+    @identity_authorized_bc_id.setter
+    def identity_authorized_bc_id(self, identity_authorized_bc_id):
+        """Sets the identity_authorized_bc_id of this AdgroupUpdateBody.
+
+        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
+
+        :param identity_authorized_bc_id: The identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._identity_authorized_bc_id = identity_authorized_bc_id
+
+    @property
     def identity_id(self):
         """Gets the identity_id of this AdgroupUpdateBody.  # noqa: E501
 
@@ -1224,29 +1247,6 @@ class AdgroupUpdateBody(object):
         """
 
         self._identity_type = identity_type
-
-    @property
-    def identity_authorized_bc_id(self):
-        """Gets the identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
-
-        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
-
-        :return: The identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._identity_authorized_bc_id
-
-    @identity_authorized_bc_id.setter
-    def identity_authorized_bc_id(self, identity_authorized_bc_id):
-        """Sets the identity_authorized_bc_id of this AdgroupUpdateBody.
-
-        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
-
-        :param identity_authorized_bc_id: The identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._identity_authorized_bc_id = identity_authorized_bc_id
 
     @property
     def included_custom_actions(self):

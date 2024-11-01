@@ -4,17 +4,17 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {AdCreateBody} from '../model/AdCreateBody';
-import {AdStatusUpdateBody} from '../model/AdStatusUpdateBody';
-import {AdUpdateBody} from '../model/AdUpdateBody';
-import {FilteringAdGet} from '../model/FilteringAdGet';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {AdCreateBody} from '../model/AdCreateBody.js';
+import {AdStatusUpdateBody} from '../model/AdStatusUpdateBody.js';
+import {AdUpdateBody} from '../model/AdUpdateBody.js';
+import {FilteringAdGet} from '../model/FilteringAdGet.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * Ad service.
 * @module api/AdApi
-* @version 0.1.1
+* @version 0.1.2
 */
 export class AdApi {
 

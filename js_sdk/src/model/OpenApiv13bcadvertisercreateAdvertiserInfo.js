@@ -4,12 +4,12 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
+import {ApiClient} from '../ApiClient.js';
 
 /**
  * The OpenApiv13bcadvertisercreateAdvertiserInfo model module.
  * @module model/OpenApiv13bcadvertisercreateAdvertiserInfo
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class OpenApiv13bcadvertisercreateAdvertiserInfo {
   /**

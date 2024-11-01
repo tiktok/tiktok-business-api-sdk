@@ -26,6 +26,7 @@ class AdAcoBody(object):
     swagger_types = {
         'adgroup_id': 'str',
         'advertiser_id': 'str',
+        'avatar_icon_list': 'list[AdAcoBodyAvatarIconList]',
         'call_to_action_list': 'list[AdAcoBodyCallToActionList]',
         'card_list': 'list[AdAcoBodyCardList]',
         'common_material': 'AdAcoBodyCommonMaterial',
@@ -34,13 +35,13 @@ class AdAcoBody(object):
         'landing_page_urls': 'list[AdAcoBodyLandingPageUrls]',
         'media_info_list': 'list[AdAcoBodyMediaInfoList]',
         'page_list': 'list[AdAcoBodyPageList]',
-        'avatar_icon_list': 'list[AdAcoBodyAvatarIconList]',
         'title_list': 'list[AdAcoBodyTitleList]'
     }
 
     attribute_map = {
         'adgroup_id': 'adgroup_id',
         'advertiser_id': 'advertiser_id',
+        'avatar_icon_list': 'avatar_icon_list',
         'call_to_action_list': 'call_to_action_list',
         'card_list': 'card_list',
         'common_material': 'common_material',
@@ -49,14 +50,14 @@ class AdAcoBody(object):
         'landing_page_urls': 'landing_page_urls',
         'media_info_list': 'media_info_list',
         'page_list': 'page_list',
-        'avatar_icon_list': 'avatar_icon_list',
         'title_list': 'title_list'
     }
 
-    def __init__(self, adgroup_id=None, advertiser_id=None, call_to_action_list=None, card_list=None, common_material=None, deeplink_list=None, display_name_list=None, landing_page_urls=None, media_info_list=None, page_list=None, avatar_icon_list=None, title_list=None):  # noqa: E501
+    def __init__(self, adgroup_id=None, advertiser_id=None, avatar_icon_list=None, call_to_action_list=None, card_list=None, common_material=None, deeplink_list=None, display_name_list=None, landing_page_urls=None, media_info_list=None, page_list=None, title_list=None):  # noqa: E501
         """AdAcoBody - a model defined in Swagger"""  # noqa: E501
         self._adgroup_id = None
         self._advertiser_id = None
+        self._avatar_icon_list = None
         self._call_to_action_list = None
         self._card_list = None
         self._common_material = None
@@ -65,12 +66,13 @@ class AdAcoBody(object):
         self._landing_page_urls = None
         self._media_info_list = None
         self._page_list = None
-        self._avatar_icon_list = None
         self._title_list = None
         self.discriminator = None
         if adgroup_id is not None:
             self.adgroup_id = adgroup_id
         self.advertiser_id = advertiser_id
+        if avatar_icon_list is not None:
+            self.avatar_icon_list = avatar_icon_list
         if call_to_action_list is not None:
             self.call_to_action_list = call_to_action_list
         if card_list is not None:
@@ -87,8 +89,6 @@ class AdAcoBody(object):
             self.media_info_list = media_info_list
         if page_list is not None:
             self.page_list = page_list
-        if avatar_icon_list is not None:
-            self.avatar_icon_list = avatar_icon_list
         if title_list is not None:
             self.title_list = title_list
 
@@ -139,6 +139,29 @@ class AdAcoBody(object):
             raise ValueError("Invalid value for `advertiser_id`, must not be `None`")  # noqa: E501
 
         self._advertiser_id = advertiser_id
+
+    @property
+    def avatar_icon_list(self):
+        """Gets the avatar_icon_list of this AdAcoBody.  # noqa: E501
+
+        Avatar image list.  # noqa: E501
+
+        :return: The avatar_icon_list of this AdAcoBody.  # noqa: E501
+        :rtype: list[AdAcoBodyAvatarIconList]
+        """
+        return self._avatar_icon_list
+
+    @avatar_icon_list.setter
+    def avatar_icon_list(self, avatar_icon_list):
+        """Sets the avatar_icon_list of this AdAcoBody.
+
+        Avatar image list.  # noqa: E501
+
+        :param avatar_icon_list: The avatar_icon_list of this AdAcoBody.  # noqa: E501
+        :type: list[AdAcoBodyAvatarIconList]
+        """
+
+        self._avatar_icon_list = avatar_icon_list
 
     @property
     def call_to_action_list(self):
@@ -321,29 +344,6 @@ class AdAcoBody(object):
         """
 
         self._page_list = page_list
-
-    @property
-    def avatar_icon_list(self):
-        """Gets the avatar_icon_list of this AdAcoBody.  # noqa: E501
-
-        Avatar image list.  # noqa: E501
-
-        :return: The avatar_icon_list of this AdAcoBody.  # noqa: E501
-        :rtype: list[AdAcoBodyAvatarIconList]
-        """
-        return self._avatar_icon_list
-
-    @avatar_icon_list.setter
-    def avatar_icon_list(self, avatar_icon_list):
-        """Sets the avatar_icon_list of this AdAcoBody.
-
-        Avatar image list.  # noqa: E501
-
-        :param avatar_icon_list: The avatar_icon_list of this AdAcoBody.  # noqa: E501
-        :type: list[AdAcoBodyAvatarIconList]
-        """
-
-        self._avatar_icon_list = avatar_icon_list
 
     @property
     def title_list(self):

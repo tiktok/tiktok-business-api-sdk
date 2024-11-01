@@ -11,7 +11,7 @@ import business_api.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")public class OAuth implements Authentication {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")public class OAuth implements Authentication {
   private String accessToken;
 
   public String getAccessToken() {

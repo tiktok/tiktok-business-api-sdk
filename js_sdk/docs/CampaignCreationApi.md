@@ -116,7 +116,7 @@ Enable, disable or delete a campaign. [Campaign status update](https://ads.tikto
 import {js_sdk} from 'business_api_client';
 
 let apiInstance = new js_sdk.CampaignCreationApi();
-let Access_Token = "Access_Token_example"; // String | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
   'body': new js_sdk.CampaignStatusUpdateBody() // CampaignStatusUpdateBody | Campaign status update body parameters
 };
@@ -133,7 +133,7 @@ apiInstance.campaignStatusUpdate(Access_Token, opts, (error, data, response) => 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **Access_Token** | **String**|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
  **body** | [**CampaignStatusUpdateBody**](CampaignStatusUpdateBody.md)| Campaign status update body parameters | [optional] 
 
 ### Return type

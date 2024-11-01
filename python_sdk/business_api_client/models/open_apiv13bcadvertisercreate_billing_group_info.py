@@ -25,28 +25,28 @@ class OpenApiv13bcadvertisercreateBillingGroupInfo(object):
     """
     swagger_types = {
         'billing_group_id': 'str',
-        'invoice_payer': 'str',
-        'invoice_group_by': 'str'
+        'invoice_group_by': 'str',
+        'invoice_payer': 'str'
     }
 
     attribute_map = {
         'billing_group_id': 'billing_group_id',
-        'invoice_payer': 'invoice_payer',
-        'invoice_group_by': 'invoice_group_by'
+        'invoice_group_by': 'invoice_group_by',
+        'invoice_payer': 'invoice_payer'
     }
 
-    def __init__(self, billing_group_id=None, invoice_payer=None, invoice_group_by=None):  # noqa: E501
+    def __init__(self, billing_group_id=None, invoice_group_by=None, invoice_payer=None):  # noqa: E501
         """OpenApiv13bcadvertisercreateBillingGroupInfo - a model defined in Swagger"""  # noqa: E501
         self._billing_group_id = None
-        self._invoice_payer = None
         self._invoice_group_by = None
+        self._invoice_payer = None
         self.discriminator = None
         if billing_group_id is not None:
             self.billing_group_id = billing_group_id
-        if invoice_payer is not None:
-            self.invoice_payer = invoice_payer
         if invoice_group_by is not None:
             self.invoice_group_by = invoice_group_by
+        if invoice_payer is not None:
+            self.invoice_payer = invoice_payer
 
     @property
     def billing_group_id(self):
@@ -72,29 +72,6 @@ class OpenApiv13bcadvertisercreateBillingGroupInfo(object):
         self._billing_group_id = billing_group_id
 
     @property
-    def invoice_payer(self):
-        """Gets the invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.  # noqa: E501
-
-        Party who pays the invoices. Enum values: `AGENCY`, `ADVERTISER`. This field is required when the registrated area of the ad account is `FR` (France)  # noqa: E501
-
-        :return: The invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._invoice_payer
-
-    @invoice_payer.setter
-    def invoice_payer(self, invoice_payer):
-        """Sets the invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.
-
-        Party who pays the invoices. Enum values: `AGENCY`, `ADVERTISER`. This field is required when the registrated area of the ad account is `FR` (France)  # noqa: E501
-
-        :param invoice_payer: The invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.  # noqa: E501
-        :type: str
-        """
-
-        self._invoice_payer = invoice_payer
-
-    @property
     def invoice_group_by(self):
         """Gets the invoice_group_by of this OpenApiv13bcadvertisercreateBillingGroupInfo.  # noqa: E501
 
@@ -116,6 +93,29 @@ class OpenApiv13bcadvertisercreateBillingGroupInfo(object):
         """
 
         self._invoice_group_by = invoice_group_by
+
+    @property
+    def invoice_payer(self):
+        """Gets the invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.  # noqa: E501
+
+        Party who pays the invoices. Enum values: `AGENCY`, `ADVERTISER`. This field is required when the registrated area of the ad account is `FR` (France)  # noqa: E501
+
+        :return: The invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.  # noqa: E501
+        :rtype: str
+        """
+        return self._invoice_payer
+
+    @invoice_payer.setter
+    def invoice_payer(self, invoice_payer):
+        """Sets the invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.
+
+        Party who pays the invoices. Enum values: `AGENCY`, `ADVERTISER`. This field is required when the registrated area of the ad account is `FR` (France)  # noqa: E501
+
+        :param invoice_payer: The invoice_payer of this OpenApiv13bcadvertisercreateBillingGroupInfo.  # noqa: E501
+        :type: str
+        """
+
+        self._invoice_payer = invoice_payer
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -4,17 +4,17 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {BcTransferBody} from '../model/BcTransferBody';
-import {FilteringAdvertiserBalanceGet} from '../model/FilteringAdvertiserBalanceGet';
-import {FilteringAdvertiserTransactionGet} from '../model/FilteringAdvertiserTransactionGet';
-import {FilteringBCTransactionGet} from '../model/FilteringBCTransactionGet';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {BcTransferBody} from '../model/BcTransferBody.js';
+import {FilteringAdvertiserBalanceGet} from '../model/FilteringAdvertiserBalanceGet.js';
+import {FilteringAdvertiserTransactionGet} from '../model/FilteringAdvertiserTransactionGet.js';
+import {FilteringBCTransactionGet} from '../model/FilteringBCTransactionGet.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * BcPayment service.
 * @module api/BcPaymentApi
-* @version 0.1.1
+* @version 0.1.2
 */
 export class BcPaymentApi {
 

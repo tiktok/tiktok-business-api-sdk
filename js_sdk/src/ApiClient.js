@@ -9,7 +9,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 0.1.1
+* @version 0.1.2
 */
 
 /**
@@ -40,7 +40,7 @@ export class ApiClient {
          * @type {Array.<String>}
          * @default {}
          */
-        this.defaultHeaders = {"Business-SDK":1, "SDK-Language": "Js", "SDK-Version": "0.1.1"};
+        this.defaultHeaders = {"Business-SDK":1, "SDK-Language": "Js", "SDK-Version": "0.1.2"};
 
         /**
          * The default HTTP timeout for all API calls.
@@ -419,11 +419,7 @@ export class ApiClient {
             for (var key in _formParams) {
                 if (_formParams.hasOwnProperty(key)) {
                     if (this.isFileParam(_formParams[key])) {
-                        if (_formParams[key] instanceof Buffer) {
-                            _formParams[key].path = "default_file_name"
-                        }
-                        // file field
-                        request.attach(key, _formParams[key]);
+                        request.attach(key, _formParams[key], formParams.file_name || 'default_file_name');
                     } else {
                         request.field(key, _formParams[key]);
                     }

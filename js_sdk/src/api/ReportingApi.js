@@ -4,14 +4,14 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from "../ApiClient";
-import {FilteringReportIntegratedGet} from '../model/FilteringReportIntegratedGet';
-import {InlineResponse200} from '../model/InlineResponse200';
+import {ApiClient} from "../ApiClient.js";
+import {FilteringReportIntegratedGet} from '../model/FilteringReportIntegratedGet.js';
+import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * Reporting service.
 * @module api/ReportingApi
-* @version 0.1.1
+* @version 0.1.2
 */
 export class ReportingApi {
 

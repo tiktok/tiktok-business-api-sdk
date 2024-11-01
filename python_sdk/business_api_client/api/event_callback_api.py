@@ -37,7 +37,7 @@ class EventCallbackApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str access_token: Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets->Event-> Website Pixel->Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id=1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162)  (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param PixelBatchBody body: Pixel batch update body parameters
         :return: InlineResponse200
                  If the method is called asynchronously,
@@ -59,7 +59,7 @@ class EventCallbackApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str access_token: Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets->Event-> Website Pixel->Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id=1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162)  (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param PixelBatchBody body: Pixel batch update body parameters
         :return: InlineResponse200
                  If the method is called asynchronously,
@@ -138,7 +138,7 @@ class EventCallbackApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str access_token: Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets->Event-> Website Pixel->Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id=1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162)  (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param PixelTrackBody body: Pixel track body parameters
         :return: InlineResponse200
                  If the method is called asynchronously,
@@ -160,7 +160,7 @@ class EventCallbackApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str access_token: Authorized Access Token. Option1: [Recommended] Can be obtained in Events Manger under Assets->Event-> Website Pixel->Select any pixel in TikTok Ads Manager: https://ads.tiktok.com/i18n/ as described in [Get Started](https://ads.tiktok.com/marketing_api/docs?id=1739584855420929). Please be aware that only an Admin or Operator role can generate a token. Option2: with your own developer app, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162)  (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param PixelTrackBody body: Pixel track body parameters
         :return: InlineResponse200
                  If the method is called asynchronously,

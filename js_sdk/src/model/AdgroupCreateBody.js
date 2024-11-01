@@ -4,17 +4,17 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13adgroupcreateActions} from './OpenApiv13adgroupcreateActions';
-import {OpenApiv13adgroupcreateAudienceRule} from './OpenApiv13adgroupcreateAudienceRule';
-import {OpenApiv13adgroupcreateExcludedCustomActions} from './OpenApiv13adgroupcreateExcludedCustomActions';
-import {OpenApiv13adgroupcreateIncludedCustomActions} from './OpenApiv13adgroupcreateIncludedCustomActions';
-import {OpenApiv13adgroupcreateTargetingExpansion} from './OpenApiv13adgroupcreateTargetingExpansion';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13adgroupcreateActions} from './OpenApiv13adgroupcreateActions.js';
+import {OpenApiv13adgroupcreateAudienceRule} from './OpenApiv13adgroupcreateAudienceRule.js';
+import {OpenApiv13adgroupcreateExcludedCustomActions} from './OpenApiv13adgroupcreateExcludedCustomActions.js';
+import {OpenApiv13adgroupcreateIncludedCustomActions} from './OpenApiv13adgroupcreateIncludedCustomActions.js';
+import {OpenApiv13adgroupcreateTargetingExpansion} from './OpenApiv13adgroupcreateTargetingExpansion.js';
 
 /**
  * The AdgroupCreateBody model module.
  * @module model/AdgroupCreateBody
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class AdgroupCreateBody {
   /**

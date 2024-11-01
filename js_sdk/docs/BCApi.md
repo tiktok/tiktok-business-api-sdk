@@ -183,8 +183,8 @@ apiInstance.bcImageUpload(Access_Token, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
-**bc_id** | **String** | Business Center ID | [required] 
-**image_file** | **Blob** | The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB | [required]
+ **bc_id** | **String**|  | [optional] 
+ **image_file** | **Blob**|  | [optional] 
 
 ### Return type
 

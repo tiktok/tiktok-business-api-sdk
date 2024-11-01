@@ -256,7 +256,7 @@ class CampaignCreationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str access_token: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param CampaignStatusUpdateBody body: Campaign status update body parameters
         :return: InlineResponse200
                  If the method is called asynchronously,
@@ -278,7 +278,7 @@ class CampaignCreationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str access_token: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param CampaignStatusUpdateBody body: Campaign status update body parameters
         :return: InlineResponse200
                  If the method is called asynchronously,

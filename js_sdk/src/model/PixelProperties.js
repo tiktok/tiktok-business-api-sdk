@@ -4,13 +4,13 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {PixelContent} from './PixelContent';
+import {ApiClient} from '../ApiClient.js';
+import {PixelContent} from './PixelContent.js';
 
 /**
  * The PixelProperties model module.
  * @module model/PixelProperties
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class PixelProperties {
   /**

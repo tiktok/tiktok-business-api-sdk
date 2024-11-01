@@ -4,13 +4,13 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {OpenApiv13adupdateCreatives} from './OpenApiv13adupdateCreatives';
+import {ApiClient} from '../ApiClient.js';
+import {OpenApiv13adupdateCreatives} from './OpenApiv13adupdateCreatives.js';
 
 /**
  * The AdUpdateBody model module.
  * @module model/AdUpdateBody
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class AdUpdateBody {
   /**

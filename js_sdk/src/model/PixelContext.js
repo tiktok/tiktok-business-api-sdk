@@ -4,15 +4,15 @@
  * This source code is licensed under the MIT license found in
  * the LICENSE file in the root directory of this source tree.
  */
-import {ApiClient} from '../ApiClient';
-import {PixelContextAd} from './PixelContextAd';
-import {PixelContextPage} from './PixelContextPage';
-import {PixelContextUser} from './PixelContextUser';
+import {ApiClient} from '../ApiClient.js';
+import {PixelContextAd} from './PixelContextAd.js';
+import {PixelContextPage} from './PixelContextPage.js';
+import {PixelContextUser} from './PixelContextUser.js';
 
 /**
  * The PixelContext model module.
  * @module model/PixelContext
- * @version 0.1.1
+ * @version 0.1.2
  */
 export class PixelContext {
   /**

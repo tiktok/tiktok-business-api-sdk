@@ -29,13 +29,16 @@ import java.util.List;
  * AdAcoBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2023-06-28T14:49:22.099759+05:30[Asia/Kolkata]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class AdAcoBody {
   @JsonProperty("adgroup_id")
   private String adgroupId = null;
 
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
+
+  @JsonProperty("avatar_icon_list")
+  private List<AdAcoBodyAvatarIconList> avatarIconList = null;
 
   @JsonProperty("call_to_action_list")
   private List<AdAcoBodyCallToActionList> callToActionList = null;
@@ -60,9 +63,6 @@ public class AdAcoBody {
 
   @JsonProperty("page_list")
   private List<AdAcoBodyPageList> pageList = null;
-
-  @JsonProperty("avatar_icon_list")
-  private List<AdAcoBodyAvatarIconList> avatarIconList = null;
 
   @JsonProperty("title_list")
   private List<AdAcoBodyTitleList> titleList = null;
@@ -101,6 +101,32 @@ public class AdAcoBody {
 
   public void setAdvertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
+  }
+
+  public AdAcoBody avatarIconList(List<AdAcoBodyAvatarIconList> avatarIconList) {
+    this.avatarIconList = avatarIconList;
+    return this;
+  }
+
+  public AdAcoBody addAvatarIconListItem(AdAcoBodyAvatarIconList avatarIconListItem) {
+    if (this.avatarIconList == null) {
+      this.avatarIconList = new ArrayList<AdAcoBodyAvatarIconList>();
+    }
+    this.avatarIconList.add(avatarIconListItem);
+    return this;
+  }
+
+   /**
+   * Avatar image list.
+   * @return avatarIconList
+  **/
+  @Schema(description = "Avatar image list.")
+  public List<AdAcoBodyAvatarIconList> getAvatarIconList() {
+    return avatarIconList;
+  }
+
+  public void setAvatarIconList(List<AdAcoBodyAvatarIconList> avatarIconList) {
+    this.avatarIconList = avatarIconList;
   }
 
   public AdAcoBody callToActionList(List<AdAcoBodyCallToActionList> callToActionList) {
@@ -303,32 +329,6 @@ public class AdAcoBody {
     this.pageList = pageList;
   }
 
-  public AdAcoBody avatarIconList(List<AdAcoBodyAvatarIconList> avatarIconList) {
-    this.avatarIconList = avatarIconList;
-    return this;
-  }
-
-  public AdAcoBody addAvatarIconListItem(AdAcoBodyAvatarIconList avatarIconListItem) {
-    if (this.avatarIconList == null) {
-      this.avatarIconList = new ArrayList<AdAcoBodyAvatarIconList>();
-    }
-    this.avatarIconList.add(avatarIconListItem);
-    return this;
-  }
-
-   /**
-   * Avatar image list.
-   * @return avatarIconList
-  **/
-  @Schema(description = "Avatar image list.")
-  public List<AdAcoBodyAvatarIconList> getAvatarIconList() {
-    return avatarIconList;
-  }
-
-  public void setAvatarIconList(List<AdAcoBodyAvatarIconList> avatarIconList) {
-    this.avatarIconList = avatarIconList;
-  }
-
   public AdAcoBody titleList(List<AdAcoBodyTitleList> titleList) {
     this.titleList = titleList;
     return this;
@@ -367,6 +367,7 @@ public class AdAcoBody {
     AdAcoBody adAcoBody = (AdAcoBody) o;
     return Objects.equals(this.adgroupId, adAcoBody.adgroupId) &&
         Objects.equals(this.advertiserId, adAcoBody.advertiserId) &&
+        Objects.equals(this.avatarIconList, adAcoBody.avatarIconList) &&
         Objects.equals(this.callToActionList, adAcoBody.callToActionList) &&
         Objects.equals(this.cardList, adAcoBody.cardList) &&
         Objects.equals(this.commonMaterial, adAcoBody.commonMaterial) &&
@@ -375,13 +376,12 @@ public class AdAcoBody {
         Objects.equals(this.landingPageUrls, adAcoBody.landingPageUrls) &&
         Objects.equals(this.mediaInfoList, adAcoBody.mediaInfoList) &&
         Objects.equals(this.pageList, adAcoBody.pageList) &&
-        Objects.equals(this.avatarIconList, adAcoBody.avatarIconList) &&
         Objects.equals(this.titleList, adAcoBody.titleList);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adgroupId, advertiserId, callToActionList, cardList, commonMaterial, deeplinkList, displayNameList, landingPageUrls, mediaInfoList, pageList, avatarIconList, titleList);
+    return Objects.hash(adgroupId, advertiserId, avatarIconList, callToActionList, cardList, commonMaterial, deeplinkList, displayNameList, landingPageUrls, mediaInfoList, pageList, titleList);
   }
 
 
@@ -392,6 +392,7 @@ public class AdAcoBody {
     
     sb.append("    adgroupId: ").append(toIndentedString(adgroupId)).append("\n");
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
+    sb.append("    avatarIconList: ").append(toIndentedString(avatarIconList)).append("\n");
     sb.append("    callToActionList: ").append(toIndentedString(callToActionList)).append("\n");
     sb.append("    cardList: ").append(toIndentedString(cardList)).append("\n");
     sb.append("    commonMaterial: ").append(toIndentedString(commonMaterial)).append("\n");
@@ -400,7 +401,6 @@ public class AdAcoBody {
     sb.append("    landingPageUrls: ").append(toIndentedString(landingPageUrls)).append("\n");
     sb.append("    mediaInfoList: ").append(toIndentedString(mediaInfoList)).append("\n");
     sb.append("    pageList: ").append(toIndentedString(pageList)).append("\n");
-    sb.append("    avatarIconList: ").append(toIndentedString(avatarIconList)).append("\n");
     sb.append("    titleList: ").append(toIndentedString(titleList)).append("\n");
     sb.append("}");
     return sb.toString();

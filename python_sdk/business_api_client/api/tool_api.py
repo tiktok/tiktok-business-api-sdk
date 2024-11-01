@@ -28,6 +28,111 @@ class ToolApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def search_region(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get available locations by advertiser ID [Search Region](https://ads.tiktok.com/marketing_api/docs?id=1773644763581441)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.search_region(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str language: The language you want the returned region name to be translated into. Default value: en Currently, we only support zh, fr, es, ko, vi, en, hi, it, tr, ru, ja, id, de, ms, ar, and th Note: If you do not pass in one of the supported values above, it will return as the default en.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.search_region_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.search_region_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def search_region_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get available locations by advertiser ID [Search Region](https://ads.tiktok.com/marketing_api/docs?id=1773644763581441)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.search_region_with_http_info(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str language: The language you want the returned region name to be translated into. Default value: en Currently, we only support zh, fr, es, ko, vi, en, hi, it, tr, ru, ja, id, de, ms, ar, and th Note: If you do not pass in one of the supported values above, it will return as the default en.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'access_token', 'language']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method search_region" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `search_region`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `search_region`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'language' in params:
+            query_params.append(('language', params['language']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/search/region/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def tool_action_category(self, advertiser_id, access_token, **kwargs):  # noqa: E501
         """Get action categories [Tool action](https://ads.tiktok.com/marketing_api/docs?id=1737166752522241)  # noqa: E501
 
@@ -120,6 +225,216 @@ class ToolApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/tool/action_category/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_bid_recommend(self, access_token, **kwargs):  # noqa: E501
+        """Get a suggested bid [Tool Bid Recommend](https://ads.tiktok.com/marketing_api/docs?id=1737107845597186)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_bid_recommend(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BidRecommendBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_bid_recommend_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_bid_recommend_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_bid_recommend_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Get a suggested bid [Tool Bid Recommend](https://ads.tiktok.com/marketing_api/docs?id=1737107845597186)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_bid_recommend_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BidRecommendBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_bid_recommend" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_bid_recommend`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/bid/recommend/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_brand_safety_partner_authorize_status(self, partner, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get the authorization status of a Brand Safety partner [Tool Brand_safety Partner Authorize Status](https://ads.tiktok.com/marketing_api/docs?id=1738456743621634)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_brand_safety_partner_authorize_status(partner, advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str partner: Brand Safety post bid measurement partner. Enum values: Zefr. (required)
+        :param str advertiser_id: Advertiser ID (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_brand_safety_partner_authorize_status_with_http_info(partner, advertiser_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_brand_safety_partner_authorize_status_with_http_info(partner, advertiser_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_brand_safety_partner_authorize_status_with_http_info(self, partner, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get the authorization status of a Brand Safety partner [Tool Brand_safety Partner Authorize Status](https://ads.tiktok.com/marketing_api/docs?id=1738456743621634)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_brand_safety_partner_authorize_status_with_http_info(partner, advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str partner: Brand Safety post bid measurement partner. Enum values: Zefr. (required)
+        :param str advertiser_id: Advertiser ID (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['partner', 'advertiser_id', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_brand_safety_partner_authorize_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'partner' is set
+        if ('partner' not in params or
+                params['partner'] is None):
+            raise ValueError("Missing the required parameter `partner` when calling `tool_brand_safety_partner_authorize_status`")  # noqa: E501
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_brand_safety_partner_authorize_status`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_brand_safety_partner_authorize_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'partner' in params:
+            query_params.append(('partner', params['partner']))  # noqa: E501
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/brand_safety/partner/authorize/status/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -235,6 +550,238 @@ class ToolApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def tool_contextual_tag_get(self, advertiser_id, objective_type, access_token, **kwargs):  # noqa: E501
+        """Get available contextual tags [Tool Contextual_tag Get](https://ads.tiktok.com/marketing_api/docs?id=1747747118654465)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_contextual_tag_get(advertiser_id, objective_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str objective_type: Advertising objective. Only supports REACH, VIDEO_VIEWS, RF_REACH. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] region_codes: Country or region codes.
+        :param str brand_safety_type: Brand safety type. Default value: STANDARD_INVENTORY. Enum values: EXPANDED_INVENTORY: Use TikTok's brand safety solution. Expanded inventory means that your ads will appear next to content where most inappropriate content has been removed, and may contain some mature themes. In the next API version, EXPANDED_INVENTORY will replace NO_BRAND_SAFETY and will be the default brand safety option. STANDARD_INVENTORY: Use TikTok's brand safety solution. Standard inventory means that ads will appear next to content that is appropriate for most brands. LIMITED_INVENTORY: Use TikTok's brand safety solution. Limited inventory means that your ads will not appear next to content that contains mature themes. Note: Pre-bid first-party Brand Safety solutions for APP_PROMOTION, WEB_CONVERSIONS, TRAFFIC, LEAD_GENERATION objectives in Auction ads, and pre-bid third-party brand safety solutions are currently allowlist-only features. If you would like to access them, please contact your TikTok representative. See Brand safety to learn about the supported advertising objectives for pre-bid Brand Safety filtering.
+        :param str rf_campaign_type: Note: When objective_type is specified as RF_REACH, use this field to set the campaign as a TikTok Pulse campaign, then you can get available premium contextual tags. Do not pass in this field when objective_type is not specified as RF_REACH. Enum values: STANDARD (Reach & Frequency campaign), PULSE（TikTok Pulse campaign）
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_contextual_tag_get_with_http_info(advertiser_id, objective_type, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_contextual_tag_get_with_http_info(advertiser_id, objective_type, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_contextual_tag_get_with_http_info(self, advertiser_id, objective_type, access_token, **kwargs):  # noqa: E501
+        """Get available contextual tags [Tool Contextual_tag Get](https://ads.tiktok.com/marketing_api/docs?id=1747747118654465)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_contextual_tag_get_with_http_info(advertiser_id, objective_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str objective_type: Advertising objective. Only supports REACH, VIDEO_VIEWS, RF_REACH. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] region_codes: Country or region codes.
+        :param str brand_safety_type: Brand safety type. Default value: STANDARD_INVENTORY. Enum values: EXPANDED_INVENTORY: Use TikTok's brand safety solution. Expanded inventory means that your ads will appear next to content where most inappropriate content has been removed, and may contain some mature themes. In the next API version, EXPANDED_INVENTORY will replace NO_BRAND_SAFETY and will be the default brand safety option. STANDARD_INVENTORY: Use TikTok's brand safety solution. Standard inventory means that ads will appear next to content that is appropriate for most brands. LIMITED_INVENTORY: Use TikTok's brand safety solution. Limited inventory means that your ads will not appear next to content that contains mature themes. Note: Pre-bid first-party Brand Safety solutions for APP_PROMOTION, WEB_CONVERSIONS, TRAFFIC, LEAD_GENERATION objectives in Auction ads, and pre-bid third-party brand safety solutions are currently allowlist-only features. If you would like to access them, please contact your TikTok representative. See Brand safety to learn about the supported advertising objectives for pre-bid Brand Safety filtering.
+        :param str rf_campaign_type: Note: When objective_type is specified as RF_REACH, use this field to set the campaign as a TikTok Pulse campaign, then you can get available premium contextual tags. Do not pass in this field when objective_type is not specified as RF_REACH. Enum values: STANDARD (Reach & Frequency campaign), PULSE（TikTok Pulse campaign）
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'objective_type', 'access_token', 'region_codes', 'brand_safety_type', 'rf_campaign_type']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_contextual_tag_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_contextual_tag_get`")  # noqa: E501
+        # verify the required parameter 'objective_type' is set
+        if ('objective_type' not in params or
+                params['objective_type'] is None):
+            raise ValueError("Missing the required parameter `objective_type` when calling `tool_contextual_tag_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_contextual_tag_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'objective_type' in params:
+            query_params.append(('objective_type', params['objective_type']))  # noqa: E501
+        if 'region_codes' in params:
+            query_params.append(('region_codes', params['region_codes']))  # noqa: E501
+            collection_formats['region_codes'] = 'multi'  # noqa: E501
+        if 'brand_safety_type' in params:
+            query_params.append(('brand_safety_type', params['brand_safety_type']))  # noqa: E501
+        if 'rf_campaign_type' in params:
+            query_params.append(('rf_campaign_type', params['rf_campaign_type']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/contextual_tag/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_contextual_tag_info(self, advertiser_id, contextual_tag_ids, access_token, **kwargs):  # noqa: E501
+        """Get details of contextual tags [Tool Contextual_tag Info](https://ads.tiktok.com/marketing_api/docs?id=1747747180830722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_contextual_tag_info(advertiser_id, contextual_tag_ids, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param list[str] contextual_tag_ids: Contextual tag IDs. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_contextual_tag_info_with_http_info(advertiser_id, contextual_tag_ids, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_contextual_tag_info_with_http_info(advertiser_id, contextual_tag_ids, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_contextual_tag_info_with_http_info(self, advertiser_id, contextual_tag_ids, access_token, **kwargs):  # noqa: E501
+        """Get details of contextual tags [Tool Contextual_tag Info](https://ads.tiktok.com/marketing_api/docs?id=1747747180830722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_contextual_tag_info_with_http_info(advertiser_id, contextual_tag_ids, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param list[str] contextual_tag_ids: Contextual tag IDs. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'contextual_tag_ids', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_contextual_tag_info" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_contextual_tag_info`")  # noqa: E501
+        # verify the required parameter 'contextual_tag_ids' is set
+        if ('contextual_tag_ids' not in params or
+                params['contextual_tag_ids'] is None):
+            raise ValueError("Missing the required parameter `contextual_tag_ids` when calling `tool_contextual_tag_info`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_contextual_tag_info`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'contextual_tag_ids' in params:
+            query_params.append(('contextual_tag_ids', params['contextual_tag_ids']))  # noqa: E501
+            collection_formats['contextual_tag_ids'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/contextual_tag/info/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def tool_device_model(self, advertiser_id, access_token, **kwargs):  # noqa: E501
         """Get device models [Tool device model](https://ads.tiktok.com/marketing_api/docs?id=1737172880570369)  # noqa: E501
 
@@ -322,6 +869,230 @@ class ToolApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/tool/device_model/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_hashtag_get(self, advertiser_id, keyword_ids, access_token, **kwargs):  # noqa: E501
+        """Get targeting hashtags by ID [Tool Hashtag Get](https://ads.tiktok.com/marketing_api/docs?id=1736280889167874)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_hashtag_get(advertiser_id, keyword_ids, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID (required)
+        :param list[str] keyword_ids: List of keyword IDs (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_hashtag_get_with_http_info(advertiser_id, keyword_ids, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_hashtag_get_with_http_info(advertiser_id, keyword_ids, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_hashtag_get_with_http_info(self, advertiser_id, keyword_ids, access_token, **kwargs):  # noqa: E501
+        """Get targeting hashtags by ID [Tool Hashtag Get](https://ads.tiktok.com/marketing_api/docs?id=1736280889167874)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_hashtag_get_with_http_info(advertiser_id, keyword_ids, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID (required)
+        :param list[str] keyword_ids: List of keyword IDs (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'keyword_ids', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_hashtag_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_hashtag_get`")  # noqa: E501
+        # verify the required parameter 'keyword_ids' is set
+        if ('keyword_ids' not in params or
+                params['keyword_ids'] is None):
+            raise ValueError("Missing the required parameter `keyword_ids` when calling `tool_hashtag_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_hashtag_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'keyword_ids' in params:
+            query_params.append(('keyword_ids', params['keyword_ids']))  # noqa: E501
+            collection_formats['keyword_ids'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/hashtag/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_hashtag_recommend(self, advertiser_id, keywords, access_token, **kwargs):  # noqa: E501
+        """Search for targeting hashtags [Tool Hashtag Recommend](https://ads.tiktok.com/marketing_api/docs?id=1736271339521025)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_hashtag_recommend(advertiser_id, keywords, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param list[str] keywords: Keywords that you want to get recommended hashtags for. If you specify multiple unrelated keywords and set operator to AND, it is possible that no recommended hashtags are returned. Max size: 10. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str operator: The operator to be used between the keywords. Enum values: AND: Recommended hashtags will be generated based on all the keywords specified in keywords. OR: Recommended hashtags will be generated separately for each individual keyword in keywords. Default value: AND.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_hashtag_recommend_with_http_info(advertiser_id, keywords, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_hashtag_recommend_with_http_info(advertiser_id, keywords, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_hashtag_recommend_with_http_info(self, advertiser_id, keywords, access_token, **kwargs):  # noqa: E501
+        """Search for targeting hashtags [Tool Hashtag Recommend](https://ads.tiktok.com/marketing_api/docs?id=1736271339521025)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_hashtag_recommend_with_http_info(advertiser_id, keywords, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param list[str] keywords: Keywords that you want to get recommended hashtags for. If you specify multiple unrelated keywords and set operator to AND, it is possible that no recommended hashtags are returned. Max size: 10. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str operator: The operator to be used between the keywords. Enum values: AND: Recommended hashtags will be generated based on all the keywords specified in keywords. OR: Recommended hashtags will be generated separately for each individual keyword in keywords. Default value: AND.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'keywords', 'access_token', 'operator']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_hashtag_recommend" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_hashtag_recommend`")  # noqa: E501
+        # verify the required parameter 'keywords' is set
+        if ('keywords' not in params or
+                params['keywords'] is None):
+            raise ValueError("Missing the required parameter `keywords` when calling `tool_hashtag_recommend`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_hashtag_recommend`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'keywords' in params:
+            query_params.append(('keywords', params['keywords']))  # noqa: E501
+            collection_formats['keywords'] = 'multi'  # noqa: E501
+        if 'operator' in params:
+            query_params.append(('operator', params['operator']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/hashtag/recommend/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -441,6 +1212,116 @@ class ToolApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/tool/interest_category/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_interest_keyword_get(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get additional interest categories by ID [Tool Interest_keyword Get](https://ads.tiktok.com/marketing_api/docs?id=1763590894544897)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_interest_keyword_get(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param object filtering: Filtering conditions.
+        :param list[object] keyword_query: Information of the additional interest category you want to get. Max size = 50.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_interest_keyword_get_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_interest_keyword_get_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_interest_keyword_get_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get additional interest categories by ID [Tool Interest_keyword Get](https://ads.tiktok.com/marketing_api/docs?id=1763590894544897)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_interest_keyword_get_with_http_info(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param object filtering: Filtering conditions.
+        :param list[object] keyword_query: Information of the additional interest category you want to get. Max size = 50.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'access_token', 'filtering', 'keyword_query']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_interest_keyword_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_interest_keyword_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_interest_keyword_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'keyword_query' in params:
+            query_params.append(('keyword_query', params['keyword_query']))  # noqa: E501
+            collection_formats['keyword_query'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/interest_keyword/get/', 'GET',
             path_params,
             query_params,
             header_params,
@@ -681,6 +1562,333 @@ class ToolApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def tool_open_url(self, advertiser_id, url, url_type, access_token, **kwargs):  # noqa: E501
+        """Get a TikTok in-app link [Tool Open_url](https://ads.tiktok.com/marketing_api/docs?id=1738457335681026)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_open_url(advertiser_id, url, url_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID (required)
+        :param str url: Open URL that you want to get the internal link for. (required)
+        :param str url_type: Type of the open TikTok URL. Enum: USER_PROFILE VIDEO: Video detail page HASHTAG_CHALLENGE: Hashtag challenge page MUSIC: Music page STICKER: Sticker (special effect) page STICKER_SHOOTER: Shoot a video with a sticker (special effect). (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_open_url_with_http_info(advertiser_id, url, url_type, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_open_url_with_http_info(advertiser_id, url, url_type, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_open_url_with_http_info(self, advertiser_id, url, url_type, access_token, **kwargs):  # noqa: E501
+        """Get a TikTok in-app link [Tool Open_url](https://ads.tiktok.com/marketing_api/docs?id=1738457335681026)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_open_url_with_http_info(advertiser_id, url, url_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID (required)
+        :param str url: Open URL that you want to get the internal link for. (required)
+        :param str url_type: Type of the open TikTok URL. Enum: USER_PROFILE VIDEO: Video detail page HASHTAG_CHALLENGE: Hashtag challenge page MUSIC: Music page STICKER: Sticker (special effect) page STICKER_SHOOTER: Shoot a video with a sticker (special effect). (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'url', 'url_type', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_open_url" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_open_url`")  # noqa: E501
+        # verify the required parameter 'url' is set
+        if ('url' not in params or
+                params['url'] is None):
+            raise ValueError("Missing the required parameter `url` when calling `tool_open_url`")  # noqa: E501
+        # verify the required parameter 'url_type' is set
+        if ('url_type' not in params or
+                params['url_type'] is None):
+            raise ValueError("Missing the required parameter `url_type` when calling `tool_open_url`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_open_url`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'url' in params:
+            query_params.append(('url', params['url']))  # noqa: E501
+        if 'url_type' in params:
+            query_params.append(('url_type', params['url_type']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/open_url/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_os_version(self, advertiser_id, os_type, access_token, **kwargs):  # noqa: E501
+        """Get OS versions [Tool Os_version](https://ads.tiktok.com/marketing_api/docs?id=1738308662898689)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_os_version(advertiser_id, os_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str os_type: OS type. Enum values: ANDROID,IOS. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_os_version_with_http_info(advertiser_id, os_type, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_os_version_with_http_info(advertiser_id, os_type, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_os_version_with_http_info(self, advertiser_id, os_type, access_token, **kwargs):  # noqa: E501
+        """Get OS versions [Tool Os_version](https://ads.tiktok.com/marketing_api/docs?id=1738308662898689)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_os_version_with_http_info(advertiser_id, os_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str os_type: OS type. Enum values: ANDROID,IOS. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'os_type', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_os_version" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_os_version`")  # noqa: E501
+        # verify the required parameter 'os_type' is set
+        if ('os_type' not in params or
+                params['os_type'] is None):
+            raise ValueError("Missing the required parameter `os_type` when calling `tool_os_version`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_os_version`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'os_type' in params:
+            query_params.append(('os_type', params['os_type']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/os_version/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_phone_region_code(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get region calling codes and region codes for phone numbers [Tool Phone_region_code](https://ads.tiktok.com/marketing_api/docs?id=1774488637039618)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_phone_region_code(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_phone_region_code_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_phone_region_code_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_phone_region_code_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get region calling codes and region codes for phone numbers [Tool Phone_region_code](https://ads.tiktok.com/marketing_api/docs?id=1774488637039618)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_phone_region_code_with_http_info(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_phone_region_code" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_phone_region_code`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_phone_region_code`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/phone_region_code/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def tool_region(self, advertiser_id, placements, objective_type, access_token, **kwargs):  # noqa: E501
         """Get available locations [Tool Region](https://ads.tiktok.com/marketing_api/docs?id=1737189539571713)  # noqa: E501
 
@@ -809,6 +2017,702 @@ class ToolApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/tool/region/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_targeting_info(self, access_token, **kwargs):  # noqa: E501
+        """Obtain details about location targeting tags by ID [Tool Targeting Info](https://ads.tiktok.com/marketing_api/docs?id=1761237001980929)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_targeting_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param TargetingInfoBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_targeting_info_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_targeting_info_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_targeting_info_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Obtain details about location targeting tags by ID [Tool Targeting Info](https://ads.tiktok.com/marketing_api/docs?id=1761237001980929)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_targeting_info_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param TargetingInfoBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_targeting_info" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_targeting_info`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/targeting/info/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_targeting_list(self, advertiser_id, location_ids, scene, access_token, **kwargs):  # noqa: E501
+        """Get internet service providers [Tool Targeting List](https://ads.tiktok.com/marketing_api/docs?id=1762962378261506)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_targeting_list(advertiser_id, location_ids, scene, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param list[str] location_ids: IDs of the locations that you want to get the supported ISP IDs for. Max size: 1000. To find out the list of location IDs, see Location IDs. Note: You need to pass location IDs at the country or region level. To get the available locations and corresponding IDs based on your placement and objective, use the /tool/region/ and the returned level for location IDs at the country or region level will be COUNTRY. (required)
+        :param str scene: The targeting type that the targeting tags are used for. The allowed enum values: ISP ( Internet Service Provider targeting). (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_targeting_list_with_http_info(advertiser_id, location_ids, scene, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_targeting_list_with_http_info(advertiser_id, location_ids, scene, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_targeting_list_with_http_info(self, advertiser_id, location_ids, scene, access_token, **kwargs):  # noqa: E501
+        """Get internet service providers [Tool Targeting List](https://ads.tiktok.com/marketing_api/docs?id=1762962378261506)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_targeting_list_with_http_info(advertiser_id, location_ids, scene, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param list[str] location_ids: IDs of the locations that you want to get the supported ISP IDs for. Max size: 1000. To find out the list of location IDs, see Location IDs. Note: You need to pass location IDs at the country or region level. To get the available locations and corresponding IDs based on your placement and objective, use the /tool/region/ and the returned level for location IDs at the country or region level will be COUNTRY. (required)
+        :param str scene: The targeting type that the targeting tags are used for. The allowed enum values: ISP ( Internet Service Provider targeting). (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'location_ids', 'scene', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_targeting_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_targeting_list`")  # noqa: E501
+        # verify the required parameter 'location_ids' is set
+        if ('location_ids' not in params or
+                params['location_ids'] is None):
+            raise ValueError("Missing the required parameter `location_ids` when calling `tool_targeting_list`")  # noqa: E501
+        # verify the required parameter 'scene' is set
+        if ('scene' not in params or
+                params['scene'] is None):
+            raise ValueError("Missing the required parameter `scene` when calling `tool_targeting_list`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_targeting_list`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'location_ids' in params:
+            query_params.append(('location_ids', params['location_ids']))  # noqa: E501
+            collection_formats['location_ids'] = 'multi'  # noqa: E501
+        if 'scene' in params:
+            query_params.append(('scene', params['scene']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/targeting/list/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_targeting_search(self, access_token, **kwargs):  # noqa: E501
+        """Search for location targeting tags [Tool Targeting Search](https://ads.tiktok.com/marketing_api/docs?id=1761236883355649)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_targeting_search(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param TargetingSearchBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_targeting_search_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_targeting_search_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_targeting_search_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Search for location targeting tags [Tool Targeting Search](https://ads.tiktok.com/marketing_api/docs?id=1761236883355649)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_targeting_search_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param TargetingSearchBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_targeting_search" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_targeting_search`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/targeting/search/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_timezone(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get time zones [Tool Timezone](https://ads.tiktok.com/marketing_api/docs?id=1738455961470977)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_timezone(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_timezone_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_timezone_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_timezone_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Get time zones [Tool Timezone](https://ads.tiktok.com/marketing_api/docs?id=1738455961470977)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_timezone_with_http_info(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_timezone" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_timezone`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_timezone`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/timezone/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_url_validate(self, advertiser_id, url, access_token, **kwargs):  # noqa: E501
+        """Get the verification results of a URL [Tool Url_validate](https://ads.tiktok.com/marketing_api/docs?id=1774487686007810)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_url_validate(advertiser_id, url, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str url: The URL that you want to get verification results for. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_url_validate_with_http_info(advertiser_id, url, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_url_validate_with_http_info(advertiser_id, url, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_url_validate_with_http_info(self, advertiser_id, url, access_token, **kwargs):  # noqa: E501
+        """Get the verification results of a URL [Tool Url_validate](https://ads.tiktok.com/marketing_api/docs?id=1774487686007810)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_url_validate_with_http_info(advertiser_id, url, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str url: The URL that you want to get verification results for. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'url', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_url_validate" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_url_validate`")  # noqa: E501
+        # verify the required parameter 'url' is set
+        if ('url' not in params or
+                params['url'] is None):
+            raise ValueError("Missing the required parameter `url` when calling `tool_url_validate`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_url_validate`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'url' in params:
+            query_params.append(('url', params['url']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/url_validate/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def tool_vbo_status(self, advertiser_id, objective_type, promotion_type, placements, access_token, **kwargs):  # noqa: E501
+        """Check Value-Based Optimization eligibility [Tool Vbo_status](https://ads.tiktok.com/marketing_api/docs?id=1770016073586753)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_vbo_status(advertiser_id, objective_type, promotion_type, placements, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str objective_type: Advertising objective. Set this field to APP_PROMOTION, WEB_CONVERSIONS, or PRODUCT_SALES. When you set this field to any other objective, vo_status will be NOT_SUPPORT because these objectives are not supported for VBO. For enum values and descriptions, see Objectives. Note: When objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING, do not pass in pixel_id or app_id. Otherwise, pass in either pixel_id or app_id. (required)
+        :param str promotion_type: Promotion type and you can decide where you'd like to promote your products using this field. For enum values, see Enumeration - Promotion Type. Note: When objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING, do not pass in pixel_id or app_id. Otherwise, pass in either pixel_id or app_id. (required)
+        :param list[str] placements: The apps where you want to deliver your ads. Note: Currently, we support PLACEMENT_TIKTOK, PLACEMENT_PANGLE and PLACEMENT_GLOBAL_APP_BUNDLE. For Product Sales campaigns (objective_type = PRODUCT_SALES), only TikTok placement (PLACEMENT_TIKTOK) is supported. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str pixel_id: Not supported when objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING. Otherwise, pass in either pixel_id or app_id. Pixel ID. When you pass in this field, you need to specify optimization_event at the same time. To get Pixel IDs, use the /pixel/list/ endpoint.
+        :param str app_id: Not supported when objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING. Otherwise, pass in either pixel_id or app_id. The Application ID of the promoted app. To get App IDs, use the /app/list/ endpoint.
+        :param str optimization_event: Required when pixel_id is passed. Ignored when app_id is passed. Conversion event for the ad group. See Conversion events for more.
+        :param str ios14_quota_type: Do not pass campaign_type and ios14_quota_type at the same time. If both fields are passed, ios14_quota_type will be ignored. We recommend using campaign_type alone when you specify an iOS 14 Dedicated Campaign. campaign_type as REGULAR_CAMPAIGN or ios14_quota_type as UNOCCUPIED both indicate a non-iOS 14 Dedicated Campaign. campaign_type as IOS14_CAMPAIGN or ios14_quota_type as OCCUPIED both indicate an iOS 14 Dedicated Campaign. Whether the campaign will be counted towards the iOS 14 Dedicated Campaign quota. Enum values: OCCUPIED: The campaign is an iOS 14 Dedicated Campaign. UNOCCUPIED: The campaign is not an iOS 14 Dedicated Campaign.
+        :param str app_promotion_type: Required when objective_type is APP_PROMOTION. App promotion type. Enum values: APP_INSTALL: Get new users to install your app. APP_RETARGETING: Re-engage existing users to take action in your app. Note: Only the enum value APP_INSTALL can be used in an iOS14 Dedicated Campaign.
+        :param str store_id: Valid only when objective_type is PRODUCT_SALES. ID of the TikTok Shop. Note: To get the TikTok Shop ID, you can use /bc/asset/get/: When in the response asset_type is TIKTOK_SHOP, the returned asset_id is the TikTok Shop ID.
+        :param str campaign_app_profile_page_state: Whether to use App Profile Page at the campaign level to optimize delivery. Enum values: ON, OFF. You can use the field only when objective_type is APP_PROMOTION and your campaign is an iOS14 Dedicated Campaign (ios14_quota_type =OCCUPIED). Otherwise, an error will occur.
+        :param bool is_smart_performance_campaign: Whether the campaign is a Smart+ Campaign or not. Enum values: true, false.
+        :param bool budget_optimize_on: Whether to enable Campaign Budget Optimization (CBO). Enum values: true, false. For details about CBO, see Campaign Budget Optimization.
+        :param str campaign_type: Do not pass campaign_type and ios14_quota_type at the same time. If both fields are passed, ios14_quota_type will be ignored. Campaign type. Enums values: REGULAR_CAMPAIGN: non-iOS 14 Dedicated Campaign. IOS14_CAMPAIGN: iOS 14 Dedicated Campaign. The value IOS14_CAMPAIGN can only be used when: objective_type is PRODUCT_SALES. objective_type is APP_PROMOTION and app_promotion_type is APP_INSTALL.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.tool_vbo_status_with_http_info(advertiser_id, objective_type, promotion_type, placements, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.tool_vbo_status_with_http_info(advertiser_id, objective_type, promotion_type, placements, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def tool_vbo_status_with_http_info(self, advertiser_id, objective_type, promotion_type, placements, access_token, **kwargs):  # noqa: E501
+        """Check Value-Based Optimization eligibility [Tool Vbo_status](https://ads.tiktok.com/marketing_api/docs?id=1770016073586753)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.tool_vbo_status_with_http_info(advertiser_id, objective_type, promotion_type, placements, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: Advertiser ID. (required)
+        :param str objective_type: Advertising objective. Set this field to APP_PROMOTION, WEB_CONVERSIONS, or PRODUCT_SALES. When you set this field to any other objective, vo_status will be NOT_SUPPORT because these objectives are not supported for VBO. For enum values and descriptions, see Objectives. Note: When objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING, do not pass in pixel_id or app_id. Otherwise, pass in either pixel_id or app_id. (required)
+        :param str promotion_type: Promotion type and you can decide where you'd like to promote your products using this field. For enum values, see Enumeration - Promotion Type. Note: When objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING, do not pass in pixel_id or app_id. Otherwise, pass in either pixel_id or app_id. (required)
+        :param list[str] placements: The apps where you want to deliver your ads. Note: Currently, we support PLACEMENT_TIKTOK, PLACEMENT_PANGLE and PLACEMENT_GLOBAL_APP_BUNDLE. For Product Sales campaigns (objective_type = PRODUCT_SALES), only TikTok placement (PLACEMENT_TIKTOK) is supported. (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str pixel_id: Not supported when objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING. Otherwise, pass in either pixel_id or app_id. Pixel ID. When you pass in this field, you need to specify optimization_event at the same time. To get Pixel IDs, use the /pixel/list/ endpoint.
+        :param str app_id: Not supported when objective_type is set to PRODUCT_SALES and promotion_type is set to LIVE_SHOPPING or VIDEO_SHOPPING. Otherwise, pass in either pixel_id or app_id. The Application ID of the promoted app. To get App IDs, use the /app/list/ endpoint.
+        :param str optimization_event: Required when pixel_id is passed. Ignored when app_id is passed. Conversion event for the ad group. See Conversion events for more.
+        :param str ios14_quota_type: Do not pass campaign_type and ios14_quota_type at the same time. If both fields are passed, ios14_quota_type will be ignored. We recommend using campaign_type alone when you specify an iOS 14 Dedicated Campaign. campaign_type as REGULAR_CAMPAIGN or ios14_quota_type as UNOCCUPIED both indicate a non-iOS 14 Dedicated Campaign. campaign_type as IOS14_CAMPAIGN or ios14_quota_type as OCCUPIED both indicate an iOS 14 Dedicated Campaign. Whether the campaign will be counted towards the iOS 14 Dedicated Campaign quota. Enum values: OCCUPIED: The campaign is an iOS 14 Dedicated Campaign. UNOCCUPIED: The campaign is not an iOS 14 Dedicated Campaign.
+        :param str app_promotion_type: Required when objective_type is APP_PROMOTION. App promotion type. Enum values: APP_INSTALL: Get new users to install your app. APP_RETARGETING: Re-engage existing users to take action in your app. Note: Only the enum value APP_INSTALL can be used in an iOS14 Dedicated Campaign.
+        :param str store_id: Valid only when objective_type is PRODUCT_SALES. ID of the TikTok Shop. Note: To get the TikTok Shop ID, you can use /bc/asset/get/: When in the response asset_type is TIKTOK_SHOP, the returned asset_id is the TikTok Shop ID.
+        :param str campaign_app_profile_page_state: Whether to use App Profile Page at the campaign level to optimize delivery. Enum values: ON, OFF. You can use the field only when objective_type is APP_PROMOTION and your campaign is an iOS14 Dedicated Campaign (ios14_quota_type =OCCUPIED). Otherwise, an error will occur.
+        :param bool is_smart_performance_campaign: Whether the campaign is a Smart+ Campaign or not. Enum values: true, false.
+        :param bool budget_optimize_on: Whether to enable Campaign Budget Optimization (CBO). Enum values: true, false. For details about CBO, see Campaign Budget Optimization.
+        :param str campaign_type: Do not pass campaign_type and ios14_quota_type at the same time. If both fields are passed, ios14_quota_type will be ignored. Campaign type. Enums values: REGULAR_CAMPAIGN: non-iOS 14 Dedicated Campaign. IOS14_CAMPAIGN: iOS 14 Dedicated Campaign. The value IOS14_CAMPAIGN can only be used when: objective_type is PRODUCT_SALES. objective_type is APP_PROMOTION and app_promotion_type is APP_INSTALL.
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'objective_type', 'promotion_type', 'placements', 'access_token', 'pixel_id', 'app_id', 'optimization_event', 'ios14_quota_type', 'app_promotion_type', 'store_id', 'campaign_app_profile_page_state', 'is_smart_performance_campaign', 'budget_optimize_on', 'campaign_type']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method tool_vbo_status" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `tool_vbo_status`")  # noqa: E501
+        # verify the required parameter 'objective_type' is set
+        if ('objective_type' not in params or
+                params['objective_type'] is None):
+            raise ValueError("Missing the required parameter `objective_type` when calling `tool_vbo_status`")  # noqa: E501
+        # verify the required parameter 'promotion_type' is set
+        if ('promotion_type' not in params or
+                params['promotion_type'] is None):
+            raise ValueError("Missing the required parameter `promotion_type` when calling `tool_vbo_status`")  # noqa: E501
+        # verify the required parameter 'placements' is set
+        if ('placements' not in params or
+                params['placements'] is None):
+            raise ValueError("Missing the required parameter `placements` when calling `tool_vbo_status`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `tool_vbo_status`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'objective_type' in params:
+            query_params.append(('objective_type', params['objective_type']))  # noqa: E501
+        if 'promotion_type' in params:
+            query_params.append(('promotion_type', params['promotion_type']))  # noqa: E501
+        if 'placements' in params:
+            query_params.append(('placements', params['placements']))  # noqa: E501
+            collection_formats['placements'] = 'multi'  # noqa: E501
+        if 'pixel_id' in params:
+            query_params.append(('pixel_id', params['pixel_id']))  # noqa: E501
+        if 'app_id' in params:
+            query_params.append(('app_id', params['app_id']))  # noqa: E501
+        if 'optimization_event' in params:
+            query_params.append(('optimization_event', params['optimization_event']))  # noqa: E501
+        if 'ios14_quota_type' in params:
+            query_params.append(('ios14_quota_type', params['ios14_quota_type']))  # noqa: E501
+        if 'app_promotion_type' in params:
+            query_params.append(('app_promotion_type', params['app_promotion_type']))  # noqa: E501
+        if 'store_id' in params:
+            query_params.append(('store_id', params['store_id']))  # noqa: E501
+        if 'campaign_app_profile_page_state' in params:
+            query_params.append(('campaign_app_profile_page_state', params['campaign_app_profile_page_state']))  # noqa: E501
+        if 'is_smart_performance_campaign' in params:
+            query_params.append(('is_smart_performance_campaign', params['is_smart_performance_campaign']))  # noqa: E501
+        if 'budget_optimize_on' in params:
+            query_params.append(('budget_optimize_on', params['budget_optimize_on']))  # noqa: E501
+        if 'campaign_type' in params:
+            query_params.append(('campaign_type', params['campaign_type']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/tool/vbo_status/', 'GET',
             path_params,
             query_params,
             header_params,
