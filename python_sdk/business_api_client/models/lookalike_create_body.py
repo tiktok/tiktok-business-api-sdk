@@ -25,9 +25,9 @@ class LookalikeCreateBody(object):
     """
     swagger_types = {
         'advertiser_id': 'str',
-        'context_info': 'OpenApiv13dmpcustomAudiencelookalikecreateContextInfo',
+        'context_info': 'dmpcustomAudiencelookalikecreateContextInfo',
         'custom_audience_name': 'str',
-        'lookalike_spec': 'OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec'
+        'lookalike_spec': 'dmpcustomAudiencelookalikecreateLookalikeSpec'
     }
 
     attribute_map = {
@@ -81,7 +81,7 @@ class LookalikeCreateBody(object):
 
 
         :return: The context_info of this LookalikeCreateBody.  # noqa: E501
-        :rtype: OpenApiv13dmpcustomAudiencelookalikecreateContextInfo
+        :rtype: dmpcustomAudiencelookalikecreateContextInfo
         """
         return self._context_info
 
@@ -91,7 +91,7 @@ class LookalikeCreateBody(object):
 
 
         :param context_info: The context_info of this LookalikeCreateBody.  # noqa: E501
-        :type: OpenApiv13dmpcustomAudiencelookalikecreateContextInfo
+        :type: dmpcustomAudiencelookalikecreateContextInfo
         """
 
         self._context_info = context_info
@@ -127,7 +127,7 @@ class LookalikeCreateBody(object):
 
 
         :return: The lookalike_spec of this LookalikeCreateBody.  # noqa: E501
-        :rtype: OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec
+        :rtype: dmpcustomAudiencelookalikecreateLookalikeSpec
         """
         return self._lookalike_spec
 
@@ -137,7 +137,7 @@ class LookalikeCreateBody(object):
 
 
         :param lookalike_spec: The lookalike_spec of this LookalikeCreateBody.  # noqa: E501
-        :type: OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec
+        :type: dmpcustomAudiencelookalikecreateLookalikeSpec
         """
         if lookalike_spec is None:
             raise ValueError("Invalid value for `lookalike_spec`, must not be `None`")  # noqa: E501

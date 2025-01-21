@@ -469,7 +469,7 @@ class AudienceApi(object):
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str advertiser_id:
         :param str calculate_type:
-        :param OpenApiv13dmpcustomAudiencefileuploadContextInfo context_info:
+        :param dmpcustomAudiencefileuploadContextInfo context_info:
         :param str file:
         :param str file_name:
         :param str file_signature:
@@ -496,7 +496,7 @@ class AudienceApi(object):
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str advertiser_id:
         :param str calculate_type:
-        :param OpenApiv13dmpcustomAudiencefileuploadContextInfo context_info:
+        :param dmpcustomAudiencefileuploadContextInfo context_info:
         :param str file:
         :param str file_name:
         :param str file_signature:

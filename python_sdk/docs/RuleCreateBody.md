@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **identity_type** | **str** | Required when audience_type is ENGAGEMENT_LIVE_VIDEO or ENGAGEMENT_ORGANIC_VIDEO. Identity type. Enum values: TT_USER, BC_AUTH_TT | [optional] 
 **is_auto_refresh** | **bool** | Whether to turn on the audience auto-refresh function. Supported values: true, false. Default value: true. If you enable this feature, your audience will automatically refresh to include the latest user data according to the lookback window you set. If you disable this feature, your audience will not automatically refresh. | [optional] 
 **retention_in_days** | **int** | Number of days to retain the audience. Value range: 1-365. Note: If this field is passed, the expiration date will be the specified number of retention days from the date when the audience was created. Any operations to the audience CANNOT reset the expiration date. If this field is not passed, the expiration date will be 365 days from the last time the audience was applied to an active ad group or modified. Applying the audience to an active ad group or modifying the audience will reset the expiration date. To learn about the actions that will reset the expiration date, refer to the Help Center article Audience Expiration Policy. | [optional] 
-**rule_spec** | [**OpenApiv13dmpcustomAudiencerulecreateRuleSpec**](OpenApiv13dmpcustomAudiencerulecreateRuleSpec.md) |  | [required] 
+**rule_spec** | [**dmpcustomAudiencerulecreateRuleSpec**](dmpcustomAudiencerulecreateRuleSpec.md) |  | [required] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

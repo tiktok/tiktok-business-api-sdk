@@ -33,7 +33,7 @@ class RuleCreateBody(object):
         'identity_type': 'str',
         'is_auto_refresh': 'bool',
         'retention_in_days': 'int',
-        'rule_spec': 'OpenApiv13dmpcustomAudiencerulecreateRuleSpec'
+        'rule_spec': 'dmpcustomAudiencerulecreateRuleSpec'
     }
 
     attribute_map = {
@@ -298,7 +298,7 @@ class RuleCreateBody(object):
 
 
         :return: The rule_spec of this RuleCreateBody.  # noqa: E501
-        :rtype: OpenApiv13dmpcustomAudiencerulecreateRuleSpec
+        :rtype: dmpcustomAudiencerulecreateRuleSpec
         """
         return self._rule_spec
 
@@ -308,7 +308,7 @@ class RuleCreateBody(object):
 
 
         :param rule_spec: The rule_spec of this RuleCreateBody.  # noqa: E501
-        :type: OpenApiv13dmpcustomAudiencerulecreateRuleSpec
+        :type: dmpcustomAudiencerulecreateRuleSpec
         """
         if rule_spec is None:
             raise ValueError("Invalid value for `rule_spec`, must not be `None`")  # noqa: E501

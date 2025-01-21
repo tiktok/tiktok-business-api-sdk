@@ -24,7 +24,7 @@ class SavedAudienceCreateBody(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'actions': 'list[OpenApiv13dmpsavedAudiencecreateActions]',
+        'actions': 'list[dmpsavedAudiencecreateActions]',
         'advertiser_id': 'str',
         'age_groups': 'list[str]',
         'audience_ids': 'list[str]',
@@ -127,7 +127,7 @@ class SavedAudienceCreateBody(object):
         A list of action category objects.  # noqa: E501
 
         :return: The actions of this SavedAudienceCreateBody.  # noqa: E501
-        :rtype: list[OpenApiv13dmpsavedAudiencecreateActions]
+        :rtype: list[dmpsavedAudiencecreateActions]
         """
         return self._actions
 
@@ -138,7 +138,7 @@ class SavedAudienceCreateBody(object):
         A list of action category objects.  # noqa: E501
 
         :param actions: The actions of this SavedAudienceCreateBody.  # noqa: E501
-        :type: list[OpenApiv13dmpsavedAudiencecreateActions]
+        :type: list[dmpsavedAudiencecreateActions]
         """
 
         self._actions = actions

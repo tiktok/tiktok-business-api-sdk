@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13adcreateCreatives;
+import business_api_client.adcreateCreatives;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -29,7 +29,7 @@ public class AdCreateBody {
   private String advertiserId = null;
 
   @JsonProperty("creatives")
-  private List<OpenApiv13adcreateCreatives> creatives = new ArrayList<OpenApiv13adcreateCreatives>();
+  private List<adcreateCreatives> creatives = new ArrayList<adcreateCreatives>();
 
   public AdCreateBody adgroupId(String adgroupId) {
     this.adgroupId = adgroupId;
@@ -67,12 +67,12 @@ public class AdCreateBody {
     this.advertiserId = advertiserId;
   }
 
-  public AdCreateBody creatives(List<OpenApiv13adcreateCreatives> creatives) {
+  public AdCreateBody creatives(List<adcreateCreatives> creatives) {
     this.creatives = creatives;
     return this;
   }
 
-  public AdCreateBody addCreativesItem(OpenApiv13adcreateCreatives creativesItem) {
+  public AdCreateBody addCreativesItem(adcreateCreatives creativesItem) {
     this.creatives.add(creativesItem);
     return this;
   }
@@ -82,11 +82,11 @@ public class AdCreateBody {
    * @return creatives
   **/
   @Schema(required = true, description = "Advertising creatives.")
-  public List<OpenApiv13adcreateCreatives> getCreatives() {
+  public List<adcreateCreatives> getCreatives() {
     return creatives;
   }
 
-  public void setCreatives(List<OpenApiv13adcreateCreatives> creatives) {
+  public void setCreatives(List<adcreateCreatives> creatives) {
     this.creatives = creatives;
   }
 

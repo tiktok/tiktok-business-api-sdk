@@ -14,5 +14,5 @@ Name | Type | Description | Notes
 **licenseNo** | **String** | Business license number. This is required for ad accounts that are registered in the Chinese mainland, Hong Kong, or in countries Brazil and Mexico |  [optional]
 **needSubmitCertificate** | **Boolean** | Whether you want to submit the new certificate images for review |  [optional]
 **promotionLink** | **String** | Promotion link. Length cannot exceed 255 characters |  [optional]
-**qualificationImages** | [**OpenApiv13advertiserupdateQualificationImages**](OpenApiv13advertiserupdateQualificationImages.md) |  |  [optional]
+**qualificationImages** | [**advertiserupdateQualificationImages**](advertiserupdateQualificationImages.md) |  |  [optional]
 **taxMap** | **String** | Billing and invoicing tax number. Different countries use different tax number fields. France uses &#x60;vat&#x60;, and Brazil uses &#x60;tax_id&#x60; |  [optional]

@@ -5,11 +5,11 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13adgroupcreateActions} from './OpenApiv13adgroupcreateActions.js';
-import {OpenApiv13adgroupcreateAudienceRule} from './OpenApiv13adgroupcreateAudienceRule.js';
-import {OpenApiv13adgroupcreateExcludedCustomActions} from './OpenApiv13adgroupcreateExcludedCustomActions.js';
-import {OpenApiv13adgroupcreateIncludedCustomActions} from './OpenApiv13adgroupcreateIncludedCustomActions.js';
-import {OpenApiv13adgroupcreateTargetingExpansion} from './OpenApiv13adgroupcreateTargetingExpansion.js';
+import {adgroupcreateActions} from './adgroupcreateActions.js';
+import {adgroupcreateAudienceRule} from './adgroupcreateAudienceRule.js';
+import {adgroupcreateExcludedCustomActions} from './adgroupcreateExcludedCustomActions.js';
+import {adgroupcreateIncludedCustomActions} from './adgroupcreateIncludedCustomActions.js';
+import {adgroupcreateTargetingExpansion} from './adgroupcreateTargetingExpansion.js';
 
 /**
  * The AdgroupCreateBody model module.
@@ -50,7 +50,7 @@ export class AdgroupCreateBody {
     if (data) {
       obj = obj || new AdgroupCreateBody();
       if (data.hasOwnProperty('actions'))
-        obj.actions = ApiClient.convertToType(data['actions'], [OpenApiv13adgroupcreateActions]);
+        obj.actions = ApiClient.convertToType(data['actions'], [adgroupcreateActions]);
       if (data.hasOwnProperty('adgroup_app_profile_page_state'))
         obj.adgroup_app_profile_page_state = ApiClient.convertToType(data['adgroup_app_profile_page_state'], 'String');
       if (data.hasOwnProperty('adgroup_name'))
@@ -64,7 +64,7 @@ export class AdgroupCreateBody {
       if (data.hasOwnProperty('audience_ids'))
         obj.audience_ids = ApiClient.convertToType(data['audience_ids'], ['String']);
       if (data.hasOwnProperty('audience_rule'))
-        obj.audience_rule = OpenApiv13adgroupcreateAudienceRule.constructFromObject(data['audience_rule']);
+        obj.audience_rule = adgroupcreateAudienceRule.constructFromObject(data['audience_rule']);
       if (data.hasOwnProperty('audience_type'))
         obj.audience_type = ApiClient.convertToType(data['audience_type'], 'String');
       if (data.hasOwnProperty('auto_targeting_enabled'))
@@ -120,7 +120,7 @@ export class AdgroupCreateBody {
       if (data.hasOwnProperty('excluded_audience_ids'))
         obj.excluded_audience_ids = ApiClient.convertToType(data['excluded_audience_ids'], ['String']);
       if (data.hasOwnProperty('excluded_custom_actions'))
-        obj.excluded_custom_actions = OpenApiv13adgroupcreateExcludedCustomActions.constructFromObject(data['excluded_custom_actions']);
+        obj.excluded_custom_actions = adgroupcreateExcludedCustomActions.constructFromObject(data['excluded_custom_actions']);
       if (data.hasOwnProperty('excluded_pangle_audience_package_ids'))
         obj.excluded_pangle_audience_package_ids = ApiClient.convertToType(data['excluded_pangle_audience_package_ids'], ['String']);
       if (data.hasOwnProperty('frequency'))
@@ -138,7 +138,7 @@ export class AdgroupCreateBody {
       if (data.hasOwnProperty('identity_type'))
         obj.identity_type = ApiClient.convertToType(data['identity_type'], 'String');
       if (data.hasOwnProperty('included_custom_actions'))
-        obj.included_custom_actions = OpenApiv13adgroupcreateIncludedCustomActions.constructFromObject(data['included_custom_actions']);
+        obj.included_custom_actions = adgroupcreateIncludedCustomActions.constructFromObject(data['included_custom_actions']);
       if (data.hasOwnProperty('included_pangle_audience_package_ids'))
         obj.included_pangle_audience_package_ids = ApiClient.convertToType(data['included_pangle_audience_package_ids'], ['String']);
       if (data.hasOwnProperty('interest_category_ids'))
@@ -218,7 +218,7 @@ export class AdgroupCreateBody {
       if (data.hasOwnProperty('store_id'))
         obj.store_id = ApiClient.convertToType(data['store_id'], 'String');
       if (data.hasOwnProperty('targeting_expansion'))
-        obj.targeting_expansion = OpenApiv13adgroupcreateTargetingExpansion.constructFromObject(data['targeting_expansion']);
+        obj.targeting_expansion = adgroupcreateTargetingExpansion.constructFromObject(data['targeting_expansion']);
       if (data.hasOwnProperty('video_download_disabled'))
         obj.video_download_disabled = ApiClient.convertToType(data['video_download_disabled'], 'String');
     }
@@ -228,7 +228,7 @@ export class AdgroupCreateBody {
 
 /**
  * A list of action category objects.
- * @member {Array.<module:model/OpenApiv13adgroupcreateActions>} actions
+ * @member {Array.<module:model/adgroupcreateActions>} actions
  */
 AdgroupCreateBody.prototype.actions = undefined;
 
@@ -269,7 +269,7 @@ AdgroupCreateBody.prototype.app_id = undefined;
 AdgroupCreateBody.prototype.audience_ids = undefined;
 
 /**
- * @member {module:model/OpenApiv13adgroupcreateAudienceRule} audience_rule
+ * @member {module:model/adgroupcreateAudienceRule} audience_rule
  */
 AdgroupCreateBody.prototype.audience_rule = undefined;
 
@@ -436,7 +436,7 @@ AdgroupCreateBody.prototype.device_price_ranges = undefined;
 AdgroupCreateBody.prototype.excluded_audience_ids = undefined;
 
 /**
- * @member {module:model/OpenApiv13adgroupcreateExcludedCustomActions} excluded_custom_actions
+ * @member {module:model/adgroupcreateExcludedCustomActions} excluded_custom_actions
  */
 AdgroupCreateBody.prototype.excluded_custom_actions = undefined;
 
@@ -489,7 +489,7 @@ AdgroupCreateBody.prototype.identity_id = undefined;
 AdgroupCreateBody.prototype.identity_type = undefined;
 
 /**
- * @member {module:model/OpenApiv13adgroupcreateIncludedCustomActions} included_custom_actions
+ * @member {module:model/adgroupcreateIncludedCustomActions} included_custom_actions
  */
 AdgroupCreateBody.prototype.included_custom_actions = undefined;
 
@@ -728,7 +728,7 @@ AdgroupCreateBody.prototype.store_authorized_bc_id = undefined;
 AdgroupCreateBody.prototype.store_id = undefined;
 
 /**
- * @member {module:model/OpenApiv13adgroupcreateTargetingExpansion} targeting_expansion
+ * @member {module:model/adgroupcreateTargetingExpansion} targeting_expansion
  */
 AdgroupCreateBody.prototype.targeting_expansion = undefined;
 

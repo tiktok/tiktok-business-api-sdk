@@ -5,7 +5,7 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13pixelbatchBatch} from './OpenApiv13pixelbatchBatch.js';
+import {pixelbatchBatch} from './pixelbatchBatch.js';
 
 /**
  * The PixelBatchBody model module.
@@ -17,7 +17,7 @@ export class PixelBatchBody {
    * Constructs a new <code>PixelBatchBody</code>.
    * @alias module:model/PixelBatchBody
    * @class
-   * @param batch {Array.<module:model/OpenApiv13pixelbatchBatch>} A list of web events
+   * @param batch {Array.<module:model/pixelbatchBatch>} A list of web events
    * @param pixel_code {String} Pixel ID that can be found in events manager of the TikTok ads platform. For details, see the [Where to Find pixel_code](https://ads.tiktok.com/marketing_api/docs?id=1739584855420929) section
    */
   constructor(batch, pixel_code) {
@@ -36,7 +36,7 @@ export class PixelBatchBody {
     if (data) {
       obj = obj || new PixelBatchBody();
       if (data.hasOwnProperty('batch'))
-        obj.batch = ApiClient.convertToType(data['batch'], [OpenApiv13pixelbatchBatch]);
+        obj.batch = ApiClient.convertToType(data['batch'], [pixelbatchBatch]);
       if (data.hasOwnProperty('pixel_code'))
         obj.pixel_code = ApiClient.convertToType(data['pixel_code'], 'String');
     }
@@ -46,7 +46,7 @@ export class PixelBatchBody {
 
 /**
  * A list of web events
- * @member {Array.<module:model/OpenApiv13pixelbatchBatch>} batch
+ * @member {Array.<module:model/pixelbatchBatch>} batch
  */
 PixelBatchBody.prototype.batch = undefined;
 

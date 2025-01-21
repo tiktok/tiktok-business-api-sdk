@@ -248,7 +248,7 @@ api_instance = business_api_client.AudienceApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 advertiser_id = 'advertiser_id_example' # str |  (optional)
 calculate_type = 'calculate_type_example' # str |  (optional)
-context_info = business_api_client.OpenApiv13dmpcustomAudiencefileuploadContextInfo() # OpenApiv13dmpcustomAudiencefileuploadContextInfo |  (optional)
+context_info = business_api_client.dmpcustomAudiencefileuploadContextInfo() # dmpcustomAudiencefileuploadContextInfo |  (optional)
 file = 'file_example' # str |  (optional)
 file_name = 'file_name_example' # str |  (optional)
 file_signature = 'file_signature_example' # str |  (optional)
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
  **advertiser_id** | **str**|  | [optional] 
  **calculate_type** | **str**|  | [optional] 
- **context_info** | [**OpenApiv13dmpcustomAudiencefileuploadContextInfo**](OpenApiv13dmpcustomAudiencefileuploadContextInfo.md)|  | [optional] 
+ **context_info** | [**dmpcustomAudiencefileuploadContextInfo**](dmpcustomAudiencefileuploadContextInfo.md)|  | [optional] 
  **file** | **str**|  | [optional] 
  **file_name** | **str**|  | [optional] 
  **file_signature** | **str**|  | [optional] 

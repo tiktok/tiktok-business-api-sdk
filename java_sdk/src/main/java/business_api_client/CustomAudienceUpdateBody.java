@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13dmpcustomAudienceapplyContextInfo;
+import business_api_client.dmpcustomAudienceapplyContextInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -35,7 +35,7 @@ public class CustomAudienceUpdateBody {
   private String audienceSubType = null;
 
   @JsonProperty("context_info")
-  private OpenApiv13dmpcustomAudienceapplyContextInfo contextInfo = null;
+  private dmpcustomAudienceapplyContextInfo contextInfo = null;
 
   @JsonProperty("custom_audience_id")
   private String customAudienceId = null;
@@ -118,7 +118,7 @@ public class CustomAudienceUpdateBody {
     this.audienceSubType = audienceSubType;
   }
 
-  public CustomAudienceUpdateBody contextInfo(OpenApiv13dmpcustomAudienceapplyContextInfo contextInfo) {
+  public CustomAudienceUpdateBody contextInfo(dmpcustomAudienceapplyContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -128,11 +128,11 @@ public class CustomAudienceUpdateBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public OpenApiv13dmpcustomAudienceapplyContextInfo getContextInfo() {
+  public dmpcustomAudienceapplyContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(OpenApiv13dmpcustomAudienceapplyContextInfo contextInfo) {
+  public void setContextInfo(dmpcustomAudienceapplyContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 

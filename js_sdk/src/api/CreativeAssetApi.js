@@ -11,7 +11,7 @@ import {PortfolioCreateBody} from '../model/PortfolioCreateBody.js';
 /**
 * CreativeAsset service.
 * @module api/CreativeAssetApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class CreativeAssetApi {
 

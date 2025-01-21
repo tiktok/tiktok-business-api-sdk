@@ -25,7 +25,7 @@ import java.io.File;
 import business_api_client.InlineResponse200;
 import business_api_client.LookalikeCreateBody;
 import business_api_client.LookalikeUpdateBody;
-import business_api_client.OpenApiv13dmpcustomAudiencefileuploadContextInfo;
+import business_api_client.dmpcustomAudiencefileuploadContextInfo;
 import business_api_client.RuleCreateBody;
 import business_api_client.SavedAudienceCreateBody;
 import business_api_client.SavedAudienceDeleteBody;
@@ -299,7 +299,7 @@ import java.util.Map;
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response dmpCustomAudienceFileUpload(String accessToken, String advertiserId, String calculateType, OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo, File file, String fileName, String fileSignature) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response dmpCustomAudienceFileUpload(String accessToken, String advertiserId, String calculateType, dmpcustomAudiencefileuploadContextInfo contextInfo, File file, String fileName, String fileSignature) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'accessToken' is set
     if (accessToken == null) {

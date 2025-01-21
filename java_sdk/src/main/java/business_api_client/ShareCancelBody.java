@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13dmpcustomAudiencefileuploadContextInfo;
+import business_api_client.dmpcustomAudiencefileuploadContextInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -24,7 +24,7 @@ public class ShareCancelBody {
   private String advertiserId = null;
 
   @JsonProperty("context_info")
-  private OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo = null;
+  private dmpcustomAudiencefileuploadContextInfo contextInfo = null;
 
   @JsonProperty("custom_audience_id")
   private String customAudienceId = null;
@@ -50,7 +50,7 @@ public class ShareCancelBody {
     this.advertiserId = advertiserId;
   }
 
-  public ShareCancelBody contextInfo(OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public ShareCancelBody contextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -60,11 +60,11 @@ public class ShareCancelBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public OpenApiv13dmpcustomAudiencefileuploadContextInfo getContextInfo() {
+  public dmpcustomAudiencefileuploadContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public void setContextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 
