@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13bcadvertisercreateAdvertiserInfo} from './OpenApiv13bcadvertisercreateAdvertiserInfo.js';
-import {OpenApiv13bcadvertisercreateBillingGroupInfo} from './OpenApiv13bcadvertisercreateBillingGroupInfo.js';
-import {OpenApiv13bcadvertisercreateBillingInfo} from './OpenApiv13bcadvertisercreateBillingInfo.js';
-import {OpenApiv13bcadvertisercreateContactInfo} from './OpenApiv13bcadvertisercreateContactInfo.js';
-import {OpenApiv13bcadvertisercreateCustomerInfo} from './OpenApiv13bcadvertisercreateCustomerInfo.js';
-import {OpenApiv13bcadvertisercreateQualificationInfo} from './OpenApiv13bcadvertisercreateQualificationInfo.js';
+import {bcadvertisercreateAdvertiserInfo} from './bcadvertisercreateAdvertiserInfo.js';
+import {bcadvertisercreateBillingGroupInfo} from './bcadvertisercreateBillingGroupInfo.js';
+import {bcadvertisercreateBillingInfo} from './bcadvertisercreateBillingInfo.js';
+import {bcadvertisercreateContactInfo} from './bcadvertisercreateContactInfo.js';
+import {bcadvertisercreateCustomerInfo} from './bcadvertisercreateCustomerInfo.js';
+import {bcadvertisercreateQualificationInfo} from './bcadvertisercreateQualificationInfo.js';
 
 /**
  * The AdvertiserCreateBody model module.
@@ -22,9 +22,9 @@ export class AdvertiserCreateBody {
    * Constructs a new <code>AdvertiserCreateBody</code>.
    * @alias module:model/AdvertiserCreateBody
    * @class
-   * @param advertiser_info {module:model/OpenApiv13bcadvertisercreateAdvertiserInfo} 
+   * @param advertiser_info {module:model/bcadvertisercreateAdvertiserInfo} 
    * @param bc_id {String} Business Center ID
-   * @param customer_info {module:model/OpenApiv13bcadvertisercreateCustomerInfo} 
+   * @param customer_info {module:model/bcadvertisercreateCustomerInfo} 
    */
   constructor(advertiser_info, bc_id, customer_info) {
     this.advertiser_info = advertiser_info;
@@ -43,19 +43,19 @@ export class AdvertiserCreateBody {
     if (data) {
       obj = obj || new AdvertiserCreateBody();
       if (data.hasOwnProperty('advertiser_info'))
-        obj.advertiser_info = OpenApiv13bcadvertisercreateAdvertiserInfo.constructFromObject(data['advertiser_info']);
+        obj.advertiser_info = bcadvertisercreateAdvertiserInfo.constructFromObject(data['advertiser_info']);
       if (data.hasOwnProperty('bc_id'))
         obj.bc_id = ApiClient.convertToType(data['bc_id'], 'String');
       if (data.hasOwnProperty('billing_group_info'))
-        obj.billing_group_info = OpenApiv13bcadvertisercreateBillingGroupInfo.constructFromObject(data['billing_group_info']);
+        obj.billing_group_info = bcadvertisercreateBillingGroupInfo.constructFromObject(data['billing_group_info']);
       if (data.hasOwnProperty('billing_info'))
-        obj.billing_info = OpenApiv13bcadvertisercreateBillingInfo.constructFromObject(data['billing_info']);
+        obj.billing_info = bcadvertisercreateBillingInfo.constructFromObject(data['billing_info']);
       if (data.hasOwnProperty('contact_info'))
-        obj.contact_info = OpenApiv13bcadvertisercreateContactInfo.constructFromObject(data['contact_info']);
+        obj.contact_info = bcadvertisercreateContactInfo.constructFromObject(data['contact_info']);
       if (data.hasOwnProperty('customer_info'))
-        obj.customer_info = OpenApiv13bcadvertisercreateCustomerInfo.constructFromObject(data['customer_info']);
+        obj.customer_info = bcadvertisercreateCustomerInfo.constructFromObject(data['customer_info']);
       if (data.hasOwnProperty('qualification_info'))
-        obj.qualification_info = OpenApiv13bcadvertisercreateQualificationInfo.constructFromObject(data['qualification_info']);
+        obj.qualification_info = bcadvertisercreateQualificationInfo.constructFromObject(data['qualification_info']);
       if (data.hasOwnProperty('tied_to_billing_group'))
         obj.tied_to_billing_group = ApiClient.convertToType(data['tied_to_billing_group'], 'Boolean');
     }
@@ -64,7 +64,7 @@ export class AdvertiserCreateBody {
 }
 
 /**
- * @member {module:model/OpenApiv13bcadvertisercreateAdvertiserInfo} advertiser_info
+ * @member {module:model/bcadvertisercreateAdvertiserInfo} advertiser_info
  */
 AdvertiserCreateBody.prototype.advertiser_info = undefined;
 
@@ -75,27 +75,27 @@ AdvertiserCreateBody.prototype.advertiser_info = undefined;
 AdvertiserCreateBody.prototype.bc_id = undefined;
 
 /**
- * @member {module:model/OpenApiv13bcadvertisercreateBillingGroupInfo} billing_group_info
+ * @member {module:model/bcadvertisercreateBillingGroupInfo} billing_group_info
  */
 AdvertiserCreateBody.prototype.billing_group_info = undefined;
 
 /**
- * @member {module:model/OpenApiv13bcadvertisercreateBillingInfo} billing_info
+ * @member {module:model/bcadvertisercreateBillingInfo} billing_info
  */
 AdvertiserCreateBody.prototype.billing_info = undefined;
 
 /**
- * @member {module:model/OpenApiv13bcadvertisercreateContactInfo} contact_info
+ * @member {module:model/bcadvertisercreateContactInfo} contact_info
  */
 AdvertiserCreateBody.prototype.contact_info = undefined;
 
 /**
- * @member {module:model/OpenApiv13bcadvertisercreateCustomerInfo} customer_info
+ * @member {module:model/bcadvertisercreateCustomerInfo} customer_info
  */
 AdvertiserCreateBody.prototype.customer_info = undefined;
 
 /**
- * @member {module:model/OpenApiv13bcadvertisercreateQualificationInfo} qualification_info
+ * @member {module:model/bcadvertisercreateQualificationInfo} qualification_info
  */
 AdvertiserCreateBody.prototype.qualification_info = undefined;
 

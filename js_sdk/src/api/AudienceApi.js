@@ -13,7 +13,7 @@ import {CustomAudienceUpdateBody} from '../model/CustomAudienceUpdateBody.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
 import {LookalikeCreateBody} from '../model/LookalikeCreateBody.js';
 import {LookalikeUpdateBody} from '../model/LookalikeUpdateBody.js';
-import {OpenApiv13dmpcustomAudiencefileuploadContextInfo} from '../model/OpenApiv13dmpcustomAudiencefileuploadContextInfo.js';
+import {dmpcustomAudiencefileuploadContextInfo} from '../model/dmpcustomAudiencefileuploadContextInfo.js';
 import {RuleCreateBody} from '../model/RuleCreateBody.js';
 import {SavedAudienceCreateBody} from '../model/SavedAudienceCreateBody.js';
 import {SavedAudienceDeleteBody} from '../model/SavedAudienceDeleteBody.js';
@@ -257,7 +257,7 @@ export class AudienceApi {
      * @param {Object} opts Optional parameters
      * @param {String} opts.advertiser_id 
      * @param {String} opts.calculate_type 
-     * @param {module:model/OpenApiv13dmpcustomAudiencefileuploadContextInfo} opts.context_info 
+     * @param {module:model/dmpcustomAudiencefileuploadContextInfo} opts.context_info 
      * @param {Blob} opts.file 
      * @param {String} opts.file_name 
      * @param {String} opts.file_signature 

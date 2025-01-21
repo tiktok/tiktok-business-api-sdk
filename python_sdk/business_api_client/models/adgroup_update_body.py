@@ -24,7 +24,7 @@ class AdgroupUpdateBody(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'actions': 'list[OpenApiv13adgroupcreateActions]',
+        'actions': 'list[adgroupcreateActions]',
         'adgroup_id': 'str',
         'adgroup_name': 'str',
         'advertiser_id': 'str',
@@ -32,7 +32,7 @@ class AdgroupUpdateBody(object):
         'app_download_url': 'str',
         'app_id': 'str',
         'audience_ids': 'list[str]',
-        'audience_rule': 'OpenApiv13adgroupupdateAudienceRule',
+        'audience_rule': 'adgroupupdateAudienceRule',
         'audience_type': 'str',
         'auto_targeting_enabled': 'bool',
         'bid_price': 'float',
@@ -54,7 +54,7 @@ class AdgroupUpdateBody(object):
         'device_model_ids': 'list[str]',
         'device_price_ranges': 'list[int]',
         'excluded_audience_ids': 'list[str]',
-        'excluded_custom_actions': 'OpenApiv13adgroupcreateExcludedCustomActions',
+        'excluded_custom_actions': 'adgroupcreateExcludedCustomActions',
         'excluded_pangle_audience_package_ids': 'list[str]',
         'frequency': 'int',
         'frequency_schedule': 'int',
@@ -63,7 +63,7 @@ class AdgroupUpdateBody(object):
         'identity_authorized_bc_id': 'str',
         'identity_id': 'str',
         'identity_type': 'str',
-        'included_custom_actions': 'OpenApiv13adgroupcreateIncludedCustomActions',
+        'included_custom_actions': 'adgroupcreateIncludedCustomActions',
         'included_pangle_audience_package_ids': 'list[str]',
         'interest_category_ids': 'list[str]',
         'interest_keyword_ids': 'list[str]',
@@ -87,7 +87,7 @@ class AdgroupUpdateBody(object):
         'shopping_ads_retargeting_actions_days': 'int',
         'shopping_ads_retargeting_type': 'str',
         'spending_power': 'str',
-        'targeting_expansion': 'OpenApiv13adgroupcreateTargetingExpansion'
+        'targeting_expansion': 'adgroupcreateTargetingExpansion'
     }
 
     attribute_map = {
@@ -358,7 +358,7 @@ class AdgroupUpdateBody(object):
         A list of action category objects.  # noqa: E501
 
         :return: The actions of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: list[OpenApiv13adgroupcreateActions]
+        :rtype: list[adgroupcreateActions]
         """
         return self._actions
 
@@ -369,7 +369,7 @@ class AdgroupUpdateBody(object):
         A list of action category objects.  # noqa: E501
 
         :param actions: The actions of this AdgroupUpdateBody.  # noqa: E501
-        :type: list[OpenApiv13adgroupcreateActions]
+        :type: list[adgroupcreateActions]
         """
 
         self._actions = actions
@@ -545,7 +545,7 @@ class AdgroupUpdateBody(object):
 
 
         :return: The audience_rule of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: OpenApiv13adgroupupdateAudienceRule
+        :rtype: adgroupupdateAudienceRule
         """
         return self._audience_rule
 
@@ -555,7 +555,7 @@ class AdgroupUpdateBody(object):
 
 
         :param audience_rule: The audience_rule of this AdgroupUpdateBody.  # noqa: E501
-        :type: OpenApiv13adgroupupdateAudienceRule
+        :type: adgroupupdateAudienceRule
         """
 
         self._audience_rule = audience_rule
@@ -1049,7 +1049,7 @@ class AdgroupUpdateBody(object):
 
 
         :return: The excluded_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: OpenApiv13adgroupcreateExcludedCustomActions
+        :rtype: adgroupcreateExcludedCustomActions
         """
         return self._excluded_custom_actions
 
@@ -1059,7 +1059,7 @@ class AdgroupUpdateBody(object):
 
 
         :param excluded_custom_actions: The excluded_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :type: OpenApiv13adgroupcreateExcludedCustomActions
+        :type: adgroupcreateExcludedCustomActions
         """
 
         self._excluded_custom_actions = excluded_custom_actions
@@ -1254,7 +1254,7 @@ class AdgroupUpdateBody(object):
 
 
         :return: The included_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: OpenApiv13adgroupcreateIncludedCustomActions
+        :rtype: adgroupcreateIncludedCustomActions
         """
         return self._included_custom_actions
 
@@ -1264,7 +1264,7 @@ class AdgroupUpdateBody(object):
 
 
         :param included_custom_actions: The included_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :type: OpenApiv13adgroupcreateIncludedCustomActions
+        :type: adgroupcreateIncludedCustomActions
         """
 
         self._included_custom_actions = included_custom_actions
@@ -1804,7 +1804,7 @@ class AdgroupUpdateBody(object):
 
 
         :return: The targeting_expansion of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: OpenApiv13adgroupcreateTargetingExpansion
+        :rtype: adgroupcreateTargetingExpansion
         """
         return self._targeting_expansion
 
@@ -1814,7 +1814,7 @@ class AdgroupUpdateBody(object):
 
 
         :param targeting_expansion: The targeting_expansion of this AdgroupUpdateBody.  # noqa: E501
-        :type: OpenApiv13adgroupcreateTargetingExpansion
+        :type: adgroupcreateTargetingExpansion
         """
 
         self._targeting_expansion = targeting_expansion

@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13creativeportfoliocreatePortfolioContent;
+import business_api_client.creativeportfoliocreatePortfolioContent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -20,7 +20,7 @@ import java.util.List;
  * PortfolioCreateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-21T14:49:06.465252-08:00[America/Los_Angeles]")
 public class PortfolioCreateBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -29,7 +29,7 @@ public class PortfolioCreateBody {
   private String creativePortfolioType = null;
 
   @JsonProperty("portfolio_content")
-  private List<OpenApiv13creativeportfoliocreatePortfolioContent> portfolioContent = null;
+  private List<creativeportfoliocreatePortfolioContent> portfolioContent = null;
 
   public PortfolioCreateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
@@ -67,14 +67,14 @@ public class PortfolioCreateBody {
     this.creativePortfolioType = creativePortfolioType;
   }
 
-  public PortfolioCreateBody portfolioContent(List<OpenApiv13creativeportfoliocreatePortfolioContent> portfolioContent) {
+  public PortfolioCreateBody portfolioContent(List<creativeportfoliocreatePortfolioContent> portfolioContent) {
     this.portfolioContent = portfolioContent;
     return this;
   }
 
-  public PortfolioCreateBody addPortfolioContentItem(OpenApiv13creativeportfoliocreatePortfolioContent portfolioContentItem) {
+  public PortfolioCreateBody addPortfolioContentItem(creativeportfoliocreatePortfolioContent portfolioContentItem) {
     if (this.portfolioContent == null) {
-      this.portfolioContent = new ArrayList<OpenApiv13creativeportfoliocreatePortfolioContent>();
+      this.portfolioContent = new ArrayList<creativeportfoliocreatePortfolioContent>();
     }
     this.portfolioContent.add(portfolioContentItem);
     return this;
@@ -85,11 +85,11 @@ public class PortfolioCreateBody {
    * @return portfolioContent
   **/
   @Schema(description = "The content of the portfolio")
-  public List<OpenApiv13creativeportfoliocreatePortfolioContent> getPortfolioContent() {
+  public List<creativeportfoliocreatePortfolioContent> getPortfolioContent() {
     return portfolioContent;
   }
 
-  public void setPortfolioContent(List<OpenApiv13creativeportfoliocreatePortfolioContent> portfolioContent) {
+  public void setPortfolioContent(List<creativeportfoliocreatePortfolioContent> portfolioContent) {
     this.portfolioContent = portfolioContent;
   }
 

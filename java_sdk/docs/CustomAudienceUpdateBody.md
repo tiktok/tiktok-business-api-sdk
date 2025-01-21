@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **advertiserId** | **String** | Advertiser ID. |[required]  
 **audienceEnhancement** | **Boolean** |  |  [optional]
 **audienceSubType** | **String** | Audience sub type, indicating the type of ads that the audience can be used for. The allowed enum value: REACH_FREQUENCY(To enable the audience to be used in Reach &amp; Frequency campaigns). It means you can only convert audience sub type from NORMAL to REACH_FREQUENCY, but not the other way round. Note: If you update this field, changes to other data fields will be ignored. If you want to update a Lookalike audience, you cannot change the audience_sub_type to REACH_FREQUENCY. Otherwise, an error will occur. |  [optional]
-**contextInfo** | [**OpenApiv13dmpcustomAudienceapplyContextInfo**](OpenApiv13dmpcustomAudienceapplyContextInfo.md) |  |  [optional]
+**contextInfo** | [**dmpcustomAudienceapplyContextInfo**](dmpcustomAudienceapplyContextInfo.md) |  |  [optional]
 **customAudienceId** | **String** | Custom audience ID. |[required]  
 **customAudienceName** | **String** | New name for the audience. Length limit: 128 characters. You must pass in either this field or file_paths. |  [optional]
 **filePaths** | **List&lt;String&gt;** | The files you upload to update the Customer File audience. You must pass in either this field or custom_audience_name. The recommended size is &lt;50 per request to ensure stability. Once you pass in this field, you can specify the modification type (APPEND, REMOVE or REPLACE) via action. The files must be encrypted with the same encryption method/type with the audience that you want to update. |  [optional]

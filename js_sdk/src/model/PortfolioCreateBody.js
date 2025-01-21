@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13creativeportfoliocreatePortfolioContent} from './OpenApiv13creativeportfoliocreatePortfolioContent.js';
+import {creativeportfoliocreatePortfolioContent} from './creativeportfoliocreatePortfolioContent.js';
 
 /**
  * The PortfolioCreateBody model module.
  * @module model/PortfolioCreateBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class PortfolioCreateBody {
   /**
@@ -38,7 +38,7 @@ export class PortfolioCreateBody {
       if (data.hasOwnProperty('creative_portfolio_type'))
         obj.creative_portfolio_type = ApiClient.convertToType(data['creative_portfolio_type'], 'String');
       if (data.hasOwnProperty('portfolio_content'))
-        obj.portfolio_content = ApiClient.convertToType(data['portfolio_content'], [OpenApiv13creativeportfoliocreatePortfolioContent]);
+        obj.portfolio_content = ApiClient.convertToType(data['portfolio_content'], [creativeportfoliocreatePortfolioContent]);
     }
     return obj;
   }
@@ -58,7 +58,7 @@ PortfolioCreateBody.prototype.creative_portfolio_type = undefined;
 
 /**
  * The content of the portfolio
- * @member {Array.<module:model/OpenApiv13creativeportfoliocreatePortfolioContent>} portfolio_content
+ * @member {Array.<module:model/creativeportfoliocreatePortfolioContent>} portfolio_content
  */
 PortfolioCreateBody.prototype.portfolio_content = undefined;
 

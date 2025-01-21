@@ -26,7 +26,7 @@ class FileUploadBody(object):
     swagger_types = {
         'advertiser_id': 'str',
         'calculate_type': 'str',
-        'context_info': 'OpenApiv13dmpcustomAudiencefileuploadContextInfo',
+        'context_info': 'dmpcustomAudiencefileuploadContextInfo',
         'file': 'str',
         'file_name': 'str',
         'file_signature': 'str'
@@ -115,7 +115,7 @@ class FileUploadBody(object):
 
 
         :return: The context_info of this FileUploadBody.  # noqa: E501
-        :rtype: OpenApiv13dmpcustomAudiencefileuploadContextInfo
+        :rtype: dmpcustomAudiencefileuploadContextInfo
         """
         return self._context_info
 
@@ -125,7 +125,7 @@ class FileUploadBody(object):
 
 
         :param context_info: The context_info of this FileUploadBody.  # noqa: E501
-        :type: OpenApiv13dmpcustomAudiencefileuploadContextInfo
+        :type: dmpcustomAudiencefileuploadContextInfo
         """
 
         self._context_info = context_info

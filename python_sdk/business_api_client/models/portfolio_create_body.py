@@ -26,7 +26,7 @@ class PortfolioCreateBody(object):
     swagger_types = {
         'advertiser_id': 'str',
         'creative_portfolio_type': 'str',
-        'portfolio_content': 'list[OpenApiv13creativeportfoliocreatePortfolioContent]'
+        'portfolio_content': 'list[creativeportfoliocreatePortfolioContent]'
     }
 
     attribute_map = {
@@ -102,7 +102,7 @@ class PortfolioCreateBody(object):
         The content of the portfolio  # noqa: E501
 
         :return: The portfolio_content of this PortfolioCreateBody.  # noqa: E501
-        :rtype: list[OpenApiv13creativeportfoliocreatePortfolioContent]
+        :rtype: list[creativeportfoliocreatePortfolioContent]
         """
         return self._portfolio_content
 
@@ -113,7 +113,7 @@ class PortfolioCreateBody(object):
         The content of the portfolio  # noqa: E501
 
         :param portfolio_content: The portfolio_content of this PortfolioCreateBody.  # noqa: E501
-        :type: list[OpenApiv13creativeportfoliocreatePortfolioContent]
+        :type: list[creativeportfoliocreatePortfolioContent]
         """
 
         self._portfolio_content = portfolio_content

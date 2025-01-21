@@ -223,7 +223,7 @@ let Access_Token = "Access_Token_example"; // String | Authorized access token. 
 let opts = { 
   'advertiser_id': "advertiser_id_example", // String | 
   'calculate_type': "calculate_type_example", // String | 
-  'context_info': new js_sdk.OpenApiv13dmpcustomAudiencefileuploadContextInfo(), // OpenApiv13dmpcustomAudiencefileuploadContextInfo | 
+  'context_info': new js_sdk.dmpcustomAudiencefileuploadContextInfo(), // dmpcustomAudiencefileuploadContextInfo | 
   'file': "file_example", // Blob | 
   'file_name': "file_name_example", // String | 
   'file_signature': "file_signature_example" // String | 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
  **advertiser_id** | **String**|  | [optional] 
  **calculate_type** | **String**|  | [optional] 
- **context_info** | [**OpenApiv13dmpcustomAudiencefileuploadContextInfo**](OpenApiv13dmpcustomAudiencefileuploadContextInfo.md)|  | [optional] 
+ **context_info** | [**dmpcustomAudiencefileuploadContextInfo**](dmpcustomAudiencefileuploadContextInfo.md)|  | [optional] 
  **file** | **Blob**|  | [optional] 
  **file_name** | **String**|  | [optional] 
  **file_signature** | **String**|  | [optional] 

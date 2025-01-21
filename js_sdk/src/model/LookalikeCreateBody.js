@@ -5,8 +5,8 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13dmpcustomAudiencelookalikecreateContextInfo} from './OpenApiv13dmpcustomAudiencelookalikecreateContextInfo.js';
-import {OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec} from './OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec.js';
+import {dmpcustomAudiencelookalikecreateContextInfo} from './dmpcustomAudiencelookalikecreateContextInfo.js';
+import {dmpcustomAudiencelookalikecreateLookalikeSpec} from './dmpcustomAudiencelookalikecreateLookalikeSpec.js';
 
 /**
  * The LookalikeCreateBody model module.
@@ -20,7 +20,7 @@ export class LookalikeCreateBody {
    * @class
    * @param advertiser_id {String} Advertiser ID.
    * @param custom_audience_name {String} Audience name. Maximum of 128 characters.
-   * @param lookalike_spec {module:model/OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec} 
+   * @param lookalike_spec {module:model/dmpcustomAudiencelookalikecreateLookalikeSpec} 
    */
   constructor(advertiser_id, custom_audience_name, lookalike_spec) {
     this.advertiser_id = advertiser_id;
@@ -41,11 +41,11 @@ export class LookalikeCreateBody {
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
       if (data.hasOwnProperty('context_info'))
-        obj.context_info = OpenApiv13dmpcustomAudiencelookalikecreateContextInfo.constructFromObject(data['context_info']);
+        obj.context_info = dmpcustomAudiencelookalikecreateContextInfo.constructFromObject(data['context_info']);
       if (data.hasOwnProperty('custom_audience_name'))
         obj.custom_audience_name = ApiClient.convertToType(data['custom_audience_name'], 'String');
       if (data.hasOwnProperty('lookalike_spec'))
-        obj.lookalike_spec = OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec.constructFromObject(data['lookalike_spec']);
+        obj.lookalike_spec = dmpcustomAudiencelookalikecreateLookalikeSpec.constructFromObject(data['lookalike_spec']);
     }
     return obj;
   }
@@ -58,7 +58,7 @@ export class LookalikeCreateBody {
 LookalikeCreateBody.prototype.advertiser_id = undefined;
 
 /**
- * @member {module:model/OpenApiv13dmpcustomAudiencelookalikecreateContextInfo} context_info
+ * @member {module:model/dmpcustomAudiencelookalikecreateContextInfo} context_info
  */
 LookalikeCreateBody.prototype.context_info = undefined;
 
@@ -69,7 +69,7 @@ LookalikeCreateBody.prototype.context_info = undefined;
 LookalikeCreateBody.prototype.custom_audience_name = undefined;
 
 /**
- * @member {module:model/OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec} lookalike_spec
+ * @member {module:model/dmpcustomAudiencelookalikecreateLookalikeSpec} lookalike_spec
  */
 LookalikeCreateBody.prototype.lookalike_spec = undefined;
 

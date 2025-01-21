@@ -26,7 +26,7 @@ class AdUpdateBody(object):
     swagger_types = {
         'adgroup_id': 'str',
         'advertiser_id': 'str',
-        'creatives': 'list[OpenApiv13adupdateCreatives]'
+        'creatives': 'list[adupdateCreatives]'
     }
 
     attribute_map = {
@@ -102,7 +102,7 @@ class AdUpdateBody(object):
         Advertising creatives.  # noqa: E501
 
         :return: The creatives of this AdUpdateBody.  # noqa: E501
-        :rtype: list[OpenApiv13adupdateCreatives]
+        :rtype: list[adupdateCreatives]
         """
         return self._creatives
 
@@ -113,7 +113,7 @@ class AdUpdateBody(object):
         Advertising creatives.  # noqa: E501
 
         :param creatives: The creatives of this AdUpdateBody.  # noqa: E501
-        :type: list[OpenApiv13adupdateCreatives]
+        :type: list[adupdateCreatives]
         """
         if creatives is None:
             raise ValueError("Invalid value for `creatives`, must not be `None`")  # noqa: E501

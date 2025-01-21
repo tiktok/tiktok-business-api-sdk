@@ -229,7 +229,7 @@ AudienceApi apiInstance = new AudienceApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 String advertiserId = "advertiserId_example"; // String | 
 String calculateType = "calculateType_example"; // String | 
-OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo = new OpenApiv13dmpcustomAudiencefileuploadContextInfo(); // OpenApiv13dmpcustomAudiencefileuploadContextInfo | 
+dmpcustomAudiencefileuploadContextInfo contextInfo = new dmpcustomAudiencefileuploadContextInfo(); // dmpcustomAudiencefileuploadContextInfo | 
 File file = new File("file_example"); // File | 
 String fileName = "fileName_example"; // String | 
 String fileSignature = "fileSignature_example"; // String | 
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **advertiserId** | **String**|  | [optional]
  **calculateType** | **String**|  | [optional]
- **contextInfo** | [**OpenApiv13dmpcustomAudiencefileuploadContextInfo**](OpenApiv13dmpcustomAudiencefileuploadContextInfo.md)|  | [optional]
+ **contextInfo** | [**dmpcustomAudiencefileuploadContextInfo**](dmpcustomAudiencefileuploadContextInfo.md)|  | [optional]
  **file** | **File**|  | [optional]
  **fileName** | **String**|  | [optional]
  **fileSignature** | **String**|  | [optional]

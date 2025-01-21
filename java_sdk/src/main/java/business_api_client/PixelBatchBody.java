@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13pixelbatchBatch;
+import business_api_client.pixelbatchBatch;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -23,17 +23,17 @@ import java.util.List;
 @javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class PixelBatchBody {
   @JsonProperty("batch")
-  private List<OpenApiv13pixelbatchBatch> batch = new ArrayList<OpenApiv13pixelbatchBatch>();
+  private List<pixelbatchBatch> batch = new ArrayList<pixelbatchBatch>();
 
   @JsonProperty("pixel_code")
   private String pixelCode = null;
 
-  public PixelBatchBody batch(List<OpenApiv13pixelbatchBatch> batch) {
+  public PixelBatchBody batch(List<pixelbatchBatch> batch) {
     this.batch = batch;
     return this;
   }
 
-  public PixelBatchBody addBatchItem(OpenApiv13pixelbatchBatch batchItem) {
+  public PixelBatchBody addBatchItem(pixelbatchBatch batchItem) {
     this.batch.add(batchItem);
     return this;
   }
@@ -43,11 +43,11 @@ public class PixelBatchBody {
    * @return batch
   **/
   @Schema(required = true, description = "A list of web events")
-  public List<OpenApiv13pixelbatchBatch> getBatch() {
+  public List<pixelbatchBatch> getBatch() {
     return batch;
   }
 
-  public void setBatch(List<OpenApiv13pixelbatchBatch> batch) {
+  public void setBatch(List<pixelbatchBatch> batch) {
     this.batch = batch;
   }
 

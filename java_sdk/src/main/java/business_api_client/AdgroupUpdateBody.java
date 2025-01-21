@@ -9,11 +9,11 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13adgroupcreateActions;
-import business_api_client.OpenApiv13adgroupcreateExcludedCustomActions;
-import business_api_client.OpenApiv13adgroupcreateIncludedCustomActions;
-import business_api_client.OpenApiv13adgroupcreateTargetingExpansion;
-import business_api_client.OpenApiv13adgroupupdateAudienceRule;
+import business_api_client.adgroupcreateActions;
+import business_api_client.adgroupcreateExcludedCustomActions;
+import business_api_client.adgroupcreateIncludedCustomActions;
+import business_api_client.adgroupcreateTargetingExpansion;
+import business_api_client.adgroupupdateAudienceRule;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -28,7 +28,7 @@ import java.util.List;
 @javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class AdgroupUpdateBody {
   @JsonProperty("actions")
-  private List<OpenApiv13adgroupcreateActions> actions = null;
+  private List<adgroupcreateActions> actions = null;
 
   @JsonProperty("adgroup_id")
   private String adgroupId = null;
@@ -52,7 +52,7 @@ public class AdgroupUpdateBody {
   private List<String> audienceIds = null;
 
   @JsonProperty("audience_rule")
-  private OpenApiv13adgroupupdateAudienceRule audienceRule = null;
+  private adgroupupdateAudienceRule audienceRule = null;
 
   @JsonProperty("audience_type")
   private String audienceType = null;
@@ -118,7 +118,7 @@ public class AdgroupUpdateBody {
   private List<String> excludedAudienceIds = null;
 
   @JsonProperty("excluded_custom_actions")
-  private OpenApiv13adgroupcreateExcludedCustomActions excludedCustomActions = null;
+  private adgroupcreateExcludedCustomActions excludedCustomActions = null;
 
   @JsonProperty("excluded_pangle_audience_package_ids")
   private List<String> excludedPangleAudiencePackageIds = null;
@@ -145,7 +145,7 @@ public class AdgroupUpdateBody {
   private String identityType = null;
 
   @JsonProperty("included_custom_actions")
-  private OpenApiv13adgroupcreateIncludedCustomActions includedCustomActions = null;
+  private adgroupcreateIncludedCustomActions includedCustomActions = null;
 
   @JsonProperty("included_pangle_audience_package_ids")
   private List<String> includedPangleAudiencePackageIds = null;
@@ -217,16 +217,16 @@ public class AdgroupUpdateBody {
   private String spendingPower = null;
 
   @JsonProperty("targeting_expansion")
-  private OpenApiv13adgroupcreateTargetingExpansion targetingExpansion = null;
+  private adgroupcreateTargetingExpansion targetingExpansion = null;
 
-  public AdgroupUpdateBody actions(List<OpenApiv13adgroupcreateActions> actions) {
+  public AdgroupUpdateBody actions(List<adgroupcreateActions> actions) {
     this.actions = actions;
     return this;
   }
 
-  public AdgroupUpdateBody addActionsItem(OpenApiv13adgroupcreateActions actionsItem) {
+  public AdgroupUpdateBody addActionsItem(adgroupcreateActions actionsItem) {
     if (this.actions == null) {
-      this.actions = new ArrayList<OpenApiv13adgroupcreateActions>();
+      this.actions = new ArrayList<adgroupcreateActions>();
     }
     this.actions.add(actionsItem);
     return this;
@@ -237,11 +237,11 @@ public class AdgroupUpdateBody {
    * @return actions
   **/
   @Schema(description = "A list of action category objects.")
-  public List<OpenApiv13adgroupcreateActions> getActions() {
+  public List<adgroupcreateActions> getActions() {
     return actions;
   }
 
-  public void setActions(List<OpenApiv13adgroupcreateActions> actions) {
+  public void setActions(List<adgroupcreateActions> actions) {
     this.actions = actions;
   }
 
@@ -387,7 +387,7 @@ public class AdgroupUpdateBody {
     this.audienceIds = audienceIds;
   }
 
-  public AdgroupUpdateBody audienceRule(OpenApiv13adgroupupdateAudienceRule audienceRule) {
+  public AdgroupUpdateBody audienceRule(adgroupupdateAudienceRule audienceRule) {
     this.audienceRule = audienceRule;
     return this;
   }
@@ -397,11 +397,11 @@ public class AdgroupUpdateBody {
    * @return audienceRule
   **/
   @Schema(description = "")
-  public OpenApiv13adgroupupdateAudienceRule getAudienceRule() {
+  public adgroupupdateAudienceRule getAudienceRule() {
     return audienceRule;
   }
 
-  public void setAudienceRule(OpenApiv13adgroupupdateAudienceRule audienceRule) {
+  public void setAudienceRule(adgroupupdateAudienceRule audienceRule) {
     this.audienceRule = audienceRule;
   }
 
@@ -831,7 +831,7 @@ public class AdgroupUpdateBody {
     this.excludedAudienceIds = excludedAudienceIds;
   }
 
-  public AdgroupUpdateBody excludedCustomActions(OpenApiv13adgroupcreateExcludedCustomActions excludedCustomActions) {
+  public AdgroupUpdateBody excludedCustomActions(adgroupcreateExcludedCustomActions excludedCustomActions) {
     this.excludedCustomActions = excludedCustomActions;
     return this;
   }
@@ -841,11 +841,11 @@ public class AdgroupUpdateBody {
    * @return excludedCustomActions
   **/
   @Schema(description = "")
-  public OpenApiv13adgroupcreateExcludedCustomActions getExcludedCustomActions() {
+  public adgroupcreateExcludedCustomActions getExcludedCustomActions() {
     return excludedCustomActions;
   }
 
-  public void setExcludedCustomActions(OpenApiv13adgroupcreateExcludedCustomActions excludedCustomActions) {
+  public void setExcludedCustomActions(adgroupcreateExcludedCustomActions excludedCustomActions) {
     this.excludedCustomActions = excludedCustomActions;
   }
 
@@ -1009,7 +1009,7 @@ public class AdgroupUpdateBody {
     this.identityType = identityType;
   }
 
-  public AdgroupUpdateBody includedCustomActions(OpenApiv13adgroupcreateIncludedCustomActions includedCustomActions) {
+  public AdgroupUpdateBody includedCustomActions(adgroupcreateIncludedCustomActions includedCustomActions) {
     this.includedCustomActions = includedCustomActions;
     return this;
   }
@@ -1019,11 +1019,11 @@ public class AdgroupUpdateBody {
    * @return includedCustomActions
   **/
   @Schema(description = "")
-  public OpenApiv13adgroupcreateIncludedCustomActions getIncludedCustomActions() {
+  public adgroupcreateIncludedCustomActions getIncludedCustomActions() {
     return includedCustomActions;
   }
 
-  public void setIncludedCustomActions(OpenApiv13adgroupcreateIncludedCustomActions includedCustomActions) {
+  public void setIncludedCustomActions(adgroupcreateIncludedCustomActions includedCustomActions) {
     this.includedCustomActions = includedCustomActions;
   }
 
@@ -1513,7 +1513,7 @@ public class AdgroupUpdateBody {
     this.spendingPower = spendingPower;
   }
 
-  public AdgroupUpdateBody targetingExpansion(OpenApiv13adgroupcreateTargetingExpansion targetingExpansion) {
+  public AdgroupUpdateBody targetingExpansion(adgroupcreateTargetingExpansion targetingExpansion) {
     this.targetingExpansion = targetingExpansion;
     return this;
   }
@@ -1523,11 +1523,11 @@ public class AdgroupUpdateBody {
    * @return targetingExpansion
   **/
   @Schema(description = "")
-  public OpenApiv13adgroupcreateTargetingExpansion getTargetingExpansion() {
+  public adgroupcreateTargetingExpansion getTargetingExpansion() {
     return targetingExpansion;
   }
 
-  public void setTargetingExpansion(OpenApiv13adgroupcreateTargetingExpansion targetingExpansion) {
+  public void setTargetingExpansion(adgroupcreateTargetingExpansion targetingExpansion) {
     this.targetingExpansion = targetingExpansion;
   }
 

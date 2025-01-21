@@ -9,8 +9,8 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13dmpcustomAudiencelookalikecreateContextInfo;
-import business_api_client.OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec;
+import business_api_client.dmpcustomAudiencelookalikecreateContextInfo;
+import business_api_client.dmpcustomAudiencelookalikecreateLookalikeSpec;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -25,13 +25,13 @@ public class LookalikeCreateBody {
   private String advertiserId = null;
 
   @JsonProperty("context_info")
-  private OpenApiv13dmpcustomAudiencelookalikecreateContextInfo contextInfo = null;
+  private dmpcustomAudiencelookalikecreateContextInfo contextInfo = null;
 
   @JsonProperty("custom_audience_name")
   private String customAudienceName = null;
 
   @JsonProperty("lookalike_spec")
-  private OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec = null;
+  private dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec = null;
 
   public LookalikeCreateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
@@ -51,7 +51,7 @@ public class LookalikeCreateBody {
     this.advertiserId = advertiserId;
   }
 
-  public LookalikeCreateBody contextInfo(OpenApiv13dmpcustomAudiencelookalikecreateContextInfo contextInfo) {
+  public LookalikeCreateBody contextInfo(dmpcustomAudiencelookalikecreateContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -61,11 +61,11 @@ public class LookalikeCreateBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public OpenApiv13dmpcustomAudiencelookalikecreateContextInfo getContextInfo() {
+  public dmpcustomAudiencelookalikecreateContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(OpenApiv13dmpcustomAudiencelookalikecreateContextInfo contextInfo) {
+  public void setContextInfo(dmpcustomAudiencelookalikecreateContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 
@@ -87,7 +87,7 @@ public class LookalikeCreateBody {
     this.customAudienceName = customAudienceName;
   }
 
-  public LookalikeCreateBody lookalikeSpec(OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
+  public LookalikeCreateBody lookalikeSpec(dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
     this.lookalikeSpec = lookalikeSpec;
     return this;
   }
@@ -97,11 +97,11 @@ public class LookalikeCreateBody {
    * @return lookalikeSpec
   **/
   @Schema(required = true, description = "")
-  public OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec getLookalikeSpec() {
+  public dmpcustomAudiencelookalikecreateLookalikeSpec getLookalikeSpec() {
     return lookalikeSpec;
   }
 
-  public void setLookalikeSpec(OpenApiv13dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
+  public void setLookalikeSpec(dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
     this.lookalikeSpec = lookalikeSpec;
   }
 

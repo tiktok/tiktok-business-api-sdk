@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13dmpsavedAudiencecreateActions;
+import business_api_client.dmpsavedAudiencecreateActions;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -23,7 +23,7 @@ import java.util.List;
 @javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class SavedAudienceCreateBody {
   @JsonProperty("actions")
-  private List<OpenApiv13dmpsavedAudiencecreateActions> actions = null;
+  private List<dmpsavedAudiencecreateActions> actions = null;
 
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -76,14 +76,14 @@ public class SavedAudienceCreateBody {
   @JsonProperty("saved_audience_name")
   private String savedAudienceName = null;
 
-  public SavedAudienceCreateBody actions(List<OpenApiv13dmpsavedAudiencecreateActions> actions) {
+  public SavedAudienceCreateBody actions(List<dmpsavedAudiencecreateActions> actions) {
     this.actions = actions;
     return this;
   }
 
-  public SavedAudienceCreateBody addActionsItem(OpenApiv13dmpsavedAudiencecreateActions actionsItem) {
+  public SavedAudienceCreateBody addActionsItem(dmpsavedAudiencecreateActions actionsItem) {
     if (this.actions == null) {
-      this.actions = new ArrayList<OpenApiv13dmpsavedAudiencecreateActions>();
+      this.actions = new ArrayList<dmpsavedAudiencecreateActions>();
     }
     this.actions.add(actionsItem);
     return this;
@@ -94,11 +94,11 @@ public class SavedAudienceCreateBody {
    * @return actions
   **/
   @Schema(description = "A list of action category objects.")
-  public List<OpenApiv13dmpsavedAudiencecreateActions> getActions() {
+  public List<dmpsavedAudiencecreateActions> getActions() {
     return actions;
   }
 
-  public void setActions(List<OpenApiv13dmpsavedAudiencecreateActions> actions) {
+  public void setActions(List<dmpsavedAudiencecreateActions> actions) {
     this.actions = actions;
   }
 

@@ -5,7 +5,7 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13dmpcustomAudienceapplyContextInfo} from './OpenApiv13dmpcustomAudienceapplyContextInfo.js';
+import {dmpcustomAudienceapplyContextInfo} from './dmpcustomAudienceapplyContextInfo.js';
 
 /**
  * The CustomAudienceUpdateBody model module.
@@ -44,7 +44,7 @@ export class CustomAudienceUpdateBody {
       if (data.hasOwnProperty('audience_sub_type'))
         obj.audience_sub_type = ApiClient.convertToType(data['audience_sub_type'], 'String');
       if (data.hasOwnProperty('context_info'))
-        obj.context_info = OpenApiv13dmpcustomAudienceapplyContextInfo.constructFromObject(data['context_info']);
+        obj.context_info = dmpcustomAudienceapplyContextInfo.constructFromObject(data['context_info']);
       if (data.hasOwnProperty('custom_audience_id'))
         obj.custom_audience_id = ApiClient.convertToType(data['custom_audience_id'], 'String');
       if (data.hasOwnProperty('custom_audience_name'))
@@ -81,7 +81,7 @@ CustomAudienceUpdateBody.prototype.audience_enhancement = undefined;
 CustomAudienceUpdateBody.prototype.audience_sub_type = undefined;
 
 /**
- * @member {module:model/OpenApiv13dmpcustomAudienceapplyContextInfo} context_info
+ * @member {module:model/dmpcustomAudienceapplyContextInfo} context_info
  */
 CustomAudienceUpdateBody.prototype.context_info = undefined;
 

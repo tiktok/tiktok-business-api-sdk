@@ -9,12 +9,12 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13bcadvertisercreateAdvertiserInfo;
-import business_api_client.OpenApiv13bcadvertisercreateBillingGroupInfo;
-import business_api_client.OpenApiv13bcadvertisercreateBillingInfo;
-import business_api_client.OpenApiv13bcadvertisercreateContactInfo;
-import business_api_client.OpenApiv13bcadvertisercreateCustomerInfo;
-import business_api_client.OpenApiv13bcadvertisercreateQualificationInfo;
+import business_api_client.bcadvertisercreateAdvertiserInfo;
+import business_api_client.bcadvertisercreateBillingGroupInfo;
+import business_api_client.bcadvertisercreateBillingInfo;
+import business_api_client.bcadvertisercreateContactInfo;
+import business_api_client.bcadvertisercreateCustomerInfo;
+import business_api_client.bcadvertisercreateQualificationInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -26,30 +26,30 @@ import io.swagger.v3.oas.annotations.media.Schema;
 @javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
 public class AdvertiserCreateBody {
   @JsonProperty("advertiser_info")
-  private OpenApiv13bcadvertisercreateAdvertiserInfo advertiserInfo = null;
+  private bcadvertisercreateAdvertiserInfo advertiserInfo = null;
 
   @JsonProperty("bc_id")
   private String bcId = null;
 
   @JsonProperty("billing_group_info")
-  private OpenApiv13bcadvertisercreateBillingGroupInfo billingGroupInfo = null;
+  private bcadvertisercreateBillingGroupInfo billingGroupInfo = null;
 
   @JsonProperty("billing_info")
-  private OpenApiv13bcadvertisercreateBillingInfo billingInfo = null;
+  private bcadvertisercreateBillingInfo billingInfo = null;
 
   @JsonProperty("contact_info")
-  private OpenApiv13bcadvertisercreateContactInfo contactInfo = null;
+  private bcadvertisercreateContactInfo contactInfo = null;
 
   @JsonProperty("customer_info")
-  private OpenApiv13bcadvertisercreateCustomerInfo customerInfo = null;
+  private bcadvertisercreateCustomerInfo customerInfo = null;
 
   @JsonProperty("qualification_info")
-  private OpenApiv13bcadvertisercreateQualificationInfo qualificationInfo = null;
+  private bcadvertisercreateQualificationInfo qualificationInfo = null;
 
   @JsonProperty("tied_to_billing_group")
   private Boolean tiedToBillingGroup = null;
 
-  public AdvertiserCreateBody advertiserInfo(OpenApiv13bcadvertisercreateAdvertiserInfo advertiserInfo) {
+  public AdvertiserCreateBody advertiserInfo(bcadvertisercreateAdvertiserInfo advertiserInfo) {
     this.advertiserInfo = advertiserInfo;
     return this;
   }
@@ -59,11 +59,11 @@ public class AdvertiserCreateBody {
    * @return advertiserInfo
   **/
   @Schema(required = true, description = "")
-  public OpenApiv13bcadvertisercreateAdvertiserInfo getAdvertiserInfo() {
+  public bcadvertisercreateAdvertiserInfo getAdvertiserInfo() {
     return advertiserInfo;
   }
 
-  public void setAdvertiserInfo(OpenApiv13bcadvertisercreateAdvertiserInfo advertiserInfo) {
+  public void setAdvertiserInfo(bcadvertisercreateAdvertiserInfo advertiserInfo) {
     this.advertiserInfo = advertiserInfo;
   }
 
@@ -85,7 +85,7 @@ public class AdvertiserCreateBody {
     this.bcId = bcId;
   }
 
-  public AdvertiserCreateBody billingGroupInfo(OpenApiv13bcadvertisercreateBillingGroupInfo billingGroupInfo) {
+  public AdvertiserCreateBody billingGroupInfo(bcadvertisercreateBillingGroupInfo billingGroupInfo) {
     this.billingGroupInfo = billingGroupInfo;
     return this;
   }
@@ -95,15 +95,15 @@ public class AdvertiserCreateBody {
    * @return billingGroupInfo
   **/
   @Schema(description = "")
-  public OpenApiv13bcadvertisercreateBillingGroupInfo getBillingGroupInfo() {
+  public bcadvertisercreateBillingGroupInfo getBillingGroupInfo() {
     return billingGroupInfo;
   }
 
-  public void setBillingGroupInfo(OpenApiv13bcadvertisercreateBillingGroupInfo billingGroupInfo) {
+  public void setBillingGroupInfo(bcadvertisercreateBillingGroupInfo billingGroupInfo) {
     this.billingGroupInfo = billingGroupInfo;
   }
 
-  public AdvertiserCreateBody billingInfo(OpenApiv13bcadvertisercreateBillingInfo billingInfo) {
+  public AdvertiserCreateBody billingInfo(bcadvertisercreateBillingInfo billingInfo) {
     this.billingInfo = billingInfo;
     return this;
   }
@@ -113,15 +113,15 @@ public class AdvertiserCreateBody {
    * @return billingInfo
   **/
   @Schema(description = "")
-  public OpenApiv13bcadvertisercreateBillingInfo getBillingInfo() {
+  public bcadvertisercreateBillingInfo getBillingInfo() {
     return billingInfo;
   }
 
-  public void setBillingInfo(OpenApiv13bcadvertisercreateBillingInfo billingInfo) {
+  public void setBillingInfo(bcadvertisercreateBillingInfo billingInfo) {
     this.billingInfo = billingInfo;
   }
 
-  public AdvertiserCreateBody contactInfo(OpenApiv13bcadvertisercreateContactInfo contactInfo) {
+  public AdvertiserCreateBody contactInfo(bcadvertisercreateContactInfo contactInfo) {
     this.contactInfo = contactInfo;
     return this;
   }
@@ -131,15 +131,15 @@ public class AdvertiserCreateBody {
    * @return contactInfo
   **/
   @Schema(description = "")
-  public OpenApiv13bcadvertisercreateContactInfo getContactInfo() {
+  public bcadvertisercreateContactInfo getContactInfo() {
     return contactInfo;
   }
 
-  public void setContactInfo(OpenApiv13bcadvertisercreateContactInfo contactInfo) {
+  public void setContactInfo(bcadvertisercreateContactInfo contactInfo) {
     this.contactInfo = contactInfo;
   }
 
-  public AdvertiserCreateBody customerInfo(OpenApiv13bcadvertisercreateCustomerInfo customerInfo) {
+  public AdvertiserCreateBody customerInfo(bcadvertisercreateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
@@ -149,15 +149,15 @@ public class AdvertiserCreateBody {
    * @return customerInfo
   **/
   @Schema(required = true, description = "")
-  public OpenApiv13bcadvertisercreateCustomerInfo getCustomerInfo() {
+  public bcadvertisercreateCustomerInfo getCustomerInfo() {
     return customerInfo;
   }
 
-  public void setCustomerInfo(OpenApiv13bcadvertisercreateCustomerInfo customerInfo) {
+  public void setCustomerInfo(bcadvertisercreateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 
-  public AdvertiserCreateBody qualificationInfo(OpenApiv13bcadvertisercreateQualificationInfo qualificationInfo) {
+  public AdvertiserCreateBody qualificationInfo(bcadvertisercreateQualificationInfo qualificationInfo) {
     this.qualificationInfo = qualificationInfo;
     return this;
   }
@@ -167,11 +167,11 @@ public class AdvertiserCreateBody {
    * @return qualificationInfo
   **/
   @Schema(description = "")
-  public OpenApiv13bcadvertisercreateQualificationInfo getQualificationInfo() {
+  public bcadvertisercreateQualificationInfo getQualificationInfo() {
     return qualificationInfo;
   }
 
-  public void setQualificationInfo(OpenApiv13bcadvertisercreateQualificationInfo qualificationInfo) {
+  public void setQualificationInfo(bcadvertisercreateQualificationInfo qualificationInfo) {
     this.qualificationInfo = qualificationInfo;
   }
 

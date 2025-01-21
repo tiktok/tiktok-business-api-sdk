@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13dmpcustomAudiencerulecreateRuleSpec;
+import business_api_client.dmpcustomAudiencerulecreateRuleSpec;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -48,7 +48,7 @@ public class RuleCreateBody {
   private Integer retentionInDays = null;
 
   @JsonProperty("rule_spec")
-  private OpenApiv13dmpcustomAudiencerulecreateRuleSpec ruleSpec = null;
+  private dmpcustomAudiencerulecreateRuleSpec ruleSpec = null;
 
   public RuleCreateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
@@ -212,7 +212,7 @@ public class RuleCreateBody {
     this.retentionInDays = retentionInDays;
   }
 
-  public RuleCreateBody ruleSpec(OpenApiv13dmpcustomAudiencerulecreateRuleSpec ruleSpec) {
+  public RuleCreateBody ruleSpec(dmpcustomAudiencerulecreateRuleSpec ruleSpec) {
     this.ruleSpec = ruleSpec;
     return this;
   }
@@ -222,11 +222,11 @@ public class RuleCreateBody {
    * @return ruleSpec
   **/
   @Schema(required = true, description = "")
-  public OpenApiv13dmpcustomAudiencerulecreateRuleSpec getRuleSpec() {
+  public dmpcustomAudiencerulecreateRuleSpec getRuleSpec() {
     return ruleSpec;
   }
 
-  public void setRuleSpec(OpenApiv13dmpcustomAudiencerulecreateRuleSpec ruleSpec) {
+  public void setRuleSpec(dmpcustomAudiencerulecreateRuleSpec ruleSpec) {
     this.ruleSpec = ruleSpec;
   }
 

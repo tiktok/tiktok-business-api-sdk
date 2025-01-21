@@ -27,7 +27,7 @@ class CustomAudienceApplyBody(object):
         'action_mode': 'str',
         'adgroup_ids': 'list[str]',
         'advertiser_id': 'str',
-        'context_info': 'OpenApiv13dmpcustomAudienceapplyContextInfo',
+        'context_info': 'dmpcustomAudienceapplyContextInfo',
         'custom_audience_id': 'str',
         'usage_mode': 'str'
     }
@@ -140,7 +140,7 @@ class CustomAudienceApplyBody(object):
 
 
         :return: The context_info of this CustomAudienceApplyBody.  # noqa: E501
-        :rtype: OpenApiv13dmpcustomAudienceapplyContextInfo
+        :rtype: dmpcustomAudienceapplyContextInfo
         """
         return self._context_info
 
@@ -150,7 +150,7 @@ class CustomAudienceApplyBody(object):
 
 
         :param context_info: The context_info of this CustomAudienceApplyBody.  # noqa: E501
-        :type: OpenApiv13dmpcustomAudienceapplyContextInfo
+        :type: dmpcustomAudienceapplyContextInfo
         """
 
         self._context_info = context_info

@@ -24,13 +24,13 @@ class AdvertiserCreateBody(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'advertiser_info': 'OpenApiv13bcadvertisercreateAdvertiserInfo',
+        'advertiser_info': 'bcadvertisercreateAdvertiserInfo',
         'bc_id': 'str',
-        'billing_group_info': 'OpenApiv13bcadvertisercreateBillingGroupInfo',
-        'billing_info': 'OpenApiv13bcadvertisercreateBillingInfo',
-        'contact_info': 'OpenApiv13bcadvertisercreateContactInfo',
-        'customer_info': 'OpenApiv13bcadvertisercreateCustomerInfo',
-        'qualification_info': 'OpenApiv13bcadvertisercreateQualificationInfo',
+        'billing_group_info': 'bcadvertisercreateBillingGroupInfo',
+        'billing_info': 'bcadvertisercreateBillingInfo',
+        'contact_info': 'bcadvertisercreateContactInfo',
+        'customer_info': 'bcadvertisercreateCustomerInfo',
+        'qualification_info': 'bcadvertisercreateQualificationInfo',
         'tied_to_billing_group': 'bool'
     }
 
@@ -76,7 +76,7 @@ class AdvertiserCreateBody(object):
 
 
         :return: The advertiser_info of this AdvertiserCreateBody.  # noqa: E501
-        :rtype: OpenApiv13bcadvertisercreateAdvertiserInfo
+        :rtype: bcadvertisercreateAdvertiserInfo
         """
         return self._advertiser_info
 
@@ -86,7 +86,7 @@ class AdvertiserCreateBody(object):
 
 
         :param advertiser_info: The advertiser_info of this AdvertiserCreateBody.  # noqa: E501
-        :type: OpenApiv13bcadvertisercreateAdvertiserInfo
+        :type: bcadvertisercreateAdvertiserInfo
         """
         if advertiser_info is None:
             raise ValueError("Invalid value for `advertiser_info`, must not be `None`")  # noqa: E501
@@ -124,7 +124,7 @@ class AdvertiserCreateBody(object):
 
 
         :return: The billing_group_info of this AdvertiserCreateBody.  # noqa: E501
-        :rtype: OpenApiv13bcadvertisercreateBillingGroupInfo
+        :rtype: bcadvertisercreateBillingGroupInfo
         """
         return self._billing_group_info
 
@@ -134,7 +134,7 @@ class AdvertiserCreateBody(object):
 
 
         :param billing_group_info: The billing_group_info of this AdvertiserCreateBody.  # noqa: E501
-        :type: OpenApiv13bcadvertisercreateBillingGroupInfo
+        :type: bcadvertisercreateBillingGroupInfo
         """
 
         self._billing_group_info = billing_group_info
@@ -145,7 +145,7 @@ class AdvertiserCreateBody(object):
 
 
         :return: The billing_info of this AdvertiserCreateBody.  # noqa: E501
-        :rtype: OpenApiv13bcadvertisercreateBillingInfo
+        :rtype: bcadvertisercreateBillingInfo
         """
         return self._billing_info
 
@@ -155,7 +155,7 @@ class AdvertiserCreateBody(object):
 
 
         :param billing_info: The billing_info of this AdvertiserCreateBody.  # noqa: E501
-        :type: OpenApiv13bcadvertisercreateBillingInfo
+        :type: bcadvertisercreateBillingInfo
         """
 
         self._billing_info = billing_info
@@ -166,7 +166,7 @@ class AdvertiserCreateBody(object):
 
 
         :return: The contact_info of this AdvertiserCreateBody.  # noqa: E501
-        :rtype: OpenApiv13bcadvertisercreateContactInfo
+        :rtype: bcadvertisercreateContactInfo
         """
         return self._contact_info
 
@@ -176,7 +176,7 @@ class AdvertiserCreateBody(object):
 
 
         :param contact_info: The contact_info of this AdvertiserCreateBody.  # noqa: E501
-        :type: OpenApiv13bcadvertisercreateContactInfo
+        :type: bcadvertisercreateContactInfo
         """
 
         self._contact_info = contact_info
@@ -187,7 +187,7 @@ class AdvertiserCreateBody(object):
 
 
         :return: The customer_info of this AdvertiserCreateBody.  # noqa: E501
-        :rtype: OpenApiv13bcadvertisercreateCustomerInfo
+        :rtype: bcadvertisercreateCustomerInfo
         """
         return self._customer_info
 
@@ -197,7 +197,7 @@ class AdvertiserCreateBody(object):
 
 
         :param customer_info: The customer_info of this AdvertiserCreateBody.  # noqa: E501
-        :type: OpenApiv13bcadvertisercreateCustomerInfo
+        :type: bcadvertisercreateCustomerInfo
         """
         if customer_info is None:
             raise ValueError("Invalid value for `customer_info`, must not be `None`")  # noqa: E501
@@ -210,7 +210,7 @@ class AdvertiserCreateBody(object):
 
 
         :return: The qualification_info of this AdvertiserCreateBody.  # noqa: E501
-        :rtype: OpenApiv13bcadvertisercreateQualificationInfo
+        :rtype: bcadvertisercreateQualificationInfo
         """
         return self._qualification_info
 
@@ -220,7 +220,7 @@ class AdvertiserCreateBody(object):
 
 
         :param qualification_info: The qualification_info of this AdvertiserCreateBody.  # noqa: E501
-        :type: OpenApiv13bcadvertisercreateQualificationInfo
+        :type: bcadvertisercreateQualificationInfo
         """
 
         self._qualification_info = qualification_info

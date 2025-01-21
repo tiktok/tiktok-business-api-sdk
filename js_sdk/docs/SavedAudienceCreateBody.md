@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actions** | [**[OpenApiv13dmpsavedAudiencecreateActions]**](OpenApiv13dmpsavedAudiencecreateActions.md) | A list of action category objects. | [optional] 
+**actions** | [**[dmpsavedAudiencecreateActions]**](dmpsavedAudiencecreateActions.md) | A list of action category objects. | [optional] 
 **advertiser_id** | **String** | Advertiser ID. | [required] 
 **age_groups** | **[String]** | Age groups you want to target. For enum values, see Enumeration - Targeting Age Group. | [optional] 
 **audience_ids** | **[String]** | List of audience IDs. You can get audience IDs via the /dmp/custom_audience/list/ endpoint. | [optional] 

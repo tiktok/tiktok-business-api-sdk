@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13dmpcustomAudiencefileuploadContextInfo;
+import business_api_client.dmpcustomAudiencefileuploadContextInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -28,7 +28,7 @@ public class FileUploadBody {
   private String calculateType = null;
 
   @JsonProperty("context_info")
-  private OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo = null;
+  private dmpcustomAudiencefileuploadContextInfo contextInfo = null;
 
   @JsonProperty("file")
   private File file = null;
@@ -75,7 +75,7 @@ public class FileUploadBody {
     this.calculateType = calculateType;
   }
 
-  public FileUploadBody contextInfo(OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public FileUploadBody contextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -85,11 +85,11 @@ public class FileUploadBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public OpenApiv13dmpcustomAudiencefileuploadContextInfo getContextInfo() {
+  public dmpcustomAudiencefileuploadContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(OpenApiv13dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public void setContextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 

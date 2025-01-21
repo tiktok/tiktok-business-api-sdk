@@ -5,7 +5,7 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13dmpcustomAudiencerulecreateRuleSpec} from './OpenApiv13dmpcustomAudiencerulecreateRuleSpec.js';
+import {dmpcustomAudiencerulecreateRuleSpec} from './dmpcustomAudiencerulecreateRuleSpec.js';
 
 /**
  * The RuleCreateBody model module.
@@ -20,7 +20,7 @@ export class RuleCreateBody {
    * @param advertiser_id {String} Advertiser ID.
    * @param audience_type {String} Audience type. Enum values: ENGAGEMENT: Engagement Audience (with asset type as ad groups). ENGAGEMENT_ORGANIC_VIDEO: Organic Engagement Audience (with asset type as public video). ENGAGEMENT_LIVE_VIDEO: Live Engagement Audience (with asset type as live video). APP: App Activity Audience. PIXEL: Website Traffic Audience. LEAD_GENERATION: Lead Generation Audience. BUSINESS_ACCOUNT: Business Account Audience. TIKTOK_SHOP: Shop Activity Audience. OFFLINE: Offline Activity Audience.
    * @param custom_audience_name {String} Audience name. Length limit: 128 characters.
-   * @param rule_spec {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpec} 
+   * @param rule_spec {module:model/dmpcustomAudiencerulecreateRuleSpec} 
    */
   constructor(advertiser_id, audience_type, custom_audience_name, rule_spec) {
     this.advertiser_id = advertiser_id;
@@ -58,7 +58,7 @@ export class RuleCreateBody {
       if (data.hasOwnProperty('retention_in_days'))
         obj.retention_in_days = ApiClient.convertToType(data['retention_in_days'], 'Number');
       if (data.hasOwnProperty('rule_spec'))
-        obj.rule_spec = OpenApiv13dmpcustomAudiencerulecreateRuleSpec.constructFromObject(data['rule_spec']);
+        obj.rule_spec = dmpcustomAudiencerulecreateRuleSpec.constructFromObject(data['rule_spec']);
     }
     return obj;
   }
@@ -119,7 +119,7 @@ RuleCreateBody.prototype.is_auto_refresh = undefined;
 RuleCreateBody.prototype.retention_in_days = undefined;
 
 /**
- * @member {module:model/OpenApiv13dmpcustomAudiencerulecreateRuleSpec} rule_spec
+ * @member {module:model/dmpcustomAudiencerulecreateRuleSpec} rule_spec
  */
 RuleCreateBody.prototype.rule_spec = undefined;
 

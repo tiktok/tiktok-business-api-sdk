@@ -5,7 +5,7 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {OpenApiv13dmpsavedAudiencecreateActions} from './OpenApiv13dmpsavedAudiencecreateActions.js';
+import {dmpsavedAudiencecreateActions} from './dmpsavedAudiencecreateActions.js';
 
 /**
  * The SavedAudienceCreateBody model module.
@@ -38,7 +38,7 @@ export class SavedAudienceCreateBody {
     if (data) {
       obj = obj || new SavedAudienceCreateBody();
       if (data.hasOwnProperty('actions'))
-        obj.actions = ApiClient.convertToType(data['actions'], [OpenApiv13dmpsavedAudiencecreateActions]);
+        obj.actions = ApiClient.convertToType(data['actions'], [dmpsavedAudiencecreateActions]);
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
       if (data.hasOwnProperty('age_groups'))
@@ -80,7 +80,7 @@ export class SavedAudienceCreateBody {
 
 /**
  * A list of action category objects.
- * @member {Array.<module:model/OpenApiv13dmpsavedAudiencecreateActions>} actions
+ * @member {Array.<module:model/dmpsavedAudiencecreateActions>} actions
  */
 SavedAudienceCreateBody.prototype.actions = undefined;
 

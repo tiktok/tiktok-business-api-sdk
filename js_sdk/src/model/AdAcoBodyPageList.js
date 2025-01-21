@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyPageList model module.
  * @module model/AdAcoBodyPageList
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class AdAcoBodyPageList {
   /**

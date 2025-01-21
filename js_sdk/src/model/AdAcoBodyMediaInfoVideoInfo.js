@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyMediaInfoVideoInfo model module.
  * @module model/AdAcoBodyMediaInfoVideoInfo
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class AdAcoBodyMediaInfoVideoInfo {
   /**

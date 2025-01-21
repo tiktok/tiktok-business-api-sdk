@@ -19,7 +19,7 @@ import java.util.List;
  * Tracking information.
  */
 @Schema(description = "Tracking information.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-21T14:49:06.465252-08:00[America/Los_Angeles]")
 public class AdAcoBodyCommonMaterialTrackingInfo {
   @JsonProperty("click_tracking_urls")
   private List<String> clickTrackingUrls = null;

@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.OpenApiv13advertiserupdateQualificationImages;
+import business_api_client.advertiserupdateQualificationImages;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -54,7 +54,7 @@ public class AdvertiserUpdateBody {
   private String promotionLink = null;
 
   @JsonProperty("qualification_images")
-  private OpenApiv13advertiserupdateQualificationImages qualificationImages = null;
+  private advertiserupdateQualificationImages qualificationImages = null;
 
   @JsonProperty("tax_map")
   private String taxMap = null;
@@ -257,7 +257,7 @@ public class AdvertiserUpdateBody {
     this.promotionLink = promotionLink;
   }
 
-  public AdvertiserUpdateBody qualificationImages(OpenApiv13advertiserupdateQualificationImages qualificationImages) {
+  public AdvertiserUpdateBody qualificationImages(advertiserupdateQualificationImages qualificationImages) {
     this.qualificationImages = qualificationImages;
     return this;
   }
@@ -267,11 +267,11 @@ public class AdvertiserUpdateBody {
    * @return qualificationImages
   **/
   @Schema(description = "")
-  public OpenApiv13advertiserupdateQualificationImages getQualificationImages() {
+  public advertiserupdateQualificationImages getQualificationImages() {
     return qualificationImages;
   }
 
-  public void setQualificationImages(OpenApiv13advertiserupdateQualificationImages qualificationImages) {
+  public void setQualificationImages(advertiserupdateQualificationImages qualificationImages) {
     this.qualificationImages = qualificationImages;
   }
 
