@@ -25,7 +25,7 @@ class ShareCancelBody(object):
     """
     swagger_types = {
         'advertiser_id': 'str',
-        'context_info': 'dmpcustomAudiencefileuploadContextInfo',
+        'context_info': 'DmpcustomAudiencefileuploadContextInfo',
         'custom_audience_id': 'str',
         'shared_advertiser_id': 'str'
     }
@@ -81,7 +81,7 @@ class ShareCancelBody(object):
 
 
         :return: The context_info of this ShareCancelBody.  # noqa: E501
-        :rtype: dmpcustomAudiencefileuploadContextInfo
+        :rtype: DmpcustomAudiencefileuploadContextInfo
         """
         return self._context_info
 
@@ -91,7 +91,7 @@ class ShareCancelBody(object):
 
 
         :param context_info: The context_info of this ShareCancelBody.  # noqa: E501
-        :type: dmpcustomAudiencefileuploadContextInfo
+        :type: DmpcustomAudiencefileuploadContextInfo
         """
 
         self._context_info = context_info

@@ -322,7 +322,7 @@ class ApiClient(object):
 
             #Error response
             if response.code != NumericErrorCodes.ERROR_CODE_OK:
-                if resource_path.startswith("/open_api/v1.3/pixel"):
+                if resource_path.startswith("/pixel"):
                     raise TiktokSDKError(message=response.message, error_code=response.code, request_id=response.request_id, data=response.data)
                 else:
                     raise TiktokSDKError(message=response.message, error_code=response.code, request_id=response.request_id)

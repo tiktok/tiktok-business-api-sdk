@@ -10,7 +10,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * Measurement service.
 * @module api/MeasurementApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class MeasurementApi {
 

@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.catalogcreateCatalogConf;
+import business_api_client.CatalogcreateCatalogConf;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -18,13 +18,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * CatalogCreateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-21T14:49:06.465252-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class CatalogCreateBody {
   @JsonProperty("bc_id")
   private String bcId = null;
 
   @JsonProperty("catalog_conf")
-  private catalogcreateCatalogConf catalogConf = null;
+  private CatalogcreateCatalogConf catalogConf = null;
 
   @JsonProperty("catalog_type")
   private String catalogType = null;
@@ -53,7 +53,7 @@ public class CatalogCreateBody {
     this.bcId = bcId;
   }
 
-  public CatalogCreateBody catalogConf(catalogcreateCatalogConf catalogConf) {
+  public CatalogCreateBody catalogConf(CatalogcreateCatalogConf catalogConf) {
     this.catalogConf = catalogConf;
     return this;
   }
@@ -63,11 +63,11 @@ public class CatalogCreateBody {
    * @return catalogConf
   **/
   @Schema(required = true, description = "")
-  public catalogcreateCatalogConf getCatalogConf() {
+  public CatalogcreateCatalogConf getCatalogConf() {
     return catalogConf;
   }
 
-  public void setCatalogConf(catalogcreateCatalogConf catalogConf) {
+  public void setCatalogConf(CatalogcreateCatalogConf catalogConf) {
     this.catalogConf = catalogConf;
   }
 

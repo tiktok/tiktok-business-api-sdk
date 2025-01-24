@@ -10,61 +10,11 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ad_image_info**](FileApi.md#ad_image_info) | **GET** /open_api/v1.3/file/image/ad/info/ | The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740051721711618)
 [**ad_image_upload**](FileApi.md#ad_image_upload) | **POST** /open_api/v1.3/file/image/ad/upload/ | The function is used to  to upload pictures to the Asset Library and use the obtained image ID for creating ads. [File image Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739067433456642)
 [**ad_video_info**](FileApi.md#ad_video_info) | **GET** /open_api/v1.3/file/video/ad/info/ | The function is used to get the information about a list of videos [File Video Ad Info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740050161973250) from the Asset Library.
 [**ad_video_search**](FileApi.md#ad_video_search) | **GET** /open_api/v1.3/file/video/ad/search/ | The function is used to to search for video creatives in the Asset Library of an ad account. [File Video Search](to search for video creatives in the Asset Library of an ad account.) Library.
 [**ad_video_upload**](FileApi.md#ad_video_upload) | **POST** /open_api/v1.3/file/video/ad/upload/ | The function is used to upload a video to the Asset Library and use the obtained video ID for creating ads. [File Video Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737587322856449)
-
-# **ad_image_info**
-> InlineResponse200 ad_image_info(advertiser_id, image_ids, access_token)
-
-The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id=1740051721711618)
-
-### Example
-```python
-from __future__ import print_function
-import time
-import business_api_client
-from business_api_client.rest import ApiException
-from pprint import pprint
-
-# create an instance of the API class
-api_instance = business_api_client.FileApi()
-advertiser_id = 'advertiser_id_example' # str | Advertiser ID.
-image_ids = ['image_ids_example'] # list[str] | Image ID list. Up to 100 IDs per request.
-access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-
-try:
-    # The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id=1740051721711618)
-    api_response = api_instance.ad_image_info(advertiser_id, image_ids, access_token)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FileApi->ad_image_info: %s\n" % e)
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **advertiser_id** | **str**| Advertiser ID. | [required]
- **image_ids** | [**list[str]**](str.md)| Image ID list. Up to 100 IDs per request. | [required]
- **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
-
-### Return type
-
-[**InlineResponse200**](InlineResponse200.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+[**file_image_ad_info**](FileApi.md#file_image_ad_info) | **GET** /open_api/v1.3/file/image/ad/info/ | Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id&#x3D;1740051721711618)
 
 # **ad_image_upload**
 > InlineResponse200 ad_image_upload(access_token, advertiser_id=advertiser_id, file_id=file_id, file_name=file_name, image_file=image_file, image_signature=image_signature, image_url=image_url, upload_type=upload_type)
@@ -296,6 +246,56 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **file_image_ad_info**
+> InlineResponse200 file_image_ad_info(advertiser_id, image_ids, access_token)
+
+Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id=1740051721711618)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.FileApi()
+advertiser_id = 'advertiser_id_example' # str | 
+image_ids = ['image_ids_example'] # list[str] | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+
+try:
+    # Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id=1740051721711618)
+    api_response = api_instance.file_image_ad_info(advertiser_id, image_ids, access_token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling FileApi->file_image_ad_info: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**|  | [required]
+ **image_ids** | [**list[str]**](str.md)|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

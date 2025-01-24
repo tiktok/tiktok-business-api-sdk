@@ -130,7 +130,7 @@ class BCApi(object):
             collection_formats=collection_formats)
 
     def bc_asset_get(self, bc_id, asset_type, access_token, **kwargs):  # noqa: E501
-        """Get assets [BC asset get](https://ads.tiktok.com/marketing_api/docs?id=1739432717798401)  # noqa: E501
+        """Get assets of a Business Center. [BC Asset Get](https://business-api.tiktok.com/portal/docs?id=1739432717798401)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -138,12 +138,13 @@ class BCApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID (required)
-        :param str asset_type: Type of asset that you want to get. Enum values: `CATALOG`, `ADVERTISER`, `PIXEL`, `LEAD`, `TT_ACCOUNT`(corresponds to `BC_AUTH_TT`, and learn more from [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097), `TIKTOK_SHOP` (TikTok shop) , `STOREFRONT`( TikTok Storefront (third-party store)) (required)
+        :param str bc_id: (required)
+        :param str asset_type: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param Filtering filtering: Filtering conditions. Use either `user_id` or `user_email` as filter.Note: You cannot use `user_id` and `user_email` at the same time.If you do not specify any filter values, the system will pass in to the `user_id` field the user ID of the TikTok for Business account that gives you the authentication code (`auth_code`)
-        :param int page: Current page number. Default value: 1
-        :param int page_size: Page size, in the range of 1-50. Default value: 10
+        :param str child_bc_id:
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,7 +157,7 @@ class BCApi(object):
             return data
 
     def bc_asset_get_with_http_info(self, bc_id, asset_type, access_token, **kwargs):  # noqa: E501
-        """Get assets [BC asset get](https://ads.tiktok.com/marketing_api/docs?id=1739432717798401)  # noqa: E501
+        """Get assets of a Business Center. [BC Asset Get](https://business-api.tiktok.com/portal/docs?id=1739432717798401)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -164,18 +165,19 @@ class BCApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID (required)
-        :param str asset_type: Type of asset that you want to get. Enum values: `CATALOG`, `ADVERTISER`, `PIXEL`, `LEAD`, `TT_ACCOUNT`(corresponds to `BC_AUTH_TT`, and learn more from [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097), `TIKTOK_SHOP` (TikTok shop) , `STOREFRONT`( TikTok Storefront (third-party store)) (required)
+        :param str bc_id: (required)
+        :param str asset_type: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param Filtering filtering: Filtering conditions. Use either `user_id` or `user_email` as filter.Note: You cannot use `user_id` and `user_email` at the same time.If you do not specify any filter values, the system will pass in to the `user_id` field the user ID of the TikTok for Business account that gives you the authentication code (`auth_code`)
-        :param int page: Current page number. Default value: 1
-        :param int page_size: Page size, in the range of 1-50. Default value: 10
+        :param str child_bc_id:
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bc_id', 'asset_type', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params = ['bc_id', 'asset_type', 'access_token', 'child_bc_id', 'filtering', 'page', 'page_size']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -212,6 +214,8 @@ class BCApi(object):
             query_params.append(('bc_id', params['bc_id']))  # noqa: E501
         if 'asset_type' in params:
             query_params.append(('asset_type', params['asset_type']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
         if 'filtering' in params:
             query_params.append(('filtering', params['filtering']))  # noqa: E501
         if 'page' in params:
@@ -251,7 +255,7 @@ class BCApi(object):
             collection_formats=collection_formats)
 
     def bc_get(self, access_token, **kwargs):  # noqa: E501
-        """Get Business Centers [BC get](https://ads.tiktok.com/marketing_api/docs?id=1737115687501826)  # noqa: E501
+        """Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id=1737115687501826)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -260,9 +264,11 @@ class BCApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param str bc_id: The Business Center ID. When not passed, returns the user entire list of Business Centers by default, and returns the specified Business Center account when passed in
-        :param int page: Current number of pages. Default value: 1. Value range : ≥ 1
-        :param int page_size: Page size. Default value: 10. Value range: 1-50
+        :param str bc_id:
+        :param str scene:
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -275,7 +281,7 @@ class BCApi(object):
             return data
 
     def bc_get_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Get Business Centers [BC get](https://ads.tiktok.com/marketing_api/docs?id=1737115687501826)  # noqa: E501
+        """Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id=1737115687501826)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -284,15 +290,17 @@ class BCApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param str bc_id: The Business Center ID. When not passed, returns the user entire list of Business Centers by default, and returns the specified Business Center account when passed in
-        :param int page: Current number of pages. Default value: 1. Value range : ≥ 1
-        :param int page_size: Page size. Default value: 10. Value range: 1-50
+        :param str bc_id:
+        :param str scene:
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['access_token', 'bc_id', 'page', 'page_size']  # noqa: E501
+        all_params = ['access_token', 'bc_id', 'scene', 'filtering', 'page', 'page_size']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -319,6 +327,10 @@ class BCApi(object):
         query_params = []
         if 'bc_id' in params:
             query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'scene' in params:
+            query_params.append(('scene', params['scene']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
         if 'page' in params:
             query_params.append(('page', params['page']))  # noqa: E501
         if 'page_size' in params:

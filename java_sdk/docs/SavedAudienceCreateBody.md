@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**actions** | [**List&lt;dmpsavedAudiencecreateActions&gt;**](dmpsavedAudiencecreateActions.md) | A list of action category objects. |  [optional]
+**actions** | [**List&lt;DmpsavedAudiencecreateActions&gt;**](DmpsavedAudiencecreateActions.md) | A list of action category objects. |  [optional]
 **advertiserId** | **String** | Advertiser ID. |[required]  
 **ageGroups** | **List&lt;String&gt;** | Age groups you want to target. For enum values, see Enumeration - Targeting Age Group. |  [optional]
 **audienceIds** | **List&lt;String&gt;** | List of audience IDs. You can get audience IDs via the /dmp/custom_audience/list/ endpoint. |  [optional]

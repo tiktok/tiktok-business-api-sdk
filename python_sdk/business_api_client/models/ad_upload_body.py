@@ -68,8 +68,7 @@ class AdUploadBody(object):
         self._video_signature = None
         self._video_url = None
         self.discriminator = None
-        if advertiser_id is not None:
-            self.advertiser_id = advertiser_id
+        self.advertiser_id = advertiser_id
         if auto_bind_enabled is not None:
             self.auto_bind_enabled = auto_bind_enabled
         if auto_fix_enabled is not None:
@@ -113,6 +112,8 @@ class AdUploadBody(object):
         :param advertiser_id: The advertiser_id of this AdUploadBody.  # noqa: E501
         :type: str
         """
+        if advertiser_id is None:
+            raise ValueError("Invalid value for `advertiser_id`, must not be `None`")  # noqa: E501
 
         self._advertiser_id = advertiser_id
 

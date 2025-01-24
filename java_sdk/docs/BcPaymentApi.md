@@ -4,17 +4,17 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**advertiserBalanceGet**](BcPaymentApi.md#advertiserBalanceGet) | **GET** /open_api/v1.3/advertiser/balance/get/ | Obtain the balance of ad accounts in the Business Center. This function only returns the ad accounts that the Business Center has administrator permissions over. [Advertiser balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939106470913)
-[**advertiserTransactionGet**](BcPaymentApi.md#advertiserTransactionGet) | **GET** /open_api/v1.3/advertiser/transaction/get/ | Get the transaction records of ad accounts in the Business Center. This function only returns the transaction records of ad accounts that the Business Center has administrator rights over. [Advertiser transaction Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939116353538)
-[**bcBalanceGet**](BcPaymentApi.md#bcBalanceGet) | **GET** /open_api/v1.3/bc/balance/get/ | Obtain the balance of a Business Center. [Balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939128198145)
-[**bcTransactionGet**](BcPaymentApi.md#bcTransactionGet) | **GET** /open_api/v1.3/bc/transaction/get/ | Get the transaction records of your Business Centers. [Transaction get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939140408322)
-[**bcTransfer**](BcPaymentApi.md#bcTransfer) | **POST** /open_api/v1.3/bc/transfer/ | Recharge money to or deduct money from an ad account in a Business Center. [BC transfer](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939095321601)
+[**advertiserBalanceGet**](BcPaymentApi.md#advertiserBalanceGet) | **GET** /open_api/v1.3/advertiser/balance/get/ | Get ad account balance and budget. [BcPayment Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939106470913)
+[**advertiserTransactionGet**](BcPaymentApi.md#advertiserTransactionGet) | **GET** /open_api/v1.3/advertiser/transaction/get/ | Get transaction records of an ad account. [BcPayment Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939116353538)
+[**bcBalanceGet**](BcPaymentApi.md#bcBalanceGet) | **GET** /open_api/v1.3/bc/balance/get/ | Get the balance of a Business Center. [BcPayment BC Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939128198145)
+[**bcTransactionGet**](BcPaymentApi.md#bcTransactionGet) | **GET** /open_api/v1.3/bc/transaction/get/ | Get transaction records of a Business Center. [BcPayment BC Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939140408322)
+[**bcTransfer**](BcPaymentApi.md#bcTransfer) | **POST** /open_api/v1.3/bc/transfer/ | Process payments to recharge or deduct money from an ad account in a Business Center. [BcPayment BC Transfer](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939095321601)
 
 <a name="advertiserBalanceGet"></a>
 # **advertiserBalanceGet**
-> Response advertiserBalanceGet(bcId, accessToken, filtering, page, pageSize)
+> Response advertiserBalanceGet(bcId, accessToken, childBcId, filtering, page, pageSize)
 
-Obtain the balance of ad accounts in the Business Center. This function only returns the ad accounts that the Business Center has administrator permissions over. [Advertiser balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939106470913)
+Get ad account balance and budget. [BcPayment Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939106470913)
 
 ### Example
 ```java
@@ -24,13 +24,14 @@ Obtain the balance of ad accounts in the Business Center. This function only ret
 
 
 BcPaymentApi apiInstance = new BcPaymentApi();
-String bcId = "bcId_example"; // String | Business Center ID.
+String bcId = "bcId_example"; // String | 
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-FilteringAdvertiserBalanceGet filtering = new FilteringAdvertiserBalanceGet(); // FilteringAdvertiserBalanceGet | Filtering conditions.
-Integer page = 56; // Integer | Current number of page
-Integer pageSize = 56; // Integer | Page size.
+String childBcId = "childBcId_example"; // String | 
+Object filtering = null; // Object | 
+Long page = 789L; // Long | 
+Long pageSize = 789L; // Long | 
 try {
-    Response result = apiInstance.advertiserBalanceGet(bcId, accessToken, filtering, page, pageSize);
+    Response result = apiInstance.advertiserBalanceGet(bcId, accessToken, childBcId, filtering, page, pageSize);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BcPaymentApi#advertiserBalanceGet");
@@ -42,11 +43,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bcId** | **String**| Business Center ID. |[required] 
+ **bcId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **filtering** | [**FilteringAdvertiserBalanceGet**](FilteringAdvertiserBalanceGet.md)| Filtering conditions. | [optional]
- **page** | **Integer**| Current number of page | [optional]
- **pageSize** | **Integer**| Page size. | [optional]
+ **childBcId** | **String**|  | [optional]
+ **filtering** | [**Object**](Object.md)|  | [optional]
+ **page** | **Long**|  | [optional]
+ **pageSize** | **Long**|  | [optional]
 
 ### Return type
 
@@ -65,7 +67,7 @@ No authorization required
 # **advertiserTransactionGet**
 > Response advertiserTransactionGet(bcId, accessToken, filtering, page, pageSize)
 
-Get the transaction records of ad accounts in the Business Center. This function only returns the transaction records of ad accounts that the Business Center has administrator rights over. [Advertiser transaction Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939116353538)
+Get transaction records of an ad account. [BcPayment Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939116353538)
 
 ### Example
 ```java
@@ -75,11 +77,11 @@ Get the transaction records of ad accounts in the Business Center. This function
 
 
 BcPaymentApi apiInstance = new BcPaymentApi();
-String bcId = "bcId_example"; // String | Business Center ID.
+Long bcId = 789L; // Long | 
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-FilteringAdvertiserTransactionGet filtering = new FilteringAdvertiserTransactionGet(); // FilteringAdvertiserTransactionGet | Filtering conditions
-Integer page = 56; // Integer | Current page
-Integer pageSize = 56; // Integer | Page size,
+Object filtering = null; // Object | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
 try {
     Response result = apiInstance.advertiserTransactionGet(bcId, accessToken, filtering, page, pageSize);
     System.out.println(result);
@@ -93,11 +95,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bcId** | **String**| Business Center ID. |[required] 
+ **bcId** | **Long**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **filtering** | [**FilteringAdvertiserTransactionGet**](FilteringAdvertiserTransactionGet.md)| Filtering conditions | [optional]
- **page** | **Integer**| Current page | [optional]
- **pageSize** | **Integer**| Page size, | [optional]
+ **filtering** | [**Object**](Object.md)|  | [optional]
+ **page** | **Long**|  | [optional] [default to 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
 
 ### Return type
 
@@ -114,9 +116,9 @@ No authorization required
 
 <a name="bcBalanceGet"></a>
 # **bcBalanceGet**
-> Response bcBalanceGet(bcId, accessToken)
+> Response bcBalanceGet(bcId, accessToken, childBcId)
 
-Obtain the balance of a Business Center. [Balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939128198145)
+Get the balance of a Business Center. [BcPayment BC Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939128198145)
 
 ### Example
 ```java
@@ -126,10 +128,11 @@ Obtain the balance of a Business Center. [Balance get](https://ads.tiktok.com/ma
 
 
 BcPaymentApi apiInstance = new BcPaymentApi();
-String bcId = "bcId_example"; // String | Business Center ID
+String bcId = "bcId_example"; // String | 
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+String childBcId = "childBcId_example"; // String | 
 try {
-    Response result = apiInstance.bcBalanceGet(bcId, accessToken);
+    Response result = apiInstance.bcBalanceGet(bcId, accessToken, childBcId);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling BcPaymentApi#bcBalanceGet");
@@ -141,8 +144,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bcId** | **String**| Business Center ID |[required] 
+ **bcId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **childBcId** | **String**|  | [optional]
 
 ### Return type
 
@@ -161,7 +165,7 @@ No authorization required
 # **bcTransactionGet**
 > Response bcTransactionGet(bcId, accessToken, filtering, startDate, endDate, page, pageSize)
 
-Get the transaction records of your Business Centers. [Transaction get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939140408322)
+Get transaction records of a Business Center. [BcPayment BC Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939140408322)
 
 ### Example
 ```java
@@ -171,13 +175,13 @@ Get the transaction records of your Business Centers. [Transaction get](https://
 
 
 BcPaymentApi apiInstance = new BcPaymentApi();
-String bcId = "bcId_example"; // String | Business Center ID.
+String bcId = "bcId_example"; // String | 
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-FilteringBCTransactionGet filtering = new FilteringBCTransactionGet(); // FilteringBCTransactionGet | Filtering conditions
-String startDate = "startDate_example"; // String | Start date of transaction records that you want to get, in the format of \"YYYY-MM-DD\". The default value is the date 90 days earlier.
-String endDate = "endDate_example"; // String | End date of transaction records that you want to get, in the format of \"YYYY-MM-DD\". The default value is the date today.
-Integer page = 56; // Integer | Page number
-Integer pageSize = 56; // Integer | Page size. Value range- 1-50
+Object filtering = null; // Object | 
+LocalDate startDate = new LocalDate(); // LocalDate | 
+LocalDate endDate = new LocalDate(); // LocalDate | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
 try {
     Response result = apiInstance.bcTransactionGet(bcId, accessToken, filtering, startDate, endDate, page, pageSize);
     System.out.println(result);
@@ -191,13 +195,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bcId** | **String**| Business Center ID. |[required] 
+ **bcId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **filtering** | [**FilteringBCTransactionGet**](FilteringBCTransactionGet.md)| Filtering conditions | [optional]
- **startDate** | **String**| Start date of transaction records that you want to get, in the format of \&quot;YYYY-MM-DD\&quot;. The default value is the date 90 days earlier. | [optional]
- **endDate** | **String**| End date of transaction records that you want to get, in the format of \&quot;YYYY-MM-DD\&quot;. The default value is the date today. | [optional]
- **page** | **Integer**| Page number | [optional]
- **pageSize** | **Integer**| Page size. Value range- 1-50 | [optional]
+ **filtering** | [**Object**](Object.md)|  | [optional]
+ **startDate** | **LocalDate**|  | [optional]
+ **endDate** | **LocalDate**|  | [optional]
+ **page** | **Long**|  | [optional] [default to 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
 
 ### Return type
 
@@ -216,7 +220,7 @@ No authorization required
 # **bcTransfer**
 > Response bcTransfer(accessToken, body)
 
-Recharge money to or deduct money from an ad account in a Business Center. [BC transfer](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939095321601)
+Process payments to recharge or deduct money from an ad account in a Business Center. [BcPayment BC Transfer](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939095321601)
 
 ### Example
 ```java
@@ -227,7 +231,7 @@ Recharge money to or deduct money from an ad account in a Business Center. [BC t
 
 BcPaymentApi apiInstance = new BcPaymentApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-BcTransferBody body = new BcTransferBody(); // BcTransferBody | BC transfer parameters
+BcTransferBody body = new BcTransferBody(); // BcTransferBody | 
 try {
     Response result = apiInstance.bcTransfer(accessToken, body);
     System.out.println(result);
@@ -242,7 +246,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**BcTransferBody**](BcTransferBody.md)| BC transfer parameters | [optional]
+ **body** | [**BcTransferBody**](BcTransferBody.md)|  | [optional]
 
 ### Return type
 

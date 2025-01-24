@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.dmpcustomAudiencefileuploadContextInfo;
+import business_api_client.DmpcustomAudiencefileuploadContextInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -19,7 +19,7 @@ import java.io.File;
  * FileUploadBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class FileUploadBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -28,7 +28,7 @@ public class FileUploadBody {
   private String calculateType = null;
 
   @JsonProperty("context_info")
-  private dmpcustomAudiencefileuploadContextInfo contextInfo = null;
+  private DmpcustomAudiencefileuploadContextInfo contextInfo = null;
 
   @JsonProperty("file")
   private File file = null;
@@ -75,7 +75,7 @@ public class FileUploadBody {
     this.calculateType = calculateType;
   }
 
-  public FileUploadBody contextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public FileUploadBody contextInfo(DmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -85,11 +85,11 @@ public class FileUploadBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public dmpcustomAudiencefileuploadContextInfo getContextInfo() {
+  public DmpcustomAudiencefileuploadContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public void setContextInfo(DmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 

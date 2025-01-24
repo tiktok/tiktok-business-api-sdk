@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PixelContextAd model module.
  * @module model/PixelContextAd
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class PixelContextAd {
   /**

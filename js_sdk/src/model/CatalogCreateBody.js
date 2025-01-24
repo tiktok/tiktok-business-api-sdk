@@ -5,7 +5,7 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {catalogcreateCatalogConf} from './catalogcreateCatalogConf.js';
+import {CatalogcreateCatalogConf} from './CatalogcreateCatalogConf.js';
 
 /**
  * The CatalogCreateBody model module.
@@ -18,7 +18,7 @@ export class CatalogCreateBody {
    * @alias module:model/CatalogCreateBody
    * @class
    * @param bc_id {String} 
-   * @param catalog_conf {module:model/catalogcreateCatalogConf} 
+   * @param catalog_conf {module:model/CatalogcreateCatalogConf} 
    * @param catalog_type {String} 
    * @param name {String} 
    */
@@ -42,7 +42,7 @@ export class CatalogCreateBody {
       if (data.hasOwnProperty('bc_id'))
         obj.bc_id = ApiClient.convertToType(data['bc_id'], 'String');
       if (data.hasOwnProperty('catalog_conf'))
-        obj.catalog_conf = catalogcreateCatalogConf.constructFromObject(data['catalog_conf']);
+        obj.catalog_conf = CatalogcreateCatalogConf.constructFromObject(data['catalog_conf']);
       if (data.hasOwnProperty('catalog_type'))
         obj.catalog_type = ApiClient.convertToType(data['catalog_type'], 'String');
       if (data.hasOwnProperty('creative_asset_type'))
@@ -60,7 +60,7 @@ export class CatalogCreateBody {
 CatalogCreateBody.prototype.bc_id = undefined;
 
 /**
- * @member {module:model/catalogcreateCatalogConf} catalog_conf
+ * @member {module:model/CatalogcreateCatalogConf} catalog_conf
  */
 CatalogCreateBody.prototype.catalog_conf = undefined;
 

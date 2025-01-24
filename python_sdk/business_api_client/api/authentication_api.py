@@ -122,7 +122,7 @@ class AuthenticationApi(object):
             collection_formats=collection_formats)
 
     def oauth2_advertiser_get(self, app_id, secret, access_token, **kwargs):  # noqa: E501
-        """Obtain a list of advertiser accounts that authorized an app. [Advertiser Get](https://ads.tiktok.com/marketing_api/docs?id=1738455508553729)  # noqa: E501
+        """Get a list of advertisers that have granted you permission to manage their accounts. [Authentication Oauth2 Advertiser Get](https://business-api.tiktok.com/portal/docs?id=1738455508553729)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -130,8 +130,8 @@ class AuthenticationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_id: The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
-        :param str secret: The private key of the developer's application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
+        :param str app_id: (required)
+        :param str secret: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :return: InlineResponse200
                  If the method is called asynchronously,
@@ -145,7 +145,7 @@ class AuthenticationApi(object):
             return data
 
     def oauth2_advertiser_get_with_http_info(self, app_id, secret, access_token, **kwargs):  # noqa: E501
-        """Obtain a list of advertiser accounts that authorized an app. [Advertiser Get](https://ads.tiktok.com/marketing_api/docs?id=1738455508553729)  # noqa: E501
+        """Get a list of advertisers that have granted you permission to manage their accounts. [Authentication Oauth2 Advertiser Get](https://business-api.tiktok.com/portal/docs?id=1738455508553729)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -153,8 +153,8 @@ class AuthenticationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_id: The App id applied by the developer, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
-        :param str secret: The private key of the developer's application, which can be found on the [Application Management](https://ads.tiktok.com/marketing_api/apps/) page. (required)
+        :param str app_id: (required)
+        :param str secret: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :return: InlineResponse200
                  If the method is called asynchronously,

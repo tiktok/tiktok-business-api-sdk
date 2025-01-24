@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {adcreateCreatives} from './adcreateCreatives.js';
+import {AdcreateCreatives} from './AdcreateCreatives.js';
 
 /**
  * The AdCreateBody model module.
  * @module model/AdCreateBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class AdCreateBody {
   /**
@@ -19,7 +19,7 @@ export class AdCreateBody {
    * @class
    * @param adgroup_id {String} Ad group ID
    * @param advertiser_id {String} Advertiser ID
-   * @param creatives {Array.<module:model/adcreateCreatives>} Advertising creatives.
+   * @param creatives {Array.<module:model/AdcreateCreatives>} Advertising creatives.
    */
   constructor(adgroup_id, advertiser_id, creatives) {
     this.adgroup_id = adgroup_id;
@@ -42,7 +42,7 @@ export class AdCreateBody {
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
       if (data.hasOwnProperty('creatives'))
-        obj.creatives = ApiClient.convertToType(data['creatives'], [adcreateCreatives]);
+        obj.creatives = ApiClient.convertToType(data['creatives'], [AdcreateCreatives]);
     }
     return obj;
   }
@@ -62,7 +62,7 @@ AdCreateBody.prototype.advertiser_id = undefined;
 
 /**
  * Advertising creatives.
- * @member {Array.<module:model/adcreateCreatives>} creatives
+ * @member {Array.<module:model/AdcreateCreatives>} creatives
  */
 AdCreateBody.prototype.creatives = undefined;
 

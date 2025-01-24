@@ -35,7 +35,7 @@ class AdvertiserUpdateBody(object):
         'license_no': 'str',
         'need_submit_certificate': 'bool',
         'promotion_link': 'str',
-        'qualification_images': 'advertiserupdateQualificationImages',
+        'qualification_images': 'AdvertiserupdateQualificationImages',
         'tax_map': 'str'
     }
 
@@ -358,7 +358,7 @@ class AdvertiserUpdateBody(object):
 
 
         :return: The qualification_images of this AdvertiserUpdateBody.  # noqa: E501
-        :rtype: advertiserupdateQualificationImages
+        :rtype: AdvertiserupdateQualificationImages
         """
         return self._qualification_images
 
@@ -368,7 +368,7 @@ class AdvertiserUpdateBody(object):
 
 
         :param qualification_images: The qualification_images of this AdvertiserUpdateBody.  # noqa: E501
-        :type: advertiserupdateQualificationImages
+        :type: AdvertiserupdateQualificationImages
         """
 
         self._qualification_images = qualification_images

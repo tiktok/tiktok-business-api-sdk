@@ -9,15 +9,17 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdUploadBody model module.
  * @module model/AdUploadBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class AdUploadBody {
   /**
    * Constructs a new <code>AdUploadBody</code>.
    * @alias module:model/AdUploadBody
    * @class
+   * @param advertiser_id {String} Advertiser ID
    */
-  constructor() {
+  constructor(advertiser_id) {
+    this.advertiser_id = advertiser_id;
   }
 
   /**

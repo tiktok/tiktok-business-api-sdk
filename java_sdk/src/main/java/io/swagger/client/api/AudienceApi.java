@@ -21,11 +21,11 @@ import business_api_client.CustomAudienceCreateBody;
 import business_api_client.CustomAudienceDeleteBody;
 import business_api_client.CustomAudienceShareBody;
 import business_api_client.CustomAudienceUpdateBody;
+import business_api_client.DmpcustomAudiencefileuploadContextInfo;
 import java.io.File;
 import business_api_client.InlineResponse200;
 import business_api_client.LookalikeCreateBody;
 import business_api_client.LookalikeUpdateBody;
-import business_api_client.dmpcustomAudiencefileuploadContextInfo;
 import business_api_client.RuleCreateBody;
 import business_api_client.SavedAudienceCreateBody;
 import business_api_client.SavedAudienceDeleteBody;
@@ -36,7 +36,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")public class AudienceApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")public class AudienceApi {
   private ApiClient apiClient;
 
   public AudienceApi() {
@@ -97,7 +97,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -169,7 +169,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -222,7 +222,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -234,7 +234,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Delete audiences [Dmp Custom_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940539757569)
+   * Delete audiences [Dmp Custom_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940539757569)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -275,7 +275,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -287,7 +287,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Upload a data file [Dmp Custom_audience File Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940567842818)
+   * Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940567842818)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param advertiserId  (optional)
@@ -299,7 +299,7 @@ import java.util.Map;
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response dmpCustomAudienceFileUpload(String accessToken, String advertiserId, String calculateType, dmpcustomAudiencefileuploadContextInfo contextInfo, File file, String fileName, String fileSignature) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response dmpCustomAudienceFileUpload(String accessToken, String advertiserId, String calculateType, DmpcustomAudiencefileuploadContextInfo contextInfo, File file, String fileName, String fileSignature) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'accessToken' is set
     if (accessToken == null) {
@@ -345,7 +345,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -357,7 +357,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Obtain the details of specified audiences [Dmp Custom_audience Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940507792385)
+   * Obtain the details of specified audiences [Dmp Custom_audience Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940507792385)
    * 
    * @param advertiserId Advertiser ID. (required)
    * @param customAudienceIds A list of Audience IDs. Length range is [1, 100] . (required)
@@ -411,7 +411,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -423,7 +423,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Get all audiences [Dmp Custom_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940506015746)
+   * Get all audiences [Dmp Custom_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940506015746)
    * 
    * @param advertiserId Advertiser ID. (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
@@ -475,7 +475,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -487,7 +487,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940511844353)
+   * Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940511844353)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -528,7 +528,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -581,7 +581,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -593,7 +593,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Create an audience by rules [Dmp Custom_audience Rule Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940509849601)
+   * Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940509849601)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -634,7 +634,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -646,7 +646,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Share custom audiences with other advertisers [Dmp Custom_audience Share](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245803888706)
+   * Share custom audiences with other advertisers [Dmp Custom_audience Share](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245803888706)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -687,7 +687,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -699,7 +699,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245829978113)
+   * Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245829978113)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -740,7 +740,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -806,7 +806,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -818,7 +818,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Update the details of an audience [Dmp Custom_audience Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940572667906)
+   * Update the details of an audience [Dmp Custom_audience Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940572667906)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -859,7 +859,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -871,7 +871,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Create a Saved Audience [Dmp Saved_audience Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154541898754)
+   * Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154541898754)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -912,7 +912,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -924,7 +924,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Delete Saved Audiences [Dmp Saved_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154666312706)
+   * Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154666312706)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
    * @param body  (optional)
@@ -965,7 +965,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -977,7 +977,7 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Get the details of Saved Audiences [Dmp Saved_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154619404290)
+   * Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154619404290)
    * 
    * @param advertiserId Advertiser ID. (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
@@ -1029,7 +1029,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());

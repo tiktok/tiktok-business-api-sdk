@@ -357,7 +357,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_delete(self, access_token, **kwargs):  # noqa: E501
-        """Delete audiences [Dmp Custom_audience Delete](https://ads.tiktok.com/marketing_api/docs?id=1739940539757569)  # noqa: E501
+        """Delete audiences [Dmp Custom_audience Delete](https://business-api.tiktok.com/portal/docs?id=1739940539757569)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -379,7 +379,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Delete audiences [Dmp Custom_audience Delete](https://ads.tiktok.com/marketing_api/docs?id=1739940539757569)  # noqa: E501
+        """Delete audiences [Dmp Custom_audience Delete](https://business-api.tiktok.com/portal/docs?id=1739940539757569)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -458,7 +458,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_file_upload(self, access_token, **kwargs):  # noqa: E501
-        """Upload a data file [Dmp Custom_audience File Upload](https://ads.tiktok.com/marketing_api/docs?id=1739940567842818)  # noqa: E501
+        """Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id=1739940567842818)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -469,7 +469,7 @@ class AudienceApi(object):
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str advertiser_id:
         :param str calculate_type:
-        :param dmpcustomAudiencefileuploadContextInfo context_info:
+        :param DmpcustomAudiencefileuploadContextInfo context_info:
         :param str file:
         :param str file_name:
         :param str file_signature:
@@ -485,7 +485,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_file_upload_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Upload a data file [Dmp Custom_audience File Upload](https://ads.tiktok.com/marketing_api/docs?id=1739940567842818)  # noqa: E501
+        """Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id=1739940567842818)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -496,7 +496,7 @@ class AudienceApi(object):
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str advertiser_id:
         :param str calculate_type:
-        :param dmpcustomAudiencefileuploadContextInfo context_info:
+        :param DmpcustomAudiencefileuploadContextInfo context_info:
         :param str file:
         :param str file_name:
         :param str file_signature:
@@ -579,7 +579,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_get(self, advertiser_id, custom_audience_ids, access_token, **kwargs):  # noqa: E501
-        """Obtain the details of specified audiences [Dmp Custom_audience Get](https://ads.tiktok.com/marketing_api/docs?id=1739940507792385)  # noqa: E501
+        """Obtain the details of specified audiences [Dmp Custom_audience Get](https://business-api.tiktok.com/portal/docs?id=1739940507792385)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -603,7 +603,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_get_with_http_info(self, advertiser_id, custom_audience_ids, access_token, **kwargs):  # noqa: E501
-        """Obtain the details of specified audiences [Dmp Custom_audience Get](https://ads.tiktok.com/marketing_api/docs?id=1739940507792385)  # noqa: E501
+        """Obtain the details of specified audiences [Dmp Custom_audience Get](https://business-api.tiktok.com/portal/docs?id=1739940507792385)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -693,7 +693,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_list(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get all audiences [Dmp Custom_audience List](https://ads.tiktok.com/marketing_api/docs?id=1739940506015746)  # noqa: E501
+        """Get all audiences [Dmp Custom_audience List](https://business-api.tiktok.com/portal/docs?id=1739940506015746)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -718,7 +718,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_list_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get all audiences [Dmp Custom_audience List](https://ads.tiktok.com/marketing_api/docs?id=1739940506015746)  # noqa: E501
+        """Get all audiences [Dmp Custom_audience List](https://business-api.tiktok.com/portal/docs?id=1739940506015746)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -807,7 +807,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_lookalike_create(self, access_token, **kwargs):  # noqa: E501
-        """Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://ads.tiktok.com/marketing_api/docs?id=1739940511844353)  # noqa: E501
+        """Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://business-api.tiktok.com/portal/docs?id=1739940511844353)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -829,7 +829,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_lookalike_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://ads.tiktok.com/marketing_api/docs?id=1739940511844353)  # noqa: E501
+        """Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://business-api.tiktok.com/portal/docs?id=1739940511844353)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1009,7 +1009,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_rule_create(self, access_token, **kwargs):  # noqa: E501
-        """Create an audience by rules [Dmp Custom_audience Rule Create](https://ads.tiktok.com/marketing_api/docs?id=1739940509849601)  # noqa: E501
+        """Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id=1739940509849601)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1031,7 +1031,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_rule_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Create an audience by rules [Dmp Custom_audience Rule Create](https://ads.tiktok.com/marketing_api/docs?id=1739940509849601)  # noqa: E501
+        """Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id=1739940509849601)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1110,7 +1110,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_share(self, access_token, **kwargs):  # noqa: E501
-        """Share custom audiences with other advertisers [Dmp Custom_audience Share](https://ads.tiktok.com/marketing_api/docs?id=1740245803888706)  # noqa: E501
+        """Share custom audiences with other advertisers [Dmp Custom_audience Share](https://business-api.tiktok.com/portal/docs?id=1740245803888706)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1132,7 +1132,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_share_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Share custom audiences with other advertisers [Dmp Custom_audience Share](https://ads.tiktok.com/marketing_api/docs?id=1740245803888706)  # noqa: E501
+        """Share custom audiences with other advertisers [Dmp Custom_audience Share](https://business-api.tiktok.com/portal/docs?id=1740245803888706)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1211,7 +1211,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_share_cancel(self, access_token, **kwargs):  # noqa: E501
-        """Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://ads.tiktok.com/marketing_api/docs?id=1740245829978113)  # noqa: E501
+        """Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://business-api.tiktok.com/portal/docs?id=1740245829978113)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1233,7 +1233,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_share_cancel_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://ads.tiktok.com/marketing_api/docs?id=1740245829978113)  # noqa: E501
+        """Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://business-api.tiktok.com/portal/docs?id=1740245829978113)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1425,7 +1425,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_custom_audience_update(self, access_token, **kwargs):  # noqa: E501
-        """Update the details of an audience [Dmp Custom_audience Update](https://ads.tiktok.com/marketing_api/docs?id=1739940572667906)  # noqa: E501
+        """Update the details of an audience [Dmp Custom_audience Update](https://business-api.tiktok.com/portal/docs?id=1739940572667906)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1447,7 +1447,7 @@ class AudienceApi(object):
             return data
 
     def dmp_custom_audience_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Update the details of an audience [Dmp Custom_audience Update](https://ads.tiktok.com/marketing_api/docs?id=1739940572667906)  # noqa: E501
+        """Update the details of an audience [Dmp Custom_audience Update](https://business-api.tiktok.com/portal/docs?id=1739940572667906)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1526,7 +1526,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_saved_audience_create(self, access_token, **kwargs):  # noqa: E501
-        """Create a Saved Audience [Dmp Saved_audience Create](https://ads.tiktok.com/marketing_api/docs?id=1780154541898754)  # noqa: E501
+        """Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id=1780154541898754)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1548,7 +1548,7 @@ class AudienceApi(object):
             return data
 
     def dmp_saved_audience_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Create a Saved Audience [Dmp Saved_audience Create](https://ads.tiktok.com/marketing_api/docs?id=1780154541898754)  # noqa: E501
+        """Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id=1780154541898754)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1627,7 +1627,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_saved_audience_delete(self, access_token, **kwargs):  # noqa: E501
-        """Delete Saved Audiences [Dmp Saved_audience Delete](https://ads.tiktok.com/marketing_api/docs?id=1780154666312706)  # noqa: E501
+        """Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id=1780154666312706)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1649,7 +1649,7 @@ class AudienceApi(object):
             return data
 
     def dmp_saved_audience_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Delete Saved Audiences [Dmp Saved_audience Delete](https://ads.tiktok.com/marketing_api/docs?id=1780154666312706)  # noqa: E501
+        """Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id=1780154666312706)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1728,7 +1728,7 @@ class AudienceApi(object):
             collection_formats=collection_formats)
 
     def dmp_saved_audience_list(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get the details of Saved Audiences [Dmp Saved_audience List](https://ads.tiktok.com/marketing_api/docs?id=1780154619404290)  # noqa: E501
+        """Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id=1780154619404290)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1753,7 +1753,7 @@ class AudienceApi(object):
             return data
 
     def dmp_saved_audience_list_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get the details of Saved Audiences [Dmp Saved_audience List](https://ads.tiktok.com/marketing_api/docs?id=1780154619404290)  # noqa: E501
+        """Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id=1780154619404290)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

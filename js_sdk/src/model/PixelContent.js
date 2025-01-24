@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PixelContent model module.
  * @module model/PixelContent
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class PixelContent {
   /**

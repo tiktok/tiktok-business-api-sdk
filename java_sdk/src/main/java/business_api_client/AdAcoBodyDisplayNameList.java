@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * AdAcoBodyDisplayNameList
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-21T14:49:06.465252-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class AdAcoBodyDisplayNameList {
   @JsonProperty("app_name")
   private String appName = null;

@@ -28,116 +28,6 @@ class FileApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def ad_image_info(self, advertiser_id, image_ids, access_token, **kwargs):  # noqa: E501
-        """The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id=1740051721711618)  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.ad_image_info(advertiser_id, image_ids, access_token, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str advertiser_id: Advertiser ID. (required)
-        :param list[str] image_ids: Image ID list. Up to 100 IDs per request. (required)
-        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :return: InlineResponse200
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-        kwargs['_return_http_data_only'] = True
-        if kwargs.get('async_req'):
-            return self.ad_image_info_with_http_info(advertiser_id, image_ids, access_token, **kwargs)  # noqa: E501
-        else:
-            (data) = self.ad_image_info_with_http_info(advertiser_id, image_ids, access_token, **kwargs)  # noqa: E501
-            return data
-
-    def ad_image_info_with_http_info(self, advertiser_id, image_ids, access_token, **kwargs):  # noqa: E501
-        """The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id=1740051721711618)  # noqa: E501
-
-        This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.ad_image_info_with_http_info(advertiser_id, image_ids, access_token, async_req=True)
-        >>> result = thread.get()
-
-        :param async_req bool
-        :param str advertiser_id: Advertiser ID. (required)
-        :param list[str] image_ids: Image ID list. Up to 100 IDs per request. (required)
-        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :return: InlineResponse200
-                 If the method is called asynchronously,
-                 returns the request thread.
-        """
-
-        all_params = ['advertiser_id', 'image_ids', 'access_token']  # noqa: E501
-        all_params.append('async_req')
-        all_params.append('_return_http_data_only')
-        all_params.append('_preload_content')
-        all_params.append('_request_timeout')
-
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            if key not in all_params:
-                raise TypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method ad_image_info" % key
-                )
-            params[key] = val
-        del params['kwargs']
-        # verify the required parameter 'advertiser_id' is set
-        if ('advertiser_id' not in params or
-                params['advertiser_id'] is None):
-            raise ValueError("Missing the required parameter `advertiser_id` when calling `ad_image_info`")  # noqa: E501
-        # verify the required parameter 'image_ids' is set
-        if ('image_ids' not in params or
-                params['image_ids'] is None):
-            raise ValueError("Missing the required parameter `image_ids` when calling `ad_image_info`")  # noqa: E501
-        # verify the required parameter 'access_token' is set
-        if ('access_token' not in params or
-                params['access_token'] is None):
-            raise ValueError("Missing the required parameter `access_token` when calling `ad_image_info`")  # noqa: E501
-
-        collection_formats = {}
-
-        path_params = {}
-
-        query_params = []
-        if 'advertiser_id' in params:
-            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
-        if 'image_ids' in params:
-            query_params.append(('image_ids', params['image_ids']))  # noqa: E501
-            collection_formats['image_ids'] = 'multi'  # noqa: E501
-
-        header_params = {}
-        if 'access_token' in params:
-            header_params['Access-Token'] = params['access_token']  # noqa: E501
-
-        form_params = []
-        local_var_files = {}
-
-        body_params = None
-        # HTTP header `Accept`
-        header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # Authentication setting
-        auth_settings = []  # noqa: E501
-
-        return self.api_client.call_api(
-            '/open_api/v1.3/file/image/ad/info/', 'GET',
-            path_params,
-            query_params,
-            header_params,
-            body=body_params,
-            post_params=form_params,
-            files=local_var_files,
-            response_type='InlineResponse200',  # noqa: E501
-            auth_settings=auth_settings,
-            async_req=params.get('async_req'),
-            _return_http_data_only=params.get('_return_http_data_only'),
-            _preload_content=params.get('_preload_content', True),
-            _request_timeout=params.get('_request_timeout'),
-            collection_formats=collection_formats)
-
     def ad_image_upload(self, access_token, **kwargs):  # noqa: E501
         """The function is used to  to upload pictures to the Asset Library and use the obtained image ID for creating ads. [File image Upload](https://ads.tiktok.com/marketing_api/docs?id=1739067433456642)  # noqa: E501
 
@@ -617,6 +507,116 @@ class FileApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/file/video/ad/upload/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def file_image_ad_info(self, advertiser_id, image_ids, access_token, **kwargs):  # noqa: E501
+        """Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id=1740051721711618)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.file_image_ad_info(advertiser_id, image_ids, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] image_ids: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.file_image_ad_info_with_http_info(advertiser_id, image_ids, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.file_image_ad_info_with_http_info(advertiser_id, image_ids, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def file_image_ad_info_with_http_info(self, advertiser_id, image_ids, access_token, **kwargs):  # noqa: E501
+        """Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id=1740051721711618)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.file_image_ad_info_with_http_info(advertiser_id, image_ids, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] image_ids: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'image_ids', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method file_image_ad_info" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `file_image_ad_info`")  # noqa: E501
+        # verify the required parameter 'image_ids' is set
+        if ('image_ids' not in params or
+                params['image_ids'] is None):
+            raise ValueError("Missing the required parameter `image_ids` when calling `file_image_ad_info`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `file_image_ad_info`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'image_ids' in params:
+            query_params.append(('image_ids', params['image_ids']))  # noqa: E501
+            collection_formats['image_ids'] = 'multi'  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/file/image/ad/info/', 'GET',
             path_params,
             query_params,
             header_params,

@@ -3,13 +3,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**advertiser_info** | [**bcadvertisercreateAdvertiserInfo**](bcadvertisercreateAdvertiserInfo.md) |  | [required] 
+**advertiser_info** | [**BcadvertisercreateAdvertiserInfo**](BcadvertisercreateAdvertiserInfo.md) |  | [required] 
 **bc_id** | **str** | Business Center ID | [required] 
-**billing_group_info** | [**bcadvertisercreateBillingGroupInfo**](bcadvertisercreateBillingGroupInfo.md) |  | [optional] 
-**billing_info** | [**bcadvertisercreateBillingInfo**](bcadvertisercreateBillingInfo.md) |  | [optional] 
-**contact_info** | [**bcadvertisercreateContactInfo**](bcadvertisercreateContactInfo.md) |  | [optional] 
-**customer_info** | [**bcadvertisercreateCustomerInfo**](bcadvertisercreateCustomerInfo.md) |  | [required] 
-**qualification_info** | [**bcadvertisercreateQualificationInfo**](bcadvertisercreateQualificationInfo.md) |  | [optional] 
+**billing_group_info** | [**BcadvertisercreateBillingGroupInfo**](BcadvertisercreateBillingGroupInfo.md) |  | [optional] 
+**billing_info** | [**BcadvertisercreateBillingInfo**](BcadvertisercreateBillingInfo.md) |  | [optional] 
+**contact_info** | [**BcadvertisercreateContactInfo**](BcadvertisercreateContactInfo.md) |  | [optional] 
+**customer_info** | [**BcadvertisercreateCustomerInfo**](BcadvertisercreateCustomerInfo.md) |  | [required] 
+**qualification_info** | [**BcadvertisercreateQualificationInfo**](BcadvertisercreateQualificationInfo.md) |  | [optional] 
 **tied_to_billing_group** | **bool** | Whether to add the ad account to a billing group. Default value: &#x60;False&#x60;. This field is an allowlist-only feature. If you would like to access it, please contact your TikTok representative | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

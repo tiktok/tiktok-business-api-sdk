@@ -25,7 +25,7 @@ class CatalogCreateBody(object):
     """
     swagger_types = {
         'bc_id': 'str',
-        'catalog_conf': 'catalogcreateCatalogConf',
+        'catalog_conf': 'CatalogcreateCatalogConf',
         'catalog_type': 'str',
         'creative_asset_type': 'str',
         'name': 'str'
@@ -83,7 +83,7 @@ class CatalogCreateBody(object):
 
 
         :return: The catalog_conf of this CatalogCreateBody.  # noqa: E501
-        :rtype: catalogcreateCatalogConf
+        :rtype: CatalogcreateCatalogConf
         """
         return self._catalog_conf
 
@@ -93,7 +93,7 @@ class CatalogCreateBody(object):
 
 
         :param catalog_conf: The catalog_conf of this CatalogCreateBody.  # noqa: E501
-        :type: catalogcreateCatalogConf
+        :type: CatalogcreateCatalogConf
         """
         if catalog_conf is None:
             raise ValueError("Invalid value for `catalog_conf`, must not be `None`")  # noqa: E501

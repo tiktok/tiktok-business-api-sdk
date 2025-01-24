@@ -9,8 +9,8 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.dmpcustomAudiencelookalikecreateContextInfo;
-import business_api_client.dmpcustomAudiencelookalikecreateLookalikeSpec;
+import business_api_client.DmpcustomAudiencelookalikecreateContextInfo;
+import business_api_client.DmpcustomAudiencelookalikecreateLookalikeSpec;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -19,19 +19,19 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * LookalikeCreateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class LookalikeCreateBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
 
   @JsonProperty("context_info")
-  private dmpcustomAudiencelookalikecreateContextInfo contextInfo = null;
+  private DmpcustomAudiencelookalikecreateContextInfo contextInfo = null;
 
   @JsonProperty("custom_audience_name")
   private String customAudienceName = null;
 
   @JsonProperty("lookalike_spec")
-  private dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec = null;
+  private DmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec = null;
 
   public LookalikeCreateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
@@ -51,7 +51,7 @@ public class LookalikeCreateBody {
     this.advertiserId = advertiserId;
   }
 
-  public LookalikeCreateBody contextInfo(dmpcustomAudiencelookalikecreateContextInfo contextInfo) {
+  public LookalikeCreateBody contextInfo(DmpcustomAudiencelookalikecreateContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -61,11 +61,11 @@ public class LookalikeCreateBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public dmpcustomAudiencelookalikecreateContextInfo getContextInfo() {
+  public DmpcustomAudiencelookalikecreateContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(dmpcustomAudiencelookalikecreateContextInfo contextInfo) {
+  public void setContextInfo(DmpcustomAudiencelookalikecreateContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 
@@ -87,7 +87,7 @@ public class LookalikeCreateBody {
     this.customAudienceName = customAudienceName;
   }
 
-  public LookalikeCreateBody lookalikeSpec(dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
+  public LookalikeCreateBody lookalikeSpec(DmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
     this.lookalikeSpec = lookalikeSpec;
     return this;
   }
@@ -97,11 +97,11 @@ public class LookalikeCreateBody {
    * @return lookalikeSpec
   **/
   @Schema(required = true, description = "")
-  public dmpcustomAudiencelookalikecreateLookalikeSpec getLookalikeSpec() {
+  public DmpcustomAudiencelookalikecreateLookalikeSpec getLookalikeSpec() {
     return lookalikeSpec;
   }
 
-  public void setLookalikeSpec(dmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
+  public void setLookalikeSpec(DmpcustomAudiencelookalikecreateLookalikeSpec lookalikeSpec) {
     this.lookalikeSpec = lookalikeSpec;
   }
 

@@ -10,10 +10,10 @@ import {CustomAudienceCreateBody} from '../model/CustomAudienceCreateBody.js';
 import {CustomAudienceDeleteBody} from '../model/CustomAudienceDeleteBody.js';
 import {CustomAudienceShareBody} from '../model/CustomAudienceShareBody.js';
 import {CustomAudienceUpdateBody} from '../model/CustomAudienceUpdateBody.js';
+import {DmpcustomAudiencefileuploadContextInfo} from '../model/DmpcustomAudiencefileuploadContextInfo.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
 import {LookalikeCreateBody} from '../model/LookalikeCreateBody.js';
 import {LookalikeUpdateBody} from '../model/LookalikeUpdateBody.js';
-import {dmpcustomAudiencefileuploadContextInfo} from '../model/dmpcustomAudiencefileuploadContextInfo.js';
 import {RuleCreateBody} from '../model/RuleCreateBody.js';
 import {SavedAudienceCreateBody} from '../model/SavedAudienceCreateBody.js';
 import {SavedAudienceDeleteBody} from '../model/SavedAudienceDeleteBody.js';
@@ -22,7 +22,7 @@ import {ShareCancelBody} from '../model/ShareCancelBody.js';
 /**
 * Audience service.
 * @module api/AudienceApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class AudienceApi {
 
@@ -204,7 +204,7 @@ export class AudienceApi {
      */
 
     /**
-     * Delete audiences [Dmp Custom_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940539757569)
+     * Delete audiences [Dmp Custom_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940539757569)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/CustomAudienceDeleteBody} opts.body 
@@ -252,12 +252,12 @@ export class AudienceApi {
      */
 
     /**
-     * Upload a data file [Dmp Custom_audience File Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940567842818)
+     * Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940567842818)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {String} opts.advertiser_id 
      * @param {String} opts.calculate_type 
-     * @param {module:model/dmpcustomAudiencefileuploadContextInfo} opts.context_info 
+     * @param {module:model/DmpcustomAudiencefileuploadContextInfo} opts.context_info 
      * @param {Blob} opts.file 
      * @param {String} opts.file_name 
      * @param {String} opts.file_signature 
@@ -305,7 +305,7 @@ export class AudienceApi {
      */
 
     /**
-     * Obtain the details of specified audiences [Dmp Custom_audience Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940507792385)
+     * Obtain the details of specified audiences [Dmp Custom_audience Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940507792385)
      * @param {String} advertiser_id Advertiser ID.
      * @param {Array.<String>} custom_audience_ids A list of Audience IDs. Length range is [1, 100] .
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
@@ -363,7 +363,7 @@ export class AudienceApi {
      */
 
     /**
-     * Get all audiences [Dmp Custom_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940506015746)
+     * Get all audiences [Dmp Custom_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940506015746)
      * @param {String} advertiser_id Advertiser ID.
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
@@ -418,7 +418,7 @@ export class AudienceApi {
      */
 
     /**
-     * Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940511844353)
+     * Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940511844353)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/LookalikeCreateBody} opts.body 
@@ -514,7 +514,7 @@ export class AudienceApi {
      */
 
     /**
-     * Create an audience by rules [Dmp Custom_audience Rule Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940509849601)
+     * Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940509849601)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/RuleCreateBody} opts.body 
@@ -562,7 +562,7 @@ export class AudienceApi {
      */
 
     /**
-     * Share custom audiences with other advertisers [Dmp Custom_audience Share](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245803888706)
+     * Share custom audiences with other advertisers [Dmp Custom_audience Share](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245803888706)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/CustomAudienceShareBody} opts.body 
@@ -610,7 +610,7 @@ export class AudienceApi {
      */
 
     /**
-     * Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245829978113)
+     * Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245829978113)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/ShareCancelBody} opts.body 
@@ -716,7 +716,7 @@ export class AudienceApi {
      */
 
     /**
-     * Update the details of an audience [Dmp Custom_audience Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940572667906)
+     * Update the details of an audience [Dmp Custom_audience Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940572667906)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/CustomAudienceUpdateBody} opts.body 
@@ -764,7 +764,7 @@ export class AudienceApi {
      */
 
     /**
-     * Create a Saved Audience [Dmp Saved_audience Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154541898754)
+     * Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154541898754)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/SavedAudienceCreateBody} opts.body 
@@ -812,7 +812,7 @@ export class AudienceApi {
      */
 
     /**
-     * Delete Saved Audiences [Dmp Saved_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154666312706)
+     * Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154666312706)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
      * @param {module:model/SavedAudienceDeleteBody} opts.body 
@@ -860,7 +860,7 @@ export class AudienceApi {
      */
 
     /**
-     * Get the details of Saved Audiences [Dmp Saved_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154619404290)
+     * Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154619404290)
      * @param {String} advertiser_id Advertiser ID.
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters

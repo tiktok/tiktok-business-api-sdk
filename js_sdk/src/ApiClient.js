@@ -462,7 +462,7 @@ export class ApiClient {
                         delete data.code;
                         delete data.message;
                         } else {
-                            if (path.startsWith("/open_api/v1.3/pixel")) {
+                            if (path.startsWith("/pixel")) {
                                 throw new Error("request_id:" + data.request_id + " message: " + data.message + " code: " + data.code + " data: " + JSON.stringify(data.data));
                             }
                             throw new Error("request_id:" + data.request_id + " message: " + data.message + " code: " + data.code );

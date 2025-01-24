@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.dmpsavedAudiencecreateActions;
+import business_api_client.DmpsavedAudiencecreateActions;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -20,10 +20,10 @@ import java.util.List;
  * SavedAudienceCreateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class SavedAudienceCreateBody {
   @JsonProperty("actions")
-  private List<dmpsavedAudiencecreateActions> actions = null;
+  private List<DmpsavedAudiencecreateActions> actions = null;
 
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -76,14 +76,14 @@ public class SavedAudienceCreateBody {
   @JsonProperty("saved_audience_name")
   private String savedAudienceName = null;
 
-  public SavedAudienceCreateBody actions(List<dmpsavedAudiencecreateActions> actions) {
+  public SavedAudienceCreateBody actions(List<DmpsavedAudiencecreateActions> actions) {
     this.actions = actions;
     return this;
   }
 
-  public SavedAudienceCreateBody addActionsItem(dmpsavedAudiencecreateActions actionsItem) {
+  public SavedAudienceCreateBody addActionsItem(DmpsavedAudiencecreateActions actionsItem) {
     if (this.actions == null) {
-      this.actions = new ArrayList<dmpsavedAudiencecreateActions>();
+      this.actions = new ArrayList<DmpsavedAudiencecreateActions>();
     }
     this.actions.add(actionsItem);
     return this;
@@ -94,11 +94,11 @@ public class SavedAudienceCreateBody {
    * @return actions
   **/
   @Schema(description = "A list of action category objects.")
-  public List<dmpsavedAudiencecreateActions> getActions() {
+  public List<DmpsavedAudiencecreateActions> getActions() {
     return actions;
   }
 
-  public void setActions(List<dmpsavedAudiencecreateActions> actions) {
+  public void setActions(List<DmpsavedAudiencecreateActions> actions) {
     this.actions = actions;
   }
 
