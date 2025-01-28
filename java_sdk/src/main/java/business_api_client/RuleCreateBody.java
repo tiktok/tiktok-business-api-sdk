@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.dmpcustomAudiencerulecreateRuleSpec;
+import business_api_client.DmpcustomAudiencerulecreateRuleSpec;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * RuleCreateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class RuleCreateBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -48,7 +48,7 @@ public class RuleCreateBody {
   private Integer retentionInDays = null;
 
   @JsonProperty("rule_spec")
-  private dmpcustomAudiencerulecreateRuleSpec ruleSpec = null;
+  private DmpcustomAudiencerulecreateRuleSpec ruleSpec = null;
 
   public RuleCreateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
@@ -212,7 +212,7 @@ public class RuleCreateBody {
     this.retentionInDays = retentionInDays;
   }
 
-  public RuleCreateBody ruleSpec(dmpcustomAudiencerulecreateRuleSpec ruleSpec) {
+  public RuleCreateBody ruleSpec(DmpcustomAudiencerulecreateRuleSpec ruleSpec) {
     this.ruleSpec = ruleSpec;
     return this;
   }
@@ -222,11 +222,11 @@ public class RuleCreateBody {
    * @return ruleSpec
   **/
   @Schema(required = true, description = "")
-  public dmpcustomAudiencerulecreateRuleSpec getRuleSpec() {
+  public DmpcustomAudiencerulecreateRuleSpec getRuleSpec() {
     return ruleSpec;
   }
 
-  public void setRuleSpec(dmpcustomAudiencerulecreateRuleSpec ruleSpec) {
+  public void setRuleSpec(DmpcustomAudiencerulecreateRuleSpec ruleSpec) {
     this.ruleSpec = ruleSpec;
   }
 

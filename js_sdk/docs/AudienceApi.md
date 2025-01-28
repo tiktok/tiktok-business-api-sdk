@@ -7,20 +7,20 @@ Method | HTTP request | Description
 [**dmpCustomAudienceApply**](AudienceApi.md#dmpCustomAudienceApply) | **POST** /open_api/v1.3/dmp/custom_audience/apply/ | Apply a shared custom audience [Dmp Custom_audience Apply](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245827044354)
 [**dmpCustomAudienceApplyLog**](AudienceApi.md#dmpCustomAudienceApplyLog) | **GET** /open_api/v1.3/dmp/custom_audience/apply/log/ | Get the latest application log of custom audiences [Dmp Custom_audience Apply Log](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1758615737388033)
 [**dmpCustomAudienceCreate**](AudienceApi.md#dmpCustomAudienceCreate) | **POST** /open_api/v1.3/dmp/custom_audience/create/ | Create an audience by file [Dmp Custom_audience Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940570793985)
-[**dmpCustomAudienceDelete**](AudienceApi.md#dmpCustomAudienceDelete) | **POST** /open_api/v1.3/dmp/custom_audience/delete/ | Delete audiences [Dmp Custom_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940539757569)
-[**dmpCustomAudienceFileUpload**](AudienceApi.md#dmpCustomAudienceFileUpload) | **POST** /open_api/v1.3/dmp/custom_audience/file/upload/ | Upload a data file [Dmp Custom_audience File Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940567842818)
-[**dmpCustomAudienceGet**](AudienceApi.md#dmpCustomAudienceGet) | **GET** /open_api/v1.3/dmp/custom_audience/get/ | Obtain the details of specified audiences [Dmp Custom_audience Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940507792385)
-[**dmpCustomAudienceList**](AudienceApi.md#dmpCustomAudienceList) | **GET** /open_api/v1.3/dmp/custom_audience/list/ | Get all audiences [Dmp Custom_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940506015746)
-[**dmpCustomAudienceLookalikeCreate**](AudienceApi.md#dmpCustomAudienceLookalikeCreate) | **POST** /open_api/v1.3/dmp/custom_audience/lookalike/create/ | Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940511844353)
+[**dmpCustomAudienceDelete**](AudienceApi.md#dmpCustomAudienceDelete) | **POST** /open_api/v1.3/dmp/custom_audience/delete/ | Delete audiences [Dmp Custom_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940539757569)
+[**dmpCustomAudienceFileUpload**](AudienceApi.md#dmpCustomAudienceFileUpload) | **POST** /open_api/v1.3/dmp/custom_audience/file/upload/ | Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940567842818)
+[**dmpCustomAudienceGet**](AudienceApi.md#dmpCustomAudienceGet) | **GET** /open_api/v1.3/dmp/custom_audience/get/ | Obtain the details of specified audiences [Dmp Custom_audience Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940507792385)
+[**dmpCustomAudienceList**](AudienceApi.md#dmpCustomAudienceList) | **GET** /open_api/v1.3/dmp/custom_audience/list/ | Get all audiences [Dmp Custom_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940506015746)
+[**dmpCustomAudienceLookalikeCreate**](AudienceApi.md#dmpCustomAudienceLookalikeCreate) | **POST** /open_api/v1.3/dmp/custom_audience/lookalike/create/ | Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940511844353)
 [**dmpCustomAudienceLookalikeUpdate**](AudienceApi.md#dmpCustomAudienceLookalikeUpdate) | **POST** /open_api/v1.3/dmp/custom_audience/lookalike/update/ | Manually refresh a Lookalike Audience [Dmp Custom_audience Lookalike Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1758616888158209)
-[**dmpCustomAudienceRuleCreate**](AudienceApi.md#dmpCustomAudienceRuleCreate) | **POST** /open_api/v1.3/dmp/custom_audience/rule/create/ | Create an audience by rules [Dmp Custom_audience Rule Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940509849601)
-[**dmpCustomAudienceShare**](AudienceApi.md#dmpCustomAudienceShare) | **POST** /open_api/v1.3/dmp/custom_audience/share/ | Share custom audiences with other advertisers [Dmp Custom_audience Share](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245803888706)
-[**dmpCustomAudienceShareCancel**](AudienceApi.md#dmpCustomAudienceShareCancel) | **POST** /open_api/v1.3/dmp/custom_audience/share/cancel/ | Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245829978113)
+[**dmpCustomAudienceRuleCreate**](AudienceApi.md#dmpCustomAudienceRuleCreate) | **POST** /open_api/v1.3/dmp/custom_audience/rule/create/ | Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940509849601)
+[**dmpCustomAudienceShare**](AudienceApi.md#dmpCustomAudienceShare) | **POST** /open_api/v1.3/dmp/custom_audience/share/ | Share custom audiences with other advertisers [Dmp Custom_audience Share](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245803888706)
+[**dmpCustomAudienceShareCancel**](AudienceApi.md#dmpCustomAudienceShareCancel) | **POST** /open_api/v1.3/dmp/custom_audience/share/cancel/ | Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245829978113)
 [**dmpCustomAudienceShareLog**](AudienceApi.md#dmpCustomAudienceShareLog) | **GET** /open_api/v1.3/dmp/custom_audience/share/log/ | Get the sharing log of a custom audience [Dmp Custom_audience Share Log](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245827044354)
-[**dmpCustomAudienceUpdate**](AudienceApi.md#dmpCustomAudienceUpdate) | **POST** /open_api/v1.3/dmp/custom_audience/update/ | Update the details of an audience [Dmp Custom_audience Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940572667906)
-[**dmpSavedAudienceCreate**](AudienceApi.md#dmpSavedAudienceCreate) | **POST** /open_api/v1.3/dmp/saved_audience/create/ | Create a Saved Audience [Dmp Saved_audience Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154541898754)
-[**dmpSavedAudienceDelete**](AudienceApi.md#dmpSavedAudienceDelete) | **POST** /open_api/v1.3/dmp/saved_audience/delete/ | Delete Saved Audiences [Dmp Saved_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154666312706)
-[**dmpSavedAudienceList**](AudienceApi.md#dmpSavedAudienceList) | **GET** /open_api/v1.3/dmp/saved_audience/list/ | Get the details of Saved Audiences [Dmp Saved_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154619404290)
+[**dmpCustomAudienceUpdate**](AudienceApi.md#dmpCustomAudienceUpdate) | **POST** /open_api/v1.3/dmp/custom_audience/update/ | Update the details of an audience [Dmp Custom_audience Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940572667906)
+[**dmpSavedAudienceCreate**](AudienceApi.md#dmpSavedAudienceCreate) | **POST** /open_api/v1.3/dmp/saved_audience/create/ | Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154541898754)
+[**dmpSavedAudienceDelete**](AudienceApi.md#dmpSavedAudienceDelete) | **POST** /open_api/v1.3/dmp/saved_audience/delete/ | Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154666312706)
+[**dmpSavedAudienceList**](AudienceApi.md#dmpSavedAudienceList) | **GET** /open_api/v1.3/dmp/saved_audience/list/ | Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154619404290)
 
 <a name="dmpCustomAudienceApply"></a>
 # **dmpCustomAudienceApply**
@@ -168,7 +168,7 @@ No authorization required
 # **dmpCustomAudienceDelete**
 > InlineResponse200 dmpCustomAudienceDelete(Access_Token, opts)
 
-Delete audiences [Dmp Custom_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940539757569)
+Delete audiences [Dmp Custom_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940539757569)
 
 ### Example
 ```javascript
@@ -212,7 +212,7 @@ No authorization required
 # **dmpCustomAudienceFileUpload**
 > InlineResponse200 dmpCustomAudienceFileUpload(Access_Token, opts)
 
-Upload a data file [Dmp Custom_audience File Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940567842818)
+Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940567842818)
 
 ### Example
 ```javascript
@@ -223,7 +223,7 @@ let Access_Token = "Access_Token_example"; // String | Authorized access token. 
 let opts = { 
   'advertiser_id': "advertiser_id_example", // String | 
   'calculate_type': "calculate_type_example", // String | 
-  'context_info': new js_sdk.dmpcustomAudiencefileuploadContextInfo(), // dmpcustomAudiencefileuploadContextInfo | 
+  'context_info': new js_sdk.DmpcustomAudiencefileuploadContextInfo(), // DmpcustomAudiencefileuploadContextInfo | 
   'file': "file_example", // Blob | 
   'file_name': "file_name_example", // String | 
   'file_signature': "file_signature_example" // String | 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
  **advertiser_id** | **String**|  | [optional] 
  **calculate_type** | **String**|  | [optional] 
- **context_info** | [**dmpcustomAudiencefileuploadContextInfo**](dmpcustomAudiencefileuploadContextInfo.md)|  | [optional] 
+ **context_info** | [**DmpcustomAudiencefileuploadContextInfo**](DmpcustomAudiencefileuploadContextInfo.md)|  | [optional] 
  **file** | **Blob**|  | [optional] 
  **file_name** | **String**|  | [optional] 
  **file_signature** | **String**|  | [optional] 
@@ -266,7 +266,7 @@ No authorization required
 # **dmpCustomAudienceGet**
 > InlineResponse200 dmpCustomAudienceGet(advertiser_id, custom_audience_ids, Access_Token, opts)
 
-Obtain the details of specified audiences [Dmp Custom_audience Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940507792385)
+Obtain the details of specified audiences [Dmp Custom_audience Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940507792385)
 
 ### Example
 ```javascript
@@ -314,7 +314,7 @@ No authorization required
 # **dmpCustomAudienceList**
 > InlineResponse200 dmpCustomAudienceList(advertiser_id, Access_Token, opts)
 
-Get all audiences [Dmp Custom_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940506015746)
+Get all audiences [Dmp Custom_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940506015746)
 
 ### Example
 ```javascript
@@ -364,7 +364,7 @@ No authorization required
 # **dmpCustomAudienceLookalikeCreate**
 > InlineResponse200 dmpCustomAudienceLookalikeCreate(Access_Token, opts)
 
-Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940511844353)
+Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940511844353)
 
 ### Example
 ```javascript
@@ -452,7 +452,7 @@ No authorization required
 # **dmpCustomAudienceRuleCreate**
 > InlineResponse200 dmpCustomAudienceRuleCreate(Access_Token, opts)
 
-Create an audience by rules [Dmp Custom_audience Rule Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940509849601)
+Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940509849601)
 
 ### Example
 ```javascript
@@ -496,7 +496,7 @@ No authorization required
 # **dmpCustomAudienceShare**
 > InlineResponse200 dmpCustomAudienceShare(Access_Token, opts)
 
-Share custom audiences with other advertisers [Dmp Custom_audience Share](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245803888706)
+Share custom audiences with other advertisers [Dmp Custom_audience Share](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245803888706)
 
 ### Example
 ```javascript
@@ -540,7 +540,7 @@ No authorization required
 # **dmpCustomAudienceShareCancel**
 > InlineResponse200 dmpCustomAudienceShareCancel(Access_Token, opts)
 
-Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245829978113)
+Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1740245829978113)
 
 ### Example
 ```javascript
@@ -632,7 +632,7 @@ No authorization required
 # **dmpCustomAudienceUpdate**
 > InlineResponse200 dmpCustomAudienceUpdate(Access_Token, opts)
 
-Update the details of an audience [Dmp Custom_audience Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940572667906)
+Update the details of an audience [Dmp Custom_audience Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739940572667906)
 
 ### Example
 ```javascript
@@ -676,7 +676,7 @@ No authorization required
 # **dmpSavedAudienceCreate**
 > InlineResponse200 dmpSavedAudienceCreate(Access_Token, opts)
 
-Create a Saved Audience [Dmp Saved_audience Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154541898754)
+Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154541898754)
 
 ### Example
 ```javascript
@@ -720,7 +720,7 @@ No authorization required
 # **dmpSavedAudienceDelete**
 > InlineResponse200 dmpSavedAudienceDelete(Access_Token, opts)
 
-Delete Saved Audiences [Dmp Saved_audience Delete](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154666312706)
+Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154666312706)
 
 ### Example
 ```javascript
@@ -764,7 +764,7 @@ No authorization required
 # **dmpSavedAudienceList**
 > InlineResponse200 dmpSavedAudienceList(advertiser_id, Access_Token, opts)
 
-Get the details of Saved Audiences [Dmp Saved_audience List](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1780154619404290)
+Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154619404290)
 
 ### Example
 ```javascript

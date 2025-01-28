@@ -21,27 +21,129 @@ import {AdAcoBodyMediaInfoList} from './model/AdAcoBodyMediaInfoList.js';
 import {AdAcoBodyMediaInfoVideoInfo} from './model/AdAcoBodyMediaInfoVideoInfo.js';
 import {AdAcoBodyPageList} from './model/AdAcoBodyPageList.js';
 import {AdAcoBodyTitleList} from './model/AdAcoBodyTitleList.js';
+import {AdAcoUpdateBody} from './model/AdAcoUpdateBody.js';
+import {AdCreateBody} from './model/AdCreateBody.js';
+import {AdStatusUpdateBody} from './model/AdStatusUpdateBody.js';
+import {AdUpdateBody} from './model/AdUpdateBody.js';
+import {AdUploadBody} from './model/AdUploadBody.js';
+import {AdcreateCreatives} from './model/AdcreateCreatives.js';
+import {AdcreateDisclaimerClickableTexts} from './model/AdcreateDisclaimerClickableTexts.js';
+import {AdcreateDisclaimerText} from './model/AdcreateDisclaimerText.js';
+import {AdgroupCreateBody} from './model/AdgroupCreateBody.js';
+import {AdgroupStatusUpdateBody} from './model/AdgroupStatusUpdateBody.js';
+import {AdgroupUpdateBody} from './model/AdgroupUpdateBody.js';
+import {AdgroupcreateActions} from './model/AdgroupcreateActions.js';
+import {AdgroupcreateAudienceRule} from './model/AdgroupcreateAudienceRule.js';
+import {AdgroupcreateAudienceRuleExclusions} from './model/AdgroupcreateAudienceRuleExclusions.js';
+import {AdgroupcreateAudienceRuleExclusionsEventSources} from './model/AdgroupcreateAudienceRuleExclusionsEventSources.js';
+import {AdgroupcreateAudienceRuleExclusionsFilter} from './model/AdgroupcreateAudienceRuleExclusionsFilter.js';
+import {AdgroupcreateAudienceRuleExclusionsFilterFilters} from './model/AdgroupcreateAudienceRuleExclusionsFilterFilters.js';
+import {AdgroupcreateAudienceRuleExclusionsRules} from './model/AdgroupcreateAudienceRuleExclusionsRules.js';
+import {AdgroupcreateAudienceRuleInclusions} from './model/AdgroupcreateAudienceRuleInclusions.js';
+import {AdgroupcreateExcludedCustomActions} from './model/AdgroupcreateExcludedCustomActions.js';
+import {AdgroupcreateIncludedCustomActions} from './model/AdgroupcreateIncludedCustomActions.js';
+import {AdgroupcreateTargetingExpansion} from './model/AdgroupcreateTargetingExpansion.js';
+import {AdupdateCreatives} from './model/AdupdateCreatives.js';
+import {AdvertiserCreateBody} from './model/AdvertiserCreateBody.js';
+import {AdvertiserUpdateBody} from './model/AdvertiserUpdateBody.js';
+import {AdvertiserupdateQualificationImages} from './model/AdvertiserupdateQualificationImages.js';
+import {BcTransferBody} from './model/BcTransferBody.js';
+import {BcadvertisercreateAdvertiserInfo} from './model/BcadvertisercreateAdvertiserInfo.js';
+import {BcadvertisercreateBillingGroupInfo} from './model/BcadvertisercreateBillingGroupInfo.js';
+import {BcadvertisercreateBillingInfo} from './model/BcadvertisercreateBillingInfo.js';
+import {BcadvertisercreateContactInfo} from './model/BcadvertisercreateContactInfo.js';
+import {BcadvertisercreateCustomerInfo} from './model/BcadvertisercreateCustomerInfo.js';
+import {BcadvertisercreateQualificationInfo} from './model/BcadvertisercreateQualificationInfo.js';
+import {BidRecommendBody} from './model/BidRecommendBody.js';
+import {CampaignCreateBody} from './model/CampaignCreateBody.js';
+import {CampaignStatusUpdateBody} from './model/CampaignStatusUpdateBody.js';
+import {CampaignUpdateBody} from './model/CampaignUpdateBody.js';
 import {CatalogCapitalizeBody} from './model/CatalogCapitalizeBody.js';
 import {CatalogCreateBody} from './model/CatalogCreateBody.js';
 import {CatalogDeleteBody} from './model/CatalogDeleteBody.js';
 import {CatalogUpdateBody} from './model/CatalogUpdateBody.js';
+import {CatalogcreateCatalogConf} from './model/CatalogcreateCatalogConf.js';
+import {CreativeportfoliocreateAdvancedAudioInfo} from './model/CreativeportfoliocreateAdvancedAudioInfo.js';
+import {CreativeportfoliocreateAdvancedGestureIcon} from './model/CreativeportfoliocreateAdvancedGestureIcon.js';
+import {CreativeportfoliocreateBadgeImageInfo} from './model/CreativeportfoliocreateBadgeImageInfo.js';
+import {CreativeportfoliocreateBadgePosition} from './model/CreativeportfoliocreateBadgePosition.js';
+import {CreativeportfoliocreatePortfolioContent} from './model/CreativeportfoliocreatePortfolioContent.js';
+import {CreativeportfoliocreateStickerParam} from './model/CreativeportfoliocreateStickerParam.js';
+import {CustomAudienceApplyBody} from './model/CustomAudienceApplyBody.js';
+import {CustomAudienceCreateBody} from './model/CustomAudienceCreateBody.js';
+import {CustomAudienceDeleteBody} from './model/CustomAudienceDeleteBody.js';
+import {CustomAudienceShareBody} from './model/CustomAudienceShareBody.js';
+import {CustomAudienceUpdateBody} from './model/CustomAudienceUpdateBody.js';
+import {DmpcustomAudienceapplyContextInfo} from './model/DmpcustomAudienceapplyContextInfo.js';
+import {DmpcustomAudiencefileuploadContextInfo} from './model/DmpcustomAudiencefileuploadContextInfo.js';
+import {DmpcustomAudiencelookalikecreateContextInfo} from './model/DmpcustomAudiencelookalikecreateContextInfo.js';
+import {DmpcustomAudiencelookalikecreateLookalikeSpec} from './model/DmpcustomAudiencelookalikecreateLookalikeSpec.js';
+import {DmpcustomAudiencerulecreateRuleSpec} from './model/DmpcustomAudiencerulecreateRuleSpec.js';
+import {DmpcustomAudiencerulecreateRuleSpecExclusionRuleSet} from './model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSet.js';
+import {DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet} from './model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet.js';
+import {DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters} from './model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters.js';
+import {DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters} from './model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters.js';
+import {DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules} from './model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules.js';
+import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet} from './model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet.js';
+import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet} from './model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet.js';
+import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters} from './model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters.js';
+import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters} from './model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters.js';
+import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules} from './model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules.js';
+import {DmpsavedAudiencecreateActions} from './model/DmpsavedAudiencecreateActions.js';
 import {EventsourceBindBody} from './model/EventsourceBindBody.js';
 import {EventsourceUnbindBody} from './model/EventsourceUnbindBody.js';
 import {FeedDeleteBody} from './model/FeedDeleteBody.js';
+import {FileImageAdUpload} from './model/FileImageAdUpload.js';
+import {FileUploadBody} from './model/FileUploadBody.js';
+import {FilteringAdGet} from './model/FilteringAdGet.js';
+import {FilteringAdgroupGet} from './model/FilteringAdgroupGet.js';
+import {FilteringCampaignGet} from './model/FilteringCampaignGet.js';
+import {FilteringReportIntegratedGet} from './model/FilteringReportIntegratedGet.js';
+import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch.js';
+import {IdentityCreateBody} from './model/IdentityCreateBody.js';
+import {ImageUploadBody} from './model/ImageUploadBody.js';
 import {InlineResponse200} from './model/InlineResponse200.js';
-import {catalogcreateCatalogConf} from './model/catalogcreateCatalogConf.js';
-import {creativeportfoliocreateAdvancedAudioInfo} from './model/creativeportfoliocreateAdvancedAudioInfo.js';
-import {creativeportfoliocreateAdvancedGestureIcon} from './model/creativeportfoliocreateAdvancedGestureIcon.js';
-import {creativeportfoliocreateBadgeImageInfo} from './model/creativeportfoliocreateBadgeImageInfo.js';
-import {creativeportfoliocreateBadgePosition} from './model/creativeportfoliocreateBadgePosition.js';
-import {creativeportfoliocreatePortfolioContent} from './model/creativeportfoliocreatePortfolioContent.js';
-import {creativeportfoliocreateStickerParam} from './model/creativeportfoliocreateStickerParam.js';
+import {LookalikeCreateBody} from './model/LookalikeCreateBody.js';
+import {LookalikeUpdateBody} from './model/LookalikeUpdateBody.js';
+import {MaterialStatusUpdateBody} from './model/MaterialStatusUpdateBody.js';
+import {Oauth2AccessTokenBody} from './model/Oauth2AccessTokenBody.js';
+import {PixelBatchBody} from './model/PixelBatchBody.js';
+import {PixelContent} from './model/PixelContent.js';
+import {PixelContext} from './model/PixelContext.js';
+import {PixelContextAd} from './model/PixelContextAd.js';
+import {PixelContextPage} from './model/PixelContextPage.js';
+import {PixelContextUser} from './model/PixelContextUser.js';
+import {PixelProperties} from './model/PixelProperties.js';
+import {PixelTrackBody} from './model/PixelTrackBody.js';
+import {PixelbatchBatch} from './model/PixelbatchBatch.js';
 import {PortfolioCreateBody} from './model/PortfolioCreateBody.js';
 import {ProductDeleteBody} from './model/ProductDeleteBody.js';
 import {ProductFileBody} from './model/ProductFileBody.js';
+import {RuleCreateBody} from './model/RuleCreateBody.js';
+import {SavedAudienceCreateBody} from './model/SavedAudienceCreateBody.js';
+import {SavedAudienceDeleteBody} from './model/SavedAudienceDeleteBody.js';
+import {ShareCancelBody} from './model/ShareCancelBody.js';
+import {TargetingCategoryRecommendBody} from './model/TargetingCategoryRecommendBody.js';
+import {TargetingInfoBody} from './model/TargetingInfoBody.js';
+import {TargetingSearchBody} from './model/TargetingSearchBody.js';
+import {AccountApi} from './api/AccountApi.js';
+import {AdApi} from './api/AdApi.js';
 import {AdAcoApi} from './api/AdAcoApi.js';
+import {AdgroupApi} from './api/AdgroupApi.js';
+import {AudienceApi} from './api/AudienceApi.js';
+import {AuthenticationApi} from './api/AuthenticationApi.js';
+import {BCApi} from './api/BCApi.js';
+import {BcPaymentApi} from './api/BcPaymentApi.js';
+import {CampaignCreationApi} from './api/CampaignCreationApi.js';
 import {CatalogApi} from './api/CatalogApi.js';
 import {CreativeAssetApi} from './api/CreativeAssetApi.js';
+import {EventCallbackApi} from './api/EventCallbackApi.js';
+import {FileApi} from './api/FileApi.js';
+import {IdentityApi} from './api/IdentityApi.js';
+import {MeasurementApi} from './api/MeasurementApi.js';
+import {RecommendToolApi} from './api/RecommendToolApi.js';
+import {ReportingApi} from './api/ReportingApi.js';
+import {ToolApi} from './api/ToolApi.js';
 
 /**
 * Comprehensive_collection_of_client_libraries_that_enable_our_developers_to_build_software_to_integrate_with_Business_API_faster_and_in_a_more_standardized_way_.<br>
@@ -178,6 +280,228 @@ export {
     AdAcoBodyTitleList,
 
     /**
+     * The AdAcoUpdateBody model constructor.
+     * @property {module:model/AdAcoUpdateBody}
+     */
+    AdAcoUpdateBody,
+
+    /**
+     * The AdCreateBody model constructor.
+     * @property {module:model/AdCreateBody}
+     */
+    AdCreateBody,
+
+    /**
+     * The AdStatusUpdateBody model constructor.
+     * @property {module:model/AdStatusUpdateBody}
+     */
+    AdStatusUpdateBody,
+
+    /**
+     * The AdUpdateBody model constructor.
+     * @property {module:model/AdUpdateBody}
+     */
+    AdUpdateBody,
+
+    /**
+     * The AdUploadBody model constructor.
+     * @property {module:model/AdUploadBody}
+     */
+    AdUploadBody,
+
+    /**
+     * The AdcreateCreatives model constructor.
+     * @property {module:model/AdcreateCreatives}
+     */
+    AdcreateCreatives,
+
+    /**
+     * The AdcreateDisclaimerClickableTexts model constructor.
+     * @property {module:model/AdcreateDisclaimerClickableTexts}
+     */
+    AdcreateDisclaimerClickableTexts,
+
+    /**
+     * The AdcreateDisclaimerText model constructor.
+     * @property {module:model/AdcreateDisclaimerText}
+     */
+    AdcreateDisclaimerText,
+
+    /**
+     * The AdgroupCreateBody model constructor.
+     * @property {module:model/AdgroupCreateBody}
+     */
+    AdgroupCreateBody,
+
+    /**
+     * The AdgroupStatusUpdateBody model constructor.
+     * @property {module:model/AdgroupStatusUpdateBody}
+     */
+    AdgroupStatusUpdateBody,
+
+    /**
+     * The AdgroupUpdateBody model constructor.
+     * @property {module:model/AdgroupUpdateBody}
+     */
+    AdgroupUpdateBody,
+
+    /**
+     * The AdgroupcreateActions model constructor.
+     * @property {module:model/AdgroupcreateActions}
+     */
+    AdgroupcreateActions,
+
+    /**
+     * The AdgroupcreateAudienceRule model constructor.
+     * @property {module:model/AdgroupcreateAudienceRule}
+     */
+    AdgroupcreateAudienceRule,
+
+    /**
+     * The AdgroupcreateAudienceRuleExclusions model constructor.
+     * @property {module:model/AdgroupcreateAudienceRuleExclusions}
+     */
+    AdgroupcreateAudienceRuleExclusions,
+
+    /**
+     * The AdgroupcreateAudienceRuleExclusionsEventSources model constructor.
+     * @property {module:model/AdgroupcreateAudienceRuleExclusionsEventSources}
+     */
+    AdgroupcreateAudienceRuleExclusionsEventSources,
+
+    /**
+     * The AdgroupcreateAudienceRuleExclusionsFilter model constructor.
+     * @property {module:model/AdgroupcreateAudienceRuleExclusionsFilter}
+     */
+    AdgroupcreateAudienceRuleExclusionsFilter,
+
+    /**
+     * The AdgroupcreateAudienceRuleExclusionsFilterFilters model constructor.
+     * @property {module:model/AdgroupcreateAudienceRuleExclusionsFilterFilters}
+     */
+    AdgroupcreateAudienceRuleExclusionsFilterFilters,
+
+    /**
+     * The AdgroupcreateAudienceRuleExclusionsRules model constructor.
+     * @property {module:model/AdgroupcreateAudienceRuleExclusionsRules}
+     */
+    AdgroupcreateAudienceRuleExclusionsRules,
+
+    /**
+     * The AdgroupcreateAudienceRuleInclusions model constructor.
+     * @property {module:model/AdgroupcreateAudienceRuleInclusions}
+     */
+    AdgroupcreateAudienceRuleInclusions,
+
+    /**
+     * The AdgroupcreateExcludedCustomActions model constructor.
+     * @property {module:model/AdgroupcreateExcludedCustomActions}
+     */
+    AdgroupcreateExcludedCustomActions,
+
+    /**
+     * The AdgroupcreateIncludedCustomActions model constructor.
+     * @property {module:model/AdgroupcreateIncludedCustomActions}
+     */
+    AdgroupcreateIncludedCustomActions,
+
+    /**
+     * The AdgroupcreateTargetingExpansion model constructor.
+     * @property {module:model/AdgroupcreateTargetingExpansion}
+     */
+    AdgroupcreateTargetingExpansion,
+
+    /**
+     * The AdupdateCreatives model constructor.
+     * @property {module:model/AdupdateCreatives}
+     */
+    AdupdateCreatives,
+
+    /**
+     * The AdvertiserCreateBody model constructor.
+     * @property {module:model/AdvertiserCreateBody}
+     */
+    AdvertiserCreateBody,
+
+    /**
+     * The AdvertiserUpdateBody model constructor.
+     * @property {module:model/AdvertiserUpdateBody}
+     */
+    AdvertiserUpdateBody,
+
+    /**
+     * The AdvertiserupdateQualificationImages model constructor.
+     * @property {module:model/AdvertiserupdateQualificationImages}
+     */
+    AdvertiserupdateQualificationImages,
+
+    /**
+     * The BcTransferBody model constructor.
+     * @property {module:model/BcTransferBody}
+     */
+    BcTransferBody,
+
+    /**
+     * The BcadvertisercreateAdvertiserInfo model constructor.
+     * @property {module:model/BcadvertisercreateAdvertiserInfo}
+     */
+    BcadvertisercreateAdvertiserInfo,
+
+    /**
+     * The BcadvertisercreateBillingGroupInfo model constructor.
+     * @property {module:model/BcadvertisercreateBillingGroupInfo}
+     */
+    BcadvertisercreateBillingGroupInfo,
+
+    /**
+     * The BcadvertisercreateBillingInfo model constructor.
+     * @property {module:model/BcadvertisercreateBillingInfo}
+     */
+    BcadvertisercreateBillingInfo,
+
+    /**
+     * The BcadvertisercreateContactInfo model constructor.
+     * @property {module:model/BcadvertisercreateContactInfo}
+     */
+    BcadvertisercreateContactInfo,
+
+    /**
+     * The BcadvertisercreateCustomerInfo model constructor.
+     * @property {module:model/BcadvertisercreateCustomerInfo}
+     */
+    BcadvertisercreateCustomerInfo,
+
+    /**
+     * The BcadvertisercreateQualificationInfo model constructor.
+     * @property {module:model/BcadvertisercreateQualificationInfo}
+     */
+    BcadvertisercreateQualificationInfo,
+
+    /**
+     * The BidRecommendBody model constructor.
+     * @property {module:model/BidRecommendBody}
+     */
+    BidRecommendBody,
+
+    /**
+     * The CampaignCreateBody model constructor.
+     * @property {module:model/CampaignCreateBody}
+     */
+    CampaignCreateBody,
+
+    /**
+     * The CampaignStatusUpdateBody model constructor.
+     * @property {module:model/CampaignStatusUpdateBody}
+     */
+    CampaignStatusUpdateBody,
+
+    /**
+     * The CampaignUpdateBody model constructor.
+     * @property {module:model/CampaignUpdateBody}
+     */
+    CampaignUpdateBody,
+
+    /**
      * The CatalogCapitalizeBody model constructor.
      * @property {module:model/CatalogCapitalizeBody}
      */
@@ -202,6 +526,174 @@ export {
     CatalogUpdateBody,
 
     /**
+     * The CatalogcreateCatalogConf model constructor.
+     * @property {module:model/CatalogcreateCatalogConf}
+     */
+    CatalogcreateCatalogConf,
+
+    /**
+     * The CreativeportfoliocreateAdvancedAudioInfo model constructor.
+     * @property {module:model/CreativeportfoliocreateAdvancedAudioInfo}
+     */
+    CreativeportfoliocreateAdvancedAudioInfo,
+
+    /**
+     * The CreativeportfoliocreateAdvancedGestureIcon model constructor.
+     * @property {module:model/CreativeportfoliocreateAdvancedGestureIcon}
+     */
+    CreativeportfoliocreateAdvancedGestureIcon,
+
+    /**
+     * The CreativeportfoliocreateBadgeImageInfo model constructor.
+     * @property {module:model/CreativeportfoliocreateBadgeImageInfo}
+     */
+    CreativeportfoliocreateBadgeImageInfo,
+
+    /**
+     * The CreativeportfoliocreateBadgePosition model constructor.
+     * @property {module:model/CreativeportfoliocreateBadgePosition}
+     */
+    CreativeportfoliocreateBadgePosition,
+
+    /**
+     * The CreativeportfoliocreatePortfolioContent model constructor.
+     * @property {module:model/CreativeportfoliocreatePortfolioContent}
+     */
+    CreativeportfoliocreatePortfolioContent,
+
+    /**
+     * The CreativeportfoliocreateStickerParam model constructor.
+     * @property {module:model/CreativeportfoliocreateStickerParam}
+     */
+    CreativeportfoliocreateStickerParam,
+
+    /**
+     * The CustomAudienceApplyBody model constructor.
+     * @property {module:model/CustomAudienceApplyBody}
+     */
+    CustomAudienceApplyBody,
+
+    /**
+     * The CustomAudienceCreateBody model constructor.
+     * @property {module:model/CustomAudienceCreateBody}
+     */
+    CustomAudienceCreateBody,
+
+    /**
+     * The CustomAudienceDeleteBody model constructor.
+     * @property {module:model/CustomAudienceDeleteBody}
+     */
+    CustomAudienceDeleteBody,
+
+    /**
+     * The CustomAudienceShareBody model constructor.
+     * @property {module:model/CustomAudienceShareBody}
+     */
+    CustomAudienceShareBody,
+
+    /**
+     * The CustomAudienceUpdateBody model constructor.
+     * @property {module:model/CustomAudienceUpdateBody}
+     */
+    CustomAudienceUpdateBody,
+
+    /**
+     * The DmpcustomAudienceapplyContextInfo model constructor.
+     * @property {module:model/DmpcustomAudienceapplyContextInfo}
+     */
+    DmpcustomAudienceapplyContextInfo,
+
+    /**
+     * The DmpcustomAudiencefileuploadContextInfo model constructor.
+     * @property {module:model/DmpcustomAudiencefileuploadContextInfo}
+     */
+    DmpcustomAudiencefileuploadContextInfo,
+
+    /**
+     * The DmpcustomAudiencelookalikecreateContextInfo model constructor.
+     * @property {module:model/DmpcustomAudiencelookalikecreateContextInfo}
+     */
+    DmpcustomAudiencelookalikecreateContextInfo,
+
+    /**
+     * The DmpcustomAudiencelookalikecreateLookalikeSpec model constructor.
+     * @property {module:model/DmpcustomAudiencelookalikecreateLookalikeSpec}
+     */
+    DmpcustomAudiencelookalikecreateLookalikeSpec,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpec model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpec}
+     */
+    DmpcustomAudiencerulecreateRuleSpec,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecExclusionRuleSet model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSet}
+     */
+    DmpcustomAudiencerulecreateRuleSpecExclusionRuleSet,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet}
+     */
+    DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters}
+     */
+    DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters}
+     */
+    DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules}
+     */
+    DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet}
+     */
+    DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet}
+     */
+    DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters}
+     */
+    DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters}
+     */
+    DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters,
+
+    /**
+     * The DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules model constructor.
+     * @property {module:model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules}
+     */
+    DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules,
+
+    /**
+     * The DmpsavedAudiencecreateActions model constructor.
+     * @property {module:model/DmpsavedAudiencecreateActions}
+     */
+    DmpsavedAudiencecreateActions,
+
+    /**
      * The EventsourceBindBody model constructor.
      * @property {module:model/EventsourceBindBody}
      */
@@ -220,52 +712,142 @@ export {
     FeedDeleteBody,
 
     /**
+     * The FileImageAdUpload model constructor.
+     * @property {module:model/FileImageAdUpload}
+     */
+    FileImageAdUpload,
+
+    /**
+     * The FileUploadBody model constructor.
+     * @property {module:model/FileUploadBody}
+     */
+    FileUploadBody,
+
+    /**
+     * The FilteringAdGet model constructor.
+     * @property {module:model/FilteringAdGet}
+     */
+    FilteringAdGet,
+
+    /**
+     * The FilteringAdgroupGet model constructor.
+     * @property {module:model/FilteringAdgroupGet}
+     */
+    FilteringAdgroupGet,
+
+    /**
+     * The FilteringCampaignGet model constructor.
+     * @property {module:model/FilteringCampaignGet}
+     */
+    FilteringCampaignGet,
+
+    /**
+     * The FilteringReportIntegratedGet model constructor.
+     * @property {module:model/FilteringReportIntegratedGet}
+     */
+    FilteringReportIntegratedGet,
+
+    /**
+     * The FilteringVideoAdSearch model constructor.
+     * @property {module:model/FilteringVideoAdSearch}
+     */
+    FilteringVideoAdSearch,
+
+    /**
+     * The IdentityCreateBody model constructor.
+     * @property {module:model/IdentityCreateBody}
+     */
+    IdentityCreateBody,
+
+    /**
+     * The ImageUploadBody model constructor.
+     * @property {module:model/ImageUploadBody}
+     */
+    ImageUploadBody,
+
+    /**
      * The InlineResponse200 model constructor.
      * @property {module:model/InlineResponse200}
      */
     InlineResponse200,
 
     /**
-     * The catalogcreateCatalogConf model constructor.
-     * @property {module:model/catalogcreateCatalogConf}
+     * The LookalikeCreateBody model constructor.
+     * @property {module:model/LookalikeCreateBody}
      */
-    catalogcreateCatalogConf,
+    LookalikeCreateBody,
 
     /**
-     * The creativeportfoliocreateAdvancedAudioInfo model constructor.
-     * @property {module:model/creativeportfoliocreateAdvancedAudioInfo}
+     * The LookalikeUpdateBody model constructor.
+     * @property {module:model/LookalikeUpdateBody}
      */
-    creativeportfoliocreateAdvancedAudioInfo,
+    LookalikeUpdateBody,
 
     /**
-     * The creativeportfoliocreateAdvancedGestureIcon model constructor.
-     * @property {module:model/creativeportfoliocreateAdvancedGestureIcon}
+     * The MaterialStatusUpdateBody model constructor.
+     * @property {module:model/MaterialStatusUpdateBody}
      */
-    creativeportfoliocreateAdvancedGestureIcon,
+    MaterialStatusUpdateBody,
 
     /**
-     * The creativeportfoliocreateBadgeImageInfo model constructor.
-     * @property {module:model/creativeportfoliocreateBadgeImageInfo}
+     * The Oauth2AccessTokenBody model constructor.
+     * @property {module:model/Oauth2AccessTokenBody}
      */
-    creativeportfoliocreateBadgeImageInfo,
+    Oauth2AccessTokenBody,
 
     /**
-     * The creativeportfoliocreateBadgePosition model constructor.
-     * @property {module:model/creativeportfoliocreateBadgePosition}
+     * The PixelBatchBody model constructor.
+     * @property {module:model/PixelBatchBody}
      */
-    creativeportfoliocreateBadgePosition,
+    PixelBatchBody,
 
     /**
-     * The creativeportfoliocreatePortfolioContent model constructor.
-     * @property {module:model/creativeportfoliocreatePortfolioContent}
+     * The PixelContent model constructor.
+     * @property {module:model/PixelContent}
      */
-    creativeportfoliocreatePortfolioContent,
+    PixelContent,
 
     /**
-     * The creativeportfoliocreateStickerParam model constructor.
-     * @property {module:model/creativeportfoliocreateStickerParam}
+     * The PixelContext model constructor.
+     * @property {module:model/PixelContext}
      */
-    creativeportfoliocreateStickerParam,
+    PixelContext,
+
+    /**
+     * The PixelContextAd model constructor.
+     * @property {module:model/PixelContextAd}
+     */
+    PixelContextAd,
+
+    /**
+     * The PixelContextPage model constructor.
+     * @property {module:model/PixelContextPage}
+     */
+    PixelContextPage,
+
+    /**
+     * The PixelContextUser model constructor.
+     * @property {module:model/PixelContextUser}
+     */
+    PixelContextUser,
+
+    /**
+     * The PixelProperties model constructor.
+     * @property {module:model/PixelProperties}
+     */
+    PixelProperties,
+
+    /**
+     * The PixelTrackBody model constructor.
+     * @property {module:model/PixelTrackBody}
+     */
+    PixelTrackBody,
+
+    /**
+     * The PixelbatchBatch model constructor.
+     * @property {module:model/PixelbatchBatch}
+     */
+    PixelbatchBatch,
 
     /**
      * The PortfolioCreateBody model constructor.
@@ -286,10 +868,100 @@ export {
     ProductFileBody,
 
     /**
+     * The RuleCreateBody model constructor.
+     * @property {module:model/RuleCreateBody}
+     */
+    RuleCreateBody,
+
+    /**
+     * The SavedAudienceCreateBody model constructor.
+     * @property {module:model/SavedAudienceCreateBody}
+     */
+    SavedAudienceCreateBody,
+
+    /**
+     * The SavedAudienceDeleteBody model constructor.
+     * @property {module:model/SavedAudienceDeleteBody}
+     */
+    SavedAudienceDeleteBody,
+
+    /**
+     * The ShareCancelBody model constructor.
+     * @property {module:model/ShareCancelBody}
+     */
+    ShareCancelBody,
+
+    /**
+     * The TargetingCategoryRecommendBody model constructor.
+     * @property {module:model/TargetingCategoryRecommendBody}
+     */
+    TargetingCategoryRecommendBody,
+
+    /**
+     * The TargetingInfoBody model constructor.
+     * @property {module:model/TargetingInfoBody}
+     */
+    TargetingInfoBody,
+
+    /**
+     * The TargetingSearchBody model constructor.
+     * @property {module:model/TargetingSearchBody}
+     */
+    TargetingSearchBody,
+
+    /**
+    * The AccountApi service constructor.
+    * @property {module:api/AccountApi}
+    */
+    AccountApi,
+
+    /**
+    * The AdApi service constructor.
+    * @property {module:api/AdApi}
+    */
+    AdApi,
+
+    /**
     * The AdAcoApi service constructor.
     * @property {module:api/AdAcoApi}
     */
     AdAcoApi,
+
+    /**
+    * The AdgroupApi service constructor.
+    * @property {module:api/AdgroupApi}
+    */
+    AdgroupApi,
+
+    /**
+    * The AudienceApi service constructor.
+    * @property {module:api/AudienceApi}
+    */
+    AudienceApi,
+
+    /**
+    * The AuthenticationApi service constructor.
+    * @property {module:api/AuthenticationApi}
+    */
+    AuthenticationApi,
+
+    /**
+    * The BCApi service constructor.
+    * @property {module:api/BCApi}
+    */
+    BCApi,
+
+    /**
+    * The BcPaymentApi service constructor.
+    * @property {module:api/BcPaymentApi}
+    */
+    BcPaymentApi,
+
+    /**
+    * The CampaignCreationApi service constructor.
+    * @property {module:api/CampaignCreationApi}
+    */
+    CampaignCreationApi,
 
     /**
     * The CatalogApi service constructor.
@@ -301,5 +973,47 @@ export {
     * The CreativeAssetApi service constructor.
     * @property {module:api/CreativeAssetApi}
     */
-    CreativeAssetApi
+    CreativeAssetApi,
+
+    /**
+    * The EventCallbackApi service constructor.
+    * @property {module:api/EventCallbackApi}
+    */
+    EventCallbackApi,
+
+    /**
+    * The FileApi service constructor.
+    * @property {module:api/FileApi}
+    */
+    FileApi,
+
+    /**
+    * The IdentityApi service constructor.
+    * @property {module:api/IdentityApi}
+    */
+    IdentityApi,
+
+    /**
+    * The MeasurementApi service constructor.
+    * @property {module:api/MeasurementApi}
+    */
+    MeasurementApi,
+
+    /**
+    * The RecommendToolApi service constructor.
+    * @property {module:api/RecommendToolApi}
+    */
+    RecommendToolApi,
+
+    /**
+    * The ReportingApi service constructor.
+    * @property {module:api/ReportingApi}
+    */
+    ReportingApi,
+
+    /**
+    * The ToolApi service constructor.
+    * @property {module:api/ToolApi}
+    */
+    ToolApi
 };

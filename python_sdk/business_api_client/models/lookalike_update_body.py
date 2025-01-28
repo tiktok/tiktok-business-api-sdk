@@ -25,7 +25,7 @@ class LookalikeUpdateBody(object):
     """
     swagger_types = {
         'advertiser_id': 'str',
-        'context_info': 'dmpcustomAudiencefileuploadContextInfo',
+        'context_info': 'DmpcustomAudiencefileuploadContextInfo',
         'custom_audience_ids': 'list[str]'
     }
 
@@ -77,7 +77,7 @@ class LookalikeUpdateBody(object):
 
 
         :return: The context_info of this LookalikeUpdateBody.  # noqa: E501
-        :rtype: dmpcustomAudiencefileuploadContextInfo
+        :rtype: DmpcustomAudiencefileuploadContextInfo
         """
         return self._context_info
 
@@ -87,7 +87,7 @@ class LookalikeUpdateBody(object):
 
 
         :param context_info: The context_info of this LookalikeUpdateBody.  # noqa: E501
-        :type: dmpcustomAudiencefileuploadContextInfo
+        :type: DmpcustomAudiencefileuploadContextInfo
         """
 
         self._context_info = context_info

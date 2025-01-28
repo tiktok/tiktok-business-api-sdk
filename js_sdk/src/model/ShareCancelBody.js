@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {dmpcustomAudiencefileuploadContextInfo} from './dmpcustomAudiencefileuploadContextInfo.js';
+import {DmpcustomAudiencefileuploadContextInfo} from './DmpcustomAudiencefileuploadContextInfo.js';
 
 /**
  * The ShareCancelBody model module.
  * @module model/ShareCancelBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class ShareCancelBody {
   /**
@@ -40,7 +40,7 @@ export class ShareCancelBody {
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
       if (data.hasOwnProperty('context_info'))
-        obj.context_info = dmpcustomAudiencefileuploadContextInfo.constructFromObject(data['context_info']);
+        obj.context_info = DmpcustomAudiencefileuploadContextInfo.constructFromObject(data['context_info']);
       if (data.hasOwnProperty('custom_audience_id'))
         obj.custom_audience_id = ApiClient.convertToType(data['custom_audience_id'], 'String');
       if (data.hasOwnProperty('shared_advertiser_id'))
@@ -57,7 +57,7 @@ export class ShareCancelBody {
 ShareCancelBody.prototype.advertiser_id = undefined;
 
 /**
- * @member {module:model/dmpcustomAudiencefileuploadContextInfo} context_info
+ * @member {module:model/DmpcustomAudiencefileuploadContextInfo} context_info
  */
 ShareCancelBody.prototype.context_info = undefined;
 

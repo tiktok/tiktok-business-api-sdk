@@ -14,7 +14,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * Ad service.
 * @module api/AdApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class AdApi {
 

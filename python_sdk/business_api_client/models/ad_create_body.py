@@ -26,7 +26,7 @@ class AdCreateBody(object):
     swagger_types = {
         'adgroup_id': 'str',
         'advertiser_id': 'str',
-        'creatives': 'list[adcreateCreatives]'
+        'creatives': 'list[AdcreateCreatives]'
     }
 
     attribute_map = {
@@ -102,7 +102,7 @@ class AdCreateBody(object):
         Advertising creatives.  # noqa: E501
 
         :return: The creatives of this AdCreateBody.  # noqa: E501
-        :rtype: list[adcreateCreatives]
+        :rtype: list[AdcreateCreatives]
         """
         return self._creatives
 
@@ -113,7 +113,7 @@ class AdCreateBody(object):
         Advertising creatives.  # noqa: E501
 
         :param creatives: The creatives of this AdCreateBody.  # noqa: E501
-        :type: list[adcreateCreatives]
+        :type: list[AdcreateCreatives]
         """
         if creatives is None:
             raise ValueError("Invalid value for `creatives`, must not be `None`")  # noqa: E501

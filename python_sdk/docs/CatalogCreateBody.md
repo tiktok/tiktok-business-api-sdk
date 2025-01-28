@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bc_id** | **str** |  | [required] 
-**catalog_conf** | [**catalogcreateCatalogConf**](catalogcreateCatalogConf.md) |  | [required] 
+**catalog_conf** | [**CatalogcreateCatalogConf**](CatalogcreateCatalogConf.md) |  | [required] 
 **catalog_type** | **str** |  | [required] 
 **creative_asset_type** | **str** |  | [optional] 
 **name** | **str** |  | [required] 

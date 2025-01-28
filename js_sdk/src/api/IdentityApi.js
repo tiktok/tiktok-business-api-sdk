@@ -11,7 +11,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * Identity service.
 * @module api/IdentityApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class IdentityApi {
 

@@ -9,12 +9,12 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.bcadvertisercreateAdvertiserInfo;
-import business_api_client.bcadvertisercreateBillingGroupInfo;
-import business_api_client.bcadvertisercreateBillingInfo;
-import business_api_client.bcadvertisercreateContactInfo;
-import business_api_client.bcadvertisercreateCustomerInfo;
-import business_api_client.bcadvertisercreateQualificationInfo;
+import business_api_client.BcadvertisercreateAdvertiserInfo;
+import business_api_client.BcadvertisercreateBillingGroupInfo;
+import business_api_client.BcadvertisercreateBillingInfo;
+import business_api_client.BcadvertisercreateContactInfo;
+import business_api_client.BcadvertisercreateCustomerInfo;
+import business_api_client.BcadvertisercreateQualificationInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -23,33 +23,33 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * AdvertiserCreateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class AdvertiserCreateBody {
   @JsonProperty("advertiser_info")
-  private bcadvertisercreateAdvertiserInfo advertiserInfo = null;
+  private BcadvertisercreateAdvertiserInfo advertiserInfo = null;
 
   @JsonProperty("bc_id")
   private String bcId = null;
 
   @JsonProperty("billing_group_info")
-  private bcadvertisercreateBillingGroupInfo billingGroupInfo = null;
+  private BcadvertisercreateBillingGroupInfo billingGroupInfo = null;
 
   @JsonProperty("billing_info")
-  private bcadvertisercreateBillingInfo billingInfo = null;
+  private BcadvertisercreateBillingInfo billingInfo = null;
 
   @JsonProperty("contact_info")
-  private bcadvertisercreateContactInfo contactInfo = null;
+  private BcadvertisercreateContactInfo contactInfo = null;
 
   @JsonProperty("customer_info")
-  private bcadvertisercreateCustomerInfo customerInfo = null;
+  private BcadvertisercreateCustomerInfo customerInfo = null;
 
   @JsonProperty("qualification_info")
-  private bcadvertisercreateQualificationInfo qualificationInfo = null;
+  private BcadvertisercreateQualificationInfo qualificationInfo = null;
 
   @JsonProperty("tied_to_billing_group")
   private Boolean tiedToBillingGroup = null;
 
-  public AdvertiserCreateBody advertiserInfo(bcadvertisercreateAdvertiserInfo advertiserInfo) {
+  public AdvertiserCreateBody advertiserInfo(BcadvertisercreateAdvertiserInfo advertiserInfo) {
     this.advertiserInfo = advertiserInfo;
     return this;
   }
@@ -59,11 +59,11 @@ public class AdvertiserCreateBody {
    * @return advertiserInfo
   **/
   @Schema(required = true, description = "")
-  public bcadvertisercreateAdvertiserInfo getAdvertiserInfo() {
+  public BcadvertisercreateAdvertiserInfo getAdvertiserInfo() {
     return advertiserInfo;
   }
 
-  public void setAdvertiserInfo(bcadvertisercreateAdvertiserInfo advertiserInfo) {
+  public void setAdvertiserInfo(BcadvertisercreateAdvertiserInfo advertiserInfo) {
     this.advertiserInfo = advertiserInfo;
   }
 
@@ -85,7 +85,7 @@ public class AdvertiserCreateBody {
     this.bcId = bcId;
   }
 
-  public AdvertiserCreateBody billingGroupInfo(bcadvertisercreateBillingGroupInfo billingGroupInfo) {
+  public AdvertiserCreateBody billingGroupInfo(BcadvertisercreateBillingGroupInfo billingGroupInfo) {
     this.billingGroupInfo = billingGroupInfo;
     return this;
   }
@@ -95,15 +95,15 @@ public class AdvertiserCreateBody {
    * @return billingGroupInfo
   **/
   @Schema(description = "")
-  public bcadvertisercreateBillingGroupInfo getBillingGroupInfo() {
+  public BcadvertisercreateBillingGroupInfo getBillingGroupInfo() {
     return billingGroupInfo;
   }
 
-  public void setBillingGroupInfo(bcadvertisercreateBillingGroupInfo billingGroupInfo) {
+  public void setBillingGroupInfo(BcadvertisercreateBillingGroupInfo billingGroupInfo) {
     this.billingGroupInfo = billingGroupInfo;
   }
 
-  public AdvertiserCreateBody billingInfo(bcadvertisercreateBillingInfo billingInfo) {
+  public AdvertiserCreateBody billingInfo(BcadvertisercreateBillingInfo billingInfo) {
     this.billingInfo = billingInfo;
     return this;
   }
@@ -113,15 +113,15 @@ public class AdvertiserCreateBody {
    * @return billingInfo
   **/
   @Schema(description = "")
-  public bcadvertisercreateBillingInfo getBillingInfo() {
+  public BcadvertisercreateBillingInfo getBillingInfo() {
     return billingInfo;
   }
 
-  public void setBillingInfo(bcadvertisercreateBillingInfo billingInfo) {
+  public void setBillingInfo(BcadvertisercreateBillingInfo billingInfo) {
     this.billingInfo = billingInfo;
   }
 
-  public AdvertiserCreateBody contactInfo(bcadvertisercreateContactInfo contactInfo) {
+  public AdvertiserCreateBody contactInfo(BcadvertisercreateContactInfo contactInfo) {
     this.contactInfo = contactInfo;
     return this;
   }
@@ -131,15 +131,15 @@ public class AdvertiserCreateBody {
    * @return contactInfo
   **/
   @Schema(description = "")
-  public bcadvertisercreateContactInfo getContactInfo() {
+  public BcadvertisercreateContactInfo getContactInfo() {
     return contactInfo;
   }
 
-  public void setContactInfo(bcadvertisercreateContactInfo contactInfo) {
+  public void setContactInfo(BcadvertisercreateContactInfo contactInfo) {
     this.contactInfo = contactInfo;
   }
 
-  public AdvertiserCreateBody customerInfo(bcadvertisercreateCustomerInfo customerInfo) {
+  public AdvertiserCreateBody customerInfo(BcadvertisercreateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
     return this;
   }
@@ -149,15 +149,15 @@ public class AdvertiserCreateBody {
    * @return customerInfo
   **/
   @Schema(required = true, description = "")
-  public bcadvertisercreateCustomerInfo getCustomerInfo() {
+  public BcadvertisercreateCustomerInfo getCustomerInfo() {
     return customerInfo;
   }
 
-  public void setCustomerInfo(bcadvertisercreateCustomerInfo customerInfo) {
+  public void setCustomerInfo(BcadvertisercreateCustomerInfo customerInfo) {
     this.customerInfo = customerInfo;
   }
 
-  public AdvertiserCreateBody qualificationInfo(bcadvertisercreateQualificationInfo qualificationInfo) {
+  public AdvertiserCreateBody qualificationInfo(BcadvertisercreateQualificationInfo qualificationInfo) {
     this.qualificationInfo = qualificationInfo;
     return this;
   }
@@ -167,11 +167,11 @@ public class AdvertiserCreateBody {
    * @return qualificationInfo
   **/
   @Schema(description = "")
-  public bcadvertisercreateQualificationInfo getQualificationInfo() {
+  public BcadvertisercreateQualificationInfo getQualificationInfo() {
     return qualificationInfo;
   }
 
-  public void setQualificationInfo(bcadvertisercreateQualificationInfo qualificationInfo) {
+  public void setQualificationInfo(BcadvertisercreateQualificationInfo qualificationInfo) {
     this.qualificationInfo = qualificationInfo;
   }
 

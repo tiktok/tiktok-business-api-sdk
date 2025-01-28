@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.adupdateCreatives;
+import business_api_client.AdupdateCreatives;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -20,7 +20,7 @@ import java.util.List;
  * AdUpdateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class AdUpdateBody {
   @JsonProperty("adgroup_id")
   private String adgroupId = null;
@@ -29,7 +29,7 @@ public class AdUpdateBody {
   private String advertiserId = null;
 
   @JsonProperty("creatives")
-  private List<adupdateCreatives> creatives = new ArrayList<adupdateCreatives>();
+  private List<AdupdateCreatives> creatives = new ArrayList<AdupdateCreatives>();
 
   public AdUpdateBody adgroupId(String adgroupId) {
     this.adgroupId = adgroupId;
@@ -67,12 +67,12 @@ public class AdUpdateBody {
     this.advertiserId = advertiserId;
   }
 
-  public AdUpdateBody creatives(List<adupdateCreatives> creatives) {
+  public AdUpdateBody creatives(List<AdupdateCreatives> creatives) {
     this.creatives = creatives;
     return this;
   }
 
-  public AdUpdateBody addCreativesItem(adupdateCreatives creativesItem) {
+  public AdUpdateBody addCreativesItem(AdupdateCreatives creativesItem) {
     this.creatives.add(creativesItem);
     return this;
   }
@@ -82,11 +82,11 @@ public class AdUpdateBody {
    * @return creatives
   **/
   @Schema(required = true, description = "Advertising creatives.")
-  public List<adupdateCreatives> getCreatives() {
+  public List<AdupdateCreatives> getCreatives() {
     return creatives;
   }
 
-  public void setCreatives(List<adupdateCreatives> creatives) {
+  public void setCreatives(List<AdupdateCreatives> creatives) {
     this.creatives = creatives;
   }
 

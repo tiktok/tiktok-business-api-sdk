@@ -9,19 +9,17 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BcTransferBody model module.
  * @module model/BcTransferBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class BcTransferBody {
   /**
    * Constructs a new <code>BcTransferBody</code>.
    * @alias module:model/BcTransferBody
    * @class
-   * @param advertiser_id {String} Ad Account ID
-   * @param bc_id {String} Business Center ID
-   * @param transfer_type {String} How you'd like to process payments from an ad account. Enum values：`RECHARGE`(transfer), `REFUND`(deduction)
+   * @param bc_id {String} 
+   * @param transfer_type {String} 
    */
-  constructor(advertiser_id, bc_id, transfer_type) {
-    this.advertiser_id = advertiser_id;
+  constructor(bc_id, transfer_type) {
     this.bc_id = bc_id;
     this.transfer_type = transfer_type;
   }
@@ -42,8 +40,14 @@ export class BcTransferBody {
         obj.bc_id = ApiClient.convertToType(data['bc_id'], 'String');
       if (data.hasOwnProperty('cash_amount'))
         obj.cash_amount = ApiClient.convertToType(data['cash_amount'], 'Number');
+      if (data.hasOwnProperty('child_bc_id'))
+        obj.child_bc_id = ApiClient.convertToType(data['child_bc_id'], 'String');
       if (data.hasOwnProperty('grant_amount'))
         obj.grant_amount = ApiClient.convertToType(data['grant_amount'], 'Number');
+      if (data.hasOwnProperty('request_id'))
+        obj.request_id = ApiClient.convertToType(data['request_id'], 'String');
+      if (data.hasOwnProperty('transfer_level'))
+        obj.transfer_level = ApiClient.convertToType(data['transfer_level'], 'String');
       if (data.hasOwnProperty('transfer_type'))
         obj.transfer_type = ApiClient.convertToType(data['transfer_type'], 'String');
     }
@@ -52,31 +56,41 @@ export class BcTransferBody {
 }
 
 /**
- * Ad Account ID
  * @member {String} advertiser_id
  */
 BcTransferBody.prototype.advertiser_id = undefined;
 
 /**
- * Business Center ID
  * @member {String} bc_id
  */
 BcTransferBody.prototype.bc_id = undefined;
 
 /**
- * The amount to process. You need to specify either cash_amount or grant_amount. Rounded to two decimal places. Value range > 0.
  * @member {Number} cash_amount
  */
 BcTransferBody.prototype.cash_amount = undefined;
 
 /**
- * Coupon/voucher amount. You need to specify either `cash_amount` or `grant_amount`. Rounded to two decimal places. Value range > 0
+ * @member {String} child_bc_id
+ */
+BcTransferBody.prototype.child_bc_id = undefined;
+
+/**
  * @member {Number} grant_amount
  */
 BcTransferBody.prototype.grant_amount = undefined;
 
 /**
- * How you'd like to process payments from an ad account. Enum values：`RECHARGE`(transfer), `REFUND`(deduction)
+ * @member {String} request_id
+ */
+BcTransferBody.prototype.request_id = undefined;
+
+/**
+ * @member {String} transfer_level
+ */
+BcTransferBody.prototype.transfer_level = undefined;
+
+/**
  * @member {String} transfer_type
  */
 BcTransferBody.prototype.transfer_type = undefined;

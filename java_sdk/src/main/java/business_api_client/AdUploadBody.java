@@ -18,7 +18,7 @@ import java.io.File;
  * AdUploadBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class AdUploadBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -65,7 +65,7 @@ public class AdUploadBody {
    * Advertiser ID
    * @return advertiserId
   **/
-  @Schema(description = "Advertiser ID")
+  @Schema(required = true, description = "Advertiser ID")
   public String getAdvertiserId() {
     return advertiserId;
   }

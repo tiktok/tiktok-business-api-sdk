@@ -6,13 +6,12 @@
  */
 import {ApiClient} from "../ApiClient.js";
 import {AdvertiserCreateBody} from '../model/AdvertiserCreateBody.js';
-import {Filtering} from '../model/Filtering.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * BC service.
 * @module api/BCApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class BCApi {
 
@@ -85,14 +84,15 @@ export class BCApi {
      */
 
     /**
-     * Get assets [BC asset get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739432717798401)
-     * @param {String} bc_id Business Center ID
-     * @param {String} asset_type Type of asset that you want to get. Enum values: &#x60;CATALOG&#x60;, &#x60;ADVERTISER&#x60;, &#x60;PIXEL&#x60;, &#x60;LEAD&#x60;, &#x60;TT_ACCOUNT&#x60;(corresponds to &#x60;BC_AUTH_TT&#x60;, and learn more from [Identities](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738958351620097), &#x60;TIKTOK_SHOP&#x60; (TikTok shop) , &#x60;STOREFRONT&#x60;( TikTok Storefront (third-party store))
+     * Get assets of a Business Center. [BC Asset Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739432717798401)
+     * @param {String} bc_id 
+     * @param {String} asset_type 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/Filtering} opts.filtering Filtering conditions. Use either &#x60;user_id&#x60; or &#x60;user_email&#x60; as filter.Note: You cannot use &#x60;user_id&#x60; and &#x60;user_email&#x60; at the same time.If you do not specify any filter values, the system will pass in to the &#x60;user_id&#x60; field the user ID of the TikTok for Business account that gives you the authentication code (&#x60;auth_code&#x60;)
-     * @param {Number} opts.page Current page number. Default value: 1
-     * @param {Number} opts.page_size Page size, in the range of 1-50. Default value: 10
+     * @param {String} opts.child_bc_id 
+     * @param {Object} opts.filtering 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
      * @param {module:api/BCApi~bcAssetGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -116,7 +116,7 @@ export class BCApi {
         
       };
       let queryParams = {
-        'bc_id': bc_id,'asset_type': asset_type,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size']
+        'bc_id': bc_id,'asset_type': asset_type,'child_bc_id': opts['child_bc_id'],'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size']
       };
       let headerParams = {
         'Access-Token': Access_Token
@@ -145,12 +145,14 @@ export class BCApi {
      */
 
     /**
-     * Get Business Centers [BC get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737115687501826)
+     * Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1737115687501826)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {String} opts.bc_id The Business Center ID. When not passed, returns the user entire list of Business Centers by default, and returns the specified Business Center account when passed in
-     * @param {Number} opts.page Current number of pages. Default value: 1. Value range : ≥ 1
-     * @param {Number} opts.page_size Page size. Default value: 10. Value range: 1-50
+     * @param {String} opts.bc_id 
+     * @param {String} opts.scene  (default to <.>)
+     * @param {Object} opts.filtering 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
      * @param {module:api/BCApi~bcGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -166,7 +168,7 @@ export class BCApi {
         
       };
       let queryParams = {
-        'bc_id': opts['bc_id'],'page': opts['page'],'page_size': opts['page_size']
+        'bc_id': opts['bc_id'],'scene': opts['scene'],'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size']
       };
       let headerParams = {
         'Access-Token': Access_Token

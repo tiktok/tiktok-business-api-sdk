@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {advertiserupdateQualificationImages} from './advertiserupdateQualificationImages.js';
+import {AdvertiserupdateQualificationImages} from './AdvertiserupdateQualificationImages.js';
 
 /**
  * The AdvertiserUpdateBody model module.
  * @module model/AdvertiserUpdateBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class AdvertiserUpdateBody {
   /**
@@ -56,7 +56,7 @@ export class AdvertiserUpdateBody {
       if (data.hasOwnProperty('promotion_link'))
         obj.promotion_link = ApiClient.convertToType(data['promotion_link'], 'String');
       if (data.hasOwnProperty('qualification_images'))
-        obj.qualification_images = advertiserupdateQualificationImages.constructFromObject(data['qualification_images']);
+        obj.qualification_images = AdvertiserupdateQualificationImages.constructFromObject(data['qualification_images']);
       if (data.hasOwnProperty('tax_map'))
         obj.tax_map = ApiClient.convertToType(data['tax_map'], 'String');
     }
@@ -131,7 +131,7 @@ AdvertiserUpdateBody.prototype.need_submit_certificate = undefined;
 AdvertiserUpdateBody.prototype.promotion_link = undefined;
 
 /**
- * @member {module:model/advertiserupdateQualificationImages} qualification_images
+ * @member {module:model/AdvertiserupdateQualificationImages} qualification_images
  */
 AdvertiserUpdateBody.prototype.qualification_images = undefined;
 

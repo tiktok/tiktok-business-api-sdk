@@ -6,15 +6,12 @@
  */
 import {ApiClient} from "../ApiClient.js";
 import {BcTransferBody} from '../model/BcTransferBody.js';
-import {FilteringAdvertiserBalanceGet} from '../model/FilteringAdvertiserBalanceGet.js';
-import {FilteringAdvertiserTransactionGet} from '../model/FilteringAdvertiserTransactionGet.js';
-import {FilteringBCTransactionGet} from '../model/FilteringBCTransactionGet.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
 
 /**
 * BcPayment service.
 * @module api/BcPaymentApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class BcPaymentApi {
 
@@ -39,13 +36,14 @@ export class BcPaymentApi {
      */
 
     /**
-     * Obtain the balance of ad accounts in the Business Center. This function only returns the ad accounts that the Business Center has administrator permissions over. [Advertiser balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939106470913)
-     * @param {String} bc_id Business Center ID.
+     * Get ad account balance and budget. [BcPayment Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939106470913)
+     * @param {String} bc_id 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/FilteringAdvertiserBalanceGet} opts.filtering Filtering conditions.
-     * @param {Number} opts.page Current number of page
-     * @param {Number} opts.page_size Page size.
+     * @param {String} opts.child_bc_id 
+     * @param {Object} opts.filtering 
+     * @param {Number} opts.page 
+     * @param {Number} opts.page_size 
      * @param {module:api/BcPaymentApi~advertiserBalanceGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -65,7 +63,7 @@ export class BcPaymentApi {
         
       };
       let queryParams = {
-        'bc_id': bc_id,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size']
+        'bc_id': bc_id,'child_bc_id': opts['child_bc_id'],'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size']
       };
       let headerParams = {
         'Access-Token': Access_Token
@@ -94,13 +92,13 @@ export class BcPaymentApi {
      */
 
     /**
-     * Get the transaction records of ad accounts in the Business Center. This function only returns the transaction records of ad accounts that the Business Center has administrator rights over. [Advertiser transaction Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939116353538)
-     * @param {String} bc_id Business Center ID.
+     * Get transaction records of an ad account. [BcPayment Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939116353538)
+     * @param {Number} bc_id 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/FilteringAdvertiserTransactionGet} opts.filtering Filtering conditions
-     * @param {Number} opts.page Current page
-     * @param {Number} opts.page_size Page size,
+     * @param {Object} opts.filtering 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
      * @param {module:api/BcPaymentApi~advertiserTransactionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -149,14 +147,16 @@ export class BcPaymentApi {
      */
 
     /**
-     * Obtain the balance of a Business Center. [Balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939128198145)
-     * @param {String} bc_id Business Center ID
+     * Get the balance of a Business Center. [BcPayment BC Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939128198145)
+     * @param {String} bc_id 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.child_bc_id 
      * @param {module:api/BcPaymentApi~bcBalanceGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
-    bcBalanceGet(bc_id, Access_Token, callback) {
-      
+    bcBalanceGet(bc_id, Access_Token, opts, callback) {
+      opts = opts || {};
       let postBody = null;
       // verify the required parameter 'bc_id' is set
       if (bc_id === undefined || bc_id === null) {
@@ -171,7 +171,7 @@ export class BcPaymentApi {
         
       };
       let queryParams = {
-        'bc_id': bc_id
+        'bc_id': bc_id,'child_bc_id': opts['child_bc_id']
       };
       let headerParams = {
         'Access-Token': Access_Token
@@ -200,15 +200,15 @@ export class BcPaymentApi {
      */
 
     /**
-     * Get the transaction records of your Business Centers. [Transaction get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939140408322)
-     * @param {String} bc_id Business Center ID.
+     * Get transaction records of a Business Center. [BcPayment BC Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939140408322)
+     * @param {String} bc_id 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/FilteringBCTransactionGet} opts.filtering Filtering conditions
-     * @param {String} opts.start_date Start date of transaction records that you want to get, in the format of \&quot;YYYY-MM-DD\&quot;. The default value is the date 90 days earlier.
-     * @param {String} opts.end_date End date of transaction records that you want to get, in the format of \&quot;YYYY-MM-DD\&quot;. The default value is the date today.
-     * @param {Number} opts.page Page number
-     * @param {Number} opts.page_size Page size. Value range- 1-50
+     * @param {Object} opts.filtering 
+     * @param {Date} opts.start_date 
+     * @param {Date} opts.end_date 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
      * @param {module:api/BcPaymentApi~bcTransactionGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -257,10 +257,10 @@ export class BcPaymentApi {
      */
 
     /**
-     * Recharge money to or deduct money from an ad account in a Business Center. [BC transfer](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939095321601)
+     * Process payments to recharge or deduct money from an ad account in a Business Center. [BcPayment BC Transfer](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939095321601)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/BcTransferBody} opts.body BC transfer parameters
+     * @param {module:model/BcTransferBody} opts.body 
      * @param {module:api/BcPaymentApi~bcTransferCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */

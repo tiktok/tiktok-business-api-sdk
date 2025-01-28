@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")public class ToolApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")public class ToolApi {
   private ApiClient apiClient;
 
   public ToolApi() {
@@ -50,7 +50,7 @@ import java.util.Map;
    * 
    * @param advertiserId Advertiser ID. (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param language The language you want the returned region name to be translated into. Default value: en Currently, we only support zh, fr, es, ko, vi, en, hi, it, tr, ru, ja, id, de, ms, ar, and th Note: If you do not pass in one of the supported values above, it will return as the default en. (optional)
+   * @param language The language you want the returned region name to be translated into. Default value: en Currently, we only support zh, fr, es, ko, vi, en, hi, it, tr, ru, ja, id, de, ms, ar, and th Note: If you do not pass in one of the supported values above, it will return as the default en. (optional, default to en)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -94,7 +94,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -154,7 +154,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -207,7 +207,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -271,7 +271,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -329,7 +329,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -399,7 +399,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -463,7 +463,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -521,7 +521,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -585,7 +585,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -651,7 +651,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -717,7 +717,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -779,7 +779,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -851,7 +851,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -909,7 +909,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -979,7 +979,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1043,7 +1043,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1101,7 +1101,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1183,7 +1183,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1236,7 +1236,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1306,7 +1306,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1359,7 +1359,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1417,7 +1417,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1481,7 +1481,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -1577,7 +1577,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());

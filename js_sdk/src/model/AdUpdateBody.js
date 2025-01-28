@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {adupdateCreatives} from './adupdateCreatives.js';
+import {AdupdateCreatives} from './AdupdateCreatives.js';
 
 /**
  * The AdUpdateBody model module.
  * @module model/AdUpdateBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class AdUpdateBody {
   /**
@@ -19,7 +19,7 @@ export class AdUpdateBody {
    * @class
    * @param adgroup_id {String} Ad group ID
    * @param advertiser_id {String} Advertiser ID
-   * @param creatives {Array.<module:model/adupdateCreatives>} Advertising creatives.
+   * @param creatives {Array.<module:model/AdupdateCreatives>} Advertising creatives.
    */
   constructor(adgroup_id, advertiser_id, creatives) {
     this.adgroup_id = adgroup_id;
@@ -42,7 +42,7 @@ export class AdUpdateBody {
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
       if (data.hasOwnProperty('creatives'))
-        obj.creatives = ApiClient.convertToType(data['creatives'], [adupdateCreatives]);
+        obj.creatives = ApiClient.convertToType(data['creatives'], [AdupdateCreatives]);
     }
     return obj;
   }
@@ -62,7 +62,7 @@ AdUpdateBody.prototype.advertiser_id = undefined;
 
 /**
  * Advertising creatives.
- * @member {Array.<module:model/adupdateCreatives>} creatives
+ * @member {Array.<module:model/AdupdateCreatives>} creatives
  */
 AdUpdateBody.prototype.creatives = undefined;
 

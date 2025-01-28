@@ -24,7 +24,7 @@ class PixelBatchBody(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'batch': 'list[pixelbatchBatch]',
+        'batch': 'list[PixelbatchBatch]',
         'pixel_code': 'str'
     }
 
@@ -48,7 +48,7 @@ class PixelBatchBody(object):
         A list of web events  # noqa: E501
 
         :return: The batch of this PixelBatchBody.  # noqa: E501
-        :rtype: list[pixelbatchBatch]
+        :rtype: list[PixelbatchBatch]
         """
         return self._batch
 
@@ -59,7 +59,7 @@ class PixelBatchBody(object):
         A list of web events  # noqa: E501
 
         :param batch: The batch of this PixelBatchBody.  # noqa: E501
-        :type: list[pixelbatchBatch]
+        :type: list[PixelbatchBatch]
         """
         if batch is None:
             raise ValueError("Invalid value for `batch`, must not be `None`")  # noqa: E501

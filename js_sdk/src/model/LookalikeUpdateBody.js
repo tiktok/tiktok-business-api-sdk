@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {dmpcustomAudiencefileuploadContextInfo} from './dmpcustomAudiencefileuploadContextInfo.js';
+import {DmpcustomAudiencefileuploadContextInfo} from './DmpcustomAudiencefileuploadContextInfo.js';
 
 /**
  * The LookalikeUpdateBody model module.
  * @module model/LookalikeUpdateBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class LookalikeUpdateBody {
   /**
@@ -38,7 +38,7 @@ export class LookalikeUpdateBody {
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
       if (data.hasOwnProperty('context_info'))
-        obj.context_info = dmpcustomAudiencefileuploadContextInfo.constructFromObject(data['context_info']);
+        obj.context_info = DmpcustomAudiencefileuploadContextInfo.constructFromObject(data['context_info']);
       if (data.hasOwnProperty('custom_audience_ids'))
         obj.custom_audience_ids = ApiClient.convertToType(data['custom_audience_ids'], ['String']);
     }
@@ -53,7 +53,7 @@ export class LookalikeUpdateBody {
 LookalikeUpdateBody.prototype.advertiser_id = undefined;
 
 /**
- * @member {module:model/dmpcustomAudiencefileuploadContextInfo} context_info
+ * @member {module:model/DmpcustomAudiencefileuploadContextInfo} context_info
  */
 LookalikeUpdateBody.prototype.context_info = undefined;
 

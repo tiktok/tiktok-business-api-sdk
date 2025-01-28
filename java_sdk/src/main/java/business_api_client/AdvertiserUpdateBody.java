@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.advertiserupdateQualificationImages;
+import business_api_client.AdvertiserupdateQualificationImages;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * AdvertiserUpdateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class AdvertiserUpdateBody {
   @JsonProperty("address")
   private String address = null;
@@ -54,7 +54,7 @@ public class AdvertiserUpdateBody {
   private String promotionLink = null;
 
   @JsonProperty("qualification_images")
-  private advertiserupdateQualificationImages qualificationImages = null;
+  private AdvertiserupdateQualificationImages qualificationImages = null;
 
   @JsonProperty("tax_map")
   private String taxMap = null;
@@ -257,7 +257,7 @@ public class AdvertiserUpdateBody {
     this.promotionLink = promotionLink;
   }
 
-  public AdvertiserUpdateBody qualificationImages(advertiserupdateQualificationImages qualificationImages) {
+  public AdvertiserUpdateBody qualificationImages(AdvertiserupdateQualificationImages qualificationImages) {
     this.qualificationImages = qualificationImages;
     return this;
   }
@@ -267,11 +267,11 @@ public class AdvertiserUpdateBody {
    * @return qualificationImages
   **/
   @Schema(description = "")
-  public advertiserupdateQualificationImages getQualificationImages() {
+  public AdvertiserupdateQualificationImages getQualificationImages() {
     return qualificationImages;
   }
 
-  public void setQualificationImages(advertiserupdateQualificationImages qualificationImages) {
+  public void setQualificationImages(AdvertiserupdateQualificationImages qualificationImages) {
     this.qualificationImages = qualificationImages;
   }
 

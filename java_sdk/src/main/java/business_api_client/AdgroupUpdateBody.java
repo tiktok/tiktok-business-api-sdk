@@ -9,11 +9,11 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.adgroupcreateActions;
-import business_api_client.adgroupcreateExcludedCustomActions;
-import business_api_client.adgroupcreateIncludedCustomActions;
-import business_api_client.adgroupcreateTargetingExpansion;
-import business_api_client.adgroupupdateAudienceRule;
+import business_api_client.AdgroupcreateActions;
+import business_api_client.AdgroupcreateAudienceRule;
+import business_api_client.AdgroupcreateExcludedCustomActions;
+import business_api_client.AdgroupcreateIncludedCustomActions;
+import business_api_client.AdgroupcreateTargetingExpansion;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -25,10 +25,10 @@ import java.util.List;
  * AdgroupUpdateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class AdgroupUpdateBody {
   @JsonProperty("actions")
-  private List<adgroupcreateActions> actions = null;
+  private List<AdgroupcreateActions> actions = null;
 
   @JsonProperty("adgroup_id")
   private String adgroupId = null;
@@ -52,7 +52,7 @@ public class AdgroupUpdateBody {
   private List<String> audienceIds = null;
 
   @JsonProperty("audience_rule")
-  private adgroupupdateAudienceRule audienceRule = null;
+  private AdgroupcreateAudienceRule audienceRule = null;
 
   @JsonProperty("audience_type")
   private String audienceType = null;
@@ -118,7 +118,7 @@ public class AdgroupUpdateBody {
   private List<String> excludedAudienceIds = null;
 
   @JsonProperty("excluded_custom_actions")
-  private adgroupcreateExcludedCustomActions excludedCustomActions = null;
+  private AdgroupcreateExcludedCustomActions excludedCustomActions = null;
 
   @JsonProperty("excluded_pangle_audience_package_ids")
   private List<String> excludedPangleAudiencePackageIds = null;
@@ -145,7 +145,7 @@ public class AdgroupUpdateBody {
   private String identityType = null;
 
   @JsonProperty("included_custom_actions")
-  private adgroupcreateIncludedCustomActions includedCustomActions = null;
+  private AdgroupcreateIncludedCustomActions includedCustomActions = null;
 
   @JsonProperty("included_pangle_audience_package_ids")
   private List<String> includedPangleAudiencePackageIds = null;
@@ -217,16 +217,16 @@ public class AdgroupUpdateBody {
   private String spendingPower = null;
 
   @JsonProperty("targeting_expansion")
-  private adgroupcreateTargetingExpansion targetingExpansion = null;
+  private AdgroupcreateTargetingExpansion targetingExpansion = null;
 
-  public AdgroupUpdateBody actions(List<adgroupcreateActions> actions) {
+  public AdgroupUpdateBody actions(List<AdgroupcreateActions> actions) {
     this.actions = actions;
     return this;
   }
 
-  public AdgroupUpdateBody addActionsItem(adgroupcreateActions actionsItem) {
+  public AdgroupUpdateBody addActionsItem(AdgroupcreateActions actionsItem) {
     if (this.actions == null) {
-      this.actions = new ArrayList<adgroupcreateActions>();
+      this.actions = new ArrayList<AdgroupcreateActions>();
     }
     this.actions.add(actionsItem);
     return this;
@@ -237,11 +237,11 @@ public class AdgroupUpdateBody {
    * @return actions
   **/
   @Schema(description = "A list of action category objects.")
-  public List<adgroupcreateActions> getActions() {
+  public List<AdgroupcreateActions> getActions() {
     return actions;
   }
 
-  public void setActions(List<adgroupcreateActions> actions) {
+  public void setActions(List<AdgroupcreateActions> actions) {
     this.actions = actions;
   }
 
@@ -387,7 +387,7 @@ public class AdgroupUpdateBody {
     this.audienceIds = audienceIds;
   }
 
-  public AdgroupUpdateBody audienceRule(adgroupupdateAudienceRule audienceRule) {
+  public AdgroupUpdateBody audienceRule(AdgroupcreateAudienceRule audienceRule) {
     this.audienceRule = audienceRule;
     return this;
   }
@@ -397,11 +397,11 @@ public class AdgroupUpdateBody {
    * @return audienceRule
   **/
   @Schema(description = "")
-  public adgroupupdateAudienceRule getAudienceRule() {
+  public AdgroupcreateAudienceRule getAudienceRule() {
     return audienceRule;
   }
 
-  public void setAudienceRule(adgroupupdateAudienceRule audienceRule) {
+  public void setAudienceRule(AdgroupcreateAudienceRule audienceRule) {
     this.audienceRule = audienceRule;
   }
 
@@ -831,7 +831,7 @@ public class AdgroupUpdateBody {
     this.excludedAudienceIds = excludedAudienceIds;
   }
 
-  public AdgroupUpdateBody excludedCustomActions(adgroupcreateExcludedCustomActions excludedCustomActions) {
+  public AdgroupUpdateBody excludedCustomActions(AdgroupcreateExcludedCustomActions excludedCustomActions) {
     this.excludedCustomActions = excludedCustomActions;
     return this;
   }
@@ -841,11 +841,11 @@ public class AdgroupUpdateBody {
    * @return excludedCustomActions
   **/
   @Schema(description = "")
-  public adgroupcreateExcludedCustomActions getExcludedCustomActions() {
+  public AdgroupcreateExcludedCustomActions getExcludedCustomActions() {
     return excludedCustomActions;
   }
 
-  public void setExcludedCustomActions(adgroupcreateExcludedCustomActions excludedCustomActions) {
+  public void setExcludedCustomActions(AdgroupcreateExcludedCustomActions excludedCustomActions) {
     this.excludedCustomActions = excludedCustomActions;
   }
 
@@ -1009,7 +1009,7 @@ public class AdgroupUpdateBody {
     this.identityType = identityType;
   }
 
-  public AdgroupUpdateBody includedCustomActions(adgroupcreateIncludedCustomActions includedCustomActions) {
+  public AdgroupUpdateBody includedCustomActions(AdgroupcreateIncludedCustomActions includedCustomActions) {
     this.includedCustomActions = includedCustomActions;
     return this;
   }
@@ -1019,11 +1019,11 @@ public class AdgroupUpdateBody {
    * @return includedCustomActions
   **/
   @Schema(description = "")
-  public adgroupcreateIncludedCustomActions getIncludedCustomActions() {
+  public AdgroupcreateIncludedCustomActions getIncludedCustomActions() {
     return includedCustomActions;
   }
 
-  public void setIncludedCustomActions(adgroupcreateIncludedCustomActions includedCustomActions) {
+  public void setIncludedCustomActions(AdgroupcreateIncludedCustomActions includedCustomActions) {
     this.includedCustomActions = includedCustomActions;
   }
 
@@ -1513,7 +1513,7 @@ public class AdgroupUpdateBody {
     this.spendingPower = spendingPower;
   }
 
-  public AdgroupUpdateBody targetingExpansion(adgroupcreateTargetingExpansion targetingExpansion) {
+  public AdgroupUpdateBody targetingExpansion(AdgroupcreateTargetingExpansion targetingExpansion) {
     this.targetingExpansion = targetingExpansion;
     return this;
   }
@@ -1523,11 +1523,11 @@ public class AdgroupUpdateBody {
    * @return targetingExpansion
   **/
   @Schema(description = "")
-  public adgroupcreateTargetingExpansion getTargetingExpansion() {
+  public AdgroupcreateTargetingExpansion getTargetingExpansion() {
     return targetingExpansion;
   }
 
-  public void setTargetingExpansion(adgroupcreateTargetingExpansion targetingExpansion) {
+  public void setTargetingExpansion(AdgroupcreateTargetingExpansion targetingExpansion) {
     this.targetingExpansion = targetingExpansion;
   }
 

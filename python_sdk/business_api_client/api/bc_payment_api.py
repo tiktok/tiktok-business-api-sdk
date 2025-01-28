@@ -29,7 +29,7 @@ class BcPaymentApi(object):
         self.api_client = api_client
 
     def advertiser_balance_get(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Obtain the balance of ad accounts in the Business Center. This function only returns the ad accounts that the Business Center has administrator permissions over. [Advertiser balance get](https://ads.tiktok.com/marketing_api/docs?id=1739939106470913)  # noqa: E501
+        """Get ad account balance and budget. [BcPayment Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939106470913)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -37,11 +37,12 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID. (required)
+        :param str bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdvertiserBalanceGet filtering: Filtering conditions.
-        :param int page: Current number of page
-        :param int page_size: Page size.
+        :param str child_bc_id:
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -54,7 +55,7 @@ class BcPaymentApi(object):
             return data
 
     def advertiser_balance_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Obtain the balance of ad accounts in the Business Center. This function only returns the ad accounts that the Business Center has administrator permissions over. [Advertiser balance get](https://ads.tiktok.com/marketing_api/docs?id=1739939106470913)  # noqa: E501
+        """Get ad account balance and budget. [BcPayment Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939106470913)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -62,17 +63,18 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID. (required)
+        :param str bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdvertiserBalanceGet filtering: Filtering conditions.
-        :param int page: Current number of page
-        :param int page_size: Page size.
+        :param str child_bc_id:
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bc_id', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params = ['bc_id', 'access_token', 'child_bc_id', 'filtering', 'page', 'page_size']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -103,6 +105,8 @@ class BcPaymentApi(object):
         query_params = []
         if 'bc_id' in params:
             query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
         if 'filtering' in params:
             query_params.append(('filtering', params['filtering']))  # noqa: E501
         if 'page' in params:
@@ -142,7 +146,7 @@ class BcPaymentApi(object):
             collection_formats=collection_formats)
 
     def advertiser_transaction_get(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Get the transaction records of ad accounts in the Business Center. This function only returns the transaction records of ad accounts that the Business Center has administrator rights over. [Advertiser transaction Get](https://ads.tiktok.com/marketing_api/docs?id=1739939116353538)  # noqa: E501
+        """Get transaction records of an ad account. [BcPayment Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939116353538)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -150,11 +154,11 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID. (required)
+        :param int bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdvertiserTransactionGet filtering: Filtering conditions
-        :param int page: Current page
-        :param int page_size: Page size,
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -167,7 +171,7 @@ class BcPaymentApi(object):
             return data
 
     def advertiser_transaction_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Get the transaction records of ad accounts in the Business Center. This function only returns the transaction records of ad accounts that the Business Center has administrator rights over. [Advertiser transaction Get](https://ads.tiktok.com/marketing_api/docs?id=1739939116353538)  # noqa: E501
+        """Get transaction records of an ad account. [BcPayment Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939116353538)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -175,11 +179,11 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID. (required)
+        :param int bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdvertiserTransactionGet filtering: Filtering conditions
-        :param int page: Current page
-        :param int page_size: Page size,
+        :param object filtering:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -255,7 +259,7 @@ class BcPaymentApi(object):
             collection_formats=collection_formats)
 
     def bc_balance_get(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Obtain the balance of a Business Center. [Balance get](https://ads.tiktok.com/marketing_api/docs?id=1739939128198145)  # noqa: E501
+        """Get the balance of a Business Center. [BcPayment BC Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939128198145)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -263,8 +267,9 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID (required)
+        :param str bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -277,7 +282,7 @@ class BcPaymentApi(object):
             return data
 
     def bc_balance_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Obtain the balance of a Business Center. [Balance get](https://ads.tiktok.com/marketing_api/docs?id=1739939128198145)  # noqa: E501
+        """Get the balance of a Business Center. [BcPayment BC Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939128198145)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -285,14 +290,15 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID (required)
+        :param str bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['bc_id', 'access_token']  # noqa: E501
+        all_params = ['bc_id', 'access_token', 'child_bc_id']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -323,6 +329,8 @@ class BcPaymentApi(object):
         query_params = []
         if 'bc_id' in params:
             query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
@@ -356,7 +364,7 @@ class BcPaymentApi(object):
             collection_formats=collection_formats)
 
     def bc_transaction_get(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Get the transaction records of your Business Centers. [Transaction get](https://ads.tiktok.com/marketing_api/docs?id=1739939140408322)  # noqa: E501
+        """Get transaction records of a Business Center. [BcPayment BC Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939140408322)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -364,13 +372,13 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID. (required)
+        :param str bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringBCTransactionGet filtering: Filtering conditions
-        :param str start_date: Start date of transaction records that you want to get, in the format of \"YYYY-MM-DD\". The default value is the date 90 days earlier.
-        :param str end_date: End date of transaction records that you want to get, in the format of \"YYYY-MM-DD\". The default value is the date today.
-        :param int page: Page number
-        :param int page_size: Page size. Value range- 1-50
+        :param object filtering:
+        :param date start_date:
+        :param date end_date:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -383,7 +391,7 @@ class BcPaymentApi(object):
             return data
 
     def bc_transaction_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
-        """Get the transaction records of your Business Centers. [Transaction get](https://ads.tiktok.com/marketing_api/docs?id=1739939140408322)  # noqa: E501
+        """Get transaction records of a Business Center. [BcPayment BC Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939140408322)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -391,13 +399,13 @@ class BcPaymentApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str bc_id: Business Center ID. (required)
+        :param str bc_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringBCTransactionGet filtering: Filtering conditions
-        :param str start_date: Start date of transaction records that you want to get, in the format of \"YYYY-MM-DD\". The default value is the date 90 days earlier.
-        :param str end_date: End date of transaction records that you want to get, in the format of \"YYYY-MM-DD\". The default value is the date today.
-        :param int page: Page number
-        :param int page_size: Page size. Value range- 1-50
+        :param object filtering:
+        :param date start_date:
+        :param date end_date:
+        :param int page:
+        :param int page_size:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -477,7 +485,7 @@ class BcPaymentApi(object):
             collection_formats=collection_formats)
 
     def bc_transfer(self, access_token, **kwargs):  # noqa: E501
-        """Recharge money to or deduct money from an ad account in a Business Center. [BC transfer](https://ads.tiktok.com/marketing_api/docs?id=1739939095321601)  # noqa: E501
+        """Process payments to recharge or deduct money from an ad account in a Business Center. [BcPayment BC Transfer](https://business-api.tiktok.com/portal/docs?id=1739939095321601)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -486,7 +494,7 @@ class BcPaymentApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param BcTransferBody body: BC transfer parameters
+        :param BcTransferBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -499,7 +507,7 @@ class BcPaymentApi(object):
             return data
 
     def bc_transfer_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Recharge money to or deduct money from an ad account in a Business Center. [BC transfer](https://ads.tiktok.com/marketing_api/docs?id=1739939095321601)  # noqa: E501
+        """Process payments to recharge or deduct money from an ad account in a Business Center. [BcPayment BC Transfer](https://business-api.tiktok.com/portal/docs?id=1739939095321601)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -508,7 +516,7 @@ class BcPaymentApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param BcTransferBody body: BC transfer parameters
+        :param BcTransferBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.

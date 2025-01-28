@@ -27,7 +27,10 @@ class BcTransferBody(object):
         'advertiser_id': 'str',
         'bc_id': 'str',
         'cash_amount': 'float',
+        'child_bc_id': 'str',
         'grant_amount': 'float',
+        'request_id': 'str',
+        'transfer_level': 'str',
         'transfer_type': 'str'
     }
 
@@ -35,31 +38,43 @@ class BcTransferBody(object):
         'advertiser_id': 'advertiser_id',
         'bc_id': 'bc_id',
         'cash_amount': 'cash_amount',
+        'child_bc_id': 'child_bc_id',
         'grant_amount': 'grant_amount',
+        'request_id': 'request_id',
+        'transfer_level': 'transfer_level',
         'transfer_type': 'transfer_type'
     }
 
-    def __init__(self, advertiser_id=None, bc_id=None, cash_amount=None, grant_amount=None, transfer_type=None):  # noqa: E501
+    def __init__(self, advertiser_id=None, bc_id=None, cash_amount=None, child_bc_id=None, grant_amount=None, request_id=None, transfer_level=None, transfer_type=None):  # noqa: E501
         """BcTransferBody - a model defined in Swagger"""  # noqa: E501
         self._advertiser_id = None
         self._bc_id = None
         self._cash_amount = None
+        self._child_bc_id = None
         self._grant_amount = None
+        self._request_id = None
+        self._transfer_level = None
         self._transfer_type = None
         self.discriminator = None
-        self.advertiser_id = advertiser_id
+        if advertiser_id is not None:
+            self.advertiser_id = advertiser_id
         self.bc_id = bc_id
         if cash_amount is not None:
             self.cash_amount = cash_amount
+        if child_bc_id is not None:
+            self.child_bc_id = child_bc_id
         if grant_amount is not None:
             self.grant_amount = grant_amount
+        if request_id is not None:
+            self.request_id = request_id
+        if transfer_level is not None:
+            self.transfer_level = transfer_level
         self.transfer_type = transfer_type
 
     @property
     def advertiser_id(self):
         """Gets the advertiser_id of this BcTransferBody.  # noqa: E501
 
-        Ad Account ID  # noqa: E501
 
         :return: The advertiser_id of this BcTransferBody.  # noqa: E501
         :rtype: str
@@ -70,13 +85,10 @@ class BcTransferBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this BcTransferBody.
 
-        Ad Account ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this BcTransferBody.  # noqa: E501
         :type: str
         """
-        if advertiser_id is None:
-            raise ValueError("Invalid value for `advertiser_id`, must not be `None`")  # noqa: E501
 
         self._advertiser_id = advertiser_id
 
@@ -84,7 +96,6 @@ class BcTransferBody(object):
     def bc_id(self):
         """Gets the bc_id of this BcTransferBody.  # noqa: E501
 
-        Business Center ID  # noqa: E501
 
         :return: The bc_id of this BcTransferBody.  # noqa: E501
         :rtype: str
@@ -95,7 +106,6 @@ class BcTransferBody(object):
     def bc_id(self, bc_id):
         """Sets the bc_id of this BcTransferBody.
 
-        Business Center ID  # noqa: E501
 
         :param bc_id: The bc_id of this BcTransferBody.  # noqa: E501
         :type: str
@@ -109,7 +119,6 @@ class BcTransferBody(object):
     def cash_amount(self):
         """Gets the cash_amount of this BcTransferBody.  # noqa: E501
 
-        The amount to process. You need to specify either cash_amount or grant_amount. Rounded to two decimal places. Value range > 0.  # noqa: E501
 
         :return: The cash_amount of this BcTransferBody.  # noqa: E501
         :rtype: float
@@ -120,7 +129,6 @@ class BcTransferBody(object):
     def cash_amount(self, cash_amount):
         """Sets the cash_amount of this BcTransferBody.
 
-        The amount to process. You need to specify either cash_amount or grant_amount. Rounded to two decimal places. Value range > 0.  # noqa: E501
 
         :param cash_amount: The cash_amount of this BcTransferBody.  # noqa: E501
         :type: float
@@ -129,10 +137,30 @@ class BcTransferBody(object):
         self._cash_amount = cash_amount
 
     @property
+    def child_bc_id(self):
+        """Gets the child_bc_id of this BcTransferBody.  # noqa: E501
+
+
+        :return: The child_bc_id of this BcTransferBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._child_bc_id
+
+    @child_bc_id.setter
+    def child_bc_id(self, child_bc_id):
+        """Sets the child_bc_id of this BcTransferBody.
+
+
+        :param child_bc_id: The child_bc_id of this BcTransferBody.  # noqa: E501
+        :type: str
+        """
+
+        self._child_bc_id = child_bc_id
+
+    @property
     def grant_amount(self):
         """Gets the grant_amount of this BcTransferBody.  # noqa: E501
 
-        Coupon/voucher amount. You need to specify either `cash_amount` or `grant_amount`. Rounded to two decimal places. Value range > 0  # noqa: E501
 
         :return: The grant_amount of this BcTransferBody.  # noqa: E501
         :rtype: float
@@ -143,7 +171,6 @@ class BcTransferBody(object):
     def grant_amount(self, grant_amount):
         """Sets the grant_amount of this BcTransferBody.
 
-        Coupon/voucher amount. You need to specify either `cash_amount` or `grant_amount`. Rounded to two decimal places. Value range > 0  # noqa: E501
 
         :param grant_amount: The grant_amount of this BcTransferBody.  # noqa: E501
         :type: float
@@ -152,10 +179,51 @@ class BcTransferBody(object):
         self._grant_amount = grant_amount
 
     @property
+    def request_id(self):
+        """Gets the request_id of this BcTransferBody.  # noqa: E501
+
+
+        :return: The request_id of this BcTransferBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._request_id
+
+    @request_id.setter
+    def request_id(self, request_id):
+        """Sets the request_id of this BcTransferBody.
+
+
+        :param request_id: The request_id of this BcTransferBody.  # noqa: E501
+        :type: str
+        """
+
+        self._request_id = request_id
+
+    @property
+    def transfer_level(self):
+        """Gets the transfer_level of this BcTransferBody.  # noqa: E501
+
+
+        :return: The transfer_level of this BcTransferBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._transfer_level
+
+    @transfer_level.setter
+    def transfer_level(self, transfer_level):
+        """Sets the transfer_level of this BcTransferBody.
+
+
+        :param transfer_level: The transfer_level of this BcTransferBody.  # noqa: E501
+        :type: str
+        """
+
+        self._transfer_level = transfer_level
+
+    @property
     def transfer_type(self):
         """Gets the transfer_type of this BcTransferBody.  # noqa: E501
 
-        How you'd like to process payments from an ad account. Enum values：`RECHARGE`(transfer), `REFUND`(deduction)  # noqa: E501
 
         :return: The transfer_type of this BcTransferBody.  # noqa: E501
         :rtype: str
@@ -166,7 +234,6 @@ class BcTransferBody(object):
     def transfer_type(self, transfer_type):
         """Sets the transfer_type of this BcTransferBody.
 
-        How you'd like to process payments from an ad account. Enum values：`RECHARGE`(transfer), `REFUND`(deduction)  # noqa: E501
 
         :param transfer_type: The transfer_type of this BcTransferBody.  # noqa: E501
         :type: str

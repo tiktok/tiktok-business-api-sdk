@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.dmpcustomAudiencefileuploadContextInfo;
+import business_api_client.DmpcustomAudiencefileuploadContextInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -18,13 +18,13 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * ShareCancelBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class ShareCancelBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
 
   @JsonProperty("context_info")
-  private dmpcustomAudiencefileuploadContextInfo contextInfo = null;
+  private DmpcustomAudiencefileuploadContextInfo contextInfo = null;
 
   @JsonProperty("custom_audience_id")
   private String customAudienceId = null;
@@ -50,7 +50,7 @@ public class ShareCancelBody {
     this.advertiserId = advertiserId;
   }
 
-  public ShareCancelBody contextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public ShareCancelBody contextInfo(DmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -60,11 +60,11 @@ public class ShareCancelBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public dmpcustomAudiencefileuploadContextInfo getContextInfo() {
+  public DmpcustomAudiencefileuploadContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(dmpcustomAudiencefileuploadContextInfo contextInfo) {
+  public void setContextInfo(DmpcustomAudiencefileuploadContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 

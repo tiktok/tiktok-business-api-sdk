@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FileImageAdUpload model module.
  * @module model/FileImageAdUpload
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class FileImageAdUpload {
   /**

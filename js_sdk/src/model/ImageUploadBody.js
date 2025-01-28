@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ImageUploadBody model module.
  * @module model/ImageUploadBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class ImageUploadBody {
   /**

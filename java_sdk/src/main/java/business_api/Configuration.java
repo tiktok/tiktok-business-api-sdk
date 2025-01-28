@@ -7,7 +7,7 @@
 
 package business_api;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-21T14:49:06.465252-08:00[America/Los_Angeles]")public class Configuration {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
     /**

@@ -5,12 +5,12 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from '../ApiClient.js';
-import {dmpcustomAudiencefileuploadContextInfo} from './dmpcustomAudiencefileuploadContextInfo.js';
+import {DmpcustomAudiencefileuploadContextInfo} from './DmpcustomAudiencefileuploadContextInfo.js';
 
 /**
  * The FileUploadBody model module.
  * @module model/FileUploadBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class FileUploadBody {
   /**
@@ -44,7 +44,7 @@ export class FileUploadBody {
       if (data.hasOwnProperty('calculate_type'))
         obj.calculate_type = ApiClient.convertToType(data['calculate_type'], 'String');
       if (data.hasOwnProperty('context_info'))
-        obj.context_info = dmpcustomAudiencefileuploadContextInfo.constructFromObject(data['context_info']);
+        obj.context_info = DmpcustomAudiencefileuploadContextInfo.constructFromObject(data['context_info']);
       if (data.hasOwnProperty('file'))
         obj.file = ApiClient.convertToType(data['file'], 'Blob');
       if (data.hasOwnProperty('file_name'))
@@ -69,7 +69,7 @@ FileUploadBody.prototype.advertiser_id = undefined;
 FileUploadBody.prototype.calculate_type = undefined;
 
 /**
- * @member {module:model/dmpcustomAudiencefileuploadContextInfo} context_info
+ * @member {module:model/DmpcustomAudiencefileuploadContextInfo} context_info
  */
 FileUploadBody.prototype.context_info = undefined;
 

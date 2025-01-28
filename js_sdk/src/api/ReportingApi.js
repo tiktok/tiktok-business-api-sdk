@@ -11,7 +11,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * Reporting service.
 * @module api/ReportingApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class ReportingApi {
 

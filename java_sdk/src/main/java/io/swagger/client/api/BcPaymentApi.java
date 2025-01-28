@@ -17,17 +17,15 @@ import business_api.Pair;
 import javax.ws.rs.core.GenericType;
 
 import business_api_client.BcTransferBody;
-import business_api_client.FilteringAdvertiserBalanceGet;
-import business_api_client.FilteringAdvertiserTransactionGet;
-import business_api_client.FilteringBCTransactionGet;
 import business_api_client.InlineResponse200;
+import org.threeten.bp.LocalDate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")public class BcPaymentApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")public class BcPaymentApi {
   private ApiClient apiClient;
 
   public BcPaymentApi() {
@@ -47,17 +45,18 @@ import java.util.Map;
   }
 
   /**
-   * Obtain the balance of ad accounts in the Business Center. This function only returns the ad accounts that the Business Center has administrator permissions over. [Advertiser balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939106470913)
+   * Get ad account balance and budget. [BcPayment Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939106470913)
    * 
-   * @param bcId Business Center ID. (required)
+   * @param bcId  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param filtering Filtering conditions. (optional)
-   * @param page Current number of page (optional)
-   * @param pageSize Page size. (optional)
+   * @param childBcId  (optional)
+   * @param filtering  (optional)
+   * @param page  (optional)
+   * @param pageSize  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response advertiserBalanceGet(String bcId, String accessToken, FilteringAdvertiserBalanceGet filtering, Integer page, Integer pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response advertiserBalanceGet(String bcId, String accessToken, String childBcId, Object filtering, Long page, Long pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'bcId' is set
     if (bcId == null) {
@@ -76,6 +75,7 @@ import java.util.Map;
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "bc_id", bcId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "child_bc_id", childBcId));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "filtering", filtering));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
@@ -99,7 +99,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -111,17 +111,17 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Get the transaction records of ad accounts in the Business Center. This function only returns the transaction records of ad accounts that the Business Center has administrator rights over. [Advertiser transaction Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939116353538)
+   * Get transaction records of an ad account. [BcPayment Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939116353538)
    * 
-   * @param bcId Business Center ID. (required)
+   * @param bcId  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param filtering Filtering conditions (optional)
-   * @param page Current page (optional)
-   * @param pageSize Page size, (optional)
+   * @param filtering  (optional)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response advertiserTransactionGet(String bcId, String accessToken, FilteringAdvertiserTransactionGet filtering, Integer page, Integer pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response advertiserTransactionGet(Long bcId, String accessToken, Object filtering, Long page, Long pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'bcId' is set
     if (bcId == null) {
@@ -163,7 +163,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -175,14 +175,15 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Obtain the balance of a Business Center. [Balance get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939128198145)
+   * Get the balance of a Business Center. [BcPayment BC Balance Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939128198145)
    * 
-   * @param bcId Business Center ID (required)
+   * @param bcId  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param childBcId  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response bcBalanceGet(String bcId, String accessToken) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response bcBalanceGet(String bcId, String accessToken, String childBcId) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'bcId' is set
     if (bcId == null) {
@@ -201,6 +202,7 @@ import java.util.Map;
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "bc_id", bcId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "child_bc_id", childBcId));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
@@ -221,7 +223,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -233,19 +235,19 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Get the transaction records of your Business Centers. [Transaction get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939140408322)
+   * Get transaction records of a Business Center. [BcPayment BC Transaction Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939140408322)
    * 
-   * @param bcId Business Center ID. (required)
+   * @param bcId  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param filtering Filtering conditions (optional)
-   * @param startDate Start date of transaction records that you want to get, in the format of \&quot;YYYY-MM-DD\&quot;. The default value is the date 90 days earlier. (optional)
-   * @param endDate End date of transaction records that you want to get, in the format of \&quot;YYYY-MM-DD\&quot;. The default value is the date today. (optional)
-   * @param page Page number (optional)
-   * @param pageSize Page size. Value range- 1-50 (optional)
+   * @param filtering  (optional)
+   * @param startDate  (optional)
+   * @param endDate  (optional)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response bcTransactionGet(String bcId, String accessToken, FilteringBCTransactionGet filtering, String startDate, String endDate, Integer page, Integer pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response bcTransactionGet(String bcId, String accessToken, Object filtering, LocalDate startDate, LocalDate endDate, Long page, Long pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'bcId' is set
     if (bcId == null) {
@@ -289,7 +291,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -301,10 +303,10 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Recharge money to or deduct money from an ad account in a Business Center. [BC transfer](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739939095321601)
+   * Process payments to recharge or deduct money from an ad account in a Business Center. [BcPayment BC Transfer](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939095321601)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body BC transfer parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -342,7 +344,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());

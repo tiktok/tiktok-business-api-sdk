@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")public class FileApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")public class FileApi {
   private ApiClient apiClient;
 
   public FileApi() {
@@ -44,70 +44,6 @@ import java.util.Map;
     this.apiClient = apiClient;
   }
 
-  /**
-   * The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740051721711618)
-   * 
-   * @param advertiserId Advertiser ID. (required)
-   * @param imageIds Image ID list. Up to 100 IDs per request. (required)
-   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @return InlineResponse200
-   * @throws ApiException if fails to make API call
-   */
-  public Response adImageInfo(String advertiserId, List<String> imageIds, String accessToken) throws ApiException, SDKException, SDKExceptionForEvent {
-    Object localVarPostBody = null;
-    // verify the required parameter 'advertiserId' is set
-    if (advertiserId == null) {
-      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling adImageInfo");
-    }
-    // verify the required parameter 'imageIds' is set
-    if (imageIds == null) {
-      throw new ApiException(400, "Missing the required parameter 'imageIds' when calling adImageInfo");
-    }
-    // verify the required parameter 'accessToken' is set
-    if (accessToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling adImageInfo");
-    }
-    // create path and map variables
-    String localVarPath = "/open_api/v1.3/file/image/ad/info/";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "image_ids", imageIds));
-
-    if (accessToken != null)
-      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
-
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] {  };
-
-    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
-    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      if(response.getCode() != 0)
-    {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
-          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
-      }
-      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
-    }
-      Response return_response = new Response();
-    return_response.setData(response.getData());
-    return_response.setRequestId(response.getRequestId());
-
-    return return_response;
-  }
   /**
    * The function is used to  to upload pictures to the Asset Library and use the obtained image ID for creating ads. [File image Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739067433456642)
    * 
@@ -170,7 +106,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -234,7 +170,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -298,7 +234,7 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
@@ -386,7 +322,71 @@ import java.util.Map;
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
-      if (localVarPath.startsWith("/open_api/v1.3/pixel")) {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id&#x3D;1740051721711618)
+   * 
+   * @param advertiserId  (required)
+   * @param imageIds  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response fileImageAdInfo(String advertiserId, List<String> imageIds, String accessToken) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling fileImageAdInfo");
+    }
+    // verify the required parameter 'imageIds' is set
+    if (imageIds == null) {
+      throw new ApiException(400, "Missing the required parameter 'imageIds' when calling fileImageAdInfo");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling fileImageAdInfo");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/file/image/ad/info/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "image_ids", imageIds));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
           throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
       }
       throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());

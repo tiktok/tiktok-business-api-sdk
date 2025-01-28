@@ -1,7 +1,0 @@
-# js_sdk.adgroupcreateAudienceRuleInclusions
-
-## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**operator** | **String** |  | [optional] 
-**rules** | [**[adgroupcreateAudienceRuleInclusionsRules]**](adgroupcreateAudienceRuleInclusionsRules.md) |  | [optional] 

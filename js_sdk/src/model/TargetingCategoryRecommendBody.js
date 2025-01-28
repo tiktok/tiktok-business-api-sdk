@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The TargetingCategoryRecommendBody model module.
  * @module model/TargetingCategoryRecommendBody
- * @version 0.1.2
+ * @version 0.1.3
  */
 export class TargetingCategoryRecommendBody {
   /**

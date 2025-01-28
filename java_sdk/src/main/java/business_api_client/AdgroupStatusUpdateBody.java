@@ -19,7 +19,7 @@ import java.util.List;
  * AdgroupStatusUpdateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class AdgroupStatusUpdateBody {
   @JsonProperty("adgroup_ids")
   private List<String> adgroupIds = new ArrayList<String>();

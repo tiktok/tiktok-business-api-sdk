@@ -13,7 +13,7 @@ import {TargetingSearchBody} from '../model/TargetingSearchBody.js';
 /**
 * Tool service.
 * @module api/ToolApi
-* @version 0.1.2
+* @version 0.1.3
 */
 export class ToolApi {
 
@@ -42,7 +42,7 @@ export class ToolApi {
      * @param {String} advertiser_id Advertiser ID.
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {String} opts.language The language you want the returned region name to be translated into. Default value: en Currently, we only support zh, fr, es, ko, vi, en, hi, it, tr, ru, ja, id, de, ms, ar, and th Note: If you do not pass in one of the supported values above, it will return as the default en.
+     * @param {String} opts.language The language you want the returned region name to be translated into. Default value: en Currently, we only support zh, fr, es, ko, vi, en, hi, it, tr, ru, ja, id, de, ms, ar, and th Note: If you do not pass in one of the supported values above, it will return as the default en. (default to <.>)
      * @param {module:api/ToolApi~searchRegionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */

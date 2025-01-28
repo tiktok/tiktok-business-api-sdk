@@ -9,7 +9,7 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
-import business_api_client.dmpcustomAudienceapplyContextInfo;
+import business_api_client.DmpcustomAudienceapplyContextInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -20,7 +20,7 @@ import java.util.List;
  * CustomAudienceApplyBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class CustomAudienceApplyBody {
   @JsonProperty("action_mode")
   private String actionMode = null;
@@ -32,7 +32,7 @@ public class CustomAudienceApplyBody {
   private String advertiserId = null;
 
   @JsonProperty("context_info")
-  private dmpcustomAudienceapplyContextInfo contextInfo = null;
+  private DmpcustomAudienceapplyContextInfo contextInfo = null;
 
   @JsonProperty("custom_audience_id")
   private String customAudienceId = null;
@@ -99,7 +99,7 @@ public class CustomAudienceApplyBody {
     this.advertiserId = advertiserId;
   }
 
-  public CustomAudienceApplyBody contextInfo(dmpcustomAudienceapplyContextInfo contextInfo) {
+  public CustomAudienceApplyBody contextInfo(DmpcustomAudienceapplyContextInfo contextInfo) {
     this.contextInfo = contextInfo;
     return this;
   }
@@ -109,11 +109,11 @@ public class CustomAudienceApplyBody {
    * @return contextInfo
   **/
   @Schema(description = "")
-  public dmpcustomAudienceapplyContextInfo getContextInfo() {
+  public DmpcustomAudienceapplyContextInfo getContextInfo() {
     return contextInfo;
   }
 
-  public void setContextInfo(dmpcustomAudienceapplyContextInfo contextInfo) {
+  public void setContextInfo(DmpcustomAudienceapplyContextInfo contextInfo) {
     this.contextInfo = contextInfo;
   }
 

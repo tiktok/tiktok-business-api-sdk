@@ -24,14 +24,14 @@ class AdgroupCreateBody(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'actions': 'list[adgroupcreateActions]',
+        'actions': 'list[AdgroupcreateActions]',
         'adgroup_app_profile_page_state': 'str',
         'adgroup_name': 'str',
         'advertiser_id': 'str',
         'age_groups': 'list[str]',
         'app_id': 'str',
         'audience_ids': 'list[str]',
-        'audience_rule': 'adgroupcreateAudienceRule',
+        'audience_rule': 'AdgroupcreateAudienceRule',
         'audience_type': 'str',
         'auto_targeting_enabled': 'str',
         'bid_display_mode': 'str',
@@ -59,7 +59,7 @@ class AdgroupCreateBody(object):
         'device_model_ids': 'list[str]',
         'device_price_ranges': 'list[int]',
         'excluded_audience_ids': 'list[str]',
-        'excluded_custom_actions': 'adgroupcreateExcludedCustomActions',
+        'excluded_custom_actions': 'AdgroupcreateExcludedCustomActions',
         'excluded_pangle_audience_package_ids': 'list[str]',
         'frequency': 'int',
         'frequency_schedule': 'int',
@@ -68,7 +68,7 @@ class AdgroupCreateBody(object):
         'identity_authorized_bc_id': 'str',
         'identity_id': 'str',
         'identity_type': 'str',
-        'included_custom_actions': 'adgroupcreateIncludedCustomActions',
+        'included_custom_actions': 'AdgroupcreateIncludedCustomActions',
         'included_pangle_audience_package_ids': 'list[str]',
         'interest_category_ids': 'list[str]',
         'interest_keyword_ids': 'list[str]',
@@ -108,7 +108,7 @@ class AdgroupCreateBody(object):
         'statistic_type': 'str',
         'store_authorized_bc_id': 'str',
         'store_id': 'str',
-        'targeting_expansion': 'adgroupcreateTargetingExpansion',
+        'targeting_expansion': 'AdgroupcreateTargetingExpansion',
         'video_download_disabled': 'str'
     }
 
@@ -463,7 +463,7 @@ class AdgroupCreateBody(object):
         A list of action category objects.  # noqa: E501
 
         :return: The actions of this AdgroupCreateBody.  # noqa: E501
-        :rtype: list[adgroupcreateActions]
+        :rtype: list[AdgroupcreateActions]
         """
         return self._actions
 
@@ -474,7 +474,7 @@ class AdgroupCreateBody(object):
         A list of action category objects.  # noqa: E501
 
         :param actions: The actions of this AdgroupCreateBody.  # noqa: E501
-        :type: list[adgroupcreateActions]
+        :type: list[AdgroupcreateActions]
         """
 
         self._actions = actions
@@ -627,7 +627,7 @@ class AdgroupCreateBody(object):
 
 
         :return: The audience_rule of this AdgroupCreateBody.  # noqa: E501
-        :rtype: adgroupcreateAudienceRule
+        :rtype: AdgroupcreateAudienceRule
         """
         return self._audience_rule
 
@@ -637,7 +637,7 @@ class AdgroupCreateBody(object):
 
 
         :param audience_rule: The audience_rule of this AdgroupCreateBody.  # noqa: E501
-        :type: adgroupcreateAudienceRule
+        :type: AdgroupcreateAudienceRule
         """
 
         self._audience_rule = audience_rule
@@ -1273,7 +1273,7 @@ class AdgroupCreateBody(object):
 
 
         :return: The excluded_custom_actions of this AdgroupCreateBody.  # noqa: E501
-        :rtype: adgroupcreateExcludedCustomActions
+        :rtype: AdgroupcreateExcludedCustomActions
         """
         return self._excluded_custom_actions
 
@@ -1283,7 +1283,7 @@ class AdgroupCreateBody(object):
 
 
         :param excluded_custom_actions: The excluded_custom_actions of this AdgroupCreateBody.  # noqa: E501
-        :type: adgroupcreateExcludedCustomActions
+        :type: AdgroupcreateExcludedCustomActions
         """
 
         self._excluded_custom_actions = excluded_custom_actions
@@ -1478,7 +1478,7 @@ class AdgroupCreateBody(object):
 
 
         :return: The included_custom_actions of this AdgroupCreateBody.  # noqa: E501
-        :rtype: adgroupcreateIncludedCustomActions
+        :rtype: AdgroupcreateIncludedCustomActions
         """
         return self._included_custom_actions
 
@@ -1488,7 +1488,7 @@ class AdgroupCreateBody(object):
 
 
         :param included_custom_actions: The included_custom_actions of this AdgroupCreateBody.  # noqa: E501
-        :type: adgroupcreateIncludedCustomActions
+        :type: AdgroupcreateIncludedCustomActions
         """
 
         self._included_custom_actions = included_custom_actions
@@ -2402,7 +2402,7 @@ class AdgroupCreateBody(object):
 
 
         :return: The targeting_expansion of this AdgroupCreateBody.  # noqa: E501
-        :rtype: adgroupcreateTargetingExpansion
+        :rtype: AdgroupcreateTargetingExpansion
         """
         return self._targeting_expansion
 
@@ -2412,7 +2412,7 @@ class AdgroupCreateBody(object):
 
 
         :param targeting_expansion: The targeting_expansion of this AdgroupCreateBody.  # noqa: E501
-        :type: adgroupcreateTargetingExpansion
+        :type: AdgroupcreateTargetingExpansion
         """
 
         self._targeting_expansion = targeting_expansion

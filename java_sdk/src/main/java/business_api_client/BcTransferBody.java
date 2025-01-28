@@ -13,12 +13,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.math.BigDecimal;
 /**
  * BcTransferBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2024-11-01T15:21:34.532937-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
 public class BcTransferBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -27,10 +26,19 @@ public class BcTransferBody {
   private String bcId = null;
 
   @JsonProperty("cash_amount")
-  private BigDecimal cashAmount = null;
+  private Float cashAmount = null;
+
+  @JsonProperty("child_bc_id")
+  private String childBcId = null;
 
   @JsonProperty("grant_amount")
-  private BigDecimal grantAmount = null;
+  private Float grantAmount = null;
+
+  @JsonProperty("request_id")
+  private String requestId = null;
+
+  @JsonProperty("transfer_level")
+  private String transferLevel = null;
 
   @JsonProperty("transfer_type")
   private String transferType = null;
@@ -41,10 +49,10 @@ public class BcTransferBody {
   }
 
    /**
-   * Ad Account ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Ad Account ID")
+  @Schema(description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -59,10 +67,10 @@ public class BcTransferBody {
   }
 
    /**
-   * Business Center ID
+   * Get bcId
    * @return bcId
   **/
-  @Schema(required = true, description = "Business Center ID")
+  @Schema(required = true, description = "")
   public String getBcId() {
     return bcId;
   }
@@ -71,40 +79,94 @@ public class BcTransferBody {
     this.bcId = bcId;
   }
 
-  public BcTransferBody cashAmount(BigDecimal cashAmount) {
+  public BcTransferBody cashAmount(Float cashAmount) {
     this.cashAmount = cashAmount;
     return this;
   }
 
    /**
-   * The amount to process. You need to specify either cash_amount or grant_amount. Rounded to two decimal places. Value range &gt; 0.
+   * Get cashAmount
    * @return cashAmount
   **/
-  @Schema(description = "The amount to process. You need to specify either cash_amount or grant_amount. Rounded to two decimal places. Value range > 0.")
-  public BigDecimal getCashAmount() {
+  @Schema(description = "")
+  public Float getCashAmount() {
     return cashAmount;
   }
 
-  public void setCashAmount(BigDecimal cashAmount) {
+  public void setCashAmount(Float cashAmount) {
     this.cashAmount = cashAmount;
   }
 
-  public BcTransferBody grantAmount(BigDecimal grantAmount) {
+  public BcTransferBody childBcId(String childBcId) {
+    this.childBcId = childBcId;
+    return this;
+  }
+
+   /**
+   * Get childBcId
+   * @return childBcId
+  **/
+  @Schema(description = "")
+  public String getChildBcId() {
+    return childBcId;
+  }
+
+  public void setChildBcId(String childBcId) {
+    this.childBcId = childBcId;
+  }
+
+  public BcTransferBody grantAmount(Float grantAmount) {
     this.grantAmount = grantAmount;
     return this;
   }
 
    /**
-   * Coupon/voucher amount. You need to specify either &#x60;cash_amount&#x60; or &#x60;grant_amount&#x60;. Rounded to two decimal places. Value range &gt; 0
+   * Get grantAmount
    * @return grantAmount
   **/
-  @Schema(description = "Coupon/voucher amount. You need to specify either `cash_amount` or `grant_amount`. Rounded to two decimal places. Value range > 0")
-  public BigDecimal getGrantAmount() {
+  @Schema(description = "")
+  public Float getGrantAmount() {
     return grantAmount;
   }
 
-  public void setGrantAmount(BigDecimal grantAmount) {
+  public void setGrantAmount(Float grantAmount) {
     this.grantAmount = grantAmount;
+  }
+
+  public BcTransferBody requestId(String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
+
+   /**
+   * Get requestId
+   * @return requestId
+  **/
+  @Schema(description = "")
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(String requestId) {
+    this.requestId = requestId;
+  }
+
+  public BcTransferBody transferLevel(String transferLevel) {
+    this.transferLevel = transferLevel;
+    return this;
+  }
+
+   /**
+   * Get transferLevel
+   * @return transferLevel
+  **/
+  @Schema(description = "")
+  public String getTransferLevel() {
+    return transferLevel;
+  }
+
+  public void setTransferLevel(String transferLevel) {
+    this.transferLevel = transferLevel;
   }
 
   public BcTransferBody transferType(String transferType) {
@@ -113,10 +175,10 @@ public class BcTransferBody {
   }
 
    /**
-   * How you&#x27;d like to process payments from an ad account. Enum values：&#x60;RECHARGE&#x60;(transfer), &#x60;REFUND&#x60;(deduction)
+   * Get transferType
    * @return transferType
   **/
-  @Schema(required = true, description = "How you'd like to process payments from an ad account. Enum values：`RECHARGE`(transfer), `REFUND`(deduction)")
+  @Schema(required = true, description = "")
   public String getTransferType() {
     return transferType;
   }
@@ -138,13 +200,16 @@ public class BcTransferBody {
     return Objects.equals(this.advertiserId, bcTransferBody.advertiserId) &&
         Objects.equals(this.bcId, bcTransferBody.bcId) &&
         Objects.equals(this.cashAmount, bcTransferBody.cashAmount) &&
+        Objects.equals(this.childBcId, bcTransferBody.childBcId) &&
         Objects.equals(this.grantAmount, bcTransferBody.grantAmount) &&
+        Objects.equals(this.requestId, bcTransferBody.requestId) &&
+        Objects.equals(this.transferLevel, bcTransferBody.transferLevel) &&
         Objects.equals(this.transferType, bcTransferBody.transferType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(advertiserId, bcId, cashAmount, grantAmount, transferType);
+    return Objects.hash(advertiserId, bcId, cashAmount, childBcId, grantAmount, requestId, transferLevel, transferType);
   }
 
 
@@ -156,7 +221,10 @@ public class BcTransferBody {
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
     sb.append("    bcId: ").append(toIndentedString(bcId)).append("\n");
     sb.append("    cashAmount: ").append(toIndentedString(cashAmount)).append("\n");
+    sb.append("    childBcId: ").append(toIndentedString(childBcId)).append("\n");
     sb.append("    grantAmount: ").append(toIndentedString(grantAmount)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+    sb.append("    transferLevel: ").append(toIndentedString(transferLevel)).append("\n");
     sb.append("    transferType: ").append(toIndentedString(transferType)).append("\n");
     sb.append("}");
     return sb.toString();

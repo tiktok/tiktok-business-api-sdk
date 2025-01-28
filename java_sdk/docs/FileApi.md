@@ -4,58 +4,11 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adImageInfo**](FileApi.md#adImageInfo) | **GET** /open_api/v1.3/file/image/ad/info/ | The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740051721711618)
 [**adImageUpload**](FileApi.md#adImageUpload) | **POST** /open_api/v1.3/file/image/ad/upload/ | The function is used to  to upload pictures to the Asset Library and use the obtained image ID for creating ads. [File image Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739067433456642)
 [**adVideoInfo**](FileApi.md#adVideoInfo) | **GET** /open_api/v1.3/file/video/ad/info/ | The function is used to get the information about a list of videos [File Video Ad Info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740050161973250) from the Asset Library.
 [**adVideoSearch**](FileApi.md#adVideoSearch) | **GET** /open_api/v1.3/file/video/ad/search/ | The function is used to to search for video creatives in the Asset Library of an ad account. [File Video Search](to search for video creatives in the Asset Library of an ad account.) Library.
 [**adVideoUpload**](FileApi.md#adVideoUpload) | **POST** /open_api/v1.3/file/video/ad/upload/ | The function is used to upload a video to the Asset Library and use the obtained video ID for creating ads. [File Video Upload](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737587322856449)
-
-<a name="adImageInfo"></a>
-# **adImageInfo**
-> Response adImageInfo(advertiserId, imageIds, accessToken)
-
-The function is used to obtain the information of images from the Asset Library. [File image info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740051721711618)
-
-### Example
-```java
-// Import classes:
-//import business_api.ApiException;
-//import io.swagger.client.api.FileApi;
-
-
-FileApi apiInstance = new FileApi();
-String advertiserId = "advertiserId_example"; // String | Advertiser ID.
-List<String> imageIds = Arrays.asList("imageIds_example"); // List<String> | Image ID list. Up to 100 IDs per request.
-String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-try {
-    Response result = apiInstance.adImageInfo(advertiserId, imageIds, accessToken);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling FileApi#adImageInfo");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **advertiserId** | **String**| Advertiser ID. |[required] 
- **imageIds** | [**List&lt;String&gt;**](String.md)| Image ID list. Up to 100 IDs per request. |[required] 
- **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
-
-### Return type
-
-[**Response**](Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
+[**fileImageAdInfo**](FileApi.md#fileImageAdInfo) | **GET** /open_api/v1.3/file/image/ad/info/ | Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id&#x3D;1740051721711618)
 
 <a name="adImageUpload"></a>
 # **adImageUpload**
@@ -277,5 +230,52 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+<a name="fileImageAdInfo"></a>
+# **fileImageAdInfo**
+> Response fileImageAdInfo(advertiserId, imageIds, accessToken)
+
+Get image information. [File Image Info](https://business-api.tiktok.com/portal/docs?id&#x3D;1740051721711618)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.FileApi;
+
+
+FileApi apiInstance = new FileApi();
+String advertiserId = "advertiserId_example"; // String | 
+List<String> imageIds = Arrays.asList("imageIds_example"); // List<String> | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+try {
+    Response result = apiInstance.fileImageAdInfo(advertiserId, imageIds, accessToken);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FileApi#fileImageAdInfo");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **imageIds** | [**List&lt;String&gt;**](String.md)|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

@@ -28,7 +28,7 @@ class CustomAudienceUpdateBody(object):
         'advertiser_id': 'str',
         'audience_enhancement': 'bool',
         'audience_sub_type': 'str',
-        'context_info': 'dmpcustomAudienceapplyContextInfo',
+        'context_info': 'DmpcustomAudienceapplyContextInfo',
         'custom_audience_id': 'str',
         'custom_audience_name': 'str',
         'file_paths': 'list[str]'
@@ -169,7 +169,7 @@ class CustomAudienceUpdateBody(object):
 
 
         :return: The context_info of this CustomAudienceUpdateBody.  # noqa: E501
-        :rtype: dmpcustomAudienceapplyContextInfo
+        :rtype: DmpcustomAudienceapplyContextInfo
         """
         return self._context_info
 
@@ -179,7 +179,7 @@ class CustomAudienceUpdateBody(object):
 
 
         :param context_info: The context_info of this CustomAudienceUpdateBody.  # noqa: E501
-        :type: dmpcustomAudienceapplyContextInfo
+        :type: DmpcustomAudienceapplyContextInfo
         """
 
         self._context_info = context_info
