@@ -54,6 +54,7 @@ export class ReportingApi {
      * @param {Number} opts.page Current page number. Default value- &#x60;1&#x60;
      * @param {Number} opts.page_size Pagination size. Value range- 1-1000. Default value- &#x60;10&#x60;.
      * @param {String} opts.query_mode The way data is queried. Enum values- &#x60;REGULAR&#x60;, &#x60;CHUNK&#x60;. Default value- &#x60;REGULAR&#x60;.  With &#x60;CHUNK&#x60; mode on, data can be returned much faster in a more stable way. Meanwhile, pagination will not be working with &#x60;CHUNK&#x60;.
+     * @param {string} opts.bc_id The business center ID. If not provided, the default business center ID for the account will be used. (optional)
      * @param {module:api/ReportingApi~reportIntegratedGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -81,7 +82,7 @@ export class ReportingApi {
         
       };
       let queryParams = {
-        'advertiser_id': advertiser_id,'service_type': opts['service_type'],'data_level': opts['data_level'],'report_type': report_type,'dimensions': this.apiClient.buildCollectionParam(dimensions, 'multi'),'metrics': this.apiClient.buildCollectionParam(opts['metrics'], 'multi'),'order_field': opts['order_field'],'order_type': opts['order_type'],'start_date': opts['start_date'],'end_date': opts['end_date'],'filtering': this.apiClient.buildCollectionParam(opts['filtering'], 'multi'),'query_lifetime': opts['query_lifetime'],'page': opts['page'],'page_size': opts['page_size'],'query_mode': opts['query_mode']
+        'advertiser_id': advertiser_id,'service_type': opts['service_type'],'data_level': opts['data_level'],'report_type': report_type,'dimensions': this.apiClient.buildCollectionParam(dimensions, 'multi'),'metrics': this.apiClient.buildCollectionParam(opts['metrics'], 'multi'),'order_field': opts['order_field'],'order_type': opts['order_type'],'start_date': opts['start_date'],'end_date': opts['end_date'],'filtering': this.apiClient.buildCollectionParam(opts['filtering'], 'multi'),'query_lifetime': opts['query_lifetime'],'page': opts['page'],'page_size': opts['page_size'],'query_mode': opts['query_mode'], 'bc_id': opts['bc_id']
       };
       let headerParams = {
         'Access-Token': Access_Token
