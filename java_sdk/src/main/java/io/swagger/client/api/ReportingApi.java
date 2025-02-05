@@ -62,10 +62,11 @@ import java.util.Map;
    * @param page Current page number. Default value- &#x60;1&#x60; (optional)
    * @param pageSize Pagination size. Value range- 1-1000. Default value- &#x60;10&#x60;. (optional)
    * @param queryMode The way data is queried. Enum values- &#x60;REGULAR&#x60;, &#x60;CHUNK&#x60;. Default value- &#x60;REGULAR&#x60;.  With &#x60;CHUNK&#x60; mode on, data can be returned much faster in a more stable way. Meanwhile, pagination will not be working with &#x60;CHUNK&#x60;. (optional)
+   * @param bcId The business center ID. If not provided, the default business center ID for the account will be used. (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response reportIntegratedGet(String advertiserId, String reportType, List<String> dimensions, String accessToken, String serviceType, String dataLevel, List<String> metrics, String orderField, String orderType, String startDate, String endDate, List<FilteringReportIntegratedGet> filtering, Boolean queryLifetime, Integer page, Integer pageSize, String queryMode) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response reportIntegratedGet(String advertiserId, String reportType, List<String> dimensions, String accessToken, String serviceType, String dataLevel, List<String> metrics, String orderField, String orderType, String startDate, String endDate, List<FilteringReportIntegratedGet> filtering, Boolean queryLifetime, Integer page, Integer pageSize, String queryMode, String bcId) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'advertiserId' is set
     if (advertiserId == null) {
@@ -106,6 +107,7 @@ import java.util.Map;
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_mode", queryMode));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "bc_id", bcId));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
