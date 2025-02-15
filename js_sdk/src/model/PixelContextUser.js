@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PixelContextUser model module.
  * @module model/PixelContextUser
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class PixelContextUser {
   /**

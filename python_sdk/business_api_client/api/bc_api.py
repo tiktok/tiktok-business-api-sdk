@@ -28,6 +28,353 @@ class BCApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def advertiser_balance_get(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get ad account balance and budget. [BC Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939106470913)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.advertiser_balance_get(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :param FilteringAdvertiserBalanceGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.advertiser_balance_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.advertiser_balance_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def advertiser_balance_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get ad account balance and budget. [BC Advertiser Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939106470913)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.advertiser_balance_get_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :param FilteringAdvertiserBalanceGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'child_bc_id', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method advertiser_balance_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `advertiser_balance_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `advertiser_balance_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/advertiser/balance/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def advertiser_transaction_get(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get transaction records of an ad account. [BC Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939116353538)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.advertiser_transaction_get(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringAdvertiserTransactionGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.advertiser_transaction_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.advertiser_transaction_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def advertiser_transaction_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get transaction records of an ad account. [BC Advertiser Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939116353538)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.advertiser_transaction_get_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param int bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringAdvertiserTransactionGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method advertiser_transaction_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `advertiser_transaction_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `advertiser_transaction_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/advertiser/transaction/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_account_transaction_get(self, access_token, **kwargs):  # noqa: E501
+        """Get the transaction records of a BC or ad accounts. [BC Account Transaction Get](https://business-api.tiktok.com/portal/docs?id=1792849810925569)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_account_transaction_get(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str bc_id:
+        :param str child_bc_id:
+        :param str transaction_level:
+        :param FilteringBcAccountTransactionGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_account_transaction_get_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_account_transaction_get_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_account_transaction_get_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Get the transaction records of a BC or ad accounts. [BC Account Transaction Get](https://business-api.tiktok.com/portal/docs?id=1792849810925569)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_account_transaction_get_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str bc_id:
+        :param str child_bc_id:
+        :param str transaction_level:
+        :param FilteringBcAccountTransactionGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'bc_id', 'child_bc_id', 'transaction_level', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_account_transaction_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_account_transaction_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
+        if 'transaction_level' in params:
+            query_params.append(('transaction_level', params['transaction_level']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/account/transaction/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def bc_advertiser_create(self, access_token, **kwargs):  # noqa: E501
         """Create an ad account [BC advertiser create](https://ads.tiktok.com/marketing_api/docs?id=1739939020318721)  # noqa: E501
 
@@ -129,6 +476,333 @@ class BCApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def bc_asset_admin_delete(self, access_token, **kwargs):  # noqa: E501
+        """Delete assets. [BC Asset Admin Delete](https://business-api.tiktok.com/portal/docs?id=1739657251102722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_admin_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AdminDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_admin_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_admin_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_admin_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Delete assets. [BC Asset Admin Delete](https://business-api.tiktok.com/portal/docs?id=1739657251102722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_admin_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AdminDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_admin_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_admin_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset/admin/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_admin_get(self, bc_id, asset_type, access_token, **kwargs):  # noqa: E501
+        """Get assets of a Business Center as admins. [BC Asset Admin Get](https://business-api.tiktok.com/portal/docs?id=1739433007779841)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_admin_get(bc_id, asset_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_type: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :param FilteringBcAssetAdminGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_admin_get_with_http_info(bc_id, asset_type, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_admin_get_with_http_info(bc_id, asset_type, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_admin_get_with_http_info(self, bc_id, asset_type, access_token, **kwargs):  # noqa: E501
+        """Get assets of a Business Center as admins. [BC Asset Admin Get](https://business-api.tiktok.com/portal/docs?id=1739433007779841)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_admin_get_with_http_info(bc_id, asset_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_type: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :param FilteringBcAssetAdminGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'asset_type', 'access_token', 'child_bc_id', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_admin_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_asset_admin_get`")  # noqa: E501
+        # verify the required parameter 'asset_type' is set
+        if ('asset_type' not in params or
+                params['asset_type'] is None):
+            raise ValueError("Missing the required parameter `asset_type` when calling `bc_asset_admin_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_admin_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
+        if 'asset_type' in params:
+            query_params.append(('asset_type', params['asset_type']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset/admin/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_assign(self, access_token, **kwargs):  # noqa: E501
+        """Assign assets to a user. [BC Asset Assign](https://business-api.tiktok.com/portal/docs?id=1739438211077121)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_assign(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetAssignBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_assign_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_assign_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_assign_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Assign assets to a user. [BC Asset Assign](https://business-api.tiktok.com/portal/docs?id=1739438211077121)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_assign_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetAssignBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_assign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_assign`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset/assign/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def bc_asset_get(self, bc_id, asset_type, access_token, **kwargs):  # noqa: E501
         """Get assets of a Business Center. [BC Asset Get](https://business-api.tiktok.com/portal/docs?id=1739432717798401)  # noqa: E501
 
@@ -142,7 +816,7 @@ class BCApi(object):
         :param str asset_type: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str child_bc_id:
-        :param object filtering:
+        :param FilteringBcAssetGet filtering:
         :param int page:
         :param int page_size:
         :return: InlineResponse200
@@ -169,7 +843,7 @@ class BCApi(object):
         :param str asset_type: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str child_bc_id:
-        :param object filtering:
+        :param FilteringBcAssetGet filtering:
         :param int page:
         :param int page_size:
         :return: InlineResponse200
@@ -254,6 +928,1330 @@ class BCApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def bc_asset_group_create(self, access_token, **kwargs):  # noqa: E501
+        """Create an Asset Group in your Business Center. [BC Asset Group Create](https://business-api.tiktok.com/portal/docs?id=1749001658583105)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_create(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetGroupCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_group_create_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_group_create_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_group_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Create an Asset Group in your Business Center. [BC Asset Group Create](https://business-api.tiktok.com/portal/docs?id=1749001658583105)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_create_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetGroupCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_group_create" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_group_create`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset_group/create/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_group_delete(self, access_token, **kwargs):  # noqa: E501
+        """Remove members' access to an Asset Group. [BC Asset Group Delete](https://business-api.tiktok.com/portal/docs?id=1749001673406466)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetGroupDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_group_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_group_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_group_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Remove members' access to an Asset Group. [BC Asset Group Delete](https://business-api.tiktok.com/portal/docs?id=1749001673406466)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetGroupDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_group_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_group_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset_group/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_group_get(self, bc_id, asset_group_id, query_entity, access_token, **kwargs):  # noqa: E501
+        """Get the assets or members of an Asset Group in a Business Center. [BC Asset Group Get](https://business-api.tiktok.com/portal/docs?id=1749001669670913)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_get(bc_id, asset_group_id, query_entity, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_group_id: (required)
+        :param str query_entity: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcAssetGroupGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_group_get_with_http_info(bc_id, asset_group_id, query_entity, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_group_get_with_http_info(bc_id, asset_group_id, query_entity, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_group_get_with_http_info(self, bc_id, asset_group_id, query_entity, access_token, **kwargs):  # noqa: E501
+        """Get the assets or members of an Asset Group in a Business Center. [BC Asset Group Get](https://business-api.tiktok.com/portal/docs?id=1749001669670913)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_get_with_http_info(bc_id, asset_group_id, query_entity, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_group_id: (required)
+        :param str query_entity: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcAssetGroupGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'asset_group_id', 'query_entity', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_group_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_asset_group_get`")  # noqa: E501
+        # verify the required parameter 'asset_group_id' is set
+        if ('asset_group_id' not in params or
+                params['asset_group_id'] is None):
+            raise ValueError("Missing the required parameter `asset_group_id` when calling `bc_asset_group_get`")  # noqa: E501
+        # verify the required parameter 'query_entity' is set
+        if ('query_entity' not in params or
+                params['query_entity'] is None):
+            raise ValueError("Missing the required parameter `query_entity` when calling `bc_asset_group_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_group_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'asset_group_id' in params:
+            query_params.append(('asset_group_id', params['asset_group_id']))  # noqa: E501
+        if 'query_entity' in params:
+            query_params.append(('query_entity', params['query_entity']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset_group/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_group_list(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get all Asset Groups in your Business Center. [BC Asset Group List](https://business-api.tiktok.com/portal/docs?id=1749001665910786)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_list(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcAssetGroupList filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_group_list_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_group_list_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_group_list_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get all Asset Groups in your Business Center. [BC Asset Group List](https://business-api.tiktok.com/portal/docs?id=1749001665910786)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_list_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcAssetGroupList filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_group_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_asset_group_list`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_group_list`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset_group/list/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_group_update(self, access_token, **kwargs):  # noqa: E501
+        """Update assets, members or the name of an Asset Group. [BC Asset Group Update](https://business-api.tiktok.com/portal/docs?id=1749001662156801)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetGroupUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_group_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_group_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_group_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Update assets, members or the name of an Asset Group. [BC Asset Group Update](https://business-api.tiktok.com/portal/docs?id=1749001662156801)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_group_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetGroupUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_group_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_group_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset_group/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_member_get(self, bc_id, asset_type, asset_id, access_token, **kwargs):  # noqa: E501
+        """Get members by assets. [BC Asset Member Get](https://business-api.tiktok.com/portal/docs?id=1739659558931458)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_member_get(bc_id, asset_type, asset_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_type: (required)
+        :param str asset_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcAssetMemberGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_member_get_with_http_info(bc_id, asset_type, asset_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_member_get_with_http_info(bc_id, asset_type, asset_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_member_get_with_http_info(self, bc_id, asset_type, asset_id, access_token, **kwargs):  # noqa: E501
+        """Get members by assets. [BC Asset Member Get](https://business-api.tiktok.com/portal/docs?id=1739659558931458)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_member_get_with_http_info(bc_id, asset_type, asset_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_type: (required)
+        :param str asset_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcAssetMemberGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'asset_type', 'asset_id', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_member_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_asset_member_get`")  # noqa: E501
+        # verify the required parameter 'asset_type' is set
+        if ('asset_type' not in params or
+                params['asset_type'] is None):
+            raise ValueError("Missing the required parameter `asset_type` when calling `bc_asset_member_get`")  # noqa: E501
+        # verify the required parameter 'asset_id' is set
+        if ('asset_id' not in params or
+                params['asset_id'] is None):
+            raise ValueError("Missing the required parameter `asset_id` when calling `bc_asset_member_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_member_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'asset_type' in params:
+            query_params.append(('asset_type', params['asset_type']))  # noqa: E501
+        if 'asset_id' in params:
+            query_params.append(('asset_id', params['asset_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset/member/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_partner_get(self, bc_id, asset_type, asset_id, access_token, **kwargs):  # noqa: E501
+        """Get partners by assets. [BC Asset Partner Get](https://business-api.tiktok.com/portal/docs?id=1739663268166722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_partner_get(bc_id, asset_type, asset_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_type: (required)
+        :param str asset_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param object filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_partner_get_with_http_info(bc_id, asset_type, asset_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_partner_get_with_http_info(bc_id, asset_type, asset_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_partner_get_with_http_info(self, bc_id, asset_type, asset_id, access_token, **kwargs):  # noqa: E501
+        """Get partners by assets. [BC Asset Partner Get](https://business-api.tiktok.com/portal/docs?id=1739663268166722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_partner_get_with_http_info(bc_id, asset_type, asset_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str asset_type: (required)
+        :param str asset_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param object filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'asset_type', 'asset_id', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_partner_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_asset_partner_get`")  # noqa: E501
+        # verify the required parameter 'asset_type' is set
+        if ('asset_type' not in params or
+                params['asset_type'] is None):
+            raise ValueError("Missing the required parameter `asset_type` when calling `bc_asset_partner_get`")  # noqa: E501
+        # verify the required parameter 'asset_id' is set
+        if ('asset_id' not in params or
+                params['asset_id'] is None):
+            raise ValueError("Missing the required parameter `asset_id` when calling `bc_asset_partner_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_partner_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'asset_type' in params:
+            query_params.append(('asset_type', params['asset_type']))  # noqa: E501
+        if 'asset_id' in params:
+            query_params.append(('asset_id', params['asset_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset/partner/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_asset_unassign(self, access_token, **kwargs):  # noqa: E501
+        """Revoke the access to an asset from a user. [BC Asset Unassign](https://business-api.tiktok.com/portal/docs?id=1739448126749698)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_unassign(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetUnassignBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_asset_unassign_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_asset_unassign_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_asset_unassign_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Revoke the access to an asset from a user. [BC Asset Unassign](https://business-api.tiktok.com/portal/docs?id=1739448126749698)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_asset_unassign_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetUnassignBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_asset_unassign" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_asset_unassign`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/asset/unassign/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_balance_get(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get the balance of a Business Center. [BC Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939128198145)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_balance_get(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_balance_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_balance_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_balance_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get the balance of a Business Center. [BC Balance Get](https://business-api.tiktok.com/portal/docs?id=1739939128198145)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_balance_get_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'child_bc_id']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_balance_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_balance_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_balance_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/balance/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_billing_group_create(self, access_token, **kwargs):  # noqa: E501
+        """Create a billing group in a Business Center. [BC Billing Group Create](https://business-api.tiktok.com/portal/docs?id=1738947780033537)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_billing_group_create(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BillingGroupCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_billing_group_create_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_billing_group_create_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_billing_group_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Create a billing group in a Business Center. [BC Billing Group Create](https://business-api.tiktok.com/portal/docs?id=1738947780033537)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_billing_group_create_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BillingGroupCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_billing_group_create" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_billing_group_create`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/billing_group/create/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_billing_group_get(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get all billing groups in a Business Center. [BC Billing Group Get](https://business-api.tiktok.com/portal/docs?id=1738944324279297)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_billing_group_get(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcBillingGroupGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_billing_group_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_billing_group_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_billing_group_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get all billing groups in a Business Center. [BC Billing Group Get](https://business-api.tiktok.com/portal/docs?id=1738944324279297)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_billing_group_get_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcBillingGroupGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_billing_group_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_billing_group_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_billing_group_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/billing_group/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_billing_group_update(self, access_token, **kwargs):  # noqa: E501
+        """Update settings of a billing group. [BC Billing Group Update](https://business-api.tiktok.com/portal/docs?id=1738947843447809)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_billing_group_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BillingGroupUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_billing_group_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_billing_group_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_billing_group_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Update settings of a billing group. [BC Billing Group Update](https://business-api.tiktok.com/portal/docs?id=1738947843447809)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_billing_group_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BillingGroupUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_billing_group_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_billing_group_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/billing_group/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def bc_get(self, access_token, **kwargs):  # noqa: E501
         """Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id=1737115687501826)  # noqa: E501
 
@@ -266,7 +2264,7 @@ class BCApi(object):
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str bc_id:
         :param str scene:
-        :param object filtering:
+        :param FilteringBcGet filtering:
         :param int page:
         :param int page_size:
         :return: InlineResponse200
@@ -292,7 +2290,7 @@ class BCApi(object):
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
         :param str bc_id:
         :param str scene:
-        :param object filtering:
+        :param FilteringBcGet filtering:
         :param int page:
         :param int page_size:
         :return: InlineResponse200
@@ -368,7 +2366,7 @@ class BCApi(object):
             collection_formats=collection_formats)
 
     def bc_image_upload(self, access_token, **kwargs):  # noqa: E501
-        """Upload a business certificate [BC image upload](https://ads.tiktok.com/marketing_api/docs?id=1739938996913218)  # noqa: E501
+        """Upload certificate images for an ad account. [BC Image Upload](https://business-api.tiktok.com/portal/docs?id=1739938996913218)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -391,7 +2389,7 @@ class BCApi(object):
             return data
 
     def bc_image_upload_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Upload a business certificate [BC image upload](https://ads.tiktok.com/marketing_api/docs?id=1739938996913218)  # noqa: E501
+        """Upload certificate images for an ad account. [BC Image Upload](https://business-api.tiktok.com/portal/docs?id=1739938996913218)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -458,6 +2456,1520 @@ class BCApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/bc/image/upload/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_member_delete(self, access_token, **kwargs):  # noqa: E501
+        """Delete member. [BC Member Delete](https://business-api.tiktok.com/portal/docs?id=1739939482851329)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param MemberDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_member_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_member_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_member_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Delete member. [BC Member Delete](https://business-api.tiktok.com/portal/docs?id=1739939482851329)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param MemberDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_member_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_member_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/member/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_member_get(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get BC members. [BC Member Get](https://business-api.tiktok.com/portal/docs?id=1739939404802049)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_get(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :param FilteringBcMemberGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_member_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_member_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_member_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get BC members. [BC Member Get](https://business-api.tiktok.com/portal/docs?id=1739939404802049)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_get_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str child_bc_id:
+        :param FilteringBcMemberGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'child_bc_id', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_member_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_member_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_member_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'child_bc_id' in params:
+            query_params.append(('child_bc_id', params['child_bc_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/member/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_member_invite(self, access_token, **kwargs):  # noqa: E501
+        """Invite members to BC. [BC Member Invite](https://business-api.tiktok.com/portal/docs?id=1739939455765505)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_invite(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param MemberInviteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_member_invite_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_member_invite_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_member_invite_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Invite members to BC. [BC Member Invite](https://business-api.tiktok.com/portal/docs?id=1739939455765505)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_invite_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param MemberInviteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_member_invite" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_member_invite`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/member/invite/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_member_update(self, access_token, **kwargs):  # noqa: E501
+        """Update member information. [BC Member Update](https://business-api.tiktok.com/portal/docs?id=1739696704424961)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param MemberUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_member_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_member_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_member_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Update member information. [BC Member Update](https://business-api.tiktok.com/portal/docs?id=1739696704424961)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_member_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param MemberUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_member_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_member_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/member/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_partner_add(self, access_token, **kwargs):  # noqa: E501
+        """Add partner to Business Center. [BC Partner Add](https://business-api.tiktok.com/portal/docs?id=1739662756510721)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_add(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PartnerAddBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_partner_add_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_partner_add_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_partner_add_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Add partner to Business Center. [BC Partner Add](https://business-api.tiktok.com/portal/docs?id=1739662756510721)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_add_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PartnerAddBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_partner_add" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_partner_add`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/partner/add/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_partner_asset_delete(self, access_token, **kwargs):  # noqa: E501
+        """Cancel asset sharing. [BC Partner Asset Delete](https://business-api.tiktok.com/portal/docs?id=1739662800930817)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_asset_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_partner_asset_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_partner_asset_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_partner_asset_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Cancel asset sharing. [BC Partner Asset Delete](https://business-api.tiktok.com/portal/docs?id=1739662800930817)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_asset_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param AssetDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_partner_asset_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_partner_asset_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/partner/asset/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_partner_asset_get(self, bc_id, partner_id, asset_type, share_type, access_token, **kwargs):  # noqa: E501
+        """Get partner assets. [BC Partner Asset Get](https://business-api.tiktok.com/portal/docs?id=1739662828320769)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_asset_get(bc_id, partner_id, asset_type, share_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str partner_id: (required)
+        :param str asset_type: (required)
+        :param str share_type: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcPartnerAssetGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_partner_asset_get_with_http_info(bc_id, partner_id, asset_type, share_type, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_partner_asset_get_with_http_info(bc_id, partner_id, asset_type, share_type, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_partner_asset_get_with_http_info(self, bc_id, partner_id, asset_type, share_type, access_token, **kwargs):  # noqa: E501
+        """Get partner assets. [BC Partner Asset Get](https://business-api.tiktok.com/portal/docs?id=1739662828320769)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_asset_get_with_http_info(bc_id, partner_id, asset_type, share_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str partner_id: (required)
+        :param str asset_type: (required)
+        :param str share_type: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcPartnerAssetGet filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'partner_id', 'asset_type', 'share_type', 'access_token', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_partner_asset_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_partner_asset_get`")  # noqa: E501
+        # verify the required parameter 'partner_id' is set
+        if ('partner_id' not in params or
+                params['partner_id'] is None):
+            raise ValueError("Missing the required parameter `partner_id` when calling `bc_partner_asset_get`")  # noqa: E501
+        # verify the required parameter 'asset_type' is set
+        if ('asset_type' not in params or
+                params['asset_type'] is None):
+            raise ValueError("Missing the required parameter `asset_type` when calling `bc_partner_asset_get`")  # noqa: E501
+        # verify the required parameter 'share_type' is set
+        if ('share_type' not in params or
+                params['share_type'] is None):
+            raise ValueError("Missing the required parameter `share_type` when calling `bc_partner_asset_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_partner_asset_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'partner_id' in params:
+            query_params.append(('partner_id', params['partner_id']))  # noqa: E501
+        if 'asset_type' in params:
+            query_params.append(('asset_type', params['asset_type']))  # noqa: E501
+        if 'share_type' in params:
+            query_params.append(('share_type', params['share_type']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/partner/asset/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_partner_delete(self, access_token, **kwargs):  # noqa: E501
+        """Delete partner. [BC Partner Delete](https://business-api.tiktok.com/portal/docs?id=1739662779301890)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PartnerDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_partner_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_partner_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_partner_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Delete partner. [BC Partner Delete](https://business-api.tiktok.com/portal/docs?id=1739662779301890)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PartnerDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_partner_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_partner_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/partner/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_partner_get(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get partners. [BC Partner Get](https://business-api.tiktok.com/portal/docs?id=1739662727395330)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_get(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param int page:
+        :param int page_size:
+        :param FilteringBcPartnerGet filtering:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_partner_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_partner_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_partner_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get partners. [BC Partner Get](https://business-api.tiktok.com/portal/docs?id=1739662727395330)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_partner_get_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param int page:
+        :param int page_size:
+        :param FilteringBcPartnerGet filtering:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'page', 'page_size', 'filtering']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_partner_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_partner_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_partner_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/partner/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_pixel_link_get(self, bc_id, pixel_code, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to get a list of ad accounts that have been linked to the request pixel. [BC Pixel Link Get](https://business-api.tiktok.com/portal/docs?id=1753994966965249)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_pixel_link_get(bc_id, pixel_code, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str pixel_code: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_pixel_link_get_with_http_info(bc_id, pixel_code, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_pixel_link_get_with_http_info(bc_id, pixel_code, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_pixel_link_get_with_http_info(self, bc_id, pixel_code, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to get a list of ad accounts that have been linked to the request pixel. [BC Pixel Link Get](https://business-api.tiktok.com/portal/docs?id=1753994966965249)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_pixel_link_get_with_http_info(bc_id, pixel_code, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str pixel_code: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'pixel_code', 'access_token', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_pixel_link_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_pixel_link_get`")  # noqa: E501
+        # verify the required parameter 'pixel_code' is set
+        if ('pixel_code' not in params or
+                params['pixel_code'] is None):
+            raise ValueError("Missing the required parameter `pixel_code` when calling `bc_pixel_link_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_pixel_link_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'pixel_code' in params:
+            query_params.append(('pixel_code', params['pixel_code']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/pixel/link/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_pixel_link_update(self, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to link and unlink pixel to advertiser accounts. [BC Pixel Link Update](https://business-api.tiktok.com/portal/docs?id=1753994950327297)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_pixel_link_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param LinkUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_pixel_link_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_pixel_link_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_pixel_link_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to link and unlink pixel to advertiser accounts. [BC Pixel Link Update](https://business-api.tiktok.com/portal/docs?id=1753994950327297)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_pixel_link_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param LinkUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_pixel_link_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_pixel_link_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/pixel/link/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_pixel_transfer(self, access_token, **kwargs):  # noqa: E501
+        """Transfer Pixel from Advertiser to BC. [BC Pixel Transfer](https://business-api.tiktok.com/portal/docs?id=1753994928261122)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_pixel_transfer(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PixelTransferBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_pixel_transfer_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_pixel_transfer_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_pixel_transfer_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Transfer Pixel from Advertiser to BC. [BC Pixel Transfer](https://business-api.tiktok.com/portal/docs?id=1753994928261122)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_pixel_transfer_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PixelTransferBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_pixel_transfer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_pixel_transfer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/pixel/transfer/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_transaction_get(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get translaction records of a Business Center. [BC Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939140408322)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_transaction_get(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcTransactionGet filtering:
+        :param str start_date:
+        :param str end_date:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_transaction_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_transaction_get_with_http_info(bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_transaction_get_with_http_info(self, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get translaction records of a Business Center. [BC Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939140408322)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_transaction_get_with_http_info(bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FilteringBcTransactionGet filtering:
+        :param str start_date:
+        :param str end_date:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'access_token', 'filtering', 'start_date', 'end_date', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_transaction_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_transaction_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_transaction_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/transaction/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def bc_transfer(self, access_token, **kwargs):  # noqa: E501
+        """Process payments (recharge money to or deduct money from an ad account in a Business Center. [BC Transfer](https://business-api.tiktok.com/portal/docs?id=1739939095321601)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_transfer(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BcTransferBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_transfer_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_transfer_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_transfer_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Process payments (recharge money to or deduct money from an ad account in a Business Center. [BC Transfer](https://business-api.tiktok.com/portal/docs?id=1739939095321601)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_transfer_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param BcTransferBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_transfer" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_transfer`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/transfer/', 'POST',
             path_params,
             query_params,
             header_params,

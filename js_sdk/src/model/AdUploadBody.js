@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdUploadBody model module.
  * @module model/AdUploadBody
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class AdUploadBody {
   /**

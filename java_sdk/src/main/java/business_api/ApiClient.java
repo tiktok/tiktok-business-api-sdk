@@ -60,7 +60,7 @@ import business_api.auth.HttpBasicAuth;
 import business_api.auth.ApiKeyAuth;
 import business_api.auth.OAuth;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")public class ApiClient {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")public class ApiClient {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
   protected String basePath = "https://business-api.tiktok.com";
   protected boolean debugging = false;
@@ -85,7 +85,7 @@ import business_api.auth.OAuth;
     this.dateFormat = new RFC3339DateFormat();
     defaultHeaderMap.put("Business-SDK", "1");
     defaultHeaderMap.put("SDK-Language", "Java");
-    defaultHeaderMap.put("SDK-Version", "0.1.3");
+    defaultHeaderMap.put("SDK-Version", "0.1.4");
 
     // Set default User-Agent.
     setUserAgent("Swagger-Codegen/1.0.0/java");

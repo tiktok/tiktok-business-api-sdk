@@ -10,7 +10,7 @@ import {AdAcoBodyMediaInfo} from './AdAcoBodyMediaInfo.js';
 /**
  * The AdAcoBodyMediaInfoList model module.
  * @module model/AdAcoBodyMediaInfoList
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class AdAcoBodyMediaInfoList {
   /**

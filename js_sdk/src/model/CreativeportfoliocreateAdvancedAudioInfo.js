@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeportfoliocreateAdvancedAudioInfo model module.
  * @module model/CreativeportfoliocreateAdvancedAudioInfo
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class CreativeportfoliocreateAdvancedAudioInfo {
   /**

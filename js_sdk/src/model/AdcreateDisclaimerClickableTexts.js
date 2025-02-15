@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdcreateDisclaimerClickableTexts model module.
  * @module model/AdcreateDisclaimerClickableTexts
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class AdcreateDisclaimerClickableTexts {
   /**

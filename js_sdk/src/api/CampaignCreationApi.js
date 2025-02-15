@@ -14,7 +14,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * CampaignCreation service.
 * @module api/CampaignCreationApi
-* @version 0.1.3
+* @version 0.1.4
 */
 export class CampaignCreationApi {
 

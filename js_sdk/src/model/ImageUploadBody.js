@@ -9,19 +9,17 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ImageUploadBody model module.
  * @module model/ImageUploadBody
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class ImageUploadBody {
   /**
    * Constructs a new <code>ImageUploadBody</code>.
    * @alias module:model/ImageUploadBody
    * @class
-   * @param bc_id {String} Business Center ID
-   * @param image_file {Blob} The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB
+   * @param bc_id {String} 
    */
-  constructor(bc_id, image_file) {
+  constructor(bc_id) {
     this.bc_id = bc_id;
-    this.image_file = image_file;
   }
 
   /**
@@ -44,13 +42,11 @@ export class ImageUploadBody {
 }
 
 /**
- * Business Center ID
  * @member {String} bc_id
  */
 ImageUploadBody.prototype.bc_id = undefined;
 
 /**
- * The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB
  * @member {Blob} image_file
  */
 ImageUploadBody.prototype.image_file = undefined;

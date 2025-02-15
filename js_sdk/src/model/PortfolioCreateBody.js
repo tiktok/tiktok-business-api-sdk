@@ -10,7 +10,7 @@ import {CreativeportfoliocreatePortfolioContent} from './Creativeportfoliocreate
 /**
  * The PortfolioCreateBody model module.
  * @module model/PortfolioCreateBody
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class PortfolioCreateBody {
   /**

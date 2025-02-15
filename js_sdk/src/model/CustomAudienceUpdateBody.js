@@ -10,7 +10,7 @@ import {DmpcustomAudienceapplyContextInfo} from './DmpcustomAudienceapplyContext
 /**
  * The CustomAudienceUpdateBody model module.
  * @module model/CustomAudienceUpdateBody
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class CustomAudienceUpdateBody {
   /**

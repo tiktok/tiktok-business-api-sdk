@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CatalogUpdateBody model module.
  * @module model/CatalogUpdateBody
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class CatalogUpdateBody {
   /**

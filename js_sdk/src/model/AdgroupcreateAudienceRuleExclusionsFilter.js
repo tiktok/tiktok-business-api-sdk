@@ -10,7 +10,7 @@ import {AdgroupcreateAudienceRuleExclusionsFilterFilters} from './AdgroupcreateA
 /**
  * The AdgroupcreateAudienceRuleExclusionsFilter model module.
  * @module model/AdgroupcreateAudienceRuleExclusionsFilter
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class AdgroupcreateAudienceRuleExclusionsFilter {
   /**
