@@ -20,7 +20,7 @@ import java.util.List;
  * The set of filters for each inclusion rule.
  */
 @Schema(description = "The set of filters for each inclusion rule.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
 public class DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSet {
   @JsonProperty("filters")
   private List<DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters> filters = new ArrayList<DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters>();

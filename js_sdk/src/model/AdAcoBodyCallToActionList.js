@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyCallToActionList model module.
  * @module model/AdAcoBodyCallToActionList
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class AdAcoBodyCallToActionList {
   /**

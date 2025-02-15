@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdcreateDisclaimerText model module.
  * @module model/AdcreateDisclaimerText
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class AdcreateDisclaimerText {
   /**

@@ -20,7 +20,7 @@ import java.util.List;
  * CustomAudienceShareBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
 public class CustomAudienceShareBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;

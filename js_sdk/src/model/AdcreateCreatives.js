@@ -11,7 +11,7 @@ import {AdcreateDisclaimerText} from './AdcreateDisclaimerText.js';
 /**
  * The AdcreateCreatives model module.
  * @module model/AdcreateCreatives
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class AdcreateCreatives {
   /**

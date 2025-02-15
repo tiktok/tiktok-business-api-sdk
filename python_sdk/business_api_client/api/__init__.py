@@ -16,7 +16,6 @@ from business_api_client.api.adgroup_api import AdgroupApi
 from business_api_client.api.audience_api import AudienceApi
 from business_api_client.api.authentication_api import AuthenticationApi
 from business_api_client.api.bc_api import BCApi
-from business_api_client.api.bc_payment_api import BcPaymentApi
 from business_api_client.api.campaign_creation_api import CampaignCreationApi
 from business_api_client.api.creative_asset_api import CreativeAssetApi
 from business_api_client.api.event_callback_api import EventCallbackApi

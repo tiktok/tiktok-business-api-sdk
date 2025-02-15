@@ -43,10 +43,17 @@ import {AdgroupcreateAudienceRuleInclusions} from './model/AdgroupcreateAudience
 import {AdgroupcreateExcludedCustomActions} from './model/AdgroupcreateExcludedCustomActions.js';
 import {AdgroupcreateIncludedCustomActions} from './model/AdgroupcreateIncludedCustomActions.js';
 import {AdgroupcreateTargetingExpansion} from './model/AdgroupcreateTargetingExpansion.js';
+import {AdminDeleteBody} from './model/AdminDeleteBody.js';
 import {AdupdateCreatives} from './model/AdupdateCreatives.js';
 import {AdvertiserCreateBody} from './model/AdvertiserCreateBody.js';
 import {AdvertiserUpdateBody} from './model/AdvertiserUpdateBody.js';
 import {AdvertiserupdateQualificationImages} from './model/AdvertiserupdateQualificationImages.js';
+import {AssetAssignBody} from './model/AssetAssignBody.js';
+import {AssetDeleteBody} from './model/AssetDeleteBody.js';
+import {AssetGroupCreateBody} from './model/AssetGroupCreateBody.js';
+import {AssetGroupDeleteBody} from './model/AssetGroupDeleteBody.js';
+import {AssetGroupUpdateBody} from './model/AssetGroupUpdateBody.js';
+import {AssetUnassignBody} from './model/AssetUnassignBody.js';
 import {BcTransferBody} from './model/BcTransferBody.js';
 import {BcadvertisercreateAdvertiserInfo} from './model/BcadvertisercreateAdvertiserInfo.js';
 import {BcadvertisercreateBillingGroupInfo} from './model/BcadvertisercreateBillingGroupInfo.js';
@@ -54,7 +61,12 @@ import {BcadvertisercreateBillingInfo} from './model/BcadvertisercreateBillingIn
 import {BcadvertisercreateContactInfo} from './model/BcadvertisercreateContactInfo.js';
 import {BcadvertisercreateCustomerInfo} from './model/BcadvertisercreateCustomerInfo.js';
 import {BcadvertisercreateQualificationInfo} from './model/BcadvertisercreateQualificationInfo.js';
+import {BcassetGroupcreateAssets} from './model/BcassetGroupcreateAssets.js';
+import {BcassetGroupcreateMembers} from './model/BcassetGroupcreateMembers.js';
+import {BcmemberinviteExtUserRole} from './model/BcmemberinviteExtUserRole.js';
 import {BidRecommendBody} from './model/BidRecommendBody.js';
+import {BillingGroupCreateBody} from './model/BillingGroupCreateBody.js';
+import {BillingGroupUpdateBody} from './model/BillingGroupUpdateBody.js';
 import {CampaignCreateBody} from './model/CampaignCreateBody.js';
 import {CampaignStatusUpdateBody} from './model/CampaignStatusUpdateBody.js';
 import {CampaignUpdateBody} from './model/CampaignUpdateBody.js';
@@ -97,16 +109,36 @@ import {FileImageAdUpload} from './model/FileImageAdUpload.js';
 import {FileUploadBody} from './model/FileUploadBody.js';
 import {FilteringAdGet} from './model/FilteringAdGet.js';
 import {FilteringAdgroupGet} from './model/FilteringAdgroupGet.js';
+import {FilteringAdvertiserBalanceGet} from './model/FilteringAdvertiserBalanceGet.js';
+import {FilteringAdvertiserTransactionGet} from './model/FilteringAdvertiserTransactionGet.js';
+import {FilteringBcAccountTransactionGet} from './model/FilteringBcAccountTransactionGet.js';
+import {FilteringBcAssetAdminGet} from './model/FilteringBcAssetAdminGet.js';
+import {FilteringBcAssetGet} from './model/FilteringBcAssetGet.js';
+import {FilteringBcAssetGroupGet} from './model/FilteringBcAssetGroupGet.js';
+import {FilteringBcAssetGroupList} from './model/FilteringBcAssetGroupList.js';
+import {FilteringBcAssetMemberGet} from './model/FilteringBcAssetMemberGet.js';
+import {FilteringBcBillingGroupGet} from './model/FilteringBcBillingGroupGet.js';
+import {FilteringBcGet} from './model/FilteringBcGet.js';
+import {FilteringBcMemberGet} from './model/FilteringBcMemberGet.js';
+import {FilteringBcPartnerAssetGet} from './model/FilteringBcPartnerAssetGet.js';
+import {FilteringBcPartnerGet} from './model/FilteringBcPartnerGet.js';
+import {FilteringBcTransactionGet} from './model/FilteringBcTransactionGet.js';
 import {FilteringCampaignGet} from './model/FilteringCampaignGet.js';
 import {FilteringReportIntegratedGet} from './model/FilteringReportIntegratedGet.js';
 import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch.js';
 import {IdentityCreateBody} from './model/IdentityCreateBody.js';
 import {ImageUploadBody} from './model/ImageUploadBody.js';
 import {InlineResponse200} from './model/InlineResponse200.js';
+import {LinkUpdateBody} from './model/LinkUpdateBody.js';
 import {LookalikeCreateBody} from './model/LookalikeCreateBody.js';
 import {LookalikeUpdateBody} from './model/LookalikeUpdateBody.js';
 import {MaterialStatusUpdateBody} from './model/MaterialStatusUpdateBody.js';
+import {MemberDeleteBody} from './model/MemberDeleteBody.js';
+import {MemberInviteBody} from './model/MemberInviteBody.js';
+import {MemberUpdateBody} from './model/MemberUpdateBody.js';
 import {Oauth2AccessTokenBody} from './model/Oauth2AccessTokenBody.js';
+import {PartnerAddBody} from './model/PartnerAddBody.js';
+import {PartnerDeleteBody} from './model/PartnerDeleteBody.js';
 import {PixelBatchBody} from './model/PixelBatchBody.js';
 import {PixelContent} from './model/PixelContent.js';
 import {PixelContext} from './model/PixelContext.js';
@@ -115,6 +147,7 @@ import {PixelContextPage} from './model/PixelContextPage.js';
 import {PixelContextUser} from './model/PixelContextUser.js';
 import {PixelProperties} from './model/PixelProperties.js';
 import {PixelTrackBody} from './model/PixelTrackBody.js';
+import {PixelTransferBody} from './model/PixelTransferBody.js';
 import {PixelbatchBatch} from './model/PixelbatchBatch.js';
 import {PortfolioCreateBody} from './model/PortfolioCreateBody.js';
 import {ProductDeleteBody} from './model/ProductDeleteBody.js';
@@ -133,7 +166,6 @@ import {AdgroupApi} from './api/AdgroupApi.js';
 import {AudienceApi} from './api/AudienceApi.js';
 import {AuthenticationApi} from './api/AuthenticationApi.js';
 import {BCApi} from './api/BCApi.js';
-import {BcPaymentApi} from './api/BcPaymentApi.js';
 import {CampaignCreationApi} from './api/CampaignCreationApi.js';
 import {CatalogApi} from './api/CatalogApi.js';
 import {CreativeAssetApi} from './api/CreativeAssetApi.js';
@@ -174,7 +206,7 @@ import {ToolApi} from './api/ToolApi.js';
 * </pre>
 * </p>
 * @module index
-* @version 0.1.3
+* @version 0.1.4
 */
 export {
     /**
@@ -412,6 +444,12 @@ export {
     AdgroupcreateTargetingExpansion,
 
     /**
+     * The AdminDeleteBody model constructor.
+     * @property {module:model/AdminDeleteBody}
+     */
+    AdminDeleteBody,
+
+    /**
      * The AdupdateCreatives model constructor.
      * @property {module:model/AdupdateCreatives}
      */
@@ -434,6 +472,42 @@ export {
      * @property {module:model/AdvertiserupdateQualificationImages}
      */
     AdvertiserupdateQualificationImages,
+
+    /**
+     * The AssetAssignBody model constructor.
+     * @property {module:model/AssetAssignBody}
+     */
+    AssetAssignBody,
+
+    /**
+     * The AssetDeleteBody model constructor.
+     * @property {module:model/AssetDeleteBody}
+     */
+    AssetDeleteBody,
+
+    /**
+     * The AssetGroupCreateBody model constructor.
+     * @property {module:model/AssetGroupCreateBody}
+     */
+    AssetGroupCreateBody,
+
+    /**
+     * The AssetGroupDeleteBody model constructor.
+     * @property {module:model/AssetGroupDeleteBody}
+     */
+    AssetGroupDeleteBody,
+
+    /**
+     * The AssetGroupUpdateBody model constructor.
+     * @property {module:model/AssetGroupUpdateBody}
+     */
+    AssetGroupUpdateBody,
+
+    /**
+     * The AssetUnassignBody model constructor.
+     * @property {module:model/AssetUnassignBody}
+     */
+    AssetUnassignBody,
 
     /**
      * The BcTransferBody model constructor.
@@ -478,10 +552,40 @@ export {
     BcadvertisercreateQualificationInfo,
 
     /**
+     * The BcassetGroupcreateAssets model constructor.
+     * @property {module:model/BcassetGroupcreateAssets}
+     */
+    BcassetGroupcreateAssets,
+
+    /**
+     * The BcassetGroupcreateMembers model constructor.
+     * @property {module:model/BcassetGroupcreateMembers}
+     */
+    BcassetGroupcreateMembers,
+
+    /**
+     * The BcmemberinviteExtUserRole model constructor.
+     * @property {module:model/BcmemberinviteExtUserRole}
+     */
+    BcmemberinviteExtUserRole,
+
+    /**
      * The BidRecommendBody model constructor.
      * @property {module:model/BidRecommendBody}
      */
     BidRecommendBody,
+
+    /**
+     * The BillingGroupCreateBody model constructor.
+     * @property {module:model/BillingGroupCreateBody}
+     */
+    BillingGroupCreateBody,
+
+    /**
+     * The BillingGroupUpdateBody model constructor.
+     * @property {module:model/BillingGroupUpdateBody}
+     */
+    BillingGroupUpdateBody,
 
     /**
      * The CampaignCreateBody model constructor.
@@ -736,6 +840,90 @@ export {
     FilteringAdgroupGet,
 
     /**
+     * The FilteringAdvertiserBalanceGet model constructor.
+     * @property {module:model/FilteringAdvertiserBalanceGet}
+     */
+    FilteringAdvertiserBalanceGet,
+
+    /**
+     * The FilteringAdvertiserTransactionGet model constructor.
+     * @property {module:model/FilteringAdvertiserTransactionGet}
+     */
+    FilteringAdvertiserTransactionGet,
+
+    /**
+     * The FilteringBcAccountTransactionGet model constructor.
+     * @property {module:model/FilteringBcAccountTransactionGet}
+     */
+    FilteringBcAccountTransactionGet,
+
+    /**
+     * The FilteringBcAssetAdminGet model constructor.
+     * @property {module:model/FilteringBcAssetAdminGet}
+     */
+    FilteringBcAssetAdminGet,
+
+    /**
+     * The FilteringBcAssetGet model constructor.
+     * @property {module:model/FilteringBcAssetGet}
+     */
+    FilteringBcAssetGet,
+
+    /**
+     * The FilteringBcAssetGroupGet model constructor.
+     * @property {module:model/FilteringBcAssetGroupGet}
+     */
+    FilteringBcAssetGroupGet,
+
+    /**
+     * The FilteringBcAssetGroupList model constructor.
+     * @property {module:model/FilteringBcAssetGroupList}
+     */
+    FilteringBcAssetGroupList,
+
+    /**
+     * The FilteringBcAssetMemberGet model constructor.
+     * @property {module:model/FilteringBcAssetMemberGet}
+     */
+    FilteringBcAssetMemberGet,
+
+    /**
+     * The FilteringBcBillingGroupGet model constructor.
+     * @property {module:model/FilteringBcBillingGroupGet}
+     */
+    FilteringBcBillingGroupGet,
+
+    /**
+     * The FilteringBcGet model constructor.
+     * @property {module:model/FilteringBcGet}
+     */
+    FilteringBcGet,
+
+    /**
+     * The FilteringBcMemberGet model constructor.
+     * @property {module:model/FilteringBcMemberGet}
+     */
+    FilteringBcMemberGet,
+
+    /**
+     * The FilteringBcPartnerAssetGet model constructor.
+     * @property {module:model/FilteringBcPartnerAssetGet}
+     */
+    FilteringBcPartnerAssetGet,
+
+    /**
+     * The FilteringBcPartnerGet model constructor.
+     * @property {module:model/FilteringBcPartnerGet}
+     */
+    FilteringBcPartnerGet,
+
+    /**
+     * The FilteringBcTransactionGet model constructor.
+     * @property {module:model/FilteringBcTransactionGet}
+     */
+    FilteringBcTransactionGet,
+
+    /**
      * The FilteringCampaignGet model constructor.
      * @property {module:model/FilteringCampaignGet}
      */
@@ -772,6 +960,12 @@ export {
     InlineResponse200,
 
     /**
+     * The LinkUpdateBody model constructor.
+     * @property {module:model/LinkUpdateBody}
+     */
+    LinkUpdateBody,
+
+    /**
      * The LookalikeCreateBody model constructor.
      * @property {module:model/LookalikeCreateBody}
      */
@@ -790,10 +984,40 @@ export {
     MaterialStatusUpdateBody,
 
     /**
+     * The MemberDeleteBody model constructor.
+     * @property {module:model/MemberDeleteBody}
+     */
+    MemberDeleteBody,
+
+    /**
+     * The MemberInviteBody model constructor.
+     * @property {module:model/MemberInviteBody}
+     */
+    MemberInviteBody,
+
+    /**
+     * The MemberUpdateBody model constructor.
+     * @property {module:model/MemberUpdateBody}
+     */
+    MemberUpdateBody,
+
+    /**
      * The Oauth2AccessTokenBody model constructor.
      * @property {module:model/Oauth2AccessTokenBody}
      */
     Oauth2AccessTokenBody,
+
+    /**
+     * The PartnerAddBody model constructor.
+     * @property {module:model/PartnerAddBody}
+     */
+    PartnerAddBody,
+
+    /**
+     * The PartnerDeleteBody model constructor.
+     * @property {module:model/PartnerDeleteBody}
+     */
+    PartnerDeleteBody,
 
     /**
      * The PixelBatchBody model constructor.
@@ -842,6 +1066,12 @@ export {
      * @property {module:model/PixelTrackBody}
      */
     PixelTrackBody,
+
+    /**
+     * The PixelTransferBody model constructor.
+     * @property {module:model/PixelTransferBody}
+     */
+    PixelTransferBody,
 
     /**
      * The PixelbatchBatch model constructor.
@@ -950,12 +1180,6 @@ export {
     * @property {module:api/BCApi}
     */
     BCApi,
-
-    /**
-    * The BcPaymentApi service constructor.
-    * @property {module:api/BcPaymentApi}
-    */
-    BcPaymentApi,
 
     /**
     * The CampaignCreationApi service constructor.

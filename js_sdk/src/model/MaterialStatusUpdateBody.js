@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The MaterialStatusUpdateBody model module.
  * @module model/MaterialStatusUpdateBody
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class MaterialStatusUpdateBody {
   /**

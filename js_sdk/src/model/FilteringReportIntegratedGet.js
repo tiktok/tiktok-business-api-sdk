@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringReportIntegratedGet model module.
  * @module model/FilteringReportIntegratedGet
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class FilteringReportIntegratedGet {
   /**

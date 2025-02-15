@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The DmpcustomAudienceapplyContextInfo model module.
  * @module model/DmpcustomAudienceapplyContextInfo
- * @version 0.1.3
+ * @version 0.1.4
  */
 export class DmpcustomAudienceapplyContextInfo {
   /**

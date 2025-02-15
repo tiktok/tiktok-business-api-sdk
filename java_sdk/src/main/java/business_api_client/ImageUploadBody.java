@@ -18,7 +18,7 @@ import java.io.File;
  * ImageUploadBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-01-27T17:23:30.114869-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
 public class ImageUploadBody {
   @JsonProperty("bc_id")
   private String bcId = null;
@@ -32,10 +32,10 @@ public class ImageUploadBody {
   }
 
    /**
-   * Business Center ID
+   * Get bcId
    * @return bcId
   **/
-  @Schema(required = true, description = "Business Center ID")
+  @Schema(required = true, description = "")
   public String getBcId() {
     return bcId;
   }
@@ -50,10 +50,10 @@ public class ImageUploadBody {
   }
 
    /**
-   * The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB
+   * Get imageFile
    * @return imageFile
   **/
-  @Schema(required = true, description = "The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB")
+  @Schema(description = "")
   public File getImageFile() {
     return imageFile;
   }

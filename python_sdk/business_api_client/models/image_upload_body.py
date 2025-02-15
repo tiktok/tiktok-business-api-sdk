@@ -39,13 +39,13 @@ class ImageUploadBody(object):
         self._image_file = None
         self.discriminator = None
         self.bc_id = bc_id
-        self.image_file = image_file
+        if image_file is not None:
+            self.image_file = image_file
 
     @property
     def bc_id(self):
         """Gets the bc_id of this ImageUploadBody.  # noqa: E501
 
-        Business Center ID  # noqa: E501
 
         :return: The bc_id of this ImageUploadBody.  # noqa: E501
         :rtype: str
@@ -56,7 +56,6 @@ class ImageUploadBody(object):
     def bc_id(self, bc_id):
         """Sets the bc_id of this ImageUploadBody.
 
-        Business Center ID  # noqa: E501
 
         :param bc_id: The bc_id of this ImageUploadBody.  # noqa: E501
         :type: str
@@ -70,7 +69,6 @@ class ImageUploadBody(object):
     def image_file(self):
         """Gets the image_file of this ImageUploadBody.  # noqa: E501
 
-        The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB  # noqa: E501
 
         :return: The image_file of this ImageUploadBody.  # noqa: E501
         :rtype: str
@@ -81,13 +79,10 @@ class ImageUploadBody(object):
     def image_file(self, image_file):
         """Sets the image_file of this ImageUploadBody.
 
-        The certificate image file to be uploaded. Supported picture format: JPG/JPEG/PNG. The maximum file size is 10 MB  # noqa: E501
 
         :param image_file: The image_file of this ImageUploadBody.  # noqa: E501
         :type: str
         """
-        if image_file is None:
-            raise ValueError("Invalid value for `image_file`, must not be `None`")  # noqa: E501
 
         self._image_file = image_file
 
