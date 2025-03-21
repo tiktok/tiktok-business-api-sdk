@@ -42,7 +42,6 @@ class AdvertiserupdateQualificationImages(object):
     def image_id(self):
         """Gets the image_id of this AdvertiserupdateQualificationImages.  # noqa: E501
 
-        Image ID of the business certificate  # noqa: E501
 
         :return: The image_id of this AdvertiserupdateQualificationImages.  # noqa: E501
         :rtype: str
@@ -53,7 +52,6 @@ class AdvertiserupdateQualificationImages(object):
     def image_id(self, image_id):
         """Sets the image_id of this AdvertiserupdateQualificationImages.
 
-        Image ID of the business certificate  # noqa: E501
 
         :param image_id: The image_id of this AdvertiserupdateQualificationImages.  # noqa: E501
         :type: str

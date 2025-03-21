@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ProductDeleteBody model module.
  * @module model/ProductDeleteBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class ProductDeleteBody {
   /**

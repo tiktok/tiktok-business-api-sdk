@@ -9,7 +9,8 @@ from __future__ import absolute_import
  the LICENSE file in the root directory of this source tree.
 """
 # import apis into api package
-from business_api_client.api.account_api import AccountApi
+from business_api_client.api.app_management_api import APPManagementApi
+from business_api_client.api.account_management_api import AccountManagementApi
 from business_api_client.api.ad_api import AdApi
 from business_api_client.api.ad_aco_api import AdAcoApi
 from business_api_client.api.adgroup_api import AdgroupApi
@@ -21,7 +22,6 @@ from business_api_client.api.creative_asset_api import CreativeAssetApi
 from business_api_client.api.event_callback_api import EventCallbackApi
 from business_api_client.api.file_api import FileApi
 from business_api_client.api.identity_api import IdentityApi
-from business_api_client.api.measurement_api import MeasurementApi
 from business_api_client.api.recommend_tool_api import RecommendToolApi
 from business_api_client.api.reporting_api import ReportingApi
 from business_api_client.api.tool_api import ToolApi

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdminDeleteBody model module.
  * @module model/AdminDeleteBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class AdminDeleteBody {
   /**

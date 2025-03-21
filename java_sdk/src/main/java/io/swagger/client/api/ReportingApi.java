@@ -18,13 +18,15 @@ import javax.ws.rs.core.GenericType;
 
 import business_api_client.FilteringReportIntegratedGet;
 import business_api_client.InlineResponse200;
+import business_api_client.TaskCancelBody;
+import business_api_client.TaskCreateBody;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")public class ReportingApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")public class ReportingApi {
   private ApiClient apiClient;
 
   public ReportingApi() {
@@ -44,40 +46,36 @@ import java.util.Map;
   }
 
   /**
-   * Create a synchronous report task.  This endpoint can currently return the reporting data of up to 10,000 advertisements. If your number of advertisements exceeds 10,000, please use campaign_ids / adgroup_ids / ad_ids as a filter to obtain the reporting data of all advertisements in batches. Additionally, with CHUNK mode on, up to 20,000 advertisements can be returned. If you use campaign_ids / adgroup_ids / ad_ids as a filter, you can pass in up to 100 IDs at a time. [Reporting Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740302848100353)
+   * Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302848100353)
    * 
-   * @param advertiserId Advertiser ID (required)
-   * @param reportType Report type. Enum values- &#x60;BASIC&#x60; (basic report), &#x60;AUDIENCE&#x60; (audience report), &#x60;PLAYABLE_MATERIAL&#x60;  (playable ads report), &#x60;CATALOG&#x60; (DSA report). When &#x60;service_type&#x60; is &#x60;RESERVATION&#x60;, only &#x60;BASIC&#x60; report is supported. When &#x60;service_type&#x60; is &#x60;AUCTION&#x60;, &#x60;BASIC&#x60;, &#x60;AUDIENCE&#x60;, &#x60;PLAYABLE_MATERIAL&#x60;, and &#x60;CATALOG&#x60; reports are all supported. (required)
-   * @param dimensions Grouping conditions. For example- &#x60;［\&quot;campaign_id\&quot;, \&quot;stat_time_day\&quot;］&#x60; indicates that both &#x60;campaign_id&#x60; and &#x60;stat_time_day&#x60; (days) are grouped. For supported dimensions for each report type, see the corresponding articles under [Report types](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738864835805186). (required)
+   * @param reportType  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param serviceType Ad service type. Enum values:&#x60;AUCTION&#x60;(Auction Ads), &#x60;RESERVATION&#x60;(Reservation Ads). Default value &#x60;AUCTION&#x60;. (optional)
-   * @param dataLevel The data level that you&#x27;d like to query in reports. Required when &#x60;report_type&#x60; is &#x60;BASIC&#x60;,&#x60;AUDIENCE&#x60; or &#x60;CATALOG&#x60;. Enum values &#x60;AUCTION_AD&#x60; Auction Ads, Ad level. &#x60;AUCTION_ADGROUP&#x60; Auction Ads, Ad Group level. &#x60;AUCTION_CAMPAIGN&#x60; Auction Ads, Campaign level. &#x60;AUCTION_ADVERTISER&#x60; Auction Ads, Advertiser level. &#x60;RESERVATION_AD&#x60; Reservation Ads, Ad level. &#x60;RESERVATION_ADGROUP&#x60; Reservation Ads, Ad Group level. RESERVATION_CAMPAIGN&#x60; Reservation Ads, Campaign level. &#x60;RESERVATION_ADVERTISER&#x60; Reservation Ads, Advertiser level. (optional)
-   * @param metrics Metrics to query. Different report types support different metrics.  For supported metrics for each report type, see the corresponding articles under [Report types](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738864835805186). (optional)
-   * @param orderField Sorting field. All supported metrics (excluding attribute metrics) support sorting. Not sorting by default. (optional)
-   * @param orderType Sorting order. Enum values- &#x60;ASC&#x60;, &#x60;DESC&#x60;. Default value- &#x60;DESC&#x60;. (optional)
-   * @param startDate Query start date (closed interval) in the format of &#x60;YYYY-MM-DD&#x60;. The date is based on the ad account time zone. This field is required when &#x60;query_lifetime&#x60; is &#x60;False&#x60;. (optional)
-   * @param endDate Query end date (closed interval) in the format of &#x60;YYYY-MM-DD&#x60;. The date is based on the ad account time zone. This field is required when &#x60;query_lifetime&#x60; is &#x60;False&#x60;. (optional)
-   * @param filtering Filtering conditions. Supported filtering conditions vary based on &#x60;service_type&#x60; and &#x60;data_level&#x60;. For filters supported in different report types, refer to the articles under [Report types](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738864835805186). (optional)
-   * @param queryLifetime Whether to request the lifetime metrics.  Default value- &#x60;False&#x60;. If &#x60;query_lifetime&#x60; &#x3D; &#x60;True&#x60;, the &#x60;start_date&#x60; and &#x60;end_date&#x60; parameters will be ignored. The lifetime metric name is the same as the normal one. (optional)
-   * @param page Current page number. Default value- &#x60;1&#x60; (optional)
-   * @param pageSize Pagination size. Value range- 1-1000. Default value- &#x60;10&#x60;. (optional)
-   * @param queryMode The way data is queried. Enum values- &#x60;REGULAR&#x60;, &#x60;CHUNK&#x60;. Default value- &#x60;REGULAR&#x60;.  With &#x60;CHUNK&#x60; mode on, data can be returned much faster in a more stable way. Meanwhile, pagination will not be working with &#x60;CHUNK&#x60;. (optional)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
+   * @param enableTotalMetrics  (optional, default to false)
+   * @param multiAdvReportInUtcTime  (optional, default to false)
+   * @param queryMode  (optional)
+   * @param advertiserId  (optional)
+   * @param advertiserIds  (optional)
+   * @param bcId  (optional)
+   * @param serviceType  (optional)
+   * @param dataLevel  (optional)
+   * @param dimensions  (optional)
+   * @param metrics  (optional)
+   * @param startDate  (optional)
+   * @param endDate  (optional)
+   * @param queryLifetime  (optional)
+   * @param orderField  (optional)
+   * @param orderType  (optional)
+   * @param filtering  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response reportIntegratedGet(String advertiserId, String reportType, List<String> dimensions, String accessToken, String serviceType, String dataLevel, List<String> metrics, String orderField, String orderType, String startDate, String endDate, List<FilteringReportIntegratedGet> filtering, Boolean queryLifetime, Integer page, Integer pageSize, String queryMode) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response reportIntegratedGet(String reportType, String accessToken, Long page, Long pageSize, Boolean enableTotalMetrics, Boolean multiAdvReportInUtcTime, String queryMode, String advertiserId, List<String> advertiserIds, String bcId, String serviceType, String dataLevel, List<String> dimensions, List<String> metrics, String startDate, String endDate, Boolean queryLifetime, String orderField, String orderType, FilteringReportIntegratedGet filtering) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
-    // verify the required parameter 'advertiserId' is set
-    if (advertiserId == null) {
-      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling reportIntegratedGet");
-    }
     // verify the required parameter 'reportType' is set
     if (reportType == null) {
       throw new ApiException(400, "Missing the required parameter 'reportType' when calling reportIntegratedGet");
-    }
-    // verify the required parameter 'dimensions' is set
-    if (dimensions == null) {
-      throw new ApiException(400, "Missing the required parameter 'dimensions' when calling reportIntegratedGet");
     }
     // verify the required parameter 'accessToken' is set
     if (accessToken == null) {
@@ -91,21 +89,25 @@ import java.util.Map;
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "service_type", serviceType));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "data_level", dataLevel));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "report_type", reportType));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "dimensions", dimensions));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "metrics", metrics));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "order_field", orderField));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "order_type", orderType));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "start_date", startDate));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "end_date", endDate));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "filtering", filtering));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_lifetime", queryLifetime));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "enable_total_metrics", enableTotalMetrics));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "multi_adv_report_in_utc_time", multiAdvReportInUtcTime));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_mode", queryMode));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "advertiser_ids", advertiserIds));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "bc_id", bcId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "service_type", serviceType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "report_type", reportType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "data_level", dataLevel));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "dimensions", dimensions));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "metrics", metrics));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "start_date", startDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "end_date", endDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_lifetime", queryLifetime));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "order_field", orderField));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "order_type", orderType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "filtering", filtering));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
@@ -124,6 +126,176 @@ import java.util.Map;
 
     GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * Cancel an asynchronous report task. [Report Task Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1803615367145537)
+   * 
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param body  (optional)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response reportTaskCancel(String accessToken, TaskCancelBody body) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = body;
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling reportTaskCancel");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/report/task/cancel/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * Get the status of an async report task. [Report Task Check](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302781443073)
+   * 
+   * @param taskId  (required)
+   * @param advertiserId  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response reportTaskCheck(String taskId, String advertiserId, String accessToken) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'taskId' is set
+    if (taskId == null) {
+      throw new ApiException(400, "Missing the required parameter 'taskId' when calling reportTaskCheck");
+    }
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling reportTaskCheck");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling reportTaskCheck");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/report/task/check/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "task_id", taskId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * 
+   * 
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param body  (optional)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response reportTaskCreate(String accessToken, TaskCreateBody body) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = body;
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling reportTaskCreate");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/report/task/create/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
       if (localVarPath.startsWith("/pixel")) {

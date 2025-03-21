@@ -14,7 +14,7 @@ import {CreativeportfoliocreateStickerParam} from './CreativeportfoliocreateStic
 /**
  * The CreativeportfoliocreatePortfolioContent model module.
  * @module model/CreativeportfoliocreatePortfolioContent
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class CreativeportfoliocreatePortfolioContent {
   /**

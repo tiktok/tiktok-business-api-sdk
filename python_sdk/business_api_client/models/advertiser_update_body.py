@@ -25,8 +25,12 @@ class AdvertiserUpdateBody(object):
     """
     swagger_types = {
         'address': 'str',
+        'advertiser_budgets': 'list[AdvertiserupdateAdvertiserBudgets]',
         'advertiser_id': 'str',
         'advertiser_name': 'str',
+        'bc_id': 'int',
+        'budget_update_type': 'str',
+        'child_bc_id': 'int',
         'company': 'str',
         'contact_email': 'str',
         'contact_name': 'str',
@@ -35,14 +39,18 @@ class AdvertiserUpdateBody(object):
         'license_no': 'str',
         'need_submit_certificate': 'bool',
         'promotion_link': 'str',
-        'qualification_images': 'AdvertiserupdateQualificationImages',
-        'tax_map': 'str'
+        'qualification_images': 'list[AdvertiserupdateQualificationImages]',
+        'tax_map': 'dict(str, str)'
     }
 
     attribute_map = {
         'address': 'address',
+        'advertiser_budgets': 'advertiser_budgets',
         'advertiser_id': 'advertiser_id',
         'advertiser_name': 'advertiser_name',
+        'bc_id': 'bc_id',
+        'budget_update_type': 'budget_update_type',
+        'child_bc_id': 'child_bc_id',
         'company': 'company',
         'contact_email': 'contact_email',
         'contact_name': 'contact_name',
@@ -55,11 +63,15 @@ class AdvertiserUpdateBody(object):
         'tax_map': 'tax_map'
     }
 
-    def __init__(self, address=None, advertiser_id=None, advertiser_name=None, company=None, contact_email=None, contact_name=None, contact_number=None, license_image_id=None, license_no=None, need_submit_certificate=None, promotion_link=None, qualification_images=None, tax_map=None):  # noqa: E501
+    def __init__(self, address=None, advertiser_budgets=None, advertiser_id=None, advertiser_name=None, bc_id=None, budget_update_type=None, child_bc_id=None, company=None, contact_email=None, contact_name=None, contact_number=None, license_image_id=None, license_no=None, need_submit_certificate=None, promotion_link=None, qualification_images=None, tax_map=None):  # noqa: E501
         """AdvertiserUpdateBody - a model defined in Swagger"""  # noqa: E501
         self._address = None
+        self._advertiser_budgets = None
         self._advertiser_id = None
         self._advertiser_name = None
+        self._bc_id = None
+        self._budget_update_type = None
+        self._child_bc_id = None
         self._company = None
         self._contact_email = None
         self._contact_name = None
@@ -73,9 +85,18 @@ class AdvertiserUpdateBody(object):
         self.discriminator = None
         if address is not None:
             self.address = address
-        self.advertiser_id = advertiser_id
+        if advertiser_budgets is not None:
+            self.advertiser_budgets = advertiser_budgets
+        if advertiser_id is not None:
+            self.advertiser_id = advertiser_id
         if advertiser_name is not None:
             self.advertiser_name = advertiser_name
+        if bc_id is not None:
+            self.bc_id = bc_id
+        if budget_update_type is not None:
+            self.budget_update_type = budget_update_type
+        if child_bc_id is not None:
+            self.child_bc_id = child_bc_id
         if company is not None:
             self.company = company
         if contact_email is not None:
@@ -101,7 +122,6 @@ class AdvertiserUpdateBody(object):
     def address(self):
         """Gets the address of this AdvertiserUpdateBody.  # noqa: E501
 
-        Business address that is shown on receipts  # noqa: E501
 
         :return: The address of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -112,7 +132,6 @@ class AdvertiserUpdateBody(object):
     def address(self, address):
         """Sets the address of this AdvertiserUpdateBody.
 
-        Business address that is shown on receipts  # noqa: E501
 
         :param address: The address of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -121,10 +140,30 @@ class AdvertiserUpdateBody(object):
         self._address = address
 
     @property
+    def advertiser_budgets(self):
+        """Gets the advertiser_budgets of this AdvertiserUpdateBody.  # noqa: E501
+
+
+        :return: The advertiser_budgets of this AdvertiserUpdateBody.  # noqa: E501
+        :rtype: list[AdvertiserupdateAdvertiserBudgets]
+        """
+        return self._advertiser_budgets
+
+    @advertiser_budgets.setter
+    def advertiser_budgets(self, advertiser_budgets):
+        """Sets the advertiser_budgets of this AdvertiserUpdateBody.
+
+
+        :param advertiser_budgets: The advertiser_budgets of this AdvertiserUpdateBody.  # noqa: E501
+        :type: list[AdvertiserupdateAdvertiserBudgets]
+        """
+
+        self._advertiser_budgets = advertiser_budgets
+
+    @property
     def advertiser_id(self):
         """Gets the advertiser_id of this AdvertiserUpdateBody.  # noqa: E501
 
-        Ad account ID  # noqa: E501
 
         :return: The advertiser_id of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -135,13 +174,10 @@ class AdvertiserUpdateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this AdvertiserUpdateBody.
 
-        Ad account ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
         """
-        if advertiser_id is None:
-            raise ValueError("Invalid value for `advertiser_id`, must not be `None`")  # noqa: E501
 
         self._advertiser_id = advertiser_id
 
@@ -149,7 +185,6 @@ class AdvertiserUpdateBody(object):
     def advertiser_name(self):
         """Gets the advertiser_name of this AdvertiserUpdateBody.  # noqa: E501
 
-        Ad account name  # noqa: E501
 
         :return: The advertiser_name of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -160,7 +195,6 @@ class AdvertiserUpdateBody(object):
     def advertiser_name(self, advertiser_name):
         """Sets the advertiser_name of this AdvertiserUpdateBody.
 
-        Ad account name  # noqa: E501
 
         :param advertiser_name: The advertiser_name of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -169,10 +203,72 @@ class AdvertiserUpdateBody(object):
         self._advertiser_name = advertiser_name
 
     @property
+    def bc_id(self):
+        """Gets the bc_id of this AdvertiserUpdateBody.  # noqa: E501
+
+
+        :return: The bc_id of this AdvertiserUpdateBody.  # noqa: E501
+        :rtype: int
+        """
+        return self._bc_id
+
+    @bc_id.setter
+    def bc_id(self, bc_id):
+        """Sets the bc_id of this AdvertiserUpdateBody.
+
+
+        :param bc_id: The bc_id of this AdvertiserUpdateBody.  # noqa: E501
+        :type: int
+        """
+
+        self._bc_id = bc_id
+
+    @property
+    def budget_update_type(self):
+        """Gets the budget_update_type of this AdvertiserUpdateBody.  # noqa: E501
+
+
+        :return: The budget_update_type of this AdvertiserUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._budget_update_type
+
+    @budget_update_type.setter
+    def budget_update_type(self, budget_update_type):
+        """Sets the budget_update_type of this AdvertiserUpdateBody.
+
+
+        :param budget_update_type: The budget_update_type of this AdvertiserUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._budget_update_type = budget_update_type
+
+    @property
+    def child_bc_id(self):
+        """Gets the child_bc_id of this AdvertiserUpdateBody.  # noqa: E501
+
+
+        :return: The child_bc_id of this AdvertiserUpdateBody.  # noqa: E501
+        :rtype: int
+        """
+        return self._child_bc_id
+
+    @child_bc_id.setter
+    def child_bc_id(self, child_bc_id):
+        """Sets the child_bc_id of this AdvertiserUpdateBody.
+
+
+        :param child_bc_id: The child_bc_id of this AdvertiserUpdateBody.  # noqa: E501
+        :type: int
+        """
+
+        self._child_bc_id = child_bc_id
+
+    @property
     def company(self):
         """Gets the company of this AdvertiserUpdateBody.  # noqa: E501
 
-        Company name  # noqa: E501
 
         :return: The company of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -183,7 +279,6 @@ class AdvertiserUpdateBody(object):
     def company(self, company):
         """Sets the company of this AdvertiserUpdateBody.
 
-        Company name  # noqa: E501
 
         :param company: The company of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -195,7 +290,6 @@ class AdvertiserUpdateBody(object):
     def contact_email(self):
         """Gets the contact_email of this AdvertiserUpdateBody.  # noqa: E501
 
-        Contact email  # noqa: E501
 
         :return: The contact_email of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -206,7 +300,6 @@ class AdvertiserUpdateBody(object):
     def contact_email(self, contact_email):
         """Sets the contact_email of this AdvertiserUpdateBody.
 
-        Contact email  # noqa: E501
 
         :param contact_email: The contact_email of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -218,7 +311,6 @@ class AdvertiserUpdateBody(object):
     def contact_name(self):
         """Gets the contact_name of this AdvertiserUpdateBody.  # noqa: E501
 
-        Name of the contact person  # noqa: E501
 
         :return: The contact_name of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -229,7 +321,6 @@ class AdvertiserUpdateBody(object):
     def contact_name(self, contact_name):
         """Sets the contact_name of this AdvertiserUpdateBody.
 
-        Name of the contact person  # noqa: E501
 
         :param contact_name: The contact_name of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -241,7 +332,6 @@ class AdvertiserUpdateBody(object):
     def contact_number(self):
         """Gets the contact_number of this AdvertiserUpdateBody.  # noqa: E501
 
-        Contact phone number  # noqa: E501
 
         :return: The contact_number of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -252,7 +342,6 @@ class AdvertiserUpdateBody(object):
     def contact_number(self, contact_number):
         """Sets the contact_number of this AdvertiserUpdateBody.
 
-        Contact phone number  # noqa: E501
 
         :param contact_number: The contact_number of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -264,7 +353,6 @@ class AdvertiserUpdateBody(object):
     def license_image_id(self):
         """Gets the license_image_id of this AdvertiserUpdateBody.  # noqa: E501
 
-        Image ID (`image_id`) of the business license  # noqa: E501
 
         :return: The license_image_id of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -275,7 +363,6 @@ class AdvertiserUpdateBody(object):
     def license_image_id(self, license_image_id):
         """Sets the license_image_id of this AdvertiserUpdateBody.
 
-        Image ID (`image_id`) of the business license  # noqa: E501
 
         :param license_image_id: The license_image_id of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -287,7 +374,6 @@ class AdvertiserUpdateBody(object):
     def license_no(self):
         """Gets the license_no of this AdvertiserUpdateBody.  # noqa: E501
 
-        Business license number. This is required for ad accounts that are registered in the Chinese mainland, Hong Kong, or in countries Brazil and Mexico  # noqa: E501
 
         :return: The license_no of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -298,7 +384,6 @@ class AdvertiserUpdateBody(object):
     def license_no(self, license_no):
         """Sets the license_no of this AdvertiserUpdateBody.
 
-        Business license number. This is required for ad accounts that are registered in the Chinese mainland, Hong Kong, or in countries Brazil and Mexico  # noqa: E501
 
         :param license_no: The license_no of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -310,7 +395,6 @@ class AdvertiserUpdateBody(object):
     def need_submit_certificate(self):
         """Gets the need_submit_certificate of this AdvertiserUpdateBody.  # noqa: E501
 
-        Whether you want to submit the new certificate images for review  # noqa: E501
 
         :return: The need_submit_certificate of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: bool
@@ -321,7 +405,6 @@ class AdvertiserUpdateBody(object):
     def need_submit_certificate(self, need_submit_certificate):
         """Sets the need_submit_certificate of this AdvertiserUpdateBody.
 
-        Whether you want to submit the new certificate images for review  # noqa: E501
 
         :param need_submit_certificate: The need_submit_certificate of this AdvertiserUpdateBody.  # noqa: E501
         :type: bool
@@ -333,7 +416,6 @@ class AdvertiserUpdateBody(object):
     def promotion_link(self):
         """Gets the promotion_link of this AdvertiserUpdateBody.  # noqa: E501
 
-        Promotion link. Length cannot exceed 255 characters  # noqa: E501
 
         :return: The promotion_link of this AdvertiserUpdateBody.  # noqa: E501
         :rtype: str
@@ -344,7 +426,6 @@ class AdvertiserUpdateBody(object):
     def promotion_link(self, promotion_link):
         """Sets the promotion_link of this AdvertiserUpdateBody.
 
-        Promotion link. Length cannot exceed 255 characters  # noqa: E501
 
         :param promotion_link: The promotion_link of this AdvertiserUpdateBody.  # noqa: E501
         :type: str
@@ -358,7 +439,7 @@ class AdvertiserUpdateBody(object):
 
 
         :return: The qualification_images of this AdvertiserUpdateBody.  # noqa: E501
-        :rtype: AdvertiserupdateQualificationImages
+        :rtype: list[AdvertiserupdateQualificationImages]
         """
         return self._qualification_images
 
@@ -368,7 +449,7 @@ class AdvertiserUpdateBody(object):
 
 
         :param qualification_images: The qualification_images of this AdvertiserUpdateBody.  # noqa: E501
-        :type: AdvertiserupdateQualificationImages
+        :type: list[AdvertiserupdateQualificationImages]
         """
 
         self._qualification_images = qualification_images
@@ -377,10 +458,9 @@ class AdvertiserUpdateBody(object):
     def tax_map(self):
         """Gets the tax_map of this AdvertiserUpdateBody.  # noqa: E501
 
-        Billing and invoicing tax number. Different countries use different tax number fields. France uses `vat`, and Brazil uses `tax_id`  # noqa: E501
 
         :return: The tax_map of this AdvertiserUpdateBody.  # noqa: E501
-        :rtype: str
+        :rtype: dict(str, str)
         """
         return self._tax_map
 
@@ -388,10 +468,9 @@ class AdvertiserUpdateBody(object):
     def tax_map(self, tax_map):
         """Sets the tax_map of this AdvertiserUpdateBody.
 
-        Billing and invoicing tax number. Different countries use different tax number fields. France uses `vat`, and Brazil uses `tax_id`  # noqa: E501
 
         :param tax_map: The tax_map of this AdvertiserUpdateBody.  # noqa: E501
-        :type: str
+        :type: dict(str, str)
         """
 
         self._tax_map = tax_map

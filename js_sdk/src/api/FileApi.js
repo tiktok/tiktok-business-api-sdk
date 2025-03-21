@@ -11,7 +11,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * File service.
 * @module api/FileApi
-* @version 0.1.4
+* @version 0.1.5
 */
 export class FileApi {
 

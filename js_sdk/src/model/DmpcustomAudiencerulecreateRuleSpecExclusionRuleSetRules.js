@@ -10,7 +10,7 @@ import {DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet} from './Dm
 /**
  * The DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules model module.
  * @module model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetRules {
   /**

@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * Video information, required when the material type is video.
  */
 @Schema(description = "Video information, required when the material type is video.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
 public class AdAcoBodyMediaInfoVideoInfo {
   @JsonProperty("file_name")
   private String fileName = null;

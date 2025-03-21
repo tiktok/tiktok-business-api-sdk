@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdgroupStatusUpdateBody model module.
  * @module model/AdgroupStatusUpdateBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class AdgroupStatusUpdateBody {
   /**

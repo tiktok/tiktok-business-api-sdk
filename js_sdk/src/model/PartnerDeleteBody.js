@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PartnerDeleteBody model module.
  * @module model/PartnerDeleteBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class PartnerDeleteBody {
   /**

@@ -12,7 +12,7 @@ import {PixelContextUser} from './PixelContextUser.js';
 /**
  * The PixelContext model module.
  * @module model/PixelContext
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class PixelContext {
   /**

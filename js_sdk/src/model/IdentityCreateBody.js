@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The IdentityCreateBody model module.
  * @module model/IdentityCreateBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class IdentityCreateBody {
   /**

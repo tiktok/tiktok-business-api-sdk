@@ -11,7 +11,7 @@ import {AdgroupcreateAudienceRuleExclusionsFilter} from './AdgroupcreateAudience
 /**
  * The AdgroupcreateAudienceRuleExclusionsRules model module.
  * @module model/AdgroupcreateAudienceRuleExclusionsRules
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class AdgroupcreateAudienceRuleExclusionsRules {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyDeeplinkList model module.
  * @module model/AdAcoBodyDeeplinkList
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class AdAcoBodyDeeplinkList {
   /**

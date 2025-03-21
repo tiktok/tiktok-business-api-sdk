@@ -42,7 +42,7 @@ import {PixelTransferBody} from '../model/PixelTransferBody.js';
 /**
 * BC service.
 * @module api/BCApi
-* @version 0.1.4
+* @version 0.1.5
 */
 export class BCApi {
 

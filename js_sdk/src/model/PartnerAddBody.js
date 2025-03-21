@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PartnerAddBody model module.
  * @module model/PartnerAddBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class PartnerAddBody {
   /**
