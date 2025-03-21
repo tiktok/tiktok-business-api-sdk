@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringBcAssetGroupList model module.
  * @module model/FilteringBcAssetGroupList
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class FilteringBcAssetGroupList {
   /**

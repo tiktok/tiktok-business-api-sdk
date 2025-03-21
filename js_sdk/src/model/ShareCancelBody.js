@@ -10,7 +10,7 @@ import {DmpcustomAudiencefileuploadContextInfo} from './DmpcustomAudiencefileupl
 /**
  * The ShareCancelBody model module.
  * @module model/ShareCancelBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class ShareCancelBody {
   /**

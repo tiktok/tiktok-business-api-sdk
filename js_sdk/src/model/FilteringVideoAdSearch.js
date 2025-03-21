@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringVideoAdSearch model module.
  * @module model/FilteringVideoAdSearch
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class FilteringVideoAdSearch {
   /**

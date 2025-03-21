@@ -9,25 +9,42 @@ package business_api_client;
 
 import java.util.Objects;
 import java.util.Arrays;
+import business_api_client.AdvertiserupdateAdvertiserBudgets;
 import business_api_client.AdvertiserupdateQualificationImages;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 /**
  * AdvertiserUpdateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
 public class AdvertiserUpdateBody {
   @JsonProperty("address")
   private String address = null;
+
+  @JsonProperty("advertiser_budgets")
+  private List<AdvertiserupdateAdvertiserBudgets> advertiserBudgets = null;
 
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
 
   @JsonProperty("advertiser_name")
   private String advertiserName = null;
+
+  @JsonProperty("bc_id")
+  private Long bcId = null;
+
+  @JsonProperty("budget_update_type")
+  private String budgetUpdateType = null;
+
+  @JsonProperty("child_bc_id")
+  private Long childBcId = null;
 
   @JsonProperty("company")
   private String company = null;
@@ -54,10 +71,10 @@ public class AdvertiserUpdateBody {
   private String promotionLink = null;
 
   @JsonProperty("qualification_images")
-  private AdvertiserupdateQualificationImages qualificationImages = null;
+  private List<AdvertiserupdateQualificationImages> qualificationImages = null;
 
   @JsonProperty("tax_map")
-  private String taxMap = null;
+  private Map<String, String> taxMap = null;
 
   public AdvertiserUpdateBody address(String address) {
     this.address = address;
@@ -65,10 +82,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Business address that is shown on receipts
+   * Get address
    * @return address
   **/
-  @Schema(description = "Business address that is shown on receipts")
+  @Schema(description = "")
   public String getAddress() {
     return address;
   }
@@ -77,16 +94,42 @@ public class AdvertiserUpdateBody {
     this.address = address;
   }
 
+  public AdvertiserUpdateBody advertiserBudgets(List<AdvertiserupdateAdvertiserBudgets> advertiserBudgets) {
+    this.advertiserBudgets = advertiserBudgets;
+    return this;
+  }
+
+  public AdvertiserUpdateBody addAdvertiserBudgetsItem(AdvertiserupdateAdvertiserBudgets advertiserBudgetsItem) {
+    if (this.advertiserBudgets == null) {
+      this.advertiserBudgets = new ArrayList<AdvertiserupdateAdvertiserBudgets>();
+    }
+    this.advertiserBudgets.add(advertiserBudgetsItem);
+    return this;
+  }
+
+   /**
+   * Get advertiserBudgets
+   * @return advertiserBudgets
+  **/
+  @Schema(description = "")
+  public List<AdvertiserupdateAdvertiserBudgets> getAdvertiserBudgets() {
+    return advertiserBudgets;
+  }
+
+  public void setAdvertiserBudgets(List<AdvertiserupdateAdvertiserBudgets> advertiserBudgets) {
+    this.advertiserBudgets = advertiserBudgets;
+  }
+
   public AdvertiserUpdateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
     return this;
   }
 
    /**
-   * Ad account ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Ad account ID")
+  @Schema(description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -101,10 +144,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Ad account name
+   * Get advertiserName
    * @return advertiserName
   **/
-  @Schema(description = "Ad account name")
+  @Schema(description = "")
   public String getAdvertiserName() {
     return advertiserName;
   }
@@ -113,16 +156,70 @@ public class AdvertiserUpdateBody {
     this.advertiserName = advertiserName;
   }
 
+  public AdvertiserUpdateBody bcId(Long bcId) {
+    this.bcId = bcId;
+    return this;
+  }
+
+   /**
+   * Get bcId
+   * @return bcId
+  **/
+  @Schema(description = "")
+  public Long getBcId() {
+    return bcId;
+  }
+
+  public void setBcId(Long bcId) {
+    this.bcId = bcId;
+  }
+
+  public AdvertiserUpdateBody budgetUpdateType(String budgetUpdateType) {
+    this.budgetUpdateType = budgetUpdateType;
+    return this;
+  }
+
+   /**
+   * Get budgetUpdateType
+   * @return budgetUpdateType
+  **/
+  @Schema(description = "")
+  public String getBudgetUpdateType() {
+    return budgetUpdateType;
+  }
+
+  public void setBudgetUpdateType(String budgetUpdateType) {
+    this.budgetUpdateType = budgetUpdateType;
+  }
+
+  public AdvertiserUpdateBody childBcId(Long childBcId) {
+    this.childBcId = childBcId;
+    return this;
+  }
+
+   /**
+   * Get childBcId
+   * @return childBcId
+  **/
+  @Schema(description = "")
+  public Long getChildBcId() {
+    return childBcId;
+  }
+
+  public void setChildBcId(Long childBcId) {
+    this.childBcId = childBcId;
+  }
+
   public AdvertiserUpdateBody company(String company) {
     this.company = company;
     return this;
   }
 
    /**
-   * Company name
+   * Get company
    * @return company
   **/
-  @Schema(description = "Company name")
+  @Schema(description = "")
   public String getCompany() {
     return company;
   }
@@ -137,10 +234,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Contact email
+   * Get contactEmail
    * @return contactEmail
   **/
-  @Schema(description = "Contact email")
+  @Schema(description = "")
   public String getContactEmail() {
     return contactEmail;
   }
@@ -155,10 +252,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Name of the contact person
+   * Get contactName
    * @return contactName
   **/
-  @Schema(description = "Name of the contact person")
+  @Schema(description = "")
   public String getContactName() {
     return contactName;
   }
@@ -173,10 +270,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Contact phone number
+   * Get contactNumber
    * @return contactNumber
   **/
-  @Schema(description = "Contact phone number")
+  @Schema(description = "")
   public String getContactNumber() {
     return contactNumber;
   }
@@ -191,10 +288,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Image ID (&#x60;image_id&#x60;) of the business license
+   * Get licenseImageId
    * @return licenseImageId
   **/
-  @Schema(description = "Image ID (`image_id`) of the business license")
+  @Schema(description = "")
   public String getLicenseImageId() {
     return licenseImageId;
   }
@@ -209,10 +306,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Business license number. This is required for ad accounts that are registered in the Chinese mainland, Hong Kong, or in countries Brazil and Mexico
+   * Get licenseNo
    * @return licenseNo
   **/
-  @Schema(description = "Business license number. This is required for ad accounts that are registered in the Chinese mainland, Hong Kong, or in countries Brazil and Mexico")
+  @Schema(description = "")
   public String getLicenseNo() {
     return licenseNo;
   }
@@ -227,10 +324,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Whether you want to submit the new certificate images for review
+   * Get needSubmitCertificate
    * @return needSubmitCertificate
   **/
-  @Schema(description = "Whether you want to submit the new certificate images for review")
+  @Schema(description = "")
   public Boolean isNeedSubmitCertificate() {
     return needSubmitCertificate;
   }
@@ -245,10 +342,10 @@ public class AdvertiserUpdateBody {
   }
 
    /**
-   * Promotion link. Length cannot exceed 255 characters
+   * Get promotionLink
    * @return promotionLink
   **/
-  @Schema(description = "Promotion link. Length cannot exceed 255 characters")
+  @Schema(description = "")
   public String getPromotionLink() {
     return promotionLink;
   }
@@ -257,8 +354,16 @@ public class AdvertiserUpdateBody {
     this.promotionLink = promotionLink;
   }
 
-  public AdvertiserUpdateBody qualificationImages(AdvertiserupdateQualificationImages qualificationImages) {
+  public AdvertiserUpdateBody qualificationImages(List<AdvertiserupdateQualificationImages> qualificationImages) {
     this.qualificationImages = qualificationImages;
+    return this;
+  }
+
+  public AdvertiserUpdateBody addQualificationImagesItem(AdvertiserupdateQualificationImages qualificationImagesItem) {
+    if (this.qualificationImages == null) {
+      this.qualificationImages = new ArrayList<AdvertiserupdateQualificationImages>();
+    }
+    this.qualificationImages.add(qualificationImagesItem);
     return this;
   }
 
@@ -267,29 +372,37 @@ public class AdvertiserUpdateBody {
    * @return qualificationImages
   **/
   @Schema(description = "")
-  public AdvertiserupdateQualificationImages getQualificationImages() {
+  public List<AdvertiserupdateQualificationImages> getQualificationImages() {
     return qualificationImages;
   }
 
-  public void setQualificationImages(AdvertiserupdateQualificationImages qualificationImages) {
+  public void setQualificationImages(List<AdvertiserupdateQualificationImages> qualificationImages) {
     this.qualificationImages = qualificationImages;
   }
 
-  public AdvertiserUpdateBody taxMap(String taxMap) {
+  public AdvertiserUpdateBody taxMap(Map<String, String> taxMap) {
     this.taxMap = taxMap;
     return this;
   }
 
+  public AdvertiserUpdateBody putTaxMapItem(String key, String taxMapItem) {
+    if (this.taxMap == null) {
+      this.taxMap = new HashMap<String, String>();
+    }
+    this.taxMap.put(key, taxMapItem);
+    return this;
+  }
+
    /**
-   * Billing and invoicing tax number. Different countries use different tax number fields. France uses &#x60;vat&#x60;, and Brazil uses &#x60;tax_id&#x60;
+   * Get taxMap
    * @return taxMap
   **/
-  @Schema(description = "Billing and invoicing tax number. Different countries use different tax number fields. France uses `vat`, and Brazil uses `tax_id`")
-  public String getTaxMap() {
+  @Schema(description = "")
+  public Map<String, String> getTaxMap() {
     return taxMap;
   }
 
-  public void setTaxMap(String taxMap) {
+  public void setTaxMap(Map<String, String> taxMap) {
     this.taxMap = taxMap;
   }
 
@@ -304,8 +417,12 @@ public class AdvertiserUpdateBody {
     }
     AdvertiserUpdateBody advertiserUpdateBody = (AdvertiserUpdateBody) o;
     return Objects.equals(this.address, advertiserUpdateBody.address) &&
+        Objects.equals(this.advertiserBudgets, advertiserUpdateBody.advertiserBudgets) &&
         Objects.equals(this.advertiserId, advertiserUpdateBody.advertiserId) &&
         Objects.equals(this.advertiserName, advertiserUpdateBody.advertiserName) &&
+        Objects.equals(this.bcId, advertiserUpdateBody.bcId) &&
+        Objects.equals(this.budgetUpdateType, advertiserUpdateBody.budgetUpdateType) &&
+        Objects.equals(this.childBcId, advertiserUpdateBody.childBcId) &&
         Objects.equals(this.company, advertiserUpdateBody.company) &&
         Objects.equals(this.contactEmail, advertiserUpdateBody.contactEmail) &&
         Objects.equals(this.contactName, advertiserUpdateBody.contactName) &&
@@ -320,7 +437,7 @@ public class AdvertiserUpdateBody {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, advertiserId, advertiserName, company, contactEmail, contactName, contactNumber, licenseImageId, licenseNo, needSubmitCertificate, promotionLink, qualificationImages, taxMap);
+    return Objects.hash(address, advertiserBudgets, advertiserId, advertiserName, bcId, budgetUpdateType, childBcId, company, contactEmail, contactName, contactNumber, licenseImageId, licenseNo, needSubmitCertificate, promotionLink, qualificationImages, taxMap);
   }
 
 
@@ -330,8 +447,12 @@ public class AdvertiserUpdateBody {
     sb.append("class AdvertiserUpdateBody {\n");
     
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    advertiserBudgets: ").append(toIndentedString(advertiserBudgets)).append("\n");
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
     sb.append("    advertiserName: ").append(toIndentedString(advertiserName)).append("\n");
+    sb.append("    bcId: ").append(toIndentedString(bcId)).append("\n");
+    sb.append("    budgetUpdateType: ").append(toIndentedString(budgetUpdateType)).append("\n");
+    sb.append("    childBcId: ").append(toIndentedString(childBcId)).append("\n");
     sb.append("    company: ").append(toIndentedString(company)).append("\n");
     sb.append("    contactEmail: ").append(toIndentedString(contactEmail)).append("\n");
     sb.append("    contactName: ").append(toIndentedString(contactName)).append("\n");

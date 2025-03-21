@@ -9,7 +9,7 @@ import querystring from "querystring";
 
 /**
 * @module ApiClient
-* @version 0.1.4
+* @version 0.1.5
 */
 
 /**
@@ -40,7 +40,7 @@ export class ApiClient {
          * @type {Array.<String>}
          * @default {}
          */
-        this.defaultHeaders = {"Business-SDK":1, "SDK-Language": "Js", "SDK-Version": "0.1.4"};
+        this.defaultHeaders = {"Business-SDK":1, "SDK-Language": "Js", "SDK-Version": "0.1.3"};
 
         /**
          * The default HTTP timeout for all API calls.

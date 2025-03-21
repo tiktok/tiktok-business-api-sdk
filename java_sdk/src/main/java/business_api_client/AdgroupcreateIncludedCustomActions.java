@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * The custom action that you want to use as \&quot;Include\&quot; conditions for filtering out the shopping ads audiences to be retargeted. When &#x60;shopping_ads_retargeting_type&#x60; is &#x60;LAB3&#x60;, you need to pass in either &#x60;included_custom_actions&#x60; or &#x60;excluded_custom_actions&#x60;.
  */
 @Schema(description = "The custom action that you want to use as \"Include\" conditions for filtering out the shopping ads audiences to be retargeted. When `shopping_ads_retargeting_type` is `LAB3`, you need to pass in either `included_custom_actions` or `excluded_custom_actions`.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
 public class AdgroupcreateIncludedCustomActions {
   @JsonProperty("code")
   private String code = null;

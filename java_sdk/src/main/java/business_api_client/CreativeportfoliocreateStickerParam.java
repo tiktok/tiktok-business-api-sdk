@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * Details of the Countdown Sticker you want to create. You can see an example of Countdown Sticker in [Countdown Sticker](https://ads.tiktok.com/help/article?aid&#x3D;10007423). Note: You can only create one countdown sticker at a time
  */
 @Schema(description = "Details of the Countdown Sticker you want to create. You can see an example of Countdown Sticker in [Countdown Sticker](https://ads.tiktok.com/help/article?aid=10007423). Note: You can only create one countdown sticker at a time")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
 public class CreativeportfoliocreateStickerParam {
   @JsonProperty("color")
   private String color = null;

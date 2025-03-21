@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BidRecommendBody model module.
  * @module model/BidRecommendBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class BidRecommendBody {
   /**

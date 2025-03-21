@@ -10,7 +10,7 @@ import {AdcreateCreatives} from './AdcreateCreatives.js';
 /**
  * The AdCreateBody model module.
  * @module model/AdCreateBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class AdCreateBody {
   /**

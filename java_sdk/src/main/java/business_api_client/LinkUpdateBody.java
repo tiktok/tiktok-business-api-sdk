@@ -19,7 +19,7 @@ import java.util.List;
  * LinkUpdateBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
 public class LinkUpdateBody {
   @JsonProperty("advertiser_ids")
   private List<String> advertiserIds = new ArrayList<String>();

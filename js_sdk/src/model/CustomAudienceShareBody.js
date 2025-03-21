@@ -10,7 +10,7 @@ import {DmpcustomAudiencefileuploadContextInfo} from './DmpcustomAudiencefileupl
 /**
  * The CustomAudienceShareBody model module.
  * @module model/CustomAudienceShareBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class CustomAudienceShareBody {
   /**

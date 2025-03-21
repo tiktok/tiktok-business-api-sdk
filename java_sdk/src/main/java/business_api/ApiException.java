@@ -10,7 +10,7 @@ package business_api;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")public class ApiException extends Exception {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;
     private String responseBody = null;

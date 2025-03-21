@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The MemberDeleteBody model module.
  * @module model/MemberDeleteBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class MemberDeleteBody {
   /**

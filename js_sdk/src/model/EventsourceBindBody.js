@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The EventsourceBindBody model module.
  * @module model/EventsourceBindBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class EventsourceBindBody {
   /**

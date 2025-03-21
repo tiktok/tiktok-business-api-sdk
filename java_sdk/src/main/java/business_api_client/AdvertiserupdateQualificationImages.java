@@ -14,10 +14,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 /**
- * Additional business certificates
+ * AdvertiserupdateQualificationImages
  */
-@Schema(description = "Additional business certificates")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
+
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
 public class AdvertiserupdateQualificationImages {
   @JsonProperty("image_id")
   private String imageId = null;
@@ -28,10 +28,10 @@ public class AdvertiserupdateQualificationImages {
   }
 
    /**
-   * Image ID of the business certificate
+   * Get imageId
    * @return imageId
   **/
-  @Schema(description = "Image ID of the business certificate")
+  @Schema(description = "")
   public String getImageId() {
     return imageId;
   }

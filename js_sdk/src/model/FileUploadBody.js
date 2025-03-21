@@ -10,7 +10,7 @@ import {DmpcustomAudiencefileuploadContextInfo} from './DmpcustomAudiencefileupl
 /**
  * The FileUploadBody model module.
  * @module model/FileUploadBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class FileUploadBody {
   /**

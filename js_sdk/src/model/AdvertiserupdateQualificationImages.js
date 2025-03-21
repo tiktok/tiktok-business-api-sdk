@@ -9,12 +9,11 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdvertiserupdateQualificationImages model module.
  * @module model/AdvertiserupdateQualificationImages
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class AdvertiserupdateQualificationImages {
   /**
    * Constructs a new <code>AdvertiserupdateQualificationImages</code>.
-   * Additional business certificates
    * @alias module:model/AdvertiserupdateQualificationImages
    * @class
    */
@@ -39,7 +38,6 @@ export class AdvertiserupdateQualificationImages {
 }
 
 /**
- * Image ID of the business certificate
  * @member {String} image_id
  */
 AdvertiserupdateQualificationImages.prototype.image_id = undefined;

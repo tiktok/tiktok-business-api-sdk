@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AssetAssignBody model module.
  * @module model/AssetAssignBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class AssetAssignBody {
   /**

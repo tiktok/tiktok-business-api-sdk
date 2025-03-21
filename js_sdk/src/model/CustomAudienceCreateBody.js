@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CustomAudienceCreateBody model module.
  * @module model/CustomAudienceCreateBody
- * @version 0.1.4
+ * @version 0.1.5
  */
 export class CustomAudienceCreateBody {
   /**

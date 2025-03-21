@@ -20,7 +20,7 @@ import java.util.List;
  * Required when exclusion_rule_set is passed. The set of filters for the exclusion rule.
  */
 @Schema(description = "Required when exclusion_rule_set is passed. The set of filters for the exclusion rule.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-02-14T16:22:03.186437-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
 public class DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSet {
   @JsonProperty("filters")
   private List<DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters> filters = new ArrayList<DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetFilters>();

@@ -19,7 +19,7 @@ import {ProductFileBody} from '../model/ProductFileBody.js';
 /**
 * Catalog service.
 * @module api/CatalogApi
-* @version 0.1.4
+* @version 0.1.5
 */
 export class CatalogApi {
 

@@ -11,7 +11,7 @@ import {Oauth2AccessTokenBody} from '../model/Oauth2AccessTokenBody.js';
 /**
 * Authentication service.
 * @module api/AuthenticationApi
-* @version 0.1.4
+* @version 0.1.5
 */
 export class AuthenticationApi {
 
