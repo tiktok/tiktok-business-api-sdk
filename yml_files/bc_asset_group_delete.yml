@@ -1,0 +1,164 @@
+info:
+  description: "{\"en\":\"Use this endpoint to delete Asset Groups from your Business\
+    \ Center. You need to be an Admin user of the Business Center.\\n\\nPlease note\
+    \ that the deletion will remove members' access to assets in an Asset Group, and\
+    \ these assets and members will not be deleted.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\
+    \u7528\u672C\u63A5\u53E3\u5220\u9664\u5546\u52A1\u4E2D\u5FC3\u4E0B\u7684\u8D44\
+    \u4EA7\u7EC4\u3002\u60A8\u5FC5\u987B\u662F\u5546\u52A1\u4E2D\u5FC3\u7BA1\u7406\
+    \u5458\u7528\u6237\u3002\\n\\n\u8BF7\u6CE8\u610F\uFF0C\u8BE5\u63A5\u53E3\u4EC5\
+    \u5220\u9664\u60A8\u5206\u914D\u7ED9\u6210\u5458\u7684\u8D44\u4EA7\u7EC4\u6743\
+    \u9650\uFF0C\u800C\u4E0D\u4F1A\u5220\u9664\u60A8\u7684\u6210\u5458\u548C\u8D44\
+    \u4EA7\u7EC4\u672C\u8EAB\u3002\\n\\n\"}"
+  title: "{\"en\":\"Delete Asset Groups\",\"zh\":\"\u5220\u9664\u8D44\u4EA7\u7EC4\"\
+    }"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/asset_group/delete/:
+    post:
+      operationId: Bc Asset_group Delete
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                asset_group_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  maxItems: 1
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.asset_group_ids
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+              required:
+              - bc_id
+              - asset_group_ids
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Remove members' access to an Asset Group. [BC Asset Group Delete](https://business-api.tiktok.com/portal/docs?id=1749001673406466)
+      tags:
+        - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: asset_group_ids
+            required: true
+            source: $.http.body.asset_group_ids[]
+            sub_type: number
+            type: array
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          asset_group_ids: $.http.body.asset_group_ids[]
+          bc_id: $.http.body.bc_id
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

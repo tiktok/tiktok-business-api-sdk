@@ -1,0 +1,135 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get the targeting hashtag names and\
+    \ statuses by ID.\\n\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\
+    \u4F20\u5165\u8BDD\u9898\u6807\u7B7E\u5173\u952E\u8BCDID\uFF0C\u6765\u83B7\u53D6\
+    \u76F8\u5173\u7684\u8BDD\u9898\u6807\u7B7E\u4EE5\u53CA\u53EF\u7528\u72B6\u6001\
+    \u3002\\n\\n\"}"
+  title: "{\"en\":\"Get targeting hashtags by ID\",\"zh\":\"\u901A\u8FC7 ID \u83B7\
+    \u53D6\u5B9A\u5411\u8BDD\u9898\u6807\u7B7E\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/hashtag/get/:
+    get:
+      operationId: Tool Hashtag Get
+      parameters:
+      - description: Advertiser ID
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+        description: List of keyword IDs
+        in: query
+        name: keyword_ids
+        required: true
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get targeting hashtags by ID [Tool Hashtag Get](https://ads.tiktok.com/marketing_api/docs?id=1736280889167874)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: keyword_ids
+            required: false
+            source: $.http.query.keyword_ids[]
+            sub_type: number
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          keyword_ids: $.http.query.keyword_ids[]
+        response_cookie: []
+        response_header: []
+        response_rule:
+          keywords_status[][]:
+          - keyword: $.rpc.output.keywords_status[].keyword
+            keyword_id: $.rpc.output.keywords_status[].keyword_id
+            keyword_status: $.rpc.output.keywords_status[].status
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

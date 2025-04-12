@@ -1,0 +1,281 @@
+info:
+  description: '{"en":"Create BC","zh":"Create BC"}'
+  title: "{\"en\":\"Create BC\",\"zh\":\"\u521B\u5EFABC\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/create/:
+    post:
+      operationId: Bc Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_name
+                company_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.company
+                contact_info:
+                  description: ''
+                  nullable: false
+                  properties:
+                    email:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                    name:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                    phone:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                    phone_region_code:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                    secondary_industry:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-convert:
+                      - int64(%s)
+                      x-open-field-id: 5
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                currency:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.currency
+                plugin_partner:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.plugin_partner
+                registered_area:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.registered_area
+                timezone:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.timezone
+                type:
+                  default: NORMAL
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803660610513921
+                    enum_package_name: BusinessCenterType
+                    enums:
+                    - description: ''
+                      is_valid: false
+                      key: AGENCY
+                      value: '2'
+                    - description: ''
+                      is_valid: false
+                      key: DIRECT
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: NORMAL
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: SELF_SERVICE
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: SELF_SERVICE_AGENCY
+                      value: '6'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.type
+              required:
+              - bc_name
+              - timezone
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: null
+      tags: null
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_name
+            required: true
+            source: $.http.body.bc_name
+            type: string
+          - name: timezone
+            required: true
+            source: $.http.body.timezone
+            type: string
+          - name: plugin_partner
+            required: false
+            source: $.http.body.plugin_partner
+            type: string
+          - name: type
+            required: false
+            source: $.http.body.type
+            type: number
+          - name: registered_area
+            required: false
+            source: $.http.body.registered_area
+            type: string
+          - name: currency
+            required: false
+            source: $.http.body.currency
+            type: string
+          - name: company
+            required: false
+            source: $.http.body.company_name
+            type: string
+          - children:
+            - name: secondary_industry
+              required: false
+              type: number
+            - name: name
+              required: false
+              type: string
+            - name: email
+              required: false
+              type: string
+            - name: phone
+              required: false
+              type: string
+            - name: phone_region_code
+              required: false
+              type: string
+            is_expand: true
+            name: contact_info
+            required: false
+            source: $.http.body.contact_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_name: $.http.body.bc_name
+          company: $.http.body.company_name
+          contact_info: $.http.body.contact_info
+          currency: $.http.body.currency
+          plugin_partner: $.http.body.plugin_partner
+          registered_area: $.http.body.registered_area
+          timezone: $.http.body.timezone
+          type: $.http.body.type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          bc_id: $.rpc.output.bc_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

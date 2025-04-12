@@ -1,0 +1,327 @@
+info:
+  description: '{"en":"Get BC Account Transactions","zh":"Get BC Account Transactions"}'
+  title: '{"en":"Get BC Account Transactions","zh":"Get BC Account Transactions"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/account/transaction/get/:
+    get:
+      operationId: Bc Account Transaction Get
+      parameters:
+      - description: ''
+        in: query
+        name: bc_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: child_bc_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.child_bc_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: transaction_level
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1807919387053057
+            enum_package_name: TransactionLevel
+            enums:
+            - description: ''
+              is_valid: true
+              key: ADVERTISER
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: BC
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.transaction_level
+        x-open-field-id: 3
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                account_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                account_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                billing_types:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                end_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                owner_of_account:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                start_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                transaction_types:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 6
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get the transaction records of a BC or ad accounts. [BC Account Transaction
+        Get](https://business-api.tiktok.com/portal/docs?id=1792849810925569)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: false
+            source: $.http.query.bc_id
+            type: number
+          - name: child_bc_id
+            required: false
+            source: $.http.query.child_bc_id
+            type: number
+          - name: transaction_level
+            required: false
+            source: $.http.query.transaction_level
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: transaction_types
+            required: false
+            source: $.http.query.filtering.transaction_types[]
+            sub_type: string
+            type: array
+          - children:
+            - type: string
+            is_expand: true
+            name: owner_of_account
+            required: false
+            source: $.http.query.filtering.owner_of_account[]
+            sub_type: string
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: account_ids
+            required: false
+            source: $.http.query.filtering.account_ids[]
+            sub_type: number
+            type: array
+          - name: account_name
+            required: false
+            source: $.http.query.filtering.account_name
+            type: string
+          - children:
+            - type: string
+            is_expand: true
+            name: billing_types
+            required: false
+            source: $.http.query.filtering.billing_types[]
+            sub_type: string
+            type: array
+          - name: start_time
+            required: false
+            source: $.http.query.filtering.start_time
+            type: string
+          - name: end_time
+            required: false
+            source: $.http.query.filtering.end_time
+            type: string
+          - name: page
+            required: false
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: false
+            source: $.http.query.page_size
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          account_ids: $.http.query.filtering.account_ids[]
+          account_name: $.http.query.filtering.account_name
+          bc_id: $.http.query.bc_id
+          billing_types: $.http.query.filtering.billing_types[]
+          child_bc_id: $.http.query.child_bc_id
+          end_time: $.http.query.filtering.end_time
+          owner_of_account: $.http.query.filtering.owner_of_account[]
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          start_time: $.http.query.filtering.start_time
+          transaction_level: $.http.query.transaction_level
+          transaction_types: $.http.query.filtering.transaction_types[]
+        response_cookie: []
+        response_header: []
+        response_rule:
+          page_info: $.rpc.output.page_info
+          transaction_list: $.rpc.output.transaction_list
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

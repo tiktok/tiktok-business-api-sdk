@@ -1,0 +1,169 @@
+info:
+  description: "{\"en\":\"Use this endpoint to search for targeting hashtags based\
+    \ on seed keywords.\\n\\nThe returned hashtag (keyword_id) can be passed on to\
+    \ the action_category_ids field in /adgroup/create/ to target users who watched\
+    \ TikTok videos with the hashtag. You need to set action_scene to HASHTAG_RELATED\
+    \ simultaneously.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u57FA\
+    \u4E8E\u79CD\u5B50\u5173\u952E\u8BCD\u641C\u7D22\u5B9A\u5411\u8BDD\u9898\u6807\
+    \u7B7E\u3002\\n\\n\u8FD4\u56DE\u7684\u8BDD\u9898\u6807\u7B7E ID \uFF08keyword_id\uFF09\
+    \u53EF\u4F20\u5165 /adgroup/create/ \u4E2D\u7684 action_category_ids \u5B57\u6BB5\
+    \uFF0C\u7528\u4E8E\u5B9A\u5411\u89C2\u770B\u8FC7\u5E26\u6709\u8BE5\u8BDD\u9898\
+    \u6807\u7B7E\u7684 TikTok \u89C6\u9891\u7684\u53D7\u4F17\u3002\u60A8\u9700\u540C\
+    \u65F6\u5C06 action_scene \u8BBE\u7F6E\u4E3A HASHTAG_RELATED\u3002\"}"
+  title: "{\"en\":\"Search for targeting hashtags\",\"zh\":\"\u641C\u7D22\u5B9A\u5411\
+    \u8BDD\u9898\u6807\u7B7E\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/hashtag/recommend/:
+    get:
+      operationId: Tool Hashtag Recommend
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              maxItems: 10
+              minItems: 1
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.keywords
+        description: 'Keywords that you want to get recommended hashtags for. If you
+          specify multiple unrelated keywords and set operator to AND, it is possible
+          that no recommended hashtags are returned. Max size: 10.'
+        in: query
+        name: keywords
+        required: true
+        x-open-field-id: 2
+      - description: 'The operator to be used between the keywords. Enum values: AND:
+          Recommended hashtags will be generated based on all the keywords specified
+          in keywords. OR: Recommended hashtags will be generated separately for each
+          individual keyword in keywords. Default value: AND.'
+        in: query
+        name: operator
+        required: false
+        schema:
+          default: AND
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.operator
+          x-open-validate:
+          - error_msg: 'Operator: Must be one of: AND, OR.'
+            expr: '%s in ["AND", "OR"]'
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Search for targeting hashtags [Tool Hashtag Recommend](https://ads.tiktok.com/marketing_api/docs?id=1736271339521025)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: keywords
+            required: true
+            source: $.http.query.keywords[]
+            sub_type: string
+            type: array
+          - name: operator
+            required: false
+            source: $.http.query.operator
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          keywords: $.http.query.keywords[]
+          operator: $.http.query.operator
+        response_cookie: []
+        response_header: []
+        response_rule:
+          recommend_keywords[][]:
+          - input_keyword: $.rpc.output.recommend_keywords[].input_keyword
+            keyword: $.rpc.output.recommend_keywords[].keyword
+            keyword_id: $.rpc.output.recommend_keywords[].keyword_id
+            keyword_status: $.rpc.output.recommend_keywords[].keyword_status
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

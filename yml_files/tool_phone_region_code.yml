@@ -1,0 +1,103 @@
+info:
+  description: "{\"en\":\"Use this endpoint to retrieve the region codes, region names,\
+    \ and region calling codes for phone numbers.\\n\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\
+    \u4F7F\u7528\u672C\u63A5\u53E3\u83B7\u53D6\u7535\u8BDD\u53F7\u7801\u53EF\u7528\
+    \u7684\u5730\u533A\u540D\u79F0\uFF0C\u5730\u533A\u4EE3\u7801\u548C\u533A\u53F7\
+    \u3002\\n\\n\"}"
+  title: "{\"en\":\"Get region calling codes and region codes for phone numbers\"\
+    ,\"zh\":\"\u83B7\u53D6\u7535\u8BDD\u53F7\u7801\u7684\u5730\u533A\u4EE3\u7801\u548C\
+    \u533A\u53F7\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/phone_region_code/:
+    get:
+      operationId: Tool Phone_region_code
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 1
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get region calling codes and region codes for phone numbers [Tool Phone_region_code](https://ads.tiktok.com/marketing_api/docs?id=1774488637039618)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source: []
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule: null
+        response_cookie: []
+        response_header: []
+        response_rule:
+          phone_region_code_infos[][]:
+          - phone_region_calling_code: $.rpc.output.phone_area_code_info[].area
+            phone_region_code: $.rpc.output.phone_area_code_info[].short_name
+            phone_region_name: $.rpc.output.phone_area_code_info[].name
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

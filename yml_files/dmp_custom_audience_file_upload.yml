@@ -1,0 +1,253 @@
+info:
+  description: "{\"en\":\"Use this endpoint to upload a data file. After the data\
+    \ file has been uploaded, a unique file path is provided to you. This file path\
+    \ can be used to create or update an audience.\\n\\nPlease see Customer File API\
+    \ vs Streaming API - Important Notes for Customer File API to learn about the\
+    \ notes about Email Specific Normalization.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\
+    \u7528\u672C\u63A5\u53E3\u4E0A\u4F20\u53D7\u4F17\u6570\u636E\u6587\u4EF6\u3002\
+    \u6587\u4EF6\u4E0A\u4F20\u540E\uFF0C\u60A8\u5C06\u5F97\u5230\u4E00\u4E2A\u5168\
+    \u5C40\u552F\u4E00\u7684file_path\uFF0C\u53EF\u7528\u4E8E\u540E\u7EED\u521B\u5EFA\
+    \u6216\u66F4\u65B0\u53D7\u4F17\u3002\\n\\n\u8BF7\u67E5\u770B\u6D41\u5F0FAPI -\
+    \ \u5BA2\u6237\u6587\u4EF6API\u76F8\u5173\u63D0\u793A\uFF0C\u4E86\u89E3\u7535\u5B50\
+    \u90AE\u4EF6\u5730\u5740\u6807\u51C6\u5316\u7684\u76F8\u5173\u63D0\u793A\u3002\
+    \"}"
+  title: "{\"en\":\"Upload an audience file\",\"zh\":\"\u4E0A\u4F20\u53D7\u4F17\u6587\
+    \u4EF6\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /dmp/custom_audience/file/upload/:
+    post:
+      operationId: Dmp Custom_audience File Upload
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              properties:
+                advertiser_id:
+                  description: Advertiser ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                calculate_type:
+                  description: Encryption type. The value for this field must be consistent
+                    with the actual file data. Otherwise, your upload will fail or
+                    you will not be able to create a valid audience. For enum values,
+                    see Enumeration - Encryption Type.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1812020346560514
+                    enum_package_name: DmpCalculateType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: EMAIL_SHA256
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: FIRST_MD5
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: FIRST_SHA256
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: GAID_MD5
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: GAID_SHA256
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: IDFA_MD5
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: IDFA_SHA256
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: MAID_MD5
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: MAID_SHA256
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: MULTIPLE_TYPES
+                      value: '100'
+                    - description: ''
+                      is_valid: true
+                      key: PHONE_SHA256
+                      value: '9'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.calculate_type
+                file:
+                  description: Data files. Only supports CSV and TXT files. The file
+                    suffixes should exactly be .csv or .txt.
+                  format: binary
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.file
+                file_signature:
+                  description: The file's MD5, which is used for server-side verification.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.file_signature
+                name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+              required:
+              - advertiser_id
+              - file
+              - file_signature
+              - calculate_type
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id=1739940567842818)
+      tags:
+      - Audience
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: file
+            required: true
+            source: $.http.body.file
+            type: string
+          - name: file_signature
+            required: true
+            source: $.http.body.file_signature
+            type: string
+          - name: calculate_type
+            required: true
+            source: $.http.body.calculate_type
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+          - name: name
+            required: false
+            source: $.http.body.name
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          calculate_type: $.http.body.calculate_type
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+          file: $.http.body.file
+          file_signature: $.http.body.file_signature
+          name: $.http.body.name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          file_path: $.rpc.output.file_path
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

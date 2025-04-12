@@ -1,0 +1,651 @@
+info:
+  description: '{"en":"Sync Report","zh":"Sync Report"}'
+  title: '{"en":"Sync Report","zh":"Sync Report"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /report/integrated/get/:
+    get:
+      operationId: Report Integrated Get
+      parameters:
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 1000
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: enable_total_metrics
+        required: false
+        schema:
+          default: false
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.enable_total_metrics
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: multi_adv_report_in_utc_time
+        required: false
+        schema:
+          default: false
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.multi_adv_report_in_utc_time
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: query_mode
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: REGULAR
+              value: REGULAR
+            - description: ''
+              is_valid: true
+              key: CHUNK
+              value: CHUNK
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.query_mode
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 6
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+        description: ''
+        in: query
+        name: advertiser_ids
+        required: false
+        x-open-field-id: 7
+      - description: ''
+        in: query
+        name: bc_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 8
+      - description: ''
+        in: query
+        name: service_type
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1805686420337666
+            enum_package_name: ReportServiceType
+            enums:
+            - description: ''
+              is_valid: true
+              key: AUCTION
+              value: AUCTION
+            - description: ''
+              is_valid: true
+              key: RESERVATION
+              value: RESERVATION
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+        x-open-field-id: 9
+      - description: ''
+        in: query
+        name: report_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1807850604796929
+            enum_package_name: SyncReportType
+            enums:
+            - description: ''
+              is_valid: true
+              key: AUDIENCE
+              value: AUDIENCE
+            - description: ''
+              is_valid: true
+              key: BASIC
+              value: BASIC
+            - description: ''
+              is_valid: true
+              key: BC
+              value: BC
+            - description: ''
+              is_valid: true
+              key: CATALOG
+              value: CATALOG
+            - description: ''
+              is_valid: true
+              key: PLAYABLE_MATERIAL
+              value: PLAYABLE_MATERIAL
+            - description: ''
+              is_valid: true
+              key: TT_SHOP
+              value: TT_SHOP
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+        x-open-field-id: 10
+      - description: ''
+        in: query
+        name: data_level
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1805686341322753
+            enum_package_name: ReportDataLevel
+            enums:
+            - description: ''
+              is_valid: true
+              key: AUCTION_AD
+              value: AD
+            - description: ''
+              is_valid: true
+              key: AUCTION_ADGROUP
+              value: ADGROUP
+            - description: ''
+              is_valid: true
+              key: AUCTION_ADVERTISER
+              value: ADVERTISER
+            - description: ''
+              is_valid: true
+              key: AUCTION_CAMPAIGN
+              value: CAMPAIGN
+            - description: ''
+              is_valid: true
+              key: RESERVATION_AD
+              value: AD
+            - description: ''
+              is_valid: true
+              key: RESERVATION_ADGROUP
+              value: ADGROUP
+            - description: ''
+              is_valid: true
+              key: RESERVATION_ADVERTISER
+              value: ADVERTISER
+            - description: ''
+              is_valid: true
+              key: RESERVATION_CAMPAIGN
+              value: CAMPAIGN
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+        x-open-field-id: 11
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+        description: ''
+        in: query
+        name: dimensions
+        required: false
+        x-open-field-id: 12
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+        description: ''
+        in: query
+        name: metrics
+        required: false
+        x-open-field-id: 13
+      - description: ''
+        in: query
+        name: start_date
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+        x-open-field-id: 14
+      - description: ''
+        in: query
+        name: end_date
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+        x-open-field-id: 15
+      - description: ''
+        in: query
+        name: query_lifetime
+        required: false
+        schema:
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+        x-open-field-id: 16
+      - description: ''
+        in: query
+        name: order_field
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+        x-open-field-id: 17
+      - description: ''
+        in: query
+        name: order_type
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1807850809935874
+            enum_package_name: ReportOrderType
+            enums:
+            - description: ''
+              is_valid: true
+              key: ASC
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: DESC
+              value: '2'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+        x-open-field-id: 18
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                properties:
+                  field_name:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-field-id: 1
+                  filter_type:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1805686981203970
+                      enum_package_name: ReportFilterType
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: BETWEEN
+                        value: '1'
+                      - description: ''
+                        is_valid: true
+                        key: GREATER_EQUAL
+                        value: '8'
+                      - description: ''
+                        is_valid: true
+                        key: GREATER_THAN
+                        value: '6'
+                      - description: ''
+                        is_valid: true
+                        key: IN
+                        value: '0'
+                      - description: ''
+                        is_valid: true
+                        key: LOWER_EQUAL
+                        value: '7'
+                      - description: ''
+                        is_valid: true
+                        key: LOWER_THAN
+                        value: '5'
+                      - description: ''
+                        is_valid: true
+                        key: MATCH
+                        value: '9'
+                      - description: ''
+                        is_valid: true
+                        key: RANGE
+                        value: '1'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int64
+                    x-open-field-id: 2
+                  filter_value:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-field-id: 3
+                required:
+                - field_name
+                - filter_type
+                - filter_value
+                type: object
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 19
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id=1740302848100353)
+      tags:
+      - Reporting
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - children:
+            - name: service_type
+              required: true
+              source: $.http.query.service_type
+              type: string
+            - name: report_type
+              required: true
+              source: $.http.query.report_type
+              type: string
+            - name: data_level
+              required: false
+              source: $.http.query.data_level
+              type: string
+            - children:
+              - type: string
+              is_expand: true
+              name: dimensions
+              required: false
+              source: $.http.query.dimensions[]
+              sub_type: string
+              type: array
+            - children:
+              - type: string
+              is_expand: true
+              name: metrics
+              required: false
+              source: $.http.query.metrics[]
+              sub_type: string
+              type: array
+            - name: start_date
+              required: false
+              source: $.http.query.start_date
+              type: string
+            - name: end_date
+              required: false
+              source: $.http.query.end_date
+              type: string
+            - name: query_lifetime
+              required: false
+              source: $.http.query.query_lifetime
+              type: boolean
+            - name: order_type
+              required: false
+              source: $.http.query.order_type
+              type: number
+            - name: order_field
+              required: false
+              source: $.http.query.order_field
+              type: string
+            - children:
+              - children:
+                - name: field_name
+                  required: false
+                  source: $.http.query.common_report_query.filtering[].field_name
+                  type: string
+                - name: filter_type
+                  required: false
+                  source: $.http.query.common_report_query.filtering[].filter_type
+                  type: number
+                - name: filter_value
+                  required: false
+                  source: $.http.query.common_report_query.filtering[].filter_value
+                  type: string
+                is_expand: true
+                type: object
+              is_expand: true
+              name: filtering
+              required: false
+              source: $.http.query.filtering[]
+              sub_type: object
+              type: array
+            - name: advertiser_id
+              required: false
+              source: $.http.query.advertiser_id
+              type: number
+            - name: bc_id
+              required: false
+              source: $.http.query.bc_id
+              type: number
+            - children:
+              - type: number
+              is_expand: true
+              name: advertiser_ids
+              required: false
+              source: $.http.query.advertiser_ids[]
+              sub_type: number
+              type: array
+            is_expand: true
+            name: common_report_query
+            required: true
+            type: object
+          - name: page
+            required: true
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: true
+            source: $.http.query.page_size
+            type: number
+          - name: enable_total_metrics
+            required: false
+            source: $.http.query.enable_total_metrics
+            type: boolean
+          - name: multi_adv_report_in_utc_time
+            required: false
+            source: $.http.query.multi_adv_report_in_utc_time
+            type: boolean
+          - name: query_mode
+            required: false
+            source: $.http.query.query_mode
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          common_report_query:
+            advertiser_id: $.http.query.advertiser_id
+            advertiser_ids: $.http.query.advertiser_ids[]
+            bc_id: $.http.query.bc_id
+            data_level: $.http.query.data_level
+            dimensions: $.http.query.dimensions[]
+            end_date: $.http.query.end_date
+            filtering: $.http.query.filtering[]
+            metrics: $.http.query.metrics[]
+            order_field: $.http.query.order_field
+            order_type: $.http.query.order_type
+            query_lifetime: $.http.query.query_lifetime
+            report_type: $.http.query.report_type
+            service_type: $.http.query.service_type
+            start_date: $.http.query.start_date
+          enable_total_metrics: $.http.query.enable_total_metrics
+          multi_adv_report_in_utc_time: $.http.query.multi_adv_report_in_utc_time
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          query_mode: $.http.query.query_mode
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list: $.rpc.output.stats_data
+          page_info: $.rpc.output.page_info
+          total_metrics: $.rpc.output.total_metrics
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

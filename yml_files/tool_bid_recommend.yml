@@ -1,0 +1,1042 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get a suggested bid value for your\
+    \ ad group based on basic campaign and ad group settings like objectives, conversion\
+    \ events, and locations. Note that the suggested bid can only be used with Cost\
+    \ Cap bidding strategy (bid_type = BID_TYPE_CUSTOM).\\n\\n\",\"zh\":\"\u60A8\u53EF\
+    \u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u83B7\u53D6\u7CFB\u7EDF\u5EFA\u8BAE\u51FA\
+    \u4EF7\uFF0C\u5EFA\u8BAE\u51FA\u4EF7\u57FA\u4E8E\u57FA\u672C\u7684\u63A8\u5E7F\
+    \u7CFB\u5217\u53CA\u5E7F\u544A\u7EC4\u7684\u8BBE\u7F6E\uFF08\u5982\u63A8\u5E7F\
+    \u76EE\u6807\u3001\u8F6C\u5316\u4E8B\u4EF6\u4EE5\u53CA\u5730\u57DF\u5B9A\u5411\
+    \u7B49\uFF09\u3002\u83B7\u53D6\u7684\u5EFA\u8BAE\u51FA\u4EF7\u4EC5\u80FD\u7528\
+    \u4E8E\u6210\u672C\u4E0A\u9650\u51FA\u4EF7\u7B56\u7565\uFF08\u5373bid_type=BID_TYPE_CUSTOM)\u3002\
+    \\n\\n\"}"
+  title: "{\"en\":\"Get a suggested bid\",\"zh\":\"\u83B7\u53D6\u5EFA\u8BAE\u51FA\u4EF7\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/bid/recommend/:
+    post:
+      operationId: Tool Bid Recommend
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: Advertiser ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                campaign_id:
+                  default: '"0"'
+                  description: Campaign ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                external_action:
+                  description: Conversion event for the ad group.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1799795326256129
+                    enum_package_name: ExternalAction
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ACTIVE
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: ACTIVE_PAY
+                      value: '14'
+                    - description: ''
+                      is_valid: true
+                      key: ACTIVE_REGISTER
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: ADD_BOOKSHELF
+                      value: '116'
+                    - description: ''
+                      is_valid: true
+                      key: ADD_PAYMENT_INFO
+                      value: '127'
+                    - description: ''
+                      is_valid: true
+                      key: ADD_TO_WISHLIST
+                      value: '128'
+                    - description: ''
+                      is_valid: true
+                      key: ANCHOR_CLICK
+                      value: '308'
+                    - description: ''
+                      is_valid: true
+                      key: APPLET_DEAL
+                      value: '126'
+                    - description: ''
+                      is_valid: true
+                      key: APPOINTMENT_DOWNLOAD_BUTTON
+                      value: '173'
+                    - description: ''
+                      is_valid: true
+                      key: ASCRIPTION_PHONE
+                      value: '161'
+                    - description: ''
+                      is_valid: true
+                      key: AUTHORIZATION
+                      value: '121'
+                    - description: ''
+                      is_valid: true
+                      key: BANKCARD_INFORMATION
+                      value: '107'
+                    - description: ''
+                      is_valid: true
+                      key: BOOST
+                      value: '124'
+                    - description: ''
+                      is_valid: true
+                      key: BUTTON
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: CERTIFICATION_INFORMATION
+                      value: '109'
+                    - description: ''
+                      is_valid: true
+                      key: CLICK_CALL_DY
+                      value: '69'
+                    - description: ''
+                      is_valid: true
+                      key: CLICK_DOWNLOAD
+                      value: '68'
+                    - description: ''
+                      is_valid: true
+                      key: CLICK_LANDING_PAGE
+                      value: '66'
+                    - description: ''
+                      is_valid: true
+                      key: CLICK_SHOPWINDow
+                      value: '67'
+                    - description: ''
+                      is_valid: true
+                      key: CLICK_WEBSITE
+                      value: '70'
+                    - description: ''
+                      is_valid: true
+                      key: CLUE_CONFIRM
+                      value: '194'
+                    - description: ''
+                      is_valid: true
+                      key: CLUE_HIGH_INTENTION
+                      value: '196'
+                    - description: ''
+                      is_valid: true
+                      key: CLUE_INTERFLOW
+                      value: '195'
+                    - description: ''
+                      is_valid: true
+                      key: CLUE_PAY_SUCCEED
+                      value: '218'
+                    - description: ''
+                      is_valid: true
+                      key: COMMENT_ACTION
+                      value: '47'
+                    - description: ''
+                      is_valid: true
+                      key: COMMODITY_CLICK
+                      value: '122'
+                    - description: ''
+                      is_valid: true
+                      key: COMPLETE_TUTORIAL
+                      value: '131'
+                    - description: ''
+                      is_valid: true
+                      key: CONSULT
+                      value: '97'
+                    - description: ''
+                      is_valid: true
+                      key: CONSULT_CLUE
+                      value: '123'
+                    - description: ''
+                      is_valid: true
+                      key: CONSULT_EFFECTIVE
+                      value: '19'
+                    - description: ''
+                      is_valid: true
+                      key: CONVERSION_LEADS
+                      value: '313'
+                    - description: ''
+                      is_valid: true
+                      key: COUPON
+                      value: '28'
+                    - description: ''
+                      is_valid: true
+                      key: CREATE_GAMEROLE
+                      value: '38'
+                    - description: ''
+                      is_valid: true
+                      key: CUSTOMER_EFFECTIVE
+                      value: '26'
+                    - description: ''
+                      is_valid: true
+                      key: DEEP_PURCHASE
+                      value: '52'
+                    - description: ''
+                      is_valid: true
+                      key: DESTINATION_VISIT
+                      value: '272'
+                    - description: ''
+                      is_valid: true
+                      key: DIALBACK
+                      value: '33'
+                    - description: ''
+                      is_valid: true
+                      key: DIALBACK_CONFIRM
+                      value: '34'
+                    - description: ''
+                      is_valid: true
+                      key: DIALBACK_CONNECT
+                      value: '35'
+                    - description: ''
+                      is_valid: true
+                      key: DOWNLOAD_BUTTON
+                      value: '155'
+                    - description: ''
+                      is_valid: true
+                      key: DOWNLOAD_DETAIL
+                      value: '154'
+                    - description: ''
+                      is_valid: true
+                      key: DOWNLOAD_FINISH
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: DOWNLOAD_START
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: EC_CLICK_BUY
+                      value: '175'
+                    - description: ''
+                      is_valid: true
+                      key: EC_CLICK_PRODUCT
+                      value: '179'
+                    - description: ''
+                      is_valid: true
+                      key: EC_CONFRIM_DEAL
+                      value: '214'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_CART
+                      value: '210'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_CLICK_PRODUCT_ACTION
+                      value: '208'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_COMMENT_ACTION
+                      value: '205'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_ENTER_ACTION
+                      value: '202'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_FOLLOW_ACTION
+                      value: '204'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_GIFT_ACTION
+                      value: '206'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_NATIVE_ACTION
+                      value: '203'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_ORDER
+                      value: '211'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_REDIRECT_TO_STORE_ACTION
+                      value: '209'
+                    - description: ''
+                      is_valid: true
+                      key: EC_LIVE_SLIDECART_CLICK_ACTION
+                      value: '207'
+                    - description: ''
+                      is_valid: true
+                      key: EC_SUBMIT_ORDER
+                      value: '176'
+                    - description: ''
+                      is_valid: true
+                      key: EFFECTIVE_COPY
+                      value: '27'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGED_VIEW
+                      value: '309'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGED_VIEW_FIFTEEN
+                      value: '311'
+                    - description: ''
+                      is_valid: true
+                      key: ENTER_HOMEPAGE
+                      value: '181'
+                    - description: ''
+                      is_valid: true
+                      key: FEED_LIVE_HOMEPAGE
+                      value: '120'
+                    - description: ''
+                      is_valid: true
+                      key: FOLLOW_ACTION
+                      value: '46'
+                    - description: ''
+                      is_valid: true
+                      key: FOLLOW_LIVE_ENTER
+                      value: '250'
+                    - description: ''
+                      is_valid: true
+                      key: FOLLOW_VIDEO_PLAY_FINISH
+                      value: '252'
+                    - description: ''
+                      is_valid: true
+                      key: FORM
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: FORM_ANSWER
+                      value: '32'
+                    - description: ''
+                      is_valid: true
+                      key: FORM_BUTTON
+                      value: '151'
+                    - description: ''
+                      is_valid: true
+                      key: FORM_CONNECT
+                      value: '31'
+                    - description: ''
+                      is_valid: true
+                      key: FORM_DEEP
+                      value: '36'
+                    - description: ''
+                      is_valid: true
+                      key: FORM_DETAIL
+                      value: '150'
+                    - description: ''
+                      is_valid: true
+                      key: GAME_ADDICTION
+                      value: '25'
+                    - description: ''
+                      is_valid: true
+                      key: HIGHVALUE_CLUE
+                      value: '42'
+                    - description: ''
+                      is_valid: true
+                      key: IDCARD_INFORMATION
+                      value: '106'
+                    - description: ''
+                      is_valid: true
+                      key: IMPRESSION_LEVEL_AD_REVENUE
+                      value: '312'
+                    - description: ''
+                      is_valid: true
+                      key: INITIATE_ORDER
+                      value: '267'
+                    - description: ''
+                      is_valid: true
+                      key: INSTALL_FINISH
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: INTENTION_CLUE
+                      value: '41'
+                    - description: ''
+                      is_valid: true
+                      key: INVALID_CLUE
+                      value: '40'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_AD_CLICK
+                      value: '132'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_AD_IMPR
+                      value: '133'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_CART
+                      value: '22'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_DETAIL_UV
+                      value: '29'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_ORDER
+                      value: '20'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_PAY
+                      value: '23'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_UV
+                      value: '21'
+                    - description: ''
+                      is_valid: true
+                      key: LANDING_PAGE_VIEW
+                      value: '271'
+                    - description: ''
+                      is_valid: true
+                      key: LAUNCH_APP
+                      value: '129'
+                    - description: ''
+                      is_valid: true
+                      key: LIKE_ACTION
+                      value: '45'
+                    - description: ''
+                      is_valid: true
+                      key: LINK_ACTION
+                      value: '51'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_APPOINTMENT
+                      value: '249'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_CARD_CLICK
+                      value: '215'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_CLICK_PRODUCT_ACTION
+                      value: '167'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_COMMENT_ACTION
+                      value: '164'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_ENTER_ACTION
+                      value: '171'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_FOLLOW_ACTION
+                      value: '163'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_GIFT_ACTION
+                      value: '165'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_HOMEPAGE
+                      value: '111'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_JOIN_GROUP
+                      value: '248'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_NATIVE_ACTION
+                      value: '162'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_REDIRECT_TO_STORE_ACTION
+                      value: '168'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_ROOM_ACTION
+                      value: '254'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_SLIDECART_CLICK_ACTION
+                      value: '166'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_STAY_TIME
+                      value: '186'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_SUCCESSORDER_ACTION
+                      value: '172'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_SUCESSORDER_PAY
+                      value: '169'
+                    - description: ''
+                      is_valid: true
+                      key: LOAN
+                      value: '119'
+                    - description: ''
+                      is_valid: true
+                      key: LOAN_APPLY
+                      value: '118'
+                    - description: ''
+                      is_valid: true
+                      key: LOAN_COMPLETION
+                      value: '103'
+                    - description: ''
+                      is_valid: true
+                      key: LOAN_CREDIT
+                      value: '105'
+                    - description: ''
+                      is_valid: true
+                      key: LOCATION_ACTION
+                      value: '48'
+                    - description: ''
+                      is_valid: true
+                      key: LOGIN
+                      value: '114'
+                    - description: ''
+                      is_valid: true
+                      key: LOGIN_ACTION
+                      value: '136'
+                    - description: ''
+                      is_valid: true
+                      key: LONGTERM_CUSTOMER
+                      value: '130'
+                    - description: ''
+                      is_valid: true
+                      key: LOTTERY
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: LT_ROI
+                      value: '110'
+                    - description: ''
+                      is_valid: true
+                      key: MAP_SEARCH
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: MESSAGE
+                      value: '94'
+                    - description: ''
+                      is_valid: true
+                      key: MESSAGE_ACTION
+                      value: '63'
+                    - description: ''
+                      is_valid: true
+                      key: MESSAGE_CLICK
+                      value: '177'
+                    - description: ''
+                      is_valid: true
+                      key: MESSAGE_JOIN_GROUP
+                      value: '247'
+                    - description: ''
+                      is_valid: true
+                      key: MESSAGE_SELF_SERVICE
+                      value: '188'
+                    - description: ''
+                      is_valid: true
+                      key: MESSAGE_SEND
+                      value: '310'
+                    - description: ''
+                      is_valid: true
+                      key: MULTIPLE
+                      value: '100'
+                    - description: ''
+                      is_valid: true
+                      key: MULTI_NATIVE_ACTION
+                      value: '102'
+                    - description: ''
+                      is_valid: true
+                      key: NATIVE_ACTION
+                      value: '44'
+                    - description: ''
+                      is_valid: true
+                      key: NAV_BAR
+                      value: '149'
+                    - description: ''
+                      is_valid: true
+                      key: NEW_FOLLOW_ACTION
+                      value: '187'
+                    - description: ''
+                      is_valid: true
+                      key: NEXT_DAY_OPEN
+                      value: '39'
+                    - description: ''
+                      is_valid: true
+                      key: NOVEL_CHAPTER
+                      value: '115'
+                    - description: ''
+                      is_valid: true
+                      key: ON_WEB_CART
+                      value: '147'
+                    - description: ''
+                      is_valid: true
+                      key: ON_WEB_DETAIL
+                      value: '146'
+                    - description: ''
+                      is_valid: true
+                      key: ON_WEB_ORDER
+                      value: '148'
+                    - description: ''
+                      is_valid: true
+                      key: ON_WEB_REGISTER
+                      value: '145'
+                    - description: ''
+                      is_valid: true
+                      key: OTHER
+                      value: '99'
+                    - description: ''
+                      is_valid: true
+                      key: OTO_PAY
+                      value: '229'
+                    - description: ''
+                      is_valid: true
+                      key: OTO_STAY_TIME
+                      value: '228'
+                    - description: ''
+                      is_valid: true
+                      key: PAGE_VIEW
+                      value: '93'
+                    - description: ''
+                      is_valid: true
+                      key: PAGE_VISIT
+                      value: '314'
+                    - description: ''
+                      is_valid: true
+                      key: PAID_CLUE
+                      value: '43'
+                    - description: ''
+                      is_valid: true
+                      key: PAY_ACTION
+                      value: '137'
+                    - description: ''
+                      is_valid: true
+                      key: PAY_ROI
+                      value: '160'
+                    - description: ''
+                      is_valid: true
+                      key: PERSONAL_INFORMATION
+                      value: '108'
+                    - description: ''
+                      is_valid: true
+                      key: PHONE
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: PHONE_BUTTON
+                      value: '153'
+                    - description: ''
+                      is_valid: true
+                      key: PHONE_CONFIRM
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: PHONE_CONNECT
+                      value: '17'
+                    - description: ''
+                      is_valid: true
+                      key: PHONE_DETAIL
+                      value: '152'
+                    - description: ''
+                      is_valid: true
+                      key: PHONE_EFFECTIVE
+                      value: '18'
+                    - description: ''
+                      is_valid: true
+                      key: PREFERRED_LEAD
+                      value: '315'
+                    - description: ''
+                      is_valid: true
+                      key: PREMIUM_PAYMENT
+                      value: '174'
+                    - description: ''
+                      is_valid: true
+                      key: PRE_LOAN_CREDIT
+                      value: '104'
+                    - description: ''
+                      is_valid: true
+                      key: PURCHASE_OF_GOODS
+                      value: '156'
+                    - description: ''
+                      is_valid: true
+                      key: QQ
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: RATE
+                      value: '138'
+                    - description: ''
+                      is_valid: true
+                      key: READING_TIME
+                      value: '117'
+                    - description: ''
+                      is_valid: true
+                      key: REDIRECT
+                      value: '95'
+                    - description: ''
+                      is_valid: true
+                      key: REDIRECT_TO_SHOP
+                      value: '50'
+                    - description: ''
+                      is_valid: true
+                      key: REDIRECT_TO_STORE
+                      value: '113'
+                    - description: ''
+                      is_valid: true
+                      key: REGISTER_ACTION
+                      value: '139'
+                    - description: ''
+                      is_valid: true
+                      key: RESERVATION
+                      value: '62'
+                    - description: ''
+                      is_valid: true
+                      key: RSS
+                      value: '30'
+                    - description: ''
+                      is_valid: true
+                      key: SALES_LEAD
+                      value: '24'
+                    - description: ''
+                      is_valid: true
+                      key: SEARCH
+                      value: '140'
+                    - description: ''
+                      is_valid: true
+                      key: SEVEN_DAY_OPEN
+                      value: '227'
+                    - description: ''
+                      is_valid: true
+                      key: SHARE_ACTION
+                      value: '65'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPPING
+                      value: '96'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPPING_ACTION
+                      value: '49'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPPING_CART
+                      value: '182'
+                    - description: ''
+                      is_valid: true
+                      key: START_TRIAL
+                      value: '142'
+                    - description: ''
+                      is_valid: true
+                      key: STAY_TIME
+                      value: '125'
+                    - description: ''
+                      is_valid: true
+                      key: SUBSCRIBE
+                      value: '143'
+                    - description: ''
+                      is_valid: true
+                      key: SUCCESSORDER_ACTION
+                      value: '53'
+                    - description: ''
+                      is_valid: true
+                      key: SUCCESSORDER_PAY
+                      value: '112'
+                    - description: ''
+                      is_valid: true
+                      key: UG_EFFECTIVE_ACTION
+                      value: '245'
+                    - description: ''
+                      is_valid: true
+                      key: UG_EFFECTIVE_DEAL
+                      value: '244'
+                    - description: ''
+                      is_valid: true
+                      key: UG_EFFECTIVE_SHARE
+                      value: '246'
+                    - description: ''
+                      is_valid: true
+                      key: UG_EFFECTIVE_SPEECH
+                      value: '243'
+                    - description: ''
+                      is_valid: true
+                      key: UG_ROI
+                      value: '178'
+                    - description: ''
+                      is_valid: true
+                      key: UNLOCK_ACHIEVEMENT
+                      value: '144'
+                    - description: ''
+                      is_valid: true
+                      key: UPDATE_LEVEL
+                      value: '37'
+                    - description: ''
+                      is_valid: true
+                      key: VIEW
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: VOTE
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: XPATH
+                      value: '6'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                location_ids:
+                  description: IDs of the locations that you want to target.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                objective_type:
+                  description: 'Campaign objective. The current API endpoint only
+                    supports Traffic and Website conversions objectives. For enum
+                    values and descriptions, see Objectives. Note: This API is being
+                    revamped to support larger function scope and more accurate result.
+                    Please stay tuned for updates.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1815013888391169
+                    enum_package_name: ToolCampaignObjectiveType
+                    enums:
+                    - description: ''
+                      is_valid: false
+                      key: APP_INSTALL
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: APP_PROMOTION
+                      value: '16'
+                    - description: ''
+                      is_valid: false
+                      key: CATALOG_SALES
+                      value: '6'
+                    - description: ''
+                      is_valid: false
+                      key: CONVERSIONS
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGEMENT
+                      value: '9'
+                    - description: ''
+                      is_valid: false
+                      key: EST_AD
+                      value: '51'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GENERATION
+                      value: '8'
+                    - description: ''
+                      is_valid: false
+                      key: NONE_TYPE
+                      value: '0'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_SALES
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: REACH
+                      value: '5'
+                    - description: ''
+                      is_valid: false
+                      key: RF_APP_INSTALL
+                      value: '13'
+                    - description: ''
+                      is_valid: false
+                      key: RF_ENGAGEMENT
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: RF_REACH
+                      value: '7'
+                    - description: ''
+                      is_valid: false
+                      key: RF_TRAFFIC
+                      value: '11'
+                    - description: ''
+                      is_valid: false
+                      key: RF_VIDEO_VIEW
+                      value: '10'
+                    - description: ''
+                      is_valid: false
+                      key: SS_HTC_AD
+                      value: '52'
+                    - description: ''
+                      is_valid: false
+                      key: TOPVIEW_REACH
+                      value: '50'
+                    - description: ''
+                      is_valid: true
+                      key: TRAFFIC
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: VIDEO_VIEWS
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: WEB_CONVERSIONS
+                      value: '3'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+              required:
+              - advertiser_id
+              - location_ids
+              - objective_type
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get a suggested bid [Tool Bid Recommend](https://ads.tiktok.com/marketing_api/docs?id=1737107845597186)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: campaign_id
+            required: false
+            source: $.http.body.campaign_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: location_ids
+            required: false
+            source: $.http.body.location_ids[]
+            sub_type: number
+            type: array
+          - name: external_action
+            required: false
+            source: $.http.body.external_action
+            type: number
+          - name: objective_type
+            required: true
+            source: $.http.body.objective_type
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          campaign_id: $.http.body.campaign_id
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+          external_action: $.http.body.external_action
+          location_ids: $.http.body.location_ids[]
+          objective_type: $.http.body.objective_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          bid: $.rpc.output.bid
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

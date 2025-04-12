@@ -1,0 +1,237 @@
+info:
+  description: "{\"en\":\"Use this endpoint to apply audience to or disconnect audience\
+    \ from multiple ad groups.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\
+    \u53E3\u5C06\u53D7\u4F17\u5E94\u7528\u5230\u591A\u4E2A\u5E7F\u544A\u7EC4\uFF0C\
+    \u6216\u65AD\u5F00\u53D7\u4F17\u4E0E\u5E7F\u544A\u7EC4\u4E4B\u95F4\u7684\u5173\
+    \u8054\u3002\"}"
+  title: "{\"en\":\"Apply audiences to ad groups\",\"zh\":\"\u5C06\u53D7\u4F17\u5E94\
+    \u7528\u5230\u591A\u4E2A\u5E7F\u544A\u7EC4\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /dmp/custom_audience/apply/:
+    post:
+      operationId: Dmp Custom_audience Apply
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                action_mode:
+                  description: 'Specific operation to be performed on the audience.
+                    Enum values: Apply, Disconnect.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: Apply
+                      value: Apply
+                    - description: ''
+                      is_valid: true
+                      key: Disconnect
+                      value: Disconnect
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.action_mode
+                adgroup_ids:
+                  description: 'A list of ad group IDs. Note: adgroup_ids and custom_audience_id
+                    should be under the same advertiser account. Otherwise, an error
+                    will occur. Lookalike Audience cannot be used in Reach & Frequency
+                    ads. Otherwise, an error will occur. See below for more details.
+                    1. If the custom_audience_id is a Lookalike Audience and the adgroup_ids
+                    are Reach & Frequency ad groups, an error will occur. 2. If the
+                    custom_audience_id is a Lookalike Audience with the REACH_FREQUENCY
+                    audience subtype, an error will occur.'
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.adgroup_ids
+                advertiser_id:
+                  description: Advertiser ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                custom_audience_id:
+                  description: Custom audience ID. You can only pass one custom audience
+                    ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.custom_audience_id
+                usage_mode:
+                  description: 'Whether to include this audience in or exclude it
+                    from your ad groups. Required when action_mode is Apply. Enum
+                    values: Include, Exclude.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: Include
+                      value: Include
+                    - description: ''
+                      is_valid: true
+                      key: Exclude
+                      value: Exclude
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.usage_mode
+              required:
+              - advertiser_id
+              - custom_audience_id
+              - adgroup_ids
+              - action_mode
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Apply a shared custom audience [Dmp Custom_audience Apply](https://ads.tiktok.com/marketing_api/docs?id=1740245827044354)
+      tags:
+      - Audience
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: custom_audience_id
+            required: true
+            source: $.http.body.custom_audience_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: adgroup_ids
+            required: true
+            source: $.http.body.adgroup_ids
+            sub_type: number
+            type: array
+          - name: action_mode
+            required: true
+            source: $.http.body.action_mode
+            type: string
+          - name: usage_mode
+            required: false
+            source: $.http.body.usage_mode
+            type: string
+          - children:
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          action_mode: $.http.body.action_mode
+          adgroup_ids: $.http.body.adgroup_ids
+          advertiser_id: $.http.body.advertiser_id
+          context_info:
+            core_user_id: $.context.core_user_id
+          custom_audience_id: $.http.body.custom_audience_id
+          usage_mode: $.http.body.usage_mode
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

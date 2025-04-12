@@ -1,0 +1,386 @@
+info:
+  description: "{\"en\":\"Use this endpoint to update assets, members or the name\
+    \ of an Asset Group. You need to be an Admin user of the Business Center.\",\"\
+    zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u66F4\u65B0\u4E00\u4E2A\
+    \u8D44\u4EA7\u7EC4\u4E0B\u7684\u8D44\u4EA7\u3001\u6210\u5458\u6216\u540D\u79F0\
+    \u3002\u60A8\u5FC5\u987B\u662F\u5546\u52A1\u4E2D\u5FC3\u7BA1\u7406\u5458\u7528\
+    \u6237\u3002\"}"
+  title: "{\"en\":\"Update an Asset Group\",\"zh\":\"\u66F4\u65B0\u8D44\u4EA7\u7EC4\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/asset_group/update/:
+    post:
+      operationId: Bc Asset_group Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                action:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1815197776304130
+                    enum_package_name: BCAssetGroupAction
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ADD
+                      value: ADD
+                    - description: ''
+                      is_valid: true
+                      key: DELETE
+                      value: DELETE
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.action
+                asset_group_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.asset_group_id
+                asset_group_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.asset_group_name
+                assets:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      asset_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.assets[].asset_id
+                      asset_type:
+                        default: ADVERTISER
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1815197592334338
+                          enum_package_name: BCAssetGroupAssetType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: ADVERTISER
+                            value: ADVERTISER
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: string
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.assets[].asset_type
+                    required:
+                    - asset_id
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 200
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.assets
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+                members:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      asset_roles:
+                        additionalProperties:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-enum:
+                            enum_package_expired: false
+                            enum_package_id: 1815197697677314
+                            enum_package_name: BCAssetGroupRole
+                            enums:
+                            - description: ''
+                              is_valid: true
+                              key: ADVERTISER_ROLE_ADMIN
+                              value: ADVERTISER_ROLE_ADMIN
+                            - description: ''
+                              is_valid: true
+                              key: ADVERTISER_ROLE_ANALYST
+                              value: ADVERTISER_ROLE_ANALYST
+                            - description: ''
+                              is_valid: true
+                              key: ADVERTISER_ROLE_OPERATOR
+                              value: ADVERTISER_ROLE_OPERATOR
+                            key_format: string
+                            strict: true
+                            use_part: false
+                            validate_only: false
+                            value_format: string
+                        description: ''
+                        nullable: false
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.members[].asset_roles
+                      member_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.members[].member_id
+                    required:
+                    - member_id
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 50
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.members
+                update_entity:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1815197825973249
+                    enum_package_name: BCAssetGroupUpdateEntity
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ASSET
+                      value: ASSET
+                    - description: ''
+                      is_valid: true
+                      key: MEMBER
+                      value: MEMBER
+                    - description: ''
+                      is_valid: true
+                      key: NAME
+                      value: NAME
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.update_entity
+              required:
+              - bc_id
+              - asset_group_id
+              - update_entity
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update assets, members or the name of an Asset Group. [BC Asset Group Update](https://business-api.tiktok.com/portal/docs?id=1749001662156801)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: asset_group_id
+            required: true
+            source: $.http.body.asset_group_id
+            type: number
+          - name: update_entity
+            required: true
+            source: $.http.body.update_entity
+            type: string
+          - name: action
+            required: false
+            source: $.http.body.action
+            type: string
+          - name: asset_group_name
+            required: false
+            source: $.http.body.asset_group_name
+            type: string
+          - children:
+            - children:
+              - name: asset_id
+                required: true
+                source: $.http.body.assets[].asset_id
+                type: string
+              - name: asset_type
+                required: true
+                source: $.http.body.assets[].asset_type
+                type: string
+              is_expand: true
+              type: object
+            is_expand: true
+            name: assets
+            required: false
+            source: $.http.body.assets
+            sub_type: object
+            type: array
+          - children:
+            - children:
+              - name: member_id
+                required: true
+                source: $.http.body.members[].member_id
+                type: string
+              - children:
+                - type: string
+                is_expand: true
+                name: asset_roles
+                required: false
+                source: $.http.body.members[].asset_roles
+                sub_type: string
+                type: dict
+              is_expand: true
+              type: object
+            is_expand: true
+            name: members
+            required: false
+            source: $.http.body.members
+            sub_type: object
+            type: array
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            - name: x_real_ip
+              required: false
+              source: $.context.source_ip
+              type: string
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          action: $.http.body.action
+          asset_group_id: $.http.body.asset_group_id
+          asset_group_name: $.http.body.asset_group_name
+          assets: $.http.body.assets
+          bc_id: $.http.body.bc_id
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+            x_real_ip: $.context.source_ip
+          members: $.http.body.members
+          update_entity: $.http.body.update_entity
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

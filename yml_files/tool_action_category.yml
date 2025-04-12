@@ -1,0 +1,200 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get action category enumeration values.\
+    \ Action categories are also referred to as behavioral categories in our documentation.\\\
+    n\\nAction targeting provides advertisers with a way to serve relevant ads to\
+    \ users based on their recent in-app behaviors. In-app behaviors can be categorized\
+    \ into two types: video related actions (views, likes, comments or share), and\
+    \ creator related actions (following or viewed homepage). Accordingly, the action_scene\
+    \ where a developer can use action categories when calling /adgroup/create/ is\
+    \ CREATOR_RELATED, or VIDEO_RELATED.\\n\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\
+    \u7528\u672C\u63A5\u53E3\u83B7\u53D6\u884C\u4E3A\u5206\u7C7B\u7684\u679A\u4E3E\
+    \u503C\u3002\\n\\n\u901A\u8FC7\u884C\u4E3A\u5206\u7C7B\uFF0C\u5E7F\u544A\u4E3B\
+    \u53EF\u4EE5\u6839\u636E\u7528\u6237\u6700\u8FD1\u7684\u5E94\u7528\u5185\u884C\
+    \u4E3A\u5411\u7528\u6237\u63A8\u9001\u76F8\u5173\u8054\u7684\u5E7F\u544A\u5185\
+    \u5BB9\u3002\u7528\u6237\u7684\u5E94\u7528\u5185\u884C\u4E3A\u53EF\u5206\u4E3A\
+    \u4E24\u7C7B\uFF0C\u89C6\u9891\u76F8\u5173\u884C\u4E3A\uFF08\u4F8B\u5982\u6D4F\
+    \u89C8\u3001\u8BC4\u8BBA\u6216\u5206\u4EAB\uFF09\uFF0C\u4EE5\u53CA\u521B\u4F5C\
+    \u8005\u76F8\u5173\u884C\u4E3A\uFF08\u5173\u6CE8\u6216\u6D4F\u89C8\u521B\u4F5C\
+    \u8005\u4E3B\u9875\uFF09\u3002\u76F8\u5E94\u5730\uFF0C\u5F00\u53D1\u8005\u8C03\
+    \u7528/adgroup/create/\u65F6\u80FD\u591F\u4F7F\u7528\u7684action_scene\u4E3ACREATOR_RELATED\u6216\
+    VIDEO_RELATED\uFF08\u53EA\u80FD\u9009\u4E00\u4E2A\uFF09\u3002\"}"
+  title: "{\"en\":\"Get action categories\",\"zh\":\"\u83B7\u53D6\u884C\u4E3A\u5206\
+    \u7C7B\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/action_category/:
+    get:
+      operationId: Tool Action_category
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-enum:
+                  enum_package_expired: false
+                  enum_package_id: 1800966552221698
+                  enum_package_name: IndustryType
+                  enums:
+                  - description: ''
+                    is_valid: true
+                    key: CREDIT
+                    value: '3'
+                  - description: ''
+                    is_valid: true
+                    key: EMPLOYMENT
+                    value: '2'
+                  - description: ''
+                    is_valid: true
+                    key: HOUSING
+                    value: '1'
+                  key_format: string
+                  strict: true
+                  use_part: false
+                  validate_only: false
+                  value_format: int32
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.special_industries
+        description: 'Special ad categories. Enum values: HOUSING: Ads for real estate
+          listings, homeowners insurance, mortgage loans or other related opportunities.
+          EMPLOYMENT: Ads for job offers, internship, professional certification programs
+          or other related opportunities. CREDIT: Ads for credit card offers, auto
+          loans, long-term financing or other related opportunities. Note: This field
+          is generally available to advertisers registered in America or Canada. Advertisers
+          who are not registered in America or Canada but want to target these countries
+          with special ad categories need to apply for an additional allowlist.'
+        in: query
+        name: special_industries
+        required: false
+        x-open-field-id: 2
+      - description: 'Category name language in repsonse. Default value: en. Supported
+          languages: en, zh, ja, de, es, fr, id, it, ko, ru, th, tr, vi, ar, pt, ms.
+          For details, see Enumeration - Language Code.'
+        in: query
+        name: language
+        required: false
+        schema:
+          default: en
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.language
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get action categories. [Tool Action Category](https://business-api.tiktok.com/portal/docs?id=1737166752522241)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            name: special_industries
+            required: false
+            source: $.http.query.special_industries
+            sub_type: number
+            type: array
+          - name: language
+            required: false
+            source: $.http.query.language
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          language: $.http.query.language
+          special_industries: $.http.query.special_industries
+        response_cookie: []
+        response_header: []
+        response_rule:
+          action_categories[][]:
+          - action_category_id: $.rpc.output.action_categories[].action_category_id
+            action_scene: $.rpc.output.action_categories[].scene
+            description: $.rpc.output.action_categories[].description
+            level: $.rpc.output.action_categories[].level
+            name: $.rpc.output.action_categories[].action_category_name
+            special_industries: $.rpc.output.action_categories[].special_industries
+            sub_category_ids: $.rpc.output.action_categories[].sub_category_ids
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

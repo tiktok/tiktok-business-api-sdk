@@ -1,0 +1,120 @@
+info:
+  description: "{\"en\":\"Use this endpoint to check whether a URL is a custom URL\
+    \ scheme, Apple\u2019s universal link, or Android App Link, and whether the URL\
+    \ is valid.\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u9A8C\
+    \u8BC1 URL\u662F\u5426\u4E3A iOS \u901A\u7528\u94FE\u63A5\u3001Android \u5E94\u7528\
+    \u94FE\u63A5\u6216\u81EA\u5B9A\u4E49\u7F51\u5740\u67B6\u6784\uFF0C\u4EE5\u53CA\
+    \u8BE5 URL \u662F\u5426\u5408\u6CD5\u3002\\n\\n\"}"
+  title: "{\"en\":\"Get the verification results of a URL\",\"zh\":\"\u83B7\u53D6\
+    \ URL \u7684\u9A8C\u8BC1\u7ED3\u679C\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/url_validate/:
+    get:
+      operationId: Tool Url_validate
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 1
+      - description: The URL that you want to get verification results for.
+        in: query
+        name: url
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.URL
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get the verification results of a URL [Tool Url_validate](https://ads.tiktok.com/marketing_api/docs?id=1774487686007810)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: URL
+            required: false
+            source: $.http.query.url
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          URL: $.http.query.url
+        response_cookie: []
+        response_header: []
+        response_rule:
+          url_info:
+            validate_info:
+              is_scheme_link: $.rpc.output.IsSchemeLink
+              is_valid_scheme: $.rpc.output.IsValidScheme
+              is_valid_url: $.rpc.output.IsValidURL
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,748 @@
+info:
+  description: "{\"en\":\"Use this endpoint to create a Saved Audience. An advertiser\
+    \ can have up to 100 Saved Audiences.\\n\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\
+    \u7528\u672C\u63A5\u53E3\u521B\u5EFA\u5DF2\u4FDD\u5B58\u53D7\u4F17\u3002\u5E7F\
+    \u544A\u4E3B\u6700\u591A\u6709100\u4E2A\u5DF2\u4FDD\u5B58\u53D7\u4F17\u3002\\\
+    n\\n\"}"
+  title: "{\"en\":\"Create a Saved Audience\",\"zh\":\"\u521B\u5EFA\u5DF2\u4FDD\u5B58\
+    \u53D7\u4F17\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /dmp/saved_audience/create/:
+    post:
+      operationId: Dmp Saved_audience Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                actions:
+                  description: A list of action category objects.
+                  items:
+                    nullable: false
+                    properties:
+                      action_category_ids:
+                        description: Required when actions has been specified and
+                          valid only when TikTok placement is the only placement selected
+                          in your ad group. IDs of the action categories (behaviors)
+                          or hashtags that you want to target. You can get action
+                          category IDs via /tool/action_category/.
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-convert:
+                          - int64(%s)
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 4
+                        x-open-source: $.http.body.actions[].action_category_ids
+                      action_period:
+                        description: 'Required when actions has been specified. The
+                          time period to include actions from. Enum values: 0, 7,
+                          15. If action_scene is CREATOR_RELATED or HASHTAG_RELATED,
+                          0 will be used regardless of the value you pass in. 0 means
+                          that there is no definite timeframe to select actions from.'
+                        format: int32
+                        nullable: false
+                        type: integer
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.actions[].action_period
+                      action_scene:
+                        description: 'Required when actions has been specified. Where
+                          you can collect information about user actions. Enum values:
+                          VIDEO_RELATED, CREATOR_RELATED, HASHTAG_RELATED.'
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1800966577028098
+                          enum_package_name: ActionScene
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CREATOR_RELATED
+                            value: '11'
+                          - description: ''
+                            is_valid: true
+                            key: HASHTAG_RELATED
+                            value: '13'
+                          - description: ''
+                            is_valid: true
+                            key: VIDEO_RELATED
+                            value: '2'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.actions[].action_scene
+                      video_user_actions:
+                        description: 'Required when actions has been specified. Video-related
+                          Actions. If action_scene is VIDEO_RELATED, the allowed values
+                          are: WATCHED_TO_END,LIKED,COMMENTED,SHARED. If action_scene
+                          is CREATOR_RELATED, the allowed values are: FOLLOWING, VIEW_HOMEPAGE.
+                          If action_scene is HASHTAG_RELATED, the allowed value is
+                          VIEW_HASHTAG.'
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-enum:
+                            enum_package_expired: false
+                            enum_package_id: 1804237663605761
+                            enum_package_name: VideoAction
+                            enums:
+                            - description: ''
+                              is_valid: true
+                              key: COMMENTED
+                              value: '2'
+                            - description: ''
+                              is_valid: true
+                              key: FOLLOWING
+                              value: '4'
+                            - description: ''
+                              is_valid: true
+                              key: LIKED
+                              value: '1'
+                            - description: ''
+                              is_valid: true
+                              key: SHARED
+                              value: '3'
+                            - description: ''
+                              is_valid: true
+                              key: VIEW_HASHTAG
+                              value: '6'
+                            - description: ''
+                              is_valid: true
+                              key: VIEW_HOMEPAGE
+                              value: '5'
+                            - description: ''
+                              is_valid: true
+                              key: WATCHED_TO_END
+                              value: '0'
+                            key_format: string
+                            strict: true
+                            use_part: false
+                            validate_only: false
+                            value_format: int32
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.actions[].video_user_actions
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 11
+                  x-open-source: $.http.body.actions
+                advertiser_id:
+                  description: Advertiser ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                age_groups:
+                  description: Age groups you want to target. For enum values, see
+                    Enumeration - Targeting Age Group.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.age_groups
+                audience_ids:
+                  description: List of audience IDs. You can get audience IDs via
+                    the /dmp/custom_audience/list/ endpoint.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.audience_ids
+                carrier_ids:
+                  description: Carriers that you want to target. Use /tool/carrier/
+                    endpoint to get a list of carriers. A carrier is valid only when
+                    the in_use field for the carrier is true. The carriers must be
+                    consistent with the location(s) that you want to target.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 17
+                  x-open-source: $.http.body.carrier_ids
+                device_model_ids:
+                  description: 'IDs of the device models that you want to target.
+                    Use /tool/device_model/ to get the complete list of device model
+                    IDs and their statuses, and only active devices (is_active = true
+                    in the response of /tool/device_model/) can be used to create
+                    ads. Note: Device model (device_model_ids) and device price (device_price_ranges)
+                    cannot be set at the same time.'
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 15
+                  x-open-source: $.http.body.device_model_ids
+                device_price_ranges:
+                  description: ''
+                  items:
+                    format: int32
+                    nullable: false
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 18
+                  x-open-source: $.http.body.device_price_ranges
+                excluded_audience_ids:
+                  description: List of audience IDs to be excluded. You can get audience
+                    IDs via the /dmp/custom_audience/list/ endpoint.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.excluded_audience_ids
+                gender:
+                  description: 'Gender that you want to target. Enum values: GENDER_FEMALE,GENDER_MALE,GENDER_UNLIMITED'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804229882527745
+                    enum_package_name: AudienceGenderType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: GENDER_FEMALE
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: GENDER_MALE
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: GENDER_UNLIMITED
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.gender
+                interest_category_ids:
+                  description: Interest classification. You can use /tool/target_recommend_tags/
+                    to get a list of recommended interest categories based on your
+                    targeting regions and your industries, or use /tool/interest_category/
+                    endpoint to get the complete list of interest categories. If the
+                    interest is specified, users who do not meet the interest target
+                    will be excluded during delivery. Do not specify if you wish to
+                    target everyone.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.interest_category_ids
+                interest_keyword_ids:
+                  description: IDs of interest keywords that you want to use to target
+                    audience. You can use /tool/interest_keyword/recommend/ to get
+                    recommended interest keywords.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 10
+                  x-open-source: $.http.body.interest_keyword_ids
+                languages:
+                  description: Codes of the languages that you want to target. You
+                    can get language codes via /tool/language/, and if you don't want
+                    to limit the languages you target, assign an empty value to this
+                    field or do not pass in this field.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.languages
+                location_ids:
+                  description: 'IDs of the locations that you want to target. To get
+                    the available locations and corresponding IDs, use the /tool/region/
+                    or /tool/targeting/search/ endpoint. Note: Overlapping targeted
+                    locations are not supported. For instance, you cannot target the
+                    U.S. and the state of California at the same time. DMA-level and
+                    city-level (or lower) targeting is only available in certain countries,
+                    and the access is managed by allowlist. If you would like to access
+                    it, please contact your TikTok representative for allowlisting.'
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.location_ids
+                min_android_version:
+                  description: Minimum device Android version. For enum values, see
+                    Enumeration - Minimum Android Version.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 13
+                  x-open-source: $.http.body.min_android_version
+                min_ios_version:
+                  description: Minimum iOS version. For enum values, see Enumeration
+                    - Minimum iOS Version.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 14
+                  x-open-source: $.http.body.min_ios_version
+                network_types:
+                  description: 'Device connection types that you want to target. Default:
+                    unlimited. For enum values, see Enumeration - Connection Type.'
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1803592836258818
+                      enum_package_name: ReportAccessType
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: 2G
+                        value: '2'
+                      - description: ''
+                        is_valid: true
+                        key: 3G
+                        value: '3'
+                      - description: ''
+                        is_valid: true
+                        key: 4G
+                        value: '4'
+                      - description: ''
+                        is_valid: true
+                        key: 5G
+                        value: '5'
+                      - description: ''
+                        is_valid: true
+                        key: UNKNOWN
+                        value: '0'
+                      - description: ''
+                        is_valid: true
+                        key: WIFI
+                        value: '1'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 16
+                  x-open-source: $.http.body.network_types
+                operating_systems:
+                  description: 'Device operating systems that you want to target.
+                    Enum values: ANDROID, IOS. Only one value is allowed.'
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1804229743233025
+                      enum_package_name: 'AudiencePlatformType '
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: ANDROID
+                        value: '1'
+                      - description: ''
+                        is_valid: true
+                        key: IOS
+                        value: '2'
+                      - description: ''
+                        is_valid: true
+                        key: PC
+                        value: '16'
+                      - description: ''
+                        is_valid: true
+                        key: UNKNOWN
+                        value: '0'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 12
+                  x-open-source: $.http.body.operating_systems
+                saved_audience_name:
+                  description: Saved Audience name. Character limit is 512 and cannot
+                    contain emoji.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.saved_audience_name
+              required:
+              - advertiser_id
+              - saved_audience_name
+              - location_ids
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id=1780154541898754)
+      tags:
+      - Audience
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: saved_audience_name
+            required: true
+            source: $.http.body.saved_audience_name
+            type: string
+          - children:
+            - type: number
+            is_expand: true
+            name: location_ids
+            required: true
+            source: $.http.body.location_ids
+            sub_type: number
+            type: array
+          - name: gender
+            required: false
+            source: $.http.body.gender
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: age_groups
+            required: false
+            source: $.http.body.age_groups
+            sub_type: string
+            type: array
+          - children:
+            - type: string
+            is_expand: true
+            name: languages
+            required: false
+            source: $.http.body.languages
+            sub_type: string
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: audience_ids
+            required: false
+            source: $.http.body.audience_ids
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: excluded_audience_ids
+            required: false
+            source: $.http.body.excluded_audience_ids
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: interest_category_ids
+            required: false
+            source: $.http.body.interest_category_ids
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: interest_keyword_ids
+            required: false
+            source: $.http.body.interest_keyword_ids
+            sub_type: number
+            type: array
+          - children:
+            - children:
+              - name: action_scene
+                required: false
+                source: $.http.body.actions[].action_scene
+                type: number
+              - name: action_period
+                required: false
+                source: $.http.body.actions[].action_period
+                type: number
+              - children:
+                - type: number
+                is_expand: true
+                name: video_user_actions
+                required: false
+                source: $.http.body.actions[].video_user_actions
+                sub_type: number
+                type: array
+              - children:
+                - type: number
+                is_expand: true
+                name: action_category_ids
+                required: false
+                source: $.http.body.actions[].action_category_ids
+                sub_type: number
+                type: array
+              is_expand: true
+              type: object
+            is_expand: true
+            name: actions
+            required: false
+            sub_type: object
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: operating_systems
+            required: false
+            source: $.http.body.operating_systems
+            sub_type: number
+            type: array
+          - name: min_android_version
+            required: false
+            source: $.http.body.min_android_version
+            type: string
+          - name: min_ios_version
+            required: false
+            source: $.http.body.min_ios_version
+            type: string
+          - children:
+            - type: number
+            is_expand: true
+            name: device_model_ids
+            required: false
+            source: $.http.body.device_model_ids
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: network_types
+            required: false
+            source: $.http.body.network_types
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: carrier_ids
+            required: false
+            source: $.http.body.carrier_ids
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: device_price_ranges
+            required: false
+            source: $.http.body.device_price_ranges
+            sub_type: number
+            type: array
+          - children:
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          actions[][]:
+          - action_category_ids: $.http.body.actions[].action_category_ids
+            action_period: $.http.body.actions[].action_period
+            action_scene: $.http.body.actions[].action_scene
+            video_user_actions: $.http.body.actions[].video_user_actions
+          advertiser_id: $.http.body.advertiser_id
+          age_groups: $.http.body.age_groups
+          audience_ids: $.http.body.audience_ids
+          carrier_ids: $.http.body.carrier_ids
+          context_info:
+            core_user_id: $.context.core_user_id
+          device_model_ids: $.http.body.device_model_ids
+          device_price_ranges: $.http.body.device_price_ranges
+          excluded_audience_ids: $.http.body.excluded_audience_ids
+          gender: $.http.body.gender
+          interest_category_ids: $.http.body.interest_category_ids
+          interest_keyword_ids: $.http.body.interest_keyword_ids
+          languages: $.http.body.languages
+          location_ids: $.http.body.location_ids
+          min_android_version: $.http.body.min_android_version
+          min_ios_version: $.http.body.min_ios_version
+          network_types: $.http.body.network_types
+          operating_systems: $.http.body.operating_systems
+          saved_audience_name: $.http.body.saved_audience_name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          saved_audience_id: $.rpc.output.saved_audience_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

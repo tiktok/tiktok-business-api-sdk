@@ -1,0 +1,1445 @@
+info:
+  description: '{"en":"Product delete","zh":"Product delete"}'
+  title: '{"en":"Product delete","zh":"Product delete"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/product/delete/:
+    post:
+      operationId: Catalog Product Delete
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                catalog_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.catalog_id
+                destination_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 9
+                feed_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.feed_id
+                flight_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                hotel_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                media_title_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                sku_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                vehicle_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+              required:
+              - bc_id
+              - catalog_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Delete products in bulk. [Catalog Product Delete](https://business-api.tiktok.com/portal/docs?id=1740562489236481)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: request_source
+            required: true
+            source: '1'
+            type: number
+          - name: opt_type
+            required: true
+            source: '2'
+            type: number
+          - name: catalog_id
+            required: true
+            source: $.http.body.catalog_id
+            type: number
+          - children:
+            - children:
+              - name: product_id
+                required: true
+                source: $.http.body.products[].product_id
+                type: string
+              - name: name
+                required: true
+                source: $.http.body.products[].name
+                type: string
+              - name: title
+                required: true
+                source: $.http.body.products[].title
+                type: string
+              - name: description
+                required: true
+                source: $.http.body.products[].description
+                type: string
+              - children:
+                - name: url
+                  required: true
+                  source: $.http.body.products[].image.url
+                  type: string
+                - name: width
+                  required: true
+                  source: $.http.body.products[].image.width
+                  type: number
+                - name: height
+                  required: true
+                  source: $.http.body.products[].image.height
+                  type: number
+                - name: ratio
+                  required: true
+                  source: $.http.body.products[].image.ratio
+                  type: number
+                - name: description
+                  required: true
+                  source: $.http.body.products[].image.description
+                  type: string
+                - name: duration
+                  required: true
+                  source: $.http.body.products[].image.duration
+                  type: number
+                - name: video_id
+                  required: true
+                  source: $.http.body.products[].image.video_id
+                  type: string
+                - name: template_id
+                  required: true
+                  source: $.http.body.products[].image.template_id
+                  type: string
+                - name: item_id
+                  required: true
+                  source: $.http.body.products[].image.item_id
+                  type: string
+                - name: is_origin_video
+                  required: true
+                  source: $.http.body.products[].image.is_origin_video
+                  type: boolean
+                - name: tos_uri
+                  required: true
+                  source: $.http.body.products[].image.tos_uri
+                  type: string
+                - name: video_package_type
+                  required: true
+                  source: $.http.body.products[].image.video_package_type
+                  type: number
+                - name: image_label
+                  required: false
+                  source: $.http.body.products[].image.image_label
+                  type: string
+                is_expand: true
+                name: image
+                required: false
+                source: $.http.body.products[].image
+                type: object
+              - children:
+                - children:
+                  - name: url
+                    required: true
+                    source: $.http.body.products[].images[].url
+                    type: string
+                  - name: width
+                    required: true
+                    source: $.http.body.products[].images[].width
+                    type: number
+                  - name: height
+                    required: true
+                    source: $.http.body.products[].images[].height
+                    type: number
+                  - name: ratio
+                    required: true
+                    source: $.http.body.products[].images[].ratio
+                    type: number
+                  - name: description
+                    required: true
+                    source: $.http.body.products[].images[].description
+                    type: string
+                  - name: duration
+                    required: true
+                    source: $.http.body.products[].images[].duration
+                    type: number
+                  - name: video_id
+                    required: true
+                    source: $.http.body.products[].images[].video_id
+                    type: string
+                  - name: template_id
+                    required: true
+                    source: $.http.body.products[].images[].template_id
+                    type: string
+                  - name: item_id
+                    required: true
+                    source: $.http.body.products[].images[].item_id
+                    type: string
+                  - name: is_origin_video
+                    required: true
+                    source: $.http.body.products[].images[].is_origin_video
+                    type: boolean
+                  - name: tos_uri
+                    required: true
+                    source: $.http.body.products[].images[].tos_uri
+                    type: string
+                  - name: video_package_type
+                    required: true
+                    source: $.http.body.products[].images[].video_package_type
+                    type: number
+                  - name: image_label
+                    required: false
+                    source: $.http.body.products[].images[].image_label
+                    type: string
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: images
+                required: false
+                source: $.http.body.products[].images
+                sub_type: object
+                type: array
+              - children:
+                - name: url
+                  required: true
+                  source: $.http.body.products[].video.url
+                  type: string
+                - name: width
+                  required: true
+                  source: $.http.body.products[].video.width
+                  type: number
+                - name: height
+                  required: true
+                  source: $.http.body.products[].video.height
+                  type: number
+                - name: ratio
+                  required: true
+                  source: $.http.body.products[].video.ratio
+                  type: number
+                - name: description
+                  required: true
+                  source: $.http.body.products[].video.description
+                  type: string
+                - name: duration
+                  required: true
+                  source: $.http.body.products[].video.duration
+                  type: number
+                - name: video_id
+                  required: true
+                  source: $.http.body.products[].video.video_id
+                  type: string
+                - name: template_id
+                  required: true
+                  source: $.http.body.products[].video.template_id
+                  type: string
+                - name: item_id
+                  required: true
+                  source: $.http.body.products[].video.item_id
+                  type: string
+                - name: is_origin_video
+                  required: true
+                  source: $.http.body.products[].video.is_origin_video
+                  type: boolean
+                - name: tos_uri
+                  required: true
+                  source: $.http.body.products[].video.tos_uri
+                  type: string
+                - name: video_package_type
+                  required: true
+                  source: $.http.body.products[].video.video_package_type
+                  type: number
+                - name: image_label
+                  required: false
+                  source: $.http.body.products[].video.image_label
+                  type: string
+                is_expand: true
+                name: video
+                required: false
+                source: $.http.body.products[].video
+                type: object
+              - children:
+                - name: brand_id
+                  required: true
+                  source: $.http.body.products[].brand.brand_id
+                  type: string
+                - name: brand_name
+                  required: true
+                  source: $.http.body.products[].brand.brand_name
+                  type: string
+                - name: en_brand
+                  required: true
+                  source: $.http.body.products[].brand.en_brand
+                  type: string
+                - children:
+                  - name: targetUrl
+                    required: false
+                    source: $.http.body.products[].brand.target_url.targetUrl
+                    type: string
+                  - name: targetUrlMobile
+                    required: false
+                    source: $.http.body.products[].brand.target_url.targetUrlMobile
+                    type: string
+                  - name: targetUrlAndroidApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.targetUrlAndroidApp
+                    type: string
+                  - name: packageAndroidApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.packageAndroidApp
+                    type: string
+                  - name: appNameAndroidApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.appNameAndroidApp
+                    type: string
+                  - name: targetUrlIosApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.targetUrlIosApp
+                    type: string
+                  - name: AppStoreIdIosApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.AppStoreIdIosApp
+                    type: string
+                  - name: AppNameIosApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.AppNameIosApp
+                    type: string
+                  - name: AppStoreIdIphoneApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.AppStoreIdIphoneApp
+                    type: string
+                  - name: AppNameIphoneApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.AppNameIphoneApp
+                    type: string
+                  - name: AppStoreIdIpadApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.AppStoreIdIpadApp
+                    type: string
+                  - name: AppNameIpadApp
+                    required: false
+                    source: $.http.body.products[].brand.target_url.AppNameIpadApp
+                    type: string
+                  - name: universalLink
+                    required: false
+                    source: $.http.body.products[].brand.target_url.universalLink
+                    type: string
+                  - name: checkoutUrl
+                    required: false
+                    source: $.http.body.products[].brand.target_url.checkoutUrl
+                    type: string
+                  is_expand: true
+                  name: target_url
+                  required: false
+                  source: $.http.body.products[].brand.target_url
+                  type: object
+                - name: brand_logo
+                  required: true
+                  source: $.http.body.products[].brand.brand_logo
+                  type: string
+                is_expand: true
+                name: brand
+                required: false
+                source: $.http.body.products[].brand
+                type: object
+              - children:
+                - name: shopKeeperID
+                  required: false
+                  source: $.http.body.products[].shop_keeper.shopKeeperID
+                  type: string
+                - name: shopKeeperName
+                  required: false
+                  source: $.http.body.products[].shop_keeper.shopKeeperName
+                  type: string
+                - name: logo
+                  required: false
+                  source: $.http.body.products[].shop_keeper.logo
+                  type: string
+                - name: address
+                  required: false
+                  source: $.http.body.products[].shop_keeper.address
+                  type: string
+                - name: contact
+                  required: false
+                  source: $.http.body.products[].shop_keeper.contact
+                  type: string
+                - name: servicePhone
+                  required: false
+                  source: $.http.body.products[].shop_keeper.servicePhone
+                  type: string
+                - children:
+                  - name: targetUrl
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.targetUrl
+                    type: string
+                  - name: targetUrlMobile
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.targetUrlMobile
+                    type: string
+                  - name: targetUrlAndroidApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.targetUrlAndroidApp
+                    type: string
+                  - name: packageAndroidApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.packageAndroidApp
+                    type: string
+                  - name: appNameAndroidApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.appNameAndroidApp
+                    type: string
+                  - name: targetUrlIosApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.targetUrlIosApp
+                    type: string
+                  - name: AppStoreIdIosApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.AppStoreIdIosApp
+                    type: string
+                  - name: AppNameIosApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.AppNameIosApp
+                    type: string
+                  - name: AppStoreIdIphoneApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.AppStoreIdIphoneApp
+                    type: string
+                  - name: AppNameIphoneApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.AppNameIphoneApp
+                    type: string
+                  - name: AppStoreIdIpadApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.AppStoreIdIpadApp
+                    type: string
+                  - name: AppNameIpadApp
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.AppNameIpadApp
+                    type: string
+                  - name: universalLink
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.universalLink
+                    type: string
+                  - name: checkoutUrl
+                    required: false
+                    source: $.http.body.products[].shop_keeper.targetUrl.checkoutUrl
+                    type: string
+                  is_expand: true
+                  name: targetUrl
+                  required: false
+                  source: $.http.body.products[].shop_keeper.targetUrl
+                  type: object
+                is_expand: true
+                name: shop_keeper
+                required: false
+                source: $.http.body.products[].shop_keeper
+                type: object
+              - children:
+                - children:
+                  - name: id
+                    required: true
+                    source: $.http.body.products[].category.category.id
+                    type: string
+                  - name: name
+                    required: true
+                    source: $.http.body.products[].category.category.name
+                    type: string
+                  is_expand: true
+                  name: category
+                  required: false
+                  source: $.http.body.products[].category.category
+                  type: object
+                - children:
+                  - name: id
+                    required: true
+                    source: $.http.body.products[].category.first_category.id
+                    type: string
+                  - name: name
+                    required: true
+                    source: $.http.body.products[].category.first_category.name
+                    type: string
+                  is_expand: true
+                  name: first_category
+                  required: false
+                  source: $.http.body.products[].category.first_category
+                  type: object
+                - children:
+                  - name: id
+                    required: true
+                    source: $.http.body.products[].category.sub_category.id
+                    type: string
+                  - name: name
+                    required: true
+                    source: $.http.body.products[].category.sub_category.name
+                    type: string
+                  is_expand: true
+                  name: sub_category
+                  required: false
+                  source: $.http.body.products[].category.sub_category
+                  type: object
+                - children:
+                  - name: id
+                    required: true
+                    source: $.http.body.products[].category.third_category.id
+                    type: string
+                  - name: name
+                    required: true
+                    source: $.http.body.products[].category.third_category.name
+                    type: string
+                  is_expand: true
+                  name: third_category
+                  required: false
+                  source: $.http.body.products[].category.third_category
+                  type: object
+                - children:
+                  - name: targetUrl
+                    required: false
+                    source: $.http.body.products[].category.landing_url.targetUrl
+                    type: string
+                  - name: targetUrlMobile
+                    required: false
+                    source: $.http.body.products[].category.landing_url.targetUrlMobile
+                    type: string
+                  - name: targetUrlAndroidApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.targetUrlAndroidApp
+                    type: string
+                  - name: packageAndroidApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.packageAndroidApp
+                    type: string
+                  - name: appNameAndroidApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.appNameAndroidApp
+                    type: string
+                  - name: targetUrlIosApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.targetUrlIosApp
+                    type: string
+                  - name: AppStoreIdIosApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.AppStoreIdIosApp
+                    type: string
+                  - name: AppNameIosApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.AppNameIosApp
+                    type: string
+                  - name: AppStoreIdIphoneApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.AppStoreIdIphoneApp
+                    type: string
+                  - name: AppNameIphoneApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.AppNameIphoneApp
+                    type: string
+                  - name: AppStoreIdIpadApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.AppStoreIdIpadApp
+                    type: string
+                  - name: AppNameIpadApp
+                    required: false
+                    source: $.http.body.products[].category.landing_url.AppNameIpadApp
+                    type: string
+                  - name: universalLink
+                    required: false
+                    source: $.http.body.products[].category.landing_url.universalLink
+                    type: string
+                  - name: checkoutUrl
+                    required: false
+                    source: $.http.body.products[].category.landing_url.checkoutUrl
+                    type: string
+                  is_expand: true
+                  name: landing_url
+                  required: false
+                  source: $.http.body.products[].category.landing_url
+                  type: object
+                is_expand: true
+                name: category
+                required: false
+                source: $.http.body.products[].category
+                type: object
+              - children:
+                - name: targetUrl
+                  required: false
+                  source: $.http.body.products[].landing_url.targetUrl
+                  type: string
+                - name: targetUrlMobile
+                  required: false
+                  source: $.http.body.products[].landing_url.targetUrlMobile
+                  type: string
+                - name: targetUrlAndroidApp
+                  required: false
+                  source: $.http.body.products[].landing_url.targetUrlAndroidApp
+                  type: string
+                - name: packageAndroidApp
+                  required: false
+                  source: $.http.body.products[].landing_url.packageAndroidApp
+                  type: string
+                - name: appNameAndroidApp
+                  required: false
+                  source: $.http.body.products[].landing_url.appNameAndroidApp
+                  type: string
+                - name: targetUrlIosApp
+                  required: false
+                  source: $.http.body.products[].landing_url.targetUrlIosApp
+                  type: string
+                - name: AppStoreIdIosApp
+                  required: false
+                  source: $.http.body.products[].landing_url.AppStoreIdIosApp
+                  type: string
+                - name: AppNameIosApp
+                  required: false
+                  source: $.http.body.products[].landing_url.AppNameIosApp
+                  type: string
+                - name: AppStoreIdIphoneApp
+                  required: false
+                  source: $.http.body.products[].landing_url.AppStoreIdIphoneApp
+                  type: string
+                - name: AppNameIphoneApp
+                  required: false
+                  source: $.http.body.products[].landing_url.AppNameIphoneApp
+                  type: string
+                - name: AppStoreIdIpadApp
+                  required: false
+                  source: $.http.body.products[].landing_url.AppStoreIdIpadApp
+                  type: string
+                - name: AppNameIpadApp
+                  required: false
+                  source: $.http.body.products[].landing_url.AppNameIpadApp
+                  type: string
+                - name: universalLink
+                  required: false
+                  source: $.http.body.products[].landing_url.universalLink
+                  type: string
+                - name: checkoutUrl
+                  required: false
+                  source: $.http.body.products[].landing_url.checkoutUrl
+                  type: string
+                is_expand: true
+                name: landing_url
+                required: false
+                source: $.http.body.products[].landing_url
+                type: object
+              - children:
+                - type: string
+                is_expand: true
+                name: tags
+                required: false
+                source: $.http.body.products[].tags
+                sub_type: string
+                type: array
+              - name: status
+                required: true
+                source: $.http.body.products[].status
+                type: number
+              - name: audit_status
+                required: true
+                source: $.http.body.products[].audit_status
+                type: number
+              - children:
+                - name: value
+                  required: true
+                  source: $.http.body.products[].price.value
+                  type: number
+                - name: price_unit
+                  required: true
+                  source: $.http.body.products[].price.price_unit
+                  type: string
+                - name: saving
+                  required: true
+                  source: $.http.body.products[].price.saving
+                  type: number
+                - name: price
+                  required: true
+                  source: $.http.body.products[].price.price
+                  type: number
+                - name: sales_promotion
+                  required: true
+                  source: $.http.body.products[].price.sales_promotion
+                  type: string
+                - name: down_payment
+                  required: true
+                  source: $.http.body.products[].price.down_payment
+                  type: string
+                - name: mortgage
+                  required: true
+                  source: $.http.body.products[].price.mortgage
+                  type: string
+                - name: daily_mortgage
+                  required: true
+                  source: $.http.body.products[].price.daily_mortgage
+                  type: string
+                - name: discount
+                  required: true
+                  source: $.http.body.products[].price.discount
+                  type: number
+                - name: currency
+                  required: true
+                  source: $.http.body.products[].price.currency
+                  type: string
+                - name: sale_price
+                  required: true
+                  source: $.http.body.products[].price.sale_price
+                  type: number
+                - children:
+                  - type: number
+                  is_expand: true
+                  name: sale_price_effective_date
+                  required: true
+                  source: $.http.body.products[].price.sale_price_effective_date
+                  sub_type: number
+                  type: array
+                - name: std_price
+                  required: true
+                  source: $.http.body.products[].price.std_price
+                  type: string
+                - name: std_sale_price
+                  required: true
+                  source: $.http.body.products[].price.std_sale_price
+                  type: string
+                - name: has_sale_price
+                  required: true
+                  source: $.http.body.products[].price.has_sale_price
+                  type: boolean
+                - name: total_price
+                  required: true
+                  source: $.http.body.products[].price.total_price
+                  type: number
+                - name: sale_price_effective_date_str
+                  required: false
+                  source: $.http.body.products[].price.sale_price_effective_date_str
+                  type: string
+                is_expand: true
+                name: price
+                required: false
+                source: $.http.body.products[].price
+                type: object
+              - children:
+                - type: string
+                is_expand: true
+                name: profession
+                required: false
+                source: $.http.body.products[].profession
+                sub_type: string
+                type: dict
+              - name: spu_id
+                required: true
+                source: $.http.body.products[].spu_id
+                type: string
+              - name: outer_id
+                required: true
+                source: $.http.body.products[].outer_id
+                type: string
+              - name: gtin
+                required: true
+                source: $.http.body.products[].gtin
+                type: string
+              - name: mpn
+                required: true
+                source: $.http.body.products[].mpn
+                type: string
+              - name: availability
+                required: true
+                source: $.http.body.products[].availability
+                type: string
+              - children:
+                - type: string
+                is_expand: true
+                name: options_field_name
+                required: false
+                source: $.http.body.products[].options_field_name
+                sub_type: string
+                type: array
+              - children:
+                - name: custom_label_0
+                  required: false
+                  source: $.http.body.products[].ext.custom_label_0
+                  type: string
+                - name: custom_label_1
+                  required: false
+                  source: $.http.body.products[].ext.custom_label_1
+                  type: string
+                - name: custom_label_2
+                  required: false
+                  source: $.http.body.products[].ext.custom_label_2
+                  type: string
+                - name: custom_label_3
+                  required: false
+                  source: $.http.body.products[].ext.custom_label_3
+                  type: string
+                - name: custom_label_4
+                  required: false
+                  source: $.http.body.products[].ext.custom_label_4
+                  type: string
+                is_expand: true
+                name: ext
+                required: false
+                source: $.http.body.products[].ext
+                type: object
+              - name: mark
+                required: true
+                source: $.http.body.products[].mark
+                type: number
+              - children:
+                - name: OriginRichTextDescription
+                  required: false
+                  source: $.http.body.products[].rich_text.OriginRichTextDescription
+                  type: string
+                - name: RichTextDescription
+                  required: false
+                  source: $.http.body.products[].rich_text.RichTextDescription
+                  type: string
+                - name: RichTextDescriptionHtml
+                  required: false
+                  source: $.http.body.products[].rich_text.RichTextDescriptionHtml
+                  type: string
+                is_expand: true
+                name: rich_text
+                required: false
+                source: $.http.body.products[].rich_text
+                type: object
+              - name: vehicle_launched_year
+                required: true
+                source: $.http.body.products[].vehicle_launched_year
+                type: number
+              - name: vehicle_model
+                required: true
+                source: $.http.body.products[].vehicle_model
+                type: string
+              - name: vehicle_body_style
+                required: true
+                source: $.http.body.products[].vehicle_body_style
+                type: string
+              - name: vehicle_vin
+                required: true
+                source: $.http.body.products[].vehicle_vin
+                type: string
+              - children:
+                - name: value
+                  required: false
+                  source: $.http.body.products[].vehicle_mileage.value
+                  type: number
+                - name: unit
+                  required: false
+                  source: $.http.body.products[].vehicle_mileage.unit
+                  type: string
+                - name: mileage
+                  required: false
+                  source: $.http.body.products[].vehicle_mileage.mileage
+                  type: number
+                is_expand: true
+                name: vehicle_mileage
+                required: false
+                source: $.http.body.products[].vehicle_mileage
+                type: object
+              - name: vehicle_trim
+                required: true
+                source: $.http.body.products[].vehicle_trim
+                type: string
+              - name: vehicle_drive_train
+                required: true
+                source: $.http.body.products[].vehicle_drive_train
+                type: string
+              - name: vehicle_fuel_type
+                required: true
+                source: $.http.body.products[].vehicle_fuel_type
+                type: string
+              - children:
+                - type: string
+                is_expand: true
+                name: media_genres
+                required: false
+                source: $.http.body.products[].media_genres
+                sub_type: string
+                type: array
+              - name: room_type
+                required: true
+                source: $.http.body.products[].room_type
+                type: string
+              - name: origin_airport
+                required: true
+                source: $.http.body.products[].origin_airport
+                type: string
+              - name: destination_airport
+                required: true
+                source: $.http.body.products[].destination_airport
+                type: string
+              - name: origin_city
+                required: true
+                source: $.http.body.products[].origin_city
+                type: string
+              - name: destination_city
+                required: true
+                source: $.http.body.products[].destination_city
+                type: string
+              - name: airline_company
+                required: true
+                source: $.http.body.products[].airline_company
+                type: string
+              - name: cabin_class
+                required: true
+                source: $.http.body.products[].cabin_class
+                type: string
+              - name: airline_id
+                required: true
+                source: $.http.body.products[].airline_id
+                type: string
+              - name: feature
+                required: true
+                source: $.http.body.products[].feature
+                type: string
+              - name: stock
+                required: true
+                source: $.http.body.products[].stock
+                type: number
+              - name: time_line
+                required: true
+                source: $.http.body.products[].time_line
+                type: string
+              - children:
+                - name: deliverVideo
+                  required: false
+                  source: $.http.body.products[].delivery.deliverVideo
+                  type: number
+                is_expand: true
+                name: delivery
+                required: true
+                source: $.http.body.products[].delivery
+                type: object
+              - name: has_video
+                required: true
+                source: $.http.body.products[].has_video
+                type: number
+              - children:
+                - children:
+                  - type: number
+                  is_expand: true
+                  name: bidwords
+                  required: false
+                  source: $.http.body.products[].product_additional_info.bidwords
+                  sub_type: number
+                  type: array
+                - children:
+                  - type: string
+                  is_expand: true
+                  name: videoTids
+                  required: false
+                  source: $.http.body.products[].product_additional_info.videoTids
+                  sub_type: string
+                  type: array
+                - children:
+                  - type: number
+                  is_expand: true
+                  name: videoImageModes
+                  required: false
+                  source: $.http.body.products[].product_additional_info.videoImageModes
+                  sub_type: number
+                  type: array
+                is_expand: true
+                name: product_additional_info
+                required: false
+                source: $.http.body.products[].product_additional_info
+                type: object
+              - name: active_status
+                required: true
+                source: $.http.body.products[].active_status
+                type: number
+              - children:
+                - name: language
+                  required: false
+                  source: $.http.body.products[].i18n_local_info.language
+                  type: string
+                - children:
+                  - type: number
+                  is_expand: true
+                  name: tags
+                  required: false
+                  source: $.http.body.products[].i18n_local_info.tags
+                  sub_type: number
+                  type: array
+                - children:
+                  - type: string
+                  is_expand: true
+                  name: detectLanguage
+                  required: false
+                  source: $.http.body.products[].i18n_local_info.detectLanguage
+                  sub_type: string
+                  type: array
+                is_expand: true
+                name: i18n_local_info
+                required: false
+                source: $.http.body.products[].i18n_local_info
+                type: object
+              - name: pxx_id
+                required: true
+                source: $.http.body.products[].pxx_id
+                type: string
+              - children:
+                - type: string
+                is_expand: true
+                name: label
+                required: false
+                source: $.http.body.products[].label
+                sub_type: string
+                type: array
+              - children:
+                - children:
+                  - name: url
+                    required: true
+                    source: $.http.body.products[].videos[].url
+                    type: string
+                  - name: width
+                    required: true
+                    source: $.http.body.products[].videos[].width
+                    type: number
+                  - name: height
+                    required: true
+                    source: $.http.body.products[].videos[].height
+                    type: number
+                  - name: ratio
+                    required: true
+                    source: $.http.body.products[].videos[].ratio
+                    type: number
+                  - name: description
+                    required: true
+                    source: $.http.body.products[].videos[].description
+                    type: string
+                  - name: duration
+                    required: true
+                    source: $.http.body.products[].videos[].duration
+                    type: number
+                  - name: video_id
+                    required: true
+                    source: $.http.body.products[].videos[].video_id
+                    type: string
+                  - name: template_id
+                    required: true
+                    source: $.http.body.products[].videos[].template_id
+                    type: string
+                  - name: item_id
+                    required: true
+                    source: $.http.body.products[].videos[].item_id
+                    type: string
+                  - name: is_origin_video
+                    required: true
+                    source: $.http.body.products[].videos[].is_origin_video
+                    type: boolean
+                  - name: tos_uri
+                    required: true
+                    source: $.http.body.products[].videos[].tos_uri
+                    type: string
+                  - name: video_package_type
+                    required: true
+                    source: $.http.body.products[].videos[].video_package_type
+                    type: number
+                  - name: image_label
+                    required: false
+                    source: $.http.body.products[].videos[].image_label
+                    type: string
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: videos
+                required: false
+                source: $.http.body.products[].videos
+                sub_type: object
+                type: array
+              - name: version
+                required: true
+                source: $.http.body.products[].version
+                type: number
+              - children:
+                - type: number
+                is_expand: true
+                name: product_set_ids
+                required: false
+                source: $.http.body.products[].product_set_ids
+                sub_type: number
+                type: array
+              - name: address
+                required: true
+                source: $.http.body.products[].address
+                type: string
+              - name: city
+                required: true
+                source: $.http.body.products[].city
+                type: string
+              - name: rating
+                required: true
+                source: $.http.body.products[].rating
+                type: string
+              - name: user_rating
+                required: true
+                source: $.http.body.products[].user_rating
+                type: string
+              - name: qid
+                required: true
+                source: $.http.body.products[].qid
+                type: string
+              - name: vehicle_exterior_color
+                required: true
+                source: $.http.body.products[].vehicle_exterior_color
+                type: string
+              - name: address_region
+                required: true
+                source: $.http.body.products[].address_region
+                type: string
+              - name: address_country
+                required: true
+                source: $.http.body.products[].address_country
+                type: string
+              - name: vehicle_state
+                required: true
+                source: $.http.body.products[].vehicle_state
+                type: string
+              - name: vehicle_make
+                required: true
+                source: $.http.body.products[].vehicle_make
+                type: string
+              - name: loyalty_program
+                required: true
+                source: $.http.body.products[].loyalty_program
+                type: string
+              - name: margin_level
+                required: true
+                source: $.http.body.products[].margin_level
+                type: string
+              - name: hotel_retailer_id
+                required: true
+                source: $.http.body.products[].hotel_retailer_id
+                type: string
+              - name: hotel_room_id
+                required: true
+                source: $.http.body.products[].hotel_room_id
+                type: string
+              - name: meal_policy
+                required: true
+                source: $.http.body.products[].meal_policy
+                type: string
+              - name: cancellation_policy
+                required: true
+                source: $.http.body.products[].cancellation_policy
+                type: string
+              - name: phone
+                required: true
+                source: $.http.body.products[].phone
+                type: string
+              - name: organic_audit_status
+                required: true
+                source: $.http.body.products[].organic_audit_status
+                type: number
+              - name: appeal_status
+                required: false
+                source: $.http.body.products[].appeal_status
+                type: boolean
+              - children:
+                - children:
+                  - name: reason
+                    required: false
+                    source: $.http.body.products[].reject_infos[].reason
+                    type: string
+                  - name: suggestion
+                    required: false
+                    source: $.http.body.products[].reject_infos[].suggestion
+                    type: string
+                  - children:
+                    - type: string
+                    is_expand: true
+                    name: affected_country
+                    required: false
+                    source: $.http.body.products[].reject_infos[].affected_country
+                    sub_type: string
+                    type: array
+                  - children:
+                    - type: number
+                    is_expand: true
+                    name: affected_placement
+                    required: false
+                    source: $.http.body.products[].reject_infos[].affected_placement
+                    sub_type: number
+                    type: array
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: reject_infos
+                required: false
+                source: $.http.body.products[].reject_infos
+                sub_type: object
+                type: array
+              - children:
+                - name: dealerID
+                  required: false
+                  source: $.http.body.products[].dealer.dealerID
+                  type: string
+                - name: name
+                  required: false
+                  source: $.http.body.products[].dealer.name
+                  type: string
+                - name: phone
+                  required: false
+                  source: $.http.body.products[].dealer.phone
+                  type: string
+                - name: stockNumber
+                  required: false
+                  source: $.http.body.products[].dealer.stockNumber
+                  type: string
+                is_expand: true
+                name: dealer
+                required: false
+                source: $.http.body.products[].dealer
+                type: object
+              - name: vehicle_interior_color
+                required: false
+                source: $.http.body.products[].vehicle_interior_color
+                type: string
+              - name: transmission
+                required: false
+                source: $.http.body.products[].transmission
+                type: string
+              - name: vehicleType
+                required: false
+                source: $.http.body.products[].vehicleType
+                type: string
+              - name: dateFirstOnLot
+                required: false
+                source: $.http.body.products[].dateFirstOnLot
+                type: string
+              - name: daysOnLot
+                required: false
+                source: $.http.body.products[].daysOnLot
+                type: number
+              - name: postcode
+                required: false
+                source: $.http.body.products[].postcode
+                type: string
+              - name: lat
+                required: false
+                source: $.http.body.products[].lat
+                type: number
+              - name: lon
+                required: false
+                source: $.http.body.products[].lon
+                type: number
+              - name: product_type
+                required: false
+                source: $.http.body.products[].product_type
+                type: string
+              - name: google_product_category
+                required: false
+                source: $.http.body.products[].google_product_category
+                type: string
+              - children:
+                - children:
+                  - name: RatingSystem
+                    required: false
+                    source: $.http.body.products[].guest_ratings[].RatingSystem
+                    type: string
+                  - name: MaxScore
+                    required: false
+                    source: $.http.body.products[].guest_ratings[].MaxScore
+                    type: number
+                  - name: Score
+                    required: false
+                    source: $.http.body.products[].guest_ratings[].Score
+                    type: number
+                  - name: NumberOfReviewers
+                    required: false
+                    source: $.http.body.products[].guest_ratings[].NumberOfReviewers
+                    type: number
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: guest_ratings
+                required: false
+                source: $.http.body.products[].guest_ratings
+                sub_type: object
+                type: array
+              - children:
+                - type: string
+                is_expand: true
+                name: destination_types
+                required: false
+                source: $.http.body.products[].destination_types
+                sub_type: string
+                type: array
+              is_expand: true
+              type: object
+            is_expand: false
+            name: products
+            required: true
+            source: $.myProducts
+            sub_type: object
+            type: array
+          - name: feed_id
+            required: false
+            source: $.http.body.feed_id
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: outer_id_list
+            required: false
+            source: $.myOuterIds
+            sub_type: string
+            type: array
+        plugins:
+          after_response: []
+          before_request:
+          - Plugin_fill_empty_products_6806181:
+            - description: get only one outer_ids
+            - request_params:
+              - $.http.body.sku_ids
+              - $.http.body.vehicle_ids
+              - $.http.body.flight_ids
+              - $.http.body.media_title_ids
+              - $.http.body.hotel_ids
+              - $.http.body.destination_ids
+            - result_params:
+              - $.myProducts
+              - $.myOuterIds
+            - version: f252d6f26daa93852c121840d707a759
+        request_query_rule: null
+        request_rule:
+          catalog_id: $.http.body.catalog_id
+          feed_id: $.http.body.feed_id
+          opt_type: 2
+          outer_id_list: $.myOuterIds
+          products: $.myProducts
+          request_source: 1
+        response_cookie: []
+        response_header: []
+        response_rule:
+          feed_log_id: $.rpc.output.feed_log_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com
