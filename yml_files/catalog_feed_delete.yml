@@ -1,0 +1,161 @@
+info:
+  description: '{"en":"Delete a feed","zh":"Delete a feed"}'
+  title: '{"en":"Delete a feed","zh":"Delete a feed"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/feed/delete/:
+    post:
+      operationId: Catalog Feed Delete
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiserId
+                catalog_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.multiLocLangType
+                feed_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.feedIds
+              required:
+              - bc_id
+              - feed_id
+              - catalog_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Delete a feed. [Catalog Feed Delete](https://business-api.tiktok.com/portal/docs?id=1740665210863617)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - children:
+            - name: id
+              required: false
+              source: $.http.body.feed_id
+              type: number
+            - name: platformId
+              required: false
+              source: $.http.body.catalog_id
+              type: number
+            is_expand: true
+            name: feed
+            required: false
+            type: object
+          - name: optType
+            required: false
+            source: '3'
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: feedIds
+            required: false
+            source: $.feed_ids
+            sub_type: number
+            type: array
+        plugins:
+          after_response: []
+          before_request:
+          - Plugin_mk_list_5934464:
+            - description: make list
+            - request_params:
+              - $.http.body.feed_id
+            - result_params:
+              - $.feed_ids
+            - version: c9e39304e3af5001d163ef81733004ce
+        request_query_rule: null
+        request_rule:
+          feed:
+            id: $.http.body.feed_id
+            platformId: $.http.body.catalog_id
+          feedIds: $.feed_ids
+          optType: 3
+        response_cookie: []
+        response_header: []
+        response_rule:
+          feed_id: $.http.body.feed_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

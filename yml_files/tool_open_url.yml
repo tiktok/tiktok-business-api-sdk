@@ -1,0 +1,145 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get the corresponding TikTok in-app\
+    \ link for an open TikTok URL. The in-app link you get can be passed to the open_url\
+    \ field when creating or updating a Reach & Frequency ad.\\n\\n\",\"zh\":\"\u60A8\
+    \u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u83B7\u53D6TikTok\u516C\u5F00\u7F51\
+    \u5740\u7684\u5BF9\u5E94\u5E94\u7528\u5185\u94FE\u63A5\u3002\u83B7\u53D6\u7684\
+    \u5730\u5740\u53EF\u4EE5\u7528\u4E8E\u521B\u5EFA\u8986\u76D6\u548C\u9891\u6B21\
+    \u5E7F\u544A\u4E2D\uFF0C\u9700\u8981\u5C06\u5730\u5740\u4F20\u5165open_url\u5B57\
+    \u6BB5\u3002\"}"
+  title: "{\"en\":\"Get a TikTok in-app link\",\"zh\":\"\u83B7\u53D6TikTok\u5E94\u7528\
+    \u5185\u94FE\u63A5\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/open_url/:
+    get:
+      operationId: Tool Open_url
+      parameters:
+      - description: Advertiser ID
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: Open URL that you want to get the internal link for.
+        in: query
+        name: url
+        required: true
+        schema:
+          format: url
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.url
+        x-open-field-id: 2
+      - description: 'Type of the open TikTok URL. Enum: USER_PROFILE VIDEO: Video
+          detail page HASHTAG_CHALLENGE: Hashtag challenge page MUSIC: Music page
+          STICKER: Sticker (special effect) page STICKER_SHOOTER: Shoot a video with
+          a sticker (special effect).'
+        in: query
+        name: url_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.url_type
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get a TikTok in-app link [Tool Open_url](https://ads.tiktok.com/marketing_api/docs?id=1738457335681026)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: url
+            required: true
+            source: $.http.query.url
+            type: string
+          - name: url_type
+            required: true
+            source: $.http.query.url_type
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          url: $.http.query.url
+          url_type: $.http.query.url_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          open_url: $.rpc.output.open_url
+          supported_regions: $.rpc.output.supported_regions
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

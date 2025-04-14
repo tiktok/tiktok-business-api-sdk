@@ -1,0 +1,580 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get information about location targeting\
+    \ tags by ID.\\n\\nYou can get details about three types of targeting tags: zip\
+    \ code IDs (currently only supported for the U.S.), location IDs, and ISP IDs.\\\
+    n\\nSee the \\\"Supported parameters for different types of targeting tag\\\"\
+    \ section below to learn about the request parameters you need to pass for different\
+    \ types of targeting tags.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\
+    \u53E3\u6839\u636EID\u83B7\u53D6\u5B9A\u5411\u6807\u7B7E\u7684\u4FE1\u606F\u3002\
+    \\n\\n\u60A8\u53EF\u83B7\u53D6\u4E09\u79CD\u5B9A\u5411\u6807\u7B7E\u7684\u8BE6\
+    \u60C5\uFF1A\u90AE\u653F\u7F16\u7801ID\uFF08\u76EE\u524D\u4EC5\u652F\u6301\u7F8E\
+    \u56FD\uFF09\u3001\u5730\u57DFID\u6216\u4E92\u8054\u7F51\u670D\u52A1\u63D0\u4F9B\
+    \u5546ID\u3002\\n\\n\u8BF7\u67E5\u770B\u4E0B\u6587\u7684\u201C\u4E0D\u540C\u7684\
+    \u5B9A\u5411\u6807\u7B7E\u6240\u9700\u7684\u53C2\u6570\u8BBE\u7F6E\u201D\u5C0F\
+    \u8282\uFF0C\u4E86\u89E3\u83B7\u53D6\u4E0D\u540C\u5B9A\u5411\u6807\u7B7E\u65F6\
+    \u9700\u8981\u4F20\u5165\u7684\u53C2\u6570\u7684\u5BF9\u6BD4\u3002\\n\\n\"}"
+  title: "{\"en\":\"Obtain details about location targeting tags by ID\",\"zh\":\"\
+    \u6839\u636E ID \u83B7\u53D6\u5730\u57DF\u5B9A\u5411\u6807\u7B7E\u7684\u4FE1\u606F\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/targeting/info/:
+    post:
+      operationId: Tool Targeting Info
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: Advertiser ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                brand_safety_partner:
+                  description: 'Required only when brand_safety_type is THIRD_PARTY.
+                    Brand safety partner. Enum values: IAS, OPEN_SLATE(The partner
+                    is named DoubleVerify on TikTok Ads Manager because the partner
+                    has been acquired by DoubleVerify). Note: Pre-bid third-party
+                    brand safety solutions are currently allowlist-only features.
+                    If you would like to access them, please contact your TikTok representative.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1800967691601922
+                    enum_package_name: BrandSafetyPartnerType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: IAS
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: OPEN_SLATE
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.brand_safety_partner
+                brand_safety_type:
+                  description: 'Brand safety type. Valid only when scene is set as
+                    GEO and placements is set as PLACEMENT_TIKTOK. Default value:
+                    NO_BRAND_SAFETY. Enum values: NO_BRAND_SAFETY: To not use any
+                    brand safety solution. Full inventory, which means your ads may
+                    appear next to some content featuring mature themes. EXPANDED_INVENTORY:
+                    Use TikTok''s brand safety solution. Expanded inventory means
+                    that your ads will appear next to content where most inappropriate
+                    content has been removed, and that does not contain mature themes.
+                    In the next API version, EXPANDED_INVENTORY will replace NO_BRAND_SAFETY
+                    and will be the default brand safety option. STANDARD_INVENTORY:
+                    Use TikTok''s brand safety solution. Standard inventory means
+                    that ads will appear next to content that is appropriate for most
+                    brands. LIMITED_INVENTORY: Use TikTok''s brand safety solution.
+                    Limited inventory means that your ads will not appear next to
+                    content that contains mature themes. THIRD_PARTY: Use a third-party
+                    brand safety solution. You also need to pass in a value to the
+                    brand_safety_partner field. To get the countries and regions that
+                    your ads can be deployed to based on your brand safety settings,
+                    use the /tool/region/ endpoint. Note: Pre-bid first-party Brand
+                    Safety solutions for APP_PROMOTION, WEB_CONVERSIONS, TRAFFIC,
+                    LEAD_GENERATION objectives in Auction ads, and pre-bid third-party
+                    brand safety solutions are currently allowlist-only features.
+                    If you would like to access them, please contact your TikTok representative.
+                    See Brand safety to learn about the supported advertising objectives
+                    for pre-bid Brand Safety filtering.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1800967668879361
+                    enum_package_name: BrandSafetyType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: EXPANDED_INVENTORY
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: LIMITED_INVENTORY
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: NO_BRAND_SAFETY
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: STANDARD_INVENTORY
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: THIRD_PARTY
+                      value: '4'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.brand_safety_type
+                objective_type:
+                  description: 'Required when scene is set as GEO. Campaign objective.
+                    The allowed enum values: REACH, TRAFFIC, VIDEO_VIEWS, LEAD_GENERATION,
+                    ENGAGEMENT, APP_PROMOTION, WEB_CONVERSIONS, PRODUCT_SALES. For
+                    descriptions of the objectives, see Objectives.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: CampaignObjectiveType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: NONE_TYPE
+                      value: '0'
+                    - description: ''
+                      is_valid: true
+                      key: REACH
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: TRAFFIC
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: APP_INSTALL
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: VIDEO_VIEWS
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: CONVERSIONS
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: CATALOG_SALES
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GENERATION
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGEMENT
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: RF_VIDEO_VIEW
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: RF_TRAFFIC
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: RF_ENGAGEMENT
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: RF_APP_INSTALL
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_SALES
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: APP_PROMOTION
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: WEB_CONVERSIONS
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: TOPVIEW_REACH
+                      value: '50'
+                    - description: ''
+                      is_valid: true
+                      key: EST_AD
+                      value: '51'
+                    - description: ''
+                      is_valid: true
+                      key: SS_HTC_AD
+                      value: '52'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.objective_type
+                operating_system:
+                  description: 'Valid only when scene is set as GEO. Device operating
+                    system that you want to target. Enum values: ANDROID, IOS.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1800967646681090
+                    enum_package_name: PlatformType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ANDROID
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: IOS
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.operating_system
+                placements:
+                  description: 'Required when scene is set as GEO. The apps where
+                    you want to deliver your ads. For enum values, see Enumeration
+                    - Placement. Note: If you want to get information about zip code
+                    IDs to be used for zip code targeting in the US or postal code
+                    IDs to be used for postal code targeting in Canada, the value
+                    of this field needs to include PLACEMENT_TIKTOK.'
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1800966528747521
+                      enum_package_name: InventoryFlow
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: PLACEMENT_GLOBAL_APP_BUNDLE
+                        value: '1000'
+                      - description: ''
+                        is_valid: true
+                        key: PLACEMENT_HELO
+                        value: '4000'
+                      - description: ''
+                        is_valid: true
+                        key: PLACEMENT_PANGLE
+                        value: '9000'
+                      - description: ''
+                        is_valid: true
+                        key: PLACEMENT_TIKTOK
+                        value: '3000'
+                      - description: ''
+                        is_valid: true
+                        key: PLACEMENT_VIGO
+                        value: '2000'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.placements
+                promotion_type:
+                  description: Required when scene is set as GEO and objective_type
+                    is NOT set as REACH, VIDEO_VIEWS, or ENGAGEMENT. Promotion type
+                    and you can decide where you'd like to promote your products using
+                    this field. For enum values, see Enumeration - Promotion Type.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1799795775493121
+                    enum_package_name: ExternalType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AEO_APK
+                      value: '204'
+                    - description: ''
+                      is_valid: true
+                      key: APP_ANDROID
+                      value: '201'
+                    - description: ''
+                      is_valid: true
+                      key: APP_IOS
+                      value: '202'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GENERATION
+                      value: '601'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_SHOPPING
+                      value: '305'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_SHOPPING
+                      value: '307'
+                    - description: ''
+                      is_valid: true
+                      key: TIKTOK_SHOP
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: VIDEO_SHOPPING
+                      value: '304'
+                    - description: ''
+                      is_valid: true
+                      key: WEBSITE
+                      value: '102'
+                    - description: ''
+                      is_valid: true
+                      key: WEBSITE_OR_DISPLAY
+                      value: '602'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.promotion_type
+                scene:
+                  default: GEO
+                  description: 'The targeting type that the specified targeting_ids
+                    is used for. Enum values: GEO: Geographical targeting, which consists
+                    of administrative region targeting and zip code targeting (or
+                    postal code targeting). ISP : Internet Service Provider targeting.
+                    Default value: GEO.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1800965588712449
+                    enum_package_name: ListScene
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: GEO
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: ISP
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.scene
+                targeting_ids:
+                  description: 'Targeting tag IDs. You can pass in location IDs, zip
+                    code IDs or postal code IDs, a combination of location IDs, zip
+                    code IDs or postal code IDs, or ISP IDs. Max size: 1,000. You
+                    can get location IDs, zip code IDs, or postal code IDs via geo_id
+                    returned from /tool/targeting/search/, or get location IDs via
+                    location_id returned from /tool/region/. You can get ISP IDs via
+                    isp_id returned from /tool/targeting/list/.'
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 1000
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.targeting_ids
+              required:
+              - advertiser_id
+              - targeting_ids
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Obtain details about location targeting tags by ID [Tool Targeting
+        Info](https://ads.tiktok.com/marketing_api/docs?id=1761237001980929)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: placements
+            required: false
+            source: $.http.body.placements[]
+            sub_type: number
+            type: array
+          - name: objective_type
+            required: false
+            source: $.http.body.objective_type
+            type: number
+          - name: scene
+            required: false
+            source: $.http.body.scene
+            type: number
+          - name: operating_system
+            required: false
+            source: $.http.body.operating_system
+            type: number
+          - name: brand_safety_type
+            required: false
+            source: $.http.body.brand_safety_type
+            type: number
+          - name: brand_safety_partner
+            required: false
+            source: $.http.body.brand_safety_partner
+            type: number
+          - name: promotion_type
+            required: false
+            source: $.http.body.promotion_type
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: targeting_ids
+            required: true
+            source: $.http.body.targeting_ids[]
+            sub_type: string
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          brand_safety_partner: $.http.body.brand_safety_partner
+          brand_safety_type: $.http.body.brand_safety_type
+          objective_type: $.http.body.objective_type
+          operating_system: $.http.body.operating_system
+          placements: $.http.body.placements[]
+          promotion_type: $.http.body.promotion_type
+          scene: $.http.body.scene
+          targeting_ids: $.http.body.targeting_ids[]
+        response_cookie: []
+        response_header: []
+        response_rule:
+          parent_tags[][]:
+          - geo[]:
+            - description: $.rpc.output.parent_tags[].geo.description
+              geo_id: $.rpc.output.parent_tags[].geo.id
+              geo_type: $.rpc.output.parent_tags[].geo.type
+              parent_id: $.rpc.output.parent_tags[].geo.parent_id
+              region_code: $.rpc.output.parent_tags[].geo.country_code
+            isp[]:
+            - isp_id: $.rpc.output.parent_tags[].isp.isp_id
+              location_id: $.rpc.output.parent_tags[].isp.location_id
+              region_code: $.rpc.output.parent_tags[].isp.region_code
+            name: $.rpc.output.parent_tags[].name
+            status_info[]:
+            - reason: $.rpc.output.parent_tags[].status_info.reason
+              status: $.rpc.output.parent_tags[].status_info.status
+            targeting_type: $.rpc.output.parent_tags[].format_type
+          targeting_tag_list[][]:
+          - geo[]:
+            - description: $.rpc.output.targeting_tag_list[].geo.description
+              geo_id: $.rpc.output.targeting_tag_list[].geo.id
+              geo_type: $.rpc.output.targeting_tag_list[].geo.type
+              parent_id: $.rpc.output.targeting_tag_list[].geo.parent_id
+              region_code: $.rpc.output.targeting_tag_list[].geo.country_code
+            isp[]:
+            - isp_id: $.rpc.output.targeting_tag_list[].isp.isp_id
+              location_id: $.rpc.output.targeting_tag_list[].isp.location_id
+              region_code: $.rpc.output.targeting_tag_list[].isp.region_code
+            name: $.rpc.output.targeting_tag_list[].name
+            status_info[]:
+            - reason: $.rpc.output.targeting_tag_list[].status_info.reason
+              status: $.rpc.output.targeting_tag_list[].status_info.status
+            targeting_type: $.rpc.output.targeting_tag_list[].format_type
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

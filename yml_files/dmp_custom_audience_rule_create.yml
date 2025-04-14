@@ -1,0 +1,1328 @@
+info:
+  description: "{\"en\":\"Use this endpoint to create an audience by rules. To create\
+    \ an Engagement Audience, App Activity Audience, Website Traffic Audience (Pixel\
+    \ Audience), Lead Generation Audience, Shop Activity Audience, and Business Account\
+    \ Audience, you need to specify a set of inclusion rules and optionally a set\
+    \ of exclusion rules. Rule set needs to include at least 1 rule and up to 5 rules.\\\
+    n\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u901A\u8FC7\u89C4\
+    \u5219\u521B\u5EFA\u53D7\u4F17\u3002\u60A8\u9700\u8981\u4F20\u5165\u4E00\u7CFB\
+    \u5217\u7684\u89C4\u5219\u6765\u521B\u5EFA\u5E7F\u544A\u4E92\u52A8\u53D7\u4F17\
+    \u3001\u5E94\u7528\u4E8B\u4EF6\u53D7\u4F17\u3001\u7F51\u7AD9\u8BBF\u5BA2\u53D7\
+    \u4F17\u3001\u7EBF\u7D22\u4E8B\u4EF6\u53D7\u4F17\u3001\u5546\u5E97\u6D3B\u52A8\
+    \u53D7\u4F17\u548C\u4F01\u4E1A\u53F7\u53D7\u4F17\u3002\u6700\u5C11\u9700\u8981\
+    \u4E00\u6761\u89C4\u5219\uFF0C\u6700\u591A\u4E94\u6761\u89C4\u5219\u3002\\n\\\
+    n\"}"
+  title: "{\"en\":\"Create an audience by rule\",\"zh\":\"\u901A\u8FC7\u89C4\u5219\
+    \u521B\u5EFA\u53D7\u4F17\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /dmp/custom_audience/rule/create/:
+    post:
+      operationId: Dmp Custom_audience Rule Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: Advertiser ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                audience_enhancement:
+                  default: false
+                  description: ''
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 11
+                audience_sub_type:
+                  description: 'Audience sub type, indicating the type of ads that
+                    the audience can be used. Enum values: NORMAL: Audience for non-Reach
+                    & Frequency ads. REACH_FREQUENCY: Audience for Reach & Frequency
+                    ads. It can only be used in Reach & Frequency ads. Default value:
+                    NORMAL.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804315821131778
+                    enum_package_name: AudienceSubType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: NORMAL
+                      value: '0'
+                    - description: ''
+                      is_valid: true
+                      key: REACH_FREQUENCY
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.audience_sub_type
+                audience_type:
+                  description: 'Audience type. Enum values: ENGAGEMENT: Engagement
+                    Audience (with asset type as ad groups). ENGAGEMENT_ORGANIC_VIDEO:
+                    Organic Engagement Audience (with asset type as public video).
+                    ENGAGEMENT_LIVE_VIDEO: Live Engagement Audience (with asset type
+                    as live video). APP: App Activity Audience. PIXEL: Website Traffic
+                    Audience. LEAD_GENERATION: Lead Generation Audience. BUSINESS_ACCOUNT:
+                    Business Account Audience. TIKTOK_SHOP: Shop Activity Audience.
+                    OFFLINE: Offline Activity Audience.'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1805510940313602
+                    enum_package_name: SecondPartyAudienceType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: APP
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: BUSINESS_ACCOUNT
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGEMENT
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGEMENT_LIVE_VIDEO
+                      value: '200'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGEMENT_ORGANIC_VIDEO
+                      value: '100'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GENERATION
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: OFFLINE
+                      value: '25'
+                    - description: ''
+                      is_valid: true
+                      key: PIXEL
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: TIKTOK_SHOP
+                      value: '21'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.audience_type
+                custom_audience_name:
+                  description: 'Audience name. Length limit: 128 characters.'
+                  maxLength: 128
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.custom_audience_name
+                identity_authorized_bc_id:
+                  description: Required when identity_type is BC_AUTH_TT. ID of the
+                    Business Center that a TikTok Account User in Business Center
+                    identity is associated with.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.identity_authorized_bc_id
+                identity_id:
+                  description: Required when audience_type is ENGAGEMENT_LIVE_VIDEO
+                    or ENGAGEMENT_ORGANIC_VIDEO. Identity ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.identity_id
+                identity_type:
+                  description: 'Required when audience_type is ENGAGEMENT_LIVE_VIDEO
+                    or ENGAGEMENT_ORGANIC_VIDEO. Identity type. Enum values: TT_USER,
+                    BC_AUTH_TT'
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1800331041544193
+                    enum_package_name: IdentityType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AUTH_CODE
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: BC_AUTH_TT
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: BC_SELF_TT
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: CUSTOMIZED_USER
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: TT_USER
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: UNSET
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.identity_type
+                is_auto_refresh:
+                  description: 'Whether to turn on the audience auto-refresh function.
+                    Supported values: true, false. Default value: true. If you enable
+                    this feature, your audience will automatically refresh to include
+                    the latest user data according to the lookback window you set.
+                    If you disable this feature, your audience will not automatically
+                    refresh.'
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.is_auto_refresh
+                retention_in_days:
+                  description: 'Number of days to retain the audience. Value range:
+                    1-365. Note: If this field is passed, the expiration date will
+                    be the specified number of retention days from the date when the
+                    audience was created. Any operations to the audience CANNOT reset
+                    the expiration date. If this field is not passed, the expiration
+                    date will be 365 days from the last time the audience was applied
+                    to an active ad group or modified. Applying the audience to an
+                    active ad group or modifying the audience will reset the expiration
+                    date. To learn about the actions that will reset the expiration
+                    date, refer to the Help Center article Audience Expiration Policy.'
+                  format: int32
+                  maximum: 365
+                  minimum: 1
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.retention_in_days
+                rule_spec:
+                  description: Rule of the audience.
+                  nullable: false
+                  properties:
+                    exclusion_rule_set:
+                      description: ''
+                      nullable: false
+                      properties:
+                        operator:
+                          description: 'Required when exclusion_rule_set is passed.
+                            Operator between the exclusion rules within the exclusion
+                            rule set. Enum value: OR.'
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-enum:
+                            enum_package_expired: false
+                            enum_package_id: 1805510775614465
+                            enum_package_name: RuleSetOperatorType
+                            enums:
+                            - description: ''
+                              is_valid: true
+                              key: OR
+                              value: '2'
+                            key_format: string
+                            strict: true
+                            use_part: false
+                            validate_only: false
+                            value_format: int32
+                          x-open-field-id: 1
+                          x-open-source: $.http.body.rule_spec.exclusion_rule_set.operator
+                        rules:
+                          description: Required when exclusion_rule_set is passed.
+                            A list of exclusion rules within the exclusion rule set.
+                          items:
+                            nullable: false
+                            properties:
+                              event_source_ids:
+                                description: List of event source IDs of the rule.
+                                  For an Engagement Audience, use ad group IDs as
+                                  event source IDs. If not specified, all available
+                                  event source IDs will be used. For an Organic Engagement
+                                  Audience, use TikTok post IDs as event source IDs.
+                                  You can use /identity/video/get/ to get TikTok post
+                                  IDs. The maximum allowed number of TikTok post IDs
+                                  is 10. For a Live Engagement Audience, use live
+                                  video ID as event source IDs. You can use /identity/live/get/
+                                  to get live video IDs. The maximum allowed number
+                                  of live video IDs is 10. For an App Activity Audience,
+                                  use App IDs as event source IDs. For a Website Traffic
+                                  Audience, use pixel IDs as event source IDs. For
+                                  a Lead Generation Audience, do not pass in this
+                                  field. Otherwise, an error will occur. If not specified,
+                                  all available event source IDs will be used. For
+                                  a Business Account Audience, use core user IDs of
+                                  the advertisers. You can use /user/info/ to get
+                                  a core user ID. For a Shop Activity Audience, use
+                                  TikTok Shop IDs as event source IDs. You can use
+                                  /store/list/ to get TikTok Shop IDs. For an Offline
+                                  Activity Audience, use Offline Event set IDs as
+                                  event source IDs. You can use /offline/get/ to get
+                                  Offline Event set IDs.
+                                items:
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                nullable: false
+                                type: array
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 2
+                                x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].event_source_ids
+                              filter_set:
+                                description: Required when exclusion_rule_set is passed.
+                                  The set of filters for the exclusion rule.
+                                nullable: false
+                                properties:
+                                  filters:
+                                    description: 'Required when exclusion_rule_set
+                                      is passed. An array of filters on previous audience
+                                      actions and optionally also on URL keywords
+                                      or parameters. Max size: 1.'
+                                    items:
+                                      nullable: false
+                                      properties:
+                                        field:
+                                          description: 'Required when exclusion_rule_set
+                                            is passed. Filter field. Enum value: EVENT:
+                                            To exclude the people who''ve carried
+                                            out a certain action in the past few days
+                                            as indicated by retention_days.'
+                                          nullable: false
+                                          type: string
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-field-id: 1
+                                          x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].field
+                                        operator:
+                                          description: 'Required when exclusion_rule_set
+                                            is passed. Filter operator between filter
+                                            field and filter value. Enum value: EQ:
+                                            equals.'
+                                          nullable: false
+                                          type: string
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-enum:
+                                            enum_package_expired: false
+                                            enum_package_id: 1805510758672386
+                                            enum_package_name: FilterFieldOperatorType
+                                            enums:
+                                            - description: ''
+                                              is_valid: true
+                                              key: EQ
+                                              value: '1'
+                                            key_format: string
+                                            strict: true
+                                            use_part: false
+                                            validate_only: false
+                                            value_format: int32
+                                          x-open-field-id: 2
+                                          x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].operator
+                                        parameter_filters:
+                                          description: 'List of filters on URL keywords
+                                            or parameters. Within parameter_filters,
+                                            you can add a maximum of one URL keyword
+                                            filter (with field set to URL) and 10
+                                            parameter filters (with field not set
+                                            to URL) . If specified, these filters
+                                            (parameter_filters) are combined with
+                                            the action filter (as specified by field,
+                                            operator and value) using default AND
+                                            logic to form the exclusion rule. For
+                                            example, if retention_days is 30 and filter_set
+                                            is set to {"operator": "OR", "filters":[{"field":"EVENT","operator":"EQ",
+                                            "value":"PIXEL COMPLETE PAYMENT"},"parameter_filters":[{"field":"URL","operator":"CONTAINS","value":"us"}]]},
+                                            the exclusion rule will create an audience
+                                            that excludes people who carried out the
+                                            "Complete Payment" action on a webpage
+                                            with "us" included in the page URL within
+                                            the past 30 days on the website where
+                                            the Pixel is installed.'
+                                          items:
+                                            nullable: false
+                                            properties:
+                                              field:
+                                                description: 'Required when parameter_filters
+                                                  within exclusion_rule_set is passed.
+                                                  Filter condition. Use this field
+                                                  to specify whether to filter URL
+                                                  keywords, or Web Event parameters
+                                                  reported via the Pixel. Enum value:
+                                                  URL: URL keywords. CONTENT_TYPE:
+                                                  the parameter content_type. PRICE:
+                                                  the parameter price. VALUE: the
+                                                  parameter value. CONTENT_ID: the
+                                                  parameter content_id. CONTENT_CATEGORY:
+                                                  the parameter content_category.'
+                                                nullable: false
+                                                type: string
+                                                x-open-allow-strlist: false
+                                                x-open-allow-strnum: false
+                                                x-open-field-id: 1
+                                                x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].field
+                                              operator:
+                                                description: 'Required when parameter_filters
+                                                  within exclusion_rule_set is passed.
+                                                  Filter operator between filter condition
+                                                  and filter value. Enum value: CONTAINS:
+                                                  contains. DOES_NOT_CONTAIN: doesn''t
+                                                  contain. EQ: equals. IS_LESS_THAN:
+                                                  is less than. IS_GREATER_THAN: is
+                                                  greater than. IS_LESS_THAN_OR_EQUAL_TO:
+                                                  is less than or equal to. IS_GRETER_THAN_OR_EQUAL_TO:
+                                                  is greater than or equal to. The
+                                                  allowed values vary based on the
+                                                  field value: If field is set to
+                                                  URL, operator can only be set to
+                                                  CONTAINS, DOES_NOT_CONTAIN, or EQ.
+                                                  If field is not set to URL, operator
+                                                  can be set to CONTAINS, DOES_NOT_CONTAINS,
+                                                  EQ, IS_LESS_THAN, IS_GREATER_THAN,
+                                                  IS_LESS_THAN_OR_EQUAL_TO, or IS_GREATER_THAN_OR_EQUAL_TO.'
+                                                nullable: false
+                                                type: string
+                                                x-open-allow-strlist: false
+                                                x-open-allow-strnum: false
+                                                x-open-enum:
+                                                  enum_package_expired: false
+                                                  enum_package_id: 1813841099262977
+                                                  enum_package_name: ParameterFilterOperatorType
+                                                  enums:
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: CONTAINS
+                                                    value: '3'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: DOES_NOT_CONTAIN
+                                                    value: '4'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: EQ
+                                                    value: '1'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_GREATER_THAN
+                                                    value: '5'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_GREATER_THAN_OR_EQUAL_TO
+                                                    value: '6'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_LESS_THAN
+                                                    value: '7'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_LESS_THAN_OR_EQUAL_TO
+                                                    value: '8'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: NOT_EQUAL
+                                                    value: '2'
+                                                  key_format: string
+                                                  strict: true
+                                                  use_part: false
+                                                  validate_only: false
+                                                  value_format: int32
+                                                x-open-field-id: 2
+                                                x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].operator
+                                              values:
+                                                description: 'Required when parameter_filters
+                                                  within exclusion_rule_set is passed.
+                                                  A list of filter values. Max size:
+                                                  10. Length limit for each value:
+                                                  100 characters. If you specify multiple
+                                                  values, the values will be combined
+                                                  using OR logic.'
+                                                items:
+                                                  nullable: false
+                                                  type: string
+                                                  x-open-allow-strlist: false
+                                                  x-open-allow-strnum: false
+                                                nullable: false
+                                                type: array
+                                                x-open-allow-strlist: false
+                                                x-open-allow-strnum: false
+                                                x-open-field-id: 3
+                                                x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].values
+                                            required:
+                                            - field
+                                            - operator
+                                            - values
+                                            type: object
+                                            x-open-allow-strlist: false
+                                            x-open-allow-strnum: false
+                                          nullable: false
+                                          type: array
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-field-id: 4
+                                          x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters
+                                        value:
+                                          description: Required when exclusion_rule_set
+                                            is passed. Filter value. For enum values,
+                                            see Enumeration - Filter Value.
+                                          nullable: false
+                                          type: string
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-field-id: 3
+                                          x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].value
+                                      required:
+                                      - field
+                                      - operator
+                                      - value
+                                      type: object
+                                      x-open-allow-strlist: false
+                                      x-open-allow-strnum: false
+                                    nullable: false
+                                    type: array
+                                    x-open-allow-strlist: false
+                                    x-open-allow-strnum: false
+                                    x-open-field-id: 1
+                                    x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters
+                                  operator:
+                                    description: 'Required when exclusion_rule_set
+                                      is passed. Operator between filters in the filters
+                                      object array. Enum value: OR. Within each exclusion
+                                      rule, you can only specify one object in filters.'
+                                    nullable: false
+                                    type: string
+                                    x-open-allow-strlist: false
+                                    x-open-allow-strnum: false
+                                    x-open-enum:
+                                      enum_package_expired: false
+                                      enum_package_id: 1805510742984706
+                                      enum_package_name: FilterSetOperatorType
+                                      enums:
+                                      - description: ''
+                                        is_valid: true
+                                        key: AND
+                                        value: '1'
+                                      - description: ''
+                                        is_valid: true
+                                        key: OR
+                                        value: '2'
+                                      key_format: string
+                                      strict: true
+                                      use_part: false
+                                      validate_only: false
+                                      value_format: int32
+                                    x-open-field-id: 2
+                                    x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.operator
+                                required:
+                                - filters
+                                - operator
+                                type: object
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 3
+                                x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set
+                              retention_days:
+                                description: 'Required when exclusion_rule_set is
+                                  passed. Audience lookback window. For enum values,
+                                  see Enumerations - Lookback window. Note: If audience_type
+                                  = BUSINESS_ACCOUNT, and the value in the filters
+                                  object is not BUSINESS ACCOUNT PROFILE FOLLOW, then
+                                  retention_days must be 7, 14, or 30. If audience_type
+                                  = ENGAGEMENT_LIVE_VIDEO or ENGAGEMENT_ORGANIC_VIDEO,
+                                  then retention_days must be 7, 14, or 30. To avoid
+                                  confusion between retention_days and retention_in_days,
+                                  we''ll rename retention_days in the next API version.'
+                                format: int32
+                                nullable: false
+                                type: integer
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-convert:
+                                - int64(%s)
+                                x-open-field-id: 1
+                                x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules[].retention_days
+                            required:
+                            - retention_days
+                            type: object
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                          nullable: false
+                          type: array
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 2
+                          x-open-source: $.http.body.rule_spec.exclusion_rule_set.rules
+                      required:
+                      - operator
+                      - rules
+                      type: object
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.rule_spec.exclusion_rule_set
+                    inclusion_rule_set:
+                      description: Details of the inclusion rule set.
+                      nullable: false
+                      properties:
+                        operator:
+                          description: 'Operator between the inclusion rules within
+                            the inclusion rule set. Enum value: OR. If you provide
+                            more than one inclusion rule, the inclusion rules will
+                            be combined using OR logic to broaden the audience.'
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-enum:
+                            enum_package_expired: false
+                            enum_package_id: 1805510775614465
+                            enum_package_name: RuleSetOperatorType
+                            enums:
+                            - description: ''
+                              is_valid: true
+                              key: OR
+                              value: '2'
+                            key_format: string
+                            strict: true
+                            use_part: false
+                            validate_only: false
+                            value_format: int32
+                          x-open-field-id: 1
+                          x-open-source: $.http.body.rule_spec.inclusion_rule_set.operator
+                        rules:
+                          description: A list of inclusion rules within the inclusion
+                            rule set.
+                          items:
+                            nullable: false
+                            properties:
+                              event_source_ids:
+                                description: Required when audience_type is not ENGAGEMENT
+                                  or LEAD_GENERATION. List of event source IDs of
+                                  the rule. For an Engagement Audience, use ad group
+                                  IDs as event source IDs. If not specified, all available
+                                  event source IDs will be used. For an Organic Engagement
+                                  Audience, use TikTok post IDs as event source IDs.
+                                  You can use /identity/video/get/ to get TikTok post
+                                  IDs. The maximum allowed number of TikTok post IDs
+                                  is 10. For a Live Engagement Audience, use live
+                                  video ID as event source IDs. You can use /identity/live/get/
+                                  to get live video IDs. The maximum allowed number
+                                  of live video IDs is 10. For an App Activity Audience,
+                                  use App IDs as event source IDs. For a Website Traffic
+                                  Audience, use pixel IDs as event source IDs. For
+                                  a Lead Generation Audience, do not pass in this
+                                  field. Otherwise, an error will occur. If not specified,
+                                  all available event source IDs will be used. For
+                                  a Business Account Audience, use core user IDs of
+                                  the advertisers. You can use /user/info/ to get
+                                  a core user ID. For a Shop Activity Audience, use
+                                  TikTok Shop IDs as event source IDs. You can use
+                                  /store/list/ to get TikTok Shop IDs. For an Offline
+                                  Activity Audience, use Offline Event set IDs as
+                                  event source IDs. You can use /offline/get/ to get
+                                  Offline Event set IDs.
+                                items:
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                nullable: false
+                                type: array
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 2
+                                x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].event_source_ids
+                              filter_set:
+                                description: The set of filters for each inclusion
+                                  rule.
+                                nullable: false
+                                properties:
+                                  filters:
+                                    description: 'An array of filters on previous
+                                      audience actions and optionally also on URL
+                                      keywords or parameters. Max size: 1.'
+                                    items:
+                                      nullable: false
+                                      properties:
+                                        field:
+                                          description: 'Filter field. Enum value:
+                                            EVENT: To include the people who''ve carried
+                                            out a certain action in the past few days
+                                            as indicated by retention_days.'
+                                          nullable: false
+                                          type: string
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-field-id: 1
+                                          x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].field
+                                        operator:
+                                          description: 'Filter operator between filter
+                                            field and filter value. Enum value: EQ:
+                                            equals.'
+                                          nullable: false
+                                          type: string
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-enum:
+                                            enum_package_expired: false
+                                            enum_package_id: 1805510758672386
+                                            enum_package_name: FilterFieldOperatorType
+                                            enums:
+                                            - description: ''
+                                              is_valid: true
+                                              key: EQ
+                                              value: '1'
+                                            key_format: string
+                                            strict: true
+                                            use_part: false
+                                            validate_only: false
+                                            value_format: int32
+                                          x-open-field-id: 2
+                                          x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].operator
+                                        parameter_filters:
+                                          description: 'List of filters on URL keywords
+                                            or parameters. Within parameter_filters,
+                                            you can add a maximum of one URL keyword
+                                            filter (with field set to URL) and 10
+                                            parameter filters (with field not set
+                                            to URL) . If specified, these filters
+                                            (parameter_filters) are combined with
+                                            the action filter (as specified by field,
+                                            operator and value) using default AND
+                                            logic to form the inclusion rule. For
+                                            example, if retention_days is 30 and filter_set
+                                            is set to {"operator": "OR", "filters":[{"field":"EVENT","operator":"EQ",
+                                            "value":"PIXEL COMPLETE PAYMENT"},"parameter_filters":[{"field":"URL","operator":"CONTAINS","value":"us"}]]},
+                                            the inclusion rule will create an audience
+                                            that includes people who carried out the
+                                            "Complete Payment" action on a webpage
+                                            with "us" included in the page URL within
+                                            the past 30 days on the website where
+                                            the Pixel is installed.'
+                                          items:
+                                            nullable: false
+                                            properties:
+                                              field:
+                                                description: 'Required when parameter_filters
+                                                  within inclusion_rule_set is passed.
+                                                  Filter condition. Use this field
+                                                  to specify whether to filter URL
+                                                  keywords, or Web Event parameters
+                                                  reported via the Pixel. Enum value:
+                                                  URL: URL keywords. CONTENT_TYPE:
+                                                  the parameter content_type. PRICE:
+                                                  the parameter price. VALUE: the
+                                                  parameter value. CONTENT_ID: the
+                                                  parameter content_id. CONTENT_CATEGORY:
+                                                  the parameter content_category.'
+                                                nullable: false
+                                                type: string
+                                                x-open-allow-strlist: false
+                                                x-open-allow-strnum: false
+                                                x-open-field-id: 1
+                                                x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].field
+                                                x-open-validate:
+                                                - error_msg: ''
+                                                  expr: '%s in ["URL", "CONTENT_TYPE",
+                                                    "PRICE", "VALUE", "CONTENT_ID",
+                                                    "CONTENT_CATEGORY"]'
+                                              operator:
+                                                description: 'Required when parameter_filters
+                                                  within inclusion_rule_set is passed.
+                                                  Filter operator between filter condition
+                                                  and filter value. Enum value: CONTAINS:
+                                                  contains. DOES_NOT_CONTAIN: doesn''t
+                                                  contain. EQ: equals. IS_LESS_THAN:
+                                                  is less than. IS_GREATER_THAN: is
+                                                  greater than. IS_LESS_THAN_OR_EQUAL_TO:
+                                                  is less than or equal to. IS_GRETER_THAN_OR_EQUAL_TO:
+                                                  is greater than or equal to. The
+                                                  allowed values vary based on the
+                                                  field value: If field is set to
+                                                  URL, operator can only be set to
+                                                  CONTAINS, DOES_NOT_CONTAIN, or EQ.
+                                                  If field is not set to URL, operator
+                                                  can be set to CONTAINS, DOES_NOT_CONTAINS,
+                                                  EQ, IS_LESS_THAN, IS_GREATER_THAN,
+                                                  IS_LESS_THAN_OR_EQUAL_TO, or IS_GREATER_THAN_OR_EQUAL_TO.'
+                                                nullable: false
+                                                type: string
+                                                x-open-allow-strlist: false
+                                                x-open-allow-strnum: false
+                                                x-open-enum:
+                                                  enum_package_expired: false
+                                                  enum_package_id: 1813841099262977
+                                                  enum_package_name: ParameterFilterOperatorType
+                                                  enums:
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: CONTAINS
+                                                    value: '3'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: DOES_NOT_CONTAIN
+                                                    value: '4'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: EQ
+                                                    value: '1'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_GREATER_THAN
+                                                    value: '5'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_GREATER_THAN_OR_EQUAL_TO
+                                                    value: '6'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_LESS_THAN
+                                                    value: '7'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: IS_LESS_THAN_OR_EQUAL_TO
+                                                    value: '8'
+                                                  - description: ''
+                                                    is_valid: true
+                                                    key: NOT_EQUAL
+                                                    value: '2'
+                                                  key_format: string
+                                                  strict: true
+                                                  use_part: false
+                                                  validate_only: false
+                                                  value_format: int32
+                                                x-open-field-id: 2
+                                                x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].operator
+                                              values:
+                                                description: 'Required when parameter_filters
+                                                  within inclusion_rule_set is passed.
+                                                  A list of filter values. Max size:
+                                                  10. Length limit for each value:
+                                                  100 characters. If you specify multiple
+                                                  values, the values will be combined
+                                                  using OR logic.'
+                                                items:
+                                                  maxLength: 100
+                                                  nullable: false
+                                                  type: string
+                                                  x-open-allow-strlist: false
+                                                  x-open-allow-strnum: false
+                                                maxItems: 10
+                                                nullable: false
+                                                type: array
+                                                x-open-allow-strlist: false
+                                                x-open-allow-strnum: false
+                                                x-open-field-id: 3
+                                                x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].values
+                                            required:
+                                            - field
+                                            - operator
+                                            - values
+                                            type: object
+                                            x-open-allow-strlist: false
+                                            x-open-allow-strnum: false
+                                          nullable: false
+                                          type: array
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-field-id: 4
+                                          x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters
+                                        value:
+                                          description: Filter value. For enum values,
+                                            see Enumeration - Filter Value.
+                                          nullable: false
+                                          type: string
+                                          x-open-allow-strlist: false
+                                          x-open-allow-strnum: false
+                                          x-open-field-id: 3
+                                          x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].value
+                                      required:
+                                      - field
+                                      - operator
+                                      - value
+                                      type: object
+                                      x-open-allow-strlist: false
+                                      x-open-allow-strnum: false
+                                    nullable: false
+                                    type: array
+                                    x-open-allow-strlist: false
+                                    x-open-allow-strnum: false
+                                    x-open-field-id: 1
+                                    x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters
+                                  operator:
+                                    description: 'Operator between filters in the
+                                      filters object array. Enum value: OR. Within
+                                      each inclusion rule, you can only specify one
+                                      object in filters.'
+                                    nullable: false
+                                    type: string
+                                    x-open-allow-strlist: false
+                                    x-open-allow-strnum: false
+                                    x-open-enum:
+                                      enum_package_expired: false
+                                      enum_package_id: 1805510742984706
+                                      enum_package_name: FilterSetOperatorType
+                                      enums:
+                                      - description: ''
+                                        is_valid: true
+                                        key: AND
+                                        value: '1'
+                                      - description: ''
+                                        is_valid: true
+                                        key: OR
+                                        value: '2'
+                                      key_format: string
+                                      strict: true
+                                      use_part: false
+                                      validate_only: false
+                                      value_format: int32
+                                    x-open-field-id: 2
+                                    x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.operator
+                                required:
+                                - filters
+                                - operator
+                                type: object
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 3
+                                x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set
+                              retention_days:
+                                description: 'Audience lookback window. For enum values,
+                                  see Enumerations - Lookback window. Note: If audience_type
+                                  = BUSINESS_ACCOUNT, and the value in the filters
+                                  object is not BUSINESS ACCOUNT PROFILE FOLLOW, then
+                                  retention_days must be 7, 14, or 30. If audience_type
+                                  = ENGAGEMENT_LIVE_VIDEO or ENGAGEMENT_ORGANIC_VIDEO,
+                                  then retention_days must be 7, 14, or 30. To avoid
+                                  confusion between retention_days and retention_in_days,
+                                  we''ll rename retention_days in the next API version.'
+                                format: int32
+                                nullable: false
+                                type: integer
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-convert:
+                                - int64(%s)
+                                x-open-field-id: 1
+                                x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules[].retention_days
+                            required:
+                            - retention_days
+                            type: object
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                          nullable: false
+                          type: array
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 2
+                          x-open-source: $.http.body.rule_spec.inclusion_rule_set.rules
+                      required:
+                      - operator
+                      - rules
+                      type: object
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.rule_spec.inclusion_rule_set
+                  required:
+                  - inclusion_rule_set
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 10
+                  x-open-source: $.http.body.rule_spec
+              required:
+              - advertiser_id
+              - custom_audience_name
+              - audience_type
+              - rule_spec
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id=1739940509849601)
+      tags:
+      - Audience
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: custom_audience_name
+            required: true
+            source: $.http.body.custom_audience_name
+            type: string
+          - name: audience_type
+            required: true
+            source: $.http.body.audience_type
+            type: number
+          - name: audience_sub_type
+            required: false
+            source: $.http.body.audience_sub_type
+            type: number
+          - name: retention_in_days
+            required: false
+            source: $.http.body.retention_in_days
+            type: number
+          - name: is_auto_refresh
+            required: false
+            source: $.http.body.is_auto_refresh
+            type: boolean
+          - name: identity_id
+            required: false
+            source: $.http.body.identity_id
+            type: string
+          - name: identity_type
+            required: false
+            source: $.http.body.identity_type
+            type: number
+          - name: identity_authorized_bc_id
+            required: false
+            source: $.http.body.identity_authorized_bc_id
+            type: number
+          - children:
+            - children:
+              - name: operator
+                required: true
+                source: $.http.body.rule_spec.inclusion_rule_set.operator
+                type: number
+              - children:
+                - children:
+                  - name: retention_days
+                    required: true
+                    source: $.http.body.rule_spec.inclusion_rule_set.rules[].retention_days
+                    type: number
+                  - children:
+                    - type: string
+                    is_expand: true
+                    name: event_source_ids
+                    required: false
+                    source: $.http.body.rule_spec.inclusion_rule_set.rules[].event_source_ids
+                    sub_type: string
+                    type: array
+                  - children:
+                    - children:
+                      - children:
+                        - name: field
+                          required: true
+                          source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].field
+                          type: string
+                        - name: operator
+                          required: true
+                          source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].operator
+                          type: number
+                        - name: value
+                          required: true
+                          source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].value
+                          type: string
+                        - children:
+                          - children:
+                            - name: field
+                              required: true
+                              source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].field
+                              type: string
+                            - name: operator
+                              required: true
+                              source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].operator
+                              type: number
+                            - children:
+                              - type: string
+                              is_expand: true
+                              name: values
+                              required: true
+                              source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].values
+                              sub_type: string
+                              type: array
+                            is_expand: true
+                            type: object
+                          is_expand: true
+                          name: parameter_filters
+                          required: false
+                          sub_type: object
+                          type: array
+                        is_expand: true
+                        type: object
+                      is_expand: true
+                      name: filters
+                      required: true
+                      sub_type: object
+                      type: array
+                    - name: operator
+                      required: true
+                      source: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.operator
+                      type: number
+                    is_expand: true
+                    name: filter_set
+                    required: false
+                    type: object
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: rules
+                required: true
+                sub_type: object
+                type: array
+              is_expand: true
+              name: inclusion_rule_set
+              required: true
+              type: object
+            - children:
+              - name: operator
+                required: true
+                source: $.http.body.rule_spec.exclusion_rule_set.operator
+                type: number
+              - children:
+                - children:
+                  - name: retention_days
+                    required: true
+                    source: $.http.body.rule_spec.exclusion_rule_set.rules[].retention_days
+                    type: number
+                  - children:
+                    - type: string
+                    is_expand: true
+                    name: event_source_ids
+                    required: false
+                    source: $.http.body.rule_spec.exclusion_rule_set.rules[].event_source_ids
+                    sub_type: string
+                    type: array
+                  - children:
+                    - children:
+                      - children:
+                        - name: field
+                          required: true
+                          source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].field
+                          type: string
+                        - name: operator
+                          required: true
+                          source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].operator
+                          type: number
+                        - name: value
+                          required: true
+                          source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].value
+                          type: string
+                        - children:
+                          - children:
+                            - name: field
+                              required: true
+                              source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].field
+                              type: string
+                            - name: operator
+                              required: true
+                              source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].operator
+                              type: number
+                            - children:
+                              - type: string
+                              is_expand: true
+                              name: values
+                              required: true
+                              source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].values
+                              sub_type: string
+                              type: array
+                            is_expand: true
+                            type: object
+                          is_expand: true
+                          name: parameter_filters
+                          required: false
+                          sub_type: object
+                          type: array
+                        is_expand: true
+                        type: object
+                      is_expand: true
+                      name: filters
+                      required: true
+                      sub_type: object
+                      type: array
+                    - name: operator
+                      required: true
+                      source: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.operator
+                      type: number
+                    is_expand: true
+                    name: filter_set
+                    required: false
+                    type: object
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: rules
+                required: true
+                sub_type: object
+                type: array
+              is_expand: true
+              name: exclusion_rule_set
+              required: false
+              type: object
+            is_expand: false
+            name: rule_spec
+            required: true
+            type: object
+          - children:
+            - name: core_user_id
+              required: false
+              source: $.http.body.context_info.core_user_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+          - name: audience_enhancement
+            required: false
+            source: $.http.body.audience_enhancement
+            type: boolean
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          audience_enhancement: $.http.body.audience_enhancement
+          audience_sub_type: $.http.body.audience_sub_type
+          audience_type: $.http.body.audience_type
+          context_info:
+            core_user_id: $.http.body.context_info.core_user_id
+          custom_audience_name: $.http.body.custom_audience_name
+          identity_authorized_bc_id: $.http.body.identity_authorized_bc_id
+          identity_id: $.http.body.identity_id
+          identity_type: $.http.body.identity_type
+          is_auto_refresh: $.http.body.is_auto_refresh
+          retention_in_days: $.http.body.retention_in_days
+          rule_spec:
+            exclusion_rule_set:
+              operator: $.http.body.rule_spec.exclusion_rule_set.operator
+              rules[][]:
+              - event_source_ids: $.http.body.rule_spec.exclusion_rule_set.rules[].event_source_ids
+                filter_set[]:
+                - filters[][]:
+                  - field: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].field
+                    operator: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].operator
+                    parameter_filters[][]:
+                    - field: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].field
+                      operator: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].operator
+                      values: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].values
+                    value: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.filters[].value
+                  operator: $.http.body.rule_spec.exclusion_rule_set.rules[].filter_set.operator
+                retention_days: $.http.body.rule_spec.exclusion_rule_set.rules[].retention_days
+            inclusion_rule_set:
+              operator: $.http.body.rule_spec.inclusion_rule_set.operator
+              rules[][]:
+              - event_source_ids: $.http.body.rule_spec.inclusion_rule_set.rules[].event_source_ids
+                filter_set[]:
+                - filters[][]:
+                  - field: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].field
+                    operator: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].operator
+                    parameter_filters[][]:
+                    - field: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].field
+                      operator: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].operator
+                      values: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].parameter_filters[].values
+                    value: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.filters[].value
+                  operator: $.http.body.rule_spec.inclusion_rule_set.rules[].filter_set.operator
+                retention_days: $.http.body.rule_spec.inclusion_rule_set.rules[].retention_days
+        response_cookie: []
+        response_header: []
+        response_rule:
+          custom_audience_id: $.rpc.output.custom_audience_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: biz-api.tiktok.com

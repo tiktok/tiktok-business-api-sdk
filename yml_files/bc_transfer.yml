@@ -1,0 +1,244 @@
+info:
+  description: '{"en":"Transfer balance","zh":"Transfer balance"}'
+  title: '{"en":"Transfer balance","zh":"Transfer balance"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/transfer/:
+    post:
+      operationId: Bc Transfer
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.advertiser_id
+                bc_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+                cash_amount:
+                  description: ''
+                  format: float
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.cash_amount
+                child_bc_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.child_bc_id
+                grant_amount:
+                  description: ''
+                  format: float
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.grant_amount
+                request_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.request_id
+                transfer_level:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.transfer_level
+                transfer_type:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1811243935576066
+                    enum_package_name: TransferType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: RECHARGE
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: REFUND
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.transfer_type
+              required:
+              - bc_id
+              - transfer_type
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Process payments (recharge money to or deduct money from an ad account
+        in a Business Center. [BC Transfer](https://business-api.tiktok.com/portal/docs?id=1739939095321601)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: child_bc_id
+            required: false
+            source: $.http.body.child_bc_id
+            type: number
+          - name: transfer_level
+            required: false
+            source: $.http.body.transfer_level
+            type: string
+          - name: advertiser_id
+            required: false
+            source: $.http.body.advertiser_id
+            type: number
+          - name: transfer_type
+            required: true
+            source: $.http.body.transfer_type
+            type: number
+          - name: cash_amount
+            required: false
+            source: $.http.body.cash_amount
+            type: number
+          - name: grant_amount
+            required: false
+            source: $.http.body.grant_amount
+            type: number
+          - name: request_id
+            required: false
+            source: $.http.body.request_id
+            type: string
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.body.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.body.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.body.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.body.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.body.context_info.x_real_ip
+              type: string
+            name: context_info
+            required: true
+            source: $.http.body.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          bc_id: $.http.body.bc_id
+          cash_amount: $.http.body.cash_amount
+          child_bc_id: $.http.body.child_bc_id
+          context_info: $.http.body.context_info
+          grant_amount: $.http.body.grant_amount
+          request_id: $.http.body.request_id
+          transfer_level: $.http.body.transfer_level
+          transfer_type: $.http.body.transfer_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          advertiser_id: $.rpc.output.advertiser_id
+          bc_id: $.rpc.output.bc_id
+          child_bc_id: $.rpc.output.child_bc_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,445 @@
+info:
+  description: '{"en":"2","zh":"3"}'
+  title: '{"en":"AdvertiserUpdate","zh":"1"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /advertiser/update/:
+    post:
+      operationId: Advertiser Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                address:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 17
+                  x-open-source: $.http.body.address
+                advertiser_budgets:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      advertiser_id:
+                        description: ''
+                        format: int64
+                        nullable: false
+                        type: integer
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.advertiser_budgets[].advertiser_id
+                      budget:
+                        description: ''
+                        format: double
+                        nullable: false
+                        type: number
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.advertiser_budgets[].budget
+                      budget_mode:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1800785014543361
+                          enum_package_name: AccountBudgetMode
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CUSTOM_BUDGET
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: DAILY_BUDGET
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: MONTHLY_BUDGET
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: UNLIMITED
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.advertiser_budgets[].budget_mode
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 16
+                  x-open-source: $.http.body.advertiser_budgets
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                advertiser_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.advertiser_name
+                bc_id:
+                  description: ''
+                  format: int64
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 13
+                  x-open-source: $.http.body.bc_id
+                budget_update_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 15
+                  x-open-source: $.http.body.budget_update_type
+                child_bc_id:
+                  description: ''
+                  format: int64
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 14
+                  x-open-source: $.http.body.child_bc_id
+                company:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.company
+                contact_email:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.contact_email
+                contact_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.contact_name
+                contact_number:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.contact_number
+                license_image_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.license_image_id
+                license_no:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.license_no
+                need_submit_certificate:
+                  description: ''
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 12
+                  x-open-source: $.http.body.need_submit_certificate
+                promotion_link:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.promotion_link
+                qualification_images:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      image_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.qualification_images[].image_id
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 10
+                  x-open-source: $.http.body.qualification_images
+                tax_map:
+                  additionalProperties:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  description: ''
+                  nullable: false
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 11
+                  x-open-source: $.http.body.tax_map
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update an ad account. [Advertiser Update](https://business-api.tiktok.com/portal/docs?id=1739939050770434)
+      tags:
+      - Account Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: false
+            source: $.http.body.advertiser_id
+            type: number
+          - name: advertiser_name
+            required: false
+            source: $.http.body.advertiser_name
+            type: string
+          - name: company
+            required: false
+            source: $.http.body.company
+            type: string
+          - name: contact_name
+            required: false
+            source: $.http.body.contact_name
+            type: string
+          - name: contact_email
+            required: false
+            source: $.http.body.contact_email
+            type: string
+          - name: contact_number
+            required: false
+            source: $.http.body.contact_number
+            type: string
+          - name: promotion_link
+            required: false
+            source: $.http.body.promotion_link
+            type: string
+          - name: license_no
+            required: false
+            source: $.http.body.license_no
+            type: string
+          - name: license_image_id
+            required: false
+            source: $.http.body.license_image_id
+            type: string
+          - children:
+            - children:
+              - name: image_id
+                required: false
+                source: $.http.body.qualification_images[].image_id
+                type: string
+              type: object
+            name: qualification_images
+            required: false
+            source: $.http.body.qualification_images
+            sub_type: object
+            type: array
+          - children:
+            - type: string
+            name: tax_map
+            required: false
+            source: $.http.body.tax_map
+            sub_type: string
+            type: dict
+          - name: need_submit_certificate
+            required: false
+            source: $.http.body.need_submit_certificate
+            type: boolean
+          - name: bc_id
+            required: false
+            source: $.http.body.bc_id
+            type: number
+          - name: child_bc_id
+            required: false
+            source: $.http.body.child_bc_id
+            type: number
+          - name: budget_update_type
+            required: false
+            source: $.http.body.budget_update_type
+            type: string
+          - children:
+            - children:
+              - name: advertiser_id
+                required: false
+                source: $.http.body.advertiser_budgets[].advertiser_id
+                type: number
+              - name: budget_mode
+                required: false
+                source: $.http.body.advertiser_budgets[].budget_mode
+                type: number
+              - name: budget
+                required: false
+                source: $.http.body.advertiser_budgets[].budget
+                type: number
+              type: object
+            name: advertiser_budgets
+            required: false
+            source: $.http.body.advertiser_budgets
+            sub_type: object
+            type: array
+          - name: address
+            required: false
+            source: $.http.body.address
+            type: string
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.body.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.body.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.body.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.body.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.body.context_info.x_real_ip
+              type: string
+            name: context_info
+            required: true
+            source: $.http.body.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          address: $.http.body.address
+          advertiser_budgets: $.http.body.advertiser_budgets
+          advertiser_id: $.http.body.advertiser_id
+          advertiser_name: $.http.body.advertiser_name
+          bc_id: $.http.body.bc_id
+          budget_update_type: $.http.body.budget_update_type
+          child_bc_id: $.http.body.child_bc_id
+          company: $.http.body.company
+          contact_email: $.http.body.contact_email
+          contact_name: $.http.body.contact_name
+          contact_number: $.http.body.contact_number
+          context_info: $.http.body.context_info
+          license_image_id: $.http.body.license_image_id
+          license_no: $.http.body.license_no
+          need_submit_certificate: $.http.body.need_submit_certificate
+          promotion_link: $.http.body.promotion_link
+          qualification_images: $.http.body.qualification_images
+          tax_map: $.http.body.tax_map
+        response_cookie: []
+        response_header: []
+        response_rule:
+          advertiser_list: $.rpc.output.advertiser_list
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

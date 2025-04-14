@@ -1,0 +1,211 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get targeting tags.\\n\\nYou can get\
+    \ one single type of targeting tag that is used to target ad audiences: ISP IDs.\
+    \ Then to apply ISP IDs to your ads, you can pass the returned ISP IDs to isp_ids\
+    \ when calling /adgroup/create/, /adgroup/update/ or /ad/audience_size/estimate/.\"\
+    ,\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u83B7\u53D6\u5B9A\u5411\
+    \u6807\u7B7E\u3002\\n\\n\u4EC5\u652F\u6301\u83B7\u53D6\u4E00\u79CD\u7528\u4E8E\
+    \u5B9A\u5411\u53D7\u4F17\u7684\u5B9A\u5411\u6807\u7B7E\uFF1A\u4E92\u8054\u7F51\
+    \u670D\u52A1\u63D0\u4F9B\u5546ID\u3002\u82E5\u8981\u5C06\u5B9A\u5411\u6807\u7B7E\
+    \u5E94\u7528\u4E8E\u5E7F\u544A\u4E2D\uFF0C\u9700\u5728\u8C03\u7528/adgroup/create/\uFF0C\
+    /adgroup/update/\uFF0C\u6216/ad/audience_size/estimate/\u65F6\uFF0C\u5C06\u672C\
+    \u63A5\u53E3\u8FD4\u56DE\u7684\u4E92\u8054\u7F51\u670D\u52A1\u63D0\u4F9B\u5546\
+    ID\u4F20\u7ED9isp_ids\u5B57\u6BB5\u3002\"}"
+  title: "{\"en\":\"Get internet service providers\",\"zh\":\"\u83B7\u53D6\u4E92\u8054\
+    \u7F51\u670D\u52A1\u63D0\u4F9B\u5546\u5217\u8868\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/targeting/list/:
+    get:
+      operationId: Tool Targeting List
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              maxItems: 1000
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.location_ids
+        description: 'IDs of the locations that you want to get the supported ISP
+          IDs for. Max size: 1000. To find out the list of location IDs, see Location
+          IDs. Note: You need to pass location IDs at the country or region level.
+          To get the available locations and corresponding IDs based on your placement
+          and objective, use the /tool/region/ and the returned level for location
+          IDs at the country or region level will be COUNTRY.'
+        in: query
+        name: location_ids
+        required: true
+        x-open-field-id: 2
+      - description: 'The targeting type that the targeting tags are used for. The
+          allowed enum values: ISP ( Internet Service Provider targeting).'
+        in: query
+        name: scene
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1800965588712449
+            enum_package_name: ListScene
+            enums:
+            - description: ''
+              is_valid: false
+              key: GEO
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: ISP
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: true
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.scene
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get internet service providers [Tool Targeting List](https://ads.tiktok.com/marketing_api/docs?id=1762962378261506)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: scene
+            required: true
+            source: $.http.query.scene
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: location_ids
+            required: true
+            source: $.http.query.location_ids[]
+            sub_type: string
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          location_ids: $.http.query.location_ids[]
+          scene: $.http.query.scene
+        response_cookie: []
+        response_header: []
+        response_rule:
+          parent_tags[][]:
+          - format_type: $.rpc.output.parent_tags[].format_type
+            geo[]:
+            - country_code: $.rpc.output.parent_tags[].geo.country_code
+              description: $.rpc.output.parent_tags[].geo.description
+              id: $.rpc.output.parent_tags[].geo.id
+              parent_id: $.rpc.output.parent_tags[].geo.parent_id
+              type: $.rpc.output.parent_tags[].geo.type
+            isp[]:
+            - isp_id: $.rpc.output.parent_tags[].isp.isp_id
+              location_id: $.rpc.output.parent_tags[].isp.location_id
+              region_code: $.rpc.output.parent_tags[].isp.region_code
+            name: $.rpc.output.parent_tags[].name
+            status_info[]:
+            - reason: $.rpc.output.parent_tags[].status_info.reason
+              status: $.rpc.output.parent_tags[].status_info.status
+          targeting_tag_list[][]:
+          - geo[]:
+            - country_code: $.rpc.output.targeting_tag_list[].geo.country_code
+              description: $.rpc.output.targeting_tag_list[].geo.description
+              id: $.rpc.output.targeting_tag_list[].geo.id
+              parent_id: $.rpc.output.targeting_tag_list[].geo.parent_id
+              type: $.rpc.output.targeting_tag_list[].geo.type
+            isp[]:
+            - isp_id: $.rpc.output.targeting_tag_list[].isp.isp_id
+              location_id: $.rpc.output.targeting_tag_list[].isp.location_id
+              region_code: $.rpc.output.targeting_tag_list[].isp.region_code
+            name: $.rpc.output.targeting_tag_list[].name
+            status_info[]:
+            - reason: $.rpc.output.targeting_tag_list[].status_info.reason
+              status: $.rpc.output.targeting_tag_list[].status_info.status
+            targeting_type: $.rpc.output.targeting_tag_list[].format_type
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,294 @@
+info:
+  description: '{"en":"Get BC","zh":"Get BC"}'
+  title: "{\"en\":\"Get BC\",\"zh\":\"\u67E5\u8BE2BC\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/get/:
+    get:
+      operationId: Bc Get
+      parameters:
+      - description: ''
+        in: query
+        name: bc_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: scene
+        required: false
+        schema:
+          default: SINGLE_ACCOUNT
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1803660327790593
+            enum_package_name: BCGetScene
+            enums:
+            - description: ''
+              is_valid: true
+              key: SINGLE_ACCOUNT
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: TIERED_ACCOUNT
+              value: '2'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: true
+            value_format: int32
+          x-open-source: $.http.query.scene
+        x-open-field-id: 2
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                keyword:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                keyword_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803660403768321
+                    enum_package_name: BCSearchKeywordType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ASSET
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: MEMBER
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: PARTNER
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: TIER
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 2
+                relation_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803660432711682
+                    enum_package_name: TierBCRelationType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: CHILD
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: PARENT
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 50
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 5
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id=1737115687501826)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: false
+            source: $.http.query.bc_id
+            type: number
+          - name: scene
+            required: false
+            source: $.http.query.scene
+            type: string
+          - name: keyword
+            required: false
+            source: $.http.query.filtering.keyword
+            type: string
+          - name: keyword_type
+            required: false
+            source: $.http.query.filtering.keyword_type
+            type: number
+          - name: relation_type
+            required: false
+            source: $.http.query.filtering.relation_type
+            type: number
+          - name: page
+            required: false
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: false
+            source: $.http.query.page_size
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.query.bc_id
+          keyword: $.http.query.filtering.keyword
+          keyword_type: $.http.query.filtering.keyword_type
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          relation_type: $.http.query.filtering.relation_type
+          scene: $.http.query.scene
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list[][]:
+          - bc_info[]:
+            - bc_id: $.rpc.output.bc_infos[].bc_base_info.bc_id
+              company: $.rpc.output.bc_infos[].bc_base_info.company
+              currency: $.rpc.output.bc_infos[].bc_base_info.currency
+              name: $.rpc.output.bc_infos[].bc_base_info.bc_name
+              organization_type: $.rpc.output.bc_infos[].bc_base_info.organization_type
+              registered_area: $.rpc.output.bc_infos[].bc_base_info.registered_area
+              status: $.rpc.output.bc_infos[].bc_base_info.status
+              timezone: $.rpc.output.bc_infos[].bc_base_info.timezone
+              type: $.rpc.output.bc_infos[].bc_base_info.type
+            binding_status: $.rpc.output.bc_infos[].binding_status
+            ext_user_role: $.rpc.output.bc_infos[].ext_user_role
+            user_role: $.rpc.output.bc_infos[].user_role
+          page_info: $.rpc.output.page_info
+          parent_bc:
+            bc_info:
+              bc_id: $.rpc.output.parent_bc.bc_base_info.bc_id
+              company: $.rpc.output.parent_bc.bc_base_info.company
+              currency: $.rpc.output.parent_bc.bc_base_info.currency
+              name: $.rpc.output.parent_bc.bc_base_info.bc_name
+              organization_type: $.rpc.output.parent_bc.bc_base_info.organization_type
+              registered_area: $.rpc.output.parent_bc.bc_base_info.registered_area
+              status: $.rpc.output.parent_bc.bc_base_info.status
+              timezone: $.rpc.output.parent_bc.bc_base_info.timezone
+              type: $.rpc.output.parent_bc.bc_base_info.type
+            binding_status: $.rpc.output.parent_bc.binding_status
+            ext_user_role: $.rpc.output.parent_bc.ext_user_role
+            user_role: $.rpc.output.parent_bc.user_role
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

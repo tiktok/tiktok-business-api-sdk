@@ -1,0 +1,227 @@
+info:
+  description: '{"en":"Get BC transactions","zh":"Get BC transactions"}'
+  title: '{"en":"Get BC transactions","zh":"Get BC transactions"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/transaction/get/:
+    get:
+      operationId: Bc Transaction Get
+      parameters:
+      - description: ''
+        in: query
+        name: bc_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                funds_type:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1803629000016898
+                      enum_package_name: FundsType
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: FUNDS_TYPE_CASH
+                        value: '1'
+                      - description: ''
+                        is_valid: true
+                        key: FUNDS_TYPE_GRANT
+                        value: '2'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.funds_types
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: start_date
+        required: false
+        schema:
+          format: date
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.start_date
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: end_date
+        required: false
+        schema:
+          format: date
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.end_date
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 50
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 6
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get translaction records of a Business Center. [BC Transaction Get](https://business-api.tiktok.com/portal/docs?id=1739939140408322)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.query.bc_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: funds_types
+            required: false
+            source: $.http.query.filtering.funds_type[]
+            sub_type: number
+            type: array
+          - name: start_date
+            required: false
+            source: $.http.query.start_date
+            type: string
+          - name: end_date
+            required: false
+            source: $.http.query.end_date
+            type: string
+          - name: page
+            required: false
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: false
+            source: $.http.query.page_size
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.query.bc_id
+          end_date: $.http.query.end_date
+          funds_types: $.http.query.filtering.funds_type[]
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          start_date: $.http.query.start_date
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list: $.rpc.output.transactions
+          page_info: $.rpc.output.page_info
+          transaction_summary: $.rpc.output.transaction_summary
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

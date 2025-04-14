@@ -1,0 +1,206 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get the agreement for the Lead Generation\
+    \ Ads feature. You must specify the feature that you want to request the agreement\
+    \ for using the term_type field.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\
+    \u63A5\u53E3\u67E5\u770B\u534F\u8BAE\u5185\u5BB9\u3002\u60A8\u9700\u8981\u4F7F\
+    \u7528term_type\u5B57\u6BB5\u6307\u5B9A\u5E0C\u671B\u67E5\u770B\u7684\u534F\u8BAE\
+    \u7C7B\u578B\uFF0C\u76EE\u524D\u4EC5\u652F\u6301\u67E5\u770B\u7EBF\u7D22\u5E7F\
+    \u544A\u534F\u8BAE\u3002\"}"
+  title: "{\"en\":\"Term Get\",\"zh\":\"\u67E5\u770B\u534F\u8BAE\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /term/get/:
+    get:
+      operationId: Term Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: term_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1825806465200257
+            enum_package_name: TermType
+            enums:
+            - description: ''
+              is_valid: true
+              key: InstantPage
+              value: InstantPage
+            - description: ''
+              is_valid: true
+              key: LeadAds
+              value: LeadAds
+            - description: ''
+              is_valid: true
+              key: Pixel
+              value: Pixel
+            - description: ''
+              is_valid: true
+              key: ReachFrequency
+              value: ReachFrequency
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.term_type
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: lang
+        required: false
+        schema:
+          default: EN
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804149984643138
+            enum_package_name: TermLanguage
+            enums:
+            - description: ''
+              is_valid: true
+              key: EN
+              value: '0'
+            - description: ''
+              is_valid: true
+              key: JA
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: ZH
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.lang
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get Terms. [Term Get](https://business-api.tiktok.com/portal/docs?id=1737191909315585)
+      tags:
+      - Account Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: string
+          - name: term_type
+            required: true
+            source: $.http.query.term_type
+            type: string
+          - name: lang
+            required: false
+            source: $.http.query.lang
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+          lang: $.http.query.lang
+          term_type: $.http.query.term_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          terms: $.rpc.output.terms
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

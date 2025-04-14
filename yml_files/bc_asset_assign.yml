@@ -1,0 +1,361 @@
+info:
+  description: '{"en":"Assign asset\n","zh":"Assign asset\n"}'
+  title: '{"en":"Assign asset","zh":"Assign asset"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/asset/assign/:
+    post:
+      operationId: Bc Asset Assign
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_role:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803356642456577
+                    enum_package_name: AdvertiserRole
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ADMIN
+                      value: '0'
+                    - description: ''
+                      is_valid: true
+                      key: ANALYST
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: OPERATOR
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.advertiser_role
+                asset_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.asset_id
+                asset_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803356502782978
+                    enum_package_name: BCAsset
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ADVERTISER
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: CATALOG
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: DOMAIN
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: PIXEL
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: STOREFRONT
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: TIKTOK_SHOP
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: TT_ACCOUNT
+                      value: '8'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.asset_type
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+                catalog_role:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803438583019522
+                    enum_package_name: CatalogRole
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ADMIN
+                      value: '1000'
+                    - description: ''
+                      is_valid: true
+                      key: AD_PROMOTE
+                      value: '1100'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.catalog_role
+                form_library_role:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803457011208193
+                    enum_package_name: FormLibraryRole
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ADMIN
+                      value: '6000'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.form_library_role
+                store_role:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803457066320897
+                    enum_package_name: StoreRole
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AD_PROMOTION
+                      value: '3100'
+                    - description: ''
+                      is_valid: true
+                      key: MANAGER
+                      value: '3000'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.store_role
+                tt_account_roles:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1803438620652801
+                      enum_package_name: TTAccountRole
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: DIRECT_MESSAGE
+                        value: '5005'
+                      - description: ''
+                        is_valid: true
+                        key: LIVE
+                        value: '5001'
+                      - description: ''
+                        is_valid: true
+                        key: POST
+                        value: '5000'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.tt_account_roles
+                user_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.user_id
+              required:
+              - bc_id
+              - user_id
+              - asset_type
+              - asset_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Assign assets to a user. [BC Asset Assign](https://business-api.tiktok.com/portal/docs?id=1739438211077121)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: user_id
+            required: true
+            source: $.http.body.user_id
+            type: number
+          - name: asset_type
+            required: true
+            source: $.http.body.asset_type
+            type: number
+          - name: asset_id
+            required: true
+            source: $.http.body.asset_id
+            type: number
+          - name: advertiser_role
+            required: false
+            source: $.http.body.advertiser_role
+            type: number
+          - name: catalog_role
+            required: false
+            source: $.http.body.catalog_role
+            type: number
+          - children:
+            - type: number
+            name: tt_account_roles
+            required: false
+            source: $.http.body.tt_account_roles
+            sub_type: number
+            type: array
+          - name: form_library_role
+            required: false
+            source: $.http.body.form_library_role
+            type: number
+          - name: store_role
+            required: false
+            source: $.http.body.store_role
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_role: $.http.body.advertiser_role
+          asset_id: $.http.body.asset_id
+          asset_type: $.http.body.asset_type
+          bc_id: $.http.body.bc_id
+          catalog_role: $.http.body.catalog_role
+          form_library_role: $.http.body.form_library_role
+          store_role: $.http.body.store_role
+          tt_account_roles: $.http.body.tt_account_roles
+          user_id: $.http.body.user_id
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

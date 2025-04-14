@@ -1,0 +1,140 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get the authorization status of your\
+    \ Brand Safety partner.\\n\\nFor Zefr, please go to https://measurement.zefr.com/tiktok/connect\
+    \ to complete setup.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\
+    \u83B7\u53D6\u54C1\u724C\u5B89\u5168\u5408\u4F5C\u4F19\u4F34\u7684\u6388\u6743\
+    \u72B6\u6001\u3002 \u76EE\u524D\u53EA\u652F\u6301Zefr\u4E00\u5BB6\u5408\u4F5C\u4F19\
+    \u4F34\u3002\\n\\n\u5728\u4F7F\u7528Zefr\u7684\u670D\u52A1\u524D\uFF0C\u9700\u8981\
+    \u524D\u5F80https://measurement.zefr.com/tiktok/connect \u5B8C\u6210\u8BBE\u7F6E\
+    \u3002\"}"
+  title: "{\"en\":\"Get the authorization status of a Brand Safety partner\",\"zh\"\
+    :\"\u83B7\u53D6\u54C1\u724C\u5B89\u5168\u5408\u4F5C\u4F19\u4F34\u6388\u6743\u72B6\
+    \u6001\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/brand_safety/partner/authorize/status/:
+    get:
+      operationId: Tool Brand_safety Partner Authorize Status
+      parameters:
+      - description: 'Brand Safety post bid measurement partner. Enum values: Zefr.'
+        in: query
+        name: partner
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: Zefr
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.Partner
+        x-open-field-id: 1
+      - description: Advertiser ID
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.AdvertiserId
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get the authorization status of a Brand Safety partner [Tool Brand_safety
+        Partner Authorize Status](https://ads.tiktok.com/marketing_api/docs?id=1738456743621634)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: Partner
+            required: false
+            source: $.http.query.partner
+            type: number
+          - name: AdvertiserId
+            required: false
+            source: $.http.query.advertiser_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserId: $.http.query.advertiser_id
+          Partner: $.http.query.partner
+        response_cookie: []
+        response_header: []
+        response_rule:
+          status: $.rpc.output.Status
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,106 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get the dynamic quota on the number\
+    \ of active auction ad groups that an advertiser can have.\\n\",\"zh\":\"\u60A8\
+    \u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u83B7\u53D6\u5E7F\u544A\u4E3B\u6295\
+    \u653E\u4E2D\u7ADE\u4EF7\u5E7F\u544A\u7EC4\u7684\u52A8\u6001\u914D\u989D\u3002\
+    \\n\"}"
+  title: "{\"en\":\"Get the dynamic quota \",\"zh\":\"\u83B7\u53D6\u6295\u653E\u4E2D\
+    \u5E7F\u544A\u7EC4\u7684\u52A8\u6001\u914D\u989D\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /adgroup/quota/:
+    get:
+      operationId: Adgroup Quota
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id=1768463039162369)
+      tags:
+      - Ads Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          total_adgroup_quota: $.rpc.output.total_adgroup_quota
+          used_adgroup_quota: $.rpc.output.used_adgroup_quota
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

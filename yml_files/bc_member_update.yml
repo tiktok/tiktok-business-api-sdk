@@ -1,0 +1,221 @@
+info:
+  description: '{"en":"Update member","zh":"Update member"}'
+  title: '{"en":"Update member","zh":"Update member"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/member/update/:
+    post:
+      operationId: Bc Member Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+                child_bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.child_bc_id
+                ext_user_role:
+                  description: ''
+                  nullable: false
+                  properties:
+                    finance_role:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1802167339779074
+                        enum_package_name: BCFinanceRole
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: ANALYST
+                          value: '6'
+                        - description: ''
+                          is_valid: true
+                          key: MANAGER
+                          value: '5'
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: false
+                        value_format: int32
+                      x-open-field-id: 1
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.finance_role
+                user_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.user_id
+                user_name:
+                  description: ''
+                  maxLength: 250
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.user_name
+                user_role:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1802163064740866
+                    enum_package_name: BCUserRole
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ADMIN
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: STANDARD
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.user_role
+              required:
+              - bc_id
+              - user_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update member information. [BC Member Update](https://business-api.tiktok.com/portal/docs?id=1739696704424961)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: child_bc_id
+            required: false
+            source: $.http.body.child_bc_id
+            type: number
+          - name: user_id
+            required: true
+            source: $.http.body.user_id
+            type: number
+          - name: user_role
+            required: false
+            source: $.http.body.user_role
+            type: number
+          - name: user_name
+            required: false
+            source: $.http.body.user_name
+            type: string
+          - name: finance_role
+            required: false
+            source: $.http.body.ext_user_role.finance_role
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.body.bc_id
+          child_bc_id: $.http.body.child_bc_id
+          finance_role: $.http.body.ext_user_role.finance_role
+          user_id: $.http.body.user_id
+          user_name: $.http.body.user_name
+          user_role: $.http.body.user_role
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,148 @@
+info:
+  description: "{\"en\":\"Use this endpoint to delete Saved Audiences.\\n\\n\",\"\
+    zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u5220\u9664\u5DF2\u4FDD\
+    \u5B58\u53D7\u4F17\u3002\\n\\n\"}"
+  title: "{\"en\":\"Delete Saved Audiences\",\"zh\":\"\u5220\u9664\u5DF2\u4FDD\u5B58\
+    \u53D7\u4F17\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /dmp/saved_audience/delete/:
+    post:
+      operationId: Dmp Saved_audience Delete
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: Advertiser ID.
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                saved_audience_ids:
+                  description: IDs of Saved Audiences that you want to delete. Max
+                    size = 100.
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  maxItems: 100
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.saved_audience_ids
+              required:
+              - advertiser_id
+              - saved_audience_ids
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id=1780154666312706)
+      tags:
+      - Audience
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: saved_audience_ids
+            required: true
+            source: $.http.body.saved_audience_ids
+            sub_type: number
+            type: array
+          - children:
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          context_info:
+            core_user_id: $.context.core_user_id
+          saved_audience_ids: $.http.body.saved_audience_ids
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

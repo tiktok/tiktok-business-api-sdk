@@ -1,0 +1,109 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get time zone enumeration values, and\
+    \ their offsets from GMT.\\n\\nBe aware that the returned offsets (gmt_offset)\
+    \ remain fixed and do not account for daylight saving time changes. For instance,\
+    \ for New York (America/New_York), the offset will always be GMT-05:00, regardless\
+    \ of whether New York is currently observing daylight saving time.\",\"zh\":\"\
+    \u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u6765\u67E5\u8BE2\u65F6\u533A\
+    \u5217\u8868\uFF0C\u8FD4\u56DE\u7684\u5217\u8868\u4E2D\u5305\u542B\u4E86\u6BCF\
+    \u4E2A\u65F6\u533A\u5BF9\u4E8EGMT\u7684\u504F\u79FB\u3002\\n\\n\u9700\u6CE8\u610F\
+    \u8FD4\u56DE\u7684\u504F\u79FB\uFF08gmt_offset\uFF09\u4E3A\u56FA\u5B9A\u503C\uFF0C\
+    \u4E0D\u968F\u590F\u4EE4\u65F6\u6216\u51AC\u4EE4\u65F6\u53D8\u5316\u3002\u4F8B\
+    \u5982\uFF0C\u7EBD\u7EA6\uFF08America/New_York\uFF09\u5BF9\u5E94\u7684\u504F\u79FB\
+    \u56FA\u5B9A\u8FD4\u56DEGMT-05:00\uFF0C\u65E0\u8BBA\u7EBD\u7EA6\u5F53\u524D\u662F\
+    \u5426\u4F7F\u7528\u590F\u4EE4\u65F6\u3002\"}"
+  title: "{\"en\":\"Get time zones\",\"zh\":\"\u83B7\u53D6\u65F6\u533A\u5217\u8868\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /tool/timezone/:
+    get:
+      operationId: Tool Timezone
+      parameters:
+      - description: Advertiser ID
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 1
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get time zones [Tool Timezone](https://ads.tiktok.com/marketing_api/docs?id=1738455961470977)
+      tags:
+      - Tool
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source: []
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule: null
+        response_cookie: []
+        response_header: []
+        response_rule:
+          timezones[][]:
+          - gmt_offset: $.rpc.output.time_zone_list[].gmt_offset
+            timezone: $.rpc.output.time_zone_list[].timezone
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

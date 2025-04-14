@@ -1,0 +1,223 @@
+info:
+  description: "{\"en\":\"Use this endpoint to update the settings of a Billing Group.\\\
+    n\\nBoth Agency and Direct Business Centers are able to perform billing group\
+    \ related operations.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\
+    \u4FEE\u6539\u8D26\u5355\u7EC4\u7684\u8BBE\u7F6E\u3002\\n\\n\u4EE3\u7406\u5546\
+    \u5546\u52A1\u4E2D\u5FC3\u548C\u76F4\u5BA2\u5546\u52A1\u4E2D\u5FC3\u90FD\u80FD\
+    \u6267\u884C\u8D26\u5355\u7EC4\u76F8\u5173\u64CD\u4F5C\u3002\"}"
+  title: "{\"en\":\"Update a Billing Group\",\"zh\":\"\u4FEE\u6539\u8D26\u5355\u7EC4\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/billing_group/update/:
+    post:
+      operationId: Bc Billing_group Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                add_advertiser_ids:
+                  description: ''
+                  items:
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.add_advertiser_ids
+                bc_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+                billing_group_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.billing_group_id
+                delete_advertiser_ids:
+                  description: ''
+                  items:
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.delete_advertiser_ids
+                is_primary:
+                  description: ''
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.is_primary
+                new_billing_group_emails:
+                  description: ''
+                  items:
+                    format: email
+                    maxLength: 20
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.billing_group_emails
+                new_billing_group_name:
+                  description: ''
+                  maxLength: 100
+                  minLength: 1
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.billing_group_name
+              required:
+              - bc_id
+              - billing_group_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update settings of a billing group. [BC Billing Group Update](https://business-api.tiktok.com/portal/docs?id=1738947843447809)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: billing_group_id
+            required: true
+            source: $.http.body.billing_group_id
+            type: number
+          - name: billing_group_name
+            required: false
+            source: $.http.body.new_billing_group_name
+            type: string
+          - children:
+            - type: string
+            is_expand: true
+            name: billing_group_emails
+            required: false
+            source: $.http.body.new_billing_group_emails[]
+            sub_type: string
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: add_advertiser_ids
+            required: false
+            source: $.http.body.add_advertiser_ids
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: delete_advertiser_ids
+            required: false
+            source: $.http.body.delete_advertiser_ids
+            sub_type: number
+            type: array
+          - name: is_primary
+            required: false
+            source: $.http.body.is_primary
+            type: boolean
+          - name: core_user_id
+            required: true
+            source: $.context.core_user_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          add_advertiser_ids: $.http.body.add_advertiser_ids
+          bc_id: $.http.body.bc_id
+          billing_group_emails: $.http.body.new_billing_group_emails[]
+          billing_group_id: $.http.body.billing_group_id
+          billing_group_name: $.http.body.new_billing_group_name
+          core_user_id: $.context.core_user_id
+          delete_advertiser_ids: $.http.body.delete_advertiser_ids
+          is_primary: $.http.body.is_primary
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

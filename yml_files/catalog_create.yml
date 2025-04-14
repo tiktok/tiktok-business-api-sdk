@@ -1,0 +1,704 @@
+info:
+  description: '{"en":"Catalog Create","zh":"Catalog Create"}'
+  title: '{"en":"Catalog Create","zh":"Catalog Create"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/create/:
+    post:
+      operationId: Catalog Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+                catalog_conf:
+                  description: ''
+                  nullable: false
+                  properties:
+                    business_platform:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                    channel:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: null
+                        enum_package_name: null
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: CLIENT
+                          value: CLIENT
+                        - description: ''
+                          is_valid: true
+                          key: BUSINESS_PLATFORM
+                          value: BUSINESS_PLATFORM
+                        - description: ''
+                          is_valid: true
+                          key: PARTNER
+                          value: PARTNER
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: false
+                        value_format: string
+                      x-open-field-id: 3
+                      x-open-source: $.http.body.catalog_conf.channel
+                    currency:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1802164933598209
+                        enum_package_name: CatalogCurrency
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: AED
+                          value: '784'
+                        - description: ''
+                          is_valid: true
+                          key: ALL
+                          value: '8'
+                        - description: ''
+                          is_valid: true
+                          key: AOA
+                          value: '973'
+                        - description: ''
+                          is_valid: true
+                          key: ARS
+                          value: '32'
+                        - description: ''
+                          is_valid: true
+                          key: AUD
+                          value: '36'
+                        - description: ''
+                          is_valid: true
+                          key: BAM
+                          value: '977'
+                        - description: ''
+                          is_valid: true
+                          key: BDT
+                          value: '50'
+                        - description: ''
+                          is_valid: true
+                          key: BGN
+                          value: '975'
+                        - description: ''
+                          is_valid: true
+                          key: BHD
+                          value: '48'
+                        - description: ''
+                          is_valid: true
+                          key: BND
+                          value: '96'
+                        - description: ''
+                          is_valid: true
+                          key: BOB
+                          value: '68'
+                        - description: ''
+                          is_valid: true
+                          key: BRL
+                          value: '986'
+                        - description: ''
+                          is_valid: true
+                          key: BWP
+                          value: '72'
+                        - description: ''
+                          is_valid: true
+                          key: BYN
+                          value: '933'
+                        - description: ''
+                          is_valid: true
+                          key: CAD
+                          value: '124'
+                        - description: ''
+                          is_valid: true
+                          key: CHF
+                          value: '756'
+                        - description: ''
+                          is_valid: true
+                          key: CLP
+                          value: '152'
+                        - description: ''
+                          is_valid: true
+                          key: CNY
+                          value: '156'
+                        - description: ''
+                          is_valid: true
+                          key: COP
+                          value: '170'
+                        - description: ''
+                          is_valid: true
+                          key: CRC
+                          value: '188'
+                        - description: ''
+                          is_valid: true
+                          key: CZK
+                          value: '203'
+                        - description: ''
+                          is_valid: true
+                          key: DKK
+                          value: '208'
+                        - description: ''
+                          is_valid: true
+                          key: DZD
+                          value: '12'
+                        - description: ''
+                          is_valid: true
+                          key: EGP
+                          value: '818'
+                        - description: ''
+                          is_valid: true
+                          key: EUR
+                          value: '978'
+                        - description: ''
+                          is_valid: true
+                          key: GBP
+                          value: '826'
+                        - description: ''
+                          is_valid: true
+                          key: GHS
+                          value: '936'
+                        - description: ''
+                          is_valid: true
+                          key: GTQ
+                          value: '320'
+                        - description: ''
+                          is_valid: true
+                          key: GYD
+                          value: '328'
+                        - description: ''
+                          is_valid: true
+                          key: HKD
+                          value: '344'
+                        - description: ''
+                          is_valid: true
+                          key: HNL
+                          value: '340'
+                        - description: ''
+                          is_valid: true
+                          key: HRK
+                          value: '191'
+                        - description: ''
+                          is_valid: true
+                          key: HUF
+                          value: '348'
+                        - description: ''
+                          is_valid: true
+                          key: IDR
+                          value: '360'
+                        - description: ''
+                          is_valid: true
+                          key: ILS
+                          value: '376'
+                        - description: ''
+                          is_valid: true
+                          key: INR
+                          value: '356'
+                        - description: ''
+                          is_valid: true
+                          key: IQD
+                          value: '368'
+                        - description: ''
+                          is_valid: true
+                          key: IRR
+                          value: '364'
+                        - description: ''
+                          is_valid: true
+                          key: ISK
+                          value: '352'
+                        - description: ''
+                          is_valid: true
+                          key: JOD
+                          value: '400'
+                        - description: ''
+                          is_valid: true
+                          key: JPY
+                          value: '392'
+                        - description: ''
+                          is_valid: true
+                          key: KES
+                          value: '404'
+                        - description: ''
+                          is_valid: true
+                          key: KHR
+                          value: '116'
+                        - description: ''
+                          is_valid: true
+                          key: KRW
+                          value: '410'
+                        - description: ''
+                          is_valid: true
+                          key: KWD
+                          value: '414'
+                        - description: ''
+                          is_valid: true
+                          key: KZT
+                          value: '398'
+                        - description: ''
+                          is_valid: true
+                          key: LAK
+                          value: '418'
+                        - description: ''
+                          is_valid: true
+                          key: LBP
+                          value: '422'
+                        - description: ''
+                          is_valid: true
+                          key: LKR
+                          value: '144'
+                        - description: ''
+                          is_valid: true
+                          key: LYD
+                          value: '434'
+                        - description: ''
+                          is_valid: true
+                          key: MAD
+                          value: '504'
+                        - description: ''
+                          is_valid: true
+                          key: MDL
+                          value: '498'
+                        - description: ''
+                          is_valid: true
+                          key: MKD
+                          value: '807'
+                        - description: ''
+                          is_valid: true
+                          key: MMK
+                          value: '104'
+                        - description: ''
+                          is_valid: true
+                          key: MNT
+                          value: '496'
+                        - description: ''
+                          is_valid: true
+                          key: MOP
+                          value: '446'
+                        - description: ''
+                          is_valid: true
+                          key: MUR
+                          value: '480'
+                        - description: ''
+                          is_valid: true
+                          key: MVR
+                          value: '462'
+                        - description: ''
+                          is_valid: true
+                          key: MWK
+                          value: '454'
+                        - description: ''
+                          is_valid: true
+                          key: MXN
+                          value: '484'
+                        - description: ''
+                          is_valid: true
+                          key: MYR
+                          value: '458'
+                        - description: ''
+                          is_valid: true
+                          key: NGN
+                          value: '566'
+                        - description: ''
+                          is_valid: true
+                          key: NIO
+                          value: '558'
+                        - description: ''
+                          is_valid: true
+                          key: NOK
+                          value: '578'
+                        - description: ''
+                          is_valid: true
+                          key: NPR
+                          value: '524'
+                        - description: ''
+                          is_valid: true
+                          key: NZD
+                          value: '554'
+                        - description: ''
+                          is_valid: true
+                          key: OMNI
+                          value: '-1'
+                        - description: ''
+                          is_valid: true
+                          key: OMR
+                          value: '512'
+                        - description: ''
+                          is_valid: true
+                          key: PEN
+                          value: '604'
+                        - description: ''
+                          is_valid: true
+                          key: PHP
+                          value: '608'
+                        - description: ''
+                          is_valid: true
+                          key: PKR
+                          value: '586'
+                        - description: ''
+                          is_valid: true
+                          key: PLN
+                          value: '985'
+                        - description: ''
+                          is_valid: true
+                          key: PYG
+                          value: '600'
+                        - description: ''
+                          is_valid: true
+                          key: QAR
+                          value: '634'
+                        - description: ''
+                          is_valid: true
+                          key: RON
+                          value: '946'
+                        - description: ''
+                          is_valid: true
+                          key: RSD
+                          value: '941'
+                        - description: ''
+                          is_valid: true
+                          key: RUB
+                          value: '643'
+                        - description: ''
+                          is_valid: true
+                          key: SAR
+                          value: '682'
+                        - description: ''
+                          is_valid: true
+                          key: SDG
+                          value: '938'
+                        - description: ''
+                          is_valid: true
+                          key: SEK
+                          value: '752'
+                        - description: ''
+                          is_valid: true
+                          key: SGD
+                          value: '702'
+                        - description: ''
+                          is_valid: true
+                          key: SLL
+                          value: '694'
+                        - description: ''
+                          is_valid: true
+                          key: SRD
+                          value: '968'
+                        - description: ''
+                          is_valid: true
+                          key: SSP
+                          value: '728'
+                        - description: ''
+                          is_valid: true
+                          key: SYP
+                          value: '760'
+                        - description: ''
+                          is_valid: true
+                          key: THB
+                          value: '764'
+                        - description: ''
+                          is_valid: true
+                          key: TND
+                          value: '788'
+                        - description: ''
+                          is_valid: true
+                          key: TRY
+                          value: '949'
+                        - description: ''
+                          is_valid: true
+                          key: TWD
+                          value: '901'
+                        - description: ''
+                          is_valid: true
+                          key: TZS
+                          value: '834'
+                        - description: ''
+                          is_valid: true
+                          key: UAH
+                          value: '980'
+                        - description: ''
+                          is_valid: true
+                          key: UGX
+                          value: '800'
+                        - description: ''
+                          is_valid: true
+                          key: USD
+                          value: '840'
+                        - description: ''
+                          is_valid: true
+                          key: UYU
+                          value: '858'
+                        - description: ''
+                          is_valid: true
+                          key: UZS
+                          value: '860'
+                        - description: ''
+                          is_valid: true
+                          key: VEF
+                          value: '937'
+                        - description: ''
+                          is_valid: true
+                          key: VND
+                          value: '704'
+                        - description: ''
+                          is_valid: true
+                          key: XAF
+                          value: '950'
+                        - description: ''
+                          is_valid: true
+                          key: YER
+                          value: '886'
+                        - description: ''
+                          is_valid: true
+                          key: ZAR
+                          value: '710'
+                        - description: ''
+                          is_valid: true
+                          key: ZMW
+                          value: '967'
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: true
+                        value_format: int32
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.catalog_conf.currency
+                    region_code:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.catalog_conf.region_code
+                  required:
+                  - region_code
+                  - currency
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.catalog_conf
+                catalog_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1802164714465281
+                    enum_package_name: CatalogType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AUTO
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: DESTINATION
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: ECOM
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: ENTERTAINMENT
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: FLIGHT
+                      value: '14'
+                    - description: ''
+                      is_valid: true
+                      key: HOTEL
+                      value: '13'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.catalog_type
+                creative_asset_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: VIDEO
+                      value: VIDEO
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 5
+                name:
+                  description: ''
+                  maxLength: 128
+                  minLength: 1
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.catalog_name
+              required:
+              - bc_id
+              - catalog_type
+              - name
+              - catalog_conf
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a catalog by specifying information such as name, targeted locations,
+        and currency. [Catalog Create](https://business-api.tiktok.com/portal/docs?id=1740306481704961)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: catalog_type
+            required: true
+            source: $.http.body.catalog_type
+            type: number
+          - name: catalog_name
+            required: true
+            source: $.http.body.name
+            type: string
+          - children:
+            - name: region_code
+              required: true
+              source: $.http.body.catalog_conf.region_code
+              type: string
+            - name: currency
+              required: true
+              source: $.http.body.catalog_conf.currency
+              type: string
+            - name: channel
+              required: false
+              source: $.http.body.catalog_conf.channel
+              type: string
+            - name: business_platform
+              required: false
+              source: $.http.body.catalog_conf.business_platform
+              type: string
+            is_expand: true
+            name: catalog_conf
+            required: true
+            type: object
+          - name: creative_asset_type
+            required: false
+            source: $.http.query.creative_asset_type
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.body.bc_id
+          catalog_conf:
+            business_platform: $.http.body.catalog_conf.business_platform
+            channel: $.http.body.catalog_conf.channel
+            currency: $.http.body.catalog_conf.currency
+            region_code: $.http.body.catalog_conf.region_code
+          catalog_name: $.http.body.name
+          catalog_type: $.http.body.catalog_type
+          creative_asset_type: $.http.query.creative_asset_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          catalog_id: $.rpc.output.catalog_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

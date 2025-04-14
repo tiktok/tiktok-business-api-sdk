@@ -1,0 +1,376 @@
+info:
+  description: '{"en":"Get assets admin","zh":"Get assets admin"}'
+  title: '{"en":"Get assets admin","zh":"Get assets admin"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/asset/admin/get/:
+    get:
+      operationId: Bc Asset Admin Get
+      parameters:
+      - description: ''
+        in: query
+        name: bc_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: child_bc_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.child_bc_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: asset_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1803356502782978
+            enum_package_name: BCAsset
+            enums:
+            - description: ''
+              is_valid: true
+              key: ADVERTISER
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: CATALOG
+              value: '4'
+            - description: ''
+              is_valid: false
+              key: DOMAIN
+              value: '6'
+            - description: ''
+              is_valid: true
+              key: LEAD
+              value: '9'
+            - description: ''
+              is_valid: true
+              key: PIXEL
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: STOREFRONT
+              value: '5'
+            - description: ''
+              is_valid: true
+              key: TIKTOK_SHOP
+              value: '10'
+            - description: ''
+              is_valid: true
+              key: TT_ACCOUNT
+              value: '8'
+            key_format: string
+            strict: true
+            use_part: true
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.asset_type
+        x-open-field-id: 3
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                advertiser_show_status:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1800605795462145
+                    enum_package_name: ShowAccountStatus
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: SHOW_ACCOUNT_STATUS_APPROVED
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: SHOW_ACCOUNT_STATUS_IN_REVIEW
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: SHOW_ACCOUNT_STATUS_NOT_APPROVED
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: SHOW_ACCOUNT_STATUS_PUNISHED
+                      value: '4'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.filtering.advertiser_show_status
+                keyword:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.query.filtering.keyword
+                relation_status:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803448727394305
+                    enum_package_name: BCAssetRelationStatus
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: BOUND
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: PENDING
+                      value: '4'
+                    - description: "\u62D2\u7EDD"
+                      is_valid: false
+                      key: REJECT
+                      value: '5'
+                    - description: "\u88AB\u62D2\u7EDD"
+                      is_valid: true
+                      key: REJECTED
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: UNBOUND
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.query.filtering.relation_status
+                relation_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1803448641906690
+                    enum_package_name: AssetRelationType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: OWNER_BC
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: OWNER_INDIVIDUAL
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: OWNER_PARTNER
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.query.filtering.relation_type
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.filtering
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 50
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 6
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get assets of a Business Center as admins. [BC Asset Admin Get](https://business-api.tiktok.com/portal/docs?id=1739433007779841)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.query.bc_id
+            type: number
+          - name: child_bc_id
+            required: false
+            source: $.http.query.child_bc_id
+            type: number
+          - name: asset_type
+            required: true
+            source: $.http.query.asset_type
+            type: number
+          - children:
+            - name: advertiser_show_status
+              required: false
+              source: $.http.query.filtering.advertiser_show_status
+              type: number
+            - name: keyword
+              required: false
+              source: $.http.query.filtering.keyword
+              type: string
+            - name: relation_type
+              required: false
+              source: $.http.query.filtering.relation_type
+              type: number
+            - name: relation_status
+              required: false
+              source: $.http.query.filtering.relation_status
+              type: number
+            name: filtering
+            required: false
+            source: $.http.query.filtering
+            type: object
+          - name: page
+            required: false
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: false
+            source: $.http.query.page_size
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          asset_type: $.http.query.asset_type
+          bc_id: $.http.query.bc_id
+          child_bc_id: $.http.query.child_bc_id
+          filtering: $.http.query.filtering
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list[][]:
+          - ad_creation_eligible: $.rpc.output.assets[].ad_creation_eligible
+            advertiser_account_type: $.rpc.output.assets[].advertiser_account_type
+            advertiser_role: $.rpc.output.assets[].advertiser_role
+            advertiser_status: $.rpc.output.assets[].advertiser_status
+            asset_id: $.rpc.output.assets[].asset_id
+            asset_name: $.rpc.output.assets[].asset_name
+            asset_type: $.rpc.output.assets[].asset_type
+            catalog_role: $.rpc.output.assets[].catalog_role
+            owner_bc_name: $.rpc.output.assets[].owner_bc_name
+            pixel_code: $.rpc.output.assets[].pixel_code
+            relation_status: $.rpc.output.assets[].relation_status
+            relation_type: $.rpc.output.assets[].relation_type
+            store_role: $.rpc.output.assets[].shop_role
+            tt_account_roles: $.rpc.output.assets[].tt_account_roles
+          page_info: $.rpc.output.page_info
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

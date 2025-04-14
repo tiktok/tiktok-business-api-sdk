@@ -1,0 +1,550 @@
+info:
+  description: "{\"en\":\"Use this endpoint to obtain information about an app conversion\
+    \ event.\\n\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u83B7\
+    \u53D6App\u8F6C\u5316\u4E8B\u4EF6\u76F8\u5173\u4FE1\u606F\u3002\\n\\n\"}"
+  title: "{\"en\":\"Get App Conversion Events\",\"zh\":\"\u83B7\u53D6\u5E94\u7528\u8F6C\
+    \u5316\u4E8B\u4EF6\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /app/optimization_event/:
+    get:
+      operationId: App Optimization_event
+      parameters:
+      - description: Your App ID, obtained after successfully creating your app.
+        in: query
+        name: app_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.app_id
+        x-open-field-id: 1
+      - description: Advertiser ID
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 2
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-enum:
+                  enum_package_expired: false
+                  enum_package_id: null
+                  enum_package_name: InventoryFlow
+                  enums:
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_TOPBUZZ
+                    value: '1000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_VIGO
+                    value: '2000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_TIKTOK
+                    value: '3000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_HELO
+                    value: '4000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_PANGLE
+                    value: '9000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_GLOBAL_APP_BUNDLE
+                    value: '1000'
+                  key_format: string
+                  strict: true
+                  use_part: false
+                  validate_only: false
+                  value_format: int32
+              minItems: 1
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.placement
+        description: 'The apps where you want to deliver your ads. Required when placement_type
+          is PLACEMENT_TYPE_NORMAL, and ignored when placement_type is PLACEMENT_TYPE_AUTOMATIC.
+          Note: Currently, we support PLACEMENT_TIKTOK, PLACEMENT_PANGLE and PLACEMENT_GLOBAL_APP_BUNDLE.
+          Please don''t select PLACEMENT_TOPBUZZ or PLACEMENT_HELO as your placements
+          since they''ve been deprecated. For a full list of enum values, see Enumeration
+          - Placement. For Product Sales campaigns (objective_type = PRODUCT_SALES),
+          only TikTok placement (PLACEMENT_TIKTOK) is supported.'
+        in: query
+        name: placement
+        required: false
+        x-open-field-id: 3
+      - description: "\u7248\u4F4D\u7C7B\u578B\u3002 \u679A\u4E3E\u503C\uFF1APLACEMENT_TYPE_AUTOMATIC\uFF08\
+          \u81EA\u52A8\u7248\u4F4D\uFF09,PLACEMENT_TYPE_NORMAL \uFF08\u7F16\u8F91\u7248\
+          \u4F4D\uFF09\u3002 \u9ED8\u8BA4\u503C: PLACEMENT_TYPE_NORMAL\u3002"
+        in: query
+        name: placement_type
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: PLACEMENT_TYPE_NORMAL
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: PLACEMENT_TYPE_AUTOMATIC
+              value: '0'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.placement_type
+        x-open-field-id: 4
+      - description: Optimization goal. For enum values, see Enumeration-Optimization
+          Goal for more
+        in: query
+        name: optimization_goal
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int32(%s)
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804193306612737
+            enum_package_name: OptimizeGoal
+            enums:
+            - description: ''
+              is_valid: true
+              key: ANCHOR_CLICK
+              value: '112'
+            - description: ''
+              is_valid: true
+              key: ANCHOR_CLICK_PURCHASE
+              value: '117'
+            - description: ''
+              is_valid: true
+              key: AUTOMATED_VALUE
+              value: '125'
+            - description: ''
+              is_valid: true
+              key: CLICK
+              value: '101'
+            - description: ''
+              is_valid: true
+              key: CONVERSATION
+              value: '124'
+            - description: ''
+              is_valid: true
+              key: CONVERSION_LEADS
+              value: '121'
+            - description: ''
+              is_valid: true
+              key: CONVERT
+              value: '100'
+            - description: ''
+              is_valid: true
+              key: DESTINATION_VISIT
+              value: '123'
+            - description: ''
+              is_valid: true
+              key: ENGAGED_VIEW
+              value: '118'
+            - description: ''
+              is_valid: true
+              key: ENGAGED_VIEW_FIFTEEM
+              value: '120'
+            - description: ''
+              is_valid: true
+              key: FOLLOWERS
+              value: '108'
+            - description: ''
+              is_valid: true
+              key: INSTALL
+              value: '105'
+            - description: ''
+              is_valid: true
+              key: IN_APP_EVENT
+              value: '106'
+            - description: ''
+              is_valid: true
+              key: LEAD_GENERATION
+              value: '107'
+            - description: ''
+              is_valid: true
+              key: MESSAGE
+              value: '119'
+            - description: ''
+              is_valid: true
+              key: MT_LIVE_FOLLOW
+              value: '126'
+            - description: ''
+              is_valid: true
+              key: MT_LIVE_ROOM
+              value: '113'
+            - description: ''
+              is_valid: true
+              key: MT_LIVE_SHOPPING
+              value: '116'
+            - description: ''
+              is_valid: true
+              key: PAGE_VISIT
+              value: '122'
+            - description: ''
+              is_valid: true
+              key: POST_ENGAGEMNT
+              value: '110'
+            - description: ''
+              is_valid: true
+              key: PREFERRED_LEAD
+              value: '127'
+            - description: ''
+              is_valid: true
+              key: PRODUCT_CLICK_IN_LIVE
+              value: '114'
+            - description: ''
+              is_valid: true
+              key: PROFILE_VIEWS
+              value: '109'
+            - description: ''
+              is_valid: true
+              key: REACH
+              value: '103'
+            - description: ''
+              is_valid: true
+              key: SHOW
+              value: '102'
+            - description: ''
+              is_valid: true
+              key: TRAFFIC_LANDING_PAGE_VIEW
+              value: '115'
+            - description: ''
+              is_valid: true
+              key: VALUE
+              value: '111'
+            - description: ''
+              is_valid: true
+              key: VIDEO_VIEW
+              value: '104'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int64
+          x-open-source: $.http.query.optimization_goal
+        x-open-field-id: 5
+      - description: Advertising Objective. For enum values, see Enumeration-Advertising
+          Objective
+        in: query
+        name: objective
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: CampaignObjectiveType
+            enums:
+            - description: ''
+              is_valid: true
+              key: NONE_TYPE
+              value: '0'
+            - description: ''
+              is_valid: true
+              key: TRAFFIC
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: APP_INSTALL
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: CONVERSIONS
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: VIDEO_VIEW
+              value: '4'
+            - description: ''
+              is_valid: true
+              key: REACH
+              value: '5'
+            - description: ''
+              is_valid: true
+              key: CATALOG_SALES
+              value: '6'
+            - description: ''
+              is_valid: true
+              key: LEAD_GENERATION
+              value: '8'
+            - description: ''
+              is_valid: true
+              key: ENGAGEMENT
+              value: '9'
+            - description: ''
+              is_valid: true
+              key: RF_REACH
+              value: '7'
+            - description: ''
+              is_valid: true
+              key: RF_VIDEO_VIEW
+              value: '10'
+            - description: ''
+              is_valid: true
+              key: RF_TRAFFIC
+              value: '11'
+            - description: ''
+              is_valid: true
+              key: RF_ENGAGEMENT
+              value: '12'
+            - description: ''
+              is_valid: true
+              key: RF_APP_INSTALL
+              value: '13'
+            - description: ''
+              is_valid: true
+              key: PRODUCT_SALES
+              value: '15'
+            - description: ''
+              is_valid: true
+              key: APP_PROMOTION
+              value: '16'
+            - description: ''
+              is_valid: true
+              key: WEB_CONVERSIONS
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: TOPVIEW_REACH
+              value: '50'
+            - description: ''
+              is_valid: true
+              key: EST_AD
+              value: '51'
+            - description: ''
+              is_valid: true
+              key: SS_HTC_AD
+              value: '52'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.objective
+        x-open-field-id: 6
+      - description: 'Whether to return only available conversion events. The default
+          value: True (only return available conversion events)'
+        in: query
+        name: available_only
+        required: false
+        schema:
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.available_only
+        x-open-field-id: 7
+      - description: Whether the app is using Skan features.
+        in: query
+        name: is_skan
+        required: false
+        schema:
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.is_skan
+        x-open-field-id: 8
+      - description: 'App promotion type. Required when objective_type is APP_PROMOTION.
+          Enum values: APP_INSTALL, APP_RETARGETING. Note: APP_INSTALL can be used
+          in an iOS14 Dedicated Campaign, while APP_RETARGETING cannot be used.'
+        in: query
+        name: app_promotion_type
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1799795397435394
+            enum_package_name: AppCampaignType
+            enums:
+            - description: ''
+              is_valid: true
+              key: APP_INSTALL
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: APP_PREREGISTRATION
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: APP_RETARGETING
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: UNSET
+              value: '0'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.app_promotion_type
+        x-open-field-id: 9
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get App Conversion Events. [App Optimization Event](https://business-api.tiktok.com/portal/docs?id=1740859338750977)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: app_id
+            required: true
+            source: $.http.query.app_id
+            type: number
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: placement
+            required: false
+            source: $.http.query.placement[]
+            sub_type: number
+            type: array
+          - name: placement_type
+            required: false
+            source: $.http.query.placement_type
+            type: number
+          - name: optimization_goal
+            required: true
+            source: $.http.query.optimization_goal
+            type: number
+          - name: objective
+            required: false
+            source: $.http.query.objective
+            type: number
+          - name: available_only
+            required: false
+            source: $.http.query.available_only
+            type: boolean
+          - name: is_skan
+            required: false
+            source: $.http.query.is_skan
+            type: boolean
+          - name: app_promotion_type
+            required: false
+            source: $.http.query.app_promotion_type
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          app_id: $.http.query.app_id
+          app_promotion_type: $.http.query.app_promotion_type
+          available_only: $.http.query.available_only
+          is_skan: $.http.query.is_skan
+          objective: $.http.query.objective
+          optimization_goal: $.http.query.optimization_goal
+          placement: $.http.query.placement[]
+          placement_type: $.http.query.placement_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          optimization_events: $.rpc.output.optimization_events
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

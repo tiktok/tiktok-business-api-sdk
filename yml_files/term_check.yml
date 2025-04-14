@@ -1,0 +1,167 @@
+info:
+  description: "{\"en\":\"Use this endpoint to check the status of an agreement.\\\
+    n\\nIf the agreement has been signed, you can get the agreement using /term/get/.\"\
+    ,\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u68C0\u67E5\u534F\u8BAE\
+    \u7684\u7B7E\u8BA2\u60C5\u51B5\uFF0C\u786E\u8BA4\u7B7E\u8BA2\u5B8C\u6210\u540E\
+    \u624D\u53EF\u8FDB\u884C\u534F\u8BAE\u76F8\u5173\u5185\u5BB9\u7684\u64CD\u4F5C\
+    \u3002\\n\\n\u82E5\u534F\u8BAE\u5DF2\u7B7E\u8BA2\u5B8C\u6210\uFF0C\u60A8\u53EF\
+    \u4EE5\u901A\u8FC7/term/get/\u83B7\u53D6\u534F\u8BAE\u3002\"}"
+  title: "{\"en\":\"Term Check\",\"zh\":\"\u68C0\u67E5\u534F\u8BAE\u72B6\u6001\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /term/check/:
+    get:
+      operationId: Term Check
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: term_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1825806465200257
+            enum_package_name: TermType
+            enums:
+            - description: ''
+              is_valid: true
+              key: InstantPage
+              value: InstantPage
+            - description: ''
+              is_valid: true
+              key: LeadAds
+              value: LeadAds
+            - description: ''
+              is_valid: true
+              key: Pixel
+              value: Pixel
+            - description: ''
+              is_valid: true
+              key: ReachFrequency
+              value: ReachFrequency
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.term_type
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Check the status of Terms. [Term Check](https://business-api.tiktok.com/portal/docs?id=1737192304571394)
+      tags:
+      - Account Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: string
+          - name: term_type
+            required: true
+            source: $.http.query.term_type
+            type: string
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+          term_type: $.http.query.term_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          confirmed: $.rpc.output.confirmed
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

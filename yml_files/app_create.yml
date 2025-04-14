@@ -1,0 +1,437 @@
+info:
+  description: '{"en":"Create App","zh":"Create App"}'
+  title: '{"en":"Create App","zh":"Create App"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /app/create/:
+    post:
+      operationId: App Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvertiserId
+                download_url:
+                  description: ''
+                  format: url
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.DownloadUrl
+                enable_retargeting:
+                  default: NON_RETARGETING
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: RETARGETING
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: NON_RETARGETING
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.RetargetingState
+                partner:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1816188710840322
+                    enum_package_name: partnerForAppCreate
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AdBrix
+                      value: '14'
+                    - description: ''
+                      is_valid: true
+                      key: Adform
+                      value: '23'
+                    - description: ''
+                      is_valid: true
+                      key: Adjust
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: Adzcore
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: AppAdforce
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: AppLink
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: AppMetrica
+                      value: '20'
+                    - description: ''
+                      is_valid: true
+                      key: AppsFlyer
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: BASE
+                      value: '48'
+                    - description: ''
+                      is_valid: true
+                      key: BigCommerce
+                      value: '36'
+                    - description: ''
+                      is_valid: true
+                      key: Cafe24
+                      value: '47'
+                    - description: ''
+                      is_valid: true
+                      key: Cinarra
+                      value: '31'
+                    - description: ''
+                      is_valid: true
+                      key: Dentsu
+                      value: '21'
+                    - description: ''
+                      is_valid: true
+                      key: DoubleClick
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: ECWID
+                      value: '37'
+                    - description: ''
+                      is_valid: true
+                      key: FlashTalking
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: Huangbaoche
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: Kantar
+                      value: '30'
+                    - description: ''
+                      is_valid: true
+                      key: Kochava
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: Lazada
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: LeadBolt
+                      value: '17'
+                    - description: ''
+                      is_valid: true
+                      key: Macromil
+                      value: '27'
+                    - description: ''
+                      is_valid: true
+                      key: Magento
+                      value: '40'
+                    - description: ''
+                      is_valid: true
+                      key: Metaps
+                      value: '18'
+                    - description: ''
+                      is_valid: true
+                      key: Nielsen
+                      value: '25'
+                    - description: ''
+                      is_valid: true
+                      key: OpenCart
+                      value: '45'
+                    - description: ''
+                      is_valid: true
+                      key: Other
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: Placed_powered_by_Foursquare
+                      value: '26'
+                    - description: ''
+                      is_valid: true
+                      key: PrestaShop
+                      value: '38'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPLINE
+                      value: '46'
+                    - description: ''
+                      is_valid: true
+                      key: Salesforce
+                      value: '44'
+                    - description: ''
+                      is_valid: true
+                      key: ServingsSys
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: Shopify
+                      value: '34'
+                    - description: ''
+                      is_valid: true
+                      key: Singular
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: Square
+                      value: '35'
+                    - description: ''
+                      is_valid: true
+                      key: Tenjin
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: Testee
+                      value: '28'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokCustomInstantPage
+                      value: '41'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC1PSeller
+                      value: '42'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC3PStore
+                      value: '43'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokLeadAd
+                      value: '33'
+                    - description: ''
+                      is_valid: true
+                      key: TlnkIo
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: Vidoadsplus
+                      value: '19'
+                    - description: ''
+                      is_valid: true
+                      key: Weborama
+                      value: '29'
+                    - description: ''
+                      is_valid: true
+                      key: WooCommerce
+                      value: '39'
+                    - description: ''
+                      is_valid: true
+                      key: doubleverify
+                      value: '24'
+                    - description: ''
+                      is_valid: true
+                      key: myTracker
+                      value: '22'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.PartnerId
+                tracking_url:
+                  description: ''
+                  nullable: false
+                  properties:
+                    click_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.Tracking.ClickUrl
+                    impression_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.Tracking.ImpressionUrl
+                    retargeting_click_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                      x-open-source: $.http.body.Tracking.RetargetingClickUrl
+                    retargeting_impression_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                      x-open-source: $.http.body.Tracking.RetargetingImpressionUrl
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.Tracking
+              required:
+              - advertiser_id
+              - download_url
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create an app. [APP Create](https://business-api.tiktok.com/portal/docs?id=1740859280958466)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvertiserId
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: DownloadUrl
+            required: true
+            source: $.http.body.download_url
+            type: string
+          - children:
+            - name: ClickUrl
+              required: false
+              source: $.http.body.tracking_url.click_url
+              type: string
+            - name: ImpressionUrl
+              required: false
+              source: $.http.body.tracking_url.impression_url
+              type: string
+            - name: RetargetingClickUrl
+              required: false
+              source: $.http.body.tracking_url.retargeting_click_url
+              type: string
+            - name: RetargetingImpressionUrl
+              required: false
+              source: $.http.body.tracking_url.retargeting_impression_url
+              type: string
+            is_expand: true
+            name: Tracking
+            required: false
+            type: object
+          - name: PartnerId
+            required: false
+            source: $.http.body.partner
+            type: number
+          - name: RetargetingState
+            required: false
+            source: $.http.body.enable_retargeting
+            type: number
+          - name: CoreUserId
+            required: false
+            source: $.context.core_user_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserId: $.http.body.advertiser_id
+          CoreUserId: $.context.core_user_id
+          DownloadUrl: $.http.body.download_url
+          PartnerId: $.http.body.partner
+          RetargetingState: $.http.body.enable_retargeting
+          Tracking:
+            ClickUrl: $.http.body.tracking_url.click_url
+            ImpressionUrl: $.http.body.tracking_url.impression_url
+            RetargetingClickUrl: $.http.body.tracking_url.retargeting_click_url
+            RetargetingImpressionUrl: $.http.body.tracking_url.retargeting_impression_url
+        response_cookie: []
+        response_header: []
+        response_rule:
+          app_id: $.rpc.output.id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

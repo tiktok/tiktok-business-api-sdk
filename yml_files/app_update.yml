@@ -1,0 +1,814 @@
+info:
+  description: '{"en":"Update app","zh":"Update app"}'
+  title: '{"en":"Update app","zh":"Update app"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /app/update/:
+    post:
+      operationId: App Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.advertiser_id
+                app_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.app_id
+                download_url:
+                  description: ''
+                  format: url
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.download_url
+                enable_retargeting:
+                  default: NON_RETARGETING
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: RETARGETING
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: NON_RETARGETING
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.enable_retargeting
+                partner:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1805946629089281
+                    enum_package_name: MeteorConstPartner
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AdBrix
+                      value: '14'
+                    - description: ''
+                      is_valid: true
+                      key: Adform
+                      value: '23'
+                    - description: ''
+                      is_valid: true
+                      key: Adjust
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: Adobe
+                      value: '85'
+                    - description: ''
+                      is_valid: true
+                      key: AdobeRTCDP
+                      value: '132'
+                    - description: ''
+                      is_valid: true
+                      key: Adzcore
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: Amperity
+                      value: '80'
+                    - description: ''
+                      is_valid: true
+                      key: AnyTrack
+                      value: '79'
+                    - description: ''
+                      is_valid: true
+                      key: AppAdforce
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: AppLink
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: AppMetrica
+                      value: '20'
+                    - description: ''
+                      is_valid: true
+                      key: AppsFlyer
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: Apptrian
+                      value: '110'
+                    - description: TTOP
+                      is_valid: true
+                      key: Ayomakan
+                      value: '113'
+                    - description: ''
+                      is_valid: true
+                      key: BASE
+                      value: '48'
+                    - description: ''
+                      is_valid: true
+                      key: BigCommerce
+                      value: '36'
+                    - description: ctm
+                      is_valid: true
+                      key: Bird
+                      value: '126'
+                    - description: ctm
+                      is_valid: true
+                      key: Blip
+                      value: '116'
+                    - description: ''
+                      is_valid: true
+                      key: Blotout
+                      value: '76'
+                    - description: ''
+                      is_valid: true
+                      key: CTMDefault
+                      value: '100'
+                    - description: ''
+                      is_valid: true
+                      key: Cafe24
+                      value: '47'
+                    - description: ''
+                      is_valid: true
+                      key: Capico
+                      value: '129'
+                    - description: ''
+                      is_valid: true
+                      key: Chatcone
+                      value: '108'
+                    - description: ''
+                      is_valid: true
+                      key: Cheq
+                      value: '98'
+                    - description: ''
+                      is_valid: true
+                      key: Cinarra
+                      value: '31'
+                    - description: ''
+                      is_valid: true
+                      key: CommandersAct
+                      value: '106'
+                    - description: ''
+                      is_valid: true
+                      key: ConversionLiftStudy
+                      value: '96'
+                    - description: ''
+                      is_valid: true
+                      key: DataHash
+                      value: '88'
+                    - description: ''
+                      is_valid: true
+                      key: Dentsu
+                      value: '21'
+                    - description: ''
+                      is_valid: true
+                      key: Desty
+                      value: '97'
+                    - description: ''
+                      is_valid: true
+                      key: DoubleClick
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: Driftrock
+                      value: '109'
+                    - description: ''
+                      is_valid: true
+                      key: ECWID
+                      value: '37'
+                    - description: ''
+                      is_valid: true
+                      key: ECWID_RESELLER
+                      value: '57'
+                    - description: ''
+                      is_valid: true
+                      key: Elevar
+                      value: '78'
+                    - description: TTOP
+                      is_valid: true
+                      key: Eventbrite
+                      value: '114'
+                    - description: ''
+                      is_valid: true
+                      key: EventsAPIGateway
+                      value: '131'
+                    - description: ''
+                      is_valid: true
+                      key: Fandango
+                      value: '81'
+                    - description: ''
+                      is_valid: true
+                      key: FlashTalking
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: FutureShop
+                      value: '73'
+                    - description: ''
+                      is_valid: true
+                      key: Gamesight
+                      value: '72'
+                    - description: ''
+                      is_valid: true
+                      key: GoogleSheet
+                      value: '94'
+                    - description: ''
+                      is_valid: true
+                      key: GoogleTagManagerClient
+                      value: '105'
+                    - description: ''
+                      is_valid: true
+                      key: GoogleTagManagerServer
+                      value: '75'
+                    - description: ''
+                      is_valid: true
+                      key: Grivy
+                      value: '67'
+                    - description: ''
+                      is_valid: true
+                      key: Habu
+                      value: '70'
+                    - description: ctm
+                      is_valid: true
+                      key: Halosis
+                      value: '118'
+                    - description: ''
+                      is_valid: true
+                      key: Haravan
+                      value: '64'
+                    - description: ctm
+                      is_valid: true
+                      key: HiPlatform
+                      value: '124'
+                    - description: ''
+                      is_valid: true
+                      key: Hightouch
+                      value: '66'
+                    - description: ''
+                      is_valid: true
+                      key: Huangbaoche
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: HubSpot
+                      value: '92'
+                    - description: ''
+                      is_valid: true
+                      key: Journify
+                      value: '122'
+                    - description: ''
+                      is_valid: true
+                      key: Kantar
+                      value: '30'
+                    - description: ''
+                      is_valid: true
+                      key: Kargo
+                      value: '71'
+                    - description: ''
+                      is_valid: true
+                      key: Kochava
+                      value: '4'
+                    - description: TTOP
+                      is_valid: true
+                      key: KopiKenangan
+                      value: '111'
+                    - description: ''
+                      is_valid: true
+                      key: Kyte
+                      value: '58'
+                    - description: ''
+                      is_valid: true
+                      key: LadiPage
+                      value: '102'
+                    - description: ''
+                      is_valid: true
+                      key: Lazada
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: LeadBolt
+                      value: '17'
+                    - description: ''
+                      is_valid: true
+                      key: LeadCenterCSV
+                      value: '87'
+                    - description: ''
+                      is_valid: true
+                      key: Lifesight
+                      value: '89'
+                    - description: ''
+                      is_valid: true
+                      key: LiveRamp
+                      value: '61'
+                    - description: ''
+                      is_valid: true
+                      key: MParticle
+                      value: '65'
+                    - description: ''
+                      is_valid: true
+                      key: Macromil
+                      value: '27'
+                    - description: ''
+                      is_valid: true
+                      key: Magento
+                      value: '40'
+                    - description: ctm
+                      is_valid: true
+                      key: ManyChat
+                      value: '121'
+                    - description: ''
+                      is_valid: true
+                      key: Marketo
+                      value: '93'
+                    - description: ''
+                      is_valid: true
+                      key: MercadoShops
+                      value: '82'
+                    - description: ''
+                      is_valid: true
+                      key: Merkle
+                      value: '83'
+                    - description: ''
+                      is_valid: true
+                      key: MetaRouter
+                      value: '77'
+                    - description: ''
+                      is_valid: true
+                      key: Metaps
+                      value: '18'
+                    - description: ''
+                      is_valid: true
+                      key: Nielsen
+                      value: '25'
+                    - description: 'Notice: ECWID_RESELLER is different from ECWID'
+                      is_valid: true
+                      key: Nuvemshop
+                      value: '56'
+                    - description: ctm
+                      is_valid: true
+                      key: OhoChat
+                      value: '115'
+                    - description: ctm
+                      is_valid: true
+                      key: OneChatAi
+                      value: '123'
+                    - description: ''
+                      is_valid: true
+                      key: OpenCart
+                      value: '45'
+                    - description: ''
+                      is_valid: true
+                      key: Other
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: PMG
+                      value: '128'
+                    - description: ''
+                      is_valid: true
+                      key: Pancake
+                      value: '101'
+                    - description: ''
+                      is_valid: true
+                      key: Placed_powered_by_Foursquare
+                      value: '26'
+                    - description: ''
+                      is_valid: true
+                      key: PrestaShop
+                      value: '38'
+                    - description: ''
+                      is_valid: true
+                      key: Qiscus
+                      value: '103'
+                    - description: ''
+                      is_valid: true
+                      key: Qontak
+                      value: '104'
+                    - description: ctm
+                      is_valid: true
+                      key: RespondIo
+                      value: '117'
+                    - description: ''
+                      is_valid: true
+                      key: RudderStack
+                      value: '69'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPLINE
+                      value: '46'
+                    - description: ''
+                      is_valid: true
+                      key: Salesforce
+                      value: '50'
+                    - description: ''
+                      is_valid: true
+                      key: SalesforceMarketingCloud
+                      value: '95'
+                    - description: ctm
+                      is_valid: true
+                      key: Sapo
+                      value: '120'
+                    - description: ''
+                      is_valid: true
+                      key: Segment
+                      value: '59'
+                    - description: ''
+                      is_valid: true
+                      key: ServingsSys
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: Shift4Shop
+                      value: '62'
+                    - description: ''
+                      is_valid: true
+                      key: Shopify
+                      value: '34'
+                    - description: ''
+                      is_valid: true
+                      key: Shoplazza
+                      value: '90'
+                    - description: ''
+                      is_valid: true
+                      key: Shopware
+                      value: '54'
+                    - description: ''
+                      is_valid: true
+                      key: SignalSight
+                      value: '84'
+                    - description: ''
+                      is_valid: true
+                      key: Singoo
+                      value: '99'
+                    - description: ctm
+                      is_valid: true
+                      key: SingooCloud
+                      value: '127'
+                    - description: ''
+                      is_valid: true
+                      key: Singular
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: Square
+                      value: '35'
+                    - description: ''
+                      is_valid: true
+                      key: Tealium
+                      value: '60'
+                    - description: ''
+                      is_valid: true
+                      key: Tenjin
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: Testee
+                      value: '28'
+                    - description: ''
+                      is_valid: true
+                      key: Ticketmaster
+                      value: '68'
+                    - description: ''
+                      is_valid: true
+                      key: Tiendanube
+                      value: '74'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokAppAPI
+                      value: '49'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokBusinessSDK
+                      value: '44'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokCustomInstantPage
+                      value: '41'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC1PSeller
+                      value: '42'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC3PStore
+                      value: '43'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokLeadAd
+                      value: '33'
+                    - description: ''
+                      is_valid: true
+                      key: TlnkIo
+                      value: '3'
+                    - description: TTOP
+                      is_valid: true
+                      key: TomoroCoffee
+                      value: '112'
+                    - description: ''
+                      is_valid: true
+                      key: Tray
+                      value: '53'
+                    - description: ''
+                      is_valid: true
+                      key: TripleWhale
+                      value: '130'
+                    - description: ''
+                      is_valid: true
+                      key: VTEX
+                      value: '55'
+                    - description: ''
+                      is_valid: true
+                      key: Vidoadsplus
+                      value: '19'
+                    - description: ''
+                      is_valid: true
+                      key: Weborama
+                      value: '29'
+                    - description: ''
+                      is_valid: true
+                      key: Wix
+                      value: '51'
+                    - description: ''
+                      is_valid: true
+                      key: WooCommerce
+                      value: '39'
+                    - description: ''
+                      is_valid: true
+                      key: WordPress
+                      value: '125'
+                    - description: ''
+                      is_valid: true
+                      key: ZZG
+                      value: '63'
+                    - description: ''
+                      is_valid: true
+                      key: Zapier
+                      value: '91'
+                    - description: for lead crm
+                      is_valid: true
+                      key: Zoho
+                      value: '86'
+                    - description: ''
+                      is_valid: true
+                      key: Zwiz
+                      value: '107'
+                    - description: ''
+                      is_valid: true
+                      key: doubleverify
+                      value: '24'
+                    - description: ''
+                      is_valid: true
+                      key: lojaintegrada
+                      value: '52'
+                    - description: ''
+                      is_valid: true
+                      key: myTracker
+                      value: '22'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.partner
+                platform:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804229743233025
+                    enum_package_name: 'AudiencePlatformType '
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ANDROID
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: IOS
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: PC
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: UNKNOWN
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.platform
+                tracking_url:
+                  description: ''
+                  nullable: false
+                  properties:
+                    click_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.tracking_url.click_url
+                    impression_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.tracking_url.impression_url
+                    retargeting_click_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                      x-open-source: $.http.body.tracking_url.retargeting_click_url
+                    retargeting_impression_url:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                      x-open-source: $.http.body.tracking_url.retargeting_impression_url
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.tracking_url
+              required:
+              - app_id
+              - advertiser_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update an app. [APP Update](https://business-api.tiktok.com/portal/docs?id=1740859300069378)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: app_id
+            required: true
+            source: $.http.body.app_id
+            type: number
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: platform
+            required: false
+            source: $.http.body.platform
+            type: number
+          - name: download_url
+            required: false
+            source: $.http.body.download_url
+            type: string
+          - name: enable_retargeting
+            required: false
+            source: $.http.body.enable_retargeting
+            type: number
+          - children:
+            - name: click_url
+              required: false
+              source: $.http.body.tracking_url.click_url
+              type: string
+            - name: impression_url
+              required: false
+              source: $.http.body.tracking_url.impression_url
+              type: string
+            - name: retargeting_click_url
+              required: false
+              source: $.http.body.tracking_url.retargeting_click_url
+              type: string
+            - name: retargeting_impression_url
+              required: false
+              source: $.http.body.tracking_url.retargeting_impression_url
+              type: string
+            is_expand: true
+            name: tracking_url
+            required: false
+            source: $.http.body.tracking_url
+            type: object
+          - name: partner
+            required: false
+            source: $.http.body.partner
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          app_id: $.http.body.app_id
+          download_url: $.http.body.download_url
+          enable_retargeting: $.http.body.enable_retargeting
+          partner: $.http.body.partner
+          platform: $.http.body.platform
+          tracking_url: $.http.body.tracking_url
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com
