@@ -1,0 +1,553 @@
+info:
+  description: '{"en":"Discovery Trending List","zh":"Discovery Trending List"}'
+  title: '{"en":"Discovery Trending List","zh":"Discovery Trending List"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /discovery/trending_list/:
+    get:
+      operationId: Discovery Trending_list
+      parameters:
+      - description: ''
+        in: query
+        name: discovery_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1805543041665089
+            enum_package_name: DiscoveryType
+            enums:
+            - description: ''
+              is_valid: true
+              key: HASHTAG
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.discovery_type
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: country_code
+        required: false
+        schema:
+          default: US
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.country_code
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: category_name
+        required: false
+        schema:
+          default: ALL
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1805543216364546
+            enum_package_name: DiscoveryHashtagCategory
+            enums:
+            - description: ''
+              is_valid: true
+              key: ACADEMIC_RESOURCES
+              value: ACADEMIC_RESOURCES
+            - description: ''
+              is_valid: true
+              key: ALL
+              value: ALL
+            - description: ''
+              is_valid: true
+              key: ANIMATION_AND_COMICS
+              value: ANIMATION_AND_COMICS
+            - description: ''
+              is_valid: true
+              key: APPAREL_AND_ACCESSORIES
+              value: APPAREL_AND_ACCESSORIES
+            - description: ''
+              is_valid: true
+              key: ART
+              value: ART
+            - description: ''
+              is_valid: true
+              key: AUTOMOTIVE
+              value: AUTOMOTIVE
+            - description: ''
+              is_valid: true
+              key: BABY_CARE
+              value: BABY_CARE
+            - description: ''
+              is_valid: true
+              key: BABY_KIDS_AND_MATERNITY
+              value: BABY_KIDS_AND_MATERNITY
+            - description: ''
+              is_valid: true
+              key: BEAUTY
+              value: BEAUTY
+            - description: ''
+              is_valid: true
+              key: BEAUTY_AND_PERSONAL_CARE
+              value: BEAUTY_AND_PERSONAL_CARE
+            - description: ''
+              is_valid: true
+              key: BEAUTY_SERVICES
+              value: BEAUTY_SERVICES
+            - description: ''
+              is_valid: true
+              key: BUSINESS_AND_FINANCE
+              value: BUSINESS_AND_FINANCE
+            - description: ''
+              is_valid: true
+              key: BUSINESS_SERVICES
+              value: BUSINESS_SERVICES
+            - description: ''
+              is_valid: true
+              key: CARD_AND_BOARD_GAMES
+              value: CARD_AND_BOARD_GAMES
+            - description: ''
+              is_valid: true
+              key: CAREER_AND_PROFESSIONAL_GROWTH
+              value: CAREER_AND_PROFESSIONAL_GROWTH
+            - description: ''
+              is_valid: true
+              key: COLLEGE
+              value: COLLEGE
+            - description: ''
+              is_valid: true
+              key: COMEDY
+              value: COMEDY
+            - description: ''
+              is_valid: true
+              key: COMMUNITY_UPDATES_AND_ISSUES
+              value: COMMUNITY_UPDATES_AND_ISSUES
+            - description: ''
+              is_valid: true
+              key: CONVENTIONAL_AND_MAINSTREAM_SPORTS
+              value: CONVENTIONAL_AND_MAINSTREAM_SPORTS
+            - description: ''
+              is_valid: true
+              key: COOKING
+              value: COOKING
+            - description: ''
+              is_valid: true
+              key: CRAFTING_AND_CREATIONS
+              value: CRAFTING_AND_CREATIONS
+            - description: ''
+              is_valid: true
+              key: CULTURE
+              value: CULTURE
+            - description: ''
+              is_valid: true
+              key: DANCE
+              value: DANCE
+            - description: ''
+              is_valid: true
+              key: DIARY_AND_VLOG
+              value: DIARY_AND_VLOG
+            - description: ''
+              is_valid: true
+              key: DRINKS
+              value: DRINKS
+            - description: ''
+              is_valid: true
+              key: EATING_EXPERIENCES
+              value: EATING_EXPERIENCES
+            - description: ''
+              is_valid: true
+              key: EDUCATION
+              value: EDUCATION
+            - description: ''
+              is_valid: true
+              key: ENTERTAINMENT_AND_SPORTS_NEWS
+              value: ENTERTAINMENT_AND_SPORTS_NEWS
+            - description: ''
+              is_valid: true
+              key: ENVIRONMENT
+              value: ENVIRONMENT
+            - description: ''
+              is_valid: true
+              key: EXERCISE_AND_FITNESS
+              value: EXERCISE_AND_FITNESS
+            - description: ''
+              is_valid: true
+              key: EXTREME_AND_ADVENTURE_SPORTS
+              value: EXTREME_AND_ADVENTURE_SPORTS
+            - description: ''
+              is_valid: true
+              key: FAMILY
+              value: FAMILY
+            - description: ''
+              is_valid: true
+              key: FINANCIAL_SERVICES
+              value: FINANCIAL_SERVICES
+            - description: ''
+              is_valid: true
+              key: FOOD
+              value: FOOD
+            - description: ''
+              is_valid: true
+              key: FOOD_AND_BEVERAGE
+              value: FOOD_AND_BEVERAGE
+            - description: ''
+              is_valid: true
+              key: FOOD_RECOMMENDATIONS
+              value: FOOD_RECOMMENDATIONS
+            - description: ''
+              is_valid: true
+              key: GADGETS_AND_INNOVATION
+              value: GADGETS_AND_INNOVATION
+            - description: ''
+              is_valid: true
+              key: GAMES
+              value: GAMES
+            - description: ''
+              is_valid: true
+              key: GENERAL_TRAVEL
+              value: GENERAL_TRAVEL
+            - description: ''
+              is_valid: true
+              key: HAIR_CARE
+              value: HAIR_CARE
+            - description: ''
+              is_valid: true
+              key: HEALTH
+              value: HEALTH
+            - description: ''
+              is_valid: true
+              key: HEALTH_AND_WELLNESS
+              value: HEALTH_AND_WELLNESS
+            - description: ''
+              is_valid: true
+              key: HISTORY_AND_LITERATURE
+              value: HISTORY_AND_LITERATURE
+            - description: ''
+              is_valid: true
+              key: HOME_AND_GARDEN
+              value: HOME_AND_GARDEN
+            - description: ''
+              is_valid: true
+              key: HOME_IMPROVEMENT
+              value: HOME_IMPROVEMENT
+            - description: ''
+              is_valid: true
+              key: HOUSEHOLD_PRODUCTS
+              value: HOUSEHOLD_PRODUCTS
+            - description: ''
+              is_valid: true
+              key: LEARNING_AND_DEVELOPMENT
+              value: LEARNING_AND_DEVELOPMENT
+            - description: ''
+              is_valid: true
+              key: LEISURE_AND_RECREATION_FACILITIES
+              value: LEISURE_AND_RECREATION_FACILITIES
+            - description: ''
+              is_valid: true
+              key: LIFE_SERVICES
+              value: LIFE_SERVICES
+            - description: ''
+              is_valid: true
+              key: LIVESTOCK_AND_FARMING
+              value: LIVESTOCK_AND_FARMING
+            - description: ''
+              is_valid: true
+              key: MISCELLANEOUS_PERFORMANCES
+              value: MISCELLANEOUS_PERFORMANCES
+            - description: ''
+              is_valid: true
+              key: MOVIES_AND_TV
+              value: MOVIES_AND_TV
+            - description: ''
+              is_valid: true
+              key: MUSIC
+              value: MUSIC
+            - description: ''
+              is_valid: true
+              key: NEWS_AND_ENTERTAINMENT
+              value: NEWS_AND_ENTERTAINMENT
+            - description: ''
+              is_valid: true
+              key: OTHER_BEAUTY
+              value: OTHER_BEAUTY
+            - description: ''
+              is_valid: true
+              key: OTHER_FASHION
+              value: OTHER_FASHION
+            - description: ''
+              is_valid: true
+              key: OTHER_TRANSPORTATION
+              value: OTHER_TRANSPORTATION
+            - description: ''
+              is_valid: true
+              key: OUTDOOR_RECREATION
+              value: OUTDOOR_RECREATION
+            - description: ''
+              is_valid: true
+              key: OUTFITS
+              value: OUTFITS
+            - description: ''
+              is_valid: true
+              key: PERFORMING_ARTS
+              value: PERFORMING_ARTS
+            - description: ''
+              is_valid: true
+              key: PERSONAL_PHOTOGRAPHY
+              value: PERSONAL_PHOTOGRAPHY
+            - description: ''
+              is_valid: true
+              key: PETS
+              value: PETS
+            - description: ''
+              is_valid: true
+              key: PET_CARE_AND_ACCESSORIES
+              value: PET_CARE_AND_ACCESSORIES
+            - description: ''
+              is_valid: true
+              key: PHOTOGRAPHY
+              value: PHOTOGRAPHY
+            - description: ''
+              is_valid: true
+              key: PRODUCTIVITY_AND_EFFICIENCY
+              value: PRODUCTIVITY_AND_EFFICIENCY
+            - description: ''
+              is_valid: true
+              key: ROMANCE
+              value: ROMANCE
+            - description: ''
+              is_valid: true
+              key: SCIENCE
+              value: SCIENCE
+            - description: ''
+              is_valid: true
+              key: SENSORY_EXPERIENCES
+              value: SENSORY_EXPERIENCES
+            - description: ''
+              is_valid: true
+              key: SHOWS_FESTIVALS_AND_EXHIBITIONS
+              value: SHOWS_FESTIVALS_AND_EXHIBITIONS
+            - description: ''
+              is_valid: true
+              key: SOFTWARE_AND_APPS
+              value: SOFTWARE_AND_APPS
+            - description: ''
+              is_valid: true
+              key: SPECIAL_EFFECTS
+              value: SPECIAL_EFFECTS
+            - description: ''
+              is_valid: true
+              key: SPORTS
+              value: SPORTS
+            - description: ''
+              is_valid: true
+              key: SPORTS_AND_OUTDOOR
+              value: SPORTS_AND_OUTDOOR
+            - description: ''
+              is_valid: true
+              key: SUPERNATURAL_AND_HORROR
+              value: SUPERNATURAL_AND_HORROR
+            - description: ''
+              is_valid: true
+              key: TECHNOLOGY
+              value: TECHNOLOGY
+            - description: ''
+              is_valid: true
+              key: TOYS_COLLECTIBLES_AND_MEMORABILIA
+              value: TOYS_COLLECTIBLES_AND_MEMORABILIA
+            - description: ''
+              is_valid: true
+              key: TRAVEL
+              value: TRAVEL
+            - description: ''
+              is_valid: true
+              key: VEHICLE_AND_TRANSPORTATION
+              value: VEHICLE_AND_TRANSPORTATION
+            - description: ''
+              is_valid: true
+              key: VIDEO_GAMES
+              value: VIDEO_GAMES
+            - description: ''
+              is_valid: true
+              key: WILDLIFE_AND_EXOTIC_PETS
+              value: WILDLIFE_AND_EXOTIC_PETS
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.category_name
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: date_range
+        required: false
+        schema:
+          default: 7DAY
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1805543099909121
+            enum_package_name: DiscoveryPeriodType
+            enums:
+            - description: ''
+              is_valid: true
+              key: 120DAY
+              value: l120d
+            - description: ''
+              is_valid: true
+              key: 1DAY
+              value: l1d
+            - description: ''
+              is_valid: true
+              key: 30DAY
+              value: l30d
+            - description: ''
+              is_valid: true
+              key: 7DAY
+              value: l7d
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.date_range
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 5
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get popular hashtags. [Trending List](https://business-api.tiktok.com/portal/docs?id=1825119032526849)
+      tags:
+      - Creative Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: discovery_type
+            required: true
+            source: $.http.query.discovery_type
+            type: number
+          - name: country_code
+            required: true
+            source: $.http.query.country_code
+            type: string
+          - name: category_name
+            required: true
+            source: $.http.query.category_name
+            type: string
+          - name: date_range
+            required: true
+            source: $.http.query.date_range
+            type: string
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          category_name: $.http.query.category_name
+          country_code: $.http.query.country_code
+          date_range: $.http.query.date_range
+          discovery_type: $.http.query.discovery_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          filter_info:
+            category_name: $.rpc.output.filter_info.category_name
+            country_code: $.rpc.output.filter_info.country_code
+            date_range: $.rpc.output.filter_info.date_range
+          list[][]:
+          - hashtag_id: $.rpc.output.hashtag_list[].hashtag_id
+            hashtag_name: $.rpc.output.hashtag_list[].hashtag_name
+            posts: $.rpc.output.hashtag_list[].posts
+            posts_global_lifetime: $.rpc.output.hashtag_list[].posts_global_lifetime
+            rank_change: $.rpc.output.hashtag_list[].rank_change
+            rank_position: $.rpc.output.hashtag_list[].rank_position
+            top_country_list: $.rpc.output.hashtag_list[].top_country_list
+            trending_history[][]:
+            - date: $.rpc.output.hashtag_list[].trending_history[].date
+              rank_position_daily: $.rpc.output.hashtag_list[].trending_history[].rank_position_daily
+              views_daily: $.rpc.output.hashtag_list[].trending_history[].views_daily
+            views: $.rpc.output.hashtag_list[].views
+            views_global_lifetime: $.rpc.output.hashtag_list[].views_global_lifetime
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

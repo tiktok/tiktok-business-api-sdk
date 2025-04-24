@@ -1,0 +1,1951 @@
+info:
+  description: '{"en":"2","zh":"3"}'
+  title: '{"en":"Creative Portfolio Create","zh":"1"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /creative/portfolio/create/:
+    post:
+      operationId: Creative Portfolio Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                creative_portfolio_type:
+                  default: CTA
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804132825869313
+                    enum_package_name: CreativePortfolioType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: CARD
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: COUNTDOWN_STICKER
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: CTA
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: DESTINATION_CARD
+                      value: '25'
+                    - description: ''
+                      is_valid: true
+                      key: DOWNLOAD_CARD
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: DYNAMIC_ADD_ON
+                      value: '200'
+                    - description: ''
+                      is_valid: true
+                      key: FLIGHT_CARD
+                      value: '22'
+                    - description: Corresponds to GESTURE
+                      is_valid: true
+                      key: GESTURE
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: GIFTCODE_STICKER
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: HOTEL_CARD
+                      value: '21'
+                    - description: AutoInventoryCard
+                      is_valid: true
+                      key: INVENTORY_CARD
+                      value: '18'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE_REMINDER_COUNTDOWN_STICKER
+                      value: '14'
+                    - description: Corresponds to MOVIE_CARD
+                      is_valid: true
+                      key: MEDIA_CARD
+                      value: '20'
+                    - description: ''
+                      is_valid: true
+                      key: NON_CLICK_SUPER_LIKE
+                      value: '12'
+                    - description: Corresponds to PAINTED_EGG
+                      is_valid: true
+                      key: PREMIUM_BADGE
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_CARD
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_INFO_CARD
+                      value: '24'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_SHOWCASE_TILE
+                      value: '26'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_TILE
+                      value: '17'
+                    - description: ''
+                      is_valid: true
+                      key: REMINDER_COUNTDOWN_STICKER
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: SHAKE_SURPRISE
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPIFY_PRODUCT_CARD
+                      value: '19'
+                    - description: Corresponds to VOTING_STICKER
+                      is_valid: true
+                      key: STICKER
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: STORY_SELECTION
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: SUPER_LIKE
+                      value: '9'
+                    - description: InfomativeCTA
+                      is_valid: true
+                      key: WEB_INFO_CARD
+                      value: '23'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.creative_portfolio_type
+                portfolio_content:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      ad_text:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 38
+                        x-open-source: $.http.body.portfolio_content[].title
+                      advanced_audio_info:
+                        description: ''
+                        nullable: false
+                        properties:
+                          video_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.portfolio_content[].advanced_audio_info.video_id
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 14
+                        x-open-source: $.http.body.portfolio_content[].advanced_audio_info
+                      advanced_gesture_icon:
+                        description: ''
+                        nullable: false
+                        properties:
+                          image_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.portfolio_content[].advanced_gesture_icon.image_id
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 12
+                        x-open-source: $.http.body.portfolio_content[].advanced_gesture_icon
+                      advanced_gesture_image:
+                        description: ''
+                        nullable: false
+                        properties:
+                          image_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.portfolio_content[].advanced_gesture_image.image_id
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 13
+                        x-open-source: $.http.body.portfolio_content[].advanced_gesture_image
+                      advanced_interact_shape:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1804268028189761
+                          enum_package_name: CreativeGestureInteractShape
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CURVE
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: LINE
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 11
+                        x-open-source: $.http.body.portfolio_content[].advanced_interact_shape
+                      advanced_interact_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1804138054020098
+                          enum_package_name: CreativePortfolioGestureInteract
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CLICK
+                            value: '0'
+                          - description: ''
+                            is_valid: true
+                            key: SLIDE
+                            value: '1'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 10
+                        x-open-source: $.http.body.portfolio_content[].advanced_interact_type
+                      app_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 19
+                        x-open-source: $.http.body.portfolio_content[].app_id
+                      asset_content:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.portfolio_content[].asset_content
+                      asset_ids:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-convert:
+                          - int64(%s)
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.portfolio_content[].asset_ids
+                      badge_image_info:
+                        description: ''
+                        nullable: false
+                        properties:
+                          image_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.portfolio_content[].advanced_image_info.image_id
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 9
+                        x-open-source: $.http.body.portfolio_content[].advanced_image_info
+                      badge_position:
+                        description: ''
+                        nullable: false
+                        properties:
+                          angle:
+                            description: ''
+                            format: int64
+                            nullable: false
+                            type: integer
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 3
+                            x-open-source: $.http.body.portfolio_content[].advanced_position.angle
+                          position_x:
+                            description: ''
+                            format: double
+                            nullable: false
+                            type: number
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.portfolio_content[].advanced_position.position_x
+                          position_y:
+                            description: ''
+                            format: double
+                            nullable: false
+                            type: number
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                            x-open-source: $.http.body.portfolio_content[].advanced_position.position_y
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 8
+                        x-open-source: $.http.body.portfolio_content[].advanced_position
+                      badge_show_time:
+                        description: ''
+                        format: int64
+                        minimum: 3
+                        nullable: false
+                        type: integer
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 6
+                        x-open-source: $.http.body.portfolio_content[].advanced_show_time
+                      call_to_action:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 21
+                        x-open-source: $.http.body.portfolio_content[].cta
+                      call_to_action_text:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 7
+                        x-open-source: $.http.body.portfolio_content[].advanced_guide_text_bottom
+                      card_image_index:
+                        description: ''
+                        format: int64
+                        minimum: 0
+                        nullable: false
+                        type: integer
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 45
+                        x-open-source: $.http.body.portfolio_content[].card_image_index
+                      card_show_price:
+                        description: ''
+                        nullable: false
+                        type: boolean
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 43
+                        x-open-source: $.http.body.portfolio_content[].card_show_price
+                      card_tags:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-enum:
+                            enum_package_expired: false
+                            enum_package_id: 1804139531927554
+                            enum_package_name: ProductTag
+                            enums:
+                            - description: ''
+                              is_valid: true
+                              key: BRAND
+                              value: '1'
+                            - description: ''
+                              is_valid: true
+                              key: CATEGORY
+                              value: '2'
+                            - description: ''
+                              is_valid: true
+                              key: DESC
+                              value: '5'
+                            - description: ''
+                              is_valid: true
+                              key: FREE_SHIPPING
+                              value: '4'
+                            - description: ''
+                              is_valid: true
+                              key: MATERIAL
+                              value: '3'
+                            key_format: string
+                            strict: true
+                            use_part: false
+                            validate_only: false
+                            value_format: int32
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 44
+                        x-open-source: $.http.body.portfolio_content[].card_tags
+                      card_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1804137888825410
+                          enum_package_name: CreativePortfolioCardType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: IMAGE
+                            value: '1'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.portfolio_content[].card_type
+                      catalog_authorized_bc_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 29
+                        x-open-source: $.http.body.portfolio_content[].catalog_authorized_bc
+                      catalog_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 28
+                        x-open-source: $.http.body.portfolio_content[].product_platform_id
+                      category_label:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 18
+                        x-open-source: $.http.body.portfolio_content[].category_label
+                      country_code:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 23
+                        x-open-source: $.http.body.portfolio_content[].country_code
+                      description:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 17
+                        x-open-source: $.http.body.portfolio_content[].description
+                      display_price_enabled:
+                        description: ''
+                        nullable: false
+                        type: boolean
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 48
+                        x-open-source: $.http.body.portfolio_content[].display_price_info
+                      dynamic_format:
+                        default: UNSET
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1826186631243841
+                          enum_package_name: DynamicCreativeStrategy
+                          enums:
+                          - description: smart creative
+                            is_valid: true
+                            key: DYNAMIC_CREATIVE
+                            value: '1'
+                          - description: "\u672A\u8BBE\u7F6E"
+                            is_valid: true
+                            key: UNSET
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 41
+                        x-open-source: $.http.body.portfolio_content[].vertical_creative_strategy
+                      gesture_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1829049153107970
+                          enum_package_name: GestureType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CLICK
+                            value: '0'
+                          - description: ''
+                            is_valid: true
+                            key: CURVED_SLIDE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: STRAIGHT_SLIDE
+                            value: '1'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 50
+                      identity_authorized_bc_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 34
+                        x-open-source: $.http.body.portfolio_content[].identity_bc_id
+                      identity_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 32
+                        x-open-source: $.http.body.portfolio_content[].identity_id
+                      identity_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1800331041544193
+                          enum_package_name: IdentityType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: AUTH_CODE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: BC_AUTH_TT
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: BC_SELF_TT
+                            value: '4'
+                          - description: ''
+                            is_valid: true
+                            key: CUSTOMIZED_USER
+                            value: '1'
+                          - description: "TTS \u6388\u6743\u6765\u6E90TT\u8D26\u53F7"
+                            is_valid: false
+                            key: TTS_TT
+                            value: '8'
+                          - description: ''
+                            is_valid: true
+                            key: TT_USER
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: UNSET
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: true
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 33
+                        x-open-source: $.http.body.portfolio_content[].identity_type
+                      image_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 4
+                        x-open-source: $.http.body.portfolio_content[].image_uri
+                      image_optimization_enabled:
+                        description: ''
+                        nullable: false
+                        type: boolean
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 49
+                        x-open-source: $.http.body.portfolio_content[].enable_image_optimization
+                      interactive_music_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 51
+                      item_group_ids:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 37
+                        x-open-source: $.http.body.portfolio_content[].spu_list
+                      layouts:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-enum:
+                            enum_package_expired: false
+                            enum_package_id: null
+                            enum_package_name: null
+                            enums:
+                            - description: ''
+                              is_valid: true
+                              key: TYPE_1
+                              value: '1'
+                            - description: ''
+                              is_valid: true
+                              key: TYPE_2
+                              value: '2'
+                            key_format: string
+                            strict: true
+                            use_part: false
+                            validate_only: false
+                            value_format: int32
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 16
+                        x-open-source: $.http.body.portfolio_content[].layouts
+                      mobile_app_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 22
+                        x-open-source: $.http.body.portfolio_content[].origin_app_id
+                      pop_up_window_image_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 5
+                      primary_text:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1826185093536770
+                          enum_package_name: VerticalCatalogCardTextType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CUSTOM_LABEL
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: DEALS
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: GENRE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: NONE
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: RATING
+                            value: '4'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 24
+                        x-open-source: $.http.body.portfolio_content[].primary_text
+                      product_set_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 35
+                        x-open-source: $.http.body.portfolio_content[].product_set_id
+                      product_source:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1807533400732674
+                          enum_package_name: ProductSource
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CATALOG
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: SHOWCASE
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: STORE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: UNSET
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 27
+                        x-open-source: $.http.body.portfolio_content[].product_source
+                      product_specific_type:
+                        default: UNSET
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1807533365234690
+                          enum_package_name: ProductSpecificType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: ALL
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: CUSTOMIZED_PRODUCTS
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: PRODUCT_SET
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: UNSET
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 40
+                        x-open-source: $.http.body.portfolio_content[].product_specific_type
+                      profile_image:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 20
+                        x-open-source: $.http.body.portfolio_content[].avatar
+                      secondary_text:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1826185093536770
+                          enum_package_name: VerticalCatalogCardTextType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CUSTOM_LABEL
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: DEALS
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: GENRE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: NONE
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: RATING
+                            value: '4'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 25
+                        x-open-source: $.http.body.portfolio_content[].secondary_text
+                      selling_points:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        maxItems: 5
+                        minItems: 1
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 46
+                        x-open-source: $.http.body.portfolio_content[].selling_points
+                      showcase_products:
+                        description: ''
+                        items:
+                          nullable: false
+                          properties:
+                            catalog_id:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-convert:
+                              - int64(%s)
+                              x-open-field-id: 3
+                              x-open-source: $.http.body.portfolio_content[].showcase_spu_list[].catalog_id
+                            item_group_id:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-field-id: 1
+                              x-open-source: $.http.body.portfolio_content[].showcase_spu_list[].spu_id
+                            store_id:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-convert:
+                              - int64(%s)
+                              x-open-field-id: 2
+                              x-open-source: $.http.body.portfolio_content[].showcase_spu_list[].shop_id
+                          type: object
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        maxItems: 20
+                        minItems: 1
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 39
+                        x-open-source: $.http.body.portfolio_content[].showcase_spu_list
+                      sku_ids:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 36
+                        x-open-source: $.http.body.portfolio_content[].sku_ids
+                      slide_dimension:
+                        description: ''
+                        nullable: false
+                        properties:
+                          dimension_height:
+                            description: ''
+                            format: int64
+                            nullable: false
+                            type: integer
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                          dimension_width:
+                            description: ''
+                            format: int64
+                            nullable: false
+                            type: integer
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 53
+                      slide_length:
+                        description: ''
+                        format: int64
+                        nullable: false
+                        type: integer
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 52
+                      sticker_param:
+                        description: ''
+                        nullable: false
+                        properties:
+                          color:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: null
+                              enum_package_name: null
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: ORANGE
+                                value: ORANGE
+                              - description: ''
+                                is_valid: true
+                                key: BLACK
+                                value: BLACK
+                              - description: ''
+                                is_valid: true
+                                key: RED
+                                value: RED
+                              - description: ''
+                                is_valid: true
+                                key: BLUE
+                                value: BLUE
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: string
+                            x-open-field-id: 3
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.color
+                          cutoff_time:
+                            description: ''
+                            format: datetime
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.cutoff_time
+                          display_angle:
+                            description: ''
+                            format: int64
+                            maximum: 180
+                            nullable: false
+                            type: integer
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 4
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.display_angle
+                          giftcode:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 13
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.giftcode
+                          landing_page_url:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 10
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.landing_page_url
+                          live_tiktok_user_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 11
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.live_account_user_id
+                          opacity:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: null
+                              enum_package_name: null
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: '0.7'
+                                value: '0.7'
+                              - description: ''
+                                is_valid: true
+                                key: '0.8'
+                                value: '0.8'
+                              - description: ''
+                                is_valid: true
+                                key: '0.9'
+                                value: '0.9'
+                              - description: ''
+                                is_valid: true
+                                key: '1'
+                                value: '1'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: string
+                            x-open-field-id: 8
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.opacity
+                          position_x:
+                            description: ''
+                            format: int64
+                            nullable: false
+                            type: integer
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 5
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.position_x
+                          position_y:
+                            description: ''
+                            format: int64
+                            nullable: false
+                            type: integer
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 6
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.position_y
+                          predefined_placement:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 14
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.predefined_placement
+                          reminder_time:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1826186173387777
+                              enum_package_name: ReminderTime
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: FIVE_MINUTES_AFTER
+                                value: '4'
+                              - description: ''
+                                is_valid: true
+                                key: ONE_DAY_EARLIER
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: ONE_HOUR_EARLIER
+                                value: '1'
+                              - description: ''
+                                is_valid: true
+                                key: ONE_MINUTE_AFTER
+                                value: '3'
+                              - description: ''
+                                is_valid: true
+                                key: ONE_MINUTE_EARLIER
+                                value: '0'
+                              - description: ''
+                                is_valid: true
+                                key: TEN_MINUTES_AFTER
+                                value: '5'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 9
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.reminder_time
+                          size:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: null
+                              enum_package_name: null
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: '0.6'
+                                value: '0.6'
+                              - description: ''
+                                is_valid: true
+                                key: '0.7'
+                                value: '0.7'
+                              - description: ''
+                                is_valid: true
+                                key: '0.8'
+                                value: '0.8'
+                              - description: ''
+                                is_valid: true
+                                key: '0.9'
+                                value: '0.9'
+                              - description: ''
+                                is_valid: true
+                                key: '1'
+                                value: '1'
+                              - description: ''
+                                is_valid: true
+                                key: '1.1'
+                                value: '1.1'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: string
+                            x-open-field-id: 7
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.size
+                          sticker_type:
+                            default: COUNTDOWN
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1804139609682946
+                              enum_package_name: StickerType
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: COUNTDOWN
+                                value: '7'
+                              - description: ''
+                                is_valid: true
+                                key: GIFTCODE
+                                value: '8'
+                              - description: ''
+                                is_valid: true
+                                key: LIVE_REMINDER_COUNTDOWN
+                                value: '14'
+                              - description: ''
+                                is_valid: true
+                                key: REMINDER_COUNTDOWN
+                                value: '10'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 12
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.sticker_type
+                          title:
+                            description: ''
+                            maxLength: 54
+                            minLength: 1
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.portfolio_content[].sticker_param.title
+                        required:
+                        - title
+                        - color
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 26
+                        x-open-source: $.http.body.portfolio_content[].sticker_param
+                      store_authorized_bc_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 31
+                        x-open-source: $.http.body.portfolio_content[].shop_authorized_bc
+                      store_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 30
+                        x-open-source: $.http.body.portfolio_content[].shop_id
+                      tags:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-enum:
+                            enum_package_expired: false
+                            enum_package_id: 1804139457244162
+                            enum_package_name: CreativePortfolioDownloadCardTag
+                            enums:
+                            - description: ''
+                              is_valid: true
+                              key: CATEGORIES
+                              value: '1'
+                            - description: ''
+                              is_valid: true
+                              key: COMMENT_VOLUME
+                              value: '5'
+                            - description: ''
+                              is_valid: true
+                              key: FILESIZE
+                              value: '2'
+                            - description: ''
+                              is_valid: true
+                              key: RANKING
+                              value: '4'
+                            - description: ''
+                              is_valid: true
+                              key: RATING
+                              value: '3'
+                            key_format: string
+                            strict: true
+                            use_part: false
+                            validate_only: false
+                            value_format: int32
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 15
+                        x-open-source: $.http.body.portfolio_content[].tags
+                      title:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 47
+                        x-open-source: $.http.body.portfolio_content[].card_title
+                      vertical_video_strategy:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1828883174105281
+                          enum_package_name: CreativeVerticalVideoStrategy
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: CATALOG_UPLOADED_VIDEOS
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: CATALOG_VIDEOS
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: LIVE_STREAM
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: SINGLE_VIDEO
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: UNSET
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 42
+                        x-open-source: $.http.body.portfolio_content[].vertical_video_strategy
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.portfolio_content
+              required:
+              - advertiser_id
+              - portfolio_content
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a portfolio. [Creative Portfolie Create](https://business-api.tiktok.com/portal/docs?id=1739091950439426)
+      tags:
+      - Creative Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: creative_portfolio_type
+            required: false
+            source: $.http.body.creative_portfolio_type
+            type: number
+          - children:
+            - children:
+              - name: card_type
+                required: false
+                source: $.http.body.portfolio_content[].card_type
+                type: number
+              - children:
+                - type: number
+                is_expand: false
+                name: asset_ids
+                required: false
+                source: $.http.body.portfolio_content[].asset_ids
+                sub_type: number
+                type: array
+              - name: asset_content
+                required: false
+                source: $.http.body.portfolio_content[].asset_content
+                type: string
+              - name: image_uri
+                required: false
+                source: $.http.body.portfolio_content[].image_id
+                type: string
+              - name: jump_image_uri
+                required: false
+                source: $.http.body.portfolio_content[].pop_up_window_image_id
+                type: string
+              - name: advanced_show_time
+                required: false
+                source: $.http.body.portfolio_content[].badge_show_time
+                type: number
+              - name: advanced_guide_text_bottom
+                required: false
+                source: $.http.body.portfolio_content[].call_to_action_text
+                type: string
+              - children:
+                - name: position_x
+                  required: false
+                  source: $.http.body.portfolio_content[].advanced_position.position_x
+                  type: number
+                - name: position_y
+                  required: false
+                  source: $.http.body.portfolio_content[].advanced_position.position_y
+                  type: number
+                - name: angle
+                  required: false
+                  source: $.http.body.portfolio_content[].advanced_position.angle
+                  type: number
+                is_expand: true
+                name: advanced_position
+                required: false
+                source: $.http.body.portfolio_content[].badge_position
+                type: object
+              - children:
+                - name: image_id
+                  required: false
+                  source: $.http.body.portfolio_content[].advanced_image_info.image_id
+                  type: string
+                is_expand: true
+                name: advanced_image_info
+                required: false
+                source: $.http.body.portfolio_content[].badge_image_info
+                type: object
+              - name: advanced_interact_type
+                required: false
+                source: $.http.body.portfolio_content[].advanced_interact_type
+                type: number
+              - name: advanced_interact_shape
+                required: false
+                source: $.http.body.portfolio_content[].advanced_interact_shape
+                type: number
+              - children:
+                - name: image_id
+                  required: false
+                  source: $.http.body.portfolio_content[].advanced_gesture_icon.image_id
+                  type: string
+                is_expand: true
+                name: advanced_gesture_icon
+                required: false
+                source: $.http.body.portfolio_content[].advanced_gesture_icon
+                type: object
+              - children:
+                - name: image_id
+                  required: false
+                  source: $.http.body.portfolio_content[].advanced_gesture_image.image_id
+                  type: string
+                is_expand: true
+                name: advanced_gesture_image
+                required: false
+                source: $.http.body.portfolio_content[].advanced_gesture_image
+                type: object
+              - children:
+                - name: video_id
+                  required: false
+                  source: $.http.body.portfolio_content[].advanced_audio_info.video_id
+                  type: string
+                is_expand: true
+                name: advanced_audio_info
+                required: false
+                source: $.http.body.portfolio_content[].advanced_audio_info
+                type: object
+              - children:
+                - type: number
+                is_expand: true
+                name: tags
+                required: false
+                source: $.http.body.portfolio_content[].tags
+                sub_type: number
+                type: array
+              - children:
+                - type: number
+                is_expand: true
+                name: layouts
+                required: false
+                source: $.http.body.portfolio_content[].layouts
+                sub_type: number
+                type: array
+              - name: description
+                required: false
+                source: $.http.body.portfolio_content[].description
+                type: string
+              - name: category_label
+                required: false
+                source: $.http.body.portfolio_content[].category_label
+                type: string
+              - name: app_id
+                required: false
+                source: $.http.body.portfolio_content[].app_id
+                type: string
+              - name: avatar
+                required: false
+                source: $.http.body.portfolio_content[].profile_image
+                type: string
+              - name: cta
+                required: false
+                source: $.http.body.portfolio_content[].call_to_action
+                type: string
+              - name: origin_app_id
+                required: false
+                source: $.http.body.portfolio_content[].mobile_app_id
+                type: string
+              - children:
+                - type: string
+                is_expand: true
+                name: country_code
+                required: false
+                source: $.http.body.portfolio_content[].country_code
+                sub_type: string
+                type: array
+              - name: primary_text
+                required: false
+                source: $.http.body.portfolio_content[].primary_text
+                type: number
+              - name: secondary_text
+                required: false
+                source: $.http.body.portfolio_content[].secondary_text
+                type: number
+              - children:
+                - name: title
+                  required: true
+                  source: $.http.body.portfolio_content[].sticker_param.title
+                  type: string
+                - name: cutoff_time
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.cutoff_time
+                  type: string
+                - name: color
+                  required: true
+                  source: $.http.body.portfolio_content[].sticker_param.color
+                  type: string
+                - name: display_angle
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.display_angle
+                  type: number
+                - name: position_x
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.position_x
+                  type: number
+                - name: position_y
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.position_y
+                  type: number
+                - name: size
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.size
+                  type: string
+                - name: opacity
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.opacity
+                  type: string
+                - name: reminder_time
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.reminder_time
+                  type: number
+                - name: landing_page_url
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.landing_page_url
+                  type: string
+                - name: live_account_user_id
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.live_tiktok_user_id
+                  type: number
+                - name: sticker_type
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.sticker_type
+                  type: number
+                - name: giftcode
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.giftcode
+                  type: string
+                - name: predefined_placement
+                  required: false
+                  source: $.http.body.portfolio_content[].sticker_param.predefined_placement
+                  type: string
+                is_expand: true
+                name: sticker_param
+                required: false
+                type: object
+              - name: product_source
+                required: false
+                source: $.http.body.portfolio_content[].product_source
+                type: number
+              - name: product_platform_id
+                required: false
+                source: $.http.body.portfolio_content[].catalog_id
+                type: number
+              - name: catalog_authorized_bc
+                required: false
+                source: $.http.body.portfolio_content[].catalog_authorized_bc_id
+                type: number
+              - name: shop_id
+                required: false
+                source: $.http.body.portfolio_content[].store_id
+                type: number
+              - name: shop_authorized_bc
+                required: false
+                source: $.http.body.portfolio_content[].store_authorized_bc_id
+                type: number
+              - name: identity_id
+                required: false
+                source: $.http.body.portfolio_content[].identity_id
+                type: string
+              - name: identity_type
+                required: false
+                source: $.http.body.portfolio_content[].identity_type
+                type: number
+              - name: identity_bc_id
+                required: false
+                source: $.http.body.portfolio_content[].identity_authorized_bc_id
+                type: number
+              - name: product_set_id
+                required: false
+                source: $.http.body.portfolio_content[].product_set_id
+                type: number
+              - children:
+                - type: string
+                is_expand: true
+                name: sku_ids
+                required: false
+                source: $.http.body.portfolio_content[].sku_ids
+                sub_type: string
+                type: array
+              - children:
+                - type: string
+                is_expand: true
+                name: spu_list
+                required: false
+                source: $.http.body.portfolio_content[].item_group_ids
+                sub_type: string
+                type: array
+              - name: title
+                required: false
+                source: $.http.body.portfolio_content[].ad_text
+                type: string
+              - children:
+                - children:
+                  - name: spu_id
+                    required: false
+                    source: $.http.body.portfolio_content[].showcase_products[].item_group_id
+                    type: string
+                  - name: shop_id
+                    required: false
+                    source: $.http.body.portfolio_content[].showcase_products[].store_id
+                    type: number
+                  - name: catalog_id
+                    required: false
+                    source: $.http.body.portfolio_content[].showcase_products[].catalog_id
+                    type: number
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: showcase_spu_list
+                required: false
+                sub_type: object
+                type: array
+              - name: product_specific_type
+                required: false
+                source: $.http.body.portfolio_content[].product_specific_type
+                type: number
+              - name: vertical_creative_strategy
+                required: false
+                source: $.http.body.portfolio_content[].dynamic_format
+                type: number
+              - name: vertical_video_strategy
+                required: false
+                source: $.http.body.portfolio_content[].vertical_video_strategy
+                type: number
+              - name: card_show_price
+                required: false
+                source: $.http.body.portfolio_content[].card_show_price
+                type: boolean
+              - children:
+                - type: number
+                is_expand: true
+                name: card_tags
+                required: false
+                source: $.http.body.portfolio_content[].card_tags
+                sub_type: number
+                type: array
+              - name: card_image_index
+                required: false
+                source: $.http.body.portfolio_content[].card_image_index
+                type: number
+              - children:
+                - type: string
+                is_expand: true
+                name: selling_points
+                required: false
+                source: $.http.body.portfolio_content[].selling_points
+                sub_type: string
+                type: array
+              - name: card_title
+                required: false
+                source: $.http.body.portfolio_content[].title
+                type: string
+              - name: display_price_info
+                required: false
+                source: $.http.body.portfolio_content[].display_price_enabled
+                type: boolean
+              - name: enable_image_optimization
+                required: false
+                source: $.http.body.portfolio_content[].image_optimization_enabled
+                type: boolean
+              - name: gesture_type
+                required: false
+                source: $.http.body.portfolio_content[].gesture_type
+                type: number
+              - name: interactive_music_id
+                required: false
+                source: $.http.body.portfolio_content[].interactive_music_id
+                type: string
+              - name: slide_length
+                required: false
+                source: $.http.body.portfolio_content[].slide_length
+                type: number
+              - children:
+                - name: dimension_width
+                  required: false
+                  source: $.http.body.portfolio_content[].slide_dimension.dimension_width
+                  type: number
+                - name: dimension_height
+                  required: false
+                  source: $.http.body.portfolio_content[].slide_dimension.dimension_height
+                  type: number
+                is_expand: false
+                name: slide_dimension
+                required: false
+                source: $.http.body.portfolio_content[].slide_dimension
+                type: object
+              is_expand: true
+              type: object
+            is_expand: true
+            name: portfolio_content
+            required: true
+            sub_type: object
+            type: array
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.body.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.body.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.body.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.body.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.body.context_info.x_real_ip
+              type: string
+            - name: user_agent
+              required: false
+              source: $.http.body.context_info.user_agent
+              type: string
+            - name: referer
+              required: false
+              source: $.http.body.context_info.referer
+              type: string
+            is_expand: false
+            name: context_info
+            required: true
+            source: $.http.body.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          context_info: $.http.body.context_info
+          creative_portfolio_type: $.http.body.creative_portfolio_type
+          portfolio_content[][]:
+          - advanced_audio_info: $.http.body.portfolio_content[].advanced_audio_info
+            advanced_gesture_icon: $.http.body.portfolio_content[].advanced_gesture_icon
+            advanced_gesture_image: $.http.body.portfolio_content[].advanced_gesture_image
+            advanced_guide_text_bottom: $.http.body.portfolio_content[].call_to_action_text
+            advanced_image_info: $.http.body.portfolio_content[].badge_image_info
+            advanced_interact_shape: $.http.body.portfolio_content[].advanced_interact_shape
+            advanced_interact_type: $.http.body.portfolio_content[].advanced_interact_type
+            advanced_position: $.http.body.portfolio_content[].badge_position
+            advanced_show_time: $.http.body.portfolio_content[].badge_show_time
+            app_id: $.http.body.portfolio_content[].app_id
+            asset_content: $.http.body.portfolio_content[].asset_content
+            asset_ids: $.http.body.portfolio_content[].asset_ids
+            avatar: $.http.body.portfolio_content[].profile_image
+            card_image_index: $.http.body.portfolio_content[].card_image_index
+            card_show_price: $.http.body.portfolio_content[].card_show_price
+            card_tags: $.http.body.portfolio_content[].card_tags
+            card_title: $.http.body.portfolio_content[].title
+            card_type: $.http.body.portfolio_content[].card_type
+            catalog_authorized_bc: $.http.body.portfolio_content[].catalog_authorized_bc_id
+            category_label: $.http.body.portfolio_content[].category_label
+            country_code: $.http.body.portfolio_content[].country_code
+            cta: $.http.body.portfolio_content[].call_to_action
+            description: $.http.body.portfolio_content[].description
+            display_price_info: $.http.body.portfolio_content[].display_price_enabled
+            enable_image_optimization: $.http.body.portfolio_content[].image_optimization_enabled
+            gesture_type: $.http.body.portfolio_content[].gesture_type
+            identity_bc_id: $.http.body.portfolio_content[].identity_authorized_bc_id
+            identity_id: $.http.body.portfolio_content[].identity_id
+            identity_type: $.http.body.portfolio_content[].identity_type
+            image_uri: $.http.body.portfolio_content[].image_id
+            interactive_music_id: $.http.body.portfolio_content[].interactive_music_id
+            jump_image_uri: $.http.body.portfolio_content[].pop_up_window_image_id
+            layouts: $.http.body.portfolio_content[].layouts
+            origin_app_id: $.http.body.portfolio_content[].mobile_app_id
+            primary_text: $.http.body.portfolio_content[].primary_text
+            product_platform_id: $.http.body.portfolio_content[].catalog_id
+            product_set_id: $.http.body.portfolio_content[].product_set_id
+            product_source: $.http.body.portfolio_content[].product_source
+            product_specific_type: $.http.body.portfolio_content[].product_specific_type
+            secondary_text: $.http.body.portfolio_content[].secondary_text
+            selling_points: $.http.body.portfolio_content[].selling_points
+            shop_authorized_bc: $.http.body.portfolio_content[].store_authorized_bc_id
+            shop_id: $.http.body.portfolio_content[].store_id
+            showcase_spu_list[][]:
+            - catalog_id: $.http.body.portfolio_content[].showcase_products[].catalog_id
+              shop_id: $.http.body.portfolio_content[].showcase_products[].store_id
+              spu_id: $.http.body.portfolio_content[].showcase_products[].item_group_id
+            sku_ids: $.http.body.portfolio_content[].sku_ids
+            slide_dimension: $.http.body.portfolio_content[].slide_dimension
+            slide_length: $.http.body.portfolio_content[].slide_length
+            spu_list: $.http.body.portfolio_content[].item_group_ids
+            sticker_param[]:
+            - color: $.http.body.portfolio_content[].sticker_param.color
+              cutoff_time: $.http.body.portfolio_content[].sticker_param.cutoff_time
+              display_angle: $.http.body.portfolio_content[].sticker_param.display_angle
+              giftcode: $.http.body.portfolio_content[].sticker_param.giftcode
+              landing_page_url: $.http.body.portfolio_content[].sticker_param.landing_page_url
+              live_account_user_id: $.http.body.portfolio_content[].sticker_param.live_tiktok_user_id
+              opacity: $.http.body.portfolio_content[].sticker_param.opacity
+              position_x: $.http.body.portfolio_content[].sticker_param.position_x
+              position_y: $.http.body.portfolio_content[].sticker_param.position_y
+              predefined_placement: $.http.body.portfolio_content[].sticker_param.predefined_placement
+              reminder_time: $.http.body.portfolio_content[].sticker_param.reminder_time
+              size: $.http.body.portfolio_content[].sticker_param.size
+              sticker_type: $.http.body.portfolio_content[].sticker_param.sticker_type
+              title: $.http.body.portfolio_content[].sticker_param.title
+            tags: $.http.body.portfolio_content[].tags
+            title: $.http.body.portfolio_content[].ad_text
+            vertical_creative_strategy: $.http.body.portfolio_content[].dynamic_format
+            vertical_video_strategy: $.http.body.portfolio_content[].vertical_video_strategy
+        response_cookie: []
+        response_header: []
+        response_rule:
+          creative_portfolio_id: $.rpc.output.creative_portfolio_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com
