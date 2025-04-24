@@ -1,0 +1,235 @@
+info:
+  description: '{"en":"Use this endpoint to edit an image. The image editing endpoint
+    can edit an image according to the size you want as well as apply creative trimmings.
+    This endpoint only supports cropping/trimming of an image that has been uploaded
+    to the Asset Library. The edited images will be automatically uploaded to the
+    Asset Library and the new picture ID will be returned.\n\nIf you want to upload
+    an image to the Asset Library, use the /file/image/ad/upload/ endpoint.\n\nImage
+    editing methods\nfix_size: fixed length and width cropping, no trimming.\nonly_gauss_pad:
+    only Gaussian blur trimming, no cropping.\ngauss_padding_reserve_score: Gaussian
+    blur catch-all, with which picture will be adjusted according to the size of main
+    body in the original image.","zh":"Use this endpoint to edit an image. The image
+    editing endpoint can edit an image according to the size you want as well as apply
+    creative trimmings. This endpoint only supports cropping/trimming of an image
+    that has been uploaded to the Asset Library. The edited images will be automatically
+    uploaded to the Asset Library and the new picture ID will be returned.\n\nIf you
+    want to upload an image to the Asset Library, use the /file/image/ad/upload/ endpoint.\n\nImage
+    editing methods\nfix_size: fixed length and width cropping, no trimming.\nonly_gauss_pad:
+    only Gaussian blur trimming, no cropping.\ngauss_padding_reserve_score: Gaussian
+    blur catch-all, with which picture will be adjusted according to the size of main
+    body in the original image."}'
+  title: '{"en":"Edit an image","zh":"Edit an image"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /creative/image/edit/:
+    post:
+      operationId: Creative Image Edit
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                edit_method:
+                  default: fix_size
+                  description: ''
+                  maxLength: 100
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: fix_size
+                      value: fix_size
+                    - description: ''
+                      is_valid: true
+                      key: only_gauss_pad
+                      value: only_gauss_pad
+                    - description: ''
+                      is_valid: true
+                      key: gauss_padding_reserve_score
+                      value: gauss_padding_reserve_score
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.edit_method
+                height:
+                  description: ''
+                  format: int64
+                  minimum: 3
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.height
+                image_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.image_id
+                image_name:
+                  description: ''
+                  maxLength: 100
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.image_name
+                width:
+                  description: ''
+                  format: int64
+                  minimum: 3
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.width
+              required:
+              - advertiser_id
+              - image_id
+              - width
+              - height
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Edit an image according to the size you want as well as apply creative
+        trimmings. [Image Edit](https://business-api.tiktok.com/portal/docs?id=1739067107903489)
+      tags:
+      - Creative Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: image_id
+            required: true
+            source: $.http.body.image_id
+            type: string
+          - name: width
+            required: true
+            source: $.http.body.width
+            type: number
+          - name: height
+            required: true
+            source: $.http.body.height
+            type: number
+          - name: image_name
+            required: false
+            source: $.http.body.image_name
+            type: string
+          - name: edit_method
+            required: true
+            source: $.http.body.edit_method
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          edit_method: $.http.body.edit_method
+          height: $.http.body.height
+          image_id: $.http.body.image_id
+          image_name: $.http.body.image_name
+          width: $.http.body.width
+        response_cookie: []
+        response_header: []
+        response_rule:
+          create_time: $.rpc.output.create_time
+          displayable: $.rpc.output.displayable
+          file_name: $.rpc.output.file_name
+          format: $.rpc.output.format
+          height: $.rpc.output.height
+          image_id: $.rpc.output.image_id
+          image_url: $.rpc.output.image_url
+          is_carousel_usable: $.rpc.output.is_carousel_usable
+          material_id: $.rpc.output.material_id
+          modify_time: $.rpc.output.modify_time
+          signature: $.rpc.output.signature
+          size: $.rpc.output.size
+          width: $.rpc.output.width
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

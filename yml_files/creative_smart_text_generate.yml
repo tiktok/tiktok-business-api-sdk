@@ -1,0 +1,262 @@
+info:
+  description: '{"en":"Use this endpoint to get Smart Text recommendations.\n\nSmart
+    Text is an automatic ad text generation feature that provides you with ad title
+    copy suggestions relevant to your industry and product on TikTok, saving your
+    time and improving the effectiveness of your captions.\n\nThe Smart Text feature
+    is provided for English, Japanese, Vietnamese, and Russian and is not available
+    to ad accounts in the United States and Canada.","zh":"Use this endpoint to get
+    Smart Text recommendations.\n\nSmart Text is an automatic ad text generation feature
+    that provides you with ad title copy suggestions relevant to your industry and
+    product on TikTok, saving your time and improving the effectiveness of your captions.\n\nThe
+    Smart Text feature is provided for English, Japanese, Vietnamese, and Russian
+    and is not available to ad accounts in the United States and Canada."}'
+  title: '{"en":"Get Smart Text recommendations","zh":"Get Smart Text recommendations"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /creative/smart_text/generate/:
+    post:
+      operationId: Creative Smart_text Generate
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                adgroup_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.adgroup_id
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                industry_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.industry_id
+                keywords:
+                  description: ''
+                  items:
+                    minLength: 1
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.keywords
+                language:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804052384859137
+                    enum_package_name: SmartTextLanguage
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: EN
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: JA
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: RU
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: VI
+                      value: '3'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.language
+                limit:
+                  default: 10
+                  description: ''
+                  format: int64
+                  maximum: 20
+                  minimum: 1
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.limit
+                param_type:
+                  default: CUSTOMIZED
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: CUSTOMIZED
+                      value: CUSTOMIZED
+                    - description: ''
+                      is_valid: true
+                      key: RECOMMENDED
+                      value: RECOMMENDED
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.param_type
+              required:
+              - advertiser_id
+              - adgroup_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Use smart text. [Smart Text Generate](https://business-api.tiktok.com/portal/docs?id=1739084248002626)
+      tags:
+      - Creative Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: adgroup_id
+            required: true
+            source: $.http.body.adgroup_id
+            type: number
+          - name: param_type
+            required: false
+            source: $.http.body.param_type
+            type: string
+          - name: language
+            required: false
+            source: $.http.body.language
+            type: number
+          - name: industry_id
+            required: false
+            source: $.http.body.industry_id
+            type: number
+          - children:
+            - type: string
+            name: keywords
+            required: false
+            source: $.http.body.keywords
+            sub_type: string
+            type: array
+          - name: limit
+            required: true
+            source: $.http.body.limit
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          adgroup_id: $.http.body.adgroup_id
+          advertiser_id: $.http.body.advertiser_id
+          industry_id: $.http.body.industry_id
+          keywords: $.http.body.keywords
+          language: $.http.body.language
+          limit: $.http.body.limit
+          param_type: $.http.body.param_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          generate_id: $.rpc.output.generate_id
+          industry_id: $.rpc.output.industry_id
+          language: $.rpc.output.language
+          texts: $.rpc.output.texts
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

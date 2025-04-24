@@ -1,0 +1,373 @@
+info:
+  description: '{"en":"portfolio list","zh":"portfolio list"}'
+  title: '{"en":"portfolio list","zh":"portfolio list"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /creative/portfolio/list/:
+    get:
+      operationId: Creative Portfolio List
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                creative_portfolio_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.query.filtering.creative_portfolio_ids
+                creative_portfolio_types:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1804132825869313
+                      enum_package_name: CreativePortfolioType
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: CARD
+                        value: '2'
+                      - description: ''
+                        is_valid: true
+                        key: COUNTDOWN_STICKER
+                        value: '7'
+                      - description: ''
+                        is_valid: true
+                        key: CTA
+                        value: '1'
+                      - description: ''
+                        is_valid: true
+                        key: DESTINATION_CARD
+                        value: '25'
+                      - description: ''
+                        is_valid: true
+                        key: DOWNLOAD_CARD
+                        value: '13'
+                      - description: ''
+                        is_valid: false
+                        key: DYNAMIC_ADD_ON
+                        value: '200'
+                      - description: ''
+                        is_valid: true
+                        key: FLIGHT_CARD
+                        value: '22'
+                      - description: Corresponds to GESTURE
+                        is_valid: true
+                        key: GESTURE
+                        value: '4'
+                      - description: ''
+                        is_valid: true
+                        key: GIFTCODE_STICKER
+                        value: '8'
+                      - description: ''
+                        is_valid: true
+                        key: HOTEL_CARD
+                        value: '21'
+                      - description: AutoInventoryCard
+                        is_valid: true
+                        key: INVENTORY_CARD
+                        value: '18'
+                      - description: ''
+                        is_valid: true
+                        key: LIVE_REMINDER_COUNTDOWN_STICKER
+                        value: '14'
+                      - description: Corresponds to MOVIE_CARD
+                        is_valid: true
+                        key: MEDIA_CARD
+                        value: '20'
+                      - description: ''
+                        is_valid: false
+                        key: NON_CLICK_SUPER_LIKE
+                        value: '12'
+                      - description: Corresponds to PAINTED_EGG
+                        is_valid: true
+                        key: PREMIUM_BADGE
+                        value: '5'
+                      - description: ''
+                        is_valid: true
+                        key: PRODUCT_CARD
+                        value: '11'
+                      - description: ''
+                        is_valid: false
+                        key: PRODUCT_INFO_CARD
+                        value: '24'
+                      - description: ''
+                        is_valid: true
+                        key: PRODUCT_SHOWCASE_TILE
+                        value: '26'
+                      - description: ''
+                        is_valid: true
+                        key: PRODUCT_TILE
+                        value: '17'
+                      - description: ''
+                        is_valid: true
+                        key: REMINDER_COUNTDOWN_STICKER
+                        value: '10'
+                      - description: ''
+                        is_valid: false
+                        key: SHAKE_SURPRISE
+                        value: '15'
+                      - description: ''
+                        is_valid: false
+                        key: SHOPIFY_PRODUCT_CARD
+                        value: '19'
+                      - description: Corresponds to VOTING_STICKER
+                        is_valid: false
+                        key: STICKER
+                        value: '6'
+                      - description: ''
+                        is_valid: false
+                        key: STORY_SELECTION
+                        value: '16'
+                      - description: ''
+                        is_valid: true
+                        key: SUPER_LIKE
+                        value: '9'
+                      - description: InfomativeCTA
+                        is_valid: true
+                        key: WEB_INFO_CARD
+                        value: '23'
+                      key_format: string
+                      strict: true
+                      use_part: true
+                      validate_only: false
+                      value_format: int32
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.filtering.creative_portfolio_types
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.filtering
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 20
+          format: int64
+          maximum: 100
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 4
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get portfolios within an ad account. [Portfolio List](https://business-api.tiktok.com/portal/docs?id=1766324010279938)
+      tags:
+      - Creative Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - children:
+              - type: number
+              is_expand: true
+              name: creative_portfolio_types
+              required: false
+              source: $.http.query.filtering.creative_portfolio_types
+              sub_type: number
+              type: array
+            - children:
+              - type: number
+              is_expand: true
+              name: creative_portfolio_ids
+              required: false
+              source: $.http.query.filtering.creative_portfolio_ids
+              sub_type: number
+              type: array
+            is_expand: true
+            name: filtering
+            required: false
+            source: $.http.query.filtering
+            type: object
+          - name: page
+            required: false
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: false
+            source: $.http.query.page_size
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          filtering: $.http.query.filtering
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+        response_cookie: []
+        response_header: []
+        response_rule:
+          creative_portfolios[][]:
+          - advanced_audio_info: $.rpc.output.creative_portfolios[].creative_portfolio_content.advanced_audio_info
+            advanced_gesture_icon: $.rpc.output.creative_portfolios[].creative_portfolio_content.advanced_gesture_icon
+            advanced_gesture_image: $.rpc.output.creative_portfolios[].creative_portfolio_content.advanced_gesture_image
+            advanced_interact_shape: $.rpc.output.creative_portfolios[].creative_portfolio_content.advanced_interact_shape
+            advanced_interact_type: $.rpc.output.creative_portfolios[].creative_portfolio_content.advanced_interact_type
+            app_id: $.rpc.output.creative_portfolios[].creative_portfolio_content.app_id
+            badge_image_info: $.rpc.output.creative_portfolios[].creative_portfolio_content.badge_image_info
+            badge_position[]:
+            - angle: $.rpc.output.creative_portfolios[].creative_portfolio_content.badge_position.angle
+              position_x: $.rpc.output.creative_portfolios[].creative_portfolio_content.badge_position.position_x
+              position_y: $.rpc.output.creative_portfolios[].creative_portfolio_content.badge_position.position_y
+            badge_show_time: $.rpc.output.creative_portfolios[].creative_portfolio_content.badge_show_time
+            call_to_action_text: $.rpc.output.creative_portfolios[].creative_portfolio_content.call_to_action_text
+            card_image_index: $.rpc.output.creative_portfolios[].creative_portfolio_content.card_image_index
+            card_show_price: $.rpc.output.creative_portfolios[].creative_portfolio_content.card_show_price
+            card_tags: $.rpc.output.creative_portfolios[].creative_portfolio_content.card_tags
+            card_type: $.rpc.output.creative_portfolios[].creative_portfolio_content.card_type
+            content_url: $.rpc.output.creative_portfolios[].creative_portfolio_content.content_url
+            creative_portfolio_id: $.rpc.output.creative_portfolios[].creative_portfolio_id
+            creative_portfolio_preview_url: $.rpc.output.creative_portfolios[].creative_portfolio_preview_url
+            creative_portfolio_type: $.rpc.output.creative_portfolios[].creative_portfolio_type
+            description: $.rpc.output.creative_portfolios[].creative_portfolio_content.description
+            display_price_enabled: $.rpc.output.creative_portfolios[].creative_portfolio_content.display_price_enabled
+            gesture_type: $.rpc.output.creative_portfolios[].creative_portfolio_content.gesture_type
+            image_id: $.rpc.output.creative_portfolios[].creative_portfolio_content.image_id
+            image_optimization_enabled: $.rpc.output.creative_portfolios[].creative_portfolio_content.image_optimization_enabled
+            interactive_music_id: $.rpc.output.creative_portfolios[].creative_portfolio_content.interactive_music_id
+            layouts: $.rpc.output.creative_portfolios[].creative_portfolio_content.layouts
+            pop_up_window_image_id: $.rpc.output.creative_portfolios[].creative_portfolio_content.pop_up_window_image_id
+            primary_text: $.rpc.output.creative_portfolios[].creative_portfolio_content.primary_text
+            secondary_text: $.rpc.output.creative_portfolios[].creative_portfolio_content.secondary_text
+            selling_points: $.rpc.output.creative_portfolios[].creative_portfolio_content.selling_points
+            slide_dimension[]:
+            - dimension_height: $.rpc.output.creative_portfolios[].creative_portfolio_content.slide_dimension.dimension_height
+              dimension_width: $.rpc.output.creative_portfolios[].creative_portfolio_content.slide_dimension.dimension_width
+            slide_length: $.rpc.output.creative_portfolios[].creative_portfolio_content.slide_length
+            sticker_param[]:
+            - color: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.color
+              cutoff_time: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.cutoff_time
+              display_angle: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.display_angle
+              giftcode: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.giftcode
+              landing_page_url: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.landing_page_url
+              live_tiktok_user_id: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.live_tiktok_user_id
+              opacity: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.opacity
+              position_x: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.position_x
+              position_y: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.position_y
+              predefined_placement: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.predefined_placement
+              reminder_time: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.reminder_time
+              size: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.size
+              sticker_type: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.sticker_type
+              title: $.rpc.output.creative_portfolios[].creative_portfolio_content.sticker_param.title
+            tags: $.rpc.output.creative_portfolios[].creative_portfolio_content.tags
+            thumbnail_id: $.rpc.output.creative_portfolios[].creative_portfolio_content.thumbnail_id
+            title: $.rpc.output.creative_portfolios[].creative_portfolio_content.title
+          page_info: $.rpc.output.page_info
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com
