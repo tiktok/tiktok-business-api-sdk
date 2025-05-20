@@ -748,8 +748,8 @@ Name | Type | Description  | Notes
  **catalogId** | **String**|  |[required] 
  **productSetId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 20] [enum: 1, 100]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 20] [enum: ]
 
 ### Return type
 

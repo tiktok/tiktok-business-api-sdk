@@ -12,7 +12,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * APPManagement service.
 * @module api/APPManagementApi
-* @version 0.1.5
+* @version 0.1.7
 */
 export class APPManagementApi {
 

@@ -5,15 +5,14 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from "../ApiClient.js";
-import {FilteringReportIntegratedGet} from '../model/FilteringReportIntegratedGet.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
+import {ReportTaskCreateBody} from '../model/ReportTaskCreateBody.js';
 import {TaskCancelBody} from '../model/TaskCancelBody.js';
-import {TaskCreateBody} from '../model/TaskCreateBody.js';
 
 /**
 * Reporting service.
 * @module api/ReportingApi
-* @version 0.1.5
+* @version 0.1.7
 */
 export class ReportingApi {
 
@@ -59,7 +58,7 @@ export class ReportingApi {
      * @param {Boolean} opts.query_lifetime 
      * @param {String} opts.order_field 
      * @param {String} opts.order_type 
-     * @param {module:model/FilteringReportIntegratedGet} opts.filtering 
+     * @param {Array.<Object>} opts.filtering 
      * @param {module:api/ReportingApi~reportIntegratedGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -79,7 +78,7 @@ export class ReportingApi {
         
       };
       let queryParams = {
-        'page': opts['page'],'page_size': opts['page_size'],'enable_total_metrics': opts['enable_total_metrics'],'multi_adv_report_in_utc_time': opts['multi_adv_report_in_utc_time'],'query_mode': opts['query_mode'],'advertiser_id': opts['advertiser_id'],'advertiser_ids': this.apiClient.buildCollectionParam(opts['advertiser_ids'], 'multi'),'bc_id': opts['bc_id'],'service_type': opts['service_type'],'report_type': report_type,'data_level': opts['data_level'],'dimensions': this.apiClient.buildCollectionParam(opts['dimensions'], 'multi'),'metrics': this.apiClient.buildCollectionParam(opts['metrics'], 'multi'),'start_date': opts['start_date'],'end_date': opts['end_date'],'query_lifetime': opts['query_lifetime'],'order_field': opts['order_field'],'order_type': opts['order_type'],'filtering': opts['filtering']
+        'page': opts['page'],'page_size': opts['page_size'],'enable_total_metrics': opts['enable_total_metrics'],'multi_adv_report_in_utc_time': opts['multi_adv_report_in_utc_time'],'query_mode': opts['query_mode'],'advertiser_id': opts['advertiser_id'],'advertiser_ids': this.apiClient.buildCollectionParam(opts['advertiser_ids'], 'multi'),'bc_id': opts['bc_id'],'service_type': opts['service_type'],'report_type': report_type,'data_level': opts['data_level'],'dimensions': this.apiClient.buildCollectionParam(opts['dimensions'], 'multi'),'metrics': this.apiClient.buildCollectionParam(opts['metrics'], 'multi'),'start_date': opts['start_date'],'end_date': opts['end_date'],'query_lifetime': opts['query_lifetime'],'order_field': opts['order_field'],'order_type': opts['order_type'],'filtering': this.apiClient.buildCollectionParam(opts['filtering'], 'multi')
       };
       let headerParams = {
         'Access-Token': Access_Token
@@ -214,7 +213,7 @@ export class ReportingApi {
     /**
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/TaskCreateBody} opts.body 
+     * @param {module:model/ReportTaskCreateBody} opts.body 
      * @param {module:api/ReportingApi~reportTaskCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */

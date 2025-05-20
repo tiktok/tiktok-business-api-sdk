@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BcadvertisercreateBillingGroupInfo model module.
  * @module model/BcadvertisercreateBillingGroupInfo
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class BcadvertisercreateBillingGroupInfo {
   /**

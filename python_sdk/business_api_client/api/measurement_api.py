@@ -28,47 +28,45 @@ class MeasurementApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def app_list(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get the app list [App list](https://ads.tiktok.com/marketing_api/docs?id=1740859313270786)  # noqa: E501
+    def offline_create(self, access_token, **kwargs):  # noqa: E501
+        """Create a new Offline Event set. [Offline Create](https://business-api.tiktok.com/portal/docs?id=1758427576470529)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.app_list(advertiser_id, access_token, async_req=True)
+        >>> thread = api.offline_create(access_token, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param list[str] app_platform_ids: List of app platform ID for filter purpose
+        :param OfflineCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.app_list_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+            return self.offline_create_with_http_info(access_token, **kwargs)  # noqa: E501
         else:
-            (data) = self.app_list_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+            (data) = self.offline_create_with_http_info(access_token, **kwargs)  # noqa: E501
             return data
 
-    def app_list_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get the app list [App list](https://ads.tiktok.com/marketing_api/docs?id=1740859313270786)  # noqa: E501
+    def offline_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Create a new Offline Event set. [Offline Create](https://business-api.tiktok.com/portal/docs?id=1758427576470529)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.app_list_with_http_info(advertiser_id, access_token, async_req=True)
+        >>> thread = api.offline_create_with_http_info(access_token, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param list[str] app_platform_ids: List of app platform ID for filter purpose
+        :param OfflineCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['advertiser_id', 'access_token', 'app_platform_ids']  # noqa: E501
+        all_params = ['access_token', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -79,29 +77,20 @@ class MeasurementApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method app_list" % key
+                    " to method offline_create" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'advertiser_id' is set
-        if ('advertiser_id' not in params or
-                params['advertiser_id'] is None):
-            raise ValueError("Missing the required parameter `advertiser_id` when calling `app_list`")  # noqa: E501
         # verify the required parameter 'access_token' is set
         if ('access_token' not in params or
                 params['access_token'] is None):
-            raise ValueError("Missing the required parameter `access_token` when calling `app_list`")  # noqa: E501
+            raise ValueError("Missing the required parameter `access_token` when calling `offline_create`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'advertiser_id' in params:
-            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
-        if 'app_platform_ids' in params:
-            query_params.append(('app_platform_ids', params['app_platform_ids']))  # noqa: E501
-            collection_formats['app_platform_ids'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
@@ -111,15 +100,21 @@ class MeasurementApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/open_api/v1.3/app/list/', 'GET',
+            '/open_api/v1.3/offline/create/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -134,59 +129,45 @@ class MeasurementApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def app_optimization_event(self, app_id, advertiser_id, placement, optimization_goal, access_token, **kwargs):  # noqa: E501
-        """Get App Events [App events](https://ads.tiktok.com/marketing_api/docs?id=1740859338750977)  # noqa: E501
+    def offline_delete(self, access_token, **kwargs):  # noqa: E501
+        """Delete an Offline Event set. [Offline Delete](https://business-api.tiktok.com/portal/docs?id=1765596790860802)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.app_optimization_event(app_id, advertiser_id, placement, optimization_goal, access_token, async_req=True)
+        >>> thread = api.offline_delete(access_token, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_id: Your App ID, obtained after successfully creating your app (required)
-        :param str advertiser_id: Advertiser ID (required)
-        :param list[str] placement: Advertisement positioning, See [Enumeration-Placement](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) (required)
-        :param str optimization_goal: Optimization goal. For enum values, see [Enumeration-Optimization Goal](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) for more (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param str objective: Advertising Objective. For enum values, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138)
-        :param bool available_only: Whether to return only available conversion events. The default value: `True` (only return available conversion events)
-        :param bool is_skan: Whether the app is using Skan features
-        :param str app_promotion_type: App promotion type. Required when `objective_type` is `APP_PROMOTION`. Enum values: `APP_INSTALL`, `APP_RETARGETING`. Note: `APP_INSTALL` can be used in an iOS14 Dedicated Campaign, while `APP_RETARGETING` cannot be used
+        :param OfflineDeleteBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('async_req'):
-            return self.app_optimization_event_with_http_info(app_id, advertiser_id, placement, optimization_goal, access_token, **kwargs)  # noqa: E501
+            return self.offline_delete_with_http_info(access_token, **kwargs)  # noqa: E501
         else:
-            (data) = self.app_optimization_event_with_http_info(app_id, advertiser_id, placement, optimization_goal, access_token, **kwargs)  # noqa: E501
+            (data) = self.offline_delete_with_http_info(access_token, **kwargs)  # noqa: E501
             return data
 
-    def app_optimization_event_with_http_info(self, app_id, advertiser_id, placement, optimization_goal, access_token, **kwargs):  # noqa: E501
-        """Get App Events [App events](https://ads.tiktok.com/marketing_api/docs?id=1740859338750977)  # noqa: E501
+    def offline_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Delete an Offline Event set. [Offline Delete](https://business-api.tiktok.com/portal/docs?id=1765596790860802)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.app_optimization_event_with_http_info(app_id, advertiser_id, placement, optimization_goal, access_token, async_req=True)
+        >>> thread = api.offline_delete_with_http_info(access_token, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool
-        :param str app_id: Your App ID, obtained after successfully creating your app (required)
-        :param str advertiser_id: Advertiser ID (required)
-        :param list[str] placement: Advertisement positioning, See [Enumeration-Placement](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) (required)
-        :param str optimization_goal: Optimization goal. For enum values, see [Enumeration-Optimization Goal](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) for more (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param str objective: Advertising Objective. For enum values, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138)
-        :param bool available_only: Whether to return only available conversion events. The default value: `True` (only return available conversion events)
-        :param bool is_skan: Whether the app is using Skan features
-        :param str app_promotion_type: App promotion type. Required when `objective_type` is `APP_PROMOTION`. Enum values: `APP_INSTALL`, `APP_RETARGETING`. Note: `APP_INSTALL` can be used in an iOS14 Dedicated Campaign, while `APP_RETARGETING` cannot be used
+        :param OfflineDeleteBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['app_id', 'advertiser_id', 'placement', 'optimization_goal', 'access_token', 'objective', 'available_only', 'is_skan', 'app_promotion_type']  # noqa: E501
+        all_params = ['access_token', 'body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -197,53 +178,132 @@ class MeasurementApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method app_optimization_event" % key
+                    " to method offline_delete" % key
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'app_id' is set
-        if ('app_id' not in params or
-                params['app_id'] is None):
-            raise ValueError("Missing the required parameter `app_id` when calling `app_optimization_event`")  # noqa: E501
-        # verify the required parameter 'advertiser_id' is set
-        if ('advertiser_id' not in params or
-                params['advertiser_id'] is None):
-            raise ValueError("Missing the required parameter `advertiser_id` when calling `app_optimization_event`")  # noqa: E501
-        # verify the required parameter 'placement' is set
-        if ('placement' not in params or
-                params['placement'] is None):
-            raise ValueError("Missing the required parameter `placement` when calling `app_optimization_event`")  # noqa: E501
-        # verify the required parameter 'optimization_goal' is set
-        if ('optimization_goal' not in params or
-                params['optimization_goal'] is None):
-            raise ValueError("Missing the required parameter `optimization_goal` when calling `app_optimization_event`")  # noqa: E501
         # verify the required parameter 'access_token' is set
         if ('access_token' not in params or
                 params['access_token'] is None):
-            raise ValueError("Missing the required parameter `access_token` when calling `app_optimization_event`")  # noqa: E501
+            raise ValueError("Missing the required parameter `access_token` when calling `offline_delete`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
-        if 'app_id' in params:
-            query_params.append(('app_id', params['app_id']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/offline/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def offline_get(self, access_token, **kwargs):  # noqa: E501
+        """Get Offline Event sets. [Offline Get](https://business-api.tiktok.com/portal/docs?id=1765596808589313)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.offline_get(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str advertiser_id:
+        :param list[str] event_set_ids:
+        :param str name:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.offline_get_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.offline_get_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def offline_get_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Get Offline Event sets. [Offline Get](https://business-api.tiktok.com/portal/docs?id=1765596808589313)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.offline_get_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str advertiser_id:
+        :param list[str] event_set_ids:
+        :param str name:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'advertiser_id', 'event_set_ids', 'name']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method offline_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `offline_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
         if 'advertiser_id' in params:
             query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
-        if 'placement' in params:
-            query_params.append(('placement', params['placement']))  # noqa: E501
-            collection_formats['placement'] = 'multi'  # noqa: E501
-        if 'optimization_goal' in params:
-            query_params.append(('optimization_goal', params['optimization_goal']))  # noqa: E501
-        if 'objective' in params:
-            query_params.append(('objective', params['objective']))  # noqa: E501
-        if 'available_only' in params:
-            query_params.append(('available_only', params['available_only']))  # noqa: E501
-        if 'is_skan' in params:
-            query_params.append(('is_skan', params['is_skan']))  # noqa: E501
-        if 'app_promotion_type' in params:
-            query_params.append(('app_promotion_type', params['app_promotion_type']))  # noqa: E501
+        if 'event_set_ids' in params:
+            query_params.append(('event_set_ids', params['event_set_ids']))  # noqa: E501
+            collection_formats['event_set_ids'] = 'multi'  # noqa: E501
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
@@ -261,7 +321,860 @@ class MeasurementApi(object):
         auth_settings = []  # noqa: E501
 
         return self.api_client.call_api(
-            '/open_api/v1.3/app/optimization_event/', 'GET',
+            '/open_api/v1.3/offline/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def offline_update(self, access_token, **kwargs):  # noqa: E501
+        """Update an Offline Event set. [Offline Update](https://business-api.tiktok.com/portal/docs?id=1765596741157889)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.offline_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param OfflineUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.offline_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.offline_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def offline_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Update an Offline Event set. [Offline Update](https://business-api.tiktok.com/portal/docs?id=1765596741157889)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.offline_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param OfflineUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method offline_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `offline_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/offline/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pixel_create(self, access_token, **kwargs):  # noqa: E501
+        """Create a Pixel. [Pixel Create](https://business-api.tiktok.com/portal/docs?id=1740858779758593)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_create(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PixelCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pixel_create_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pixel_create_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def pixel_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Create a Pixel. [Pixel Create](https://business-api.tiktok.com/portal/docs?id=1740858779758593)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_create_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PixelCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pixel_create" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `pixel_create`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/pixel/create/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pixel_event_create(self, access_token, **kwargs):  # noqa: E501
+        """Choose either an industry or custom template to define your events. [Pixel Event Create](https://business-api.tiktok.com/portal/docs?id=1740858807646209)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_create(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param EventCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pixel_event_create_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pixel_event_create_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def pixel_event_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Choose either an industry or custom template to define your events. [Pixel Event Create](https://business-api.tiktok.com/portal/docs?id=1740858807646209)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_create_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param EventCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pixel_event_create" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `pixel_event_create`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/pixel/event/create/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pixel_event_delete(self, access_token, **kwargs):  # noqa: E501
+        """Delete Pixel events. [Pixel Event Delete](https://business-api.tiktok.com/portal/docs?id=1740858862104578)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param EventDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pixel_event_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pixel_event_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def pixel_event_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Delete Pixel events. [Pixel Event Delete](https://business-api.tiktok.com/portal/docs?id=1740858862104578)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param EventDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pixel_event_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `pixel_event_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/pixel/event/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pixel_event_stats(self, advertiser_id, pixel_ids, date_range, access_token, **kwargs):  # noqa: E501
+        """View statistics of an event data over a period of time. [Pixel Event Stats](https://business-api.tiktok.com/portal/docs?id=1740858904557570)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_stats(advertiser_id, pixel_ids, date_range, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] pixel_ids: (required)
+        :param DateRange date_range: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pixel_event_stats_with_http_info(advertiser_id, pixel_ids, date_range, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pixel_event_stats_with_http_info(advertiser_id, pixel_ids, date_range, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def pixel_event_stats_with_http_info(self, advertiser_id, pixel_ids, date_range, access_token, **kwargs):  # noqa: E501
+        """View statistics of an event data over a period of time. [Pixel Event Stats](https://business-api.tiktok.com/portal/docs?id=1740858904557570)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_stats_with_http_info(advertiser_id, pixel_ids, date_range, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] pixel_ids: (required)
+        :param DateRange date_range: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'pixel_ids', 'date_range', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pixel_event_stats" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `pixel_event_stats`")  # noqa: E501
+        # verify the required parameter 'pixel_ids' is set
+        if ('pixel_ids' not in params or
+                params['pixel_ids'] is None):
+            raise ValueError("Missing the required parameter `pixel_ids` when calling `pixel_event_stats`")  # noqa: E501
+        # verify the required parameter 'date_range' is set
+        if ('date_range' not in params or
+                params['date_range'] is None):
+            raise ValueError("Missing the required parameter `date_range` when calling `pixel_event_stats`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `pixel_event_stats`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'pixel_ids' in params:
+            query_params.append(('pixel_ids', params['pixel_ids']))  # noqa: E501
+            collection_formats['pixel_ids'] = 'multi'  # noqa: E501
+        if 'date_range' in params:
+            query_params.append(('date_range', params['date_range']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/pixel/event/stats/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pixel_event_update(self, access_token, **kwargs):  # noqa: E501
+        """Update the name of a Pixel event and the conversion value. [Pixel Event Update](https://business-api.tiktok.com/portal/docs?id=1740858823774210)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param EventUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pixel_event_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pixel_event_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def pixel_event_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Update the name of a Pixel event and the conversion value. [Pixel Event Update](https://business-api.tiktok.com/portal/docs?id=1740858823774210)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_event_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param EventUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pixel_event_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `pixel_event_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/pixel/event/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pixel_list(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Obtain a list of Pixel information. [Pixel List](https://business-api.tiktok.com/portal/docs?id=1740858697598978)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_list(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str pixel_id:
+        :param str code:
+        :param str name:
+        :param str order_by:
+        :param FilteringPixelList filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pixel_list_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pixel_list_with_http_info(advertiser_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def pixel_list_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
+        """Obtain a list of Pixel information. [Pixel List](https://business-api.tiktok.com/portal/docs?id=1740858697598978)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_list_with_http_info(advertiser_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str pixel_id:
+        :param str code:
+        :param str name:
+        :param str order_by:
+        :param FilteringPixelList filtering:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'access_token', 'pixel_id', 'code', 'name', 'order_by', 'filtering', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pixel_list" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `pixel_list`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `pixel_list`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'pixel_id' in params:
+            query_params.append(('pixel_id', params['pixel_id']))  # noqa: E501
+        if 'code' in params:
+            query_params.append(('code', params['code']))  # noqa: E501
+        if 'name' in params:
+            query_params.append(('name', params['name']))  # noqa: E501
+        if 'order_by' in params:
+            query_params.append(('order_by', params['order_by']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/pixel/list/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def pixel_update(self, access_token, **kwargs):  # noqa: E501
+        """Update a Pixel. [Pixel Update](https://business-api.tiktok.com/portal/docs?id=1740858799524865)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PixelUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.pixel_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.pixel_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def pixel_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Update a Pixel. [Pixel Update](https://business-api.tiktok.com/portal/docs?id=1740858799524865)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.pixel_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param PixelUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method pixel_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `pixel_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/pixel/update/', 'POST',
             path_params,
             query_params,
             header_params,

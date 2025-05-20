@@ -58,6 +58,7 @@ import {AssetDeleteBody} from './model/AssetDeleteBody.js';
 import {AssetGroupCreateBody} from './model/AssetGroupCreateBody.js';
 import {AssetGroupDeleteBody} from './model/AssetGroupDeleteBody.js';
 import {AssetGroupUpdateBody} from './model/AssetGroupUpdateBody.js';
+import {AssetShareBody} from './model/AssetShareBody.js';
 import {AssetUnassignBody} from './model/AssetUnassignBody.js';
 import {BcTransferBody} from './model/BcTransferBody.js';
 import {BcadvertisercreateAdvertiserInfo} from './model/BcadvertisercreateAdvertiserInfo.js';
@@ -72,6 +73,10 @@ import {BcmemberinviteExtUserRole} from './model/BcmemberinviteExtUserRole.js';
 import {BidRecommendBody} from './model/BidRecommendBody.js';
 import {BillingGroupCreateBody} from './model/BillingGroupCreateBody.js';
 import {BillingGroupUpdateBody} from './model/BillingGroupUpdateBody.js';
+import {BlockedwordCreateBody} from './model/BlockedwordCreateBody.js';
+import {BlockedwordDeleteBody} from './model/BlockedwordDeleteBody.js';
+import {BlockedwordTaskCreateBody} from './model/BlockedwordTaskCreateBody.js';
+import {BlockedwordUpdateBody} from './model/BlockedwordUpdateBody.js';
 import {CampaignCreateBody} from './model/CampaignCreateBody.js';
 import {CampaignStatusUpdateBody} from './model/CampaignStatusUpdateBody.js';
 import {CampaignUpdateBody} from './model/CampaignUpdateBody.js';
@@ -80,17 +85,26 @@ import {CatalogCreateBody} from './model/CatalogCreateBody.js';
 import {CatalogDeleteBody} from './model/CatalogDeleteBody.js';
 import {CatalogUpdateBody} from './model/CatalogUpdateBody.js';
 import {CatalogcreateCatalogConf} from './model/CatalogcreateCatalogConf.js';
+import {CommentDeleteBody} from './model/CommentDeleteBody.js';
+import {CommentPostBody} from './model/CommentPostBody.js';
+import {CommentTaskCreateBody} from './model/CommentTaskCreateBody.js';
+import {CreativeAssetDeleteBody} from './model/CreativeAssetDeleteBody.js';
 import {CreativeportfoliocreateAdvancedAudioInfo} from './model/CreativeportfoliocreateAdvancedAudioInfo.js';
 import {CreativeportfoliocreateAdvancedGestureIcon} from './model/CreativeportfoliocreateAdvancedGestureIcon.js';
+import {CreativeportfoliocreateAdvancedGestureImage} from './model/CreativeportfoliocreateAdvancedGestureImage.js';
 import {CreativeportfoliocreateBadgeImageInfo} from './model/CreativeportfoliocreateBadgeImageInfo.js';
 import {CreativeportfoliocreateBadgePosition} from './model/CreativeportfoliocreateBadgePosition.js';
 import {CreativeportfoliocreatePortfolioContent} from './model/CreativeportfoliocreatePortfolioContent.js';
+import {CreativeportfoliocreateShowcaseProducts} from './model/CreativeportfoliocreateShowcaseProducts.js';
+import {CreativeportfoliocreateSlideDimension} from './model/CreativeportfoliocreateSlideDimension.js';
 import {CreativeportfoliocreateStickerParam} from './model/CreativeportfoliocreateStickerParam.js';
+import {CreativeshareableLinkcreateSharedAssets} from './model/CreativeshareableLinkcreateSharedAssets.js';
 import {CustomAudienceApplyBody} from './model/CustomAudienceApplyBody.js';
 import {CustomAudienceCreateBody} from './model/CustomAudienceCreateBody.js';
 import {CustomAudienceDeleteBody} from './model/CustomAudienceDeleteBody.js';
 import {CustomAudienceShareBody} from './model/CustomAudienceShareBody.js';
 import {CustomAudienceUpdateBody} from './model/CustomAudienceUpdateBody.js';
+import {DateRange} from './model/DateRange.js';
 import {DmpcustomAudienceapplyContextInfo} from './model/DmpcustomAudienceapplyContextInfo.js';
 import {DmpcustomAudiencefileuploadContextInfo} from './model/DmpcustomAudiencefileuploadContextInfo.js';
 import {DmpcustomAudiencelookalikecreateContextInfo} from './model/DmpcustomAudiencelookalikecreateContextInfo.js';
@@ -107,6 +121,9 @@ import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetFilters} fro
 import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters} from './model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetFilterSetParameterFilters.js';
 import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules} from './model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules.js';
 import {DmpsavedAudiencecreateActions} from './model/DmpsavedAudiencecreateActions.js';
+import {EventCreateBody} from './model/EventCreateBody.js';
+import {EventDeleteBody} from './model/EventDeleteBody.js';
+import {EventUpdateBody} from './model/EventUpdateBody.js';
 import {EventsourceBindBody} from './model/EventsourceBindBody.js';
 import {EventsourceUnbindBody} from './model/EventsourceUnbindBody.js';
 import {FeedDeleteBody} from './model/FeedDeleteBody.js';
@@ -129,9 +146,11 @@ import {FilteringBcPartnerAssetGet} from './model/FilteringBcPartnerAssetGet.js'
 import {FilteringBcPartnerGet} from './model/FilteringBcPartnerGet.js';
 import {FilteringBcTransactionGet} from './model/FilteringBcTransactionGet.js';
 import {FilteringCampaignGet} from './model/FilteringCampaignGet.js';
-import {FilteringReportIntegratedGet} from './model/FilteringReportIntegratedGet.js';
+import {FilteringCreativePortfolioList} from './model/FilteringCreativePortfolioList.js';
+import {FilteringPixelList} from './model/FilteringPixelList.js';
 import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch.js';
 import {IdentityCreateBody} from './model/IdentityCreateBody.js';
+import {ImageEditBody} from './model/ImageEditBody.js';
 import {ImageUploadBody} from './model/ImageUploadBody.js';
 import {InlineResponse200} from './model/InlineResponse200.js';
 import {LinkUpdateBody} from './model/LinkUpdateBody.js';
@@ -142,6 +161,10 @@ import {MemberDeleteBody} from './model/MemberDeleteBody.js';
 import {MemberInviteBody} from './model/MemberInviteBody.js';
 import {MemberUpdateBody} from './model/MemberUpdateBody.js';
 import {Oauth2AccessTokenBody} from './model/Oauth2AccessTokenBody.js';
+import {OfflineCreateBody} from './model/OfflineCreateBody.js';
+import {OfflineDeleteBody} from './model/OfflineDeleteBody.js';
+import {OfflineUpdateBody} from './model/OfflineUpdateBody.js';
+import {PageInfo} from './model/PageInfo.js';
 import {PangleBlockListUpdateBody} from './model/PangleBlockListUpdateBody.js';
 import {PartnerAddBody} from './model/PartnerAddBody.js';
 import {PartnerDeleteBody} from './model/PartnerDeleteBody.js';
@@ -151,23 +174,34 @@ import {PixelContext} from './model/PixelContext.js';
 import {PixelContextAd} from './model/PixelContextAd.js';
 import {PixelContextPage} from './model/PixelContextPage.js';
 import {PixelContextUser} from './model/PixelContextUser.js';
+import {PixelCreateBody} from './model/PixelCreateBody.js';
 import {PixelProperties} from './model/PixelProperties.js';
 import {PixelTrackBody} from './model/PixelTrackBody.js';
 import {PixelTransferBody} from './model/PixelTransferBody.js';
+import {PixelUpdateBody} from './model/PixelUpdateBody.js';
 import {PixelbatchBatch} from './model/PixelbatchBatch.js';
+import {PixeleventcreatePixelEvents} from './model/PixeleventcreatePixelEvents.js';
+import {PixeleventcreateRules} from './model/PixeleventcreateRules.js';
+import {PixelupdateAdvancedMatchingFields} from './model/PixelupdateAdvancedMatchingFields.js';
+import {PlayableDeleteBody} from './model/PlayableDeleteBody.js';
+import {PlayableSaveBody} from './model/PlayableSaveBody.js';
+import {PlayableUploadBody} from './model/PlayableUploadBody.js';
 import {PortfolioCreateBody} from './model/PortfolioCreateBody.js';
 import {ProductDeleteBody} from './model/ProductDeleteBody.js';
 import {ProductFileBody} from './model/ProductFileBody.js';
-import {ReporttaskcreateFiltering} from './model/ReporttaskcreateFiltering.js';
+import {ReportTaskCreateBody} from './model/ReportTaskCreateBody.js';
+import {ReportTaskCreateBodyFiltering} from './model/ReportTaskCreateBodyFiltering.js';
 import {RuleCreateBody} from './model/RuleCreateBody.js';
 import {SavedAudienceCreateBody} from './model/SavedAudienceCreateBody.js';
 import {SavedAudienceDeleteBody} from './model/SavedAudienceDeleteBody.js';
 import {ShareCancelBody} from './model/ShareCancelBody.js';
+import {ShareableLinkCreateBody} from './model/ShareableLinkCreateBody.js';
+import {SmartTextGenerateBody} from './model/SmartTextGenerateBody.js';
+import {StatusUpdateBody} from './model/StatusUpdateBody.js';
 import {TargetingCategoryRecommendBody} from './model/TargetingCategoryRecommendBody.js';
 import {TargetingInfoBody} from './model/TargetingInfoBody.js';
 import {TargetingSearchBody} from './model/TargetingSearchBody.js';
 import {TaskCancelBody} from './model/TaskCancelBody.js';
-import {TaskCreateBody} from './model/TaskCreateBody.js';
 import {TermConfirmBody} from './model/TermConfirmBody.js';
 import {APPManagementApi} from './api/APPManagementApi.js';
 import {AccountManagementApi} from './api/AccountManagementApi.js';
@@ -179,10 +213,12 @@ import {AuthenticationApi} from './api/AuthenticationApi.js';
 import {BCApi} from './api/BCApi.js';
 import {CampaignCreationApi} from './api/CampaignCreationApi.js';
 import {CatalogApi} from './api/CatalogApi.js';
-import {CreativeAssetApi} from './api/CreativeAssetApi.js';
+import {CommentsApi} from './api/CommentsApi.js';
+import {CreativeManagementApi} from './api/CreativeManagementApi.js';
 import {EventCallbackApi} from './api/EventCallbackApi.js';
 import {FileApi} from './api/FileApi.js';
 import {IdentityApi} from './api/IdentityApi.js';
+import {MeasurementApi} from './api/MeasurementApi.js';
 import {RecommendToolApi} from './api/RecommendToolApi.js';
 import {ReportingApi} from './api/ReportingApi.js';
 import {ToolApi} from './api/ToolApi.js';
@@ -216,7 +252,7 @@ import {ToolApi} from './api/ToolApi.js';
 * </pre>
 * </p>
 * @module index
-* @version 0.1.5
+* @version 0.1.7
 */
 export {
     /**
@@ -544,6 +580,12 @@ export {
     AssetGroupUpdateBody,
 
     /**
+     * The AssetShareBody model constructor.
+     * @property {module:model/AssetShareBody}
+     */
+    AssetShareBody,
+
+    /**
      * The AssetUnassignBody model constructor.
      * @property {module:model/AssetUnassignBody}
      */
@@ -628,6 +670,30 @@ export {
     BillingGroupUpdateBody,
 
     /**
+     * The BlockedwordCreateBody model constructor.
+     * @property {module:model/BlockedwordCreateBody}
+     */
+    BlockedwordCreateBody,
+
+    /**
+     * The BlockedwordDeleteBody model constructor.
+     * @property {module:model/BlockedwordDeleteBody}
+     */
+    BlockedwordDeleteBody,
+
+    /**
+     * The BlockedwordTaskCreateBody model constructor.
+     * @property {module:model/BlockedwordTaskCreateBody}
+     */
+    BlockedwordTaskCreateBody,
+
+    /**
+     * The BlockedwordUpdateBody model constructor.
+     * @property {module:model/BlockedwordUpdateBody}
+     */
+    BlockedwordUpdateBody,
+
+    /**
      * The CampaignCreateBody model constructor.
      * @property {module:model/CampaignCreateBody}
      */
@@ -676,6 +742,30 @@ export {
     CatalogcreateCatalogConf,
 
     /**
+     * The CommentDeleteBody model constructor.
+     * @property {module:model/CommentDeleteBody}
+     */
+    CommentDeleteBody,
+
+    /**
+     * The CommentPostBody model constructor.
+     * @property {module:model/CommentPostBody}
+     */
+    CommentPostBody,
+
+    /**
+     * The CommentTaskCreateBody model constructor.
+     * @property {module:model/CommentTaskCreateBody}
+     */
+    CommentTaskCreateBody,
+
+    /**
+     * The CreativeAssetDeleteBody model constructor.
+     * @property {module:model/CreativeAssetDeleteBody}
+     */
+    CreativeAssetDeleteBody,
+
+    /**
      * The CreativeportfoliocreateAdvancedAudioInfo model constructor.
      * @property {module:model/CreativeportfoliocreateAdvancedAudioInfo}
      */
@@ -686,6 +776,12 @@ export {
      * @property {module:model/CreativeportfoliocreateAdvancedGestureIcon}
      */
     CreativeportfoliocreateAdvancedGestureIcon,
+
+    /**
+     * The CreativeportfoliocreateAdvancedGestureImage model constructor.
+     * @property {module:model/CreativeportfoliocreateAdvancedGestureImage}
+     */
+    CreativeportfoliocreateAdvancedGestureImage,
 
     /**
      * The CreativeportfoliocreateBadgeImageInfo model constructor.
@@ -706,10 +802,28 @@ export {
     CreativeportfoliocreatePortfolioContent,
 
     /**
+     * The CreativeportfoliocreateShowcaseProducts model constructor.
+     * @property {module:model/CreativeportfoliocreateShowcaseProducts}
+     */
+    CreativeportfoliocreateShowcaseProducts,
+
+    /**
+     * The CreativeportfoliocreateSlideDimension model constructor.
+     * @property {module:model/CreativeportfoliocreateSlideDimension}
+     */
+    CreativeportfoliocreateSlideDimension,
+
+    /**
      * The CreativeportfoliocreateStickerParam model constructor.
      * @property {module:model/CreativeportfoliocreateStickerParam}
      */
     CreativeportfoliocreateStickerParam,
+
+    /**
+     * The CreativeshareableLinkcreateSharedAssets model constructor.
+     * @property {module:model/CreativeshareableLinkcreateSharedAssets}
+     */
+    CreativeshareableLinkcreateSharedAssets,
 
     /**
      * The CustomAudienceApplyBody model constructor.
@@ -740,6 +854,12 @@ export {
      * @property {module:model/CustomAudienceUpdateBody}
      */
     CustomAudienceUpdateBody,
+
+    /**
+     * The DateRange model constructor.
+     * @property {module:model/DateRange}
+     */
+    DateRange,
 
     /**
      * The DmpcustomAudienceapplyContextInfo model constructor.
@@ -836,6 +956,24 @@ export {
      * @property {module:model/DmpsavedAudiencecreateActions}
      */
     DmpsavedAudiencecreateActions,
+
+    /**
+     * The EventCreateBody model constructor.
+     * @property {module:model/EventCreateBody}
+     */
+    EventCreateBody,
+
+    /**
+     * The EventDeleteBody model constructor.
+     * @property {module:model/EventDeleteBody}
+     */
+    EventDeleteBody,
+
+    /**
+     * The EventUpdateBody model constructor.
+     * @property {module:model/EventUpdateBody}
+     */
+    EventUpdateBody,
 
     /**
      * The EventsourceBindBody model constructor.
@@ -970,10 +1108,16 @@ export {
     FilteringCampaignGet,
 
     /**
-     * The FilteringReportIntegratedGet model constructor.
-     * @property {module:model/FilteringReportIntegratedGet}
+     * The FilteringCreativePortfolioList model constructor.
+     * @property {module:model/FilteringCreativePortfolioList}
      */
-    FilteringReportIntegratedGet,
+    FilteringCreativePortfolioList,
+
+    /**
+     * The FilteringPixelList model constructor.
+     * @property {module:model/FilteringPixelList}
+     */
+    FilteringPixelList,
 
     /**
      * The FilteringVideoAdSearch model constructor.
@@ -986,6 +1130,12 @@ export {
      * @property {module:model/IdentityCreateBody}
      */
     IdentityCreateBody,
+
+    /**
+     * The ImageEditBody model constructor.
+     * @property {module:model/ImageEditBody}
+     */
+    ImageEditBody,
 
     /**
      * The ImageUploadBody model constructor.
@@ -1048,6 +1198,30 @@ export {
     Oauth2AccessTokenBody,
 
     /**
+     * The OfflineCreateBody model constructor.
+     * @property {module:model/OfflineCreateBody}
+     */
+    OfflineCreateBody,
+
+    /**
+     * The OfflineDeleteBody model constructor.
+     * @property {module:model/OfflineDeleteBody}
+     */
+    OfflineDeleteBody,
+
+    /**
+     * The OfflineUpdateBody model constructor.
+     * @property {module:model/OfflineUpdateBody}
+     */
+    OfflineUpdateBody,
+
+    /**
+     * The PageInfo model constructor.
+     * @property {module:model/PageInfo}
+     */
+    PageInfo,
+
+    /**
      * The PangleBlockListUpdateBody model constructor.
      * @property {module:model/PangleBlockListUpdateBody}
      */
@@ -1102,6 +1276,12 @@ export {
     PixelContextUser,
 
     /**
+     * The PixelCreateBody model constructor.
+     * @property {module:model/PixelCreateBody}
+     */
+    PixelCreateBody,
+
+    /**
      * The PixelProperties model constructor.
      * @property {module:model/PixelProperties}
      */
@@ -1120,10 +1300,52 @@ export {
     PixelTransferBody,
 
     /**
+     * The PixelUpdateBody model constructor.
+     * @property {module:model/PixelUpdateBody}
+     */
+    PixelUpdateBody,
+
+    /**
      * The PixelbatchBatch model constructor.
      * @property {module:model/PixelbatchBatch}
      */
     PixelbatchBatch,
+
+    /**
+     * The PixeleventcreatePixelEvents model constructor.
+     * @property {module:model/PixeleventcreatePixelEvents}
+     */
+    PixeleventcreatePixelEvents,
+
+    /**
+     * The PixeleventcreateRules model constructor.
+     * @property {module:model/PixeleventcreateRules}
+     */
+    PixeleventcreateRules,
+
+    /**
+     * The PixelupdateAdvancedMatchingFields model constructor.
+     * @property {module:model/PixelupdateAdvancedMatchingFields}
+     */
+    PixelupdateAdvancedMatchingFields,
+
+    /**
+     * The PlayableDeleteBody model constructor.
+     * @property {module:model/PlayableDeleteBody}
+     */
+    PlayableDeleteBody,
+
+    /**
+     * The PlayableSaveBody model constructor.
+     * @property {module:model/PlayableSaveBody}
+     */
+    PlayableSaveBody,
+
+    /**
+     * The PlayableUploadBody model constructor.
+     * @property {module:model/PlayableUploadBody}
+     */
+    PlayableUploadBody,
 
     /**
      * The PortfolioCreateBody model constructor.
@@ -1144,10 +1366,16 @@ export {
     ProductFileBody,
 
     /**
-     * The ReporttaskcreateFiltering model constructor.
-     * @property {module:model/ReporttaskcreateFiltering}
+     * The ReportTaskCreateBody model constructor.
+     * @property {module:model/ReportTaskCreateBody}
      */
-    ReporttaskcreateFiltering,
+    ReportTaskCreateBody,
+
+    /**
+     * The ReportTaskCreateBodyFiltering model constructor.
+     * @property {module:model/ReportTaskCreateBodyFiltering}
+     */
+    ReportTaskCreateBodyFiltering,
 
     /**
      * The RuleCreateBody model constructor.
@@ -1174,6 +1402,24 @@ export {
     ShareCancelBody,
 
     /**
+     * The ShareableLinkCreateBody model constructor.
+     * @property {module:model/ShareableLinkCreateBody}
+     */
+    ShareableLinkCreateBody,
+
+    /**
+     * The SmartTextGenerateBody model constructor.
+     * @property {module:model/SmartTextGenerateBody}
+     */
+    SmartTextGenerateBody,
+
+    /**
+     * The StatusUpdateBody model constructor.
+     * @property {module:model/StatusUpdateBody}
+     */
+    StatusUpdateBody,
+
+    /**
      * The TargetingCategoryRecommendBody model constructor.
      * @property {module:model/TargetingCategoryRecommendBody}
      */
@@ -1196,12 +1442,6 @@ export {
      * @property {module:model/TaskCancelBody}
      */
     TaskCancelBody,
-
-    /**
-     * The TaskCreateBody model constructor.
-     * @property {module:model/TaskCreateBody}
-     */
-    TaskCreateBody,
 
     /**
      * The TermConfirmBody model constructor.
@@ -1270,10 +1510,16 @@ export {
     CatalogApi,
 
     /**
-    * The CreativeAssetApi service constructor.
-    * @property {module:api/CreativeAssetApi}
+    * The CommentsApi service constructor.
+    * @property {module:api/CommentsApi}
     */
-    CreativeAssetApi,
+    CommentsApi,
+
+    /**
+    * The CreativeManagementApi service constructor.
+    * @property {module:api/CreativeManagementApi}
+    */
+    CreativeManagementApi,
 
     /**
     * The EventCallbackApi service constructor.
@@ -1292,6 +1538,12 @@ export {
     * @property {module:api/IdentityApi}
     */
     IdentityApi,
+
+    /**
+    * The MeasurementApi service constructor.
+    * @property {module:api/MeasurementApi}
+    */
+    MeasurementApi,
 
     /**
     * The RecommendToolApi service constructor.

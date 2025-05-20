@@ -6,10 +6,11 @@
  */
 import superagent from "superagent";
 import querystring from "querystring";
+import pathModule from "path";
 
 /**
 * @module ApiClient
-* @version 0.1.5
+* @version 0.1.7
 */
 
 /**
@@ -416,13 +417,18 @@ export class ApiClient {
             request.send(querystring.stringify(this.normalizeParams(formParams)));
         } else if (contentType == 'multipart/form-data') {
             var _formParams = this.normalizeParams(formParams);
-            for (var key in _formParams) {
-                if (_formParams.hasOwnProperty(key)) {
-                    if (this.isFileParam(_formParams[key])) {
-                        request.attach(key, _formParams[key], formParams.file_name || 'default_file_name');
-                    } else {
-                        request.field(key, _formParams[key]);
-                    }
+            for (const key in _formParams) {
+                if (!_formParams.hasOwnProperty(key)) continue;
+                const val = _formParams[key];
+                if (this.isFileParam(val)) {
+                    // always pass a filename to superagent.attach()
+                    // ReadStream has .path → basename, Buffer doesn't → fallback to key
+                    const filename = val.path
+                        ? pathModule.basename(val.path)
+                        : key;
+                    request.attach(key, val, filename);
+                } else {
+                    request.field(key, val);
                 }
             }
         } else if (bodyParam) {

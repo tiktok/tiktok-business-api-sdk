@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringCreativePortfolioList model module.
  * @module model/FilteringCreativePortfolioList
- * @version 0.1.3
+ * @version 0.1.7
  */
 export class FilteringCreativePortfolioList {
   /**

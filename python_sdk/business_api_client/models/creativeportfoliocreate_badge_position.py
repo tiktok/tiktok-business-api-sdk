@@ -52,7 +52,6 @@ class CreativeportfoliocreateBadgePosition(object):
     def angle(self):
         """Gets the angle of this CreativeportfoliocreateBadgePosition.  # noqa: E501
 
-        Initial rotation angle when the badge starts to show  # noqa: E501
 
         :return: The angle of this CreativeportfoliocreateBadgePosition.  # noqa: E501
         :rtype: int
@@ -63,7 +62,6 @@ class CreativeportfoliocreateBadgePosition(object):
     def angle(self, angle):
         """Sets the angle of this CreativeportfoliocreateBadgePosition.
 
-        Initial rotation angle when the badge starts to show  # noqa: E501
 
         :param angle: The angle of this CreativeportfoliocreateBadgePosition.  # noqa: E501
         :type: int
@@ -75,7 +73,6 @@ class CreativeportfoliocreateBadgePosition(object):
     def position_x(self):
         """Gets the position_x of this CreativeportfoliocreateBadgePosition.  # noqa: E501
 
-        Relative x-axis value of the top-left corner of the badge. It is the x coordinate of the top-left corner divided by 720. Range: 0-1  # noqa: E501
 
         :return: The position_x of this CreativeportfoliocreateBadgePosition.  # noqa: E501
         :rtype: float
@@ -86,7 +83,6 @@ class CreativeportfoliocreateBadgePosition(object):
     def position_x(self, position_x):
         """Sets the position_x of this CreativeportfoliocreateBadgePosition.
 
-        Relative x-axis value of the top-left corner of the badge. It is the x coordinate of the top-left corner divided by 720. Range: 0-1  # noqa: E501
 
         :param position_x: The position_x of this CreativeportfoliocreateBadgePosition.  # noqa: E501
         :type: float
@@ -98,7 +94,6 @@ class CreativeportfoliocreateBadgePosition(object):
     def position_y(self):
         """Gets the position_y of this CreativeportfoliocreateBadgePosition.  # noqa: E501
 
-         Relative y-axis value of the top-left corner of the badge. It is the y coordinate of the top-left corner divided by 1280. Range: 0-1  # noqa: E501
 
         :return: The position_y of this CreativeportfoliocreateBadgePosition.  # noqa: E501
         :rtype: float
@@ -109,7 +104,6 @@ class CreativeportfoliocreateBadgePosition(object):
     def position_y(self, position_y):
         """Sets the position_y of this CreativeportfoliocreateBadgePosition.
 
-         Relative y-axis value of the top-left corner of the badge. It is the y coordinate of the top-left corner divided by 1280. Range: 0-1  # noqa: E501
 
         :param position_y: The position_y of this CreativeportfoliocreateBadgePosition.  # noqa: E501
         :type: float

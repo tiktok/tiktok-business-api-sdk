@@ -10,7 +10,7 @@ import {PixelbatchBatch} from './PixelbatchBatch.js';
 /**
  * The PixelBatchBody model module.
  * @module model/PixelBatchBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class PixelBatchBody {
   /**

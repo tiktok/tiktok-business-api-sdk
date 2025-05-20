@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PlayableDeleteBody model module.
  * @module model/PlayableDeleteBody
- * @version 0.1.3
+ * @version 0.1.7
  */
 export class PlayableDeleteBody {
   /**

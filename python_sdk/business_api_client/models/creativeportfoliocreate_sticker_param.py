@@ -27,11 +27,13 @@ class CreativeportfoliocreateStickerParam(object):
         'color': 'str',
         'cutoff_time': 'str',
         'display_angle': 'int',
+        'giftcode': 'str',
         'landing_page_url': 'str',
         'live_tiktok_user_id': 'str',
         'opacity': 'str',
         'position_x': 'int',
         'position_y': 'int',
+        'predefined_placement': 'str',
         'reminder_time': 'str',
         'size': 'str',
         'sticker_type': 'str',
@@ -42,38 +44,43 @@ class CreativeportfoliocreateStickerParam(object):
         'color': 'color',
         'cutoff_time': 'cutoff_time',
         'display_angle': 'display_angle',
+        'giftcode': 'giftcode',
         'landing_page_url': 'landing_page_url',
         'live_tiktok_user_id': 'live_tiktok_user_id',
         'opacity': 'opacity',
         'position_x': 'position_x',
         'position_y': 'position_y',
+        'predefined_placement': 'predefined_placement',
         'reminder_time': 'reminder_time',
         'size': 'size',
         'sticker_type': 'sticker_type',
         'title': 'title'
     }
 
-    def __init__(self, color=None, cutoff_time=None, display_angle=None, landing_page_url=None, live_tiktok_user_id=None, opacity=None, position_x=None, position_y=None, reminder_time=None, size=None, sticker_type=None, title=None):  # noqa: E501
+    def __init__(self, color=None, cutoff_time=None, display_angle=None, giftcode=None, landing_page_url=None, live_tiktok_user_id=None, opacity=None, position_x=None, position_y=None, predefined_placement=None, reminder_time=None, size=None, sticker_type='COUNTDOWN', title=None):  # noqa: E501
         """CreativeportfoliocreateStickerParam - a model defined in Swagger"""  # noqa: E501
         self._color = None
         self._cutoff_time = None
         self._display_angle = None
+        self._giftcode = None
         self._landing_page_url = None
         self._live_tiktok_user_id = None
         self._opacity = None
         self._position_x = None
         self._position_y = None
+        self._predefined_placement = None
         self._reminder_time = None
         self._size = None
         self._sticker_type = None
         self._title = None
         self.discriminator = None
-        if color is not None:
-            self.color = color
+        self.color = color
         if cutoff_time is not None:
             self.cutoff_time = cutoff_time
         if display_angle is not None:
             self.display_angle = display_angle
+        if giftcode is not None:
+            self.giftcode = giftcode
         if landing_page_url is not None:
             self.landing_page_url = landing_page_url
         if live_tiktok_user_id is not None:
@@ -84,20 +91,20 @@ class CreativeportfoliocreateStickerParam(object):
             self.position_x = position_x
         if position_y is not None:
             self.position_y = position_y
+        if predefined_placement is not None:
+            self.predefined_placement = predefined_placement
         if reminder_time is not None:
             self.reminder_time = reminder_time
         if size is not None:
             self.size = size
         if sticker_type is not None:
             self.sticker_type = sticker_type
-        if title is not None:
-            self.title = title
+        self.title = title
 
     @property
     def color(self):
         """Gets the color of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        Background color of the sticker. Enum values: `ORANGE`(orange), `BLACK`(black), `RED`(red), `BLUE`(blue)  # noqa: E501
 
         :return: The color of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -108,11 +115,12 @@ class CreativeportfoliocreateStickerParam(object):
     def color(self, color):
         """Sets the color of this CreativeportfoliocreateStickerParam.
 
-        Background color of the sticker. Enum values: `ORANGE`(orange), `BLACK`(black), `RED`(red), `BLUE`(blue)  # noqa: E501
 
         :param color: The color of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
         """
+        if color is None:
+            raise ValueError("Invalid value for `color`, must not be `None`")  # noqa: E501
 
         self._color = color
 
@@ -120,7 +128,6 @@ class CreativeportfoliocreateStickerParam(object):
     def cutoff_time(self):
         """Gets the cutoff_time of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        Countdown deadline (when `sticker_type`= `COUNTDOWN` or `REMINDER_COUNTDOWN`) or LIVE start time (when `sticker_type`=`LIVE_REMINDER_COUNTDOWN`) for the Countdown Sticker, in the format of \"2022-10-30 00:00:00\" (UTC+0 Time). Note: The time you pass in via this field is regarded as UTC+0 time by default and you cannot modify the default time zone  # noqa: E501
 
         :return: The cutoff_time of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -131,7 +138,6 @@ class CreativeportfoliocreateStickerParam(object):
     def cutoff_time(self, cutoff_time):
         """Sets the cutoff_time of this CreativeportfoliocreateStickerParam.
 
-        Countdown deadline (when `sticker_type`= `COUNTDOWN` or `REMINDER_COUNTDOWN`) or LIVE start time (when `sticker_type`=`LIVE_REMINDER_COUNTDOWN`) for the Countdown Sticker, in the format of \"2022-10-30 00:00:00\" (UTC+0 Time). Note: The time you pass in via this field is regarded as UTC+0 time by default and you cannot modify the default time zone  # noqa: E501
 
         :param cutoff_time: The cutoff_time of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
@@ -143,7 +149,6 @@ class CreativeportfoliocreateStickerParam(object):
     def display_angle(self):
         """Gets the display_angle of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        Sticker display angle. Value range: `[-180, +180]`. `+90` means to rotate the sticker clockwise by 90 degrees  # noqa: E501
 
         :return: The display_angle of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: int
@@ -154,7 +159,6 @@ class CreativeportfoliocreateStickerParam(object):
     def display_angle(self, display_angle):
         """Sets the display_angle of this CreativeportfoliocreateStickerParam.
 
-        Sticker display angle. Value range: `[-180, +180]`. `+90` means to rotate the sticker clockwise by 90 degrees  # noqa: E501
 
         :param display_angle: The display_angle of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: int
@@ -163,10 +167,30 @@ class CreativeportfoliocreateStickerParam(object):
         self._display_angle = display_angle
 
     @property
+    def giftcode(self):
+        """Gets the giftcode of this CreativeportfoliocreateStickerParam.  # noqa: E501
+
+
+        :return: The giftcode of this CreativeportfoliocreateStickerParam.  # noqa: E501
+        :rtype: str
+        """
+        return self._giftcode
+
+    @giftcode.setter
+    def giftcode(self, giftcode):
+        """Sets the giftcode of this CreativeportfoliocreateStickerParam.
+
+
+        :param giftcode: The giftcode of this CreativeportfoliocreateStickerParam.  # noqa: E501
+        :type: str
+        """
+
+        self._giftcode = giftcode
+
+    @property
     def landing_page_url(self):
         """Gets the landing_page_url of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        The landing page URL you will be redirected to when you click the reminder after the countdown for an non-LIVE event ends. Required when `sticker_type` is `REMINDER_COUNTDOWN`  # noqa: E501
 
         :return: The landing_page_url of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -177,7 +201,6 @@ class CreativeportfoliocreateStickerParam(object):
     def landing_page_url(self, landing_page_url):
         """Sets the landing_page_url of this CreativeportfoliocreateStickerParam.
 
-        The landing page URL you will be redirected to when you click the reminder after the countdown for an non-LIVE event ends. Required when `sticker_type` is `REMINDER_COUNTDOWN`  # noqa: E501
 
         :param landing_page_url: The landing_page_url of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
@@ -189,7 +212,6 @@ class CreativeportfoliocreateStickerParam(object):
     def live_tiktok_user_id(self):
         """Gets the live_tiktok_user_id of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        TikTok user ID of the LIVE event host. Required when `sticker_type` is `LIVE_REMINDER_COUNTDOWN`. After specifying this field, you will be redirected to the host LIVE room when you click the reminder for a LIVE event  # noqa: E501
 
         :return: The live_tiktok_user_id of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -200,7 +222,6 @@ class CreativeportfoliocreateStickerParam(object):
     def live_tiktok_user_id(self, live_tiktok_user_id):
         """Sets the live_tiktok_user_id of this CreativeportfoliocreateStickerParam.
 
-        TikTok user ID of the LIVE event host. Required when `sticker_type` is `LIVE_REMINDER_COUNTDOWN`. After specifying this field, you will be redirected to the host LIVE room when you click the reminder for a LIVE event  # noqa: E501
 
         :param live_tiktok_user_id: The live_tiktok_user_id of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
@@ -212,7 +233,6 @@ class CreativeportfoliocreateStickerParam(object):
     def opacity(self):
         """Gets the opacity of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        Sticker opacity. Enum values: `0.7`, `0.8`, `0.9`, `1`. The lower the value, the more transparent the sticker will be  # noqa: E501
 
         :return: The opacity of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -223,7 +243,6 @@ class CreativeportfoliocreateStickerParam(object):
     def opacity(self, opacity):
         """Sets the opacity of this CreativeportfoliocreateStickerParam.
 
-        Sticker opacity. Enum values: `0.7`, `0.8`, `0.9`, `1`. The lower the value, the more transparent the sticker will be  # noqa: E501
 
         :param opacity: The opacity of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
@@ -235,7 +254,6 @@ class CreativeportfoliocreateStickerParam(object):
     def position_x(self):
         """Gets the position_x of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        The x-axis coordinate relative to the top-left corner of the screen. Value range: 50-109  # noqa: E501
 
         :return: The position_x of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: int
@@ -246,7 +264,6 @@ class CreativeportfoliocreateStickerParam(object):
     def position_x(self, position_x):
         """Sets the position_x of this CreativeportfoliocreateStickerParam.
 
-        The x-axis coordinate relative to the top-left corner of the screen. Value range: 50-109  # noqa: E501
 
         :param position_x: The position_x of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: int
@@ -258,7 +275,6 @@ class CreativeportfoliocreateStickerParam(object):
     def position_y(self):
         """Gets the position_y of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        The y-axis coordinate relative to the top-left corner of the screen. Value range: 141-506  # noqa: E501
 
         :return: The position_y of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: int
@@ -269,7 +285,6 @@ class CreativeportfoliocreateStickerParam(object):
     def position_y(self, position_y):
         """Sets the position_y of this CreativeportfoliocreateStickerParam.
 
-        The y-axis coordinate relative to the top-left corner of the screen. Value range: 141-506  # noqa: E501
 
         :param position_y: The position_y of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: int
@@ -278,10 +293,30 @@ class CreativeportfoliocreateStickerParam(object):
         self._position_y = position_y
 
     @property
+    def predefined_placement(self):
+        """Gets the predefined_placement of this CreativeportfoliocreateStickerParam.  # noqa: E501
+
+
+        :return: The predefined_placement of this CreativeportfoliocreateStickerParam.  # noqa: E501
+        :rtype: str
+        """
+        return self._predefined_placement
+
+    @predefined_placement.setter
+    def predefined_placement(self, predefined_placement):
+        """Sets the predefined_placement of this CreativeportfoliocreateStickerParam.
+
+
+        :param predefined_placement: The predefined_placement of this CreativeportfoliocreateStickerParam.  # noqa: E501
+        :type: str
+        """
+
+        self._predefined_placement = predefined_placement
+
+    @property
     def reminder_time(self):
         """Gets the reminder_time of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        The time set for the reminder. Required when `sticker_type`= `REMINDER_COUNTDOWN` or `LIVE_REMINDER_COUNTDOWN`.For non-LIVE stickers (when `sticker_type`= `REMINDER_COUNTDOWN`), the enum values are:`ONE_MINUTE_EARLIER`: send the reminder one minute before the non-LIVE event.`ONE_HOUR_EARLIER `: send the reminder one hour before the non-LIVE event.`ONE_DAY_EARLIER`: send the reminder one day before the non-LIVE event.For LIVE stickers (when `sticker_type`= `LIVE_REMINDER_COUNTDOWN`), the enum values are: `ONE_MINUTE_AFTER`: send the reminder one minute after the LIVE event starts.`FIVE_MINUTES_AFTER`: send the reminder five minutes after the LIVE event starts.`TEN_MINUTES_AFTER`: send the reminder ten minutes after the LIVE event starts.   # noqa: E501
 
         :return: The reminder_time of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -292,7 +327,6 @@ class CreativeportfoliocreateStickerParam(object):
     def reminder_time(self, reminder_time):
         """Sets the reminder_time of this CreativeportfoliocreateStickerParam.
 
-        The time set for the reminder. Required when `sticker_type`= `REMINDER_COUNTDOWN` or `LIVE_REMINDER_COUNTDOWN`.For non-LIVE stickers (when `sticker_type`= `REMINDER_COUNTDOWN`), the enum values are:`ONE_MINUTE_EARLIER`: send the reminder one minute before the non-LIVE event.`ONE_HOUR_EARLIER `: send the reminder one hour before the non-LIVE event.`ONE_DAY_EARLIER`: send the reminder one day before the non-LIVE event.For LIVE stickers (when `sticker_type`= `LIVE_REMINDER_COUNTDOWN`), the enum values are: `ONE_MINUTE_AFTER`: send the reminder one minute after the LIVE event starts.`FIVE_MINUTES_AFTER`: send the reminder five minutes after the LIVE event starts.`TEN_MINUTES_AFTER`: send the reminder ten minutes after the LIVE event starts.   # noqa: E501
 
         :param reminder_time: The reminder_time of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
@@ -325,7 +359,6 @@ class CreativeportfoliocreateStickerParam(object):
     def sticker_type(self):
         """Gets the sticker_type of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        Sticker type. Default value: `COUNTDOWN`. Enum values: `COUNTDOWN`: A Countdown Sticker with no reminder.`REMINDER_COUNTDOWN`: A Countdown Sticker with reminder for a non-LIVE event.`LIVE_REMINDER_COUNTDOWN`: A Countdown Sticker with reminder for a LIVE event.  # noqa: E501
 
         :return: The sticker_type of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -336,7 +369,6 @@ class CreativeportfoliocreateStickerParam(object):
     def sticker_type(self, sticker_type):
         """Sets the sticker_type of this CreativeportfoliocreateStickerParam.
 
-        Sticker type. Default value: `COUNTDOWN`. Enum values: `COUNTDOWN`: A Countdown Sticker with no reminder.`REMINDER_COUNTDOWN`: A Countdown Sticker with reminder for a non-LIVE event.`LIVE_REMINDER_COUNTDOWN`: A Countdown Sticker with reminder for a LIVE event.  # noqa: E501
 
         :param sticker_type: The sticker_type of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
@@ -348,7 +380,6 @@ class CreativeportfoliocreateStickerParam(object):
     def title(self):
         """Gets the title of this CreativeportfoliocreateStickerParam.  # noqa: E501
 
-        Sticker title. The maximum length is 54, in UTF-8 bytes (54 English letters or 18 Chinese characters), and the hashtag symbol (#) is not supported  # noqa: E501
 
         :return: The title of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :rtype: str
@@ -359,11 +390,12 @@ class CreativeportfoliocreateStickerParam(object):
     def title(self, title):
         """Sets the title of this CreativeportfoliocreateStickerParam.
 
-        Sticker title. The maximum length is 54, in UTF-8 bytes (54 English letters or 18 Chinese characters), and the hashtag symbol (#) is not supported  # noqa: E501
 
         :param title: The title of this CreativeportfoliocreateStickerParam.  # noqa: E501
         :type: str
         """
+        if title is None:
+            raise ValueError("Invalid value for `title`, must not be `None`")  # noqa: E501
 
         self._title = title
 

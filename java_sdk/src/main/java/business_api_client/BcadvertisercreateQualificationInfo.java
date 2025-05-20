@@ -19,7 +19,7 @@ import java.util.List;
  * Qualification information.  Required when your Business Center type is &#x60;AGENCY&#x60;. &lt;p&gt;&lt;span style&#x3D;\&quot;color:darkred\&quot;&gt;&lt;b&gt;Note&lt;/b&gt;&lt;/span&gt;: Do not specify this object when your Business Center type is &#x60;DIRECT&#x60;, or an error will occur.
  */
 @Schema(description = "Qualification information.  Required when your Business Center type is `AGENCY`. <p><span style=\"color:darkred\"><b>Note</b></span>: Do not specify this object when your Business Center type is `DIRECT`, or an error will occur.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
 public class BcadvertisercreateQualificationInfo {
   @JsonProperty("license_image_id")
   private String licenseImageId = null;

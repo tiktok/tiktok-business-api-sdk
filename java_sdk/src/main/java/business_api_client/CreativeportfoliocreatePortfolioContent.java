@@ -11,8 +11,11 @@ import java.util.Objects;
 import java.util.Arrays;
 import business_api_client.CreativeportfoliocreateAdvancedAudioInfo;
 import business_api_client.CreativeportfoliocreateAdvancedGestureIcon;
+import business_api_client.CreativeportfoliocreateAdvancedGestureImage;
 import business_api_client.CreativeportfoliocreateBadgeImageInfo;
 import business_api_client.CreativeportfoliocreateBadgePosition;
+import business_api_client.CreativeportfoliocreateShowcaseProducts;
+import business_api_client.CreativeportfoliocreateSlideDimension;
 import business_api_client.CreativeportfoliocreateStickerParam;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
@@ -21,10 +24,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * The content of the portfolio
+ * CreativeportfoliocreatePortfolioContent
  */
-@Schema(description = "The content of the portfolio")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
+
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
 public class CreativeportfoliocreatePortfolioContent {
   @JsonProperty("ad_text")
   private String adText = null;
@@ -36,7 +39,7 @@ public class CreativeportfoliocreatePortfolioContent {
   private CreativeportfoliocreateAdvancedGestureIcon advancedGestureIcon = null;
 
   @JsonProperty("advanced_gesture_image")
-  private CreativeportfoliocreateAdvancedGestureIcon advancedGestureImage = null;
+  private CreativeportfoliocreateAdvancedGestureImage advancedGestureImage = null;
 
   @JsonProperty("advanced_interact_shape")
   private String advancedInteractShape = null;
@@ -60,7 +63,7 @@ public class CreativeportfoliocreatePortfolioContent {
   private CreativeportfoliocreateBadgePosition badgePosition = null;
 
   @JsonProperty("badge_show_time")
-  private Integer badgeShowTime = null;
+  private Long badgeShowTime = null;
 
   @JsonProperty("call_to_action")
   private String callToAction = null;
@@ -69,7 +72,7 @@ public class CreativeportfoliocreatePortfolioContent {
   private String callToActionText = null;
 
   @JsonProperty("card_image_index")
-  private Integer cardImageIndex = null;
+  private Long cardImageIndex = null;
 
   @JsonProperty("card_show_price")
   private Boolean cardShowPrice = null;
@@ -95,8 +98,14 @@ public class CreativeportfoliocreatePortfolioContent {
   @JsonProperty("description")
   private String description = null;
 
+  @JsonProperty("display_price_enabled")
+  private Boolean displayPriceEnabled = null;
+
   @JsonProperty("dynamic_format")
-  private String dynamicFormat = null;
+  private String dynamicFormat = "UNSET";
+
+  @JsonProperty("gesture_type")
+  private String gestureType = null;
 
   @JsonProperty("identity_authorized_bc_id")
   private String identityAuthorizedBcId = null;
@@ -110,6 +119,12 @@ public class CreativeportfoliocreatePortfolioContent {
   @JsonProperty("image_id")
   private String imageId = null;
 
+  @JsonProperty("image_optimization_enabled")
+  private Boolean imageOptimizationEnabled = null;
+
+  @JsonProperty("interactive_music_id")
+  private String interactiveMusicId = null;
+
   @JsonProperty("item_group_ids")
   private List<String> itemGroupIds = null;
 
@@ -119,6 +134,12 @@ public class CreativeportfoliocreatePortfolioContent {
   @JsonProperty("mobile_app_id")
   private String mobileAppId = null;
 
+  @JsonProperty("pop_up_window_image_id")
+  private String popUpWindowImageId = null;
+
+  @JsonProperty("primary_text")
+  private String primaryText = null;
+
   @JsonProperty("product_set_id")
   private String productSetId = null;
 
@@ -126,13 +147,28 @@ public class CreativeportfoliocreatePortfolioContent {
   private String productSource = null;
 
   @JsonProperty("product_specific_type")
-  private String productSpecificType = null;
+  private String productSpecificType = "UNSET";
 
   @JsonProperty("profile_image")
   private String profileImage = null;
 
+  @JsonProperty("secondary_text")
+  private String secondaryText = null;
+
+  @JsonProperty("selling_points")
+  private List<String> sellingPoints = null;
+
+  @JsonProperty("showcase_products")
+  private List<CreativeportfoliocreateShowcaseProducts> showcaseProducts = null;
+
   @JsonProperty("sku_ids")
   private List<String> skuIds = null;
+
+  @JsonProperty("slide_dimension")
+  private CreativeportfoliocreateSlideDimension slideDimension = null;
+
+  @JsonProperty("slide_length")
+  private Long slideLength = null;
 
   @JsonProperty("sticker_param")
   private CreativeportfoliocreateStickerParam stickerParam = null;
@@ -146,6 +182,9 @@ public class CreativeportfoliocreatePortfolioContent {
   @JsonProperty("tags")
   private List<String> tags = null;
 
+  @JsonProperty("title")
+  private String title = null;
+
   @JsonProperty("vertical_video_strategy")
   private String verticalVideoStrategy = null;
 
@@ -155,10 +194,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Valid when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;. An ad text. It is shown to your audience as part of your ad creative, to deliver the message you intend to communicate to them.  If you do not know how to create effective ad texts, you can try the [Smart Text](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739084248002626) feature, which generates ad text recommendations based on the industry and language. Note: Ad text must be 1-100 characters long and cannot contain emoji.  Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.
+   * Get adText
    * @return adText
   **/
-  @Schema(description = "Valid when `creative_portfolio_type`= `PRODUCT_CARD`. An ad text. It is shown to your audience as part of your ad creative, to deliver the message you intend to communicate to them.  If you do not know how to create effective ad texts, you can try the [Smart Text](https://ads.tiktok.com/marketing_api/docs?id=1739084248002626) feature, which generates ad text recommendations based on the industry and language. Note: Ad text must be 1-100 characters long and cannot contain emoji.  Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.")
+  @Schema(description = "")
   public String getAdText() {
     return adText;
   }
@@ -203,7 +242,7 @@ public class CreativeportfoliocreatePortfolioContent {
     this.advancedGestureIcon = advancedGestureIcon;
   }
 
-  public CreativeportfoliocreatePortfolioContent advancedGestureImage(CreativeportfoliocreateAdvancedGestureIcon advancedGestureImage) {
+  public CreativeportfoliocreatePortfolioContent advancedGestureImage(CreativeportfoliocreateAdvancedGestureImage advancedGestureImage) {
     this.advancedGestureImage = advancedGestureImage;
     return this;
   }
@@ -213,11 +252,11 @@ public class CreativeportfoliocreatePortfolioContent {
    * @return advancedGestureImage
   **/
   @Schema(description = "")
-  public CreativeportfoliocreateAdvancedGestureIcon getAdvancedGestureImage() {
+  public CreativeportfoliocreateAdvancedGestureImage getAdvancedGestureImage() {
     return advancedGestureImage;
   }
 
-  public void setAdvancedGestureImage(CreativeportfoliocreateAdvancedGestureIcon advancedGestureImage) {
+  public void setAdvancedGestureImage(CreativeportfoliocreateAdvancedGestureImage advancedGestureImage) {
     this.advancedGestureImage = advancedGestureImage;
   }
 
@@ -263,10 +302,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60;. ID of the app that you want to promote in the Download Card. It is the App ID from Events Manager
+   * Get appId
    * @return appId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. ID of the app that you want to promote in the Download Card. It is the App ID from Events Manager")
+  @Schema(description = "")
   public String getAppId() {
     return appId;
   }
@@ -281,10 +320,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * A call-to-action text. For example, &#x60;\&quot;Learn More\&quot;&#x60;. This field is required when &#x60;creative_portfolio_type&#x60; is &#x60;CTA&#x60;
+   * Get assetContent
    * @return assetContent
   **/
-  @Schema(description = "A call-to-action text. For example, `\"Learn More\"`. This field is required when `creative_portfolio_type` is `CTA`")
+  @Schema(description = "")
   public String getAssetContent() {
     return assetContent;
   }
@@ -307,10 +346,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * A list of CTAs. For example, &#x60;[201781, 201535]&#x60;. This field is required when &#x60;creative_portfolio_type&#x60; is &#x60;CTA&#x60;. To create a CTA portfolio, you need to get a group of auto-optimized CTAs by using &#x60;/creative/cta/recommend/&#x60;. Fetch the data in the response and include it as values to this field. Note: Auto-optimized CTAs can only be used in the advertiser accounts that they were created for.
+   * Get assetIds
    * @return assetIds
   **/
-  @Schema(description = "A list of CTAs. For example, `[201781, 201535]`. This field is required when `creative_portfolio_type` is `CTA`. To create a CTA portfolio, you need to get a group of auto-optimized CTAs by using `/creative/cta/recommend/`. Fetch the data in the response and include it as values to this field. Note: Auto-optimized CTAs can only be used in the advertiser accounts that they were created for.")
+  @Schema(description = "")
   public List<String> getAssetIds() {
     return assetIds;
   }
@@ -355,21 +394,22 @@ public class CreativeportfoliocreatePortfolioContent {
     this.badgePosition = badgePosition;
   }
 
-  public CreativeportfoliocreatePortfolioContent badgeShowTime(Integer badgeShowTime) {
+  public CreativeportfoliocreatePortfolioContent badgeShowTime(Long badgeShowTime) {
     this.badgeShowTime = badgeShowTime;
     return this;
   }
 
    /**
-   * When the premium badge will start to show, in seconds. The first three seconds and the last five seconds of the video cannot be used as the badge show start time
+   * Get badgeShowTime
+   * minimum: 3
    * @return badgeShowTime
   **/
-  @Schema(description = "When the premium badge will start to show, in seconds. The first three seconds and the last five seconds of the video cannot be used as the badge show start time")
-  public Integer getBadgeShowTime() {
+  @Schema(description = "")
+  public Long getBadgeShowTime() {
     return badgeShowTime;
   }
 
-  public void setBadgeShowTime(Integer badgeShowTime) {
+  public void setBadgeShowTime(Long badgeShowTime) {
     this.badgeShowTime = badgeShowTime;
   }
 
@@ -379,10 +419,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60;. Call-to-action text in the Download Card
+   * Get callToAction
    * @return callToAction
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Call-to-action text in the Download Card")
+  @Schema(description = "")
   public String getCallToAction() {
     return callToAction;
   }
@@ -397,10 +437,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * The call-to-action text that will be shown below the image/badge
+   * Get callToActionText
    * @return callToActionText
   **/
-  @Schema(description = "The call-to-action text that will be shown below the image/badge")
+  @Schema(description = "")
   public String getCallToActionText() {
     return callToActionText;
   }
@@ -409,21 +449,22 @@ public class CreativeportfoliocreatePortfolioContent {
     this.callToActionText = callToActionText;
   }
 
-  public CreativeportfoliocreatePortfolioContent cardImageIndex(Integer cardImageIndex) {
+  public CreativeportfoliocreatePortfolioContent cardImageIndex(Long cardImageIndex) {
     this.cardImageIndex = cardImageIndex;
     return this;
   }
 
    /**
-   * card_image_index | integer | Valid when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;. You can use this field to specify the image used in the Product Card. The number you set via this field will be used as index to query the Image URLs you have passed through &#x60;additional_image_urls&#x60; in [/catalog/product/upload/](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740497429681153). For instance, &#x60;card_image_index&#x60; &#x3D; 2 means that you will use the image via the second image URL in &#x60;additional_image_urls&#x60;
+   * Get cardImageIndex
+   * minimum: 0
    * @return cardImageIndex
   **/
-  @Schema(description = "card_image_index | integer | Valid when `creative_portfolio_type`= `PRODUCT_CARD`. You can use this field to specify the image used in the Product Card. The number you set via this field will be used as index to query the Image URLs you have passed through `additional_image_urls` in [/catalog/product/upload/](https://ads.tiktok.com/marketing_api/docs?id=1740497429681153). For instance, `card_image_index` = 2 means that you will use the image via the second image URL in `additional_image_urls`")
-  public Integer getCardImageIndex() {
+  @Schema(description = "")
+  public Long getCardImageIndex() {
     return cardImageIndex;
   }
 
-  public void setCardImageIndex(Integer cardImageIndex) {
+  public void setCardImageIndex(Long cardImageIndex) {
     this.cardImageIndex = cardImageIndex;
   }
 
@@ -433,10 +474,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;.  Whether to show the price of products on the Product Card or not
+   * Get cardShowPrice
    * @return cardShowPrice
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD`.  Whether to show the price of products on the Product Card or not")
+  @Schema(description = "")
   public Boolean isCardShowPrice() {
     return cardShowPrice;
   }
@@ -459,10 +500,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;. The product tags that you want to show on the Product Card. Enum values: &#x60;BRAND&#x60; (Brand Name), &#x60;DESC&#x60; (Description)
+   * Get cardTags
    * @return cardTags
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD`. The product tags that you want to show on the Product Card. Enum values: `BRAND` (Brand Name), `DESC` (Description)")
+  @Schema(description = "")
   public List<String> getCardTags() {
     return cardTags;
   }
@@ -477,10 +518,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Card type. Currently only image card portfolio (IMAGE) can be created with this endpoint. Required when creative_portfolio_type is CARD
+   * Get cardType
    * @return cardType
   **/
-  @Schema(description = "Card type. Currently only image card portfolio (IMAGE) can be created with this endpoint. Required when creative_portfolio_type is CARD")
+  @Schema(description = "")
   public String getCardType() {
     return cardType;
   }
@@ -495,10 +536,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;CATALOG&#x60;.ID of the Business Center that is authorized to access the catalog (&#x60;catalog_id&#x60;). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product
+   * Get catalogAuthorizedBcId
    * @return catalogAuthorizedBcId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`.ID of the Business Center that is authorized to access the catalog (`catalog_id`). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product")
+  @Schema(description = "")
   public String getCatalogAuthorizedBcId() {
     return catalogAuthorizedBcId;
   }
@@ -513,10 +554,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;. Catalog ID. Note: You can use [/store/list/](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1752267762718722) to get the &#x60;catalog_id&#x60;, &#x60;store_id&#x60; and &#x60;store_authorized_bc_id&#x60; for available stores under an ad account. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.
+   * Get catalogId
    * @return catalogId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD`. Catalog ID. Note: You can use [/store/list/](https://ads.tiktok.com/marketing_api/docs?id=1752267762718722) to get the `catalog_id`, `store_id` and `store_authorized_bc_id` for available stores under an ad account. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.")
+  @Schema(description = "")
   public String getCatalogId() {
     return catalogId;
   }
@@ -531,10 +572,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60; and the value of &#x60;tags&#x60; includes &#x60;CATEGORIES&#x60;. Category name of the app you want to promote in the Download Card. See [Enumerations-Creative Management-Category Labels](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138) for the enum values, and you need to pass the value as string
+   * Get categoryLabel
    * @return categoryLabel
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD` and the value of `tags` includes `CATEGORIES`. Category name of the app you want to promote in the Download Card. See [Enumerations-Creative Management-Category Labels](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) for the enum values, and you need to pass the value as string")
+  @Schema(description = "")
   public String getCategoryLabel() {
     return categoryLabel;
   }
@@ -557,10 +598,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60;. Country or location code of the region you want to target. For enum values, see [Appendix - Location code](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737585867307010)
+   * Get countryCode
    * @return countryCode
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Country or location code of the region you want to target. For enum values, see [Appendix - Location code](https://ads.tiktok.com/marketing_api/docs?id=1737585867307010)")
+  @Schema(description = "")
   public List<String> getCountryCode() {
     return countryCode;
   }
@@ -575,10 +616,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60; and the value of &#x60;layouts&#x60; includes &#x60;TYPE_1&#x60;. Description of the app that you want to promote in the Download Card
+   * Get description
    * @return description
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD` and the value of `layouts` includes `TYPE_1`. Description of the app that you want to promote in the Download Card")
+  @Schema(description = "")
   public String getDescription() {
     return description;
   }
@@ -587,16 +628,34 @@ public class CreativeportfoliocreatePortfolioContent {
     this.description = description;
   }
 
+  public CreativeportfoliocreatePortfolioContent displayPriceEnabled(Boolean displayPriceEnabled) {
+    this.displayPriceEnabled = displayPriceEnabled;
+    return this;
+  }
+
+   /**
+   * Get displayPriceEnabled
+   * @return displayPriceEnabled
+  **/
+  @Schema(description = "")
+  public Boolean isDisplayPriceEnabled() {
+    return displayPriceEnabled;
+  }
+
+  public void setDisplayPriceEnabled(Boolean displayPriceEnabled) {
+    this.displayPriceEnabled = displayPriceEnabled;
+  }
+
   public CreativeportfoliocreatePortfolioContent dynamicFormat(String dynamicFormat) {
     this.dynamicFormat = dynamicFormat;
     return this;
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and product_source is set as &#x60;CATALOG&#x60;. When &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;STORE&#x60;, you cannot set &#x60;dynamic_format&#x60; as &#x60;DYNAMIC_CREATIVE&#x60;. You can choose not to pass in the field or set it as &#x60;UNSET&#x60;. Whether to enable Dynamic Format. Dynamic Format combines video creative, product cards, and landing pages into different variations based on a shopper purchase intent, maximizing conversions for you. Enum values: &#x60;UNSET&#x60;, &#x60;DYNAMIC_CREATIVE&#x60; (Use Dynamic Format to create smart creatives). Note:&#x60;dynamic_format&#x60; cannot be enabled for retargeting ads (i.e. when &#x60;shopping_ads_retargeting_type&#x60; in the ad group is not &#x60;OFF&#x60;). When &#x60;dynamic_format&#x60; &#x3D; &#x60;DYNAMIC_CREATIVE&#x60;, we will automatically create cards. This means that you will not need to pass all card related fields (&#x60;card_show_price&#x60;, &#x60;card_tags&#x60;, &#x60;card_image_index&#x60;). If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card.
+   * Get dynamicFormat
    * @return dynamicFormat
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD` and product_source is set as `CATALOG`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`, you cannot set `dynamic_format` as `DYNAMIC_CREATIVE`. You can choose not to pass in the field or set it as `UNSET`. Whether to enable Dynamic Format. Dynamic Format combines video creative, product cards, and landing pages into different variations based on a shopper purchase intent, maximizing conversions for you. Enum values: `UNSET`, `DYNAMIC_CREATIVE` (Use Dynamic Format to create smart creatives). Note:`dynamic_format` cannot be enabled for retargeting ads (i.e. when `shopping_ads_retargeting_type` in the ad group is not `OFF`). When `dynamic_format` = `DYNAMIC_CREATIVE`, we will automatically create cards. This means that you will not need to pass all card related fields (`card_show_price`, `card_tags`, `card_image_index`). If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card.")
+  @Schema(description = "")
   public String getDynamicFormat() {
     return dynamicFormat;
   }
@@ -605,16 +664,34 @@ public class CreativeportfoliocreatePortfolioContent {
     this.dynamicFormat = dynamicFormat;
   }
 
+  public CreativeportfoliocreatePortfolioContent gestureType(String gestureType) {
+    this.gestureType = gestureType;
+    return this;
+  }
+
+   /**
+   * Get gestureType
+   * @return gestureType
+  **/
+  @Schema(description = "")
+  public String getGestureType() {
+    return gestureType;
+  }
+
+  public void setGestureType(String gestureType) {
+    this.gestureType = gestureType;
+  }
+
   public CreativeportfoliocreatePortfolioContent identityAuthorizedBcId(String identityAuthorizedBcId) {
     this.identityAuthorizedBcId = identityAuthorizedBcId;
     return this;
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;identity_type&#x60; is &#x60;BC_AUTH_TT&#x60;.  ID of the Business Center that a TikTok Account User in Business Center identity is associated with
+   * Get identityAuthorizedBcId
    * @return identityAuthorizedBcId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD` and `identity_type` is `BC_AUTH_TT`.  ID of the Business Center that a TikTok Account User in Business Center identity is associated with")
+  @Schema(description = "")
   public String getIdentityAuthorizedBcId() {
     return identityAuthorizedBcId;
   }
@@ -629,10 +706,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;. Identity ID
+   * Get identityId
    * @return identityId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD`. Identity ID")
+  @Schema(description = "")
   public String getIdentityId() {
     return identityId;
   }
@@ -647,10 +724,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;. Identity type. Enum values: &#x60;CUSTOMIZED_USER&#x60;, &#x60;AUTH_CODE&#x60;, &#x60;TT_USER&#x60;, &#x60;BC_AUTH_TT&#x60;. For details about identities, see [Identities](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738958351620097)
+   * Get identityType
    * @return identityType
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD`. Identity type. Enum values: `CUSTOMIZED_USER`, `AUTH_CODE`, `TT_USER`, `BC_AUTH_TT`. For details about identities, see [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097)")
+  @Schema(description = "")
   public String getIdentityType() {
     return identityType;
   }
@@ -665,16 +742,52 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Image ID. Required when &#x60;creative_portfolio_type&#x60; is &#x60;CARD&#x60;
+   * Get imageId
    * @return imageId
   **/
-  @Schema(description = "Image ID. Required when `creative_portfolio_type` is `CARD`")
+  @Schema(description = "")
   public String getImageId() {
     return imageId;
   }
 
   public void setImageId(String imageId) {
     this.imageId = imageId;
+  }
+
+  public CreativeportfoliocreatePortfolioContent imageOptimizationEnabled(Boolean imageOptimizationEnabled) {
+    this.imageOptimizationEnabled = imageOptimizationEnabled;
+    return this;
+  }
+
+   /**
+   * Get imageOptimizationEnabled
+   * @return imageOptimizationEnabled
+  **/
+  @Schema(description = "")
+  public Boolean isImageOptimizationEnabled() {
+    return imageOptimizationEnabled;
+  }
+
+  public void setImageOptimizationEnabled(Boolean imageOptimizationEnabled) {
+    this.imageOptimizationEnabled = imageOptimizationEnabled;
+  }
+
+  public CreativeportfoliocreatePortfolioContent interactiveMusicId(String interactiveMusicId) {
+    this.interactiveMusicId = interactiveMusicId;
+    return this;
+  }
+
+   /**
+   * Get interactiveMusicId
+   * @return interactiveMusicId
+  **/
+  @Schema(description = "")
+  public String getInteractiveMusicId() {
+    return interactiveMusicId;
+  }
+
+  public void setInteractiveMusicId(String interactiveMusicId) {
+    this.interactiveMusicId = interactiveMusicId;
   }
 
   public CreativeportfoliocreatePortfolioContent itemGroupIds(List<String> itemGroupIds) {
@@ -691,10 +804,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   *  Required when &#x60;creative_portfolio_type&#x60;is &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;STORE&#x60;. When &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_specific_type&#x60; &#x3D; PRODUCT_SET, you need to pass in either &#x60;product_set_id&#x60; or &#x60;item_group_ids&#x60;. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product
+   * Get itemGroupIds
    * @return itemGroupIds
   **/
-  @Schema(description = " Required when `creative_portfolio_type`is `PRODUCT_CARD` and `product_source` is set as `STORE`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = PRODUCT_SET, you need to pass in either `product_set_id` or `item_group_ids`. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product")
+  @Schema(description = "")
   public List<String> getItemGroupIds() {
     return itemGroupIds;
   }
@@ -717,10 +830,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60;. The layout type of the Download Card. Enum values: &#x60;TYPE_1&#x60;: Type 1, showing app description in the Download Card. &#x60;TYPE_2&#x60; : Type 2, not showing app description in the Download Card. You can pass in one or two layout types, and when you pass in both &#x60;TYPE_1&#x60; and &#x60;TYPE_2&#x60; in this field, you will create one Type 1 Download Card and one Type 2 Download Card
+   * Get layouts
    * @return layouts
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. The layout type of the Download Card. Enum values: `TYPE_1`: Type 1, showing app description in the Download Card. `TYPE_2` : Type 2, not showing app description in the Download Card. You can pass in one or two layout types, and when you pass in both `TYPE_1` and `TYPE_2` in this field, you will create one Type 1 Download Card and one Type 2 Download Card")
+  @Schema(description = "")
   public List<String> getLayouts() {
     return layouts;
   }
@@ -735,10 +848,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60;. Mobile App ID, used to extract tag information from Google Play or App Store. For an iOS app, please find the ID number in the app’s App Store URL as the string of numbers directly after &#x60;id&#x60;. For instance, in &#x60;https://apps.apple.com/us/app/hyperpure/id1203646221&#x60; the ID would be &#x60;1203646221&#x60;. For an Android app, please find the package name in the app’s Google Play store URL after &#x60;id&#x60;. For instance, in &#x60;https://play.google.com/store/apps/details?id&#x3D;com.innersloth.spacemafia&#x60; the ID would be &#x60;com.innersloth.spacemafia&#x60;.
+   * Get mobileAppId
    * @return mobileAppId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Mobile App ID, used to extract tag information from Google Play or App Store. For an iOS app, please find the ID number in the app’s App Store URL as the string of numbers directly after `id`. For instance, in `https://apps.apple.com/us/app/hyperpure/id1203646221` the ID would be `1203646221`. For an Android app, please find the package name in the app’s Google Play store URL after `id`. For instance, in `https://play.google.com/store/apps/details?id=com.innersloth.spacemafia` the ID would be `com.innersloth.spacemafia`.")
+  @Schema(description = "")
   public String getMobileAppId() {
     return mobileAppId;
   }
@@ -747,16 +860,52 @@ public class CreativeportfoliocreatePortfolioContent {
     this.mobileAppId = mobileAppId;
   }
 
+  public CreativeportfoliocreatePortfolioContent popUpWindowImageId(String popUpWindowImageId) {
+    this.popUpWindowImageId = popUpWindowImageId;
+    return this;
+  }
+
+   /**
+   * Get popUpWindowImageId
+   * @return popUpWindowImageId
+  **/
+  @Schema(description = "")
+  public String getPopUpWindowImageId() {
+    return popUpWindowImageId;
+  }
+
+  public void setPopUpWindowImageId(String popUpWindowImageId) {
+    this.popUpWindowImageId = popUpWindowImageId;
+  }
+
+  public CreativeportfoliocreatePortfolioContent primaryText(String primaryText) {
+    this.primaryText = primaryText;
+    return this;
+  }
+
+   /**
+   * Get primaryText
+   * @return primaryText
+  **/
+  @Schema(description = "")
+  public String getPrimaryText() {
+    return primaryText;
+  }
+
+  public void setPrimaryText(String primaryText) {
+    this.primaryText = primaryText;
+  }
+
   public CreativeportfoliocreatePortfolioContent productSetId(String productSetId) {
     this.productSetId = productSetId;
     return this;
   }
 
    /**
-   * When &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_specific_type&#x60; &#x3D; &#x60;PRODUCT_SET&#x60;, you need to pass in either &#x60;product_set_id&#x60; or &#x60;item_group_ids&#x60;. ID of the Product Set. You can call [/catalog/set/get/](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740570556295169) to get a list of Product Sets in a catalog under your Business Center. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product
+   * Get productSetId
    * @return productSetId
   **/
-  @Schema(description = "When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = `PRODUCT_SET`, you need to pass in either `product_set_id` or `item_group_ids`. ID of the Product Set. You can call [/catalog/set/get/](https://ads.tiktok.com/marketing_api/docs?id=1740570556295169) to get a list of Product Sets in a catalog under your Business Center. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product")
+  @Schema(description = "")
   public String getProductSetId() {
     return productSetId;
   }
@@ -771,10 +920,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60;. Product source where you want to get products for promotion. Enum values: &#x60;UNSET&#x60;, &#x60;CATALOG&#x60;(Catalog), &#x60;STORE&#x60; (TikTok Shop or TikTok Storefront (third-party store)). If you set this field as &#x60;STORE&#x60;, you need to pass in &#x60;item_group_ids&#x60; at the same time. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.
+   * Get productSource
    * @return productSource
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD`. Product source where you want to get products for promotion. Enum values: `UNSET`, `CATALOG`(Catalog), `STORE` (TikTok Shop or TikTok Storefront (third-party store)). If you set this field as `STORE`, you need to pass in `item_group_ids` at the same time. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.")
+  @Schema(description = "")
   public String getProductSource() {
     return productSource;
   }
@@ -789,10 +938,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;CATALOG&#x60;. The way that you specify the products. Enum values:  &#x60;ALL&#x60;: All products. Allow TikTok to dynamically choose from all catalog products. You do not need to specify any of &#x60;sku_ids&#x60;, &#x60;item_group_ids&#x60; and &#x60;product_set_id&#x60; at the same time.&#x60;PRODUCT_SET&#x60;: Product set. Select a product set. TikTok will dynamically choose products from this set. You need to specify &#x60;item_group_ids&#x60; or &#x60;product_set_id&#x60; at the same time. &#x60;CUSTOMIZED_PRODUCTS&#x60;: Specific products. Select up to 20 products from your catalog. You need to specify &#x60;sku_ids&#x60; at the same time.Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product
+   * Get productSpecificType
    * @return productSpecificType
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`. The way that you specify the products. Enum values:  `ALL`: All products. Allow TikTok to dynamically choose from all catalog products. You do not need to specify any of `sku_ids`, `item_group_ids` and `product_set_id` at the same time.`PRODUCT_SET`: Product set. Select a product set. TikTok will dynamically choose products from this set. You need to specify `item_group_ids` or `product_set_id` at the same time. `CUSTOMIZED_PRODUCTS`: Specific products. Select up to 20 products from your catalog. You need to specify `sku_ids` at the same time.Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product")
+  @Schema(description = "")
   public String getProductSpecificType() {
     return productSpecificType;
   }
@@ -807,16 +956,86 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60;. Profile image URL
+   * Get profileImage
    * @return profileImage
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Profile image URL")
+  @Schema(description = "")
   public String getProfileImage() {
     return profileImage;
   }
 
   public void setProfileImage(String profileImage) {
     this.profileImage = profileImage;
+  }
+
+  public CreativeportfoliocreatePortfolioContent secondaryText(String secondaryText) {
+    this.secondaryText = secondaryText;
+    return this;
+  }
+
+   /**
+   * Get secondaryText
+   * @return secondaryText
+  **/
+  @Schema(description = "")
+  public String getSecondaryText() {
+    return secondaryText;
+  }
+
+  public void setSecondaryText(String secondaryText) {
+    this.secondaryText = secondaryText;
+  }
+
+  public CreativeportfoliocreatePortfolioContent sellingPoints(List<String> sellingPoints) {
+    this.sellingPoints = sellingPoints;
+    return this;
+  }
+
+  public CreativeportfoliocreatePortfolioContent addSellingPointsItem(String sellingPointsItem) {
+    if (this.sellingPoints == null) {
+      this.sellingPoints = new ArrayList<String>();
+    }
+    this.sellingPoints.add(sellingPointsItem);
+    return this;
+  }
+
+   /**
+   * Get sellingPoints
+   * @return sellingPoints
+  **/
+  @Schema(description = "")
+  public List<String> getSellingPoints() {
+    return sellingPoints;
+  }
+
+  public void setSellingPoints(List<String> sellingPoints) {
+    this.sellingPoints = sellingPoints;
+  }
+
+  public CreativeportfoliocreatePortfolioContent showcaseProducts(List<CreativeportfoliocreateShowcaseProducts> showcaseProducts) {
+    this.showcaseProducts = showcaseProducts;
+    return this;
+  }
+
+  public CreativeportfoliocreatePortfolioContent addShowcaseProductsItem(CreativeportfoliocreateShowcaseProducts showcaseProductsItem) {
+    if (this.showcaseProducts == null) {
+      this.showcaseProducts = new ArrayList<CreativeportfoliocreateShowcaseProducts>();
+    }
+    this.showcaseProducts.add(showcaseProductsItem);
+    return this;
+  }
+
+   /**
+   * Get showcaseProducts
+   * @return showcaseProducts
+  **/
+  @Schema(description = "")
+  public List<CreativeportfoliocreateShowcaseProducts> getShowcaseProducts() {
+    return showcaseProducts;
+  }
+
+  public void setShowcaseProducts(List<CreativeportfoliocreateShowcaseProducts> showcaseProducts) {
+    this.showcaseProducts = showcaseProducts;
   }
 
   public CreativeportfoliocreatePortfolioContent skuIds(List<String> skuIds) {
@@ -833,16 +1052,52 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   *  Required when &#x60;creative_portfolio_type&#x60;is &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;STORE&#x60;. When &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_specific_type&#x60; &#x3D; PRODUCT_SET, you need to pass in either &#x60;product_set_id&#x60; or &#x60;item_group_ids&#x60;. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product
+   * Get skuIds
    * @return skuIds
   **/
-  @Schema(description = " Required when `creative_portfolio_type`is `PRODUCT_CARD` and `product_source` is set as `STORE`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = PRODUCT_SET, you need to pass in either `product_set_id` or `item_group_ids`. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product")
+  @Schema(description = "")
   public List<String> getSkuIds() {
     return skuIds;
   }
 
   public void setSkuIds(List<String> skuIds) {
     this.skuIds = skuIds;
+  }
+
+  public CreativeportfoliocreatePortfolioContent slideDimension(CreativeportfoliocreateSlideDimension slideDimension) {
+    this.slideDimension = slideDimension;
+    return this;
+  }
+
+   /**
+   * Get slideDimension
+   * @return slideDimension
+  **/
+  @Schema(description = "")
+  public CreativeportfoliocreateSlideDimension getSlideDimension() {
+    return slideDimension;
+  }
+
+  public void setSlideDimension(CreativeportfoliocreateSlideDimension slideDimension) {
+    this.slideDimension = slideDimension;
+  }
+
+  public CreativeportfoliocreatePortfolioContent slideLength(Long slideLength) {
+    this.slideLength = slideLength;
+    return this;
+  }
+
+   /**
+   * Get slideLength
+   * @return slideLength
+  **/
+  @Schema(description = "")
+  public Long getSlideLength() {
+    return slideLength;
+  }
+
+  public void setSlideLength(Long slideLength) {
+    this.slideLength = slideLength;
   }
 
   public CreativeportfoliocreatePortfolioContent stickerParam(CreativeportfoliocreateStickerParam stickerParam) {
@@ -869,10 +1124,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;STORE&#x60;.  ID of the Business Center that is authorized to access the store (&#x60;store_id&#x60;). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group levelyou pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product
+   * Get storeAuthorizedBcId
    * @return storeAuthorizedBcId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`.  ID of the Business Center that is authorized to access the store (`store_id`). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group levelyou pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product")
+  @Schema(description = "")
   public String getStoreAuthorizedBcId() {
     return storeAuthorizedBcId;
   }
@@ -887,10 +1142,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;STORE&#x60;. ID of the TikTok Storefront or TikTok Shop. Note:  To get the TikTok Storefront ID or TikTok Shop ID, you can use [/bc/asset/get/]( https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739432717798401):  When in the response &#x60;asset_type&#x60; is &#x60;STOREFRONT&#x60;, the returned &#x60;asset_id&#x60; is the TikTok Storefront ID.  When in the response &#x60;asset_type&#x60; is &#x60;TIKTOK_SHOP&#x60;, the returned &#x60;asset_id&#x60; is the TikTok Shop ID.  A store of the TikTok Storefront type (store_id) can be used to create ad groups only when a TikTok account has been bound to the store. You can use [/store/list/]( https://ads.tiktok.com/marketing_api/docs?id&#x3D;1752267762718722) to check the binding status of a TikTok Storefront via &#x60;tiktok_account_binding_status&#x60; in the response. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.
+   * Get storeId
    * @return storeId
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`. ID of the TikTok Storefront or TikTok Shop. Note:  To get the TikTok Storefront ID or TikTok Shop ID, you can use [/bc/asset/get/]( https://ads.tiktok.com/marketing_api/docs?id=1739432717798401):  When in the response `asset_type` is `STOREFRONT`, the returned `asset_id` is the TikTok Storefront ID.  When in the response `asset_type` is `TIKTOK_SHOP`, the returned `asset_id` is the TikTok Shop ID.  A store of the TikTok Storefront type (store_id) can be used to create ad groups only when a TikTok account has been bound to the store. You can use [/store/list/]( https://ads.tiktok.com/marketing_api/docs?id=1752267762718722) to check the binding status of a TikTok Storefront via `tiktok_account_binding_status` in the response. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.")
+  @Schema(description = "")
   public String getStoreId() {
     return storeId;
   }
@@ -913,10 +1168,10 @@ public class CreativeportfoliocreatePortfolioContent {
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;DOWNLOAD_CARD&#x60;. Tags for the Download Card. Enum values: &#x60;CATEGORIES&#x60;：Showing the category of the app you want to promote in the Download Card. &#x60;FILESIZE&#x60;：Showing the file size of the app you want to promote in the Download Card.  &#x60;RATING&#x60;：Showing the rating of the app you want to promote in the Download Card. &#x60;RANKING&#x60;：Showing the ranking of the app you want to promote in the Download Card. &#x60;COMMENT_VOLUME&#x60;：Showing the number of comments for the app you want to promote in the Download Card. Note: You can pass in multiple tags at one time, but when you pass in more than two tags, only two tags will show in the Download Card according to the following tag priority: &#x60;CATEGORIES&#x60; &gt; &#x60;FILESIZE&#x60; &gt; &#x60;RATING&#x60; &gt; &#x60;RANKING&#x60;&gt;&#x60;COMMENT_VOLUME&#x60;. For Type 1 Download Card, you need to pass in at least one tag. For Type 2 Download Card, you need to pass in at least two tags. 
+   * Get tags
    * @return tags
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Tags for the Download Card. Enum values: `CATEGORIES`：Showing the category of the app you want to promote in the Download Card. `FILESIZE`：Showing the file size of the app you want to promote in the Download Card.  `RATING`：Showing the rating of the app you want to promote in the Download Card. `RANKING`：Showing the ranking of the app you want to promote in the Download Card. `COMMENT_VOLUME`：Showing the number of comments for the app you want to promote in the Download Card. Note: You can pass in multiple tags at one time, but when you pass in more than two tags, only two tags will show in the Download Card according to the following tag priority: `CATEGORIES` > `FILESIZE` > `RATING` > `RANKING`>`COMMENT_VOLUME`. For Type 1 Download Card, you need to pass in at least one tag. For Type 2 Download Card, you need to pass in at least two tags. ")
+  @Schema(description = "")
   public List<String> getTags() {
     return tags;
   }
@@ -925,16 +1180,34 @@ public class CreativeportfoliocreatePortfolioContent {
     this.tags = tags;
   }
 
+  public CreativeportfoliocreatePortfolioContent title(String title) {
+    this.title = title;
+    return this;
+  }
+
+   /**
+   * Get title
+   * @return title
+  **/
+  @Schema(description = "")
+  public String getTitle() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title = title;
+  }
+
   public CreativeportfoliocreatePortfolioContent verticalVideoStrategy(String verticalVideoStrategy) {
     this.verticalVideoStrategy = verticalVideoStrategy;
     return this;
   }
 
    /**
-   * Required when &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;CATALOG&#x60;. When &#x60;creative_portfolio_type&#x60;&#x3D; &#x60;PRODUCT_CARD&#x60; and &#x60;product_source&#x60; is set as &#x60;STORE&#x60;, you can choose not to pass in the field or set it as &#x60;SINGLE_VIDEO&#x60;. The video type that you use for Product Sales scenarios. Enum values: &#x60;UNSET&#x60; (unset), &#x60;SINGLE_VIDEO&#x60; (single video), &#x60;CATALOG_VIDEOS&#x60; (catalog video).  It must be &#x60;UNSET&#x60; if &#x60;dynamic_format&#x60; &#x3D; &#x60;DYNAMIC_CREATIVE&#x60;. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card
+   * Get verticalVideoStrategy
    * @return verticalVideoStrategy
   **/
-  @Schema(description = "Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`, you can choose not to pass in the field or set it as `SINGLE_VIDEO`. The video type that you use for Product Sales scenarios. Enum values: `UNSET` (unset), `SINGLE_VIDEO` (single video), `CATALOG_VIDEOS` (catalog video).  It must be `UNSET` if `dynamic_format` = `DYNAMIC_CREATIVE`. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card")
+  @Schema(description = "")
   public String getVerticalVideoStrategy() {
     return verticalVideoStrategy;
   }
@@ -976,29 +1249,41 @@ public class CreativeportfoliocreatePortfolioContent {
         Objects.equals(this.categoryLabel, creativeportfoliocreatePortfolioContent.categoryLabel) &&
         Objects.equals(this.countryCode, creativeportfoliocreatePortfolioContent.countryCode) &&
         Objects.equals(this.description, creativeportfoliocreatePortfolioContent.description) &&
+        Objects.equals(this.displayPriceEnabled, creativeportfoliocreatePortfolioContent.displayPriceEnabled) &&
         Objects.equals(this.dynamicFormat, creativeportfoliocreatePortfolioContent.dynamicFormat) &&
+        Objects.equals(this.gestureType, creativeportfoliocreatePortfolioContent.gestureType) &&
         Objects.equals(this.identityAuthorizedBcId, creativeportfoliocreatePortfolioContent.identityAuthorizedBcId) &&
         Objects.equals(this.identityId, creativeportfoliocreatePortfolioContent.identityId) &&
         Objects.equals(this.identityType, creativeportfoliocreatePortfolioContent.identityType) &&
         Objects.equals(this.imageId, creativeportfoliocreatePortfolioContent.imageId) &&
+        Objects.equals(this.imageOptimizationEnabled, creativeportfoliocreatePortfolioContent.imageOptimizationEnabled) &&
+        Objects.equals(this.interactiveMusicId, creativeportfoliocreatePortfolioContent.interactiveMusicId) &&
         Objects.equals(this.itemGroupIds, creativeportfoliocreatePortfolioContent.itemGroupIds) &&
         Objects.equals(this.layouts, creativeportfoliocreatePortfolioContent.layouts) &&
         Objects.equals(this.mobileAppId, creativeportfoliocreatePortfolioContent.mobileAppId) &&
+        Objects.equals(this.popUpWindowImageId, creativeportfoliocreatePortfolioContent.popUpWindowImageId) &&
+        Objects.equals(this.primaryText, creativeportfoliocreatePortfolioContent.primaryText) &&
         Objects.equals(this.productSetId, creativeportfoliocreatePortfolioContent.productSetId) &&
         Objects.equals(this.productSource, creativeportfoliocreatePortfolioContent.productSource) &&
         Objects.equals(this.productSpecificType, creativeportfoliocreatePortfolioContent.productSpecificType) &&
         Objects.equals(this.profileImage, creativeportfoliocreatePortfolioContent.profileImage) &&
+        Objects.equals(this.secondaryText, creativeportfoliocreatePortfolioContent.secondaryText) &&
+        Objects.equals(this.sellingPoints, creativeportfoliocreatePortfolioContent.sellingPoints) &&
+        Objects.equals(this.showcaseProducts, creativeportfoliocreatePortfolioContent.showcaseProducts) &&
         Objects.equals(this.skuIds, creativeportfoliocreatePortfolioContent.skuIds) &&
+        Objects.equals(this.slideDimension, creativeportfoliocreatePortfolioContent.slideDimension) &&
+        Objects.equals(this.slideLength, creativeportfoliocreatePortfolioContent.slideLength) &&
         Objects.equals(this.stickerParam, creativeportfoliocreatePortfolioContent.stickerParam) &&
         Objects.equals(this.storeAuthorizedBcId, creativeportfoliocreatePortfolioContent.storeAuthorizedBcId) &&
         Objects.equals(this.storeId, creativeportfoliocreatePortfolioContent.storeId) &&
         Objects.equals(this.tags, creativeportfoliocreatePortfolioContent.tags) &&
+        Objects.equals(this.title, creativeportfoliocreatePortfolioContent.title) &&
         Objects.equals(this.verticalVideoStrategy, creativeportfoliocreatePortfolioContent.verticalVideoStrategy);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adText, advancedAudioInfo, advancedGestureIcon, advancedGestureImage, advancedInteractShape, advancedInteractType, appId, assetContent, assetIds, badgeImageInfo, badgePosition, badgeShowTime, callToAction, callToActionText, cardImageIndex, cardShowPrice, cardTags, cardType, catalogAuthorizedBcId, catalogId, categoryLabel, countryCode, description, dynamicFormat, identityAuthorizedBcId, identityId, identityType, imageId, itemGroupIds, layouts, mobileAppId, productSetId, productSource, productSpecificType, profileImage, skuIds, stickerParam, storeAuthorizedBcId, storeId, tags, verticalVideoStrategy);
+    return Objects.hash(adText, advancedAudioInfo, advancedGestureIcon, advancedGestureImage, advancedInteractShape, advancedInteractType, appId, assetContent, assetIds, badgeImageInfo, badgePosition, badgeShowTime, callToAction, callToActionText, cardImageIndex, cardShowPrice, cardTags, cardType, catalogAuthorizedBcId, catalogId, categoryLabel, countryCode, description, displayPriceEnabled, dynamicFormat, gestureType, identityAuthorizedBcId, identityId, identityType, imageId, imageOptimizationEnabled, interactiveMusicId, itemGroupIds, layouts, mobileAppId, popUpWindowImageId, primaryText, productSetId, productSource, productSpecificType, profileImage, secondaryText, sellingPoints, showcaseProducts, skuIds, slideDimension, slideLength, stickerParam, storeAuthorizedBcId, storeId, tags, title, verticalVideoStrategy);
   }
 
 
@@ -1030,23 +1315,35 @@ public class CreativeportfoliocreatePortfolioContent {
     sb.append("    categoryLabel: ").append(toIndentedString(categoryLabel)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
+    sb.append("    displayPriceEnabled: ").append(toIndentedString(displayPriceEnabled)).append("\n");
     sb.append("    dynamicFormat: ").append(toIndentedString(dynamicFormat)).append("\n");
+    sb.append("    gestureType: ").append(toIndentedString(gestureType)).append("\n");
     sb.append("    identityAuthorizedBcId: ").append(toIndentedString(identityAuthorizedBcId)).append("\n");
     sb.append("    identityId: ").append(toIndentedString(identityId)).append("\n");
     sb.append("    identityType: ").append(toIndentedString(identityType)).append("\n");
     sb.append("    imageId: ").append(toIndentedString(imageId)).append("\n");
+    sb.append("    imageOptimizationEnabled: ").append(toIndentedString(imageOptimizationEnabled)).append("\n");
+    sb.append("    interactiveMusicId: ").append(toIndentedString(interactiveMusicId)).append("\n");
     sb.append("    itemGroupIds: ").append(toIndentedString(itemGroupIds)).append("\n");
     sb.append("    layouts: ").append(toIndentedString(layouts)).append("\n");
     sb.append("    mobileAppId: ").append(toIndentedString(mobileAppId)).append("\n");
+    sb.append("    popUpWindowImageId: ").append(toIndentedString(popUpWindowImageId)).append("\n");
+    sb.append("    primaryText: ").append(toIndentedString(primaryText)).append("\n");
     sb.append("    productSetId: ").append(toIndentedString(productSetId)).append("\n");
     sb.append("    productSource: ").append(toIndentedString(productSource)).append("\n");
     sb.append("    productSpecificType: ").append(toIndentedString(productSpecificType)).append("\n");
     sb.append("    profileImage: ").append(toIndentedString(profileImage)).append("\n");
+    sb.append("    secondaryText: ").append(toIndentedString(secondaryText)).append("\n");
+    sb.append("    sellingPoints: ").append(toIndentedString(sellingPoints)).append("\n");
+    sb.append("    showcaseProducts: ").append(toIndentedString(showcaseProducts)).append("\n");
     sb.append("    skuIds: ").append(toIndentedString(skuIds)).append("\n");
+    sb.append("    slideDimension: ").append(toIndentedString(slideDimension)).append("\n");
+    sb.append("    slideLength: ").append(toIndentedString(slideLength)).append("\n");
     sb.append("    stickerParam: ").append(toIndentedString(stickerParam)).append("\n");
     sb.append("    storeAuthorizedBcId: ").append(toIndentedString(storeAuthorizedBcId)).append("\n");
     sb.append("    storeId: ").append(toIndentedString(storeId)).append("\n");
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
+    sb.append("    title: ").append(toIndentedString(title)).append("\n");
     sb.append("    verticalVideoStrategy: ").append(toIndentedString(verticalVideoStrategy)).append("\n");
     sb.append("}");
     return sb.toString();

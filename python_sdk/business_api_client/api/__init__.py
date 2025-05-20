@@ -18,10 +18,12 @@ from business_api_client.api.audience_api import AudienceApi
 from business_api_client.api.authentication_api import AuthenticationApi
 from business_api_client.api.bc_api import BCApi
 from business_api_client.api.campaign_creation_api import CampaignCreationApi
-from business_api_client.api.creative_asset_api import CreativeAssetApi
+from business_api_client.api.comments_api import CommentsApi
+from business_api_client.api.creative_management_api import CreativeManagementApi
 from business_api_client.api.event_callback_api import EventCallbackApi
 from business_api_client.api.file_api import FileApi
 from business_api_client.api.identity_api import IdentityApi
+from business_api_client.api.measurement_api import MeasurementApi
 from business_api_client.api.recommend_tool_api import RecommendToolApi
 from business_api_client.api.reporting_api import ReportingApi
 from business_api_client.api.tool_api import ToolApi

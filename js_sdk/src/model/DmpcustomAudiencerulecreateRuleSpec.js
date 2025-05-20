@@ -11,7 +11,7 @@ import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet} from './DmpcustomAu
 /**
  * The DmpcustomAudiencerulecreateRuleSpec model module.
  * @module model/DmpcustomAudiencerulecreateRuleSpec
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class DmpcustomAudiencerulecreateRuleSpec {
   /**

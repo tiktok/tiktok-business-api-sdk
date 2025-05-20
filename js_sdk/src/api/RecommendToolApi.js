@@ -11,7 +11,7 @@ import {TargetingCategoryRecommendBody} from '../model/TargetingCategoryRecommen
 /**
 * RecommendTool service.
 * @module api/RecommendToolApi
-* @version 0.1.5
+* @version 0.1.7
 */
 export class RecommendToolApi {
 

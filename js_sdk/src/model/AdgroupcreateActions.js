@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdgroupcreateActions model module.
  * @module model/AdgroupcreateActions
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class AdgroupcreateActions {
   /**

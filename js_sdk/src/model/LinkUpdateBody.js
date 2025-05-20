@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The LinkUpdateBody model module.
  * @module model/LinkUpdateBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class LinkUpdateBody {
   /**

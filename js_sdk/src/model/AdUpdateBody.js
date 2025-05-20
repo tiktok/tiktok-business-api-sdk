@@ -10,7 +10,7 @@ import {AdupdateCreatives} from './AdupdateCreatives.js';
 /**
  * The AdUpdateBody model module.
  * @module model/AdUpdateBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class AdUpdateBody {
   /**

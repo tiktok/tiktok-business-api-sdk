@@ -19,7 +19,7 @@ import java.io.File;
  * FileUploadBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
 public class FileUploadBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;

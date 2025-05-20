@@ -10,17 +10,19 @@ import {CreativeportfoliocreatePortfolioContent} from './Creativeportfoliocreate
 /**
  * The PortfolioCreateBody model module.
  * @module model/PortfolioCreateBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class PortfolioCreateBody {
   /**
    * Constructs a new <code>PortfolioCreateBody</code>.
    * @alias module:model/PortfolioCreateBody
    * @class
-   * @param advertiser_id {String} The advertiser ID
+   * @param advertiser_id {String} 
+   * @param portfolio_content {Array.<module:model/CreativeportfoliocreatePortfolioContent>} 
    */
-  constructor(advertiser_id) {
+  constructor(advertiser_id, portfolio_content) {
     this.advertiser_id = advertiser_id;
+    this.portfolio_content = portfolio_content;
   }
 
   /**
@@ -45,19 +47,17 @@ export class PortfolioCreateBody {
 }
 
 /**
- * The advertiser ID
  * @member {String} advertiser_id
  */
 PortfolioCreateBody.prototype.advertiser_id = undefined;
 
 /**
- * Type of the portfolio. Enum values: `CTA` (call-to-action text), `CARD` (card), `PREMIUM_BADGE` (badge pop-up)， `STICKER` (countdown sticker) ,`DOWNLOAD_CARD` (Download Card), `PRODUCT_CARD` (Product Card). The default value is `CTA`. See examples of Countdown Stickers Download Cards and in [Portfolios](https://ads.tiktok.com/marketing_api/docs?id=1739361803446273), and see examples of Countdown Sticker and Download Card in [Countdown Sticker](https://ads.tiktok.com/help/article?aid=10007423) and [Download Card](https://ads.tiktok.com/help/article?aid=10007086).Note: You can only create one countdown sticker at a time.Countdown Sticker is an allowlist-only feature for auction ads with the advertising objective (`objective_type`) as App Installs (`APP_INSTALL`), App Promotion (`APP_PROMOTION`), Traffic (`TRAFFIC`), or Conversion (`CONVERSIONS`). If you would like to access it for auction ads with these objectives , please contact your TikTok representative.Download Card is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. Product Cards can only be used in Video Shopping Ads.
  * @member {String} creative_portfolio_type
+ * @default 'CTA'
  */
-PortfolioCreateBody.prototype.creative_portfolio_type = undefined;
+PortfolioCreateBody.prototype.creative_portfolio_type = 'CTA';
 
 /**
- * The content of the portfolio
  * @member {Array.<module:model/CreativeportfoliocreatePortfolioContent>} portfolio_content
  */
 PortfolioCreateBody.prototype.portfolio_content = undefined;
