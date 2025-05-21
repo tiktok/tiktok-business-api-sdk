@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyAvatarIcon model module.
  * @module model/AdAcoBodyAvatarIcon
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class AdAcoBodyAvatarIcon {
   /**

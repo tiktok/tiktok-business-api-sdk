@@ -40,7 +40,7 @@ let opts = {
   'query_lifetime': true, // Boolean | 
   'order_field': "order_field_example", // String | 
   'order_type': "order_type_example", // String | 
-  'filtering': new js_sdk.FilteringReportIntegratedGet() // FilteringReportIntegratedGet | 
+  'filtering': null // [Object] | 
 };
 apiInstance.reportIntegratedGet(report_type, Access_Token, opts, (error, data, response) => {
   if (error) {
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
  **query_lifetime** | **Boolean**|  | [optional] 
  **order_field** | **String**|  | [optional] 
  **order_type** | **String**|  | [optional] 
- **filtering** | [**FilteringReportIntegratedGet**](FilteringReportIntegratedGet.md)|  | [optional] 
+ **filtering** | [**[Object]**](Object.md)|  | [optional] 
 
 ### Return type
 
@@ -191,7 +191,7 @@ import {js_sdk} from 'business_api_client';
 let apiInstance = new js_sdk.ReportingApi();
 let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
-  'body': new js_sdk.TaskCreateBody() // TaskCreateBody | 
+  'body': new js_sdk.ReportTaskCreateBody() // ReportTaskCreateBody | 
 };
 apiInstance.reportTaskCreate(Access_Token, opts, (error, data, response) => {
   if (error) {
@@ -207,7 +207,7 @@ apiInstance.reportTaskCreate(Access_Token, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
- **body** | [**TaskCreateBody**](TaskCreateBody.md)|  | [optional] 
+ **body** | [**ReportTaskCreateBody**](ReportTaskCreateBody.md)|  | [optional] 
 
 ### Return type
 

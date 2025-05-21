@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyDisplayNameList model module.
  * @module model/AdAcoBodyDisplayNameList
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class AdAcoBodyDisplayNameList {
   /**

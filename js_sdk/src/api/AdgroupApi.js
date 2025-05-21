@@ -14,7 +14,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * Adgroup service.
 * @module api/AdgroupApi
-* @version 0.1.5
+* @version 0.1.7
 */
 export class AdgroupApi {
 

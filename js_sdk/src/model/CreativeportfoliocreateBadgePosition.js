@@ -9,12 +9,11 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeportfoliocreateBadgePosition model module.
  * @module model/CreativeportfoliocreateBadgePosition
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class CreativeportfoliocreateBadgePosition {
   /**
    * Constructs a new <code>CreativeportfoliocreateBadgePosition</code>.
-   * Badge position information
    * @alias module:model/CreativeportfoliocreateBadgePosition
    * @class
    */
@@ -43,19 +42,16 @@ export class CreativeportfoliocreateBadgePosition {
 }
 
 /**
- * Initial rotation angle when the badge starts to show
  * @member {Number} angle
  */
 CreativeportfoliocreateBadgePosition.prototype.angle = undefined;
 
 /**
- * Relative x-axis value of the top-left corner of the badge. It is the x coordinate of the top-left corner divided by 720. Range: 0-1
  * @member {Number} position_x
  */
 CreativeportfoliocreateBadgePosition.prototype.position_x = undefined;
 
 /**
- *  Relative y-axis value of the top-left corner of the badge. It is the y coordinate of the top-left corner divided by 1280. Range: 0-1
  * @member {Number} position_y
  */
 CreativeportfoliocreateBadgePosition.prototype.position_y = undefined;

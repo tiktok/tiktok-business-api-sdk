@@ -16,17 +16,16 @@ import business_api.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import business_api_client.FilteringReportIntegratedGet;
 import business_api_client.InlineResponse200;
+import business_api_client.ReportTaskCreateBody;
 import business_api_client.TaskCancelBody;
-import business_api_client.TaskCreateBody;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")public class ReportingApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")public class ReportingApi {
   private ApiClient apiClient;
 
   public ReportingApi() {
@@ -71,7 +70,7 @@ import java.util.Map;
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response reportIntegratedGet(String reportType, String accessToken, Long page, Long pageSize, Boolean enableTotalMetrics, Boolean multiAdvReportInUtcTime, String queryMode, String advertiserId, List<String> advertiserIds, String bcId, String serviceType, String dataLevel, List<String> dimensions, List<String> metrics, String startDate, String endDate, Boolean queryLifetime, String orderField, String orderType, FilteringReportIntegratedGet filtering) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response reportIntegratedGet(String reportType, String accessToken, Long page, Long pageSize, Boolean enableTotalMetrics, Boolean multiAdvReportInUtcTime, String queryMode, String advertiserId, List<String> advertiserIds, String bcId, String serviceType, String dataLevel, List<String> dimensions, List<String> metrics, String startDate, String endDate, Boolean queryLifetime, String orderField, String orderType, List<Object> filtering) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'reportType' is set
     if (reportType == null) {
@@ -107,7 +106,7 @@ import java.util.Map;
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_lifetime", queryLifetime));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "order_field", orderField));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "order_type", orderType));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "filtering", filtering));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "filtering", filtering));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
@@ -264,7 +263,7 @@ import java.util.Map;
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response reportTaskCreate(String accessToken, TaskCreateBody body) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response reportTaskCreate(String accessToken, ReportTaskCreateBody body) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = body;
     // verify the required parameter 'accessToken' is set
     if (accessToken == null) {

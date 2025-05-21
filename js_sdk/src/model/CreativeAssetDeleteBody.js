@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeAssetDeleteBody model module.
  * @module model/CreativeAssetDeleteBody
- * @version 0.1.3
+ * @version 0.1.7
  */
 export class CreativeAssetDeleteBody {
   /**

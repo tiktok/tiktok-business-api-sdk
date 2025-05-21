@@ -11,7 +11,7 @@ import {AdvertiserupdateQualificationImages} from './AdvertiserupdateQualificati
 /**
  * The AdvertiserUpdateBody model module.
  * @module model/AdvertiserUpdateBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class AdvertiserUpdateBody {
   /**

@@ -13,7 +13,7 @@ import {TermConfirmBody} from '../model/TermConfirmBody.js';
 /**
 * AccountManagement service.
 * @module api/AccountManagementApi
-* @version 0.1.5
+* @version 0.1.7
 */
 export class AccountManagementApi {
 

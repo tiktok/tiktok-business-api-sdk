@@ -27,7 +27,7 @@ class CreativeportfoliocreatePortfolioContent(object):
         'ad_text': 'str',
         'advanced_audio_info': 'CreativeportfoliocreateAdvancedAudioInfo',
         'advanced_gesture_icon': 'CreativeportfoliocreateAdvancedGestureIcon',
-        'advanced_gesture_image': 'CreativeportfoliocreateAdvancedGestureIcon',
+        'advanced_gesture_image': 'CreativeportfoliocreateAdvancedGestureImage',
         'advanced_interact_shape': 'str',
         'advanced_interact_type': 'str',
         'app_id': 'str',
@@ -47,23 +47,35 @@ class CreativeportfoliocreatePortfolioContent(object):
         'category_label': 'str',
         'country_code': 'list[str]',
         'description': 'str',
+        'display_price_enabled': 'bool',
         'dynamic_format': 'str',
+        'gesture_type': 'str',
         'identity_authorized_bc_id': 'str',
         'identity_id': 'str',
         'identity_type': 'str',
         'image_id': 'str',
+        'image_optimization_enabled': 'bool',
+        'interactive_music_id': 'str',
         'item_group_ids': 'list[str]',
         'layouts': 'list[str]',
         'mobile_app_id': 'str',
+        'pop_up_window_image_id': 'str',
+        'primary_text': 'str',
         'product_set_id': 'str',
         'product_source': 'str',
         'product_specific_type': 'str',
         'profile_image': 'str',
+        'secondary_text': 'str',
+        'selling_points': 'list[str]',
+        'showcase_products': 'list[CreativeportfoliocreateShowcaseProducts]',
         'sku_ids': 'list[str]',
+        'slide_dimension': 'CreativeportfoliocreateSlideDimension',
+        'slide_length': 'int',
         'sticker_param': 'CreativeportfoliocreateStickerParam',
         'store_authorized_bc_id': 'str',
         'store_id': 'str',
         'tags': 'list[str]',
+        'title': 'str',
         'vertical_video_strategy': 'str'
     }
 
@@ -91,27 +103,39 @@ class CreativeportfoliocreatePortfolioContent(object):
         'category_label': 'category_label',
         'country_code': 'country_code',
         'description': 'description',
+        'display_price_enabled': 'display_price_enabled',
         'dynamic_format': 'dynamic_format',
+        'gesture_type': 'gesture_type',
         'identity_authorized_bc_id': 'identity_authorized_bc_id',
         'identity_id': 'identity_id',
         'identity_type': 'identity_type',
         'image_id': 'image_id',
+        'image_optimization_enabled': 'image_optimization_enabled',
+        'interactive_music_id': 'interactive_music_id',
         'item_group_ids': 'item_group_ids',
         'layouts': 'layouts',
         'mobile_app_id': 'mobile_app_id',
+        'pop_up_window_image_id': 'pop_up_window_image_id',
+        'primary_text': 'primary_text',
         'product_set_id': 'product_set_id',
         'product_source': 'product_source',
         'product_specific_type': 'product_specific_type',
         'profile_image': 'profile_image',
+        'secondary_text': 'secondary_text',
+        'selling_points': 'selling_points',
+        'showcase_products': 'showcase_products',
         'sku_ids': 'sku_ids',
+        'slide_dimension': 'slide_dimension',
+        'slide_length': 'slide_length',
         'sticker_param': 'sticker_param',
         'store_authorized_bc_id': 'store_authorized_bc_id',
         'store_id': 'store_id',
         'tags': 'tags',
+        'title': 'title',
         'vertical_video_strategy': 'vertical_video_strategy'
     }
 
-    def __init__(self, ad_text=None, advanced_audio_info=None, advanced_gesture_icon=None, advanced_gesture_image=None, advanced_interact_shape=None, advanced_interact_type=None, app_id=None, asset_content=None, asset_ids=None, badge_image_info=None, badge_position=None, badge_show_time=None, call_to_action=None, call_to_action_text=None, card_image_index=None, card_show_price=None, card_tags=None, card_type=None, catalog_authorized_bc_id=None, catalog_id=None, category_label=None, country_code=None, description=None, dynamic_format=None, identity_authorized_bc_id=None, identity_id=None, identity_type=None, image_id=None, item_group_ids=None, layouts=None, mobile_app_id=None, product_set_id=None, product_source=None, product_specific_type=None, profile_image=None, sku_ids=None, sticker_param=None, store_authorized_bc_id=None, store_id=None, tags=None, vertical_video_strategy=None):  # noqa: E501
+    def __init__(self, ad_text=None, advanced_audio_info=None, advanced_gesture_icon=None, advanced_gesture_image=None, advanced_interact_shape=None, advanced_interact_type=None, app_id=None, asset_content=None, asset_ids=None, badge_image_info=None, badge_position=None, badge_show_time=None, call_to_action=None, call_to_action_text=None, card_image_index=None, card_show_price=None, card_tags=None, card_type=None, catalog_authorized_bc_id=None, catalog_id=None, category_label=None, country_code=None, description=None, display_price_enabled=None, dynamic_format='UNSET', gesture_type=None, identity_authorized_bc_id=None, identity_id=None, identity_type=None, image_id=None, image_optimization_enabled=None, interactive_music_id=None, item_group_ids=None, layouts=None, mobile_app_id=None, pop_up_window_image_id=None, primary_text=None, product_set_id=None, product_source=None, product_specific_type='UNSET', profile_image=None, secondary_text=None, selling_points=None, showcase_products=None, sku_ids=None, slide_dimension=None, slide_length=None, sticker_param=None, store_authorized_bc_id=None, store_id=None, tags=None, title=None, vertical_video_strategy=None):  # noqa: E501
         """CreativeportfoliocreatePortfolioContent - a model defined in Swagger"""  # noqa: E501
         self._ad_text = None
         self._advanced_audio_info = None
@@ -136,23 +160,35 @@ class CreativeportfoliocreatePortfolioContent(object):
         self._category_label = None
         self._country_code = None
         self._description = None
+        self._display_price_enabled = None
         self._dynamic_format = None
+        self._gesture_type = None
         self._identity_authorized_bc_id = None
         self._identity_id = None
         self._identity_type = None
         self._image_id = None
+        self._image_optimization_enabled = None
+        self._interactive_music_id = None
         self._item_group_ids = None
         self._layouts = None
         self._mobile_app_id = None
+        self._pop_up_window_image_id = None
+        self._primary_text = None
         self._product_set_id = None
         self._product_source = None
         self._product_specific_type = None
         self._profile_image = None
+        self._secondary_text = None
+        self._selling_points = None
+        self._showcase_products = None
         self._sku_ids = None
+        self._slide_dimension = None
+        self._slide_length = None
         self._sticker_param = None
         self._store_authorized_bc_id = None
         self._store_id = None
         self._tags = None
+        self._title = None
         self._vertical_video_strategy = None
         self.discriminator = None
         if ad_text is not None:
@@ -201,8 +237,12 @@ class CreativeportfoliocreatePortfolioContent(object):
             self.country_code = country_code
         if description is not None:
             self.description = description
+        if display_price_enabled is not None:
+            self.display_price_enabled = display_price_enabled
         if dynamic_format is not None:
             self.dynamic_format = dynamic_format
+        if gesture_type is not None:
+            self.gesture_type = gesture_type
         if identity_authorized_bc_id is not None:
             self.identity_authorized_bc_id = identity_authorized_bc_id
         if identity_id is not None:
@@ -211,12 +251,20 @@ class CreativeportfoliocreatePortfolioContent(object):
             self.identity_type = identity_type
         if image_id is not None:
             self.image_id = image_id
+        if image_optimization_enabled is not None:
+            self.image_optimization_enabled = image_optimization_enabled
+        if interactive_music_id is not None:
+            self.interactive_music_id = interactive_music_id
         if item_group_ids is not None:
             self.item_group_ids = item_group_ids
         if layouts is not None:
             self.layouts = layouts
         if mobile_app_id is not None:
             self.mobile_app_id = mobile_app_id
+        if pop_up_window_image_id is not None:
+            self.pop_up_window_image_id = pop_up_window_image_id
+        if primary_text is not None:
+            self.primary_text = primary_text
         if product_set_id is not None:
             self.product_set_id = product_set_id
         if product_source is not None:
@@ -225,8 +273,18 @@ class CreativeportfoliocreatePortfolioContent(object):
             self.product_specific_type = product_specific_type
         if profile_image is not None:
             self.profile_image = profile_image
+        if secondary_text is not None:
+            self.secondary_text = secondary_text
+        if selling_points is not None:
+            self.selling_points = selling_points
+        if showcase_products is not None:
+            self.showcase_products = showcase_products
         if sku_ids is not None:
             self.sku_ids = sku_ids
+        if slide_dimension is not None:
+            self.slide_dimension = slide_dimension
+        if slide_length is not None:
+            self.slide_length = slide_length
         if sticker_param is not None:
             self.sticker_param = sticker_param
         if store_authorized_bc_id is not None:
@@ -235,6 +293,8 @@ class CreativeportfoliocreatePortfolioContent(object):
             self.store_id = store_id
         if tags is not None:
             self.tags = tags
+        if title is not None:
+            self.title = title
         if vertical_video_strategy is not None:
             self.vertical_video_strategy = vertical_video_strategy
 
@@ -242,7 +302,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def ad_text(self):
         """Gets the ad_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Valid when `creative_portfolio_type`= `PRODUCT_CARD`. An ad text. It is shown to your audience as part of your ad creative, to deliver the message you intend to communicate to them.  If you do not know how to create effective ad texts, you can try the [Smart Text](https://ads.tiktok.com/marketing_api/docs?id=1739084248002626) feature, which generates ad text recommendations based on the industry and language. Note: Ad text must be 1-100 characters long and cannot contain emoji.  Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :return: The ad_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -253,7 +312,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def ad_text(self, ad_text):
         """Sets the ad_text of this CreativeportfoliocreatePortfolioContent.
 
-        Valid when `creative_portfolio_type`= `PRODUCT_CARD`. An ad text. It is shown to your audience as part of your ad creative, to deliver the message you intend to communicate to them.  If you do not know how to create effective ad texts, you can try the [Smart Text](https://ads.tiktok.com/marketing_api/docs?id=1739084248002626) feature, which generates ad text recommendations based on the industry and language. Note: Ad text must be 1-100 characters long and cannot contain emoji.  Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :param ad_text: The ad_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -309,7 +367,7 @@ class CreativeportfoliocreatePortfolioContent(object):
 
 
         :return: The advanced_gesture_image of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
-        :rtype: CreativeportfoliocreateAdvancedGestureIcon
+        :rtype: CreativeportfoliocreateAdvancedGestureImage
         """
         return self._advanced_gesture_image
 
@@ -319,7 +377,7 @@ class CreativeportfoliocreatePortfolioContent(object):
 
 
         :param advanced_gesture_image: The advanced_gesture_image of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
-        :type: CreativeportfoliocreateAdvancedGestureIcon
+        :type: CreativeportfoliocreateAdvancedGestureImage
         """
 
         self._advanced_gesture_image = advanced_gesture_image
@@ -370,7 +428,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def app_id(self):
         """Gets the app_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. ID of the app that you want to promote in the Download Card. It is the App ID from Events Manager  # noqa: E501
 
         :return: The app_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -381,7 +438,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def app_id(self, app_id):
         """Sets the app_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. ID of the app that you want to promote in the Download Card. It is the App ID from Events Manager  # noqa: E501
 
         :param app_id: The app_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -393,7 +449,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def asset_content(self):
         """Gets the asset_content of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        A call-to-action text. For example, `\"Learn More\"`. This field is required when `creative_portfolio_type` is `CTA`  # noqa: E501
 
         :return: The asset_content of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -404,7 +459,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def asset_content(self, asset_content):
         """Sets the asset_content of this CreativeportfoliocreatePortfolioContent.
 
-        A call-to-action text. For example, `\"Learn More\"`. This field is required when `creative_portfolio_type` is `CTA`  # noqa: E501
 
         :param asset_content: The asset_content of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -416,7 +470,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def asset_ids(self):
         """Gets the asset_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        A list of CTAs. For example, `[201781, 201535]`. This field is required when `creative_portfolio_type` is `CTA`. To create a CTA portfolio, you need to get a group of auto-optimized CTAs by using `/creative/cta/recommend/`. Fetch the data in the response and include it as values to this field. Note: Auto-optimized CTAs can only be used in the advertiser accounts that they were created for.  # noqa: E501
 
         :return: The asset_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: list[str]
@@ -427,7 +480,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def asset_ids(self, asset_ids):
         """Sets the asset_ids of this CreativeportfoliocreatePortfolioContent.
 
-        A list of CTAs. For example, `[201781, 201535]`. This field is required when `creative_portfolio_type` is `CTA`. To create a CTA portfolio, you need to get a group of auto-optimized CTAs by using `/creative/cta/recommend/`. Fetch the data in the response and include it as values to this field. Note: Auto-optimized CTAs can only be used in the advertiser accounts that they were created for.  # noqa: E501
 
         :param asset_ids: The asset_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: list[str]
@@ -481,7 +533,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def badge_show_time(self):
         """Gets the badge_show_time of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        When the premium badge will start to show, in seconds. The first three seconds and the last five seconds of the video cannot be used as the badge show start time  # noqa: E501
 
         :return: The badge_show_time of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: int
@@ -492,7 +543,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def badge_show_time(self, badge_show_time):
         """Sets the badge_show_time of this CreativeportfoliocreatePortfolioContent.
 
-        When the premium badge will start to show, in seconds. The first three seconds and the last five seconds of the video cannot be used as the badge show start time  # noqa: E501
 
         :param badge_show_time: The badge_show_time of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: int
@@ -504,7 +554,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def call_to_action(self):
         """Gets the call_to_action of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Call-to-action text in the Download Card  # noqa: E501
 
         :return: The call_to_action of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -515,7 +564,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def call_to_action(self, call_to_action):
         """Sets the call_to_action of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Call-to-action text in the Download Card  # noqa: E501
 
         :param call_to_action: The call_to_action of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -527,7 +575,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def call_to_action_text(self):
         """Gets the call_to_action_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        The call-to-action text that will be shown below the image/badge  # noqa: E501
 
         :return: The call_to_action_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -538,7 +585,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def call_to_action_text(self, call_to_action_text):
         """Sets the call_to_action_text of this CreativeportfoliocreatePortfolioContent.
 
-        The call-to-action text that will be shown below the image/badge  # noqa: E501
 
         :param call_to_action_text: The call_to_action_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -550,7 +596,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_image_index(self):
         """Gets the card_image_index of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        card_image_index | integer | Valid when `creative_portfolio_type`= `PRODUCT_CARD`. You can use this field to specify the image used in the Product Card. The number you set via this field will be used as index to query the Image URLs you have passed through `additional_image_urls` in [/catalog/product/upload/](https://ads.tiktok.com/marketing_api/docs?id=1740497429681153). For instance, `card_image_index` = 2 means that you will use the image via the second image URL in `additional_image_urls`  # noqa: E501
 
         :return: The card_image_index of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: int
@@ -561,7 +606,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_image_index(self, card_image_index):
         """Sets the card_image_index of this CreativeportfoliocreatePortfolioContent.
 
-        card_image_index | integer | Valid when `creative_portfolio_type`= `PRODUCT_CARD`. You can use this field to specify the image used in the Product Card. The number you set via this field will be used as index to query the Image URLs you have passed through `additional_image_urls` in [/catalog/product/upload/](https://ads.tiktok.com/marketing_api/docs?id=1740497429681153). For instance, `card_image_index` = 2 means that you will use the image via the second image URL in `additional_image_urls`  # noqa: E501
 
         :param card_image_index: The card_image_index of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: int
@@ -573,7 +617,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_show_price(self):
         """Gets the card_show_price of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`.  Whether to show the price of products on the Product Card or not  # noqa: E501
 
         :return: The card_show_price of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: bool
@@ -584,7 +627,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_show_price(self, card_show_price):
         """Sets the card_show_price of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`.  Whether to show the price of products on the Product Card or not  # noqa: E501
 
         :param card_show_price: The card_show_price of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: bool
@@ -596,7 +638,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_tags(self):
         """Gets the card_tags of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. The product tags that you want to show on the Product Card. Enum values: `BRAND` (Brand Name), `DESC` (Description)  # noqa: E501
 
         :return: The card_tags of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: list[str]
@@ -607,7 +648,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_tags(self, card_tags):
         """Sets the card_tags of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. The product tags that you want to show on the Product Card. Enum values: `BRAND` (Brand Name), `DESC` (Description)  # noqa: E501
 
         :param card_tags: The card_tags of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: list[str]
@@ -619,7 +659,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_type(self):
         """Gets the card_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Card type. Currently only image card portfolio (IMAGE) can be created with this endpoint. Required when creative_portfolio_type is CARD  # noqa: E501
 
         :return: The card_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -630,7 +669,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def card_type(self, card_type):
         """Sets the card_type of this CreativeportfoliocreatePortfolioContent.
 
-        Card type. Currently only image card portfolio (IMAGE) can be created with this endpoint. Required when creative_portfolio_type is CARD  # noqa: E501
 
         :param card_type: The card_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -642,7 +680,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def catalog_authorized_bc_id(self):
         """Gets the catalog_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`.ID of the Business Center that is authorized to access the catalog (`catalog_id`). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :return: The catalog_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -653,7 +690,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def catalog_authorized_bc_id(self, catalog_authorized_bc_id):
         """Sets the catalog_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`.ID of the Business Center that is authorized to access the catalog (`catalog_id`). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :param catalog_authorized_bc_id: The catalog_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -665,7 +701,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def catalog_id(self):
         """Gets the catalog_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Catalog ID. Note: You can use [/store/list/](https://ads.tiktok.com/marketing_api/docs?id=1752267762718722) to get the `catalog_id`, `store_id` and `store_authorized_bc_id` for available stores under an ad account. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.  # noqa: E501
 
         :return: The catalog_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -676,7 +711,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def catalog_id(self, catalog_id):
         """Sets the catalog_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Catalog ID. Note: You can use [/store/list/](https://ads.tiktok.com/marketing_api/docs?id=1752267762718722) to get the `catalog_id`, `store_id` and `store_authorized_bc_id` for available stores under an ad account. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.  # noqa: E501
 
         :param catalog_id: The catalog_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -688,7 +722,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def category_label(self):
         """Gets the category_label of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD` and the value of `tags` includes `CATEGORIES`. Category name of the app you want to promote in the Download Card. See [Enumerations-Creative Management-Category Labels](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) for the enum values, and you need to pass the value as string  # noqa: E501
 
         :return: The category_label of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -699,7 +732,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def category_label(self, category_label):
         """Sets the category_label of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD` and the value of `tags` includes `CATEGORIES`. Category name of the app you want to promote in the Download Card. See [Enumerations-Creative Management-Category Labels](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) for the enum values, and you need to pass the value as string  # noqa: E501
 
         :param category_label: The category_label of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -711,7 +743,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def country_code(self):
         """Gets the country_code of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Country or location code of the region you want to target. For enum values, see [Appendix - Location code](https://ads.tiktok.com/marketing_api/docs?id=1737585867307010)  # noqa: E501
 
         :return: The country_code of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: list[str]
@@ -722,7 +753,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def country_code(self, country_code):
         """Sets the country_code of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Country or location code of the region you want to target. For enum values, see [Appendix - Location code](https://ads.tiktok.com/marketing_api/docs?id=1737585867307010)  # noqa: E501
 
         :param country_code: The country_code of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: list[str]
@@ -734,7 +764,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def description(self):
         """Gets the description of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD` and the value of `layouts` includes `TYPE_1`. Description of the app that you want to promote in the Download Card  # noqa: E501
 
         :return: The description of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -745,7 +774,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def description(self, description):
         """Sets the description of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD` and the value of `layouts` includes `TYPE_1`. Description of the app that you want to promote in the Download Card  # noqa: E501
 
         :param description: The description of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -754,10 +782,30 @@ class CreativeportfoliocreatePortfolioContent(object):
         self._description = description
 
     @property
+    def display_price_enabled(self):
+        """Gets the display_price_enabled of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The display_price_enabled of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._display_price_enabled
+
+    @display_price_enabled.setter
+    def display_price_enabled(self, display_price_enabled):
+        """Sets the display_price_enabled of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param display_price_enabled: The display_price_enabled of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: bool
+        """
+
+        self._display_price_enabled = display_price_enabled
+
+    @property
     def dynamic_format(self):
         """Gets the dynamic_format of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and product_source is set as `CATALOG`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`, you cannot set `dynamic_format` as `DYNAMIC_CREATIVE`. You can choose not to pass in the field or set it as `UNSET`. Whether to enable Dynamic Format. Dynamic Format combines video creative, product cards, and landing pages into different variations based on a shopper purchase intent, maximizing conversions for you. Enum values: `UNSET`, `DYNAMIC_CREATIVE` (Use Dynamic Format to create smart creatives). Note:`dynamic_format` cannot be enabled for retargeting ads (i.e. when `shopping_ads_retargeting_type` in the ad group is not `OFF`). When `dynamic_format` = `DYNAMIC_CREATIVE`, we will automatically create cards. This means that you will not need to pass all card related fields (`card_show_price`, `card_tags`, `card_image_index`). If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card.  # noqa: E501
 
         :return: The dynamic_format of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -768,7 +816,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def dynamic_format(self, dynamic_format):
         """Sets the dynamic_format of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and product_source is set as `CATALOG`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`, you cannot set `dynamic_format` as `DYNAMIC_CREATIVE`. You can choose not to pass in the field or set it as `UNSET`. Whether to enable Dynamic Format. Dynamic Format combines video creative, product cards, and landing pages into different variations based on a shopper purchase intent, maximizing conversions for you. Enum values: `UNSET`, `DYNAMIC_CREATIVE` (Use Dynamic Format to create smart creatives). Note:`dynamic_format` cannot be enabled for retargeting ads (i.e. when `shopping_ads_retargeting_type` in the ad group is not `OFF`). When `dynamic_format` = `DYNAMIC_CREATIVE`, we will automatically create cards. This means that you will not need to pass all card related fields (`card_show_price`, `card_tags`, `card_image_index`). If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card.  # noqa: E501
 
         :param dynamic_format: The dynamic_format of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -777,10 +824,30 @@ class CreativeportfoliocreatePortfolioContent(object):
         self._dynamic_format = dynamic_format
 
     @property
+    def gesture_type(self):
+        """Gets the gesture_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The gesture_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: str
+        """
+        return self._gesture_type
+
+    @gesture_type.setter
+    def gesture_type(self, gesture_type):
+        """Sets the gesture_type of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param gesture_type: The gesture_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: str
+        """
+
+        self._gesture_type = gesture_type
+
+    @property
     def identity_authorized_bc_id(self):
         """Gets the identity_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `identity_type` is `BC_AUTH_TT`.  ID of the Business Center that a TikTok Account User in Business Center identity is associated with  # noqa: E501
 
         :return: The identity_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -791,7 +858,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def identity_authorized_bc_id(self, identity_authorized_bc_id):
         """Sets the identity_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `identity_type` is `BC_AUTH_TT`.  ID of the Business Center that a TikTok Account User in Business Center identity is associated with  # noqa: E501
 
         :param identity_authorized_bc_id: The identity_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -803,7 +869,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def identity_id(self):
         """Gets the identity_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Identity ID  # noqa: E501
 
         :return: The identity_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -814,7 +879,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def identity_id(self, identity_id):
         """Sets the identity_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Identity ID  # noqa: E501
 
         :param identity_id: The identity_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -826,7 +890,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def identity_type(self):
         """Gets the identity_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Identity type. Enum values: `CUSTOMIZED_USER`, `AUTH_CODE`, `TT_USER`, `BC_AUTH_TT`. For details about identities, see [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097)  # noqa: E501
 
         :return: The identity_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -837,7 +900,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def identity_type(self, identity_type):
         """Sets the identity_type of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Identity type. Enum values: `CUSTOMIZED_USER`, `AUTH_CODE`, `TT_USER`, `BC_AUTH_TT`. For details about identities, see [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097)  # noqa: E501
 
         :param identity_type: The identity_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -849,7 +911,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def image_id(self):
         """Gets the image_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Image ID. Required when `creative_portfolio_type` is `CARD`  # noqa: E501
 
         :return: The image_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -860,7 +921,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def image_id(self, image_id):
         """Sets the image_id of this CreativeportfoliocreatePortfolioContent.
 
-        Image ID. Required when `creative_portfolio_type` is `CARD`  # noqa: E501
 
         :param image_id: The image_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -869,10 +929,51 @@ class CreativeportfoliocreatePortfolioContent(object):
         self._image_id = image_id
 
     @property
+    def image_optimization_enabled(self):
+        """Gets the image_optimization_enabled of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The image_optimization_enabled of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: bool
+        """
+        return self._image_optimization_enabled
+
+    @image_optimization_enabled.setter
+    def image_optimization_enabled(self, image_optimization_enabled):
+        """Sets the image_optimization_enabled of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param image_optimization_enabled: The image_optimization_enabled of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: bool
+        """
+
+        self._image_optimization_enabled = image_optimization_enabled
+
+    @property
+    def interactive_music_id(self):
+        """Gets the interactive_music_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The interactive_music_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: str
+        """
+        return self._interactive_music_id
+
+    @interactive_music_id.setter
+    def interactive_music_id(self, interactive_music_id):
+        """Sets the interactive_music_id of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param interactive_music_id: The interactive_music_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: str
+        """
+
+        self._interactive_music_id = interactive_music_id
+
+    @property
     def item_group_ids(self):
         """Gets the item_group_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-         Required when `creative_portfolio_type`is `PRODUCT_CARD` and `product_source` is set as `STORE`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = PRODUCT_SET, you need to pass in either `product_set_id` or `item_group_ids`. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :return: The item_group_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: list[str]
@@ -883,7 +984,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def item_group_ids(self, item_group_ids):
         """Sets the item_group_ids of this CreativeportfoliocreatePortfolioContent.
 
-         Required when `creative_portfolio_type`is `PRODUCT_CARD` and `product_source` is set as `STORE`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = PRODUCT_SET, you need to pass in either `product_set_id` or `item_group_ids`. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :param item_group_ids: The item_group_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: list[str]
@@ -895,7 +995,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def layouts(self):
         """Gets the layouts of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. The layout type of the Download Card. Enum values: `TYPE_1`: Type 1, showing app description in the Download Card. `TYPE_2` : Type 2, not showing app description in the Download Card. You can pass in one or two layout types, and when you pass in both `TYPE_1` and `TYPE_2` in this field, you will create one Type 1 Download Card and one Type 2 Download Card  # noqa: E501
 
         :return: The layouts of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: list[str]
@@ -906,7 +1005,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def layouts(self, layouts):
         """Sets the layouts of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. The layout type of the Download Card. Enum values: `TYPE_1`: Type 1, showing app description in the Download Card. `TYPE_2` : Type 2, not showing app description in the Download Card. You can pass in one or two layout types, and when you pass in both `TYPE_1` and `TYPE_2` in this field, you will create one Type 1 Download Card and one Type 2 Download Card  # noqa: E501
 
         :param layouts: The layouts of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: list[str]
@@ -918,7 +1016,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def mobile_app_id(self):
         """Gets the mobile_app_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Mobile App ID, used to extract tag information from Google Play or App Store. For an iOS app, please find the ID number in the app’s App Store URL as the string of numbers directly after `id`. For instance, in `https://apps.apple.com/us/app/hyperpure/id1203646221` the ID would be `1203646221`. For an Android app, please find the package name in the app’s Google Play store URL after `id`. For instance, in `https://play.google.com/store/apps/details?id=com.innersloth.spacemafia` the ID would be `com.innersloth.spacemafia`.  # noqa: E501
 
         :return: The mobile_app_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -929,7 +1026,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def mobile_app_id(self, mobile_app_id):
         """Sets the mobile_app_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Mobile App ID, used to extract tag information from Google Play or App Store. For an iOS app, please find the ID number in the app’s App Store URL as the string of numbers directly after `id`. For instance, in `https://apps.apple.com/us/app/hyperpure/id1203646221` the ID would be `1203646221`. For an Android app, please find the package name in the app’s Google Play store URL after `id`. For instance, in `https://play.google.com/store/apps/details?id=com.innersloth.spacemafia` the ID would be `com.innersloth.spacemafia`.  # noqa: E501
 
         :param mobile_app_id: The mobile_app_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -938,10 +1034,51 @@ class CreativeportfoliocreatePortfolioContent(object):
         self._mobile_app_id = mobile_app_id
 
     @property
+    def pop_up_window_image_id(self):
+        """Gets the pop_up_window_image_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The pop_up_window_image_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: str
+        """
+        return self._pop_up_window_image_id
+
+    @pop_up_window_image_id.setter
+    def pop_up_window_image_id(self, pop_up_window_image_id):
+        """Sets the pop_up_window_image_id of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param pop_up_window_image_id: The pop_up_window_image_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: str
+        """
+
+        self._pop_up_window_image_id = pop_up_window_image_id
+
+    @property
+    def primary_text(self):
+        """Gets the primary_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The primary_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: str
+        """
+        return self._primary_text
+
+    @primary_text.setter
+    def primary_text(self, primary_text):
+        """Sets the primary_text of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param primary_text: The primary_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: str
+        """
+
+        self._primary_text = primary_text
+
+    @property
     def product_set_id(self):
         """Gets the product_set_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = `PRODUCT_SET`, you need to pass in either `product_set_id` or `item_group_ids`. ID of the Product Set. You can call [/catalog/set/get/](https://ads.tiktok.com/marketing_api/docs?id=1740570556295169) to get a list of Product Sets in a catalog under your Business Center. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :return: The product_set_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -952,7 +1089,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def product_set_id(self, product_set_id):
         """Sets the product_set_id of this CreativeportfoliocreatePortfolioContent.
 
-        When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = `PRODUCT_SET`, you need to pass in either `product_set_id` or `item_group_ids`. ID of the Product Set. You can call [/catalog/set/get/](https://ads.tiktok.com/marketing_api/docs?id=1740570556295169) to get a list of Product Sets in a catalog under your Business Center. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :param product_set_id: The product_set_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -964,7 +1100,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def product_source(self):
         """Gets the product_source of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Product source where you want to get products for promotion. Enum values: `UNSET`, `CATALOG`(Catalog), `STORE` (TikTok Shop or TikTok Storefront (third-party store)). If you set this field as `STORE`, you need to pass in `item_group_ids` at the same time. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.  # noqa: E501
 
         :return: The product_source of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -975,7 +1110,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def product_source(self, product_source):
         """Sets the product_source of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD`. Product source where you want to get products for promotion. Enum values: `UNSET`, `CATALOG`(Catalog), `STORE` (TikTok Shop or TikTok Storefront (third-party store)). If you set this field as `STORE`, you need to pass in `item_group_ids` at the same time. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.  # noqa: E501
 
         :param product_source: The product_source of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -987,7 +1121,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def product_specific_type(self):
         """Gets the product_specific_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`. The way that you specify the products. Enum values:  `ALL`: All products. Allow TikTok to dynamically choose from all catalog products. You do not need to specify any of `sku_ids`, `item_group_ids` and `product_set_id` at the same time.`PRODUCT_SET`: Product set. Select a product set. TikTok will dynamically choose products from this set. You need to specify `item_group_ids` or `product_set_id` at the same time. `CUSTOMIZED_PRODUCTS`: Specific products. Select up to 20 products from your catalog. You need to specify `sku_ids` at the same time.Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :return: The product_specific_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -998,7 +1131,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def product_specific_type(self, product_specific_type):
         """Sets the product_specific_type of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`. The way that you specify the products. Enum values:  `ALL`: All products. Allow TikTok to dynamically choose from all catalog products. You do not need to specify any of `sku_ids`, `item_group_ids` and `product_set_id` at the same time.`PRODUCT_SET`: Product set. Select a product set. TikTok will dynamically choose products from this set. You need to specify `item_group_ids` or `product_set_id` at the same time. `CUSTOMIZED_PRODUCTS`: Specific products. Select up to 20 products from your catalog. You need to specify `sku_ids` at the same time.Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :param product_specific_type: The product_specific_type of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -1010,7 +1142,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def profile_image(self):
         """Gets the profile_image of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Profile image URL  # noqa: E501
 
         :return: The profile_image of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -1021,7 +1152,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def profile_image(self, profile_image):
         """Sets the profile_image of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Profile image URL  # noqa: E501
 
         :param profile_image: The profile_image of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -1030,10 +1160,72 @@ class CreativeportfoliocreatePortfolioContent(object):
         self._profile_image = profile_image
 
     @property
+    def secondary_text(self):
+        """Gets the secondary_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The secondary_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: str
+        """
+        return self._secondary_text
+
+    @secondary_text.setter
+    def secondary_text(self, secondary_text):
+        """Sets the secondary_text of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param secondary_text: The secondary_text of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: str
+        """
+
+        self._secondary_text = secondary_text
+
+    @property
+    def selling_points(self):
+        """Gets the selling_points of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The selling_points of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._selling_points
+
+    @selling_points.setter
+    def selling_points(self, selling_points):
+        """Sets the selling_points of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param selling_points: The selling_points of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._selling_points = selling_points
+
+    @property
+    def showcase_products(self):
+        """Gets the showcase_products of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The showcase_products of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: list[CreativeportfoliocreateShowcaseProducts]
+        """
+        return self._showcase_products
+
+    @showcase_products.setter
+    def showcase_products(self, showcase_products):
+        """Sets the showcase_products of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param showcase_products: The showcase_products of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: list[CreativeportfoliocreateShowcaseProducts]
+        """
+
+        self._showcase_products = showcase_products
+
+    @property
     def sku_ids(self):
         """Gets the sku_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-         Required when `creative_portfolio_type`is `PRODUCT_CARD` and `product_source` is set as `STORE`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = PRODUCT_SET, you need to pass in either `product_set_id` or `item_group_ids`. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :return: The sku_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: list[str]
@@ -1044,13 +1236,54 @@ class CreativeportfoliocreatePortfolioContent(object):
     def sku_ids(self, sku_ids):
         """Sets the sku_ids of this CreativeportfoliocreatePortfolioContent.
 
-         Required when `creative_portfolio_type`is `PRODUCT_CARD` and `product_source` is set as `STORE`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_specific_type` = PRODUCT_SET, you need to pass in either `product_set_id` or `item_group_ids`. Product SPU IDs. Max size: 20. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :param sku_ids: The sku_ids of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: list[str]
         """
 
         self._sku_ids = sku_ids
+
+    @property
+    def slide_dimension(self):
+        """Gets the slide_dimension of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The slide_dimension of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: CreativeportfoliocreateSlideDimension
+        """
+        return self._slide_dimension
+
+    @slide_dimension.setter
+    def slide_dimension(self, slide_dimension):
+        """Sets the slide_dimension of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param slide_dimension: The slide_dimension of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: CreativeportfoliocreateSlideDimension
+        """
+
+        self._slide_dimension = slide_dimension
+
+    @property
+    def slide_length(self):
+        """Gets the slide_length of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The slide_length of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: int
+        """
+        return self._slide_length
+
+    @slide_length.setter
+    def slide_length(self, slide_length):
+        """Sets the slide_length of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param slide_length: The slide_length of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: int
+        """
+
+        self._slide_length = slide_length
 
     @property
     def sticker_param(self):
@@ -1077,7 +1310,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def store_authorized_bc_id(self):
         """Gets the store_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`.  ID of the Business Center that is authorized to access the store (`store_id`). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group levelyou pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :return: The store_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -1088,7 +1320,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def store_authorized_bc_id(self, store_authorized_bc_id):
         """Sets the store_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`.  ID of the Business Center that is authorized to access the store (`store_id`). Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad group levelyou pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product  # noqa: E501
 
         :param store_authorized_bc_id: The store_authorized_bc_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -1100,7 +1331,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def store_id(self):
         """Gets the store_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`. ID of the TikTok Storefront or TikTok Shop. Note:  To get the TikTok Storefront ID or TikTok Shop ID, you can use [/bc/asset/get/]( https://ads.tiktok.com/marketing_api/docs?id=1739432717798401):  When in the response `asset_type` is `STOREFRONT`, the returned `asset_id` is the TikTok Storefront ID.  When in the response `asset_type` is `TIKTOK_SHOP`, the returned `asset_id` is the TikTok Shop ID.  A store of the TikTok Storefront type (store_id) can be used to create ad groups only when a TikTok account has been bound to the store. You can use [/store/list/]( https://ads.tiktok.com/marketing_api/docs?id=1752267762718722) to check the binding status of a TikTok Storefront via `tiktok_account_binding_status` in the response. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.  # noqa: E501
 
         :return: The store_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -1111,7 +1341,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def store_id(self, store_id):
         """Sets the store_id of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`. ID of the TikTok Storefront or TikTok Shop. Note:  To get the TikTok Storefront ID or TikTok Shop ID, you can use [/bc/asset/get/]( https://ads.tiktok.com/marketing_api/docs?id=1739432717798401):  When in the response `asset_type` is `STOREFRONT`, the returned `asset_id` is the TikTok Storefront ID.  When in the response `asset_type` is `TIKTOK_SHOP`, the returned `asset_id` is the TikTok Shop ID.  A store of the TikTok Storefront type (store_id) can be used to create ad groups only when a TikTok account has been bound to the store. You can use [/store/list/]( https://ads.tiktok.com/marketing_api/docs?id=1752267762718722) to check the binding status of a TikTok Storefront via `tiktok_account_binding_status` in the response. If you have created a Product Card and want to use it during ad creation, ensure that at the ad group level you pass to the same field the value that is used for creating the Product Card. Otherwise, when the ad is delivered, the product thumbnail in the Product Card may not be of the promoted product.  # noqa: E501
 
         :param store_id: The store_id of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str
@@ -1123,7 +1352,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def tags(self):
         """Gets the tags of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Tags for the Download Card. Enum values: `CATEGORIES`：Showing the category of the app you want to promote in the Download Card. `FILESIZE`：Showing the file size of the app you want to promote in the Download Card.  `RATING`：Showing the rating of the app you want to promote in the Download Card. `RANKING`：Showing the ranking of the app you want to promote in the Download Card. `COMMENT_VOLUME`：Showing the number of comments for the app you want to promote in the Download Card. Note: You can pass in multiple tags at one time, but when you pass in more than two tags, only two tags will show in the Download Card according to the following tag priority: `CATEGORIES` > `FILESIZE` > `RATING` > `RANKING`>`COMMENT_VOLUME`. For Type 1 Download Card, you need to pass in at least one tag. For Type 2 Download Card, you need to pass in at least two tags.   # noqa: E501
 
         :return: The tags of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: list[str]
@@ -1134,7 +1362,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def tags(self, tags):
         """Sets the tags of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `DOWNLOAD_CARD`. Tags for the Download Card. Enum values: `CATEGORIES`：Showing the category of the app you want to promote in the Download Card. `FILESIZE`：Showing the file size of the app you want to promote in the Download Card.  `RATING`：Showing the rating of the app you want to promote in the Download Card. `RANKING`：Showing the ranking of the app you want to promote in the Download Card. `COMMENT_VOLUME`：Showing the number of comments for the app you want to promote in the Download Card. Note: You can pass in multiple tags at one time, but when you pass in more than two tags, only two tags will show in the Download Card according to the following tag priority: `CATEGORIES` > `FILESIZE` > `RATING` > `RANKING`>`COMMENT_VOLUME`. For Type 1 Download Card, you need to pass in at least one tag. For Type 2 Download Card, you need to pass in at least two tags.   # noqa: E501
 
         :param tags: The tags of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: list[str]
@@ -1143,10 +1370,30 @@ class CreativeportfoliocreatePortfolioContent(object):
         self._tags = tags
 
     @property
+    def title(self):
+        """Gets the title of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+
+
+        :return: The title of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :rtype: str
+        """
+        return self._title
+
+    @title.setter
+    def title(self, title):
+        """Sets the title of this CreativeportfoliocreatePortfolioContent.
+
+
+        :param title: The title of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
+        :type: str
+        """
+
+        self._title = title
+
+    @property
     def vertical_video_strategy(self):
         """Gets the vertical_video_strategy of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`, you can choose not to pass in the field or set it as `SINGLE_VIDEO`. The video type that you use for Product Sales scenarios. Enum values: `UNSET` (unset), `SINGLE_VIDEO` (single video), `CATALOG_VIDEOS` (catalog video).  It must be `UNSET` if `dynamic_format` = `DYNAMIC_CREATIVE`. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card  # noqa: E501
 
         :return: The vertical_video_strategy of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :rtype: str
@@ -1157,7 +1404,6 @@ class CreativeportfoliocreatePortfolioContent(object):
     def vertical_video_strategy(self, vertical_video_strategy):
         """Sets the vertical_video_strategy of this CreativeportfoliocreatePortfolioContent.
 
-        Required when `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `CATALOG`. When `creative_portfolio_type`= `PRODUCT_CARD` and `product_source` is set as `STORE`, you can choose not to pass in the field or set it as `SINGLE_VIDEO`. The video type that you use for Product Sales scenarios. Enum values: `UNSET` (unset), `SINGLE_VIDEO` (single video), `CATALOG_VIDEOS` (catalog video).  It must be `UNSET` if `dynamic_format` = `DYNAMIC_CREATIVE`. Note: If you have created a Product Card and want to use it during ad creation, ensure that at the ad level you pass to the same field the value that is used for creating the Product Card  # noqa: E501
 
         :param vertical_video_strategy: The vertical_video_strategy of this CreativeportfoliocreatePortfolioContent.  # noqa: E501
         :type: str

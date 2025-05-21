@@ -35,7 +35,7 @@ class PortfolioCreateBody(object):
         'portfolio_content': 'portfolio_content'
     }
 
-    def __init__(self, advertiser_id=None, creative_portfolio_type=None, portfolio_content=None):  # noqa: E501
+    def __init__(self, advertiser_id=None, creative_portfolio_type='CTA', portfolio_content=None):  # noqa: E501
         """PortfolioCreateBody - a model defined in Swagger"""  # noqa: E501
         self._advertiser_id = None
         self._creative_portfolio_type = None
@@ -44,14 +44,12 @@ class PortfolioCreateBody(object):
         self.advertiser_id = advertiser_id
         if creative_portfolio_type is not None:
             self.creative_portfolio_type = creative_portfolio_type
-        if portfolio_content is not None:
-            self.portfolio_content = portfolio_content
+        self.portfolio_content = portfolio_content
 
     @property
     def advertiser_id(self):
         """Gets the advertiser_id of this PortfolioCreateBody.  # noqa: E501
 
-        The advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this PortfolioCreateBody.  # noqa: E501
         :rtype: str
@@ -62,7 +60,6 @@ class PortfolioCreateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this PortfolioCreateBody.
 
-        The advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this PortfolioCreateBody.  # noqa: E501
         :type: str
@@ -76,7 +73,6 @@ class PortfolioCreateBody(object):
     def creative_portfolio_type(self):
         """Gets the creative_portfolio_type of this PortfolioCreateBody.  # noqa: E501
 
-        Type of the portfolio. Enum values: `CTA` (call-to-action text), `CARD` (card), `PREMIUM_BADGE` (badge pop-up)， `STICKER` (countdown sticker) ,`DOWNLOAD_CARD` (Download Card), `PRODUCT_CARD` (Product Card). The default value is `CTA`. See examples of Countdown Stickers Download Cards and in [Portfolios](https://ads.tiktok.com/marketing_api/docs?id=1739361803446273), and see examples of Countdown Sticker and Download Card in [Countdown Sticker](https://ads.tiktok.com/help/article?aid=10007423) and [Download Card](https://ads.tiktok.com/help/article?aid=10007086).Note: You can only create one countdown sticker at a time.Countdown Sticker is an allowlist-only feature for auction ads with the advertising objective (`objective_type`) as App Installs (`APP_INSTALL`), App Promotion (`APP_PROMOTION`), Traffic (`TRAFFIC`), or Conversion (`CONVERSIONS`). If you would like to access it for auction ads with these objectives , please contact your TikTok representative.Download Card is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. Product Cards can only be used in Video Shopping Ads.  # noqa: E501
 
         :return: The creative_portfolio_type of this PortfolioCreateBody.  # noqa: E501
         :rtype: str
@@ -87,7 +83,6 @@ class PortfolioCreateBody(object):
     def creative_portfolio_type(self, creative_portfolio_type):
         """Sets the creative_portfolio_type of this PortfolioCreateBody.
 
-        Type of the portfolio. Enum values: `CTA` (call-to-action text), `CARD` (card), `PREMIUM_BADGE` (badge pop-up)， `STICKER` (countdown sticker) ,`DOWNLOAD_CARD` (Download Card), `PRODUCT_CARD` (Product Card). The default value is `CTA`. See examples of Countdown Stickers Download Cards and in [Portfolios](https://ads.tiktok.com/marketing_api/docs?id=1739361803446273), and see examples of Countdown Sticker and Download Card in [Countdown Sticker](https://ads.tiktok.com/help/article?aid=10007423) and [Download Card](https://ads.tiktok.com/help/article?aid=10007086).Note: You can only create one countdown sticker at a time.Countdown Sticker is an allowlist-only feature for auction ads with the advertising objective (`objective_type`) as App Installs (`APP_INSTALL`), App Promotion (`APP_PROMOTION`), Traffic (`TRAFFIC`), or Conversion (`CONVERSIONS`). If you would like to access it for auction ads with these objectives , please contact your TikTok representative.Download Card is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. Product Cards can only be used in Video Shopping Ads.  # noqa: E501
 
         :param creative_portfolio_type: The creative_portfolio_type of this PortfolioCreateBody.  # noqa: E501
         :type: str
@@ -99,7 +94,6 @@ class PortfolioCreateBody(object):
     def portfolio_content(self):
         """Gets the portfolio_content of this PortfolioCreateBody.  # noqa: E501
 
-        The content of the portfolio  # noqa: E501
 
         :return: The portfolio_content of this PortfolioCreateBody.  # noqa: E501
         :rtype: list[CreativeportfoliocreatePortfolioContent]
@@ -110,11 +104,12 @@ class PortfolioCreateBody(object):
     def portfolio_content(self, portfolio_content):
         """Sets the portfolio_content of this PortfolioCreateBody.
 
-        The content of the portfolio  # noqa: E501
 
         :param portfolio_content: The portfolio_content of this PortfolioCreateBody.  # noqa: E501
         :type: list[CreativeportfoliocreatePortfolioContent]
         """
+        if portfolio_content is None:
+            raise ValueError("Invalid value for `portfolio_content`, must not be `None`")  # noqa: E501
 
         self._portfolio_content = portfolio_content
 

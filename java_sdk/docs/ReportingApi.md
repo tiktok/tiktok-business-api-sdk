@@ -42,7 +42,7 @@ String endDate = "endDate_example"; // String |
 Boolean queryLifetime = true; // Boolean | 
 String orderField = "orderField_example"; // String | 
 String orderType = "orderType_example"; // String | 
-FilteringReportIntegratedGet filtering = new FilteringReportIntegratedGet(); // FilteringReportIntegratedGet | 
+List<Object> filtering = null; // List<Object> | 
 try {
     Response result = apiInstance.reportIntegratedGet(reportType, accessToken, page, pageSize, enableTotalMetrics, multiAdvReportInUtcTime, queryMode, advertiserId, advertiserIds, bcId, serviceType, dataLevel, dimensions, metrics, startDate, endDate, queryLifetime, orderField, orderType, filtering);
     System.out.println(result);
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportType** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 1000]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
  **enableTotalMetrics** | **Boolean**|  | [optional] [default to false]
  **multiAdvReportInUtcTime** | **Boolean**|  | [optional] [default to false]
  **queryMode** | **String**|  | [optional]
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
  **queryLifetime** | **Boolean**|  | [optional]
  **orderField** | **String**|  | [optional]
  **orderType** | **String**|  | [optional]
- **filtering** | [**FilteringReportIntegratedGet**](FilteringReportIntegratedGet.md)|  | [optional]
+ **filtering** | [**List&lt;Object&gt;**](Object.md)|  | [optional]
 
 ### Return type
 
@@ -197,7 +197,7 @@ No authorization required
 
 ReportingApi apiInstance = new ReportingApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-TaskCreateBody body = new TaskCreateBody(); // TaskCreateBody | 
+ReportTaskCreateBody body = new ReportTaskCreateBody(); // ReportTaskCreateBody | 
 try {
     Response result = apiInstance.reportTaskCreate(accessToken, body);
     System.out.println(result);
@@ -212,7 +212,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**TaskCreateBody**](TaskCreateBody.md)|  | [optional]
+ **body** | [**ReportTaskCreateBody**](ReportTaskCreateBody.md)|  | [optional]
 
 ### Return type
 

@@ -14,10 +14,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 /**
- * Information about the badge image
+ * CreativeportfoliocreateBadgeImageInfo
  */
-@Schema(description = "Information about the badge image")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-03-21T10:49:20.864324-07:00[America/Los_Angeles]")
+
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
 public class CreativeportfoliocreateBadgeImageInfo {
   @JsonProperty("image_id")
   private String imageId = null;
@@ -28,10 +28,10 @@ public class CreativeportfoliocreateBadgeImageInfo {
   }
 
    /**
-   * ID of the badge image. The image must be 448x448 px. Supported formats include PNG, JPEG, and JPG. The largest size supported is 1 MB
+   * Get imageId
    * @return imageId
   **/
-  @Schema(description = "ID of the badge image. The image must be 448x448 px. Supported formats include PNG, JPEG, and JPG. The largest size supported is 1 MB")
+  @Schema(description = "")
   public String getImageId() {
     return imageId;
   }

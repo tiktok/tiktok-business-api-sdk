@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CatalogCapitalizeBody model module.
  * @module model/CatalogCapitalizeBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class CatalogCapitalizeBody {
   /**

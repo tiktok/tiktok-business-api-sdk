@@ -49,7 +49,7 @@ end_date = 'end_date_example' # str |  (optional)
 query_lifetime = true # bool |  (optional)
 order_field = 'order_field_example' # str |  (optional)
 order_type = 'order_type_example' # str |  (optional)
-filtering = business_api_client.FilteringReportIntegratedGet() # FilteringReportIntegratedGet |  (optional)
+filtering = NULL # list[object] |  (optional)
 
 try:
     # Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id=1740302848100353)
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
  **query_lifetime** | **bool**|  | [optional] 
  **order_field** | **str**|  | [optional] 
  **order_type** | **str**|  | [optional] 
- **filtering** | [**FilteringReportIntegratedGet**](FilteringReportIntegratedGet.md)|  | [optional] 
+ **filtering** | [**list[object]**](object.md)|  | [optional] 
 
 ### Return type
 
@@ -213,7 +213,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = business_api_client.ReportingApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-body = business_api_client.TaskCreateBody() # TaskCreateBody |  (optional)
+body = business_api_client.ReportTaskCreateBody() # ReportTaskCreateBody |  (optional)
 
 try:
     api_response = api_instance.report_task_create(access_token, body=body)
@@ -227,7 +227,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **body** | [**TaskCreateBody**](TaskCreateBody.md)|  | [optional] 
+ **body** | [**ReportTaskCreateBody**](ReportTaskCreateBody.md)|  | [optional] 
 
 ### Return type
 

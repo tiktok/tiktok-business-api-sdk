@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringAdvertiserTransactionGet**](FilteringAdvertiserTransactionGet.md)|  | [optional]
  **page** | **Long**|  | [optional] [default to 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -329,8 +329,8 @@ Name | Type | Description  | Notes
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **childBcId** | **String**|  | [optional]
  **filtering** | [**FilteringBcAssetAdminGet**](FilteringBcAssetAdminGet.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -429,8 +429,8 @@ Name | Type | Description  | Notes
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **childBcId** | **String**|  | [optional]
  **filtering** | [**FilteringBcAssetGet**](FilteringBcAssetGet.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -574,8 +574,8 @@ Name | Type | Description  | Notes
  **queryEntity** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringBcAssetGroupGet**](FilteringBcAssetGroupGet.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -625,8 +625,8 @@ Name | Type | Description  | Notes
  **bcId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringBcAssetGroupList**](FilteringBcAssetGroupList.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -725,8 +725,8 @@ Name | Type | Description  | Notes
  **assetId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringBcAssetMemberGet**](FilteringBcAssetMemberGet.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 20]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -780,8 +780,8 @@ Name | Type | Description  | Notes
  **assetId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**Object**](Object.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -968,8 +968,8 @@ Name | Type | Description  | Notes
  **bcId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringBcBillingGroupGet**](FilteringBcBillingGroupGet.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1, 9223372036854776000]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -1067,7 +1067,7 @@ Name | Type | Description  | Notes
  **scene** | **String**|  | [optional] [default to SINGLE_ACCOUNT]
  **filtering** | [**FilteringBcGet**](FilteringBcGet.md)|  | [optional]
  **page** | **Long**|  | [optional] [default to 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -1448,8 +1448,8 @@ Name | Type | Description  | Notes
  **shareType** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringBcPartnerAssetGet**](FilteringBcPartnerAssetGet.md)|  | [optional]
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -1543,8 +1543,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bcId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 50]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
  **filtering** | [**FilteringBcPartnerGet**](FilteringBcPartnerGet.md)|  | [optional]
 
 ### Return type
@@ -1595,8 +1595,8 @@ Name | Type | Description  | Notes
  **bcId** | **String**|  |[required] 
  **pixelCode** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **page** | **Long**|  | [optional] [default to 1] [enum: 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 
@@ -1741,7 +1741,7 @@ Name | Type | Description  | Notes
  **startDate** | **String**|  | [optional]
  **endDate** | **String**|  | [optional]
  **page** | **Long**|  | [optional] [default to 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 50]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
 
 ### Return type
 

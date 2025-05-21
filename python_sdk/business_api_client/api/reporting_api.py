@@ -56,7 +56,7 @@ class ReportingApi(object):
         :param bool query_lifetime:
         :param str order_field:
         :param str order_type:
-        :param FilteringReportIntegratedGet filtering:
+        :param list[object] filtering:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -96,7 +96,7 @@ class ReportingApi(object):
         :param bool query_lifetime:
         :param str order_field:
         :param str order_type:
-        :param FilteringReportIntegratedGet filtering:
+        :param list[object] filtering:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -172,6 +172,7 @@ class ReportingApi(object):
             query_params.append(('order_type', params['order_type']))  # noqa: E501
         if 'filtering' in params:
             query_params.append(('filtering', params['filtering']))  # noqa: E501
+            collection_formats['filtering'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
@@ -424,7 +425,7 @@ class ReportingApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param TaskCreateBody body:
+        :param ReportTaskCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -446,7 +447,7 @@ class ReportingApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param TaskCreateBody body:
+        :param ReportTaskCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.

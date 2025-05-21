@@ -4,26 +4,34 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**appList**](MeasurementApi.md#appList) | **GET** /open_api/v1.3/app/list/ | Get the app list [App list](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740859313270786)
-[**appOptimizationEvent**](MeasurementApi.md#appOptimizationEvent) | **GET** /open_api/v1.3/app/optimization_event/ | Get App Events [App events](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740859338750977)
+[**offlineCreate**](MeasurementApi.md#offlineCreate) | **POST** /open_api/v1.3/offline/create/ | Create a new Offline Event set. [Offline Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1758427576470529)
+[**offlineDelete**](MeasurementApi.md#offlineDelete) | **POST** /open_api/v1.3/offline/delete/ | Delete an Offline Event set. [Offline Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1765596790860802)
+[**offlineGet**](MeasurementApi.md#offlineGet) | **GET** /open_api/v1.3/offline/get/ | Get Offline Event sets. [Offline Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1765596808589313)
+[**offlineUpdate**](MeasurementApi.md#offlineUpdate) | **POST** /open_api/v1.3/offline/update/ | Update an Offline Event set. [Offline Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1765596741157889)
+[**pixelCreate**](MeasurementApi.md#pixelCreate) | **POST** /open_api/v1.3/pixel/create/ | Create a Pixel. [Pixel Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858779758593)
+[**pixelEventCreate**](MeasurementApi.md#pixelEventCreate) | **POST** /open_api/v1.3/pixel/event/create/ | Choose either an industry or custom template to define your events. [Pixel Event Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858807646209)
+[**pixelEventDelete**](MeasurementApi.md#pixelEventDelete) | **POST** /open_api/v1.3/pixel/event/delete/ | Delete Pixel events. [Pixel Event Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858862104578)
+[**pixelEventStats**](MeasurementApi.md#pixelEventStats) | **GET** /open_api/v1.3/pixel/event/stats/ | View statistics of an event data over a period of time. [Pixel Event Stats](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858904557570)
+[**pixelEventUpdate**](MeasurementApi.md#pixelEventUpdate) | **POST** /open_api/v1.3/pixel/event/update/ | Update the name of a Pixel event and the conversion value. [Pixel Event Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858823774210)
+[**pixelList**](MeasurementApi.md#pixelList) | **GET** /open_api/v1.3/pixel/list/ | Obtain a list of Pixel information. [Pixel List](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858697598978)
+[**pixelUpdate**](MeasurementApi.md#pixelUpdate) | **POST** /open_api/v1.3/pixel/update/ | Update a Pixel. [Pixel Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858799524865)
 
-<a name="appList"></a>
-# **appList**
-> InlineResponse200 appList(advertiser_id, Access_Token, opts)
+<a name="offlineCreate"></a>
+# **offlineCreate**
+> InlineResponse200 offlineCreate(Access_Token, opts)
 
-Get the app list [App list](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740859313270786)
+Create a new Offline Event set. [Offline Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1758427576470529)
 
 ### Example
 ```javascript
 import {js_sdk} from 'business_api_client';
 
 let apiInstance = new js_sdk.MeasurementApi();
-let advertiser_id = "advertiser_id_example"; // String | Advertiser ID
 let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
-  'app_platform_ids': ["app_platform_ids_example"] // [String] | List of app platform ID for filter purpose
+  'body': new js_sdk.OfflineCreateBody() // OfflineCreateBody | 
 };
-apiInstance.appList(advertiser_id, Access_Token, opts, (error, data, response) => {
+apiInstance.offlineCreate(Access_Token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -36,9 +44,100 @@ apiInstance.appList(advertiser_id, Access_Token, opts, (error, data, response) =
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **String**| Advertiser ID |[required]  
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
- **app_platform_ids** | [**[String]**](String.md)| List of app platform ID for filter purpose | [optional] 
+ **body** | [**OfflineCreateBody**](OfflineCreateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="offlineDelete"></a>
+# **offlineDelete**
+> InlineResponse200 offlineDelete(Access_Token, opts)
+
+Delete an Offline Event set. [Offline Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1765596790860802)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'body': new js_sdk.OfflineDeleteBody() // OfflineDeleteBody | 
+};
+apiInstance.offlineDelete(Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **body** | [**OfflineDeleteBody**](OfflineDeleteBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="offlineGet"></a>
+# **offlineGet**
+> InlineResponse200 offlineGet(Access_Token, opts)
+
+Get Offline Event sets. [Offline Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1765596808589313)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'advertiser_id': "advertiser_id_example", // String | 
+  'event_set_ids': ["event_set_ids_example"], // [String] | 
+  'name': "name_example" // String | 
+};
+apiInstance.offlineGet(Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **advertiser_id** | **String**|  | [optional] 
+ **event_set_ids** | [**[String]**](String.md)|  | [optional] 
+ **name** | **String**|  | [optional] 
 
 ### Return type
 
@@ -53,29 +152,22 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-<a name="appOptimizationEvent"></a>
-# **appOptimizationEvent**
-> InlineResponse200 appOptimizationEvent(app_id, advertiser_id, placement, optimization_goal, Access_Token, opts)
+<a name="offlineUpdate"></a>
+# **offlineUpdate**
+> InlineResponse200 offlineUpdate(Access_Token, opts)
 
-Get App Events [App events](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740859338750977)
+Update an Offline Event set. [Offline Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1765596741157889)
 
 ### Example
 ```javascript
 import {js_sdk} from 'business_api_client';
 
 let apiInstance = new js_sdk.MeasurementApi();
-let app_id = "app_id_example"; // String | Your App ID, obtained after successfully creating your app
-let advertiser_id = "advertiser_id_example"; // String | Advertiser ID
-let placement = ["placement_example"]; // [String] | Advertisement positioning, See [Enumeration-Placement](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138)
-let optimization_goal = "optimization_goal_example"; // String | Optimization goal. For enum values, see [Enumeration-Optimization Goal](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138) for more
 let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
-  'objective': "objective_example", // String | Advertising Objective. For enum values, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138)
-  'available_only': true, // Boolean | Whether to return only available conversion events. The default value: `True` (only return available conversion events)
-  'is_skan': true, // Boolean | Whether the app is using Skan features
-  'app_promotion_type': "app_promotion_type_example" // String | App promotion type. Required when `objective_type` is `APP_PROMOTION`. Enum values: `APP_INSTALL`, `APP_RETARGETING`. Note: `APP_INSTALL` can be used in an iOS14 Dedicated Campaign, while `APP_RETARGETING` cannot be used
+  'body': new js_sdk.OfflineUpdateBody() // OfflineUpdateBody | 
 };
-apiInstance.appOptimizationEvent(app_id, advertiser_id, placement, optimization_goal, Access_Token, opts, (error, data, response) => {
+apiInstance.offlineUpdate(Access_Token, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -88,15 +180,187 @@ apiInstance.appOptimizationEvent(app_id, advertiser_id, placement, optimization_
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **app_id** | **String**| Your App ID, obtained after successfully creating your app |[required]  
- **advertiser_id** | **String**| Advertiser ID |[required]  
- **placement** | [**[String]**](String.md)| Advertisement positioning, See [Enumeration-Placement](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138) |[required]  
- **optimization_goal** | **String**| Optimization goal. For enum values, see [Enumeration-Optimization Goal](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138) for more |[required]  
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
- **objective** | **String**| Advertising Objective. For enum values, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138) | [optional] 
- **available_only** | **Boolean**| Whether to return only available conversion events. The default value: &#x60;True&#x60; (only return available conversion events) | [optional] 
- **is_skan** | **Boolean**| Whether the app is using Skan features | [optional] 
- **app_promotion_type** | **String**| App promotion type. Required when &#x60;objective_type&#x60; is &#x60;APP_PROMOTION&#x60;. Enum values: &#x60;APP_INSTALL&#x60;, &#x60;APP_RETARGETING&#x60;. Note: &#x60;APP_INSTALL&#x60; can be used in an iOS14 Dedicated Campaign, while &#x60;APP_RETARGETING&#x60; cannot be used | [optional] 
+ **body** | [**OfflineUpdateBody**](OfflineUpdateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="pixelCreate"></a>
+# **pixelCreate**
+> InlineResponse200 pixelCreate(Access_Token, opts)
+
+Create a Pixel. [Pixel Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858779758593)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'body': new js_sdk.PixelCreateBody() // PixelCreateBody | 
+};
+apiInstance.pixelCreate(Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **body** | [**PixelCreateBody**](PixelCreateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="pixelEventCreate"></a>
+# **pixelEventCreate**
+> InlineResponse200 pixelEventCreate(Access_Token, opts)
+
+Choose either an industry or custom template to define your events. [Pixel Event Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858807646209)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'body': new js_sdk.EventCreateBody() // EventCreateBody | 
+};
+apiInstance.pixelEventCreate(Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **body** | [**EventCreateBody**](EventCreateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="pixelEventDelete"></a>
+# **pixelEventDelete**
+> InlineResponse200 pixelEventDelete(Access_Token, opts)
+
+Delete Pixel events. [Pixel Event Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858862104578)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'body': new js_sdk.EventDeleteBody() // EventDeleteBody | 
+};
+apiInstance.pixelEventDelete(Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **body** | [**EventDeleteBody**](EventDeleteBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="pixelEventStats"></a>
+# **pixelEventStats**
+> InlineResponse200 pixelEventStats(advertiser_id, pixel_ids, date_range, Access_Token)
+
+View statistics of an event data over a period of time. [Pixel Event Stats](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858904557570)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let advertiser_id = "advertiser_id_example"; // String | 
+let pixel_ids = ["pixel_ids_example"]; // [String] | 
+let date_range = new js_sdk.DateRange(); // DateRange | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+
+apiInstance.pixelEventStats(advertiser_id, pixel_ids, date_range, Access_Token, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **String**|  |[required]  
+ **pixel_ids** | [**[String]**](String.md)|  |[required]  
+ **date_range** | [**DateRange**](DateRange.md)|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
 
 ### Return type
 
@@ -109,5 +373,151 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="pixelEventUpdate"></a>
+# **pixelEventUpdate**
+> InlineResponse200 pixelEventUpdate(Access_Token, opts)
+
+Update the name of a Pixel event and the conversion value. [Pixel Event Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858823774210)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'body': new js_sdk.EventUpdateBody() // EventUpdateBody | 
+};
+apiInstance.pixelEventUpdate(Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **body** | [**EventUpdateBody**](EventUpdateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="pixelList"></a>
+# **pixelList**
+> InlineResponse200 pixelList(advertiser_id, Access_Token, opts)
+
+Obtain a list of Pixel information. [Pixel List](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858697598978)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let advertiser_id = "advertiser_id_example"; // String | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'pixel_id': "pixel_id_example", // String | 
+  'code': "code_example", // String | 
+  'name': "name_example", // String | 
+  'order_by': "EARLIEST_CREATE", // String | 
+  'filtering': new js_sdk.FilteringPixelList(), // FilteringPixelList | 
+  'page': 789, // Number | 
+  'page_size': 789 // Number | 
+};
+apiInstance.pixelList(advertiser_id, Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **String**|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **pixel_id** | **String**|  | [optional] 
+ **code** | **String**|  | [optional] 
+ **name** | **String**|  | [optional] 
+ **order_by** | **String**|  | [optional] [default to EARLIEST_CREATE]
+ **filtering** | [**FilteringPixelList**](FilteringPixelList.md)|  | [optional] 
+ **page** | **Number**|  | [optional] 
+ **page_size** | **Number**|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="pixelUpdate"></a>
+# **pixelUpdate**
+> InlineResponse200 pixelUpdate(Access_Token, opts)
+
+Update a Pixel. [Pixel Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740858799524865)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.MeasurementApi();
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'body': new js_sdk.PixelUpdateBody() // PixelUpdateBody | 
+};
+apiInstance.pixelUpdate(Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **body** | [**PixelUpdateBody**](PixelUpdateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * PlayableDeleteBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-04-24T14:52:51.475773-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
 public class PlayableDeleteBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;

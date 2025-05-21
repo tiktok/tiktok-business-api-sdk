@@ -42,7 +42,6 @@ class CreativeportfoliocreateBadgeImageInfo(object):
     def image_id(self):
         """Gets the image_id of this CreativeportfoliocreateBadgeImageInfo.  # noqa: E501
 
-        ID of the badge image. The image must be 448x448 px. Supported formats include PNG, JPEG, and JPG. The largest size supported is 1 MB  # noqa: E501
 
         :return: The image_id of this CreativeportfoliocreateBadgeImageInfo.  # noqa: E501
         :rtype: str
@@ -53,7 +52,6 @@ class CreativeportfoliocreateBadgeImageInfo(object):
     def image_id(self, image_id):
         """Sets the image_id of this CreativeportfoliocreateBadgeImageInfo.
 
-        ID of the badge image. The image must be 448x448 px. Supported formats include PNG, JPEG, and JPG. The largest size supported is 1 MB  # noqa: E501
 
         :param image_id: The image_id of this CreativeportfoliocreateBadgeImageInfo.  # noqa: E501
         :type: str

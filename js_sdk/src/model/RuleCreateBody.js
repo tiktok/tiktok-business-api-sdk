@@ -10,7 +10,7 @@ import {DmpcustomAudiencerulecreateRuleSpec} from './DmpcustomAudiencerulecreate
 /**
  * The RuleCreateBody model module.
  * @module model/RuleCreateBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class RuleCreateBody {
   /**

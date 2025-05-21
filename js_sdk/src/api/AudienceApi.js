@@ -22,7 +22,7 @@ import {ShareCancelBody} from '../model/ShareCancelBody.js';
 /**
 * Audience service.
 * @module api/AudienceApi
-* @version 0.1.5
+* @version 0.1.7
 */
 export class AudienceApi {
 

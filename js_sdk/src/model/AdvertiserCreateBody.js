@@ -15,7 +15,7 @@ import {BcadvertisercreateQualificationInfo} from './BcadvertisercreateQualifica
 /**
  * The AdvertiserCreateBody model module.
  * @module model/AdvertiserCreateBody
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class AdvertiserCreateBody {
   /**

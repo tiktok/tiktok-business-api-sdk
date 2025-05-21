@@ -9,12 +9,11 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeportfoliocreateBadgeImageInfo model module.
  * @module model/CreativeportfoliocreateBadgeImageInfo
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class CreativeportfoliocreateBadgeImageInfo {
   /**
    * Constructs a new <code>CreativeportfoliocreateBadgeImageInfo</code>.
-   * Information about the badge image
    * @alias module:model/CreativeportfoliocreateBadgeImageInfo
    * @class
    */
@@ -39,7 +38,6 @@ export class CreativeportfoliocreateBadgeImageInfo {
 }
 
 /**
- * ID of the badge image. The image must be 448x448 px. Supported formats include PNG, JPEG, and JPG. The largest size supported is 1 MB
  * @member {String} image_id
  */
 CreativeportfoliocreateBadgeImageInfo.prototype.image_id = undefined;

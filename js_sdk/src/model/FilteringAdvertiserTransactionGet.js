@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringAdvertiserTransactionGet model module.
  * @module model/FilteringAdvertiserTransactionGet
- * @version 0.1.5
+ * @version 0.1.7
  */
 export class FilteringAdvertiserTransactionGet {
   /**
