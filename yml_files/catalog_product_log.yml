@@ -1,0 +1,267 @@
+info:
+  description: "{\"en\":\"Use this endpoint to check if the products are uploaded\
+    \ or deleted successfully, and what to do if the upload or deletion fails.\",\"\
+    zh\":\"\u83B7\u53D6\u4EA7\u54C1\u64CD\u4F5C\u65E5\u5FD7\uFF0C\u662F\u5426\u4E0A\
+    \u4F20/\u5220\u9664\u6210\u529F\uFF0C\u4EE5\u53CA\u5931\u8D25\u540E\u5E94\u8FDB\
+    \u884C\u7684\u64CD\u4F5C\"}"
+  title: "{\"en\":\"CataLog Product Log\",\"zh\":\"\u83B7\u53D6\u4EA7\u54C1\u65E5\u5FD7\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/product/log/:
+    get:
+      operationId: Catalog Product Log
+      parameters:
+      - description: ''
+        in: query
+        name: bc_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: catalog_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.catalog_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: feed_log_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.feed_log_id
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: language
+        required: false
+        schema:
+          default: ''
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.language
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: context_info
+        required: false
+        schema:
+          $ref: ./openapi.yaml#/definitions/Context_infoCatalogProductLog
+        x-open-field-id: 6
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Use this endpoint to find out if a product was uploaded or deleted
+        successfully, and what to do if it failed. [Catalog Product Get](https://business-api.tiktok.com/portal/docs?id=1740570027173889)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.query.bc_id
+            type: number
+          - name: catalog_id
+            required: true
+            source: $.http.query.catalog_id
+            type: number
+          - name: feed_log_id
+            required: true
+            source: $.http.query.feed_log_id
+            type: number
+          - name: advertiser_id
+            required: false
+            source: $.http.query.advertiser_id
+            type: number
+          - name: language
+            required: false
+            source: $.http.query.language
+            type: string
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.query.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.query.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.query.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.query.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.query.context_info.x_real_ip
+              type: string
+            name: context_info
+            required: false
+            source: $.http.query.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          bc_id: $.http.query.bc_id
+          catalog_id: $.http.query.catalog_id
+          context_info: $.http.query.context_info
+          feed_log_id: $.http.query.feed_log_id
+          language: $.http.query.language
+        response_cookie: []
+        response_header: []
+        response_rule:
+          product_feed_log:
+            add_count: $.rpc.output.product_feed_log.add_count
+            catalog_id: $.rpc.output.product_feed_log.catalog_id
+            delete_count: $.rpc.output.product_feed_log.delete_count
+            end_time: $.rpc.output.product_feed_log.end_time
+            error_count: $.rpc.output.product_feed_log.error_count
+            feed_id: $.rpc.output.product_feed_log.feed_id
+            feed_log_data:
+              download_path: $.rpc.output.product_feed_log.feed_log_data.download_path
+              error_affected_products[][]:
+              - affected_product_count: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_count
+                affected_product_item_list[][]:
+                - airline_company: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].airline_company
+                  brand: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].brand
+                  description: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].description
+                  flight_id: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].flight_id
+                  home_listing_id: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].home_listing_id
+                  hotel_id: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].hotel_id
+                  index: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].index
+                  make: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].make
+                  media_title_id: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].media_title_id
+                  name: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].name
+                  product_url: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].product_url
+                  series_id: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].series_id
+                  sku_id: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].sku_id
+                  title: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].title
+                  value: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].value
+                  vehicle_id: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].affected_product_item_list[].vehicle_id
+                field: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].field
+                issue: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].issue
+                suggestion: $.rpc.output.product_feed_log.feed_log_data.error_affected_products[].suggestion
+              warn_affected_products[][]:
+              - affected_product_count: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_count
+                affected_product_item_list[][]:
+                - airline_company: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].airline_company
+                  brand: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].brand
+                  description: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].description
+                  flight_id: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].flight_id
+                  home_listing_id: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].home_listing_id
+                  hotel_id: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].hotel_id
+                  index: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].index
+                  make: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].make
+                  media_title_id: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].media_title_id
+                  name: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].name
+                  product_url: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].product_url
+                  series_id: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].series_id
+                  sku_id: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].sku_id
+                  title: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].title
+                  value: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].value
+                  vehicle_id: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].affected_product_item_list[].vehicle_id
+                field: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].field
+                issue: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].issue
+                suggestion: $.rpc.output.product_feed_log.feed_log_data.warn_affected_products[].suggestion
+            process_status: $.rpc.output.product_feed_log.process_status
+            start_time: $.rpc.output.product_feed_log.start_time
+            update_count: $.rpc.output.product_feed_log.update_count
+            update_mode: $.rpc.output.product_feed_log.update_mode
+            warn_count: $.rpc.output.product_feed_log.warn_count
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

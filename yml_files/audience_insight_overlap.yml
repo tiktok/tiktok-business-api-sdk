@@ -1,0 +1,163 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get the details of the audience overlap\
+    \ between the benchmark audience and up to four other TikTok Custom Audience segments.\\\
+    n\\n\",\"zh\":\"\u4F7F\u7528\u6B64\u63A5\u53E3\u83B7\u53D6\u57FA\u51C6\u53D7\u4F17\
+    \u4E0E\u6700\u591A4\u4E2A\u5176\u4ED6Tiktok\u81EA\u5B9A\u4E49\u53D7\u4F17\u7EC6\
+    \u5206\u4E4B\u95F4\u7684\u91CD\u53E0\u3002\\n\\n\"}"
+  title: "{\"en\":\"Get details of audience overlap\",\"zh\":\"\u83B7\u53D6\u53D7\u4F17\
+    \u91CD\u53E0\u8BE6\u60C5\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /audience/insight/overlap/:
+    get:
+      operationId: Audience Insight Overlap
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: benchmark_custom_audience_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.benchmark_custom_audience_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: comparison_custom_audience_ids
+        required: false
+        schema:
+          items:
+            nullable: false
+            type: string
+            x-open-allow-strlist: false
+            x-open-allow-strnum: false
+            x-open-convert:
+            - int64(%s)
+          maxItems: 4
+          nullable: false
+          type: array
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.comparison_custom_audience_ids
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id=1797023590780930)
+      tags:
+      - Audience
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: benchmark_custom_audience_id
+            required: true
+            source: $.http.query.benchmark_custom_audience_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: comparison_custom_audience_ids
+            required: false
+            source: $.http.query.comparison_custom_audience_ids
+            sub_type: number
+            type: array
+          - children:
+            - name: core_user_id
+              required: false
+              source: $.http.query.context_info.core_user_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            source: $.http.query.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          benchmark_custom_audience_id: $.http.query.benchmark_custom_audience_id
+          comparison_custom_audience_ids: $.http.query.comparison_custom_audience_ids
+          context_info: $.http.query.context_info
+        response_cookie: []
+        response_header: []
+        response_rule:
+          benchmark_audience: $.rpc.output.benchmark_audience
+          comparison_audiences: $.rpc.output.comparison_audiences
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

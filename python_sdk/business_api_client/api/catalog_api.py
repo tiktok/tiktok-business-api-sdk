@@ -743,6 +743,107 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def catalog_feed_create(self, access_token, **kwargs):  # noqa: E501
+        """Create a feed. [Catalog Feed Create](https://business-api.tiktok.com/portal/docs?id=1740665161957377)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_feed_create(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FeedCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_feed_create_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_feed_create_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_feed_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Create a feed. [Catalog Feed Create](https://business-api.tiktok.com/portal/docs?id=1740665161957377)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_feed_create_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FeedCreateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_feed_create" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_feed_create`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/feed/create/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def catalog_feed_delete(self, access_token, **kwargs):  # noqa: E501
         """Delete a feed. [Catalog Feed Delete](https://business-api.tiktok.com/portal/docs?id=1740665210863617)  # noqa: E501
 
@@ -943,6 +1044,228 @@ class CatalogApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/catalog/feed/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def catalog_feed_log(self, bc_id, catalog_id, feed_id, access_token, **kwargs):  # noqa: E501
+        """Get the last 10 operations of a feed. [Catalog Feed Log](https://business-api.tiktok.com/portal/docs?id=1740665225631810)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_feed_log(bc_id, catalog_id, feed_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str catalog_id: (required)
+        :param str feed_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param ContextInfoCatalogFeedLog context_info:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_feed_log_with_http_info(bc_id, catalog_id, feed_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_feed_log_with_http_info(bc_id, catalog_id, feed_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_feed_log_with_http_info(self, bc_id, catalog_id, feed_id, access_token, **kwargs):  # noqa: E501
+        """Get the last 10 operations of a feed. [Catalog Feed Log](https://business-api.tiktok.com/portal/docs?id=1740665225631810)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_feed_log_with_http_info(bc_id, catalog_id, feed_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str catalog_id: (required)
+        :param str feed_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param ContextInfoCatalogFeedLog context_info:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'catalog_id', 'feed_id', 'access_token', 'context_info']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_feed_log" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `catalog_feed_log`")  # noqa: E501
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params or
+                params['catalog_id'] is None):
+            raise ValueError("Missing the required parameter `catalog_id` when calling `catalog_feed_log`")  # noqa: E501
+        # verify the required parameter 'feed_id' is set
+        if ('feed_id' not in params or
+                params['feed_id'] is None):
+            raise ValueError("Missing the required parameter `feed_id` when calling `catalog_feed_log`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_feed_log`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'catalog_id' in params:
+            query_params.append(('catalog_id', params['catalog_id']))  # noqa: E501
+        if 'feed_id' in params:
+            query_params.append(('feed_id', params['feed_id']))  # noqa: E501
+        if 'context_info' in params:
+            query_params.append(('context_info', params['context_info']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/feed/log/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def catalog_feed_update(self, access_token, **kwargs):  # noqa: E501
+        """Update a feed. [Catalog Feed Update](https://business-api.tiktok.com/portal/docs?id=1740665197662210)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_feed_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FeedUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_feed_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_feed_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_feed_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Update a feed. [Catalog Feed Update](https://business-api.tiktok.com/portal/docs?id=1740665197662210)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_feed_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param FeedUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_feed_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_feed_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/feed/update/', 'POST',
             path_params,
             query_params,
             header_params,
@@ -1583,6 +1906,353 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def catalog_product_log(self, bc_id, catalog_id, feed_log_id, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to find out if a product was uploaded or deleted successfully, and what to do if it failed. [Catalog Product Get](https://business-api.tiktok.com/portal/docs?id=1740570027173889)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_product_log(bc_id, catalog_id, feed_log_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str catalog_id: (required)
+        :param str feed_log_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str advertiser_id:
+        :param str language:
+        :param ContextInfoCatalogProductLog context_info:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_product_log_with_http_info(bc_id, catalog_id, feed_log_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_product_log_with_http_info(bc_id, catalog_id, feed_log_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_product_log_with_http_info(self, bc_id, catalog_id, feed_log_id, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to find out if a product was uploaded or deleted successfully, and what to do if it failed. [Catalog Product Get](https://business-api.tiktok.com/portal/docs?id=1740570027173889)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_product_log_with_http_info(bc_id, catalog_id, feed_log_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str catalog_id: (required)
+        :param str feed_log_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str advertiser_id:
+        :param str language:
+        :param ContextInfoCatalogProductLog context_info:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'catalog_id', 'feed_log_id', 'access_token', 'advertiser_id', 'language', 'context_info']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_product_log" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `catalog_product_log`")  # noqa: E501
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params or
+                params['catalog_id'] is None):
+            raise ValueError("Missing the required parameter `catalog_id` when calling `catalog_product_log`")  # noqa: E501
+        # verify the required parameter 'feed_log_id' is set
+        if ('feed_log_id' not in params or
+                params['feed_log_id'] is None):
+            raise ValueError("Missing the required parameter `feed_log_id` when calling `catalog_product_log`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_product_log`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'catalog_id' in params:
+            query_params.append(('catalog_id', params['catalog_id']))  # noqa: E501
+        if 'feed_log_id' in params:
+            query_params.append(('feed_log_id', params['feed_log_id']))  # noqa: E501
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'language' in params:
+            query_params.append(('language', params['language']))  # noqa: E501
+        if 'context_info' in params:
+            query_params.append(('context_info', params['context_info']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/product/log/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def catalog_set_delete(self, access_token, **kwargs):  # noqa: E501
+        """Delete product sets. [Catalog Set Delete](https://business-api.tiktok.com/portal/docs?id=1740573143966722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_set_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param SetDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_set_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_set_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_set_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Delete product sets. [Catalog Set Delete](https://business-api.tiktok.com/portal/docs?id=1740573143966722)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_set_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param SetDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_set_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_set_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/set/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def catalog_set_get(self, catalog_id, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get product sets. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740570556295169)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_set_get(catalog_id, bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str catalog_id: (required)
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str product_set_id:
+        :param bool return_product_count:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_set_get_with_http_info(catalog_id, bc_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_set_get_with_http_info(catalog_id, bc_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_set_get_with_http_info(self, catalog_id, bc_id, access_token, **kwargs):  # noqa: E501
+        """Get product sets. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740570556295169)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_set_get_with_http_info(catalog_id, bc_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str catalog_id: (required)
+        :param str bc_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param str product_set_id:
+        :param bool return_product_count:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['catalog_id', 'bc_id', 'access_token', 'product_set_id', 'return_product_count']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_set_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params or
+                params['catalog_id'] is None):
+            raise ValueError("Missing the required parameter `catalog_id` when calling `catalog_set_get`")  # noqa: E501
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `catalog_set_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_set_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'catalog_id' in params:
+            query_params.append(('catalog_id', params['catalog_id']))  # noqa: E501
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'product_set_id' in params:
+            query_params.append(('product_set_id', params['product_set_id']))  # noqa: E501
+        if 'return_product_count' in params:
+            query_params.append(('return_product_count', params['return_product_count']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/set/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def catalog_set_product_get(self, bc_id, catalog_id, product_set_id, access_token, **kwargs):  # noqa: E501
         """Get products in a product set. [Catalog Set Product Get](https://business-api.tiktok.com/portal/docs?id=1740571478441986)  # noqa: E501
 
@@ -1708,6 +2378,107 @@ class CatalogApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def catalog_set_update(self, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to update the filter conditions or name of a product set. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740572974725122)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_set_update(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param SetUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_set_update_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_set_update_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_set_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Use this endpoint to update the filter conditions or name of a product set. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740572974725122)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_set_update_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param SetUpdateBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_set_update" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_set_update`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/set/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def catalog_update(self, access_token, **kwargs):  # noqa: E501
         """Use this endpoint to update the name of a catalog. The catalog must be under a Business Center. [Catalog Update](https://business-api.tiktok.com/portal/docs?id=1740306544966657)  # noqa: E501
 
@@ -1795,6 +2566,229 @@ class CatalogApi(object):
 
         return self.api_client.call_api(
             '/open_api/v1.3/catalog/update/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def catalog_video_delete(self, access_token, **kwargs):  # noqa: E501
+        """Delete uploaded catalog videos. [Catalog Video Delete](https://business-api.tiktok.com/portal/docs?id=1803655103069185)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_video_delete(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param VideoDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_video_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_video_delete_with_http_info(access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_video_delete_with_http_info(self, access_token, **kwargs):  # noqa: E501
+        """Delete uploaded catalog videos. [Catalog Video Delete](https://business-api.tiktok.com/portal/docs?id=1803655103069185)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_video_delete_with_http_info(access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param VideoDeleteBody body:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['access_token', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_video_delete" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_video_delete`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/video/delete/', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def catalog_video_get(self, bc_id, catalog_id, access_token, **kwargs):  # noqa: E501
+        """catalog_video_get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_video_get(bc_id, catalog_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str catalog_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] catalog_video_ids:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.catalog_video_get_with_http_info(bc_id, catalog_id, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.catalog_video_get_with_http_info(bc_id, catalog_id, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def catalog_video_get_with_http_info(self, bc_id, catalog_id, access_token, **kwargs):  # noqa: E501
+        """catalog_video_get  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.catalog_video_get_with_http_info(bc_id, catalog_id, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str catalog_id: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] catalog_video_ids:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'catalog_id', 'access_token', 'catalog_video_ids', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method catalog_video_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `catalog_video_get`")  # noqa: E501
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params or
+                params['catalog_id'] is None):
+            raise ValueError("Missing the required parameter `catalog_id` when calling `catalog_video_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `catalog_video_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'catalog_id' in params:
+            query_params.append(('catalog_id', params['catalog_id']))  # noqa: E501
+        if 'catalog_video_ids' in params:
+            query_params.append(('catalog_video_ids', params['catalog_video_ids']))  # noqa: E501
+            collection_formats['catalog_video_ids'] = 'multi'  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/catalog/video/get/', 'GET',
             path_params,
             query_params,
             header_params,

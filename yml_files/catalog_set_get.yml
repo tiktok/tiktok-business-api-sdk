@@ -1,0 +1,160 @@
+info:
+  description: '{"en":"Catalog Set Get","zh":"Catalog Set Get"}'
+  title: '{"en":"Catalog Set Get","zh":"Catalog Set Get"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/set/get/:
+    get:
+      operationId: Catalog Set Get
+      parameters:
+      - description: ''
+        in: query
+        name: catalog_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.catalog_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: bc_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: product_set_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.product_set_id
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: return_product_count
+        required: false
+        schema:
+          default: true
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.return_product_count
+        x-open-field-id: 4
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get product sets. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740570556295169)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: catalog_id
+            required: true
+            source: $.http.query.catalog_id
+            type: number
+          - name: bc_id
+            required: true
+            source: $.http.query.bc_id
+            type: number
+          - name: product_set_id
+            required: false
+            source: $.http.query.product_set_id
+            type: number
+          - name: return_product_count
+            required: false
+            source: $.http.query.return_product_count
+            type: boolean
+        plugins:
+          after_response:
+          - Plugin_json_loads_resp_14621553:
+            - description: sdadsasd
+            - request_params:
+              - $.rpc.output.result_list[]
+            - result_params:
+              - $.processed_list
+            - version: e2b9b697638e7c43eb264f9aa412a4f8
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.query.bc_id
+          catalog_id: $.http.query.catalog_id
+          product_set_id: $.http.query.product_set_id
+          return_product_count: $.http.query.return_product_count
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list: $.processed_list
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

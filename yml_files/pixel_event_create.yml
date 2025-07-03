@@ -1,0 +1,536 @@
+info:
+  description: '{"en":"Pixel Event Create","zh":"Pixel Event Create"}'
+  title: '{"en":"Pixel Event Create","zh":"Pixel Event Create"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /pixel/event/create/:
+    post:
+      operationId: Pixel Event Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvID
+                pixel_events:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      currency:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: null
+                          enum_package_name: null
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: USD
+                            value: '0'
+                          - description: ''
+                            is_valid: true
+                            key: JPY
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: INR
+                            value: '2'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 6
+                        x-open-source: $.http.body.Events[].Currency
+                      currency_value:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 7
+                        x-open-source: $.http.body.Events[].CurrencyValue
+                      event_code:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.Events[].PixelEventCode
+                      event_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.Events[].PixelEventID
+                      event_name:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 8
+                        x-open-source: $.http.body.Events[].EventName
+                      event_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1803595545929730
+                          enum_package_name: PixelEventType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: ADD_BILLING
+                            value: '266'
+                          - description: ''
+                            is_valid: true
+                            key: BUTTON
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: CONSULT
+                            value: '97'
+                          - description: '[DEPRECATED] use button instead'
+                            is_valid: true
+                            key: DOWNLOAD_BUTTON
+                            value: '155'
+                          - description: '[DEPRECATED] use on_web_detail instead'
+                            is_valid: true
+                            key: DOWNLOAD_DETAIL
+                            value: '154'
+                          - description: ''
+                            is_valid: true
+                            key: DOWNLOAD_START
+                            value: '9'
+                          - description: ''
+                            is_valid: true
+                            key: FORM
+                            value: '2'
+                          - description: '[DEPRECATED] use button instead'
+                            is_valid: true
+                            key: FORM_BUTTON
+                            value: '151'
+                          - description: '[DEPRECATED] use on_web_detail instead'
+                            is_valid: true
+                            key: FORM_DETAIL
+                            value: '150'
+                          - description: ''
+                            is_valid: true
+                            key: INITIATE_ORDER
+                            value: '267'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_ADD_TO_WISHLIST
+                            value: '269'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_CART
+                            value: '147'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_DETAIL
+                            value: '146'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_ORDER
+                            value: '148'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_REGISTER
+                            value: '145'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_SEARCH
+                            value: '268'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_SUBSCRIBE
+                            value: '270'
+                          - description: ''
+                            is_valid: true
+                            key: PAGE_VIEW
+                            value: '93'
+                          - description: '[DEPRECATED] use consult insteam'
+                            is_valid: true
+                            key: PHONE
+                            value: '1'
+                          - description: '[DEPRECATED] use button instead'
+                            is_valid: true
+                            key: PHONE_BUTTON
+                            value: '153'
+                          - description: '[DEPRECATED] use on_web_detail instead'
+                            is_valid: true
+                            key: PHONE_DETAIL
+                            value: '152'
+                          - description: ''
+                            is_valid: true
+                            key: SHOPPING
+                            value: '96'
+                          - description: ''
+                            is_valid: true
+                            key: VIEW
+                            value: '7'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.Events[].EventType
+                      rules:
+                        description: ''
+                        items:
+                          nullable: false
+                          properties:
+                            operator:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: null
+                                enum_package_name: null
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: OPERATORTYPE_CONTAINS
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: OPERATORTYPE_EQUALS
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: OPERATORTYPE_DOES_NOT_EQUAL
+                                  value: '2'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 1
+                              x-open-source: $.http.body.Events[].PixelRules[].Operator
+                            trigger:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: null
+                                enum_package_name: null
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: TRIGGERTYPE_CLICK
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: TRIGGERTYPE_PAGEVIEW
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: TRIGGERTYPE_ELEMENT_SHOW
+                                  value: '2'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 2
+                              x-open-source: $.http.body.Events[].PixelRules[].Trigger
+                            value:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-field-id: 3
+                              x-open-source: $.http.body.Events[].PixelRules[].Value
+                            variable:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: null
+                                enum_package_name: null
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: PAGE_URL
+                                  value: '9'
+                                - description: ''
+                                  is_valid: true
+                                  key: PAGE_HOSTNAME
+                                  value: '10'
+                                - description: ''
+                                  is_valid: true
+                                  key: PAGE_PATH
+                                  value: '11'
+                                - description: ''
+                                  is_valid: true
+                                  key: ELEMENT
+                                  value: '13'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 4
+                              x-open-source: $.http.body.Events[].PixelRules[].Variable
+                          required:
+                          - operator
+                          - trigger
+                          - value
+                          - variable
+                          type: object
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 5
+                        x-open-source: $.http.body.Events[].PixelRules
+                      statistic_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: null
+                          enum_package_name: null
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: ONCE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: EVERY_TIME
+                            value: '4'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 4
+                        x-open-source: $.http.body.Events[].PixelEventStatisticType
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.Events
+                pixel_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.PixelID
+              required:
+              - advertiser_id
+              - pixel_id
+              - pixel_events
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Choose either an industry or custom template to define your events.
+        [Pixel Event Create](https://business-api.tiktok.com/portal/docs?id=1740858807646209)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: PixelID
+            required: true
+            source: $.http.body.pixel_id
+            type: number
+          - children:
+            - children:
+              - name: PixelEventID
+                required: false
+                source: $.http.body.pixel_events[].event_id
+                type: number
+              - name: PixelEventCode
+                required: false
+                source: $.http.body.pixel_events[].event_code
+                type: string
+              - name: EventType
+                required: false
+                source: $.http.body.pixel_events[].event_type
+                type: number
+              - name: PixelEventStatisticType
+                required: false
+                source: $.http.body.pixel_events[].statistic_type
+                type: number
+              - children:
+                - children:
+                  - name: Operator
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].operator
+                    type: number
+                  - name: Trigger
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].trigger
+                    type: number
+                  - name: Value
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].value
+                    type: string
+                  - name: Variable
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].variable
+                    type: number
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: PixelRules
+                required: false
+                source: ''
+                sub_type: object
+                type: array
+              - name: Currency
+                required: false
+                source: $.http.body.pixel_events[].currency
+                type: number
+              - name: CurrencyValue
+                required: false
+                source: $.http.body.pixel_events[].currency_value
+                type: string
+              - name: EventName
+                required: false
+                source: $.http.body.pixel_events[].event_name
+                type: string
+              is_expand: true
+              type: object
+            is_expand: true
+            name: Events
+            required: true
+            source: ''
+            sub_type: object
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvID: $.http.body.advertiser_id
+          Events[][]:
+          - Currency: $.http.body.pixel_events[].currency
+            CurrencyValue: $.http.body.pixel_events[].currency_value
+            EventName: $.http.body.pixel_events[].event_name
+            EventType: $.http.body.pixel_events[].event_type
+            PixelEventCode: $.http.body.pixel_events[].event_code
+            PixelEventID: $.http.body.pixel_events[].event_id
+            PixelEventStatisticType: $.http.body.pixel_events[].statistic_type
+            PixelRules[][]:
+            - Operator: $.http.body.pixel_events[].rules[].operator
+              Trigger: $.http.body.pixel_events[].rules[].trigger
+              Value: $.http.body.pixel_events[].rules[].value
+              Variable: $.http.body.pixel_events[].rules[].variable
+          PixelID: $.http.body.pixel_id
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

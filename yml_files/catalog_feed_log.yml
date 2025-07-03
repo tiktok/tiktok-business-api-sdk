@@ -1,0 +1,173 @@
+info:
+  description: "{\"en\":\"Use this endpoint to return the last 10 operations to the\
+    \ feed.\\n\\n\",\"zh\":\"\u83B7\u53D6\u6700\u8FD1\u5341\u6761feed\u64CD\u4F5C\u65E5\
+    \u5FD7\"}"
+  title: "{\"en\":\"Catalog Feed Log\",\"zh\":\"\u4EA7\u54C1\u6D41\u65E5\u5FD7\u83B7\
+    \u53D6\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/feed/log/:
+    get:
+      operationId: Catalog Feed Log
+      parameters:
+      - description: ''
+        in: query
+        name: bc_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: catalog_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.catalog_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: feed_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.feed_id
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: context_info
+        required: false
+        schema:
+          $ref: ./openapi.yaml#/definitions/Context_infoCatalogFeedLog
+        x-open-field-id: 4
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get the last 10 operations of a feed. [Catalog Feed Log](https://business-api.tiktok.com/portal/docs?id=1740665225631810)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.query.bc_id
+            type: number
+          - name: catalog_id
+            required: true
+            source: $.http.query.catalog_id
+            type: number
+          - name: feed_id
+            required: true
+            source: $.http.query.feed_id
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.query.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.query.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.query.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.query.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.query.context_info.x_real_ip
+              type: string
+            is_expand: false
+            name: context_info
+            required: false
+            source: $.http.query.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.query.bc_id
+          catalog_id: $.http.query.catalog_id
+          context_info: $.http.query.context_info
+          feed_id: $.http.query.feed_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          feed_logs: $.rpc.output.feed_logs
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

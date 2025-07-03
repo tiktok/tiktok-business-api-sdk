@@ -32,6 +32,7 @@ Method | HTTP request | Description
 [**bc_billing_group_update**](BCApi.md#bc_billing_group_update) | **POST** /open_api/v1.3/bc/billing_group/update/ | Update settings of a billing group. [BC Billing Group Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1738947843447809)
 [**bc_get**](BCApi.md#bc_get) | **GET** /open_api/v1.3/bc/get/ | Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1737115687501826)
 [**bc_image_upload**](BCApi.md#bc_image_upload) | **POST** /open_api/v1.3/bc/image/upload/ | Upload certificate images for an ad account. [BC Image Upload](https://business-api.tiktok.com/portal/docs?id&#x3D;1739938996913218)
+[**bc_invoice_unpaid_get**](BCApi.md#bc_invoice_unpaid_get) | **GET** /open_api/v1.3/bc/invoice/unpaid/get/ | Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740295904843777)
 [**bc_member_delete**](BCApi.md#bc_member_delete) | **POST** /open_api/v1.3/bc/member/delete/ | Delete member. [BC Member Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939482851329)
 [**bc_member_get**](BCApi.md#bc_member_get) | **GET** /open_api/v1.3/bc/member/get/ | Get BC members. [BC Member Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939404802049)
 [**bc_member_invite**](BCApi.md#bc_member_invite) | **POST** /open_api/v1.3/bc/member/invite/ | Invite members to BC. [BC Member Invite](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939455765505)
@@ -1197,6 +1198,56 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **bc_invoice_unpaid_get**
+> InlineResponse200 bc_invoice_unpaid_get(bc_id, invoice_type, access_token)
+
+Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id=1740295904843777)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.BCApi()
+bc_id = 'bc_id_example' # str | 
+invoice_type = 'invoice_type_example' # str | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+
+try:
+    # Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id=1740295904843777)
+    api_response = api_instance.bc_invoice_unpaid_get(bc_id, invoice_type, access_token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling BCApi->bc_invoice_unpaid_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bc_id** | **str**|  | [required]
+ **invoice_type** | **str**|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

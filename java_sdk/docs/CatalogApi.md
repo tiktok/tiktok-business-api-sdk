@@ -11,16 +11,25 @@ Method | HTTP request | Description
 [**catalogEventsourceBind**](CatalogApi.md#catalogEventsourceBind) | **POST** /open_api/v1.3/catalog/eventsource/bind/ | Bind app or website event sources to a catalog in a Business Center. [Catalog Eventsource Bind](https://business-api.tiktok.com/portal/docs?id&#x3D;1740492491200513)
 [**catalogEventsourceBindGet**](CatalogApi.md#catalogEventsourceBindGet) | **GET** /open_api/v1.3/catalog/eventsource_bind/get/ | Get event source binding information. [Catalog Eventsource Bind Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740492531343362)
 [**catalogEventsourceUnbind**](CatalogApi.md#catalogEventsourceUnbind) | **POST** /open_api/v1.3/catalog/eventsource/unbind/ | Unbind event sources from a catalog. [Catalog Eventsource Unbind](https://business-api.tiktok.com/portal/docs?id&#x3D;1740492512449538)
+[**catalogFeedCreate**](CatalogApi.md#catalogFeedCreate) | **POST** /open_api/v1.3/catalog/feed/create/ | Create a feed. [Catalog Feed Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665161957377)
 [**catalogFeedDelete**](CatalogApi.md#catalogFeedDelete) | **POST** /open_api/v1.3/catalog/feed/delete/ | Delete a feed. [Catalog Feed Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665210863617)
 [**catalogFeedGet**](CatalogApi.md#catalogFeedGet) | **GET** /open_api/v1.3/catalog/feed/get/ | Get all feeds or a particular feed. [Catalog Feed Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665183073281)
+[**catalogFeedLog**](CatalogApi.md#catalogFeedLog) | **GET** /open_api/v1.3/catalog/feed/log/ | Get the last 10 operations of a feed. [Catalog Feed Log](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665225631810)
+[**catalogFeedUpdate**](CatalogApi.md#catalogFeedUpdate) | **POST** /open_api/v1.3/catalog/feed/update/ | Update a feed. [Catalog Feed Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665197662210)
 [**catalogGet**](CatalogApi.md#catalogGet) | **GET** /open_api/v1.3/catalog/get/ | Get all catalogs or a particular catalog. [Catalog Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740315452868610)
 [**catalogLexiconGet**](CatalogApi.md#catalogLexiconGet) | **GET** /open_api/v1.3/catalog/lexicon/get/ | Get the lexicon for your catalog for use in ad texts. [Catalog Lexicon Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740488375815169)
 [**catalogLocationCurrencyGet**](CatalogApi.md#catalogLocationCurrencyGet) | **GET** /open_api/v1.3/catalog/location_currency/get/ | Get supported locations and corresponding currencies for Catalog API. [Catalog Location Currency Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740491571747841)
 [**catalogOverview**](CatalogApi.md#catalogOverview) | **GET** /open_api/v1.3/catalog/overview/ | Get the number of products in different audit statuses in a catalog. [Catalog Overview](https://business-api.tiktok.com/portal/docs?id&#x3D;1740492470201345)
 [**catalogProductDelete**](CatalogApi.md#catalogProductDelete) | **POST** /open_api/v1.3/catalog/product/delete/ | Delete products in bulk. [Catalog Product Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1740562489236481)
 [**catalogProductFile**](CatalogApi.md#catalogProductFile) | **POST** /open_api/v1.3/catalog/product/file/ | Upload products via file URL. [Catalog Product File](https://business-api.tiktok.com/portal/docs?id&#x3D;1740496787164161)
+[**catalogProductLog**](CatalogApi.md#catalogProductLog) | **GET** /open_api/v1.3/catalog/product/log/ | Use this endpoint to find out if a product was uploaded or deleted successfully, and what to do if it failed. [Catalog Product Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740570027173889)
+[**catalogSetDelete**](CatalogApi.md#catalogSetDelete) | **POST** /open_api/v1.3/catalog/set/delete/ | Delete product sets. [Catalog Set Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1740573143966722)
+[**catalogSetGet**](CatalogApi.md#catalogSetGet) | **GET** /open_api/v1.3/catalog/set/get/ | Get product sets. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740570556295169)
 [**catalogSetProductGet**](CatalogApi.md#catalogSetProductGet) | **GET** /open_api/v1.3/catalog/set/product/get/ | Get products in a product set. [Catalog Set Product Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740571478441986)
+[**catalogSetUpdate**](CatalogApi.md#catalogSetUpdate) | **POST** /open_api/v1.3/catalog/set/update/ | Use this endpoint to update the filter conditions or name of a product set. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740572974725122)
 [**catalogUpdate**](CatalogApi.md#catalogUpdate) | **POST** /open_api/v1.3/catalog/update/ | Use this endpoint to update the name of a catalog. The catalog must be under a Business Center. [Catalog Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740306544966657)
+[**catalogVideoDelete**](CatalogApi.md#catalogVideoDelete) | **POST** /open_api/v1.3/catalog/video/delete/ | Delete uploaded catalog videos. [Catalog Video Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1803655103069185)
+[**catalogVideoGet**](CatalogApi.md#catalogVideoGet) | **GET** /open_api/v1.3/catalog/video/get/ | 
 
 <a name="catalogAvailableCountryGet"></a>
 # **catalogAvailableCountryGet**
@@ -339,6 +348,51 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="catalogFeedCreate"></a>
+# **catalogFeedCreate**
+> Response catalogFeedCreate(accessToken, body)
+
+Create a feed. [Catalog Feed Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665161957377)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+FeedCreateBody body = new FeedCreateBody(); // FeedCreateBody | 
+try {
+    Response result = apiInstance.catalogFeedCreate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogFeedCreate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**FeedCreateBody**](FeedCreateBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="catalogFeedDelete"></a>
 # **catalogFeedDelete**
 > Response catalogFeedDelete(accessToken, body)
@@ -431,6 +485,102 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="catalogFeedLog"></a>
+# **catalogFeedLog**
+> Response catalogFeedLog(bcId, catalogId, feedId, accessToken, contextInfo)
+
+Get the last 10 operations of a feed. [Catalog Feed Log](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665225631810)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String bcId = "bcId_example"; // String | 
+String catalogId = "catalogId_example"; // String | 
+String feedId = "feedId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+ContextInfoCatalogFeedLog contextInfo = new ContextInfoCatalogFeedLog(); // ContextInfoCatalogFeedLog | 
+try {
+    Response result = apiInstance.catalogFeedLog(bcId, catalogId, feedId, accessToken, contextInfo);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogFeedLog");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bcId** | **String**|  |[required] 
+ **catalogId** | **String**|  |[required] 
+ **feedId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **contextInfo** | [**ContextInfoCatalogFeedLog**](ContextInfoCatalogFeedLog.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="catalogFeedUpdate"></a>
+# **catalogFeedUpdate**
+> Response catalogFeedUpdate(accessToken, body)
+
+Update a feed. [Catalog Feed Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665197662210)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+FeedUpdateBody body = new FeedUpdateBody(); // FeedUpdateBody | 
+try {
+    Response result = apiInstance.catalogFeedUpdate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogFeedUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**FeedUpdateBody**](FeedUpdateBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="catalogGet"></a>
@@ -711,6 +861,157 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
+<a name="catalogProductLog"></a>
+# **catalogProductLog**
+> Response catalogProductLog(bcId, catalogId, feedLogId, accessToken, advertiserId, language, contextInfo)
+
+Use this endpoint to find out if a product was uploaded or deleted successfully, and what to do if it failed. [Catalog Product Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740570027173889)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String bcId = "bcId_example"; // String | 
+String catalogId = "catalogId_example"; // String | 
+String feedLogId = "feedLogId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+String advertiserId = "advertiserId_example"; // String | 
+String language = ""; // String | 
+ContextInfoCatalogProductLog contextInfo = new ContextInfoCatalogProductLog(); // ContextInfoCatalogProductLog | 
+try {
+    Response result = apiInstance.catalogProductLog(bcId, catalogId, feedLogId, accessToken, advertiserId, language, contextInfo);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogProductLog");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bcId** | **String**|  |[required] 
+ **catalogId** | **String**|  |[required] 
+ **feedLogId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **advertiserId** | **String**|  | [optional]
+ **language** | **String**|  | [optional]
+ **contextInfo** | [**ContextInfoCatalogProductLog**](ContextInfoCatalogProductLog.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="catalogSetDelete"></a>
+# **catalogSetDelete**
+> Response catalogSetDelete(accessToken, body)
+
+Delete product sets. [Catalog Set Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1740573143966722)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SetDeleteBody body = new SetDeleteBody(); // SetDeleteBody | 
+try {
+    Response result = apiInstance.catalogSetDelete(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogSetDelete");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SetDeleteBody**](SetDeleteBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="catalogSetGet"></a>
+# **catalogSetGet**
+> Response catalogSetGet(catalogId, bcId, accessToken, productSetId, returnProductCount)
+
+Get product sets. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740570556295169)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String catalogId = "catalogId_example"; // String | 
+String bcId = "bcId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+String productSetId = "productSetId_example"; // String | 
+Boolean returnProductCount = true; // Boolean | 
+try {
+    Response result = apiInstance.catalogSetGet(catalogId, bcId, accessToken, productSetId, returnProductCount);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogSetGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **catalogId** | **String**|  |[required] 
+ **bcId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **productSetId** | **String**|  | [optional]
+ **returnProductCount** | **Boolean**|  | [optional] [default to true]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="catalogSetProductGet"></a>
 # **catalogSetProductGet**
 > Response catalogSetProductGet(bcId, catalogId, productSetId, accessToken, page, pageSize)
@@ -764,6 +1065,51 @@ No authorization required
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="catalogSetUpdate"></a>
+# **catalogSetUpdate**
+> Response catalogSetUpdate(accessToken, body)
+
+Use this endpoint to update the filter conditions or name of a product set. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740572974725122)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SetUpdateBody body = new SetUpdateBody(); // SetUpdateBody | 
+try {
+    Response result = apiInstance.catalogSetUpdate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogSetUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SetUpdateBody**](SetUpdateBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
 <a name="catalogUpdate"></a>
 # **catalogUpdate**
 > Response catalogUpdate(accessToken, body)
@@ -807,5 +1153,103 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="catalogVideoDelete"></a>
+# **catalogVideoDelete**
+> Response catalogVideoDelete(accessToken, body)
+
+Delete uploaded catalog videos. [Catalog Video Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1803655103069185)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+VideoDeleteBody body = new VideoDeleteBody(); // VideoDeleteBody | 
+try {
+    Response result = apiInstance.catalogVideoDelete(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogVideoDelete");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**VideoDeleteBody**](VideoDeleteBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="catalogVideoGet"></a>
+# **catalogVideoGet**
+> Response catalogVideoGet(bcId, catalogId, accessToken, catalogVideoIds, page, pageSize)
+
+
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CatalogApi;
+
+
+CatalogApi apiInstance = new CatalogApi();
+String bcId = "bcId_example"; // String | 
+String catalogId = "catalogId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+List<String> catalogVideoIds = Arrays.asList("catalogVideoIds_example"); // List<String> | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
+try {
+    Response result = apiInstance.catalogVideoGet(bcId, catalogId, accessToken, catalogVideoIds, page, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CatalogApi#catalogVideoGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bcId** | **String**|  |[required] 
+ **catalogId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **catalogVideoIds** | [**List&lt;String&gt;**](String.md)|  | [optional]
+ **page** | **Long**|  | [optional] [default to 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

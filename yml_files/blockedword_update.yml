@@ -1,0 +1,140 @@
+info:
+  description: "{\"en\":\"update the Use this endpoint to replace a blocked word with\
+    \ another word.\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\
+    \u5C06\u67D0\u4E2A\u5C4F\u853D\u8BCD\u66F4\u6362\u4E3A\u53E6\u5916\u4E00\u4E2A\
+    \u5C4F\u853D\u8BCD\"}"
+  title: "{\"en\":\"Update a blocked word\",\"zh\":\"\u66F4\u65B0\u5C4F\u853D\u8BCD\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /blockedword/update/:
+    post:
+      operationId: Blockedword Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                new_word:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                old_word:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+              required:
+              - advertiser_id
+              - new_word
+              - old_word
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Replace a blocked word with another word. [Blockedword Task Update](https://business-api.tiktok.com/portal/docs?id=1739029234526209)
+      tags:
+      - Comments
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: adv_id
+            required: false
+            source: $.http.body.advertiser_id
+            type: number
+          - name: old_content
+            required: false
+            source: $.http.body.old_word
+            type: string
+          - name: new_content
+            required: false
+            source: $.http.body.new_word
+            type: string
+          - name: source
+            required: true
+            source: '2'
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          adv_id: $.http.body.advertiser_id
+          new_content: $.http.body.new_word
+          old_content: $.http.body.old_word
+          source: 2
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -20,7 +20,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * Required to attribute events to TikTok campaigns. The context object can be removed for testing event fires
  */
 @Schema(description = "Required to attribute events to TikTok campaigns. The context object can be removed for testing event fires")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-07-03T14:36:18.961395-07:00[America/Los_Angeles]")
 public class PixelContext {
   @JsonProperty("ad")
   private PixelContextAd ad = null;

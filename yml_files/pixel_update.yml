@@ -1,0 +1,179 @@
+info:
+  description: '{"en":"Pixel Update","zh":"Pixel Update"}'
+  title: '{"en":"Pixel Update","zh":"Pixel Update"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /pixel/update/:
+    post:
+      operationId: Pixel Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advanced_matching_fields:
+                  description: ''
+                  nullable: false
+                  properties:
+                    email:
+                      default: true
+                      description: ''
+                      nullable: false
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                    phone_number:
+                      default: true
+                      description: ''
+                      nullable: false
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - '%s["phone_number"] ? %s["email"] ? {"2": true, "1": true} : {"2":
+                    true, "1": false} : %s["email"] ? {"2": false, "1": true} : {"2":
+                    false, "1": false}'
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.AMStatus
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvID
+                pixel_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.PixelID
+                pixel_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.Name
+              required:
+              - advertiser_id
+              - pixel_id
+              - pixel_name
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update a Pixel. [Pixel Update](https://business-api.tiktok.com/portal/docs?id=1740858799524865)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: PixelID
+            required: true
+            source: $.http.body.pixel_id
+            type: number
+          - name: Name
+            required: true
+            source: $.http.body.pixel_name
+            type: string
+          - children:
+            - type: boolean
+            is_expand: true
+            name: AMStatus
+            required: false
+            source: $.http.body.advanced_matching_fields
+            sub_type: boolean
+            type: dict
+          - name: CoreUserID
+            required: false
+            source: $.context.core_user_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AMStatus: $.http.body.advanced_matching_fields
+          AdvID: $.http.body.advertiser_id
+          CoreUserID: $.context.core_user_id
+          Name: $.http.body.pixel_name
+          PixelID: $.http.body.pixel_id
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

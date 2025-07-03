@@ -19,7 +19,7 @@ import java.util.List;
  * AssetDeleteBody
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-07-03T14:36:18.961395-07:00[America/Los_Angeles]")
 public class AssetDeleteBody {
   @JsonProperty("asset_ids")
   private List<String> assetIds = new ArrayList<String>();

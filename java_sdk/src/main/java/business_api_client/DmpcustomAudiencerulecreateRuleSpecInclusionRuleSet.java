@@ -20,7 +20,7 @@ import java.util.List;
  * Details of the inclusion rule set.
  */
 @Schema(description = "Details of the inclusion rule set.")
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-07-03T14:36:18.961395-07:00[America/Los_Angeles]")
 public class DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet {
   @JsonProperty("operator")
   private String operator = null;

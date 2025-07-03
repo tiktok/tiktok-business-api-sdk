@@ -1,0 +1,1321 @@
+info:
+  description: "{\"en\":\"Use this endpoint to update the details of rules.\",\"zh\"\
+    :\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u66F4\u65B0\u89C4\u5219\u3002\
+    \"}"
+  title: "{\"en\":\"Update rules\",\"zh\":\"\u66F4\u65B0\u89C4\u5219\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /optimizer/rule/update/:
+    post:
+      operationId: Optimizer Rule Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                lang:
+                  default: EN
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.lang
+                rules:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      actions:
+                        description: ''
+                        items:
+                          nullable: false
+                          properties:
+                            action_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804143435530241
+                                enum_package_name: AutoRuleActionType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: ADJUST_TO
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: DECREASE
+                                  value: '2'
+                                - description: ''
+                                  is_valid: true
+                                  key: DEFAULT
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: INCREASE
+                                  value: '1'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 2
+                              x-open-source: $.http.body.rules[].actions[].action_type
+                            frequency_info:
+                              description: ''
+                              nullable: false
+                              properties:
+                                count:
+                                  description: ''
+                                  format: int64
+                                  nullable: false
+                                  type: integer
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 4
+                                  x-open-source: $.http.body.rules[].actions[].frequency_info.count
+                                custom_frequency_type:
+                                  description: ''
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-enum:
+                                    enum_package_expired: false
+                                    enum_package_id: 1804143747245057
+                                    enum_package_name: AutoRuleActionCustomFreType
+                                    enums:
+                                    - description: ''
+                                      is_valid: true
+                                      key: N_DAY_Y_TIMES
+                                      value: '3'
+                                    - description: ''
+                                      is_valid: true
+                                      key: N_HOUR_Y_TIMES
+                                      value: '2'
+                                    - description: ''
+                                      is_valid: true
+                                      key: N_MINTUE_Y_TIMES
+                                      value: '1'
+                                    key_format: string
+                                    strict: true
+                                    use_part: false
+                                    validate_only: false
+                                    value_format: int32
+                                  x-open-field-id: 2
+                                  x-open-source: $.http.body.rules[].actions[].frequency_info.custom_frequency_type
+                                time:
+                                  description: ''
+                                  format: int64
+                                  nullable: false
+                                  type: integer
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 3
+                                  x-open-source: $.http.body.rules[].actions[].frequency_info.time
+                                type:
+                                  description: ''
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-enum:
+                                    enum_package_expired: false
+                                    enum_package_id: 1804143659529218
+                                    enum_package_name: AutoRuleActionFreType
+                                    enums:
+                                    - description: ''
+                                      is_valid: true
+                                      key: CUSTOM
+                                      value: '5'
+                                    - description: ''
+                                      is_valid: true
+                                      key: ONCE_IN_1_W
+                                      value: '4'
+                                    - description: ''
+                                      is_valid: true
+                                      key: ONCE_IN_24_H
+                                      value: '2'
+                                    - description: ''
+                                      is_valid: true
+                                      key: ONCE_IN_48_H
+                                      value: '3'
+                                    - description: ''
+                                      is_valid: true
+                                      key: ONLY_ONCE
+                                      value: '1'
+                                    key_format: string
+                                    strict: true
+                                    use_part: false
+                                    validate_only: false
+                                    value_format: int32
+                                  x-open-field-id: 1
+                                  x-open-source: $.http.body.rules[].actions[].frequency_info.type
+                              required:
+                              - type
+                              type: object
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-field-id: 5
+                              x-open-source: $.http.body.rules[].actions[].frequency_info
+                            subject_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804143361340417
+                                enum_package_name: AutoRuleActionSubType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: BID
+                                  value: '6'
+                                - description: ''
+                                  is_valid: true
+                                  key: DAILY_BUDGET
+                                  value: '4'
+                                - description: ''
+                                  is_valid: true
+                                  key: LIFETIME_BUDGET
+                                  value: '5'
+                                - description: ''
+                                  is_valid: true
+                                  key: MESSAGE
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: TURN_OFF
+                                  value: '2'
+                                - description: ''
+                                  is_valid: true
+                                  key: TURN_ON
+                                  value: '1'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 1
+                              x-open-source: $.http.body.rules[].actions[].subject_type
+                            value:
+                              description: ''
+                              nullable: false
+                              properties:
+                                limit:
+                                  description: ''
+                                  format: float
+                                  nullable: false
+                                  type: number
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 3
+                                  x-open-source: $.http.body.rules[].actions[].value.limit
+                                use_limit:
+                                  description: ''
+                                  nullable: false
+                                  type: boolean
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 2
+                                  x-open-source: $.http.body.rules[].actions[].value.use_limit
+                                value:
+                                  description: ''
+                                  format: float
+                                  nullable: false
+                                  type: number
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 1
+                                  x-open-source: $.http.body.rules[].actions[].value.value
+                              type: object
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-field-id: 4
+                              x-open-source: $.http.body.rules[].actions[].value
+                            value_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804143484688450
+                                enum_package_name: AutoRuleActionValType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: EXACT
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: PERCENT
+                                  value: '1'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 3
+                              x-open-source: $.http.body.rules[].actions[].value_type
+                          required:
+                          - subject_type
+                          type: object
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.rules[].actions
+                      apply_objects:
+                        description: ''
+                        items:
+                          nullable: false
+                          properties:
+                            bind_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804046212921409
+                                enum_package_name: AutoRuleBindType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: BIND
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: UNBIND
+                                  value: '2'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 4
+                            dimension:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1803155537096705
+                                enum_package_name: AutoRuleDimension
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: AD
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: ADGROUP
+                                  value: '2'
+                                - description: ''
+                                  is_valid: true
+                                  key: CAMPAIGN
+                                  value: '1'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 1
+                              x-open-source: $.http.body.rules[].apply_objects[].dimension
+                            dimension_ids:
+                              description: ''
+                              items:
+                                nullable: false
+                                type: string
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-convert:
+                                - int64(%s)
+                              nullable: false
+                              type: array
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-field-id: 2
+                              x-open-source: $.http.body.rules[].apply_objects[].dimension_ids
+                            pre_condition_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804046697548801
+                                enum_package_name: AutoRulePreCondition
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_ACTIVE_AD
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_ACTIVE_AD_GROUP
+                                  value: '2'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_ACTIVE_AD_GROUP_UNDER_SELECTED
+                                  value: '4'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_ACTIVE_AD_UNDER_SELECTED
+                                  value: '5'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_ACTIVE_CAMPAIGN
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_INACTIVE_AD
+                                  value: '8'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_INACTIVE_AD_GROUP
+                                  value: '7'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_INACTIVE_AD_GROUP_UNDER_SELECTED
+                                  value: '9'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_INACTIVE_AD_UNDER_SELECTED
+                                  value: '10'
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_INACTIVE_CAMPAIGN
+                                  value: '6'
+                                - description: ''
+                                  is_valid: true
+                                  key: SELECTED
+                                  value: '0'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 3
+                              x-open-source: $.http.body.rules[].apply_objects[].pre_condition_type
+                          required:
+                          - dimension
+                          - pre_condition_type
+                          type: object
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.rules[].apply_objects
+                      conditions:
+                        description: ''
+                        items:
+                          nullable: false
+                          properties:
+                            calculation_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804138653195266
+                                enum_package_name: AutoRuleConCalType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: ALL_OBJECTS
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: DEFAULT
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: OF_EACH_OBJECT
+                                  value: '2'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 5
+                              x-open-source: $.http.body.rules[].conditions[].calculation_type
+                            match_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804138589004802
+                                enum_package_name: AutoRuleConMatchType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: BETWEEN
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: CONTAINS
+                                  value: '5'
+                                - description: ''
+                                  is_valid: true
+                                  key: DEFAULT
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: END_WITH
+                                  value: '8'
+                                - description: ''
+                                  is_valid: true
+                                  key: GT
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: LT
+                                  value: '2'
+                                - description: ''
+                                  is_valid: true
+                                  key: MATCH
+                                  value: '4'
+                                - description: ''
+                                  is_valid: true
+                                  key: NOT_CONTAINS
+                                  value: '6'
+                                - description: ''
+                                  is_valid: true
+                                  key: START_WITH
+                                  value: '7'
+                                - description: ''
+                                  is_valid: true
+                                  key: STRING_EQUAL
+                                  value: '9'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 3
+                              x-open-source: $.http.body.rules[].conditions[].match_type
+                            range_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804138466724866
+                                enum_package_name: AutoRuleConRangeType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: DEFAULT
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: LAST_HOUR
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: LIFETIME
+                                  value: '7'
+                                - description: ''
+                                  is_valid: true
+                                  key: PAST_FIVE_DAYS
+                                  value: '5'
+                                - description: ''
+                                  is_valid: true
+                                  key: PAST_SEVEN_DAYS
+                                  value: '6'
+                                - description: ''
+                                  is_valid: true
+                                  key: PAST_THREE_DAYS
+                                  value: '4'
+                                - description: ''
+                                  is_valid: true
+                                  key: TODAY
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: YESTERDAY
+                                  value: '2'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 2
+                              x-open-source: $.http.body.rules[].conditions[].range_type
+                            subject_type:
+                              description: ''
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804138278373442
+                                enum_package_name: AutoRuleConSubjectType
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: BID_STRATEGY
+                                  value: '17'
+                                - description: ''
+                                  is_valid: true
+                                  key: CLICK
+                                  value: '5'
+                                - description: ''
+                                  is_valid: true
+                                  key: CONVERSION
+                                  value: '6'
+                                - description: ''
+                                  is_valid: true
+                                  key: CONVERSION_SKAN
+                                  value: '7'
+                                - description: ''
+                                  is_valid: true
+                                  key: COST
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: COST_PER_RESULT
+                                  value: '14'
+                                - description: ''
+                                  is_valid: true
+                                  key: CPA
+                                  value: '10'
+                                - description: ''
+                                  is_valid: true
+                                  key: CPC
+                                  value: '12'
+                                - description: ''
+                                  is_valid: true
+                                  key: CPM
+                                  value: '11'
+                                - description: ''
+                                  is_valid: true
+                                  key: CTR
+                                  value: '13'
+                                - description: ''
+                                  is_valid: true
+                                  key: CVR
+                                  value: '8'
+                                - description: ''
+                                  is_valid: true
+                                  key: CVR_IMPRESSION
+                                  value: '31'
+                                - description: ''
+                                  is_valid: true
+                                  key: CVR_SKAN
+                                  value: '9'
+                                - description: ''
+                                  is_valid: true
+                                  key: DAILY_BUDGET_SPENDING_RATE
+                                  value: '2'
+                                - description: ''
+                                  is_valid: true
+                                  key: DAYS_SINCE_CREATION
+                                  value: '21'
+                                - description: ''
+                                  is_valid: true
+                                  key: IMPRESSION
+                                  value: '4'
+                                - description: ''
+                                  is_valid: true
+                                  key: LIFETIME_BUDGET_SPENDING_RATE
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: NAME
+                                  value: '20'
+                                - description: ''
+                                  is_valid: true
+                                  key: NOT_REAL_TIME_CONVERSION
+                                  value: '29'
+                                - description: ''
+                                  is_valid: true
+                                  key: NOT_REAL_TIME_CPA
+                                  value: '28'
+                                - description: ''
+                                  is_valid: true
+                                  key: NOT_REAL_TIME_CVR
+                                  value: '30'
+                                - description: ''
+                                  is_valid: true
+                                  key: NO_CONDITION
+                                  value: '22'
+                                - description: ''
+                                  is_valid: true
+                                  key: OBJECTIVE
+                                  value: '19'
+                                - description: ''
+                                  is_valid: true
+                                  key: OPTIMIZATION_GOAL
+                                  value: '18'
+                                - description: ''
+                                  is_valid: true
+                                  key: REAL_TIME_CVR_IMPRESSION
+                                  value: '32'
+                                - description: ''
+                                  is_valid: true
+                                  key: RESULT
+                                  value: '15'
+                                - description: ''
+                                  is_valid: true
+                                  key: RESULT_RATE
+                                  value: '16'
+                                - description: ''
+                                  is_valid: true
+                                  key: ROAS_COMPLETE_PAYMENT
+                                  value: '26'
+                                - description: ''
+                                  is_valid: true
+                                  key: ROAS_IMPRESSION_ADS
+                                  value: '24'
+                                - description: ''
+                                  is_valid: true
+                                  key: ROAS_PURCHASE
+                                  value: '23'
+                                - description: ''
+                                  is_valid: true
+                                  key: ROAS_PURCHASES_ONSITE
+                                  value: '27'
+                                - description: ''
+                                  is_valid: true
+                                  key: ROAS_PURCHASE_SKAN
+                                  value: '25'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 1
+                              x-open-source: $.http.body.rules[].conditions[].subject_type
+                            values:
+                              description: ''
+                              items:
+                                nullable: false
+                                type: string
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                              nullable: false
+                              type: array
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-field-id: 4
+                              x-open-source: $.http.body.rules[].conditions[].values
+                          required:
+                          - subject_type
+                          type: object
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.rules[].conditions
+                      name:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 7
+                        x-open-source: $.http.body.rules[].name
+                      notification:
+                        description: ''
+                        nullable: false
+                        properties:
+                          email_setting:
+                            description: ''
+                            nullable: false
+                            properties:
+                              email_exec_time:
+                                description: ''
+                                items:
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                nullable: false
+                                type: array
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 2
+                                x-open-source: $.http.body.rules[].notification.email_setting.email_exec_time
+                              mute_option:
+                                description: ''
+                                nullable: false
+                                type: string
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-enum:
+                                  enum_package_expired: false
+                                  enum_package_id: 1804145270824961
+                                  enum_package_name: AutoRuleNotificationMute
+                                  enums:
+                                  - description: ''
+                                    is_valid: true
+                                    key: MUTE
+                                    value: '1'
+                                  - description: ''
+                                    is_valid: true
+                                    key: UNMUTE
+                                    value: '2'
+                                  key_format: string
+                                  strict: true
+                                  use_part: false
+                                  validate_only: false
+                                  value_format: int32
+                                x-open-field-id: 4
+                                x-open-source: $.http.body.rules[].notification.email_setting.mute_option
+                              no_result_notification:
+                                description: ''
+                                nullable: false
+                                type: boolean
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 3
+                                x-open-source: $.http.body.rules[].notification.email_setting.no_result_notification
+                              notification_period:
+                                description: ''
+                                nullable: false
+                                type: string
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-enum:
+                                  enum_package_expired: false
+                                  enum_package_id: 1804145204444161
+                                  enum_package_name: AutoRuleNotificationPeriod
+                                  enums:
+                                  - description: ''
+                                    is_valid: true
+                                    key: EVERY_TIME
+                                    value: '0'
+                                  - description: ''
+                                    is_valid: true
+                                    key: TIME_SCHEDULE
+                                    value: '1'
+                                  key_format: string
+                                  strict: true
+                                  use_part: false
+                                  validate_only: false
+                                  value_format: int32
+                                x-open-field-id: 1
+                                x-open-source: $.http.body.rules[].notification.email_setting.notification_period
+                            type: object
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                            x-open-source: $.http.body.rules[].notification.email_setting
+                          notification_type:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1804145138016257
+                              enum_package_name: AutoRuleNotificationType
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: ANY_CHANGES
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: NOT_NOTIFICATION
+                                value: '0'
+                              - description: ''
+                                is_valid: true
+                                key: TASK_FINISH
+                                value: '1'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.rules[].notification.notification_type
+                        required:
+                        - notification_type
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 4
+                        x-open-source: $.http.body.rules[].notification
+                      rule_exec_info:
+                        description: ''
+                        nullable: false
+                        properties:
+                          exec_time:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                            x-open-source: $.http.body.rules[].rule_exec_info.exec_time
+                          exec_time_type:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1804144962966529
+                              enum_package_name: AutoRuleExeTimeType
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: CUSTOM
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: HALF_HOUR_IN_SPECIFIC_TIME_PERIOD
+                                value: '3'
+                              - description: ''
+                                is_valid: true
+                                key: PER_HALF_HOUR
+                                value: '1'
+                              - description: ''
+                                is_valid: true
+                                key: SPECIFIC_TIME_ACCURATE_ONCE
+                                value: '5'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.rules[].rule_exec_info.exec_time_type
+                          time_period_info:
+                            description: ''
+                            items:
+                              nullable: false
+                              properties:
+                                date_type:
+                                  description: ''
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-enum:
+                                    enum_package_expired: false
+                                    enum_package_id: 1804145051616258
+                                    enum_package_name: AutoRuleDateType
+                                    enums:
+                                    - description: ''
+                                      is_valid: true
+                                      key: DAY
+                                      value: '1'
+                                    - description: ''
+                                      is_valid: true
+                                      key: MONTH
+                                      value: '3'
+                                    - description: ''
+                                      is_valid: true
+                                      key: WEEK
+                                      value: '2'
+                                    key_format: string
+                                    strict: true
+                                    use_part: false
+                                    validate_only: false
+                                    value_format: int32
+                                  x-open-field-id: 4
+                                  x-open-source: $.http.body.rules[].rule_exec_info.time_period_info[].date_type
+                                end_time:
+                                  description: ''
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 3
+                                  x-open-source: $.http.body.rules[].rule_exec_info.time_period_info[].end_time
+                                num:
+                                  description: ''
+                                  items:
+                                    format: int64
+                                    nullable: false
+                                    type: integer
+                                    x-open-allow-strlist: false
+                                    x-open-allow-strnum: false
+                                  nullable: false
+                                  type: array
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 1
+                                  x-open-source: $.http.body.rules[].rule_exec_info.time_period_info[].num
+                                start_time:
+                                  description: ''
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 2
+                                  x-open-source: $.http.body.rules[].rule_exec_info.time_period_info[].start_time
+                              required:
+                              - num
+                              - start_time
+                              - end_time
+                              - date_type
+                              type: object
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                            nullable: false
+                            type: array
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 3
+                            x-open-source: $.http.body.rules[].rule_exec_info.time_period_info
+                        required:
+                        - exec_time_type
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 5
+                        x-open-source: $.http.body.rules[].rule_exec_info
+                      rule_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 8
+                        x-open-source: $.http.body.rules[].rule_id
+                      tzone:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 6
+                        x-open-source: $.http.body.rules[].timezone
+                    required:
+                    - apply_objects
+                    - conditions
+                    - actions
+                    - notification
+                    - rule_exec_info
+                    - name
+                    - rule_id
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.rules
+              required:
+              - advertiser_id
+              - rules
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update an automated rule. [Optimizer Rule Update](https://business-api.tiktok.com/portal/docs?id=1738769123170306)
+      tags:
+      - Automated_Rules
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: lang
+            required: false
+            source: $.http.body.lang
+            type: string
+          - children:
+            - children:
+              - children:
+                - children:
+                  - name: dimension
+                    required: true
+                    type: number
+                  - children:
+                    - type: number
+                    is_expand: true
+                    name: dimension_ids
+                    required: false
+                    sub_type: number
+                    type: array
+                  - name: pre_condition_type
+                    required: true
+                    type: number
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: apply_objects
+                required: true
+                sub_type: object
+                type: array
+              - children:
+                - children:
+                  - name: subject_type
+                    required: true
+                    type: number
+                  - name: range_type
+                    required: false
+                    type: number
+                  - name: match_type
+                    required: false
+                    type: number
+                  - children:
+                    - type: string
+                    is_expand: true
+                    name: values
+                    required: false
+                    sub_type: string
+                    type: array
+                  - name: calculation_type
+                    required: false
+                    type: number
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: conditions
+                required: true
+                sub_type: object
+                type: array
+              - children:
+                - children:
+                  - name: subject_type
+                    required: true
+                    type: number
+                  - name: action_type
+                    required: false
+                    type: number
+                  - name: value_type
+                    required: false
+                    type: number
+                  - children:
+                    - name: value
+                      required: false
+                      type: number
+                    - name: use_limit
+                      required: false
+                      type: boolean
+                    - name: limit
+                      required: false
+                      type: number
+                    is_expand: true
+                    name: value
+                    required: false
+                    type: object
+                  - children:
+                    - name: type
+                      required: true
+                      type: number
+                    - name: custom_frequency_type
+                      required: false
+                      type: number
+                    - name: time
+                      required: false
+                      type: number
+                    - name: count
+                      required: false
+                      type: number
+                    is_expand: true
+                    name: frequency_info
+                    required: false
+                    type: object
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: actions
+                required: true
+                sub_type: object
+                type: array
+              - children:
+                - name: notification_type
+                  required: true
+                  type: number
+                - children:
+                  - name: notification_period
+                    required: false
+                    type: number
+                  - children:
+                    - type: string
+                    is_expand: true
+                    name: email_exec_time
+                    required: false
+                    sub_type: string
+                    type: array
+                  - name: no_result_notification
+                    required: false
+                    type: boolean
+                  - name: mute_option
+                    required: false
+                    type: number
+                  is_expand: true
+                  name: email_setting
+                  required: false
+                  type: object
+                is_expand: true
+                name: notification
+                required: true
+                type: object
+              - children:
+                - name: exec_time_type
+                  required: true
+                  type: number
+                - name: exec_time
+                  required: false
+                  type: string
+                - children:
+                  - children:
+                    - children:
+                      - type: number
+                      is_expand: true
+                      name: num
+                      required: true
+                      sub_type: number
+                      type: array
+                    - name: start_time
+                      required: true
+                      type: string
+                    - name: end_time
+                      required: true
+                      type: string
+                    - name: date_type
+                      required: true
+                      type: number
+                    is_expand: true
+                    type: object
+                  is_expand: true
+                  name: time_period_info
+                  required: false
+                  sub_type: object
+                  type: array
+                is_expand: true
+                name: rule_exec_info
+                required: true
+                type: object
+              - name: timezone
+                required: false
+                type: string
+              - name: name
+                required: true
+                type: string
+              - name: rule_id
+                required: false
+                type: string
+              is_expand: true
+              type: object
+            is_expand: true
+            name: rules
+            required: true
+            source: $.http.body.rules[]
+            sub_type: object
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          lang: $.http.body.lang
+          rules: $.http.body.rules[]
+        response_cookie: []
+        response_header: []
+        response_rule:
+          rule_ids: $.rpc.output.rule_ids
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

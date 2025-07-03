@@ -1,0 +1,152 @@
+info:
+  description: '{"en":"Offline Get","zh":"Offline Get"}'
+  title: '{"en":"Offline Get","zh":"Offline Get"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /offline/get/:
+    get:
+      operationId: Offline Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.AdvertiserID
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.EventSetIDs
+        description: ''
+        in: query
+        name: event_set_ids
+        required: false
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: name
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.Name
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get Offline Event sets. [Offline Get](https://business-api.tiktok.com/portal/docs?id=1765596808589313)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvertiserID
+            required: false
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: EventSetIDs
+            required: false
+            source: $.http.query.event_set_ids[]
+            sub_type: number
+            type: array
+          - name: Name
+            required: false
+            source: $.http.query.name
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserID: $.http.query.advertiser_id
+          EventSetIDs: $.http.query.event_set_ids[]
+          Name: $.http.query.name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          event_set_list[][]:
+          - advertiser_id: $.rpc.output.OfflineEventSets[].AdvertiserID
+            auto_tracking: $.rpc.output.OfflineEventSets[].AutoTracking
+            create_time: $.rpc.output.OfflineEventSets[].CreatedAt
+            description: $.rpc.output.OfflineEventSets[].Description
+            event_set_id: $.rpc.output.OfflineEventSets[].ID
+            name: $.rpc.output.OfflineEventSets[].Name
+            update_time: $.rpc.output.OfflineEventSets[].UpdatedAt
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

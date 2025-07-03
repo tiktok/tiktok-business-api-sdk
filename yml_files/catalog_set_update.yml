@@ -1,0 +1,224 @@
+info:
+  description: '{"en":"Catalog Set Update","zh":"Catalog Set Update"}'
+  title: '{"en":"Catalog Set Update","zh":"Catalog Set Update"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/set/update/:
+    post:
+      operationId: Catalog Set Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.bc_id
+                catalog_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.catalog_id
+                conditions:
+                  description: ''
+                  nullable: false
+                  properties:
+                    and:
+                      description: ''
+                      items:
+                        nullable: false
+                        properties: {}
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - json_dumps(%s)
+                      minItems: 1
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.conditions.and_condition
+                    or:
+                      description: ''
+                      items:
+                        nullable: false
+                        properties: {}
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - json_dumps(%s)
+                      minItems: 1
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.conditions.or_condition
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.conditions
+                product_set_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.product_set_id
+                product_set_name:
+                  description: ''
+                  maxLength: 28
+                  minLength: 1
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.product_set_name
+              required:
+              - catalog_id
+              - bc_id
+              - product_set_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Use this endpoint to update the filter conditions or name of a product
+        set. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740572974725122)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: catalog_id
+            required: true
+            source: $.http.body.catalog_id
+            type: number
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: product_set_id
+            required: false
+            source: $.http.body.product_set_id
+            type: number
+          - name: product_set_name
+            required: false
+            source: $.http.body.product_set_name
+            type: string
+          - children:
+            - children:
+              - type: string
+              is_expand: true
+              name: and_condition
+              required: false
+              source: $.http.body.conditions.and[]
+              sub_type: string
+              type: array
+            - children:
+              - type: string
+              is_expand: true
+              name: or_condition
+              required: false
+              source: $.http.body.conditions.or[]
+              sub_type: string
+              type: array
+            is_expand: true
+            name: conditions
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.body.bc_id
+          catalog_id: $.http.body.catalog_id
+          conditions:
+            and_condition: $.http.body.conditions.and[]
+            or_condition: $.http.body.conditions.or[]
+          product_set_id: $.http.body.product_set_id
+          product_set_name: $.http.body.product_set_name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          product_count: $.rpc.output.product_count
+          product_set_id: $.rpc.output.product_set_id
+          product_set_name: $.rpc.output.product_set_name
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,293 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get related comments.\\n\\nFor an original\
+    \ comment, you can get the comment itself and all of its replies. For a reply,\
+    \ you can get the reply and its original comment.\",\"zh\":\"\u60A8\u53EF\u4EE5\
+    \u4F7F\u7528\u672C\u63A5\u53E3\u83B7\u53D6\u5173\u8054\u8BC4\u8BBA\u3002\\n\\\
+    n\u82E5\u8BC4\u8BBA\u7C7B\u578B\u4E3ACOMMENT\uFF0C\u8FD4\u56DE\u8BE5\u8BC4\u8BBA\
+    \u53CA\u5176\u6240\u6709\u56DE\u590D\u3002\u82E5\u8BC4\u8BBA\u7C7B\u578B\u4E3A\
+    REPLY\uFF0C\u8FD4\u56DE\u8BE5\u56DE\u590D\u53CA\u539F\u8BC4\u8BBA\u3002\\n\\n\"\
+    }"
+  title: "{\"en\":\"Get related comments\",\"zh\":\"\u83B7\u53D6\u5173\u8054\u8BC4\
+    \u8BBA\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /comment/reference/:
+    get:
+      operationId: Comment Reference
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: comment_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.comment_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: comment_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804526161934338
+            enum_package_name: CommentLevel
+            enums:
+            - description: ''
+              is_valid: true
+              key: ALL
+              value: '0'
+            - description: ''
+              is_valid: true
+              key: COMMENT
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: REPLY
+              value: '2'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.comment_type
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: original_comment_id
+        required: false
+        schema:
+          default: '0'
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.original_comment_id
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: app
+        required: false
+        schema:
+          default: TIKTOK
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: TIKTOK
+              value: '1233'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.app
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 6
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 100
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 7
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get related comments. [Comment Reference](https://business-api.tiktok.com/portal/docs?id=1738086824859650)
+      tags:
+      - Comments
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: comment_id
+            required: true
+            source: $.http.query.comment_id
+            type: number
+          - name: comment_type
+            required: true
+            source: $.http.query.comment_type
+            type: number
+          - name: original_comment_id
+            required: true
+            source: $.http.query.original_comment_id
+            type: number
+          - name: app
+            required: true
+            source: $.http.query.app
+            type: number
+          - name: page
+            required: true
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: true
+            source: $.http.query.page_size
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          app: $.http.query.app
+          comment_id: $.http.query.comment_id
+          comment_type: $.http.query.comment_type
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+          original_comment_id: $.http.query.original_comment_id
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+        response_cookie: []
+        response_header: []
+        response_rule:
+          comments[][]:
+          - can_delete: $.rpc.output.comments[].can_delete
+            comment_id: $.rpc.output.comments[].comment_id
+            comment_status: $.rpc.output.comments[].comment_status
+            comment_type: $.rpc.output.comments[].comment_type
+            content: $.rpc.output.comments[].content
+            create_time: $.rpc.output.comments[].create_time
+            hit_blockedword: $.rpc.output.comments[].hit_blockedword
+            identity_id: $.rpc.output.comments[].identity_id
+            identity_type: $.rpc.output.comments[].identity_type
+            is_auth_comment_manage_scope: $.rpc.output.comments[].is_auth_comment_manage_scope
+            is_auth_ttba: $.rpc.output.comments[].is_auth_ttba
+            is_pinned: $.rpc.output.comments[].is_pinned
+            reply_user_info[]:
+            - user_avatar_url: $.rpc.output.comments[].reply_user_info.user_avatar_url
+              user_name: $.rpc.output.comments[].reply_user_info.user_name
+            tiktok_item_id: $.rpc.output.comments[].tiktok_item_id
+            user_avatar_url: $.rpc.output.comments[].user_avatar_url
+            user_id: $.rpc.output.comments[].user_id
+            user_name: $.rpc.output.comments[].user_name
+          page_info: $.rpc.output.page_info
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

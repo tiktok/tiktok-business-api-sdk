@@ -1,0 +1,182 @@
+info:
+  description: "{\"en\":\"Use this endpoint to create a blocked word export task.\\\
+    n\\nAfter the task is created, you can use /blockedword/task/check/ to check the\
+    \ status of the task. When the task completes, you can call /blockedword/task/download/\
+    \ to download the exported data.\\n\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\
+    \u63A5\u53E3\u521B\u5EFA\u5C4F\u853D\u8BCD\u5BFC\u51FA\u4EFB\u52A1\u3002\\n\\\
+    n\u5BFC\u51FA\u4EFB\u52A1\u521B\u5EFA\u5B8C\u6210\u540E\uFF0C\u60A8\u53EF\u4EE5\
+    \u4F7F\u7528/blockedword/task/check/\u67E5\u8BE2\u4EFB\u52A1\u72B6\u6001\u3002\
+    \u82E5\u4EFB\u52A1\u5DF2\u5B8C\u6210\uFF0C\u60A8\u53EF\u4EE5\u8C03\u7528/blockedword/task/download/\u4E0B\
+    \u8F7D\u5BFC\u51FA\u7684\u6570\u636E\u3002\"}"
+  title: "{\"en\":\"Create an export task (blocked words)\",\"zh\":\"\u521B\u5EFA\u5C4F\
+    \u853D\u8BCD\u5BFC\u51FA\u4EFB\u52A1\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /blockedword/task/create/:
+    post:
+      operationId: Blockedword Task Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                blocked_words:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                lang:
+                  default: EN
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: English
+                      is_valid: true
+                      key: EN
+                      value: en
+                    - description: Japanese
+                      is_valid: true
+                      key: JA
+                      value: ja
+                    - description: Chinese
+                      is_valid: true
+                      key: ZH
+                      value: zh
+                    key_format: string
+                    strict: false
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 3
+              required:
+              - advertiser_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a task to export blocked words. [Blockedword Task Create](https://business-api.tiktok.com/portal/docs?id=1739029296119809)
+      tags:
+      - Comments
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - children:
+            - name: source
+              required: true
+              source: '2'
+              type: number
+            - name: adv_id
+              required: false
+              source: $.http.body.advertiser_id
+              type: number
+            - children:
+              - type: string
+              is_expand: true
+              name: bw_contents
+              required: false
+              source: $.http.body.blocked_words[]
+              sub_type: string
+              type: array
+            - name: lang
+              required: false
+              source: $.http.body.lang
+              type: string
+            is_expand: true
+            name: condition
+            required: true
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          condition:
+            adv_id: $.http.body.advertiser_id
+            bw_contents: $.http.body.blocked_words[]
+            lang: $.http.body.lang
+            source: 2
+        response_cookie: []
+        response_header: []
+        response_rule:
+          task_id: $.rpc.output.task_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com
