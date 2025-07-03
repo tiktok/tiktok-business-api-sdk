@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**bcBillingGroupUpdate**](BcApi.md#bcBillingGroupUpdate) | **POST** /open_api/v1.3/bc/billing_group/update/ | Update settings of a billing group. [BC Billing Group Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1738947843447809)
 [**bcGet**](BcApi.md#bcGet) | **GET** /open_api/v1.3/bc/get/ | Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1737115687501826)
 [**bcImageUpload**](BcApi.md#bcImageUpload) | **POST** /open_api/v1.3/bc/image/upload/ | Upload certificate images for an ad account. [BC Image Upload](https://business-api.tiktok.com/portal/docs?id&#x3D;1739938996913218)
+[**bcInvoiceUnpaidGet**](BcApi.md#bcInvoiceUnpaidGet) | **GET** /open_api/v1.3/bc/invoice/unpaid/get/ | Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740295904843777)
 [**bcMemberDelete**](BcApi.md#bcMemberDelete) | **POST** /open_api/v1.3/bc/member/delete/ | Delete member. [BC Member Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939482851329)
 [**bcMemberGet**](BcApi.md#bcMemberGet) | **GET** /open_api/v1.3/bc/member/get/ | Get BC members. [BC Member Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939404802049)
 [**bcMemberInvite**](BcApi.md#bcMemberInvite) | **POST** /open_api/v1.3/bc/member/invite/ | Invite members to BC. [BC Member Invite](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939455765505)
@@ -1127,6 +1128,53 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+<a name="bcInvoiceUnpaidGet"></a>
+# **bcInvoiceUnpaidGet**
+> Response bcInvoiceUnpaidGet(bcId, invoiceType, accessToken)
+
+Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740295904843777)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.BcApi;
+
+
+BcApi apiInstance = new BcApi();
+String bcId = "bcId_example"; // String | 
+String invoiceType = "invoiceType_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+try {
+    Response result = apiInstance.bcInvoiceUnpaidGet(bcId, invoiceType, accessToken);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling BcApi#bcInvoiceUnpaidGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bcId** | **String**|  |[required] 
+ **invoiceType** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="bcMemberDelete"></a>

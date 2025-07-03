@@ -1,0 +1,241 @@
+info:
+  description: '{"en":"Product Set Delete","zh":"Product Set Delete"}'
+  title: '{"en":"Product Set Delete","zh":"Product Set Delete"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/set/delete/:
+    post:
+      operationId: Catalog Set Delete
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                catalog_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                product_set_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  maxItems: 10
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+              required:
+              - bc_id
+              - catalog_id
+              - product_set_ids
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Delete product sets. [Catalog Set Delete](https://business-api.tiktok.com/portal/docs?id=1740573143966722)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: optType
+            required: false
+            source: '7'
+            type: number
+          - children:
+            - children:
+              - name: id
+                required: false
+                type: number
+              - name: platformId
+                required: false
+                type: number
+              - name: name
+                required: false
+                type: string
+              - children:
+                - children:
+                  - name: field
+                    required: false
+                    type: string
+                  - name: op
+                    required: false
+                    type: string
+                  - name: fieldType
+                    required: false
+                    type: string
+                  - name: value
+                    required: false
+                    type: string
+                  - name: sensType
+                    required: false
+                    type: number
+                  is_expand: true
+                  type: object
+                is_expand: false
+                name: conditions
+                required: false
+                sub_type: object
+                type: array
+              - name: createTime
+                required: false
+                type: number
+              - name: modifyTime
+                required: false
+                type: number
+              - name: bindType
+                required: false
+                type: number
+              - name: pSetType
+                required: false
+                type: number
+              - name: pSetCreateType
+                required: false
+                type: number
+              - name: skuListTosUrl
+                required: false
+                type: string
+              - children:
+                - name: id
+                  required: false
+                  type: number
+                - name: platformId
+                  required: false
+                  type: number
+                - name: productSetId
+                  required: false
+                  type: number
+                - name: status
+                  required: false
+                  type: number
+                - name: totalCount
+                  required: false
+                  type: number
+                - name: resolvedCount
+                  required: false
+                  type: number
+                - name: errorCount
+                  required: false
+                  type: number
+                - name: uploadPath
+                  required: false
+                  type: string
+                - name: downloadPath
+                  required: false
+                  type: string
+                - name: createTime
+                  required: false
+                  type: number
+                - name: modifyTime
+                  required: false
+                  type: number
+                is_expand: false
+                name: productSetLog
+                required: false
+                type: object
+              is_expand: false
+              type: object
+            is_expand: true
+            name: pSets
+            required: false
+            source: $.pSets
+            sub_type: object
+            type: array
+        plugins:
+          after_response: []
+          before_request:
+          - Plugin_map_setids_2329204:
+            - description: map list of setids to pSets
+            - request_params:
+              - $.http.body.product_set_ids
+              - $.http.body.catalog_id
+            - result_params:
+              - $.pSets
+            - version: 40b87f525366565b0a358a95b6bed5cc
+        request_query_rule: null
+        request_rule:
+          optType: 7
+          pSets: $.pSets
+        response_cookie: []
+        response_header: []
+        response_rule:
+          product_set_ids: $.http.body.product_set_ids[]
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

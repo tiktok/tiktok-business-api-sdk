@@ -1,0 +1,461 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get the comments under the video ads\
+    \ of an ad account.\\n\\nYou need to specify a search value and the time range\
+    \ for the comments you want to get. This endpoint returns comments for both paid\
+    \ impression ads and Spark Ads.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\
+    \u63A5\u53E3\u83B7\u53D6\u5E7F\u544A\u8D26\u6237\u6240\u53D1\u89C6\u9891\u5E7F\
+    \u544A\u4E0B\u7684\u8BC4\u8BBA\u3002\\n\\n\u60A8\u9700\u8BBE\u7F6E\u641C\u7D22\
+    \u503C\u53CA\u60F3\u8981\u83B7\u53D6\u8BC4\u8BBA\u7684\u65F6\u95F4\u533A\u95F4\
+    \u3002\u672C\u63A5\u53E3\u53EF\u8FD4\u56DE\u5BFC\u6D41\u5E7F\u544A\u4EE5\u53CA\
+    Spark Ads\u7684\u8BC4\u8BBA\u3002\"}"
+  title: "{\"en\":\"Get comments\",\"zh\":\"\u83B7\u53D6\u8BC4\u8BBA\u5217\u8868\"\
+    }"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /comment/list/:
+    get:
+      operationId: Comment List
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: start_time
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.start_time
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: end_time
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.end_time
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: sort_field
+        required: false
+        schema:
+          default: CREATE_TIME
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804526557570050
+            enum_package_name: CommentSortField
+            enums:
+            - description: ''
+              is_valid: true
+              key: CREATE_TIME
+              value: create_time
+            - description: ''
+              is_valid: true
+              key: LIKES
+              value: digg_count_long
+            - description: ''
+              is_valid: true
+              key: REPLIES
+              value: reply_count_long
+            - description: ''
+              is_valid: true
+              key: SMART
+              value: smart_hot
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.sort_field
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: sort_type
+        required: false
+        schema:
+          default: DESC
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804526601709569
+            enum_package_name: CommentSortType
+            enums:
+            - description: ''
+              is_valid: true
+              key: ASC
+              value: ASC
+            - description: ''
+              is_valid: true
+              key: DESC
+              value: DESC
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.sort_type
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 6
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 7
+      - content:
+          application/json:
+            schema:
+              items:
+                default: ALL
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-enum:
+                  enum_package_expired: false
+                  enum_package_id: 1804526161934338
+                  enum_package_name: CommentLevel
+                  enums:
+                  - description: ''
+                    is_valid: true
+                    key: ALL
+                    value: '0'
+                  - description: ''
+                    is_valid: true
+                    key: COMMENT
+                    value: '1'
+                  - description: ''
+                    is_valid: true
+                    key: REPLY
+                    value: '2'
+                  key_format: string
+                  strict: true
+                  use_part: false
+                  validate_only: false
+                  value_format: int32
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.comment_type
+        description: ''
+        in: query
+        name: comment_type
+        required: false
+        x-open-field-id: 8
+      - content:
+          application/json:
+            schema:
+              items:
+                default: ALL
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-enum:
+                  enum_package_expired: false
+                  enum_package_id: 1804526126395393
+                  enum_package_name: CommentStatus
+                  enums:
+                  - description: ''
+                    is_valid: true
+                    key: ALL
+                    value: '0'
+                  - description: ''
+                    is_valid: true
+                    key: HIDDEN
+                    value: '2'
+                  - description: ''
+                    is_valid: true
+                    key: PUBLIC
+                    value: '1'
+                  key_format: string
+                  strict: true
+                  use_part: false
+                  validate_only: false
+                  value_format: int32
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.comment_status
+        description: ''
+        in: query
+        name: comment_status
+        required: false
+        x-open-field-id: 9
+      - description: ''
+        in: query
+        name: search_field
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804526075543618
+            enum_package_name: CommentSearchType
+            enums:
+            - description: ''
+              is_valid: true
+              key: ADGROUP_ID
+              value: '2'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.search_field
+        x-open-field-id: 10
+      - description: ''
+        in: query
+        name: search_value
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.search_value
+        x-open-field-id: 11
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get comments for your ads. [Comment List](https://business-api.tiktok.com/portal/docs?id=1738086301876225)
+      tags:
+      - Comments
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: tt4b_uid
+            required: true
+            source: $.context.core_user_id
+            type: number
+          - name: start_time
+            required: true
+            source: $.http.query.start_time
+            type: string
+          - name: end_time
+            required: true
+            source: $.http.query.end_time
+            type: string
+          - name: sort_field
+            required: true
+            source: $.http.query.sort_field
+            type: string
+          - name: sort_type
+            required: true
+            source: $.http.query.sort_type
+            type: string
+          - name: page
+            required: true
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: true
+            source: $.http.query.page_size
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: comment_type
+            required: false
+            source: $.http.query.comment_type
+            sub_type: number
+            type: array
+          - children:
+            - type: number
+            is_expand: true
+            name: comment_status
+            required: false
+            source: $.http.query.comment_status
+            sub_type: number
+            type: array
+          - name: search_field
+            required: false
+            source: $.http.query.search_field
+            type: number
+          - name: search_value
+            required: false
+            source: $.http.query.search_value
+            type: string
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            is_expand: true
+            name: context_info
+            required: false
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          comment_status: $.http.query.comment_status
+          comment_type: $.http.query.comment_type
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+          end_time: $.http.query.end_time
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          search_field: $.http.query.search_field
+          search_value: $.http.query.search_value
+          sort_field: $.http.query.sort_field
+          sort_type: $.http.query.sort_type
+          start_time: $.http.query.start_time
+          tt4b_uid: $.context.core_user_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          comments[][]:
+          - ad_id: $.rpc.output.comment_list[].ad_id
+            ad_name: $.rpc.output.comment_list[].ad_name
+            ad_text: $.rpc.output.comment_list[].ad_text
+            adgroup_id: $.rpc.output.comment_list[].adgroup_id
+            adgroup_name: $.rpc.output.comment_list[].adgroup_name
+            app: $.rpc.output.comment_list[].app
+            campaign_id: $.rpc.output.comment_list[].campaign_id
+            campaign_name: $.rpc.output.comment_list[].campaign_name
+            can_delete: $.rpc.output.comment_list[].can_delete
+            comment_id: $.rpc.output.comment_list[].comment_id
+            comment_status: $.rpc.output.comment_list[].comment_status
+            comment_type: $.rpc.output.comment_list[].comment_type
+            content: $.rpc.output.comment_list[].content
+            create_time: $.rpc.output.comment_list[].create_time
+            hit_blockedword: $.rpc.output.comment_list[].hit_blockedword
+            identity_id: $.rpc.output.comment_list[].identity_id
+            identity_type: $.rpc.output.comment_list[].identity_type
+            is_auth_comment_manage_scope: $.rpc.output.comment_list[].is_auth_comment_manage_scope
+            is_auth_ttba: $.rpc.output.comment_list[].is_auth_ttba
+            is_pinned: $.rpc.output.comment_list[].is_pinned
+            likes: $.rpc.output.comment_list[].likes
+            original_comment_id: $.rpc.output.comment_list[].original_comment_id
+            replies: $.rpc.output.comment_list[].replies
+            tiktok_item_id: $.rpc.output.comment_list[].tiktok_item_id
+            user_avatar_url: $.rpc.output.comment_list[].user_avatar_url
+            user_id: $.rpc.output.comment_list[].user_id
+            user_name: $.rpc.output.comment_list[].user_name
+            video_cover_url: $.rpc.output.comment_list[].video_cover_url
+            video_play_url: $.rpc.output.comment_list[].video_play_url
+          page_info:
+            page: $.rpc.output.page_info.page
+            page_size: $.rpc.output.page_info.page_size
+            total_number: $.rpc.output.page_info.total_number
+            total_page: $.rpc.output.page_info.total_page
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

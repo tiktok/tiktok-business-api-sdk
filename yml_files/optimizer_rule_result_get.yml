@@ -1,0 +1,199 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get rule execution results by execution\
+    \ IDs.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u83B7\u53D6\
+    \u7ED3\u679C\u8BE6\u60C5\u3002\"}"
+  title: "{\"en\":\"Get result details\",\"zh\":\"\u83B7\u53D6\u7ED3\u679C\u8BE6\u60C5\
+    \"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /optimizer/rule/result/get/:
+    get:
+      operationId: Optimizer Rule Result Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: result_detail
+        required: true
+        schema:
+          items:
+            nullable: false
+            properties:
+              exec_id:
+                description: ''
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+                x-open-field-id: 2
+                x-open-source: $.http.query.result_detail[].exec_id
+              rule_id:
+                description: ''
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+                x-open-field-id: 1
+                x-open-source: $.http.query.result_detail[].rule_id
+            required:
+            - rule_id
+            - exec_id
+            type: object
+            x-open-allow-strlist: false
+            x-open-allow-strnum: false
+          nullable: false
+          type: array
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.result_detail
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: lang
+        required: false
+        schema:
+          default: EN
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: EN
+              value: EN
+            - description: ''
+              is_valid: true
+              key: ZH
+              value: ZH
+            - description: ''
+              is_valid: true
+              key: JA
+              value: JA
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: string
+          x-open-source: $.http.query.lang
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get result details. [Optimizer Rule Result Get](https://business-api.tiktok.com/portal/docs?id=1738769098314754)
+      tags:
+      - Automated_Rules
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: lang
+            required: false
+            source: $.http.query.lang
+            type: string
+          - children:
+            - children:
+              - name: rule_id
+                required: true
+                type: number
+              - name: exec_id
+                required: true
+                type: number
+              is_expand: true
+              type: object
+            is_expand: true
+            name: result_detail
+            required: true
+            source: $.http.query.result_detail[]
+            sub_type: object
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          lang: $.http.query.lang
+          result_detail: $.http.query.result_detail[]
+        response_cookie: []
+        response_header: []
+        response_rule:
+          result_details: $.rpc.output.result_details
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,185 @@
+info:
+  description: '{"en":"Test","zh":"Test"}'
+  title: '{"en":"Pixel create","zh":"Pixel create"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /pixel/create/:
+    post:
+      operationId: Pixel Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                partner_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.partner_name
+                pixel_category:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1802417609811970
+                    enum_package_name: PixelCategory
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: CONTACTS
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: CUSTOMIZE_EVENTS
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: FILLING_FORM
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: LANDING_PAGE
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: ONLINE_STORE
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.pixel_category
+                pixel_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.pixel_name
+                  x-open-validate:
+                  - error_msg: pixel_name cannot be empty.
+                    expr: len(%s) > 0
+              required:
+              - advertiser_id
+              - pixel_name
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a Pixel. [Pixel Create](https://business-api.tiktok.com/portal/docs?id=1740858779758593)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: pixel_name
+            required: true
+            source: $.http.body.pixel_name
+            type: string
+          - name: pixel_category
+            required: false
+            source: $.http.body.pixel_category
+            type: number
+          - name: partner_name
+            required: false
+            source: $.http.body.partner_name
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          partner_name: $.http.body.partner_name
+          pixel_category: $.http.body.pixel_category
+          pixel_name: $.http.body.pixel_name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          advanced_matching_fields: $.rpc.output.advanced_matching_fields
+          partner_name: $.rpc.output.partner_name
+          pixel_category: $.rpc.output.pixel_category
+          pixel_code: $.rpc.output.pixel_code
+          pixel_id: $.rpc.output.pixel_id
+          pixel_name: $.rpc.output.pixel_name
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

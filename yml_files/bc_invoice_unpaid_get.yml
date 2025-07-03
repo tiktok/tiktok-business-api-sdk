@@ -1,0 +1,137 @@
+info:
+  description: "{\"en\":\"Use this endpoint to get total unpaid amount of your Business\
+    \ Center account.\\n\\nBoth Agency and Direct Business Centers are able to perform\
+    \ invoice related operations.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\
+    \u53E3\u83B7\u53D6\u5546\u52A1\u4E2D\u5FC3\u4E0B\u672A\u8FD8\u6B3E\u603B\u91D1\
+    \u989D\u3002\\n\\n\u4EE3\u7406\u5546\u5546\u52A1\u4E2D\u5FC3\u548C\u76F4\u5BA2\
+    \u5546\u52A1\u4E2D\u5FC3\u90FD\u80FD\u6267\u884C\u53D1\u7968\u76F8\u5173\u64CD\
+    \u4F5C\u3002\"}"
+  title: "{\"en\":\"BC Invoice Unpaid Get\",\"zh\":\"\u83B7\u53D6\u5546\u52A1\u4E2D\
+    \u5FC3\u672A\u8FD8\u6B3E\u603B\u91D1\u989D\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /bc/invoice/unpaid/get/:
+    get:
+      operationId: Bc Invoice Unpaid Get
+      parameters:
+      - description: ''
+        in: query
+        name: bc_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: invoice_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: RECON
+              value: '2'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Finance Managers and Finance Analysts of a Business Center account
+        can use this endpoint to get total unpaid amount of their Business Center
+        accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id=1740295904843777)
+      tags:
+      - BC
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: BcId
+            required: false
+            source: $.http.query.bc_id
+            type: number
+          - name: Classify
+            required: false
+            source: $.http.query.invoice_type
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          BcId: $.http.query.bc_id
+          Classify: $.http.query.invoice_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          result: $.rpc.output.Currency2NeedPayAmount
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

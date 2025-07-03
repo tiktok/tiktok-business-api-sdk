@@ -1,0 +1,367 @@
+info:
+  description: '{"en":"Catalog Feed Update","zh":"Catalog Feed Update"}'
+  title: '{"en":"Catalog Feed Update","zh":"Catalog Feed Update"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /catalog/feed/update/:
+    post:
+      operationId: Catalog Feed Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.bc_id
+                catalog_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.catalog_id
+                feed_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.feed_id
+                feed_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.feed_name
+                schedule_param:
+                  description: ''
+                  nullable: false
+                  properties:
+                    day_of_month:
+                      description: ''
+                      format: int32
+                      maximum: 31
+                      minimum: 1
+                      nullable: false
+                      type: integer
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 5
+                      x-open-source: $.http.body.schedule_param.day_of_month
+                    hour:
+                      description: ''
+                      format: int32
+                      maximum: 23
+                      minimum: 0
+                      nullable: false
+                      type: integer
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 6
+                      x-open-source: $.http.body.schedule_param.hour
+                    interval_count:
+                      description: ''
+                      format: int32
+                      maximum: 30
+                      minimum: 1
+                      nullable: false
+                      type: integer
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                      x-open-source: $.http.body.schedule_param.interval_count
+                    interval_type:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1822447827658753
+                        enum_package_name: CatalogFeedIntervalType
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: DAILY
+                          value: '2'
+                        - description: ''
+                          is_valid: true
+                          key: HOURLY
+                          value: '1'
+                        - description: ''
+                          is_valid: true
+                          key: MONTHLY
+                          value: '4'
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: false
+                        value_format: int64
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.schedule_param.interval_type
+                    minute:
+                      description: ''
+                      format: int32
+                      maximum: 59
+                      minimum: 0
+                      nullable: false
+                      type: integer
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 7
+                      x-open-source: $.http.body.schedule_param.minute
+                    source:
+                      description: ''
+                      nullable: false
+                      properties:
+                        password:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 3
+                          x-open-source: $.http.body.schedule_param.source.password
+                        uri:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 1
+                          x-open-source: $.http.body.schedule_param.source.uri
+                        username:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 2
+                          x-open-source: $.http.body.schedule_param.source.username
+                      type: object
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.schedule_param.source
+                    timezone:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                      x-open-source: $.http.body.schedule_param.timezone
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.schedule_param
+                update_mode:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1822447728485378
+                    enum_package_name: CatalogFeedUpdateMode
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: INCREMENTAL
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: OVERWRITE
+                      value: '2'
+                    - description: ''
+                      is_valid: false
+                      key: SUPPLEMENT
+                      value: '3'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int64
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.update_mode
+              required:
+              - bc_id
+              - catalog_id
+              - feed_id
+              - feed_name
+              - update_mode
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update a feed. [Catalog Feed Update](https://business-api.tiktok.com/portal/docs?id=1740665197662210)
+      tags:
+      - Catalog
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: bc_id
+            required: true
+            source: $.http.body.bc_id
+            type: number
+          - name: catalog_id
+            required: true
+            source: $.http.body.catalog_id
+            type: number
+          - name: feed_id
+            required: false
+            source: $.http.body.feed_id
+            type: number
+          - name: update_mode
+            required: true
+            source: $.http.body.update_mode
+            type: number
+          - children:
+            - children:
+              - name: uri
+                required: false
+                source: $.http.body.schedule_param.source.uri
+                type: string
+              - name: username
+                required: false
+                source: $.http.body.schedule_param.source.username
+                type: string
+              - name: password
+                required: false
+                source: $.http.body.schedule_param.source.password
+                type: string
+              is_expand: true
+              name: source
+              required: false
+              source: $.http.body.schedule_param.source
+              type: object
+            - name: interval_type
+              required: false
+              source: $.http.body.schedule_param.interval_type
+              type: number
+            - name: interval_count
+              required: false
+              source: $.http.body.schedule_param.interval_count
+              type: number
+            - name: timezone
+              required: false
+              source: $.http.body.schedule_param.timezone
+              type: string
+            - name: day_of_month
+              required: false
+              source: $.http.body.schedule_param.day_of_month
+              type: number
+            - name: hour
+              required: false
+              source: $.http.body.schedule_param.hour
+              type: number
+            - name: minute
+              required: false
+              source: $.http.body.schedule_param.minute
+              type: number
+            is_expand: false
+            name: schedule_param
+            required: false
+            source: $.http.body.schedule_param
+            type: object
+          - name: feed_name
+            required: false
+            source: $.http.body.feed_name
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          bc_id: $.http.body.bc_id
+          catalog_id: $.http.body.catalog_id
+          feed_id: $.http.body.feed_id
+          feed_name: $.http.body.feed_name
+          schedule_param: $.http.body.schedule_param
+          update_mode: $.http.body.update_mode
+        response_cookie: []
+        response_header: []
+        response_rule:
+          feed_id: $.rpc.output.feed_data.feed_id
+          feed_name: $.rpc.output.feed_data.feed_name
+          last_update_param: $.rpc.output.feed_data.last_update_param
+          next_update_time: $.rpc.output.feed_data.next_update_time
+          number_of_products: $.rpc.output.feed_data.number_of_products
+          status: $.rpc.output.feed_data.status
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

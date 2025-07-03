@@ -36,7 +36,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")public class AudienceApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-07-03T14:36:18.961395-07:00[America/Los_Angeles]")public class AudienceApi {
   private ApiClient apiClient;
 
   public AudienceApi() {
@@ -55,6 +55,72 @@ import java.util.Map;
     this.apiClient = apiClient;
   }
 
+  /**
+   * Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id&#x3D;1797023590780930)
+   * 
+   * @param advertiserId  (required)
+   * @param benchmarkCustomAudienceId  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param comparisonCustomAudienceIds  (optional)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response audienceInsightOverlap(String advertiserId, String benchmarkCustomAudienceId, String accessToken, List<String> comparisonCustomAudienceIds) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling audienceInsightOverlap");
+    }
+    // verify the required parameter 'benchmarkCustomAudienceId' is set
+    if (benchmarkCustomAudienceId == null) {
+      throw new ApiException(400, "Missing the required parameter 'benchmarkCustomAudienceId' when calling audienceInsightOverlap");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling audienceInsightOverlap");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/audience/insight/overlap/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "benchmark_custom_audience_id", benchmarkCustomAudienceId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "comparison_custom_audience_ids", comparisonCustomAudienceIds));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
   /**
    * Apply a shared custom audience [Dmp Custom_audience Apply](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245827044354)
    * 

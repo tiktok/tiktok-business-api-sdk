@@ -16,16 +16,6 @@ paths:
       operationId: Bc Billing_group Get
       parameters:
       - description: ''
-        in: header
-        name: Access-Token
-        required: false
-        schema:
-          nullable: false
-          type: string
-          x-open-allow-strlist: false
-          x-open-allow-strnum: false
-        x-open-field-id: 1
-      - description: ''
         in: query
         name: bc_id
         required: true

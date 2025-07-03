@@ -56,7 +56,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-05-20T12:00:30.004772-07:00[America/Los_Angeles]")public class BcApi {
+@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-07-03T14:36:18.961395-07:00[America/Los_Angeles]")public class BcApi {
   private ApiClient apiClient;
 
   public BcApi() {
@@ -1413,6 +1413,70 @@ import java.util.Map;
 
     GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740295904843777)
+   * 
+   * @param bcId  (required)
+   * @param invoiceType  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response bcInvoiceUnpaidGet(String bcId, String invoiceType, String accessToken) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'bcId' is set
+    if (bcId == null) {
+      throw new ApiException(400, "Missing the required parameter 'bcId' when calling bcInvoiceUnpaidGet");
+    }
+    // verify the required parameter 'invoiceType' is set
+    if (invoiceType == null) {
+      throw new ApiException(400, "Missing the required parameter 'invoiceType' when calling bcInvoiceUnpaidGet");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling bcInvoiceUnpaidGet");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/bc/invoice/unpaid/get/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "bc_id", bcId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "invoice_type", invoiceType));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
       if (localVarPath.startsWith("/pixel")) {

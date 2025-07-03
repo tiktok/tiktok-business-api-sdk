@@ -1236,6 +1236,62 @@ export class BCApi {
       );
     }
     /**
+     * Callback function to receive the result of the bcInvoiceUnpaidGet operation.
+     * @callback moduleapi/BCApi~bcInvoiceUnpaidGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740295904843777)
+     * @param {String} bc_id 
+     * @param {String} invoice_type 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {module:api/BCApi~bcInvoiceUnpaidGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    bcInvoiceUnpaidGet(bc_id, invoice_type, Access_Token, callback) {
+      
+      let postBody = null;
+      // verify the required parameter 'bc_id' is set
+      if (bc_id === undefined || bc_id === null) {
+        throw new Error("Missing the required parameter 'bc_id' when calling bcInvoiceUnpaidGet");
+      }
+      // verify the required parameter 'invoice_type' is set
+      if (invoice_type === undefined || invoice_type === null) {
+        throw new Error("Missing the required parameter 'invoice_type' when calling bcInvoiceUnpaidGet");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling bcInvoiceUnpaidGet");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'bc_id': bc_id,'invoice_type': invoice_type
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/bc/invoice/unpaid/get/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the bcMemberDelete operation.
      * @callback moduleapi/BCApi~bcMemberDeleteCallback
      * @param {String} error Error message, if any.

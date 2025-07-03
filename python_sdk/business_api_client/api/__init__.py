@@ -16,6 +16,7 @@ from business_api_client.api.ad_aco_api import AdAcoApi
 from business_api_client.api.adgroup_api import AdgroupApi
 from business_api_client.api.audience_api import AudienceApi
 from business_api_client.api.authentication_api import AuthenticationApi
+from business_api_client.api.automated_rules_api import AutomatedRulesApi
 from business_api_client.api.bc_api import BCApi
 from business_api_client.api.campaign_creation_api import CampaignCreationApi
 from business_api_client.api.comments_api import CommentsApi

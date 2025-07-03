@@ -2470,6 +2470,115 @@ class BCApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def bc_invoice_unpaid_get(self, bc_id, invoice_type, access_token, **kwargs):  # noqa: E501
+        """Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id=1740295904843777)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_invoice_unpaid_get(bc_id, invoice_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str invoice_type: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.bc_invoice_unpaid_get_with_http_info(bc_id, invoice_type, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.bc_invoice_unpaid_get_with_http_info(bc_id, invoice_type, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def bc_invoice_unpaid_get_with_http_info(self, bc_id, invoice_type, access_token, **kwargs):  # noqa: E501
+        """Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id=1740295904843777)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.bc_invoice_unpaid_get_with_http_info(bc_id, invoice_type, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str bc_id: (required)
+        :param str invoice_type: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['bc_id', 'invoice_type', 'access_token']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method bc_invoice_unpaid_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'bc_id' is set
+        if ('bc_id' not in params or
+                params['bc_id'] is None):
+            raise ValueError("Missing the required parameter `bc_id` when calling `bc_invoice_unpaid_get`")  # noqa: E501
+        # verify the required parameter 'invoice_type' is set
+        if ('invoice_type' not in params or
+                params['invoice_type'] is None):
+            raise ValueError("Missing the required parameter `invoice_type` when calling `bc_invoice_unpaid_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `bc_invoice_unpaid_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'bc_id' in params:
+            query_params.append(('bc_id', params['bc_id']))  # noqa: E501
+        if 'invoice_type' in params:
+            query_params.append(('invoice_type', params['invoice_type']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/bc/invoice/unpaid/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def bc_member_delete(self, access_token, **kwargs):  # noqa: E501
         """Delete member. [BC Member Delete](https://business-api.tiktok.com/portal/docs?id=1739939482851329)  # noqa: E501
 

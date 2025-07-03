@@ -85,9 +85,14 @@ import {CatalogCreateBody} from './model/CatalogCreateBody.js';
 import {CatalogDeleteBody} from './model/CatalogDeleteBody.js';
 import {CatalogUpdateBody} from './model/CatalogUpdateBody.js';
 import {CatalogcreateCatalogConf} from './model/CatalogcreateCatalogConf.js';
+import {CatalogfeedcreateScheduleParam} from './model/CatalogfeedcreateScheduleParam.js';
+import {CatalogfeedcreateScheduleParamSource} from './model/CatalogfeedcreateScheduleParamSource.js';
+import {CatalogsetupdateConditions} from './model/CatalogsetupdateConditions.js';
 import {CommentDeleteBody} from './model/CommentDeleteBody.js';
 import {CommentPostBody} from './model/CommentPostBody.js';
 import {CommentTaskCreateBody} from './model/CommentTaskCreateBody.js';
+import {ContextInfoCatalogFeedLog} from './model/ContextInfoCatalogFeedLog.js';
+import {ContextInfoCatalogProductLog} from './model/ContextInfoCatalogProductLog.js';
 import {CreativeAssetDeleteBody} from './model/CreativeAssetDeleteBody.js';
 import {CreativeportfoliocreateAdvancedAudioInfo} from './model/CreativeportfoliocreateAdvancedAudioInfo.js';
 import {CreativeportfoliocreateAdvancedGestureIcon} from './model/CreativeportfoliocreateAdvancedGestureIcon.js';
@@ -126,7 +131,9 @@ import {EventDeleteBody} from './model/EventDeleteBody.js';
 import {EventUpdateBody} from './model/EventUpdateBody.js';
 import {EventsourceBindBody} from './model/EventsourceBindBody.js';
 import {EventsourceUnbindBody} from './model/EventsourceUnbindBody.js';
+import {FeedCreateBody} from './model/FeedCreateBody.js';
 import {FeedDeleteBody} from './model/FeedDeleteBody.js';
+import {FeedUpdateBody} from './model/FeedUpdateBody.js';
 import {FileImageAdUpload} from './model/FileImageAdUpload.js';
 import {FileUploadBody} from './model/FileUploadBody.js';
 import {FilteringAdGet} from './model/FilteringAdGet.js';
@@ -147,6 +154,8 @@ import {FilteringBcPartnerGet} from './model/FilteringBcPartnerGet.js';
 import {FilteringBcTransactionGet} from './model/FilteringBcTransactionGet.js';
 import {FilteringCampaignGet} from './model/FilteringCampaignGet.js';
 import {FilteringCreativePortfolioList} from './model/FilteringCreativePortfolioList.js';
+import {FilteringOptimizerRuleList} from './model/FilteringOptimizerRuleList.js';
+import {FilteringOptimizerRuleResultList} from './model/FilteringOptimizerRuleResultList.js';
 import {FilteringPixelList} from './model/FilteringPixelList.js';
 import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch.js';
 import {IdentityCreateBody} from './model/IdentityCreateBody.js';
@@ -164,6 +173,20 @@ import {Oauth2AccessTokenBody} from './model/Oauth2AccessTokenBody.js';
 import {OfflineCreateBody} from './model/OfflineCreateBody.js';
 import {OfflineDeleteBody} from './model/OfflineDeleteBody.js';
 import {OfflineUpdateBody} from './model/OfflineUpdateBody.js';
+import {OptimizerRuleCreateBody} from './model/OptimizerRuleCreateBody.js';
+import {OptimizerRuleCreateBodyActions} from './model/OptimizerRuleCreateBodyActions.js';
+import {OptimizerRuleCreateBodyApplyObjects} from './model/OptimizerRuleCreateBodyApplyObjects.js';
+import {OptimizerRuleCreateBodyConditions} from './model/OptimizerRuleCreateBodyConditions.js';
+import {OptimizerRuleCreateBodyFrequencyInfo} from './model/OptimizerRuleCreateBodyFrequencyInfo.js';
+import {OptimizerRuleCreateBodyNotification} from './model/OptimizerRuleCreateBodyNotification.js';
+import {OptimizerRuleCreateBodyNotificationEmailSetting} from './model/OptimizerRuleCreateBodyNotificationEmailSetting.js';
+import {OptimizerRuleCreateBodyRuleExecInfo} from './model/OptimizerRuleCreateBodyRuleExecInfo.js';
+import {OptimizerRuleCreateBodyRuleExecInfoTimePeriodInfo} from './model/OptimizerRuleCreateBodyRuleExecInfoTimePeriodInfo.js';
+import {OptimizerRuleCreateBodyRules} from './model/OptimizerRuleCreateBodyRules.js';
+import {OptimizerRuleCreateBodyValue} from './model/OptimizerRuleCreateBodyValue.js';
+import {OptimizerRuleUpdateBody} from './model/OptimizerRuleUpdateBody.js';
+import {OptimizerRuleUpdateBodyRules} from './model/OptimizerRuleUpdateBodyRules.js';
+import {OptimizerrulebatchBindBindInfo} from './model/OptimizerrulebatchBindBindInfo.js';
 import {PageInfo} from './model/PageInfo.js';
 import {PangleBlockListUpdateBody} from './model/PangleBlockListUpdateBody.js';
 import {PartnerAddBody} from './model/PartnerAddBody.js';
@@ -191,9 +214,13 @@ import {ProductDeleteBody} from './model/ProductDeleteBody.js';
 import {ProductFileBody} from './model/ProductFileBody.js';
 import {ReportTaskCreateBody} from './model/ReportTaskCreateBody.js';
 import {ReportTaskCreateBodyFiltering} from './model/ReportTaskCreateBodyFiltering.js';
+import {ResultDetail} from './model/ResultDetail.js';
+import {RuleBatchBindBody} from './model/RuleBatchBindBody.js';
 import {RuleCreateBody} from './model/RuleCreateBody.js';
 import {SavedAudienceCreateBody} from './model/SavedAudienceCreateBody.js';
 import {SavedAudienceDeleteBody} from './model/SavedAudienceDeleteBody.js';
+import {SetDeleteBody} from './model/SetDeleteBody.js';
+import {SetUpdateBody} from './model/SetUpdateBody.js';
 import {ShareCancelBody} from './model/ShareCancelBody.js';
 import {ShareableLinkCreateBody} from './model/ShareableLinkCreateBody.js';
 import {SmartTextGenerateBody} from './model/SmartTextGenerateBody.js';
@@ -203,6 +230,7 @@ import {TargetingInfoBody} from './model/TargetingInfoBody.js';
 import {TargetingSearchBody} from './model/TargetingSearchBody.js';
 import {TaskCancelBody} from './model/TaskCancelBody.js';
 import {TermConfirmBody} from './model/TermConfirmBody.js';
+import {VideoDeleteBody} from './model/VideoDeleteBody.js';
 import {APPManagementApi} from './api/APPManagementApi.js';
 import {AccountManagementApi} from './api/AccountManagementApi.js';
 import {AdApi} from './api/AdApi.js';
@@ -210,6 +238,7 @@ import {AdAcoApi} from './api/AdAcoApi.js';
 import {AdgroupApi} from './api/AdgroupApi.js';
 import {AudienceApi} from './api/AudienceApi.js';
 import {AuthenticationApi} from './api/AuthenticationApi.js';
+import {AutomatedRulesApi} from './api/AutomatedRulesApi.js';
 import {BCApi} from './api/BCApi.js';
 import {CampaignCreationApi} from './api/CampaignCreationApi.js';
 import {CatalogApi} from './api/CatalogApi.js';
@@ -742,6 +771,24 @@ export {
     CatalogcreateCatalogConf,
 
     /**
+     * The CatalogfeedcreateScheduleParam model constructor.
+     * @property {module:model/CatalogfeedcreateScheduleParam}
+     */
+    CatalogfeedcreateScheduleParam,
+
+    /**
+     * The CatalogfeedcreateScheduleParamSource model constructor.
+     * @property {module:model/CatalogfeedcreateScheduleParamSource}
+     */
+    CatalogfeedcreateScheduleParamSource,
+
+    /**
+     * The CatalogsetupdateConditions model constructor.
+     * @property {module:model/CatalogsetupdateConditions}
+     */
+    CatalogsetupdateConditions,
+
+    /**
      * The CommentDeleteBody model constructor.
      * @property {module:model/CommentDeleteBody}
      */
@@ -758,6 +805,18 @@ export {
      * @property {module:model/CommentTaskCreateBody}
      */
     CommentTaskCreateBody,
+
+    /**
+     * The ContextInfoCatalogFeedLog model constructor.
+     * @property {module:model/ContextInfoCatalogFeedLog}
+     */
+    ContextInfoCatalogFeedLog,
+
+    /**
+     * The ContextInfoCatalogProductLog model constructor.
+     * @property {module:model/ContextInfoCatalogProductLog}
+     */
+    ContextInfoCatalogProductLog,
 
     /**
      * The CreativeAssetDeleteBody model constructor.
@@ -988,10 +1047,22 @@ export {
     EventsourceUnbindBody,
 
     /**
+     * The FeedCreateBody model constructor.
+     * @property {module:model/FeedCreateBody}
+     */
+    FeedCreateBody,
+
+    /**
      * The FeedDeleteBody model constructor.
      * @property {module:model/FeedDeleteBody}
      */
     FeedDeleteBody,
+
+    /**
+     * The FeedUpdateBody model constructor.
+     * @property {module:model/FeedUpdateBody}
+     */
+    FeedUpdateBody,
 
     /**
      * The FileImageAdUpload model constructor.
@@ -1114,6 +1185,18 @@ export {
     FilteringCreativePortfolioList,
 
     /**
+     * The FilteringOptimizerRuleList model constructor.
+     * @property {module:model/FilteringOptimizerRuleList}
+     */
+    FilteringOptimizerRuleList,
+
+    /**
+     * The FilteringOptimizerRuleResultList model constructor.
+     * @property {module:model/FilteringOptimizerRuleResultList}
+     */
+    FilteringOptimizerRuleResultList,
+
+    /**
      * The FilteringPixelList model constructor.
      * @property {module:model/FilteringPixelList}
      */
@@ -1214,6 +1297,90 @@ export {
      * @property {module:model/OfflineUpdateBody}
      */
     OfflineUpdateBody,
+
+    /**
+     * The OptimizerRuleCreateBody model constructor.
+     * @property {module:model/OptimizerRuleCreateBody}
+     */
+    OptimizerRuleCreateBody,
+
+    /**
+     * The OptimizerRuleCreateBodyActions model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyActions}
+     */
+    OptimizerRuleCreateBodyActions,
+
+    /**
+     * The OptimizerRuleCreateBodyApplyObjects model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyApplyObjects}
+     */
+    OptimizerRuleCreateBodyApplyObjects,
+
+    /**
+     * The OptimizerRuleCreateBodyConditions model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyConditions}
+     */
+    OptimizerRuleCreateBodyConditions,
+
+    /**
+     * The OptimizerRuleCreateBodyFrequencyInfo model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyFrequencyInfo}
+     */
+    OptimizerRuleCreateBodyFrequencyInfo,
+
+    /**
+     * The OptimizerRuleCreateBodyNotification model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyNotification}
+     */
+    OptimizerRuleCreateBodyNotification,
+
+    /**
+     * The OptimizerRuleCreateBodyNotificationEmailSetting model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyNotificationEmailSetting}
+     */
+    OptimizerRuleCreateBodyNotificationEmailSetting,
+
+    /**
+     * The OptimizerRuleCreateBodyRuleExecInfo model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyRuleExecInfo}
+     */
+    OptimizerRuleCreateBodyRuleExecInfo,
+
+    /**
+     * The OptimizerRuleCreateBodyRuleExecInfoTimePeriodInfo model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyRuleExecInfoTimePeriodInfo}
+     */
+    OptimizerRuleCreateBodyRuleExecInfoTimePeriodInfo,
+
+    /**
+     * The OptimizerRuleCreateBodyRules model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyRules}
+     */
+    OptimizerRuleCreateBodyRules,
+
+    /**
+     * The OptimizerRuleCreateBodyValue model constructor.
+     * @property {module:model/OptimizerRuleCreateBodyValue}
+     */
+    OptimizerRuleCreateBodyValue,
+
+    /**
+     * The OptimizerRuleUpdateBody model constructor.
+     * @property {module:model/OptimizerRuleUpdateBody}
+     */
+    OptimizerRuleUpdateBody,
+
+    /**
+     * The OptimizerRuleUpdateBodyRules model constructor.
+     * @property {module:model/OptimizerRuleUpdateBodyRules}
+     */
+    OptimizerRuleUpdateBodyRules,
+
+    /**
+     * The OptimizerrulebatchBindBindInfo model constructor.
+     * @property {module:model/OptimizerrulebatchBindBindInfo}
+     */
+    OptimizerrulebatchBindBindInfo,
 
     /**
      * The PageInfo model constructor.
@@ -1378,6 +1545,18 @@ export {
     ReportTaskCreateBodyFiltering,
 
     /**
+     * The ResultDetail model constructor.
+     * @property {module:model/ResultDetail}
+     */
+    ResultDetail,
+
+    /**
+     * The RuleBatchBindBody model constructor.
+     * @property {module:model/RuleBatchBindBody}
+     */
+    RuleBatchBindBody,
+
+    /**
      * The RuleCreateBody model constructor.
      * @property {module:model/RuleCreateBody}
      */
@@ -1394,6 +1573,18 @@ export {
      * @property {module:model/SavedAudienceDeleteBody}
      */
     SavedAudienceDeleteBody,
+
+    /**
+     * The SetDeleteBody model constructor.
+     * @property {module:model/SetDeleteBody}
+     */
+    SetDeleteBody,
+
+    /**
+     * The SetUpdateBody model constructor.
+     * @property {module:model/SetUpdateBody}
+     */
+    SetUpdateBody,
 
     /**
      * The ShareCancelBody model constructor.
@@ -1450,6 +1641,12 @@ export {
     TermConfirmBody,
 
     /**
+     * The VideoDeleteBody model constructor.
+     * @property {module:model/VideoDeleteBody}
+     */
+    VideoDeleteBody,
+
+    /**
     * The APPManagementApi service constructor.
     * @property {module:api/APPManagementApi}
     */
@@ -1490,6 +1687,12 @@ export {
     * @property {module:api/AuthenticationApi}
     */
     AuthenticationApi,
+
+    /**
+    * The AutomatedRulesApi service constructor.
+    * @property {module:api/AutomatedRulesApi}
+    */
+    AutomatedRulesApi,
 
     /**
     * The BCApi service constructor.

@@ -10,6 +10,7 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**audience_insight_overlap**](AudienceApi.md#audience_insight_overlap) | **GET** /open_api/v1.3/audience/insight/overlap/ | Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id&#x3D;1797023590780930)
 [**dmp_custom_audience_apply**](AudienceApi.md#dmp_custom_audience_apply) | **POST** /open_api/v1.3/dmp/custom_audience/apply/ | Apply a shared custom audience [Dmp Custom_audience Apply](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245827044354)
 [**dmp_custom_audience_apply_log**](AudienceApi.md#dmp_custom_audience_apply_log) | **GET** /open_api/v1.3/dmp/custom_audience/apply/log/ | Get the latest application log of custom audiences [Dmp Custom_audience Apply Log](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1758615737388033)
 [**dmp_custom_audience_create**](AudienceApi.md#dmp_custom_audience_create) | **POST** /open_api/v1.3/dmp/custom_audience/create/ | Create an audience by file [Dmp Custom_audience Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940570793985)
@@ -27,6 +28,58 @@ Method | HTTP request | Description
 [**dmp_saved_audience_create**](AudienceApi.md#dmp_saved_audience_create) | **POST** /open_api/v1.3/dmp/saved_audience/create/ | Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154541898754)
 [**dmp_saved_audience_delete**](AudienceApi.md#dmp_saved_audience_delete) | **POST** /open_api/v1.3/dmp/saved_audience/delete/ | Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154666312706)
 [**dmp_saved_audience_list**](AudienceApi.md#dmp_saved_audience_list) | **GET** /open_api/v1.3/dmp/saved_audience/list/ | Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154619404290)
+
+# **audience_insight_overlap**
+> InlineResponse200 audience_insight_overlap(advertiser_id, benchmark_custom_audience_id, access_token, comparison_custom_audience_ids=comparison_custom_audience_ids)
+
+Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id=1797023590780930)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.AudienceApi()
+advertiser_id = 'advertiser_id_example' # str | 
+benchmark_custom_audience_id = 'benchmark_custom_audience_id_example' # str | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+comparison_custom_audience_ids = ['comparison_custom_audience_ids_example'] # list[str] |  (optional)
+
+try:
+    # Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id=1797023590780930)
+    api_response = api_instance.audience_insight_overlap(advertiser_id, benchmark_custom_audience_id, access_token, comparison_custom_audience_ids=comparison_custom_audience_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling AudienceApi->audience_insight_overlap: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**|  | [required]
+ **benchmark_custom_audience_id** | **str**|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+ **comparison_custom_audience_ids** | [**list[str]**](str.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dmp_custom_audience_apply**
 > InlineResponse200 dmp_custom_audience_apply(access_token, body=body)

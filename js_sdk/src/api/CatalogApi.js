@@ -9,12 +9,19 @@ import {CatalogCapitalizeBody} from '../model/CatalogCapitalizeBody.js';
 import {CatalogCreateBody} from '../model/CatalogCreateBody.js';
 import {CatalogDeleteBody} from '../model/CatalogDeleteBody.js';
 import {CatalogUpdateBody} from '../model/CatalogUpdateBody.js';
+import {ContextInfoCatalogFeedLog} from '../model/ContextInfoCatalogFeedLog.js';
+import {ContextInfoCatalogProductLog} from '../model/ContextInfoCatalogProductLog.js';
 import {EventsourceBindBody} from '../model/EventsourceBindBody.js';
 import {EventsourceUnbindBody} from '../model/EventsourceUnbindBody.js';
+import {FeedCreateBody} from '../model/FeedCreateBody.js';
 import {FeedDeleteBody} from '../model/FeedDeleteBody.js';
+import {FeedUpdateBody} from '../model/FeedUpdateBody.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
 import {ProductDeleteBody} from '../model/ProductDeleteBody.js';
 import {ProductFileBody} from '../model/ProductFileBody.js';
+import {SetDeleteBody} from '../model/SetDeleteBody.js';
+import {SetUpdateBody} from '../model/SetUpdateBody.js';
+import {VideoDeleteBody} from '../model/VideoDeleteBody.js';
 
 /**
 * Catalog service.
@@ -383,6 +390,54 @@ export class CatalogApi {
       );
     }
     /**
+     * Callback function to receive the result of the catalogFeedCreate operation.
+     * @callback moduleapi/CatalogApi~catalogFeedCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a feed. [Catalog Feed Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665161957377)
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/FeedCreateBody} opts.body 
+     * @param {module:api/CatalogApi~catalogFeedCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogFeedCreate(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogFeedCreate");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/feed/create/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the catalogFeedDelete operation.
      * @callback moduleapi/CatalogApi~catalogFeedDeleteCallback
      * @param {String} error Error message, if any.
@@ -484,6 +539,117 @@ export class CatalogApi {
 
       return this.apiClient.callApi(
         '/open_api/v1.3/catalog/feed/get/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the catalogFeedLog operation.
+     * @callback moduleapi/CatalogApi~catalogFeedLogCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get the last 10 operations of a feed. [Catalog Feed Log](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665225631810)
+     * @param {String} bc_id 
+     * @param {String} catalog_id 
+     * @param {String} feed_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/ContextInfoCatalogFeedLog} opts.context_info 
+     * @param {module:api/CatalogApi~catalogFeedLogCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogFeedLog(bc_id, catalog_id, feed_id, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'bc_id' is set
+      if (bc_id === undefined || bc_id === null) {
+        throw new Error("Missing the required parameter 'bc_id' when calling catalogFeedLog");
+      }
+      // verify the required parameter 'catalog_id' is set
+      if (catalog_id === undefined || catalog_id === null) {
+        throw new Error("Missing the required parameter 'catalog_id' when calling catalogFeedLog");
+      }
+      // verify the required parameter 'feed_id' is set
+      if (feed_id === undefined || feed_id === null) {
+        throw new Error("Missing the required parameter 'feed_id' when calling catalogFeedLog");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogFeedLog");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'bc_id': bc_id,'catalog_id': catalog_id,'feed_id': feed_id,'context_info': opts['context_info']
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/feed/log/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the catalogFeedUpdate operation.
+     * @callback moduleapi/CatalogApi~catalogFeedUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update a feed. [Catalog Feed Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1740665197662210)
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/FeedUpdateBody} opts.body 
+     * @param {module:api/CatalogApi~catalogFeedUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogFeedUpdate(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogFeedUpdate");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/feed/update/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -798,6 +964,178 @@ export class CatalogApi {
       );
     }
     /**
+     * Callback function to receive the result of the catalogProductLog operation.
+     * @callback moduleapi/CatalogApi~catalogProductLogCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Use this endpoint to find out if a product was uploaded or deleted successfully, and what to do if it failed. [Catalog Product Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740570027173889)
+     * @param {String} bc_id 
+     * @param {String} catalog_id 
+     * @param {String} feed_log_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.advertiser_id 
+     * @param {String} opts.language 
+     * @param {module:model/ContextInfoCatalogProductLog} opts.context_info 
+     * @param {module:api/CatalogApi~catalogProductLogCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogProductLog(bc_id, catalog_id, feed_log_id, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'bc_id' is set
+      if (bc_id === undefined || bc_id === null) {
+        throw new Error("Missing the required parameter 'bc_id' when calling catalogProductLog");
+      }
+      // verify the required parameter 'catalog_id' is set
+      if (catalog_id === undefined || catalog_id === null) {
+        throw new Error("Missing the required parameter 'catalog_id' when calling catalogProductLog");
+      }
+      // verify the required parameter 'feed_log_id' is set
+      if (feed_log_id === undefined || feed_log_id === null) {
+        throw new Error("Missing the required parameter 'feed_log_id' when calling catalogProductLog");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogProductLog");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'bc_id': bc_id,'catalog_id': catalog_id,'feed_log_id': feed_log_id,'advertiser_id': opts['advertiser_id'],'language': opts['language'],'context_info': opts['context_info']
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/product/log/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the catalogSetDelete operation.
+     * @callback moduleapi/CatalogApi~catalogSetDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete product sets. [Catalog Set Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1740573143966722)
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SetDeleteBody} opts.body 
+     * @param {module:api/CatalogApi~catalogSetDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogSetDelete(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogSetDelete");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/set/delete/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the catalogSetGet operation.
+     * @callback moduleapi/CatalogApi~catalogSetGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get product sets. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740570556295169)
+     * @param {String} catalog_id 
+     * @param {String} bc_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.product_set_id 
+     * @param {Boolean} opts.return_product_count  (default to <.>)
+     * @param {module:api/CatalogApi~catalogSetGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogSetGet(catalog_id, bc_id, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'catalog_id' is set
+      if (catalog_id === undefined || catalog_id === null) {
+        throw new Error("Missing the required parameter 'catalog_id' when calling catalogSetGet");
+      }
+      // verify the required parameter 'bc_id' is set
+      if (bc_id === undefined || bc_id === null) {
+        throw new Error("Missing the required parameter 'bc_id' when calling catalogSetGet");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogSetGet");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'catalog_id': catalog_id,'bc_id': bc_id,'product_set_id': opts['product_set_id'],'return_product_count': opts['return_product_count']
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/set/get/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the catalogSetProductGet operation.
      * @callback moduleapi/CatalogApi~catalogSetProductGetCallback
      * @param {String} error Error message, if any.
@@ -862,6 +1200,54 @@ export class CatalogApi {
       );
     }
     /**
+     * Callback function to receive the result of the catalogSetUpdate operation.
+     * @callback moduleapi/CatalogApi~catalogSetUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Use this endpoint to update the filter conditions or name of a product set. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740572974725122)
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SetUpdateBody} opts.body 
+     * @param {module:api/CatalogApi~catalogSetUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogSetUpdate(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogSetUpdate");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/set/update/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the catalogUpdate operation.
      * @callback moduleapi/CatalogApi~catalogUpdateCallback
      * @param {String} error Error message, if any.
@@ -905,6 +1291,113 @@ export class CatalogApi {
 
       return this.apiClient.callApi(
         '/open_api/v1.3/catalog/update/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the catalogVideoDelete operation.
+     * @callback moduleapi/CatalogApi~catalogVideoDeleteCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete uploaded catalog videos. [Catalog Video Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1803655103069185)
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/VideoDeleteBody} opts.body 
+     * @param {module:api/CatalogApi~catalogVideoDeleteCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogVideoDelete(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogVideoDelete");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/video/delete/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the catalogVideoGet operation.
+     * @callback moduleapi/CatalogApi~catalogVideoGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} bc_id 
+     * @param {String} catalog_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.catalog_video_ids 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
+     * @param {module:api/CatalogApi~catalogVideoGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    catalogVideoGet(bc_id, catalog_id, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'bc_id' is set
+      if (bc_id === undefined || bc_id === null) {
+        throw new Error("Missing the required parameter 'bc_id' when calling catalogVideoGet");
+      }
+      // verify the required parameter 'catalog_id' is set
+      if (catalog_id === undefined || catalog_id === null) {
+        throw new Error("Missing the required parameter 'catalog_id' when calling catalogVideoGet");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling catalogVideoGet");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'bc_id': bc_id,'catalog_id': catalog_id,'catalog_video_ids': this.apiClient.buildCollectionParam(opts['catalog_video_ids'], 'multi'),'page': opts['page'],'page_size': opts['page_size']
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/catalog/video/get/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

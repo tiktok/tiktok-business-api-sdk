@@ -4,6 +4,7 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**audienceInsightOverlap**](AudienceApi.md#audienceInsightOverlap) | **GET** /open_api/v1.3/audience/insight/overlap/ | Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id&#x3D;1797023590780930)
 [**dmpCustomAudienceApply**](AudienceApi.md#dmpCustomAudienceApply) | **POST** /open_api/v1.3/dmp/custom_audience/apply/ | Apply a shared custom audience [Dmp Custom_audience Apply](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1740245827044354)
 [**dmpCustomAudienceApplyLog**](AudienceApi.md#dmpCustomAudienceApplyLog) | **GET** /open_api/v1.3/dmp/custom_audience/apply/log/ | Get the latest application log of custom audiences [Dmp Custom_audience Apply Log](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1758615737388033)
 [**dmpCustomAudienceCreate**](AudienceApi.md#dmpCustomAudienceCreate) | **POST** /open_api/v1.3/dmp/custom_audience/create/ | Create an audience by file [Dmp Custom_audience Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739940570793985)
@@ -21,6 +22,55 @@ Method | HTTP request | Description
 [**dmpSavedAudienceCreate**](AudienceApi.md#dmpSavedAudienceCreate) | **POST** /open_api/v1.3/dmp/saved_audience/create/ | Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154541898754)
 [**dmpSavedAudienceDelete**](AudienceApi.md#dmpSavedAudienceDelete) | **POST** /open_api/v1.3/dmp/saved_audience/delete/ | Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154666312706)
 [**dmpSavedAudienceList**](AudienceApi.md#dmpSavedAudienceList) | **GET** /open_api/v1.3/dmp/saved_audience/list/ | Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id&#x3D;1780154619404290)
+
+<a name="audienceInsightOverlap"></a>
+# **audienceInsightOverlap**
+> Response audienceInsightOverlap(advertiserId, benchmarkCustomAudienceId, accessToken, comparisonCustomAudienceIds)
+
+Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id&#x3D;1797023590780930)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.AudienceApi;
+
+
+AudienceApi apiInstance = new AudienceApi();
+String advertiserId = "advertiserId_example"; // String | 
+String benchmarkCustomAudienceId = "benchmarkCustomAudienceId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+List<String> comparisonCustomAudienceIds = Arrays.asList("comparisonCustomAudienceIds_example"); // List<String> | 
+try {
+    Response result = apiInstance.audienceInsightOverlap(advertiserId, benchmarkCustomAudienceId, accessToken, comparisonCustomAudienceIds);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AudienceApi#audienceInsightOverlap");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **benchmarkCustomAudienceId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **comparisonCustomAudienceIds** | [**List&lt;String&gt;**](String.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="dmpCustomAudienceApply"></a>
 # **dmpCustomAudienceApply**

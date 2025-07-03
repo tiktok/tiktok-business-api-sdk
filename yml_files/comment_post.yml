@@ -1,0 +1,282 @@
+info:
+  description: "{\"en\":\"For TikTok ads that were created by users linked to TTBA\
+    \ (TikTok Business Account) or custom user identities (identity_type = TT_USERor\
+    \ CUSTOMIZED_USER), users who are linked to these two types of identities and\
+    \ have comment management permissions can reply to first-level comments under\
+    \ the ads.\",\"zh\":\"\u60A8\u53EF\u4EE5\u4F7F\u7528\u672C\u63A5\u53E3\u56DE\u590D\
+    \u8BC4\u8BBA\u3002\\n\\n\u7ED1\u5B9A\u4EE5\u4E0B\u4E24\u7C7B\u8BA4\u8BC1\u8EAB\
+    \u4EFD\uFF0C\u5E76\u4E14\u62E5\u6709\u8BC4\u8BBA\u7BA1\u7406\u6743\u9650\u7684\
+    \u5E7F\u544A\u4E3B\u53EF\u4EE5\u56DE\u590D\u5DF2\u6709\u7684\u4E00\u7EA7\u8BC4\
+    \u8BBA\uFF1A\\n\\n\u81EA\u5B9A\u4E49\u7528\u6237 \uFF08CUSTOMIZED_USER\uFF09\\\
+    nTikTok \u7528\u6237\uFF08TT_USER\uFF09\"}"
+  title: "{\"en\":\"Reply to comments\",\"zh\":\"\u56DE\u590D\u8BC4\u8BBA\"}"
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /comment/post/:
+    post:
+      operationId: Comment Post
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                ad_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.creative_id
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.adv_id
+                comment_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.comment_id
+                comment_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1816409670277122
+                    enum_package_name: AdCommentType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: POST
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: REPLY
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.comment_type
+                identity_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.identity_id
+                identity_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1800331041544193
+                    enum_package_name: IdentityType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AUTH_CODE
+                      value: '2'
+                    - description: ''
+                      is_valid: false
+                      key: BC_AUTH_TT
+                      value: '5'
+                    - description: ''
+                      is_valid: false
+                      key: BC_SELF_TT
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: CUSTOMIZED_USER
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: TT_USER
+                      value: '3'
+                    - description: ''
+                      is_valid: false
+                      key: UNSET
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.identity_type
+                text:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.text
+                tiktok_item_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.item_id
+              required:
+              - advertiser_id
+              - ad_id
+              - tiktok_item_id
+              - comment_id
+              - comment_type
+              - text
+              - identity_type
+              - identity_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Reply to comments. [Comment Post](https://business-api.tiktok.com/portal/docs?id=1738957702411265)
+      tags:
+      - Comments
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: tt4b_uid
+            required: true
+            source: $.context.core_user_id
+            type: number
+          - name: adv_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: identity_type
+            required: true
+            source: $.http.body.identity_type
+            type: number
+          - name: identity_id
+            required: true
+            source: $.http.body.identity_id
+            type: string
+          - name: item_id
+            required: true
+            source: $.http.body.tiktok_item_id
+            type: number
+          - name: text
+            required: true
+            source: $.http.body.text
+            type: string
+          - name: comment_type
+            required: true
+            source: $.http.body.comment_type
+            type: number
+          - name: creative_id
+            required: true
+            source: $.http.body.ad_id
+            type: number
+          - name: comment_id
+            required: false
+            source: $.http.body.comment_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          adv_id: $.http.body.advertiser_id
+          comment_id: $.http.body.comment_id
+          comment_type: $.http.body.comment_type
+          creative_id: $.http.body.ad_id
+          identity_id: $.http.body.identity_id
+          identity_type: $.http.body.identity_type
+          item_id: $.http.body.tiktok_item_id
+          text: $.http.body.text
+          tt4b_uid: $.context.core_user_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          comment:
+            comment_id: $.rpc.output.comment.comment_id
+            create_time: $.rpc.output.comment.create_time
+            reply_to_comment_id: $.rpc.output.comment.reply_to_comment_id
+            text: $.rpc.output.comment.text
+            tiktok_item_id: $.rpc.output.comment.item_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+servers:
+- url: business-api.tiktok.com

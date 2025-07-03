@@ -26,6 +26,7 @@ Method | HTTP request | Description
 [**bcBillingGroupUpdate**](BCApi.md#bcBillingGroupUpdate) | **POST** /open_api/v1.3/bc/billing_group/update/ | Update settings of a billing group. [BC Billing Group Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1738947843447809)
 [**bcGet**](BCApi.md#bcGet) | **GET** /open_api/v1.3/bc/get/ | Get Business Centers that you have access to. [BC Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1737115687501826)
 [**bcImageUpload**](BCApi.md#bcImageUpload) | **POST** /open_api/v1.3/bc/image/upload/ | Upload certificate images for an ad account. [BC Image Upload](https://business-api.tiktok.com/portal/docs?id&#x3D;1739938996913218)
+[**bcInvoiceUnpaidGet**](BCApi.md#bcInvoiceUnpaidGet) | **GET** /open_api/v1.3/bc/invoice/unpaid/get/ | Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740295904843777)
 [**bcMemberDelete**](BCApi.md#bcMemberDelete) | **POST** /open_api/v1.3/bc/member/delete/ | Delete member. [BC Member Delete](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939482851329)
 [**bcMemberGet**](BCApi.md#bcMemberGet) | **GET** /open_api/v1.3/bc/member/get/ | Get BC members. [BC Member Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939404802049)
 [**bcMemberInvite**](BCApi.md#bcMemberInvite) | **POST** /open_api/v1.3/bc/member/invite/ | Invite members to BC. [BC Member Invite](https://business-api.tiktok.com/portal/docs?id&#x3D;1739939455765505)
@@ -1105,6 +1106,51 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
+ - **Accept**: application/json
+
+<a name="bcInvoiceUnpaidGet"></a>
+# **bcInvoiceUnpaidGet**
+> InlineResponse200 bcInvoiceUnpaidGet(bc_id, invoice_type, Access_Token)
+
+Finance Managers and Finance Analysts of a Business Center account can use this endpoint to get total unpaid amount of their Business Center accounts. [BC Invoice Unpaid Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740295904843777)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.BCApi();
+let bc_id = "bc_id_example"; // String | 
+let invoice_type = "invoice_type_example"; // String | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+
+apiInstance.bcInvoiceUnpaidGet(bc_id, invoice_type, Access_Token, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bc_id** | **String**|  |[required]  
+ **invoice_type** | **String**|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 <a name="bcMemberDelete"></a>

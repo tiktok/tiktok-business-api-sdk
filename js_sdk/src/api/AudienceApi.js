@@ -39,6 +39,64 @@ export class AudienceApi {
     }
 
     /**
+     * Callback function to receive the result of the audienceInsightOverlap operation.
+     * @callback moduleapi/AudienceApi~audienceInsightOverlapCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id&#x3D;1797023590780930)
+     * @param {String} advertiser_id 
+     * @param {String} benchmark_custom_audience_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.comparison_custom_audience_ids 
+     * @param {module:api/AudienceApi~audienceInsightOverlapCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    audienceInsightOverlap(advertiser_id, benchmark_custom_audience_id, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'advertiser_id' is set
+      if (advertiser_id === undefined || advertiser_id === null) {
+        throw new Error("Missing the required parameter 'advertiser_id' when calling audienceInsightOverlap");
+      }
+      // verify the required parameter 'benchmark_custom_audience_id' is set
+      if (benchmark_custom_audience_id === undefined || benchmark_custom_audience_id === null) {
+        throw new Error("Missing the required parameter 'benchmark_custom_audience_id' when calling audienceInsightOverlap");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling audienceInsightOverlap");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'advertiser_id': advertiser_id,'benchmark_custom_audience_id': benchmark_custom_audience_id,'comparison_custom_audience_ids': this.apiClient.buildCollectionParam(opts['comparison_custom_audience_ids'], 'multi')
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/audience/insight/overlap/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the dmpCustomAudienceApply operation.
      * @callback moduleapi/AudienceApi~dmpCustomAudienceApplyCallback
      * @param {String} error Error message, if any.
