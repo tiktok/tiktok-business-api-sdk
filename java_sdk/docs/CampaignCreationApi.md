@@ -8,6 +8,10 @@ Method | HTTP request | Description
 [**campaignGet**](CampaignCreationApi.md#campaignGet) | **GET** /open_api/v1.3/campaign/get/ | Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739315828649986)
 [**campaignStatusUpdate**](CampaignCreationApi.md#campaignStatusUpdate) | **POST** /open_api/v1.3/campaign/status/update/ | Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
 [**campaignUpdate**](CampaignCreationApi.md#campaignUpdate) | **POST** /open_api/v1.3/campaign/update/ | To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320422086657)
+[**smartPlusCampaignCreate**](CampaignCreationApi.md#smartPlusCampaignCreate) | **POST** /open_api/v1.3/smart_plus/campaign/create/ | Create a new campaign [Smart Plus Campaign Create]
+[**smartPlusCampaignGet**](CampaignCreationApi.md#smartPlusCampaignGet) | **GET** /open_api/v1.3/smart_plus/campaign/get/ | Retrieve campaign details [Smart Plus Campaign Get]
+[**smartPlusCampaignStatusUpdate**](CampaignCreationApi.md#smartPlusCampaignStatusUpdate) | **POST** /open_api/v1.3/smart_plus/campaign/status/update/ | Update campaign status [Smart Plus Campaign Status Update]
+[**smartPlusCampaignUpdate**](CampaignCreationApi.md#smartPlusCampaignUpdate) | **POST** /open_api/v1.3/smart_plus/campaign/update/ | Update an existing campaign [Smart Plus Campaign Update]
 
 <a name="campaignCreate"></a>
 # **campaignCreate**
@@ -183,6 +187,194 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **body** | [**CampaignUpdateBody**](CampaignUpdateBody.md)| Campaign update body parameters | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusCampaignCreate"></a>
+# **smartPlusCampaignCreate**
+> Response smartPlusCampaignCreate(accessToken, body)
+
+Create a new campaign [Smart Plus Campaign Create]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CampaignCreationApi;
+
+
+CampaignCreationApi apiInstance = new CampaignCreationApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SmartPlusCampaignCreateBody body = new SmartPlusCampaignCreateBody(); // SmartPlusCampaignCreateBody | 
+try {
+    Response result = apiInstance.smartPlusCampaignCreate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CampaignCreationApi#smartPlusCampaignCreate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SmartPlusCampaignCreateBody**](SmartPlusCampaignCreateBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusCampaignGet"></a>
+# **smartPlusCampaignGet**
+> Response smartPlusCampaignGet(advertiserId, accessToken, fields, filtering, page, pageSize)
+
+Retrieve campaign details [Smart Plus Campaign Get]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CampaignCreationApi;
+
+
+CampaignCreationApi apiInstance = new CampaignCreationApi();
+String advertiserId = "advertiserId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+List<String> fields = Arrays.asList("fields_example"); // List<String> | 
+FilteringSmartPlusCampaignGet filtering = new FilteringSmartPlusCampaignGet(); // FilteringSmartPlusCampaignGet | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
+try {
+    Response result = apiInstance.smartPlusCampaignGet(advertiserId, accessToken, fields, filtering, page, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CampaignCreationApi#smartPlusCampaignGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **fields** | [**List&lt;String&gt;**](String.md)|  | [optional]
+ **filtering** | [**FilteringSmartPlusCampaignGet**](FilteringSmartPlusCampaignGet.md)|  | [optional]
+ **page** | **Long**|  | [optional] [default to 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="smartPlusCampaignStatusUpdate"></a>
+# **smartPlusCampaignStatusUpdate**
+> Response smartPlusCampaignStatusUpdate(accessToken, body)
+
+Update campaign status [Smart Plus Campaign Status Update]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CampaignCreationApi;
+
+
+CampaignCreationApi apiInstance = new CampaignCreationApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SmartPlusCampaignStatusUpdateBody body = new SmartPlusCampaignStatusUpdateBody(); // SmartPlusCampaignStatusUpdateBody | 
+try {
+    Response result = apiInstance.smartPlusCampaignStatusUpdate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CampaignCreationApi#smartPlusCampaignStatusUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SmartPlusCampaignStatusUpdateBody**](SmartPlusCampaignStatusUpdateBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusCampaignUpdate"></a>
+# **smartPlusCampaignUpdate**
+> Response smartPlusCampaignUpdate(accessToken, body)
+
+Update an existing campaign [Smart Plus Campaign Update]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.CampaignCreationApi;
+
+
+CampaignCreationApi apiInstance = new CampaignCreationApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SmartPlusCampaignUpdateBody body = new SmartPlusCampaignUpdateBody(); // SmartPlusCampaignUpdateBody | 
+try {
+    Response result = apiInstance.smartPlusCampaignUpdate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling CampaignCreationApi#smartPlusCampaignUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SmartPlusCampaignUpdateBody**](SmartPlusCampaignUpdateBody.md)|  | [optional]
 
 ### Return type
 

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OptimizerRuleCreateBodyApplyObjects model module.
  * @module model/OptimizerRuleCreateBodyApplyObjects
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class OptimizerRuleCreateBodyApplyObjects {
   /**

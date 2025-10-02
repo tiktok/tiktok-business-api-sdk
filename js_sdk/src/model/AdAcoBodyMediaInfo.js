@@ -11,7 +11,7 @@ import {AdAcoBodyMediaInfoVideoInfo} from './AdAcoBodyMediaInfoVideoInfo.js';
 /**
  * The AdAcoBodyMediaInfo model module.
  * @module model/AdAcoBodyMediaInfo
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdAcoBodyMediaInfo {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BlockedwordCreateBody model module.
  * @module model/BlockedwordCreateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class BlockedwordCreateBody {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeportfoliocreateShowcaseProducts model module.
  * @module model/CreativeportfoliocreateShowcaseProducts
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class CreativeportfoliocreateShowcaseProducts {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdvertiserupdateQualificationImages model module.
  * @module model/AdvertiserupdateQualificationImages
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdvertiserupdateQualificationImages {
   /**

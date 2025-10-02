@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdgroupcreateTargetingExpansion model module.
  * @module model/AdgroupcreateTargetingExpansion
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdgroupcreateTargetingExpansion {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PlayableSaveBody model module.
  * @module model/PlayableSaveBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PlayableSaveBody {
   /**

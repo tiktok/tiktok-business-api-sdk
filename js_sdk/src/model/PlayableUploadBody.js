@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PlayableUploadBody model module.
  * @module model/PlayableUploadBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PlayableUploadBody {
   /**

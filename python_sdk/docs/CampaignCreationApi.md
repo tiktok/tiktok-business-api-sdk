@@ -14,6 +14,10 @@ Method | HTTP request | Description
 [**campaign_get**](CampaignCreationApi.md#campaign_get) | **GET** /open_api/v1.3/campaign/get/ | Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739315828649986)
 [**campaign_status_update**](CampaignCreationApi.md#campaign_status_update) | **POST** /open_api/v1.3/campaign/status/update/ | Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
 [**campaign_update**](CampaignCreationApi.md#campaign_update) | **POST** /open_api/v1.3/campaign/update/ | To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320422086657)
+[**smart_plus_campaign_create**](CampaignCreationApi.md#smart_plus_campaign_create) | **POST** /open_api/v1.3/smart_plus/campaign/create/ | Create a new campaign [Smart Plus Campaign Create]
+[**smart_plus_campaign_get**](CampaignCreationApi.md#smart_plus_campaign_get) | **GET** /open_api/v1.3/smart_plus/campaign/get/ | Retrieve campaign details [Smart Plus Campaign Get]
+[**smart_plus_campaign_status_update**](CampaignCreationApi.md#smart_plus_campaign_status_update) | **POST** /open_api/v1.3/smart_plus/campaign/status/update/ | Update campaign status [Smart Plus Campaign Status Update]
+[**smart_plus_campaign_update**](CampaignCreationApi.md#smart_plus_campaign_update) | **POST** /open_api/v1.3/smart_plus/campaign/update/ | Update an existing campaign [Smart Plus Campaign Update]
 
 # **campaign_create**
 > InlineResponse200 campaign_create(access_token, body=body)
@@ -199,6 +203,206 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
  **body** | [**CampaignUpdateBody**](CampaignUpdateBody.md)| Campaign update body parameters | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **smart_plus_campaign_create**
+> InlineResponse200 smart_plus_campaign_create(access_token, body=body)
+
+Create a new campaign [Smart Plus Campaign Create]
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.CampaignCreationApi()
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+body = business_api_client.SmartPlusCampaignCreateBody() # SmartPlusCampaignCreateBody |  (optional)
+
+try:
+    # Create a new campaign [Smart Plus Campaign Create]
+    api_response = api_instance.smart_plus_campaign_create(access_token, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CampaignCreationApi->smart_plus_campaign_create: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+ **body** | [**SmartPlusCampaignCreateBody**](SmartPlusCampaignCreateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **smart_plus_campaign_get**
+> InlineResponse200 smart_plus_campaign_get(advertiser_id, access_token, fields=fields, filtering=filtering, page=page, page_size=page_size)
+
+Retrieve campaign details [Smart Plus Campaign Get]
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.CampaignCreationApi()
+advertiser_id = 'advertiser_id_example' # str | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+fields = ['fields_example'] # list[str] |  (optional)
+filtering = business_api_client.FilteringSmartPlusCampaignGet() # FilteringSmartPlusCampaignGet |  (optional)
+page = 1 # int |  (optional) (default to 1)
+page_size = 10 # int |  (optional) (default to 10)
+
+try:
+    # Retrieve campaign details [Smart Plus Campaign Get]
+    api_response = api_instance.smart_plus_campaign_get(advertiser_id, access_token, fields=fields, filtering=filtering, page=page, page_size=page_size)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CampaignCreationApi->smart_plus_campaign_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+ **fields** | [**list[str]**](str.md)|  | [optional] 
+ **filtering** | [**FilteringSmartPlusCampaignGet**](FilteringSmartPlusCampaignGet.md)|  | [optional] 
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 10]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **smart_plus_campaign_status_update**
+> InlineResponse200 smart_plus_campaign_status_update(access_token, body=body)
+
+Update campaign status [Smart Plus Campaign Status Update]
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.CampaignCreationApi()
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+body = business_api_client.SmartPlusCampaignStatusUpdateBody() # SmartPlusCampaignStatusUpdateBody |  (optional)
+
+try:
+    # Update campaign status [Smart Plus Campaign Status Update]
+    api_response = api_instance.smart_plus_campaign_status_update(access_token, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CampaignCreationApi->smart_plus_campaign_status_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+ **body** | [**SmartPlusCampaignStatusUpdateBody**](SmartPlusCampaignStatusUpdateBody.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **smart_plus_campaign_update**
+> InlineResponse200 smart_plus_campaign_update(access_token, body=body)
+
+Update an existing campaign [Smart Plus Campaign Update]
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.CampaignCreationApi()
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+body = business_api_client.SmartPlusCampaignUpdateBody() # SmartPlusCampaignUpdateBody |  (optional)
+
+try:
+    # Update an existing campaign [Smart Plus Campaign Update]
+    api_response = api_instance.smart_plus_campaign_update(access_token, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling CampaignCreationApi->smart_plus_campaign_update: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+ **body** | [**SmartPlusCampaignUpdateBody**](SmartPlusCampaignUpdateBody.md)|  | [optional] 
 
 ### Return type
 

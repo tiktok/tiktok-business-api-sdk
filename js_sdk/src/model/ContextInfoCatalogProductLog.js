@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ContextInfoCatalogProductLog model module.
  * @module model/ContextInfoCatalogProductLog
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class ContextInfoCatalogProductLog {
   /**

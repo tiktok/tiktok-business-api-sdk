@@ -93,6 +93,8 @@ import {CommentPostBody} from './model/CommentPostBody.js';
 import {CommentTaskCreateBody} from './model/CommentTaskCreateBody.js';
 import {ContextInfoCatalogFeedLog} from './model/ContextInfoCatalogFeedLog.js';
 import {ContextInfoCatalogProductLog} from './model/ContextInfoCatalogProductLog.js';
+import {ContextInfoSmartPlusAdReviewInfo} from './model/ContextInfoSmartPlusAdReviewInfo.js';
+import {ContextInfoSmartPlusMaterialReviewInfo} from './model/ContextInfoSmartPlusMaterialReviewInfo.js';
 import {CreativeAssetDeleteBody} from './model/CreativeAssetDeleteBody.js';
 import {CreativeportfoliocreateAdvancedAudioInfo} from './model/CreativeportfoliocreateAdvancedAudioInfo.js';
 import {CreativeportfoliocreateAdvancedGestureIcon} from './model/CreativeportfoliocreateAdvancedGestureIcon.js';
@@ -131,6 +133,8 @@ import {EventDeleteBody} from './model/EventDeleteBody.js';
 import {EventUpdateBody} from './model/EventUpdateBody.js';
 import {EventsourceBindBody} from './model/EventsourceBindBody.js';
 import {EventsourceUnbindBody} from './model/EventsourceUnbindBody.js';
+import {ExtraInfoSettingSmartPlusAdReviewInfo} from './model/ExtraInfoSettingSmartPlusAdReviewInfo.js';
+import {ExtraInfoSettingSmartPlusMaterialReviewInfo} from './model/ExtraInfoSettingSmartPlusMaterialReviewInfo.js';
 import {FeedCreateBody} from './model/FeedCreateBody.js';
 import {FeedDeleteBody} from './model/FeedDeleteBody.js';
 import {FeedUpdateBody} from './model/FeedUpdateBody.js';
@@ -157,6 +161,11 @@ import {FilteringCreativePortfolioList} from './model/FilteringCreativePortfolio
 import {FilteringOptimizerRuleList} from './model/FilteringOptimizerRuleList.js';
 import {FilteringOptimizerRuleResultList} from './model/FilteringOptimizerRuleResultList.js';
 import {FilteringPixelList} from './model/FilteringPixelList.js';
+import {FilteringSmartPlusAdGet} from './model/FilteringSmartPlusAdGet.js';
+import {FilteringSmartPlusAdgroupGet} from './model/FilteringSmartPlusAdgroupGet.js';
+import {FilteringSmartPlusCampaignGet} from './model/FilteringSmartPlusCampaignGet.js';
+import {FilteringSmartPlusMaterialReportBreakdown} from './model/FilteringSmartPlusMaterialReportBreakdown.js';
+import {FilteringSmartPlusMaterialReportOverview} from './model/FilteringSmartPlusMaterialReportOverview.js';
 import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch.js';
 import {IdentityCreateBody} from './model/IdentityCreateBody.js';
 import {ImageEditBody} from './model/ImageEditBody.js';
@@ -223,6 +232,41 @@ import {SetDeleteBody} from './model/SetDeleteBody.js';
 import {SetUpdateBody} from './model/SetUpdateBody.js';
 import {ShareCancelBody} from './model/ShareCancelBody.js';
 import {ShareableLinkCreateBody} from './model/ShareableLinkCreateBody.js';
+import {SmartPlusAdAppealBody} from './model/SmartPlusAdAppealBody.js';
+import {SmartPlusAdCreateBody} from './model/SmartPlusAdCreateBody.js';
+import {SmartPlusAdCreateBodyAdConfiguration} from './model/SmartPlusAdCreateBodyAdConfiguration.js';
+import {SmartPlusAdCreateBodyAdConfigurationPhoneInfo} from './model/SmartPlusAdCreateBodyAdConfigurationPhoneInfo.js';
+import {SmartPlusAdCreateBodyAdConfigurationTrackingInfo} from './model/SmartPlusAdCreateBodyAdConfigurationTrackingInfo.js';
+import {SmartPlusAdCreateBodyAdConfigurationUtmParams} from './model/SmartPlusAdCreateBodyAdConfigurationUtmParams.js';
+import {SmartPlusAdCreateBodyAdTextList} from './model/SmartPlusAdCreateBodyAdTextList.js';
+import {SmartPlusAdCreateBodyAutoMessageList} from './model/SmartPlusAdCreateBodyAutoMessageList.js';
+import {SmartPlusAdCreateBodyCallToActionList} from './model/SmartPlusAdCreateBodyCallToActionList.js';
+import {SmartPlusAdCreateBodyCreativeInfo} from './model/SmartPlusAdCreateBodyCreativeInfo.js';
+import {SmartPlusAdCreateBodyCreativeInfoImageInfo} from './model/SmartPlusAdCreateBodyCreativeInfoImageInfo.js';
+import {SmartPlusAdCreateBodyCreativeInfoMusicInfo} from './model/SmartPlusAdCreateBodyCreativeInfoMusicInfo.js';
+import {SmartPlusAdCreateBodyCreativeInfoVideoInfo} from './model/SmartPlusAdCreateBodyCreativeInfoVideoInfo.js';
+import {SmartPlusAdCreateBodyCreativeList} from './model/SmartPlusAdCreateBodyCreativeList.js';
+import {SmartPlusAdCreateBodyDeeplinkList} from './model/SmartPlusAdCreateBodyDeeplinkList.js';
+import {SmartPlusAdCreateBodyInteractiveAddOnList} from './model/SmartPlusAdCreateBodyInteractiveAddOnList.js';
+import {SmartPlusAdCreateBodyLandingPageUrlList} from './model/SmartPlusAdCreateBodyLandingPageUrlList.js';
+import {SmartPlusAdCreateBodyPageList} from './model/SmartPlusAdCreateBodyPageList.js';
+import {SmartPlusAdMaterialStatusUpdateBody} from './model/SmartPlusAdMaterialStatusUpdateBody.js';
+import {SmartPlusAdStatusUpdateBody} from './model/SmartPlusAdStatusUpdateBody.js';
+import {SmartPlusAdUpdateBody} from './model/SmartPlusAdUpdateBody.js';
+import {SmartPlusAdUpdateBodyAdConfiguration} from './model/SmartPlusAdUpdateBodyAdConfiguration.js';
+import {SmartPlusAdUpdateBodyAdConfigurationTrackingInfo} from './model/SmartPlusAdUpdateBodyAdConfigurationTrackingInfo.js';
+import {SmartPlusAdUpdateBodyAdConfigurationUtmParams} from './model/SmartPlusAdUpdateBodyAdConfigurationUtmParams.js';
+import {SmartPlusAdUpdateBodyCreativeInfo} from './model/SmartPlusAdUpdateBodyCreativeInfo.js';
+import {SmartPlusAdUpdateBodyCreativeList} from './model/SmartPlusAdUpdateBodyCreativeList.js';
+import {SmartPlusAdgroupCreateBody} from './model/SmartPlusAdgroupCreateBody.js';
+import {SmartPlusAdgroupCreateBodyPhoneInfo} from './model/SmartPlusAdgroupCreateBodyPhoneInfo.js';
+import {SmartPlusAdgroupCreateBodyTargetingSpec} from './model/SmartPlusAdgroupCreateBodyTargetingSpec.js';
+import {SmartPlusAdgroupCreateBodyTargetingSpecActions} from './model/SmartPlusAdgroupCreateBodyTargetingSpecActions.js';
+import {SmartPlusAdgroupStatusUpdateBody} from './model/SmartPlusAdgroupStatusUpdateBody.js';
+import {SmartPlusAdgroupUpdateBody} from './model/SmartPlusAdgroupUpdateBody.js';
+import {SmartPlusCampaignCreateBody} from './model/SmartPlusCampaignCreateBody.js';
+import {SmartPlusCampaignStatusUpdateBody} from './model/SmartPlusCampaignStatusUpdateBody.js';
+import {SmartPlusCampaignUpdateBody} from './model/SmartPlusCampaignUpdateBody.js';
 import {SmartTextGenerateBody} from './model/SmartTextGenerateBody.js';
 import {StatusUpdateBody} from './model/StatusUpdateBody.js';
 import {TargetingCategoryRecommendBody} from './model/TargetingCategoryRecommendBody.js';
@@ -281,7 +325,7 @@ import {ToolApi} from './api/ToolApi.js';
 * </pre>
 * </p>
 * @module index
-* @version 0.1.7
+* @version 0.1.8
 */
 export {
     /**
@@ -819,6 +863,18 @@ export {
     ContextInfoCatalogProductLog,
 
     /**
+     * The ContextInfoSmartPlusAdReviewInfo model constructor.
+     * @property {module:model/ContextInfoSmartPlusAdReviewInfo}
+     */
+    ContextInfoSmartPlusAdReviewInfo,
+
+    /**
+     * The ContextInfoSmartPlusMaterialReviewInfo model constructor.
+     * @property {module:model/ContextInfoSmartPlusMaterialReviewInfo}
+     */
+    ContextInfoSmartPlusMaterialReviewInfo,
+
+    /**
      * The CreativeAssetDeleteBody model constructor.
      * @property {module:model/CreativeAssetDeleteBody}
      */
@@ -1047,6 +1103,18 @@ export {
     EventsourceUnbindBody,
 
     /**
+     * The ExtraInfoSettingSmartPlusAdReviewInfo model constructor.
+     * @property {module:model/ExtraInfoSettingSmartPlusAdReviewInfo}
+     */
+    ExtraInfoSettingSmartPlusAdReviewInfo,
+
+    /**
+     * The ExtraInfoSettingSmartPlusMaterialReviewInfo model constructor.
+     * @property {module:model/ExtraInfoSettingSmartPlusMaterialReviewInfo}
+     */
+    ExtraInfoSettingSmartPlusMaterialReviewInfo,
+
+    /**
      * The FeedCreateBody model constructor.
      * @property {module:model/FeedCreateBody}
      */
@@ -1201,6 +1269,36 @@ export {
      * @property {module:model/FilteringPixelList}
      */
     FilteringPixelList,
+
+    /**
+     * The FilteringSmartPlusAdGet model constructor.
+     * @property {module:model/FilteringSmartPlusAdGet}
+     */
+    FilteringSmartPlusAdGet,
+
+    /**
+     * The FilteringSmartPlusAdgroupGet model constructor.
+     * @property {module:model/FilteringSmartPlusAdgroupGet}
+     */
+    FilteringSmartPlusAdgroupGet,
+
+    /**
+     * The FilteringSmartPlusCampaignGet model constructor.
+     * @property {module:model/FilteringSmartPlusCampaignGet}
+     */
+    FilteringSmartPlusCampaignGet,
+
+    /**
+     * The FilteringSmartPlusMaterialReportBreakdown model constructor.
+     * @property {module:model/FilteringSmartPlusMaterialReportBreakdown}
+     */
+    FilteringSmartPlusMaterialReportBreakdown,
+
+    /**
+     * The FilteringSmartPlusMaterialReportOverview model constructor.
+     * @property {module:model/FilteringSmartPlusMaterialReportOverview}
+     */
+    FilteringSmartPlusMaterialReportOverview,
 
     /**
      * The FilteringVideoAdSearch model constructor.
@@ -1597,6 +1695,216 @@ export {
      * @property {module:model/ShareableLinkCreateBody}
      */
     ShareableLinkCreateBody,
+
+    /**
+     * The SmartPlusAdAppealBody model constructor.
+     * @property {module:model/SmartPlusAdAppealBody}
+     */
+    SmartPlusAdAppealBody,
+
+    /**
+     * The SmartPlusAdCreateBody model constructor.
+     * @property {module:model/SmartPlusAdCreateBody}
+     */
+    SmartPlusAdCreateBody,
+
+    /**
+     * The SmartPlusAdCreateBodyAdConfiguration model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyAdConfiguration}
+     */
+    SmartPlusAdCreateBodyAdConfiguration,
+
+    /**
+     * The SmartPlusAdCreateBodyAdConfigurationPhoneInfo model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyAdConfigurationPhoneInfo}
+     */
+    SmartPlusAdCreateBodyAdConfigurationPhoneInfo,
+
+    /**
+     * The SmartPlusAdCreateBodyAdConfigurationTrackingInfo model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyAdConfigurationTrackingInfo}
+     */
+    SmartPlusAdCreateBodyAdConfigurationTrackingInfo,
+
+    /**
+     * The SmartPlusAdCreateBodyAdConfigurationUtmParams model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyAdConfigurationUtmParams}
+     */
+    SmartPlusAdCreateBodyAdConfigurationUtmParams,
+
+    /**
+     * The SmartPlusAdCreateBodyAdTextList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyAdTextList}
+     */
+    SmartPlusAdCreateBodyAdTextList,
+
+    /**
+     * The SmartPlusAdCreateBodyAutoMessageList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyAutoMessageList}
+     */
+    SmartPlusAdCreateBodyAutoMessageList,
+
+    /**
+     * The SmartPlusAdCreateBodyCallToActionList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyCallToActionList}
+     */
+    SmartPlusAdCreateBodyCallToActionList,
+
+    /**
+     * The SmartPlusAdCreateBodyCreativeInfo model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyCreativeInfo}
+     */
+    SmartPlusAdCreateBodyCreativeInfo,
+
+    /**
+     * The SmartPlusAdCreateBodyCreativeInfoImageInfo model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyCreativeInfoImageInfo}
+     */
+    SmartPlusAdCreateBodyCreativeInfoImageInfo,
+
+    /**
+     * The SmartPlusAdCreateBodyCreativeInfoMusicInfo model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyCreativeInfoMusicInfo}
+     */
+    SmartPlusAdCreateBodyCreativeInfoMusicInfo,
+
+    /**
+     * The SmartPlusAdCreateBodyCreativeInfoVideoInfo model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyCreativeInfoVideoInfo}
+     */
+    SmartPlusAdCreateBodyCreativeInfoVideoInfo,
+
+    /**
+     * The SmartPlusAdCreateBodyCreativeList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyCreativeList}
+     */
+    SmartPlusAdCreateBodyCreativeList,
+
+    /**
+     * The SmartPlusAdCreateBodyDeeplinkList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyDeeplinkList}
+     */
+    SmartPlusAdCreateBodyDeeplinkList,
+
+    /**
+     * The SmartPlusAdCreateBodyInteractiveAddOnList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyInteractiveAddOnList}
+     */
+    SmartPlusAdCreateBodyInteractiveAddOnList,
+
+    /**
+     * The SmartPlusAdCreateBodyLandingPageUrlList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyLandingPageUrlList}
+     */
+    SmartPlusAdCreateBodyLandingPageUrlList,
+
+    /**
+     * The SmartPlusAdCreateBodyPageList model constructor.
+     * @property {module:model/SmartPlusAdCreateBodyPageList}
+     */
+    SmartPlusAdCreateBodyPageList,
+
+    /**
+     * The SmartPlusAdMaterialStatusUpdateBody model constructor.
+     * @property {module:model/SmartPlusAdMaterialStatusUpdateBody}
+     */
+    SmartPlusAdMaterialStatusUpdateBody,
+
+    /**
+     * The SmartPlusAdStatusUpdateBody model constructor.
+     * @property {module:model/SmartPlusAdStatusUpdateBody}
+     */
+    SmartPlusAdStatusUpdateBody,
+
+    /**
+     * The SmartPlusAdUpdateBody model constructor.
+     * @property {module:model/SmartPlusAdUpdateBody}
+     */
+    SmartPlusAdUpdateBody,
+
+    /**
+     * The SmartPlusAdUpdateBodyAdConfiguration model constructor.
+     * @property {module:model/SmartPlusAdUpdateBodyAdConfiguration}
+     */
+    SmartPlusAdUpdateBodyAdConfiguration,
+
+    /**
+     * The SmartPlusAdUpdateBodyAdConfigurationTrackingInfo model constructor.
+     * @property {module:model/SmartPlusAdUpdateBodyAdConfigurationTrackingInfo}
+     */
+    SmartPlusAdUpdateBodyAdConfigurationTrackingInfo,
+
+    /**
+     * The SmartPlusAdUpdateBodyAdConfigurationUtmParams model constructor.
+     * @property {module:model/SmartPlusAdUpdateBodyAdConfigurationUtmParams}
+     */
+    SmartPlusAdUpdateBodyAdConfigurationUtmParams,
+
+    /**
+     * The SmartPlusAdUpdateBodyCreativeInfo model constructor.
+     * @property {module:model/SmartPlusAdUpdateBodyCreativeInfo}
+     */
+    SmartPlusAdUpdateBodyCreativeInfo,
+
+    /**
+     * The SmartPlusAdUpdateBodyCreativeList model constructor.
+     * @property {module:model/SmartPlusAdUpdateBodyCreativeList}
+     */
+    SmartPlusAdUpdateBodyCreativeList,
+
+    /**
+     * The SmartPlusAdgroupCreateBody model constructor.
+     * @property {module:model/SmartPlusAdgroupCreateBody}
+     */
+    SmartPlusAdgroupCreateBody,
+
+    /**
+     * The SmartPlusAdgroupCreateBodyPhoneInfo model constructor.
+     * @property {module:model/SmartPlusAdgroupCreateBodyPhoneInfo}
+     */
+    SmartPlusAdgroupCreateBodyPhoneInfo,
+
+    /**
+     * The SmartPlusAdgroupCreateBodyTargetingSpec model constructor.
+     * @property {module:model/SmartPlusAdgroupCreateBodyTargetingSpec}
+     */
+    SmartPlusAdgroupCreateBodyTargetingSpec,
+
+    /**
+     * The SmartPlusAdgroupCreateBodyTargetingSpecActions model constructor.
+     * @property {module:model/SmartPlusAdgroupCreateBodyTargetingSpecActions}
+     */
+    SmartPlusAdgroupCreateBodyTargetingSpecActions,
+
+    /**
+     * The SmartPlusAdgroupStatusUpdateBody model constructor.
+     * @property {module:model/SmartPlusAdgroupStatusUpdateBody}
+     */
+    SmartPlusAdgroupStatusUpdateBody,
+
+    /**
+     * The SmartPlusAdgroupUpdateBody model constructor.
+     * @property {module:model/SmartPlusAdgroupUpdateBody}
+     */
+    SmartPlusAdgroupUpdateBody,
+
+    /**
+     * The SmartPlusCampaignCreateBody model constructor.
+     * @property {module:model/SmartPlusCampaignCreateBody}
+     */
+    SmartPlusCampaignCreateBody,
+
+    /**
+     * The SmartPlusCampaignStatusUpdateBody model constructor.
+     * @property {module:model/SmartPlusCampaignStatusUpdateBody}
+     */
+    SmartPlusCampaignStatusUpdateBody,
+
+    /**
+     * The SmartPlusCampaignUpdateBody model constructor.
+     * @property {module:model/SmartPlusCampaignUpdateBody}
+     */
+    SmartPlusCampaignUpdateBody,
 
     /**
      * The SmartTextGenerateBody model constructor.

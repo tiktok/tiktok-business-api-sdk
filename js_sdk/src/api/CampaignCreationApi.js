@@ -9,12 +9,16 @@ import {CampaignCreateBody} from '../model/CampaignCreateBody.js';
 import {CampaignStatusUpdateBody} from '../model/CampaignStatusUpdateBody.js';
 import {CampaignUpdateBody} from '../model/CampaignUpdateBody.js';
 import {FilteringCampaignGet} from '../model/FilteringCampaignGet.js';
+import {FilteringSmartPlusCampaignGet} from '../model/FilteringSmartPlusCampaignGet.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
+import {SmartPlusCampaignCreateBody} from '../model/SmartPlusCampaignCreateBody.js';
+import {SmartPlusCampaignStatusUpdateBody} from '../model/SmartPlusCampaignStatusUpdateBody.js';
+import {SmartPlusCampaignUpdateBody} from '../model/SmartPlusCampaignUpdateBody.js';
 
 /**
 * CampaignCreation service.
 * @module api/CampaignCreationApi
-* @version 0.1.7
+* @version 0.1.8
 */
 export class CampaignCreationApi {
 
@@ -226,6 +230,206 @@ export class CampaignCreationApi {
 
       return this.apiClient.callApi(
         '/open_api/v1.3/campaign/update/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the smartPlusCampaignCreate operation.
+     * @callback moduleapi/CampaignCreationApi~smartPlusCampaignCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Create a new campaign [Smart Plus Campaign Create]
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SmartPlusCampaignCreateBody} opts.body 
+     * @param {module:api/CampaignCreationApi~smartPlusCampaignCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    smartPlusCampaignCreate(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling smartPlusCampaignCreate");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/smart_plus/campaign/create/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the smartPlusCampaignGet operation.
+     * @callback moduleapi/CampaignCreationApi~smartPlusCampaignGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Retrieve campaign details [Smart Plus Campaign Get]
+     * @param {String} advertiser_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.fields 
+     * @param {module:model/FilteringSmartPlusCampaignGet} opts.filtering 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
+     * @param {module:api/CampaignCreationApi~smartPlusCampaignGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    smartPlusCampaignGet(advertiser_id, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'advertiser_id' is set
+      if (advertiser_id === undefined || advertiser_id === null) {
+        throw new Error("Missing the required parameter 'advertiser_id' when calling smartPlusCampaignGet");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling smartPlusCampaignGet");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'advertiser_id': advertiser_id,'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi'),'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size']
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/smart_plus/campaign/get/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the smartPlusCampaignStatusUpdate operation.
+     * @callback moduleapi/CampaignCreationApi~smartPlusCampaignStatusUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update campaign status [Smart Plus Campaign Status Update]
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SmartPlusCampaignStatusUpdateBody} opts.body 
+     * @param {module:api/CampaignCreationApi~smartPlusCampaignStatusUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    smartPlusCampaignStatusUpdate(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling smartPlusCampaignStatusUpdate");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/smart_plus/campaign/status/update/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the smartPlusCampaignUpdate operation.
+     * @callback moduleapi/CampaignCreationApi~smartPlusCampaignUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update an existing campaign [Smart Plus Campaign Update]
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {module:model/SmartPlusCampaignUpdateBody} opts.body 
+     * @param {module:api/CampaignCreationApi~smartPlusCampaignUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    smartPlusCampaignUpdate(Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['body'];
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling smartPlusCampaignUpdate");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/smart_plus/campaign/update/', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

@@ -1,0 +1,33 @@
+# js_sdk.SmartPlusAdgroupCreateBodyTargetingSpec
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**actions** | [**[SmartPlusAdgroupCreateBodyTargetingSpecActions]**](SmartPlusAdgroupCreateBodyTargetingSpecActions.md) |  | [optional] 
+**age_groups** | **[String]** |  | [optional] 
+**audience_ids** | **[String]** |  | [optional] 
+**blocked_pangle_app_ids** | **[String]** |  | [optional] 
+**carrier_ids** | **[String]** |  | [optional] 
+**device_model_ids** | **[String]** |  | [optional] 
+**device_price_ranges** | **[Number]** |  | [optional] 
+**excluded_audience_ids** | **[String]** |  | [optional] 
+**excluded_pangle_audience_package_ids** | **[String]** |  | [optional] 
+**gender** | **String** |  | [optional] 
+**household_income** | **[String]** |  | [optional] 
+**included_pangle_audience_package_ids** | **[String]** |  | [optional] 
+**interest_category_ids** | **[String]** |  | [optional] 
+**interest_keyword_ids** | **[String]** |  | [optional] 
+**isp_ids** | **[String]** |  | [optional] 
+**languages** | **[String]** |  | [optional] 
+**location_ids** | **[String]** |  | [optional] 
+**min_android_version** | **String** |  | [optional] 
+**min_ios_version** | **String** |  | [optional] 
+**network_types** | **[String]** |  | [optional] 
+**operating_systems** | **[String]** |  | [optional] 
+**purchase_intention_keyword_ids** | **[String]** |  | [optional] 
+**saved_audience_id** | **String** |  | [optional] 
+**smart_audience_enabled** | **Boolean** |  | [optional] 
+**smart_interest_behavior_enabled** | **Boolean** |  | [optional] 
+**spc_audience_age** | **String** |  | [optional] 
+**spending_power** | **String** |  | [optional] 
+**zipcode_ids** | **[String]** |  | [optional] 

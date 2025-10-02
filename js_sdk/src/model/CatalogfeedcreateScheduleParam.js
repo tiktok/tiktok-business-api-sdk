@@ -10,7 +10,7 @@ import {CatalogfeedcreateScheduleParamSource} from './CatalogfeedcreateScheduleP
 /**
  * The CatalogfeedcreateScheduleParam model module.
  * @module model/CatalogfeedcreateScheduleParam
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class CatalogfeedcreateScheduleParam {
   /**

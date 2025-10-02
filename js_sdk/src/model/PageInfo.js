@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PageInfo model module.
  * @module model/PageInfo
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PageInfo {
   /**

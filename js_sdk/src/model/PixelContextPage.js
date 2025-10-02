@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PixelContextPage model module.
  * @module model/PixelContextPage
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PixelContextPage {
   /**

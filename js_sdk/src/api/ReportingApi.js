@@ -5,6 +5,8 @@
  * the LICENSE file in the root directory of this source tree.
  */
 import {ApiClient} from "../ApiClient.js";
+import {FilteringSmartPlusMaterialReportBreakdown} from '../model/FilteringSmartPlusMaterialReportBreakdown.js';
+import {FilteringSmartPlusMaterialReportOverview} from '../model/FilteringSmartPlusMaterialReportOverview.js';
 import {InlineResponse200} from '../model/InlineResponse200.js';
 import {ReportTaskCreateBody} from '../model/ReportTaskCreateBody.js';
 import {TaskCancelBody} from '../model/TaskCancelBody.js';
@@ -12,7 +14,7 @@ import {TaskCancelBody} from '../model/TaskCancelBody.js';
 /**
 * Reporting service.
 * @module api/ReportingApi
-* @version 0.1.7
+* @version 0.1.8
 */
 export class ReportingApi {
 
@@ -245,6 +247,145 @@ export class ReportingApi {
 
       return this.apiClient.callApi(
         '/open_api/v1.3/report/task/create/', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the smartPlusMaterialReportBreakdown operation.
+     * @callback moduleapi/ReportingApi~smartPlusMaterialReportBreakdownCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get breakdown of material reports [Smart Plus Material Report Breakdown]
+     * @param {String} advertiser_id 
+     * @param {Array.<String>} dimensions 
+     * @param {String} start_date 
+     * @param {String} end_date 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.metrics 
+     * @param {module:model/FilteringSmartPlusMaterialReportBreakdown} opts.filtering 
+     * @param {String} opts.sort_field  (default to <.>)
+     * @param {String} opts.sort_type  (default to <.>)
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
+     * @param {module:api/ReportingApi~smartPlusMaterialReportBreakdownCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    smartPlusMaterialReportBreakdown(advertiser_id, dimensions, start_date, end_date, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'advertiser_id' is set
+      if (advertiser_id === undefined || advertiser_id === null) {
+        throw new Error("Missing the required parameter 'advertiser_id' when calling smartPlusMaterialReportBreakdown");
+      }
+      // verify the required parameter 'dimensions' is set
+      if (dimensions === undefined || dimensions === null) {
+        throw new Error("Missing the required parameter 'dimensions' when calling smartPlusMaterialReportBreakdown");
+      }
+      // verify the required parameter 'start_date' is set
+      if (start_date === undefined || start_date === null) {
+        throw new Error("Missing the required parameter 'start_date' when calling smartPlusMaterialReportBreakdown");
+      }
+      // verify the required parameter 'end_date' is set
+      if (end_date === undefined || end_date === null) {
+        throw new Error("Missing the required parameter 'end_date' when calling smartPlusMaterialReportBreakdown");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling smartPlusMaterialReportBreakdown");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'advertiser_id': advertiser_id,'dimensions': this.apiClient.buildCollectionParam(dimensions, 'multi'),'metrics': this.apiClient.buildCollectionParam(opts['metrics'], 'multi'),'start_date': start_date,'end_date': end_date,'filtering': opts['filtering'],'sort_field': opts['sort_field'],'sort_type': opts['sort_type'],'page': opts['page'],'page_size': opts['page_size']
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/smart_plus/material_report/breakdown/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the smartPlusMaterialReportOverview operation.
+     * @callback moduleapi/ReportingApi~smartPlusMaterialReportOverviewCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get overview of material reports [Smart Plus Material Report Overview]
+     * @param {String} advertiser_id 
+     * @param {Array.<String>} dimensions 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {Array.<String>} opts.metrics 
+     * @param {String} opts.start_date 
+     * @param {String} opts.end_date 
+     * @param {Boolean} opts.query_lifetime  (default to <.>)
+     * @param {module:model/FilteringSmartPlusMaterialReportOverview} opts.filtering 
+     * @param {String} opts.sort_field  (default to <.>)
+     * @param {String} opts.sort_type  (default to <.>)
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
+     * @param {module:api/ReportingApi~smartPlusMaterialReportOverviewCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    smartPlusMaterialReportOverview(advertiser_id, dimensions, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'advertiser_id' is set
+      if (advertiser_id === undefined || advertiser_id === null) {
+        throw new Error("Missing the required parameter 'advertiser_id' when calling smartPlusMaterialReportOverview");
+      }
+      // verify the required parameter 'dimensions' is set
+      if (dimensions === undefined || dimensions === null) {
+        throw new Error("Missing the required parameter 'dimensions' when calling smartPlusMaterialReportOverview");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling smartPlusMaterialReportOverview");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'advertiser_id': advertiser_id,'dimensions': this.apiClient.buildCollectionParam(dimensions, 'multi'),'metrics': this.apiClient.buildCollectionParam(opts['metrics'], 'multi'),'start_date': opts['start_date'],'end_date': opts['end_date'],'query_lifetime': opts['query_lifetime'],'filtering': opts['filtering'],'sort_field': opts['sort_field'],'sort_type': opts['sort_type'],'page': opts['page'],'page_size': opts['page_size']
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/smart_plus/material_report/overview/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

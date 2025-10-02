@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**reportTaskCancel**](ReportingApi.md#reportTaskCancel) | **POST** /open_api/v1.3/report/task/cancel/ | Cancel an asynchronous report task. [Report Task Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1803615367145537)
 [**reportTaskCheck**](ReportingApi.md#reportTaskCheck) | **GET** /open_api/v1.3/report/task/check/ | Get the status of an async report task. [Report Task Check](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302781443073)
 [**reportTaskCreate**](ReportingApi.md#reportTaskCreate) | **POST** /open_api/v1.3/report/task/create/ | 
+[**smartPlusMaterialReportBreakdown**](ReportingApi.md#smartPlusMaterialReportBreakdown) | **GET** /open_api/v1.3/smart_plus/material_report/breakdown/ | Get breakdown of material reports [Smart Plus Material Report Breakdown]
+[**smartPlusMaterialReportOverview**](ReportingApi.md#smartPlusMaterialReportOverview) | **GET** /open_api/v1.3/smart_plus/material_report/overview/ | Get overview of material reports [Smart Plus Material Report Overview]
 
 <a name="reportIntegratedGet"></a>
 # **reportIntegratedGet**
@@ -220,5 +222,131 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusMaterialReportBreakdown"></a>
+# **smartPlusMaterialReportBreakdown**
+> InlineResponse200 smartPlusMaterialReportBreakdown(advertiser_id, dimensions, start_date, end_date, Access_Token, opts)
+
+Get breakdown of material reports [Smart Plus Material Report Breakdown]
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.ReportingApi();
+let advertiser_id = "advertiser_id_example"; // String | 
+let dimensions = ["dimensions_example"]; // [String] | 
+let start_date = "start_date_example"; // String | 
+let end_date = "end_date_example"; // String | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'metrics': ["metrics_example"], // [String] | 
+  'filtering': new js_sdk.FilteringSmartPlusMaterialReportBreakdown(), // FilteringSmartPlusMaterialReportBreakdown | 
+  'sort_field': "spend", // String | 
+  'sort_type': "DESC", // String | 
+  'page': 1, // Number | 
+  'page_size': 10 // Number | 
+};
+apiInstance.smartPlusMaterialReportBreakdown(advertiser_id, dimensions, start_date, end_date, Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **String**|  |[required]  
+ **dimensions** | [**[String]**](String.md)|  |[required]  
+ **start_date** | **String**|  |[required]  
+ **end_date** | **String**|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **metrics** | [**[String]**](String.md)|  | [optional] 
+ **filtering** | [**FilteringSmartPlusMaterialReportBreakdown**](FilteringSmartPlusMaterialReportBreakdown.md)|  | [optional] 
+ **sort_field** | **String**|  | [optional] [default to spend]
+ **sort_type** | **String**|  | [optional] [default to DESC]
+ **page** | **Number**|  | [optional] [default to 1]
+ **page_size** | **Number**|  | [optional] [default to 10]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="smartPlusMaterialReportOverview"></a>
+# **smartPlusMaterialReportOverview**
+> InlineResponse200 smartPlusMaterialReportOverview(advertiser_id, dimensions, Access_Token, opts)
+
+Get overview of material reports [Smart Plus Material Report Overview]
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.ReportingApi();
+let advertiser_id = "advertiser_id_example"; // String | 
+let dimensions = ["dimensions_example"]; // [String] | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'metrics': ["metrics_example"], // [String] | 
+  'start_date': "start_date_example", // String | 
+  'end_date': "end_date_example", // String | 
+  'query_lifetime': false, // Boolean | 
+  'filtering': new js_sdk.FilteringSmartPlusMaterialReportOverview(), // FilteringSmartPlusMaterialReportOverview | 
+  'sort_field': "spend", // String | 
+  'sort_type': "DESC", // String | 
+  'page': 1, // Number | 
+  'page_size': 10 // Number | 
+};
+apiInstance.smartPlusMaterialReportOverview(advertiser_id, dimensions, Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **String**|  |[required]  
+ **dimensions** | [**[String]**](String.md)|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **metrics** | [**[String]**](String.md)|  | [optional] 
+ **start_date** | **String**|  | [optional] 
+ **end_date** | **String**|  | [optional] 
+ **query_lifetime** | **Boolean**|  | [optional] [default to false]
+ **filtering** | [**FilteringSmartPlusMaterialReportOverview**](FilteringSmartPlusMaterialReportOverview.md)|  | [optional] 
+ **sort_field** | **String**|  | [optional] [default to spend]
+ **sort_type** | **String**|  | [optional] [default to DESC]
+ **page** | **Number**|  | [optional] [default to 1]
+ **page_size** | **Number**|  | [optional] [default to 10]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

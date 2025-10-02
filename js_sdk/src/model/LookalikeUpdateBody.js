@@ -10,7 +10,7 @@ import {DmpcustomAudiencefileuploadContextInfo} from './DmpcustomAudiencefileupl
 /**
  * The LookalikeUpdateBody model module.
  * @module model/LookalikeUpdateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class LookalikeUpdateBody {
   /**

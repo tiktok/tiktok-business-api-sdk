@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyCommonMaterialTrackingInfo model module.
  * @module model/AdAcoBodyCommonMaterialTrackingInfo
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdAcoBodyCommonMaterialTrackingInfo {
   /**

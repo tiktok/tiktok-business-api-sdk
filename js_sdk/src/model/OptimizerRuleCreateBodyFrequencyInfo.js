@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OptimizerRuleCreateBodyFrequencyInfo model module.
  * @module model/OptimizerRuleCreateBodyFrequencyInfo
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class OptimizerRuleCreateBodyFrequencyInfo {
   /**

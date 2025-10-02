@@ -1,0 +1,46 @@
+/*
+ * Copyright 2023 TikTok Pte. Ltd.
+ *
+ * This source code is licensed under the MIT license found in
+ * the LICENSE file in the root directory of this source tree.
+ */
+import {ApiClient} from '../ApiClient.js';
+
+/**
+ * The SmartPlusAdCreateBodyCreativeInfoImageInfo model module.
+ * @module model/SmartPlusAdCreateBodyCreativeInfoImageInfo
+ * @version 0.1.8
+ */
+export class SmartPlusAdCreateBodyCreativeInfoImageInfo {
+  /**
+   * Constructs a new <code>SmartPlusAdCreateBodyCreativeInfoImageInfo</code>.
+   * @alias module:model/SmartPlusAdCreateBodyCreativeInfoImageInfo
+   * @class
+   * @param web_uri {String} 
+   */
+  constructor(web_uri) {
+    this.web_uri = web_uri;
+  }
+
+  /**
+   * Constructs a <code>SmartPlusAdCreateBodyCreativeInfoImageInfo</code> from a plain JavaScript object, optionally creating a new instance.
+   * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
+   * @param {Object} data The plain JavaScript object bearing properties of interest.
+   * @param {module:model/SmartPlusAdCreateBodyCreativeInfoImageInfo} obj Optional instance to populate.
+   * @return {module:model/SmartPlusAdCreateBodyCreativeInfoImageInfo} The populated <code>SmartPlusAdCreateBodyCreativeInfoImageInfo</code> instance.
+   */
+  static constructFromObject(data, obj) {
+    if (data) {
+      obj = obj || new SmartPlusAdCreateBodyCreativeInfoImageInfo();
+      if (data.hasOwnProperty('web_uri'))
+        obj.web_uri = ApiClient.convertToType(data['web_uri'], 'String');
+    }
+    return obj;
+  }
+}
+
+/**
+ * @member {String} web_uri
+ */
+SmartPlusAdCreateBodyCreativeInfoImageInfo.prototype.web_uri = undefined;
+

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CatalogsetupdateConditions model module.
  * @module model/CatalogsetupdateConditions
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class CatalogsetupdateConditions {
   /**

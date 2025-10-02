@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdvertiserupdateAdvertiserBudgets model module.
  * @module model/AdvertiserupdateAdvertiserBudgets
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdvertiserupdateAdvertiserBudgets {
   /**

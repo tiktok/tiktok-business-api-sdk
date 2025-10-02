@@ -10,7 +10,7 @@ import {OptimizerRuleCreateBodyRuleExecInfoTimePeriodInfo} from './OptimizerRule
 /**
  * The OptimizerRuleCreateBodyRuleExecInfo model module.
  * @module model/OptimizerRuleCreateBodyRuleExecInfo
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class OptimizerRuleCreateBodyRuleExecInfo {
   /**

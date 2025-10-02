@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringBcPartnerAssetGet model module.
  * @module model/FilteringBcPartnerAssetGet
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class FilteringBcPartnerAssetGet {
   /**

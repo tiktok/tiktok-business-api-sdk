@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OptimizerRuleCreateBodyValue model module.
  * @module model/OptimizerRuleCreateBodyValue
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class OptimizerRuleCreateBodyValue {
   /**
