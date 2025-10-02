@@ -16,6 +16,8 @@ import business_api.Pair;
 
 import javax.ws.rs.core.GenericType;
 
+import business_api_client.FilteringSmartPlusMaterialReportBreakdown;
+import business_api_client.FilteringSmartPlusMaterialReportOverview;
 import business_api_client.InlineResponse200;
 import business_api_client.ReportTaskCreateBody;
 import business_api_client.TaskCancelBody;
@@ -25,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-07-03T14:36:18.961395-07:00[America/Los_Angeles]")public class ReportingApi {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-10-02T15:20:10.801947-07:00[America/Los_Angeles]")public class ReportingApi {
   private ApiClient apiClient;
 
   public ReportingApi() {
@@ -295,6 +297,176 @@ import java.util.Map;
 
     GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
     InlineResponse200 response = apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * Get breakdown of material reports [Smart Plus Material Report Breakdown]
+   * 
+   * @param advertiserId  (required)
+   * @param dimensions  (required)
+   * @param startDate  (required)
+   * @param endDate  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param metrics  (optional)
+   * @param filtering  (optional)
+   * @param sortField  (optional, default to spend)
+   * @param sortType  (optional, default to DESC)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response smartPlusMaterialReportBreakdown(String advertiserId, List<String> dimensions, String startDate, String endDate, String accessToken, List<String> metrics, FilteringSmartPlusMaterialReportBreakdown filtering, String sortField, String sortType, Long page, Long pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling smartPlusMaterialReportBreakdown");
+    }
+    // verify the required parameter 'dimensions' is set
+    if (dimensions == null) {
+      throw new ApiException(400, "Missing the required parameter 'dimensions' when calling smartPlusMaterialReportBreakdown");
+    }
+    // verify the required parameter 'startDate' is set
+    if (startDate == null) {
+      throw new ApiException(400, "Missing the required parameter 'startDate' when calling smartPlusMaterialReportBreakdown");
+    }
+    // verify the required parameter 'endDate' is set
+    if (endDate == null) {
+      throw new ApiException(400, "Missing the required parameter 'endDate' when calling smartPlusMaterialReportBreakdown");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling smartPlusMaterialReportBreakdown");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/smart_plus/material_report/breakdown/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "dimensions", dimensions));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "metrics", metrics));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "start_date", startDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "end_date", endDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "filtering", filtering));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort_field", sortField));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort_type", sortType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * Get overview of material reports [Smart Plus Material Report Overview]
+   * 
+   * @param advertiserId  (required)
+   * @param dimensions  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param metrics  (optional)
+   * @param startDate  (optional)
+   * @param endDate  (optional)
+   * @param queryLifetime  (optional, default to false)
+   * @param filtering  (optional)
+   * @param sortField  (optional, default to spend)
+   * @param sortType  (optional, default to DESC)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response smartPlusMaterialReportOverview(String advertiserId, List<String> dimensions, String accessToken, List<String> metrics, String startDate, String endDate, Boolean queryLifetime, FilteringSmartPlusMaterialReportOverview filtering, String sortField, String sortType, Long page, Long pageSize) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling smartPlusMaterialReportOverview");
+    }
+    // verify the required parameter 'dimensions' is set
+    if (dimensions == null) {
+      throw new ApiException(400, "Missing the required parameter 'dimensions' when calling smartPlusMaterialReportOverview");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling smartPlusMaterialReportOverview");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/smart_plus/material_report/overview/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "dimensions", dimensions));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "metrics", metrics));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "start_date", startDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "end_date", endDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "query_lifetime", queryLifetime));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "filtering", filtering));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort_field", sortField));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort_type", sortType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       if(response.getCode() != 0)
     {
       if (localVarPath.startsWith("/pixel")) {

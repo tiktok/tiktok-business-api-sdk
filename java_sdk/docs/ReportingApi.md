@@ -8,6 +8,8 @@ Method | HTTP request | Description
 [**reportTaskCancel**](ReportingApi.md#reportTaskCancel) | **POST** /open_api/v1.3/report/task/cancel/ | Cancel an asynchronous report task. [Report Task Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1803615367145537)
 [**reportTaskCheck**](ReportingApi.md#reportTaskCheck) | **GET** /open_api/v1.3/report/task/check/ | Get the status of an async report task. [Report Task Check](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302781443073)
 [**reportTaskCreate**](ReportingApi.md#reportTaskCreate) | **POST** /open_api/v1.3/report/task/create/ | 
+[**smartPlusMaterialReportBreakdown**](ReportingApi.md#smartPlusMaterialReportBreakdown) | **GET** /open_api/v1.3/smart_plus/material_report/breakdown/ | Get breakdown of material reports [Smart Plus Material Report Breakdown]
+[**smartPlusMaterialReportOverview**](ReportingApi.md#smartPlusMaterialReportOverview) | **GET** /open_api/v1.3/smart_plus/material_report/overview/ | Get overview of material reports [Smart Plus Material Report Overview]
 
 <a name="reportIntegratedGet"></a>
 # **reportIntegratedGet**
@@ -225,5 +227,133 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusMaterialReportBreakdown"></a>
+# **smartPlusMaterialReportBreakdown**
+> Response smartPlusMaterialReportBreakdown(advertiserId, dimensions, startDate, endDate, accessToken, metrics, filtering, sortField, sortType, page, pageSize)
+
+Get breakdown of material reports [Smart Plus Material Report Breakdown]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.ReportingApi;
+
+
+ReportingApi apiInstance = new ReportingApi();
+String advertiserId = "advertiserId_example"; // String | 
+List<String> dimensions = Arrays.asList("dimensions_example"); // List<String> | 
+String startDate = "startDate_example"; // String | 
+String endDate = "endDate_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+List<String> metrics = Arrays.asList("metrics_example"); // List<String> | 
+FilteringSmartPlusMaterialReportBreakdown filtering = new FilteringSmartPlusMaterialReportBreakdown(); // FilteringSmartPlusMaterialReportBreakdown | 
+String sortField = "spend"; // String | 
+String sortType = "DESC"; // String | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
+try {
+    Response result = apiInstance.smartPlusMaterialReportBreakdown(advertiserId, dimensions, startDate, endDate, accessToken, metrics, filtering, sortField, sortType, page, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ReportingApi#smartPlusMaterialReportBreakdown");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **dimensions** | [**List&lt;String&gt;**](String.md)|  |[required] 
+ **startDate** | **String**|  |[required] 
+ **endDate** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **metrics** | [**List&lt;String&gt;**](String.md)|  | [optional]
+ **filtering** | [**FilteringSmartPlusMaterialReportBreakdown**](FilteringSmartPlusMaterialReportBreakdown.md)|  | [optional]
+ **sortField** | **String**|  | [optional] [default to spend]
+ **sortType** | **String**|  | [optional] [default to DESC]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="smartPlusMaterialReportOverview"></a>
+# **smartPlusMaterialReportOverview**
+> Response smartPlusMaterialReportOverview(advertiserId, dimensions, accessToken, metrics, startDate, endDate, queryLifetime, filtering, sortField, sortType, page, pageSize)
+
+Get overview of material reports [Smart Plus Material Report Overview]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.ReportingApi;
+
+
+ReportingApi apiInstance = new ReportingApi();
+String advertiserId = "advertiserId_example"; // String | 
+List<String> dimensions = Arrays.asList("dimensions_example"); // List<String> | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+List<String> metrics = Arrays.asList("metrics_example"); // List<String> | 
+String startDate = "startDate_example"; // String | 
+String endDate = "endDate_example"; // String | 
+Boolean queryLifetime = false; // Boolean | 
+FilteringSmartPlusMaterialReportOverview filtering = new FilteringSmartPlusMaterialReportOverview(); // FilteringSmartPlusMaterialReportOverview | 
+String sortField = "spend"; // String | 
+String sortType = "DESC"; // String | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
+try {
+    Response result = apiInstance.smartPlusMaterialReportOverview(advertiserId, dimensions, accessToken, metrics, startDate, endDate, queryLifetime, filtering, sortField, sortType, page, pageSize);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ReportingApi#smartPlusMaterialReportOverview");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **dimensions** | [**List&lt;String&gt;**](String.md)|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **metrics** | [**List&lt;String&gt;**](String.md)|  | [optional]
+ **startDate** | **String**|  | [optional]
+ **endDate** | **String**|  | [optional]
+ **queryLifetime** | **Boolean**|  | [optional] [default to false]
+ **filtering** | [**FilteringSmartPlusMaterialReportOverview**](FilteringSmartPlusMaterialReportOverview.md)|  | [optional]
+ **sortField** | **String**|  | [optional] [default to spend]
+ **sortType** | **String**|  | [optional] [default to DESC]
+ **page** | **Long**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 

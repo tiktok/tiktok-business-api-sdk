@@ -14,7 +14,7 @@ import {AdgroupcreateTargetingExpansion} from './AdgroupcreateTargetingExpansion
 /**
  * The AdgroupUpdateBody model module.
  * @module model/AdgroupUpdateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdgroupUpdateBody {
   /**

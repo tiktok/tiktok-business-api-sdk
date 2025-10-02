@@ -19,7 +19,7 @@ import java.util.List;
  * FilteringAdvertiserTransactionGet
  */
 
-@javax.annotation.Generated(value = "com.tiktok.codegen.JavatiktokcodegenGenerator", date = "2025-07-03T14:36:18.961395-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-10-02T15:20:10.801947-07:00[America/Los_Angeles]")
 public class FilteringAdvertiserTransactionGet {
   @JsonProperty("end_date")
   private String endDate = null;

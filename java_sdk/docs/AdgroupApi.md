@@ -9,6 +9,10 @@ Method | HTTP request | Description
 [**adgroupQuota**](AdgroupApi.md#adgroupQuota) | **GET** /open_api/v1.3/adgroup/quota/ | Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1768463039162369)
 [**adgroupStatusUpdate**](AdgroupApi.md#adgroupStatusUpdate) | **POST** /open_api/v1.3/adgroup/status/update/ | Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
 [**adgroupUpdate**](AdgroupApi.md#adgroupUpdate) | **POST** /open_api/v1.3/adgroup/update/ | Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739586761631745)
+[**smartPlusAdgroupCreate**](AdgroupApi.md#smartPlusAdgroupCreate) | **POST** /open_api/v1.3/smart_plus/adgroup/create/ | Create a new ad group [Smart Plus AdGroup Create]
+[**smartPlusAdgroupGet**](AdgroupApi.md#smartPlusAdgroupGet) | **GET** /open_api/v1.3/smart_plus/adgroup/get/ | Retrieve ad group details [Smart Plus AdGroup Get]
+[**smartPlusAdgroupStatusUpdate**](AdgroupApi.md#smartPlusAdgroupStatusUpdate) | **POST** /open_api/v1.3/smart_plus/adgroup/status/update/ | Update ad group status [Smart Plus AdGroup Status Update]
+[**smartPlusAdgroupUpdate**](AdgroupApi.md#smartPlusAdgroupUpdate) | **POST** /open_api/v1.3/smart_plus/adgroup/update/ | Update an ad group [Smart Plus AdGroup Update]
 
 <a name="adgroupCreate"></a>
 # **adgroupCreate**
@@ -229,6 +233,194 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **body** | [**AdgroupUpdateBody**](AdgroupUpdateBody.md)| Adgroup update body parameters | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusAdgroupCreate"></a>
+# **smartPlusAdgroupCreate**
+> Response smartPlusAdgroupCreate(accessToken, body)
+
+Create a new ad group [Smart Plus AdGroup Create]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.AdgroupApi;
+
+
+AdgroupApi apiInstance = new AdgroupApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SmartPlusAdgroupCreateBody body = new SmartPlusAdgroupCreateBody(); // SmartPlusAdgroupCreateBody | 
+try {
+    Response result = apiInstance.smartPlusAdgroupCreate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdgroupApi#smartPlusAdgroupCreate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SmartPlusAdgroupCreateBody**](SmartPlusAdgroupCreateBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusAdgroupGet"></a>
+# **smartPlusAdgroupGet**
+> Response smartPlusAdgroupGet(advertiserId, accessToken, filtering, page, pageSize, fields)
+
+Retrieve ad group details [Smart Plus AdGroup Get]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.AdgroupApi;
+
+
+AdgroupApi apiInstance = new AdgroupApi();
+String advertiserId = "advertiserId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+FilteringSmartPlusAdgroupGet filtering = new FilteringSmartPlusAdgroupGet(); // FilteringSmartPlusAdgroupGet | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
+List<String> fields = Arrays.asList("fields_example"); // List<String> | 
+try {
+    Response result = apiInstance.smartPlusAdgroupGet(advertiserId, accessToken, filtering, page, pageSize, fields);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdgroupApi#smartPlusAdgroupGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **filtering** | [**FilteringSmartPlusAdgroupGet**](FilteringSmartPlusAdgroupGet.md)|  | [optional]
+ **page** | **Long**|  | [optional] [default to 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **fields** | [**List&lt;String&gt;**](String.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="smartPlusAdgroupStatusUpdate"></a>
+# **smartPlusAdgroupStatusUpdate**
+> Response smartPlusAdgroupStatusUpdate(accessToken, body)
+
+Update ad group status [Smart Plus AdGroup Status Update]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.AdgroupApi;
+
+
+AdgroupApi apiInstance = new AdgroupApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SmartPlusAdgroupStatusUpdateBody body = new SmartPlusAdgroupStatusUpdateBody(); // SmartPlusAdgroupStatusUpdateBody | 
+try {
+    Response result = apiInstance.smartPlusAdgroupStatusUpdate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdgroupApi#smartPlusAdgroupStatusUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SmartPlusAdgroupStatusUpdateBody**](SmartPlusAdgroupStatusUpdateBody.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="smartPlusAdgroupUpdate"></a>
+# **smartPlusAdgroupUpdate**
+> Response smartPlusAdgroupUpdate(accessToken, body)
+
+Update an ad group [Smart Plus AdGroup Update]
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.AdgroupApi;
+
+
+AdgroupApi apiInstance = new AdgroupApi();
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+SmartPlusAdgroupUpdateBody body = new SmartPlusAdgroupUpdateBody(); // SmartPlusAdgroupUpdateBody | 
+try {
+    Response result = apiInstance.smartPlusAdgroupUpdate(accessToken, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AdgroupApi#smartPlusAdgroupUpdate");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **body** | [**SmartPlusAdgroupUpdateBody**](SmartPlusAdgroupUpdateBody.md)|  | [optional]
 
 ### Return type
 

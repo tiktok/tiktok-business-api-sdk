@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ResultDetail model module.
  * @module model/ResultDetail
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class ResultDetail extends Array {
   /**

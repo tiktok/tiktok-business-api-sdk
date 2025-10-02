@@ -10,7 +10,7 @@ import {PixelupdateAdvancedMatchingFields} from './PixelupdateAdvancedMatchingFi
 /**
  * The PixelUpdateBody model module.
  * @module model/PixelUpdateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PixelUpdateBody {
   /**

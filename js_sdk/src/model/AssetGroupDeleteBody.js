@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AssetGroupDeleteBody model module.
  * @module model/AssetGroupDeleteBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AssetGroupDeleteBody {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeportfoliocreateBadgeImageInfo model module.
  * @module model/CreativeportfoliocreateBadgeImageInfo
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class CreativeportfoliocreateBadgeImageInfo {
   /**

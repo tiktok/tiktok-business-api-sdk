@@ -10,7 +10,7 @@ import {DmpsavedAudiencecreateActions} from './DmpsavedAudiencecreateActions.js'
 /**
  * The SavedAudienceCreateBody model module.
  * @module model/SavedAudienceCreateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class SavedAudienceCreateBody {
   /**

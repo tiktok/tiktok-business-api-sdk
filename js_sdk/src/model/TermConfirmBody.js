@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The TermConfirmBody model module.
  * @module model/TermConfirmBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class TermConfirmBody {
   /**

@@ -14,7 +14,7 @@ import {OptimizerRuleCreateBodyRuleExecInfo} from './OptimizerRuleCreateBodyRule
 /**
  * The OptimizerRuleUpdateBodyRules model module.
  * @module model/OptimizerRuleUpdateBodyRules
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class OptimizerRuleUpdateBodyRules {
   /**

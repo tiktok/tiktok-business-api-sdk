@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdgroupcreateAudienceRuleExclusionsFilterFilters model module.
  * @module model/AdgroupcreateAudienceRuleExclusionsFilterFilters
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdgroupcreateAudienceRuleExclusionsFilterFilters {
   /**

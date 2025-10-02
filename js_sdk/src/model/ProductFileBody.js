@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ProductFileBody model module.
  * @module model/ProductFileBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class ProductFileBody {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringOptimizerRuleResultList model module.
  * @module model/FilteringOptimizerRuleResultList
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class FilteringOptimizerRuleResultList {
   /**

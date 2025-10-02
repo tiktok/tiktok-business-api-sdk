@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The EventUpdateBody model module.
  * @module model/EventUpdateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class EventUpdateBody {
   /**

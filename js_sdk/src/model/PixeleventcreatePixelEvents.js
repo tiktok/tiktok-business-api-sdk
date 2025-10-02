@@ -10,7 +10,7 @@ import {PixeleventcreateRules} from './PixeleventcreateRules.js';
 /**
  * The PixeleventcreatePixelEvents model module.
  * @module model/PixeleventcreatePixelEvents
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PixeleventcreatePixelEvents {
   /**

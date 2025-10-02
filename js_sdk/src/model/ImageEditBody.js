@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ImageEditBody model module.
  * @module model/ImageEditBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class ImageEditBody {
   /**

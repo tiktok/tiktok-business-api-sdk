@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PixeleventcreateRules model module.
  * @module model/PixeleventcreateRules
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PixeleventcreateRules {
   /**

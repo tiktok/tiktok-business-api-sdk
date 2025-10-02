@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CommentDeleteBody model module.
  * @module model/CommentDeleteBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class CommentDeleteBody {
   /**

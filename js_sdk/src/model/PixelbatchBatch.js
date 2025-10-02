@@ -11,7 +11,7 @@ import {PixelProperties} from './PixelProperties.js';
 /**
  * The PixelbatchBatch model module.
  * @module model/PixelbatchBatch
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class PixelbatchBatch {
   /**

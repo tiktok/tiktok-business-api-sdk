@@ -10,7 +10,7 @@ import {DmpcustomAudiencerulecreateRuleSpecInclusionRuleSetRules} from './Dmpcus
 /**
  * The DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet model module.
  * @module model/DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class DmpcustomAudiencerulecreateRuleSpecInclusionRuleSet {
   /**

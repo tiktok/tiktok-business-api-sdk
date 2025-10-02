@@ -10,7 +10,7 @@ import {OptimizerRuleUpdateBodyRules} from './OptimizerRuleUpdateBodyRules.js';
 /**
  * The OptimizerRuleUpdateBody model module.
  * @module model/OptimizerRuleUpdateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class OptimizerRuleUpdateBody {
   /**

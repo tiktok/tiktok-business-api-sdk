@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OfflineCreateBody model module.
  * @module model/OfflineCreateBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class OfflineCreateBody {
   /**

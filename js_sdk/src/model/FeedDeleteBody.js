@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FeedDeleteBody model module.
  * @module model/FeedDeleteBody
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class FeedDeleteBody {
   /**

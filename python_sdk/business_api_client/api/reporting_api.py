@@ -515,3 +515,301 @@ class ReportingApi(object):
             _preload_content=params.get('_preload_content', True),
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
+
+    def smart_plus_material_report_breakdown(self, advertiser_id, dimensions, start_date, end_date, access_token, **kwargs):  # noqa: E501
+        """Get breakdown of material reports [Smart Plus Material Report Breakdown]  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.smart_plus_material_report_breakdown(advertiser_id, dimensions, start_date, end_date, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] dimensions: (required)
+        :param str start_date: (required)
+        :param str end_date: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] metrics:
+        :param FilteringSmartPlusMaterialReportBreakdown filtering:
+        :param str sort_field:
+        :param str sort_type:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.smart_plus_material_report_breakdown_with_http_info(advertiser_id, dimensions, start_date, end_date, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.smart_plus_material_report_breakdown_with_http_info(advertiser_id, dimensions, start_date, end_date, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def smart_plus_material_report_breakdown_with_http_info(self, advertiser_id, dimensions, start_date, end_date, access_token, **kwargs):  # noqa: E501
+        """Get breakdown of material reports [Smart Plus Material Report Breakdown]  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.smart_plus_material_report_breakdown_with_http_info(advertiser_id, dimensions, start_date, end_date, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] dimensions: (required)
+        :param str start_date: (required)
+        :param str end_date: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] metrics:
+        :param FilteringSmartPlusMaterialReportBreakdown filtering:
+        :param str sort_field:
+        :param str sort_type:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'dimensions', 'start_date', 'end_date', 'access_token', 'metrics', 'filtering', 'sort_field', 'sort_type', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method smart_plus_material_report_breakdown" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `smart_plus_material_report_breakdown`")  # noqa: E501
+        # verify the required parameter 'dimensions' is set
+        if ('dimensions' not in params or
+                params['dimensions'] is None):
+            raise ValueError("Missing the required parameter `dimensions` when calling `smart_plus_material_report_breakdown`")  # noqa: E501
+        # verify the required parameter 'start_date' is set
+        if ('start_date' not in params or
+                params['start_date'] is None):
+            raise ValueError("Missing the required parameter `start_date` when calling `smart_plus_material_report_breakdown`")  # noqa: E501
+        # verify the required parameter 'end_date' is set
+        if ('end_date' not in params or
+                params['end_date'] is None):
+            raise ValueError("Missing the required parameter `end_date` when calling `smart_plus_material_report_breakdown`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `smart_plus_material_report_breakdown`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'dimensions' in params:
+            query_params.append(('dimensions', params['dimensions']))  # noqa: E501
+            collection_formats['dimensions'] = 'multi'  # noqa: E501
+        if 'metrics' in params:
+            query_params.append(('metrics', params['metrics']))  # noqa: E501
+            collection_formats['metrics'] = 'multi'  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'sort_field' in params:
+            query_params.append(('sort_field', params['sort_field']))  # noqa: E501
+        if 'sort_type' in params:
+            query_params.append(('sort_type', params['sort_type']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/smart_plus/material_report/breakdown/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def smart_plus_material_report_overview(self, advertiser_id, dimensions, access_token, **kwargs):  # noqa: E501
+        """Get overview of material reports [Smart Plus Material Report Overview]  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.smart_plus_material_report_overview(advertiser_id, dimensions, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] dimensions: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] metrics:
+        :param str start_date:
+        :param str end_date:
+        :param bool query_lifetime:
+        :param FilteringSmartPlusMaterialReportOverview filtering:
+        :param str sort_field:
+        :param str sort_type:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.smart_plus_material_report_overview_with_http_info(advertiser_id, dimensions, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.smart_plus_material_report_overview_with_http_info(advertiser_id, dimensions, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def smart_plus_material_report_overview_with_http_info(self, advertiser_id, dimensions, access_token, **kwargs):  # noqa: E501
+        """Get overview of material reports [Smart Plus Material Report Overview]  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.smart_plus_material_report_overview_with_http_info(advertiser_id, dimensions, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] dimensions: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param list[str] metrics:
+        :param str start_date:
+        :param str end_date:
+        :param bool query_lifetime:
+        :param FilteringSmartPlusMaterialReportOverview filtering:
+        :param str sort_field:
+        :param str sort_type:
+        :param int page:
+        :param int page_size:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'dimensions', 'access_token', 'metrics', 'start_date', 'end_date', 'query_lifetime', 'filtering', 'sort_field', 'sort_type', 'page', 'page_size']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method smart_plus_material_report_overview" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `smart_plus_material_report_overview`")  # noqa: E501
+        # verify the required parameter 'dimensions' is set
+        if ('dimensions' not in params or
+                params['dimensions'] is None):
+            raise ValueError("Missing the required parameter `dimensions` when calling `smart_plus_material_report_overview`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `smart_plus_material_report_overview`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'dimensions' in params:
+            query_params.append(('dimensions', params['dimensions']))  # noqa: E501
+            collection_formats['dimensions'] = 'multi'  # noqa: E501
+        if 'metrics' in params:
+            query_params.append(('metrics', params['metrics']))  # noqa: E501
+            collection_formats['metrics'] = 'multi'  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'query_lifetime' in params:
+            query_params.append(('query_lifetime', params['query_lifetime']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'sort_field' in params:
+            query_params.append(('sort_field', params['sort_field']))  # noqa: E501
+        if 'sort_type' in params:
+            query_params.append(('sort_type', params['sort_type']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/smart_plus/material_report/overview/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)

@@ -26,7 +26,7 @@ import {VideoDeleteBody} from '../model/VideoDeleteBody.js';
 /**
 * Catalog service.
 * @module api/CatalogApi
-* @version 0.1.7
+* @version 0.1.8
 */
 export class CatalogApi {
 

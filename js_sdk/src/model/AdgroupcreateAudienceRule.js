@@ -11,7 +11,7 @@ import {AdgroupcreateAudienceRuleInclusions} from './AdgroupcreateAudienceRuleIn
 /**
  * The AdgroupcreateAudienceRule model module.
  * @module model/AdgroupcreateAudienceRule
- * @version 0.1.7
+ * @version 0.1.8
  */
 export class AdgroupcreateAudienceRule {
   /**
