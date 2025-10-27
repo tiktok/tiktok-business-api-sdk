@@ -3,8 +3,9 @@
 #
 language: java
 jdk:
-  - oraclejdk8
-  - oraclejdk7
+  - openjdk7
+  - openjdk8
+  - openjdk21
 before_install:
   # ensure gradlew has proper permission
   - chmod a+x ./gradlew
@@ -13,5 +14,5 @@ script:
   - mvn test
   # uncomment below to test using gradle
   # - gradle test
-  # uncomment below to test using sbt 
+  # uncomment below to test using sbt
   # - sbt test
