@@ -28,6 +28,67 @@ export class IdentityApi {
     }
 
     /**
+     * Callback function to receive the result of the gmvMaxIdentityGet operation.
+     * @callback moduleapi/IdentityApi~gmvMaxIdentityGetCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get GMV Max identity info [Smart Plus GMV Max Identity Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001101474882)
+     * @param {String} advertiser_id 
+     * @param {String} store_id 
+     * @param {String} store_authorized_bc_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {module:api/IdentityApi~gmvMaxIdentityGetCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    gmvMaxIdentityGet(advertiser_id, store_id, store_authorized_bc_id, Access_Token, callback) {
+      
+      let postBody = null;
+      // verify the required parameter 'advertiser_id' is set
+      if (advertiser_id === undefined || advertiser_id === null) {
+        throw new Error("Missing the required parameter 'advertiser_id' when calling gmvMaxIdentityGet");
+      }
+      // verify the required parameter 'store_id' is set
+      if (store_id === undefined || store_id === null) {
+        throw new Error("Missing the required parameter 'store_id' when calling gmvMaxIdentityGet");
+      }
+      // verify the required parameter 'store_authorized_bc_id' is set
+      if (store_authorized_bc_id === undefined || store_authorized_bc_id === null) {
+        throw new Error("Missing the required parameter 'store_authorized_bc_id' when calling gmvMaxIdentityGet");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling gmvMaxIdentityGet");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'advertiser_id': advertiser_id,'store_id': store_id,'store_authorized_bc_id': store_authorized_bc_id
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/gmv_max/identity/get/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
      * Callback function to receive the result of the identityCreate operation.
      * @callback moduleapi/IdentityApi~identityCreateCallback
      * @param {String} error Error message, if any.

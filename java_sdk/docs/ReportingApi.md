@@ -4,12 +4,82 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**gmvMaxReportGet**](ReportingApi.md#gmvMaxReportGet) | **GET** /open_api/v1.3/gmv_max/report/get/ | Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1824721673497601)
 [**reportIntegratedGet**](ReportingApi.md#reportIntegratedGet) | **GET** /open_api/v1.3/report/integrated/get/ | Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302848100353)
 [**reportTaskCancel**](ReportingApi.md#reportTaskCancel) | **POST** /open_api/v1.3/report/task/cancel/ | Cancel an asynchronous report task. [Report Task Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1803615367145537)
 [**reportTaskCheck**](ReportingApi.md#reportTaskCheck) | **GET** /open_api/v1.3/report/task/check/ | Get the status of an async report task. [Report Task Check](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302781443073)
 [**reportTaskCreate**](ReportingApi.md#reportTaskCreate) | **POST** /open_api/v1.3/report/task/create/ | 
 [**smartPlusMaterialReportBreakdown**](ReportingApi.md#smartPlusMaterialReportBreakdown) | **GET** /open_api/v1.3/smart_plus/material_report/breakdown/ | Get breakdown of material reports [Smart Plus Material Report Breakdown]
 [**smartPlusMaterialReportOverview**](ReportingApi.md#smartPlusMaterialReportOverview) | **GET** /open_api/v1.3/smart_plus/material_report/overview/ | Get overview of material reports [Smart Plus Material Report Overview]
+
+<a name="gmvMaxReportGet"></a>
+# **gmvMaxReportGet**
+> Response gmvMaxReportGet(advertiserId, storeIds, dimensions, metrics, startDate, endDate, accessToken, enableTotalMetrics, filtering, sortField, sortType, page, pageSize, contextInfo)
+
+Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1824721673497601)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.ReportingApi;
+
+
+ReportingApi apiInstance = new ReportingApi();
+String advertiserId = "advertiserId_example"; // String | 
+List<String> storeIds = Arrays.asList("storeIds_example"); // List<String> | 
+List<String> dimensions = Arrays.asList("dimensions_example"); // List<String> | 
+List<String> metrics = Arrays.asList("metrics_example"); // List<String> | 
+String startDate = "startDate_example"; // String | 
+String endDate = "endDate_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+Boolean enableTotalMetrics = false; // Boolean | 
+FilteringGmvMaxReportGet filtering = new FilteringGmvMaxReportGet(); // FilteringGmvMaxReportGet | 
+String sortField = "sortField_example"; // String | 
+String sortType = "DESC"; // String | 
+Long page = 1L; // Long | 
+Long pageSize = 10L; // Long | 
+ContextInfoGmvMaxReportGet contextInfo = new ContextInfoGmvMaxReportGet(); // ContextInfoGmvMaxReportGet | 
+try {
+    Response result = apiInstance.gmvMaxReportGet(advertiserId, storeIds, dimensions, metrics, startDate, endDate, accessToken, enableTotalMetrics, filtering, sortField, sortType, page, pageSize, contextInfo);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ReportingApi#gmvMaxReportGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **storeIds** | [**List&lt;String&gt;**](String.md)|  |[required] 
+ **dimensions** | [**List&lt;String&gt;**](String.md)|  |[required] 
+ **metrics** | [**List&lt;String&gt;**](String.md)|  |[required] 
+ **startDate** | **String**|  |[required] 
+ **endDate** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+ **enableTotalMetrics** | **Boolean**|  | [optional] [default to false]
+ **filtering** | [**FilteringGmvMaxReportGet**](FilteringGmvMaxReportGet.md)|  | [optional]
+ **sortField** | **String**|  | [optional]
+ **sortType** | **String**|  | [optional] [default to DESC]
+ **page** | **Long**|  | [optional] [default to 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1000]
+ **contextInfo** | [**ContextInfoGmvMaxReportGet**](ContextInfoGmvMaxReportGet.md)|  | [optional]
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="reportIntegratedGet"></a>
 # **reportIntegratedGet**
@@ -60,8 +130,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportType** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **page** | **Long**|  | [optional] [default to 1] [enum: ]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **page** | **Long**|  | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 1000]
  **enableTotalMetrics** | **Boolean**|  | [optional] [default to false]
  **multiAdvReportInUtcTime** | **Boolean**|  | [optional] [default to false]
  **queryMode** | **String**|  | [optional]
@@ -276,8 +346,8 @@ Name | Type | Description  | Notes
  **filtering** | [**FilteringSmartPlusMaterialReportBreakdown**](FilteringSmartPlusMaterialReportBreakdown.md)|  | [optional]
  **sortField** | **String**|  | [optional] [default to spend]
  **sortType** | **String**|  | [optional] [default to DESC]
- **page** | **Long**|  | [optional] [default to 1] [enum: ]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **page** | **Long**|  | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 100]
 
 ### Return type
 
@@ -341,8 +411,8 @@ Name | Type | Description  | Notes
  **filtering** | [**FilteringSmartPlusMaterialReportOverview**](FilteringSmartPlusMaterialReportOverview.md)|  | [optional]
  **sortField** | **String**|  | [optional] [default to spend]
  **sortType** | **String**|  | [optional] [default to DESC]
- **page** | **Long**|  | [optional] [default to 1] [enum: ]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **page** | **Long**|  | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 100]
 
 ### Return type
 

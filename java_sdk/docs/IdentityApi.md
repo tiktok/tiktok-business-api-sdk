@@ -4,9 +4,59 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**gmvMaxIdentityGet**](IdentityApi.md#gmvMaxIdentityGet) | **GET** /open_api/v1.3/gmv_max/identity/get/ | Get GMV Max identity info [Smart Plus GMV Max Identity Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001101474882)
 [**identityCreate**](IdentityApi.md#identityCreate) | **POST** /open_api/v1.3/identity/create/ | Create a customized user identity. [Identity Create](https://ads.tiktok.com/marketing_api/docs?rid&#x3D;uraumvplog&amp;id&#x3D;1740654203526146)
 [**identityGet**](IdentityApi.md#identityGet) | **GET** /open_api/v1.3/identity/get/ | Get a list of identities under an ad account. You can filter results by identity type. [Identity Get](https://ads.tiktok.com/marketing_api/docs?rid&#x3D;uraumvplog&amp;id&#x3D;1740218420781057)
 [**identityVideoInfo**](IdentityApi.md#identityVideoInfo) | **GET** /open_api/v1.3/identity/video/info/ | Get the information about a TikTok post that you own, if your identity is AUTH_CODE, TT_USER or BC_AUTH_TT. [Identity Video Info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738958351620097)
+
+<a name="gmvMaxIdentityGet"></a>
+# **gmvMaxIdentityGet**
+> Response gmvMaxIdentityGet(advertiserId, storeId, storeAuthorizedBcId, accessToken)
+
+Get GMV Max identity info [Smart Plus GMV Max Identity Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001101474882)
+
+### Example
+```java
+// Import classes:
+//import business_api.ApiException;
+//import io.swagger.client.api.IdentityApi;
+
+
+IdentityApi apiInstance = new IdentityApi();
+String advertiserId = "advertiserId_example"; // String | 
+String storeId = "storeId_example"; // String | 
+String storeAuthorizedBcId = "storeAuthorizedBcId_example"; // String | 
+String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+try {
+    Response result = apiInstance.gmvMaxIdentityGet(advertiserId, storeId, storeAuthorizedBcId, accessToken);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling IdentityApi#gmvMaxIdentityGet");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiserId** | **String**|  |[required] 
+ **storeId** | **String**|  |[required] 
+ **storeAuthorizedBcId** | **String**|  |[required] 
+ **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
+
+### Return type
+
+[**Response**](Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="identityCreate"></a>
 # **identityCreate**

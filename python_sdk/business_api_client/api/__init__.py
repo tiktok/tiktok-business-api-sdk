@@ -27,5 +27,7 @@ from business_api_client.api.identity_api import IdentityApi
 from business_api_client.api.measurement_api import MeasurementApi
 from business_api_client.api.recommend_tool_api import RecommendToolApi
 from business_api_client.api.reporting_api import ReportingApi
+from business_api_client.api.store_api import StoreApi
 from business_api_client.api.tool_api import ToolApi
+from business_api_client.api.video_api import VideoApi
 from business_api_client.api.catalog_api import CatalogApi

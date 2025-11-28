@@ -332,7 +332,7 @@ Name | Type | Description  | Notes
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringSmartPlusAdGet**](FilteringSmartPlusAdGet.md)|  | [optional]
  **page** | **Long**|  | [optional] [default to 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 100]
  **fields** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
 ### Return type

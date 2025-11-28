@@ -4,12 +4,81 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**gmvMaxReportGet**](ReportingApi.md#gmvMaxReportGet) | **GET** /open_api/v1.3/gmv_max/report/get/ | Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1824721673497601)
 [**reportIntegratedGet**](ReportingApi.md#reportIntegratedGet) | **GET** /open_api/v1.3/report/integrated/get/ | Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302848100353)
 [**reportTaskCancel**](ReportingApi.md#reportTaskCancel) | **POST** /open_api/v1.3/report/task/cancel/ | Cancel an asynchronous report task. [Report Task Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1803615367145537)
 [**reportTaskCheck**](ReportingApi.md#reportTaskCheck) | **GET** /open_api/v1.3/report/task/check/ | Get the status of an async report task. [Report Task Check](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302781443073)
 [**reportTaskCreate**](ReportingApi.md#reportTaskCreate) | **POST** /open_api/v1.3/report/task/create/ | 
 [**smartPlusMaterialReportBreakdown**](ReportingApi.md#smartPlusMaterialReportBreakdown) | **GET** /open_api/v1.3/smart_plus/material_report/breakdown/ | Get breakdown of material reports [Smart Plus Material Report Breakdown]
 [**smartPlusMaterialReportOverview**](ReportingApi.md#smartPlusMaterialReportOverview) | **GET** /open_api/v1.3/smart_plus/material_report/overview/ | Get overview of material reports [Smart Plus Material Report Overview]
+
+<a name="gmvMaxReportGet"></a>
+# **gmvMaxReportGet**
+> InlineResponse200 gmvMaxReportGet(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, Access_Token, opts)
+
+Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1824721673497601)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.ReportingApi();
+let advertiser_id = "advertiser_id_example"; // String | 
+let store_ids = ["store_ids_example"]; // [String] | 
+let dimensions = ["dimensions_example"]; // [String] | 
+let metrics = ["metrics_example"]; // [String] | 
+let start_date = "start_date_example"; // String | 
+let end_date = "end_date_example"; // String | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'enable_total_metrics': false, // Boolean | 
+  'filtering': new js_sdk.FilteringGmvMaxReportGet(), // FilteringGmvMaxReportGet | 
+  'sort_field': "sort_field_example", // String | 
+  'sort_type': "DESC", // String | 
+  'page': 1, // Number | 
+  'page_size': 10, // Number | 
+  'context_info': new js_sdk.ContextInfoGmvMaxReportGet() // ContextInfoGmvMaxReportGet | 
+};
+apiInstance.gmvMaxReportGet(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **String**|  |[required]  
+ **store_ids** | [**[String]**](String.md)|  |[required]  
+ **dimensions** | [**[String]**](String.md)|  |[required]  
+ **metrics** | [**[String]**](String.md)|  |[required]  
+ **start_date** | **String**|  |[required]  
+ **end_date** | **String**|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **enable_total_metrics** | **Boolean**|  | [optional] [default to false]
+ **filtering** | [**FilteringGmvMaxReportGet**](FilteringGmvMaxReportGet.md)|  | [optional] 
+ **sort_field** | **String**|  | [optional] 
+ **sort_type** | **String**|  | [optional] [default to DESC]
+ **page** | **Number**|  | [optional] [default to 1]
+ **page_size** | **Number**|  | [optional] [default to 10]
+ **context_info** | [**ContextInfoGmvMaxReportGet**](ContextInfoGmvMaxReportGet.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 <a name="reportIntegratedGet"></a>
 # **reportIntegratedGet**
