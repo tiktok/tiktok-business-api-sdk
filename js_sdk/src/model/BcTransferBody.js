@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BcTransferBody model module.
  * @module model/BcTransferBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class BcTransferBody {
   /**

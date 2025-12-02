@@ -1,0 +1,556 @@
+info:
+  description: '{"en":"SPCampaignGet","zh":"SPCampaignGet"}'
+  title: '{"en":"SPCampaignGet","zh":"SPCampaignGet"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /smart_plus/campaign/get/:
+    get:
+      operationId: Smart_plus Campaign Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.fields
+        description: ''
+        in: query
+        name: fields
+        required: false
+        x-open-field-id: 2
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                campaign_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.filtering.campaign_ids
+                campaign_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.query.filtering.campaign_name
+                creation_filter_end_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.query.filtering.creation_filter_end_time
+                creation_filter_start_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.query.filtering.creation_filter_start_time
+                objective_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1799789194562626
+                    enum_package_name: CampaignObjectiveType
+                    enums:
+                    - description: ''
+                      is_valid: false
+                      key: APP_INSTALL
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: APP_PROMOTION
+                      value: '16'
+                    - description: ''
+                      is_valid: false
+                      key: BRAND_AD
+                      value: '50'
+                    - description: ''
+                      is_valid: false
+                      key: CATALOG_SALES
+                      value: '6'
+                    - description: ''
+                      is_valid: false
+                      key: CONVERSIONS
+                      value: '3'
+                    - description: ''
+                      is_valid: false
+                      key: ENGAGEMENT
+                      value: '9'
+                    - description: ''
+                      is_valid: false
+                      key: EST_AD
+                      value: '51'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GENERATION
+                      value: '8'
+                    - description: ''
+                      is_valid: false
+                      key: NONE_TYPE
+                      value: '0'
+                    - description: ''
+                      is_valid: false
+                      key: PRODUCT_SALES
+                      value: '15'
+                    - description: ''
+                      is_valid: false
+                      key: REACH
+                      value: '5'
+                    - description: ''
+                      is_valid: false
+                      key: RF_APP_INSTALL
+                      value: '13'
+                    - description: ''
+                      is_valid: false
+                      key: RF_ENGAGEMENT
+                      value: '12'
+                    - description: ''
+                      is_valid: false
+                      key: RF_REACH
+                      value: '7'
+                    - description: ''
+                      is_valid: false
+                      key: RF_TRAFFIC
+                      value: '11'
+                    - description: ''
+                      is_valid: false
+                      key: RF_VIDEO_VIEW
+                      value: '10'
+                    - description: ''
+                      is_valid: false
+                      key: SHOP
+                      value: '14'
+                    - description: ''
+                      is_valid: false
+                      key: SS_HTC_AD
+                      value: '52'
+                    - description: ''
+                      is_valid: false
+                      key: TOPVIEW_REACH
+                      value: '50'
+                    - description: ''
+                      is_valid: false
+                      key: TRAFFIC
+                      value: '1'
+                    - description: ''
+                      is_valid: false
+                      key: VIDEO_VIEWS
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: WEB_CONVERSIONS
+                      value: '1003'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 2
+                  x-open-source: $.http.query.filtering.objective_type
+                primary_status:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1809973489656834
+                    enum_package_name: CampaignPrimaryStatus
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_ALL
+                      value: None
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELETE
+                      value: delete
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELIVERY_OK
+                      value: delivery_ok
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DISABLE
+                      value: disable
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_NOT_DELETE
+                      value: no_delete
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_NOT_DELIVERY
+                      value: not_delivery
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 4
+                  x-open-source: $.http.query.filtering.primary_status
+                secondary_status:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1836704060612609
+                    enum_package_name: CampaignSecondaryStatus
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ADVERTISER_ACCOUNT_PUNISH
+                      value: advertiser_punish
+                    - description: ''
+                      is_valid: true
+                      key: ADVERTISER_CONTRACT_PENDING
+                      value: advertiser_contract_pending
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_ADVERTISER_AUDIT
+                      value: advertiser_audit
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_ADVERTISER_AUDIT_DENY
+                      value: advertiser_offline_audit
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_AD_UNAVAILABLE
+                      value: tts_no_available_ad
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_ALL
+                      value: None
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_AWAITING_RELEASE
+                      value: dc_waiting_release
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_BUDGET_EXCEED
+                      value: campaign_offline_budget
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_DELETE
+                      value: campaign_delete
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_DISABLE
+                      value: campaign_disable
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_ENABLE
+                      value: campaign_delivery_ok
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_IDENTITY_USED_BY_GMV_MAX_AD
+                      value: roi2_mutex_enable
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_IDENTITY_USED_BY_LIVE_GMV_MAX
+                      value: roi2_mutex_exclusive
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_LIVE_GMV_MAX_AUTHORIZATION_CANCEL
+                      value: roi2_exclusive_cancel
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_NOT_DELETE
+                      value: no_delete
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_PRODUCT_GMV_MAX_AUTHORIZATION_CANCEL
+                      value: roi2_exclusive_cancel_product
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_PRODUCT_UNAVAILABLE
+                      value: tts_product_unavailable
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_PRODUCT_USED_BY_PRODUCT_GMV_MAX
+                      value: roi2_mutex_exclusive_product
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_REVIEW_DISAPPROVED
+                      value: tts_review_disapproved
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_TIKTOK_SHOP_UNAVAILABLE
+                      value: tts_shop_unavailable
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_TTS_TT_ASSET_UNAVAILABLE
+                      value: tts_asset_unavailable
+                    - description: ''
+                      is_valid: true
+                      key: CAMPAIGN_STATUS_TTS_TT_IDENTITY_UNAVAILABLE
+                      value: tts_identity_unavailable
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELETE
+                      value: delete
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELIVERY_OK
+                      value: delivery_ok
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DISABLE
+                      value: disable
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_NOT_DELIVERY
+                      value: not_delivery
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 3
+                  x-open-source: $.http.query.filtering.secondary_status
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.filtering
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 1000
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 5
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Retrieve campaign details [Smart Plus Campaign Get]
+      tags:
+      - Campaign Creation
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: string
+            is_expand: false
+            name: fields
+            required: false
+            source: $.http.query.fields
+            sub_type: string
+            type: array
+          - children:
+            - children:
+              - type: number
+              is_expand: true
+              name: campaign_ids
+              required: false
+              source: $.http.query.filtering.campaign_ids
+              sub_type: number
+              type: array
+            - name: objective_type
+              required: false
+              source: $.http.query.filtering.objective_type
+              type: number
+            - name: secondary_status
+              required: false
+              source: $.http.query.filtering.secondary_status
+              type: string
+            - name: primary_status
+              required: false
+              source: $.http.query.filtering.primary_status
+              type: string
+            - name: campaign_name
+              required: false
+              source: $.http.query.filtering.campaign_name
+              type: string
+            - name: creation_filter_start_time
+              required: false
+              source: $.http.query.filtering.creation_filter_start_time
+              type: string
+            - name: creation_filter_end_time
+              required: false
+              source: $.http.query.filtering.creation_filter_end_time
+              type: string
+            is_expand: false
+            name: filtering
+            required: false
+            source: $.http.query.filtering
+            type: object
+          - name: page
+            required: true
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: true
+            source: $.http.query.page_size
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          fields: $.http.query.fields
+          filtering: $.http.query.filtering
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list[][]:
+          - advertiser_id: $.rpc.output.campaign_list[].advertiser_id
+            app_id: $.rpc.output.campaign_list[].app_id
+            app_promotion_type: $.rpc.output.campaign_list[].app_campaign_type
+            bid_align_type: $.rpc.output.campaign_list[].bid_align_type
+            budget: $.rpc.output.campaign_list[].budget
+            budget_mode: $.rpc.output.campaign_list[].budget_mode
+            budget_optimize_on: $.rpc.output.campaign_list[].budget_optimize_on
+            campaign_app_profile_page_state: $.rpc.output.campaign_list[].campaign_app_profile_page_type
+            campaign_id: $.rpc.output.campaign_list[].campaign_id
+            campaign_name: $.rpc.output.campaign_list[].name
+            campaign_type: $.rpc.output.campaign_list[].dedicate_type
+            catalog_enabled: $.rpc.output.campaign_list[].catalog_enabled
+            catalog_type: $.rpc.output.campaign_list[].catalog_type
+            create_time: $.rpc.output.campaign_list[].create_time
+            disable_skan_campaign: $.rpc.output.campaign_list[].disable_skan_campaign
+            is_advanced_dedicated_campaign: $.rpc.output.campaign_list[].is_advanced_dedicated_campaign
+            is_promotional_campaign: $.rpc.output.campaign_list[].is_promotional_campaign
+            modify_time: $.rpc.output.campaign_list[].modify_time
+            objective_type: $.rpc.output.campaign_list[].objective_type
+            operation_status: $.rpc.output.campaign_list[].operation_status
+            po_number: $.rpc.output.campaign_list[].po_number
+            postback_window_mode: $.rpc.output.campaign_list[].dc_postback_mode
+            sales_destination: $.rpc.output.campaign_list[].sales_destination
+            secondary_status: $.rpc.output.campaign_list[].secondary_status
+            smart_plus_adgroup_mode: $.rpc.output.campaign_list[].spc_multi_ad_mode
+            special_industries: $.rpc.output.campaign_list[].industry_types
+          page_info: $.rpc.output.page_info
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

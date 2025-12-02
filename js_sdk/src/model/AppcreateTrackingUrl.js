@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AppcreateTrackingUrl model module.
  * @module model/AppcreateTrackingUrl
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class AppcreateTrackingUrl {
   /**

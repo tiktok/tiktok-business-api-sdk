@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SmartPlusAdCreateBodyAdConfigurationUtmParams model module.
  * @module model/SmartPlusAdCreateBodyAdConfigurationUtmParams
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdCreateBodyAdConfigurationUtmParams {
   /**

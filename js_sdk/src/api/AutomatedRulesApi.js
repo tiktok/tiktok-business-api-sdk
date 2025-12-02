@@ -16,7 +16,7 @@ import {RuleBatchBindBody} from '../model/RuleBatchBindBody.js';
 /**
 * AutomatedRules service.
 * @module api/AutomatedRulesApi
-* @version 0.1.8
+* @version 0.1.9
 */
 export class AutomatedRulesApi {
 

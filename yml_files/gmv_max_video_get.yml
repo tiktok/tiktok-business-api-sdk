@@ -1,0 +1,561 @@
+info:
+  description: '{"en":"GmvMaxVideoGet","zh":"GmvMaxVideoGet"}'
+  title: '{"en":"GmvMaxVideoGet","zh":"GmvMaxVideoGet"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /gmv_max/video/get/:
+    get:
+      operationId: Gmv_max Video Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: store_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.store_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: store_authorized_bc_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.bc_id
+        x-open-field-id: 3
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.spu_list
+        description: ''
+        in: query
+        name: spu_id_list
+        required: false
+        x-open-field-id: 4
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                properties:
+                  identity_authorized_bc_id:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                    x-open-field-id: 3
+                    x-open-source: $.http.query.identity_list[].identity_authorized_bc_id
+                  identity_authorized_shop_id:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                    x-open-field-id: 4
+                    x-open-source: $.http.query.identity_list[].identity_authorized_shop_id
+                  identity_id:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-field-id: 1
+                    x-open-source: $.http.query.identity_list[].identity_id
+                  identity_type:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: 1800331041544193
+                      enum_package_name: IdentityType
+                      enums:
+                      - description: ''
+                        is_valid: false
+                        key: AUTH_CODE
+                        value: '2'
+                      - description: ''
+                        is_valid: true
+                        key: BC_AUTH_TT
+                        value: '5'
+                      - description: ''
+                        is_valid: false
+                        key: BC_SELF_TT
+                        value: '4'
+                      - description: ''
+                        is_valid: false
+                        key: CUSTOMIZED_USER
+                        value: '1'
+                      - description: "TTS \u6388\u6743\u6765\u6E90TT\u8D26\u53F7"
+                        is_valid: true
+                        key: TTS_TT
+                        value: '8'
+                      - description: ''
+                        is_valid: true
+                        key: TT_USER
+                        value: '3'
+                      - description: ''
+                        is_valid: false
+                        key: UNSET
+                        value: '0'
+                      key_format: string
+                      strict: true
+                      use_part: true
+                      validate_only: false
+                      value_format: int32
+                    x-open-field-id: 2
+                    x-open-source: $.http.query.identity_list[].identity_type
+                  store_id:
+                    description: ''
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                    x-open-field-id: 5
+                required:
+                - identity_id
+                - identity_type
+                type: object
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              maxItems: 20
+              minItems: 1
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.identity_list
+        description: ''
+        in: query
+        name: identity_list
+        required: false
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: need_auth_code_video
+        required: false
+        schema:
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.need_auth_code_video
+        x-open-field-id: 6
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 7
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 50
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 8
+      - description: ''
+        in: query
+        name: custom_posts_eligible
+        required: false
+        schema:
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+        x-open-field-id: 9
+      - description: ''
+        in: query
+        name: sort_field
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: GMV
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: VIDEO_VIEWS
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: VIDEO_LIKES
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: CLICK_THROUGH_RATE
+              value: '4'
+            - description: ''
+              is_valid: true
+              key: ORDER_RATE
+              value: '5'
+            - description: ''
+              is_valid: true
+              key: POST_TIME
+              value: '6'
+            - description: ''
+              is_valid: true
+              key: PRODUCT_CLICKS
+              value: '7'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+        x-open-field-id: 10
+      - description: ''
+        in: query
+        name: sort_type
+        required: false
+        schema:
+          default: DESC
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: ASC
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: DESC
+              value: '2'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+        x-open-field-id: 11
+      - description: ''
+        in: query
+        name: keyword
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+        x-open-field-id: 12
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get GMV Max video info [Smart Plus GMV Max Video Get](https://business-api.tiktok.com/portal/docs?id=1822001168512129)
+      tags:
+      - Video
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: store_id
+            required: true
+            source: $.http.query.store_id
+            type: number
+          - children:
+            - type: string
+            is_expand: false
+            name: spu_list
+            required: false
+            source: $.http.query.spu_id_list
+            sub_type: string
+            type: array
+          - children:
+            - children:
+              - name: identity_id
+                required: true
+                source: $.http.query.identity_list[].identity_id
+                type: string
+              - name: identity_type
+                required: true
+                source: $.http.query.identity_list[].identity_type
+                type: number
+              - name: identity_authorized_bc_id
+                required: false
+                source: $.http.query.identity_list[].identity_authorized_bc_id
+                type: number
+              - name: store_id
+                required: false
+                source: $.http.query.identity_list[].store_id
+                type: number
+              - name: avatar_url
+                required: false
+                source: $.http.query.identity_list[].avatar_url
+                type: string
+              - name: name
+                required: false
+                source: $.http.query.identity_list[].name
+                type: string
+              - name: identity_authorized_shop_id
+                required: false
+                source: $.http.query.identity_list[].identity_authorized_shop_id
+                type: number
+              - name: has_roi1_ads
+                required: false
+                source: $.http.query.identity_list[].has_roi1_ads
+                type: boolean
+              - name: available_for_product
+                required: false
+                source: $.http.query.identity_list[].available_for_product
+                type: boolean
+              - name: available_for_live
+                required: false
+                source: $.http.query.identity_list[].available_for_live
+                type: boolean
+              - name: unavailable_reason_for_live
+                required: false
+                source: $.http.query.identity_list[].unavailable_reason_for_live
+                type: number
+              - name: user_name
+                required: false
+                source: $.http.query.identity_list[].user_name
+                type: string
+              is_expand: true
+              type: object
+            is_expand: false
+            name: identity_list
+            required: false
+            source: $.http.query.identity_list
+            sub_type: object
+            type: array
+          - name: need_auth_code_video
+            required: false
+            source: $.http.query.need_auth_code_video
+            type: boolean
+          - name: page
+            required: true
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: true
+            source: $.http.query.page_size
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.query.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.query.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.query.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.query.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.query.context_info.x_real_ip
+              type: string
+            - name: user_agent
+              required: false
+              source: $.http.query.context_info.user_agent
+              type: string
+            - name: referer
+              required: false
+              source: $.http.query.context_info.referer
+              type: string
+            is_expand: false
+            name: context_info
+            required: false
+            source: $.http.query.context_info
+            type: object
+          - name: store_authorized_bc_id
+            required: true
+            source: $.http.query.store_authorized_bc_id
+            type: number
+          - name: sort_field
+            required: false
+            source: $.http.query.sort_field
+            type: number
+          - name: custom_posts_eligible
+            required: false
+            source: $.http.query.custom_posts_eligible
+            type: boolean
+          - name: keyword
+            required: false
+            source: $.http.query.keyword
+            type: string
+          - name: sort_order
+            required: false
+            source: $.http.query.sort_type
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          context_info: $.http.query.context_info
+          custom_posts_eligible: $.http.query.custom_posts_eligible
+          identity_list: $.http.query.identity_list
+          keyword: $.http.query.keyword
+          need_auth_code_video: $.http.query.need_auth_code_video
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          sort_field: $.http.query.sort_field
+          sort_order: $.http.query.sort_type
+          spu_list: $.http.query.spu_id_list
+          store_authorized_bc_id: $.http.query.store_authorized_bc_id
+          store_id: $.http.query.store_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          item_list[][]:
+          - can_change_anchor: $.rpc.output.item_list[].can_change_anchor
+            identity_info[]:
+            - display_name: $.rpc.output.item_list[].identity_info.name
+              identity_authorized_bc_id: $.rpc.output.item_list[].identity_info.identity_authorized_bc_id
+              identity_authorized_shop_id: $.rpc.output.item_list[].identity_info.identity_authorized_shop_id
+              identity_id: $.rpc.output.item_list[].identity_info.identity_id
+              identity_type: $.rpc.output.item_list[].identity_info.identity_type
+              profile_image: $.rpc.output.item_list[].identity_info.avatar_url
+              store_id: $.rpc.output.item_list[].identity_info.store_id
+            item_id: $.rpc.output.item_list[].item_id
+            spu_id_list: $.rpc.output.item_list[].spu_id_list
+            text: $.rpc.output.item_list[].title
+            video_info[]:
+            - bit_rate: $.rpc.output.item_list[].video_info.bitrate
+              definition: $.rpc.output.item_list[].video_info.definition
+              duration: $.rpc.output.item_list[].video_info.duration
+              format: $.rpc.output.item_list[].video_info.format
+              fps: $.rpc.output.item_list[].video_info.fps
+              height: $.rpc.output.item_list[].video_info.height
+              preview_url: $.rpc.output.item_list[].video_info.play_url
+              signature: $.rpc.output.item_list[].video_info.file_md5
+              size: $.rpc.output.item_list[].video_info.file_size
+              video_cover_url: $.rpc.output.item_list[].video_info.cover_url
+              video_id: $.rpc.output.item_list[].video_info.video_id
+              width: $.rpc.output.item_list[].video_info.width
+          page_info: $.rpc.output.page_info
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

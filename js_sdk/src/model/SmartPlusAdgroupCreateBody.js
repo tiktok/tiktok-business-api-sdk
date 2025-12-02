@@ -11,7 +11,7 @@ import {SmartPlusAdgroupCreateBodyTargetingSpec} from './SmartPlusAdgroupCreateB
 /**
  * The SmartPlusAdgroupCreateBody model module.
  * @module model/SmartPlusAdgroupCreateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdgroupCreateBody {
   /**

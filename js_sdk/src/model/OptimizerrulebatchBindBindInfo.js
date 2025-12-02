@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OptimizerrulebatchBindBindInfo model module.
  * @module model/OptimizerrulebatchBindBindInfo
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class OptimizerrulebatchBindBindInfo {
   /**

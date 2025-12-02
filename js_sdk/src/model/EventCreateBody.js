@@ -10,7 +10,7 @@ import {PixeleventcreatePixelEvents} from './PixeleventcreatePixelEvents.js';
 /**
  * The EventCreateBody model module.
  * @module model/EventCreateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class EventCreateBody {
   /**

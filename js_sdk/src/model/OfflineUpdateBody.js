@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OfflineUpdateBody model module.
  * @module model/OfflineUpdateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class OfflineUpdateBody {
   /**

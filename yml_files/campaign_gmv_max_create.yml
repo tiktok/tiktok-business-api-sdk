@@ -1,0 +1,1447 @@
+info:
+  description: '{"en":"GmvMaxCampaignCreate","zh":"GmvMaxCampaignCreate"}'
+  title: '{"en":"GmvMaxCampaignCreate","zh":"GmvMaxCampaignCreate"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /campaign/gmv_max/create/:
+    post:
+      operationId: Campaign Gmv_max Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.gmv_max_data.advertiser_id
+                affiliate_posts_enabled:
+                  description: ''
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int32(%s)
+                  x-open-field-id: 19
+                auto_budget_enabled:
+                  description: ''
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 22
+                budget:
+                  description: ''
+                  format: double
+                  nullable: false
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 12
+                  x-open-source: $.http.body.gmv_max_data.budget
+                campaign_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.gmv_max_data.campaign_name
+                custom_anchor_video_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      identity_info:
+                        description: ''
+                        nullable: false
+                        properties:
+                          identity_authorized_bc_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 3
+                          identity_authorized_shop_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 5
+                          identity_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                          identity_type:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1800331041544193
+                              enum_package_name: IdentityType
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: AUTH_CODE
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: BC_AUTH_TT
+                                value: '5'
+                              - description: ''
+                                is_valid: false
+                                key: BC_SELF_TT
+                                value: '4'
+                              - description: ''
+                                is_valid: false
+                                key: CUSTOMIZED_USER
+                                value: '1'
+                              - description: "TTS \u6388\u6743\u6765\u6E90TT\u8D26\
+                                  \u53F7"
+                                is_valid: true
+                                key: TTS_TT
+                                value: '8'
+                              - description: ''
+                                is_valid: true
+                                key: TT_USER
+                                value: '3'
+                              - description: ''
+                                is_valid: false
+                                key: UNSET
+                                value: '0'
+                              key_format: string
+                              strict: true
+                              use_part: true
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 2
+                          store_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 4
+                        required:
+                        - identity_id
+                        - identity_type
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 3
+                      item_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 1
+                      spu_id_list:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        maxItems: 1
+                        minItems: 1
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 2
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 2000
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 20
+                deep_bid_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804193389572097
+                    enum_package_name: DeepBidType
+                    enums:
+                    - description: "AEO\u76F4\u6295\u51FA\u4EF7"
+                      is_valid: false
+                      key: AEO
+                      value: '101'
+                    - description: "\u6807\u51C6\u51FA\u4EF7"
+                      is_valid: false
+                      key: DEFAULT
+                      value: '0'
+                    - description: "\u81EA\u5B9A\u4E49\u51FA\u4EF7"
+                      is_valid: false
+                      key: MIN
+                      value: '1'
+                    - description: "\u52A8\u6001\u51FA\u4EF7"
+                      is_valid: false
+                      key: PACING
+                      value: '2'
+                    - description: "\u975E\u4E2DVO highest value"
+                      is_valid: false
+                      key: VO_HIGHEST_VALUE
+                      value: '109'
+                    - description: "ROI\u81EA\u52A8\u51FA\u4EF7\uFF0C\u975E\u4E2D\u542B\
+                        \u4E49\u4E3AVO target CPA"
+                      is_valid: false
+                      key: VO_MIN
+                      value: '7'
+                    - description: "\u975E\u4E2DVO minRoas"
+                      is_valid: true
+                      key: VO_MIN_ROAS
+                      value: '108'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 10
+                  x-open-source: $.http.body.gmv_max_data.deep_bid_type
+                identity_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      identity_authorized_bc_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.gmv_max_data.identity_list[].identity_authorized_bc_id
+                      identity_authorized_shop_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 5
+                        x-open-source: $.http.body.gmv_max_data.identity_list[].identity_authorized_shop_id
+                      identity_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.gmv_max_data.identity_list[].identity_id
+                      identity_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1800331041544193
+                          enum_package_name: IdentityType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: AUTH_CODE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: BC_AUTH_TT
+                            value: '5'
+                          - description: ''
+                            is_valid: false
+                            key: BC_SELF_TT
+                            value: '4'
+                          - description: ''
+                            is_valid: false
+                            key: CUSTOMIZED_USER
+                            value: '1'
+                          - description: "TTS \u6388\u6743\u6765\u6E90TT\u8D26\u53F7"
+                            is_valid: true
+                            key: TTS_TT
+                            value: '8'
+                          - description: ''
+                            is_valid: true
+                            key: TT_USER
+                            value: '3'
+                          - description: ''
+                            is_valid: false
+                            key: UNSET
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: true
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.gmv_max_data.identity_list[].identity_type
+                      store_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 4
+                        x-open-source: $.http.body.gmv_max_data.identity_list[].store_id
+                    required:
+                    - identity_id
+                    - identity_type
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.gmv_max_data.identity_list
+                item_group_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 50
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.gmv_max_data.spu_list
+                item_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      identity_info:
+                        description: ''
+                        nullable: false
+                        properties:
+                          identity_authorized_bc_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 3
+                            x-open-source: $.http.body.gmv_max_data.shop_item_list[].identity_info.identity_authorized_bc_id
+                          identity_authorized_shop_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 5
+                          identity_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.gmv_max_data.shop_item_list[].identity_info.identity_id
+                          identity_type:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1800331041544193
+                              enum_package_name: IdentityType
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: AUTH_CODE
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: BC_AUTH_TT
+                                value: '5'
+                              - description: ''
+                                is_valid: false
+                                key: BC_SELF_TT
+                                value: '4'
+                              - description: ''
+                                is_valid: false
+                                key: CUSTOMIZED_USER
+                                value: '1'
+                              - description: "TTS \u6388\u6743\u6765\u6E90TT\u8D26\
+                                  \u53F7"
+                                is_valid: true
+                                key: TTS_TT
+                                value: '8'
+                              - description: ''
+                                is_valid: true
+                                key: TT_USER
+                                value: '3'
+                              - description: ''
+                                is_valid: false
+                                key: UNSET
+                                value: '0'
+                              key_format: string
+                              strict: true
+                              use_part: true
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 2
+                            x-open-source: $.http.body.gmv_max_data.shop_item_list[].identity_info.identity_type
+                          store_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 4
+                            x-open-source: $.http.body.gmv_max_data.shop_item_list[].identity_info.store_id
+                        required:
+                        - identity_id
+                        - identity_type
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.gmv_max_data.shop_item_list[].identity_info
+                      item_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.gmv_max_data.shop_item_list[].item_id
+                      spu_id_list:
+                        description: ''
+                        items:
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        nullable: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.gmv_max_data.shop_item_list[].spu_id_list
+                      video_info:
+                        description: ''
+                        nullable: false
+                        properties:
+                          video_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.gmv_max_data.shop_item_list[].video_info.video_id
+                        required:
+                        - video_id
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 4
+                        x-open-source: $.http.body.gmv_max_data.shop_item_list[].video_info
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 17
+                  x-open-source: $.http.body.gmv_max_data.shop_item_list
+                optimization_goal:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804193306612737
+                    enum_package_name: OptimizeGoal
+                    enums:
+                    - description: ''
+                      is_valid: false
+                      key: ANCHOR_CLICK
+                      value: '112'
+                    - description: ''
+                      is_valid: false
+                      key: ANCHOR_CLICK_PURCHASE
+                      value: '117'
+                    - description: ''
+                      is_valid: false
+                      key: AUTOMATED_VALUE
+                      value: '125'
+                    - description: ''
+                      is_valid: false
+                      key: CLICK
+                      value: '101'
+                    - description: ''
+                      is_valid: false
+                      key: CONVERSATION
+                      value: '124'
+                    - description: ''
+                      is_valid: false
+                      key: CONVERSION_LEADS
+                      value: '121'
+                    - description: ''
+                      is_valid: false
+                      key: CONVERT
+                      value: '100'
+                    - description: ''
+                      is_valid: false
+                      key: DESTINATION_VISIT
+                      value: '123'
+                    - description: ''
+                      is_valid: false
+                      key: ENGAGED_VIEW
+                      value: '118'
+                    - description: ''
+                      is_valid: false
+                      key: ENGAGED_VIEW_FIFTEEM
+                      value: '120'
+                    - description: ''
+                      is_valid: false
+                      key: FOLLOWERS
+                      value: '108'
+                    - description: ''
+                      is_valid: false
+                      key: INSTALL
+                      value: '105'
+                    - description: ''
+                      is_valid: false
+                      key: IN_APP_EVENT
+                      value: '106'
+                    - description: ''
+                      is_valid: false
+                      key: LEAD_GENERATION
+                      value: '107'
+                    - description: ''
+                      is_valid: false
+                      key: MESSAGE
+                      value: '119'
+                    - description: ''
+                      is_valid: false
+                      key: MT_LIVE_FOLLOW
+                      value: '126'
+                    - description: ''
+                      is_valid: false
+                      key: MT_LIVE_ROOM
+                      value: '113'
+                    - description: ''
+                      is_valid: false
+                      key: MT_LIVE_SHOPPING
+                      value: '116'
+                    - description: ''
+                      is_valid: false
+                      key: PAGE_VISIT
+                      value: '122'
+                    - description: ''
+                      is_valid: false
+                      key: POST_ENGAGEMNT
+                      value: '110'
+                    - description: ''
+                      is_valid: false
+                      key: PREFERRED_LEAD
+                      value: '127'
+                    - description: ''
+                      is_valid: false
+                      key: PRODUCT_CLICK_IN_LIVE
+                      value: '114'
+                    - description: ''
+                      is_valid: false
+                      key: PROFILE_VIEWS
+                      value: '109'
+                    - description: ''
+                      is_valid: false
+                      key: REACH
+                      value: '103'
+                    - description: ''
+                      is_valid: false
+                      key: SHOW
+                      value: '102'
+                    - description: ''
+                      is_valid: false
+                      key: TRAFFIC_LANDING_PAGE_VIEW
+                      value: '115'
+                    - description: ''
+                      is_valid: true
+                      key: VALUE
+                      value: '111'
+                    - description: ''
+                      is_valid: false
+                      key: VIDEO_VIEW
+                      value: '104'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.gmv_max_data.optimize_goal
+                product_specific_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1807533365234690
+                    enum_package_name: ProductSpecificType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ALL
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: CUSTOMIZED_PRODUCTS
+                      value: '3'
+                    - description: ''
+                      is_valid: false
+                      key: PRODUCT_SET
+                      value: '2'
+                    - description: ''
+                      is_valid: false
+                      key: UNSET
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.gmv_max_data.product_specific_type
+                product_video_specific_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1817317969806337
+                    enum_package_name: ProductVideoSelectionType
+                    enums:
+                    - description: video auto selected by automation
+                      is_valid: true
+                      key: AUTO_SELECTION
+                      value: '1'
+                    - description: video mannual selected in seller center
+                      is_valid: true
+                      key: CUSTOM_SELECTION
+                      value: '2'
+                    - description: ''
+                      is_valid: false
+                      key: UNSET
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 16
+                  x-open-source: $.http.body.gmv_max_data.product_video_selection_type
+                promotion_days:
+                  description: ''
+                  nullable: false
+                  properties:
+                    auto_schedule_enabled:
+                      default: true
+                      description: ''
+                      nullable: false
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                    custom_schedule_list:
+                      description: ''
+                      items:
+                        nullable: false
+                        properties:
+                          end_date:
+                            description: ''
+                            format: date
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - 'convert_time_format(%s, "yyyy-MM-dd", "yyyy-MM-dd 00:00:00",
+                              "local") '
+                            x-open-field-id: 2
+                          schedule_type:
+                            default: STARTEND
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: null
+                              enum_package_name: null
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: FROMTIME
+                                value: '1'
+                              - description: ''
+                                is_valid: true
+                                key: STARTEND
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: DAYS
+                                value: '3'
+                              - description: ''
+                                is_valid: true
+                                key: WEEKLY
+                                value: '4'
+                              - description: ''
+                                is_valid: true
+                                key: STARTDURATION
+                                value: '5'
+                              - description: ''
+                                is_valid: true
+                                key: FROMTIME_DAILY_DURATION
+                                value: '6'
+                              - description: ''
+                                is_valid: true
+                                key: STARTEND_DAILY_DURATION
+                                value: '7'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 3
+                          start_date:
+                            description: ''
+                            format: date
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - 'convert_time_format(%s, "yyyy-MM-dd", "yyyy-MM-dd 00:00:00",
+                              "local") '
+                            x-open-field-id: 1
+                        required:
+                        - start_date
+                        - end_date
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                    is_enabled:
+                      default: true
+                      description: ''
+                      nullable: false
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                    roas_bid_multiplier:
+                      default: 90
+                      description: ''
+                      format: int32
+                      nullable: false
+                      type: integer
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 21
+                request_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 18
+                  x-open-source: $.http.body.dedup_token
+                roas_bid:
+                  description: ''
+                  format: double
+                  nullable: false
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 11
+                  x-open-source: $.http.body.gmv_max_data.roas_bid
+                schedule_end_time:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - datetime_to_timestamp(%s,"date-time","utc")
+                  x-open-field-id: 15
+                  x-open-source: $.http.body.gmv_max_data.end_time_stamp
+                schedule_start_time:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - datetime_to_timestamp(%s,"date-time","utc")
+                  x-open-field-id: 14
+                  x-open-source: $.http.body.gmv_max_data.start_time_stamp
+                schedule_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1807532710001665
+                    enum_package_name: ScheduleType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: SCHEDULE_FROM_NOW
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: SCHEDULE_START_END
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 13
+                  x-open-source: $.http.body.gmv_max_data.schedule_type
+                shopping_ads_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1810159239577601
+                    enum_package_name: PromotionFlowType
+                    enums:
+                    - description: ''
+                      is_valid: false
+                      key: CATALOG_LISTING_ADS
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: LIVE
+                      value: '2'
+                    - description: "\u63A8\u5546\u54C1\u5E7F\u544A\uFF08VIDEO + PSA\uFF09"
+                      is_valid: true
+                      key: PRODUCT
+                      value: '5'
+                    - description: ''
+                      is_valid: false
+                      key: PRODUCT_SHOPPING_ADS
+                      value: '4'
+                    - description: ''
+                      is_valid: false
+                      key: UNSET
+                      value: '0'
+                    - description: ''
+                      is_valid: false
+                      key: VIDEO
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.gmv_max_data.promotion_flow_type
+                store_authorized_bc_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.gmv_max_data.store_authorized_bc_id
+                store_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.gmv_max_data.store_id
+              required:
+              - advertiser_id
+              - campaign_name
+              - store_id
+              - store_authorized_bc_id
+              - shopping_ads_type
+              - optimization_goal
+              - deep_bid_type
+              - schedule_type
+              - schedule_start_time
+              - request_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create GMV Max campaign [Smart Plus GMV Max Campaign Create](https://business-api.tiktok.com/portal/docs?id=1822000988713089)
+      tags:
+      - Campaign Creation
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - children:
+            - name: advertiser_id
+              required: true
+              source: $.http.body.advertiser_id
+              type: number
+            - name: campaign_name
+              required: true
+              source: $.http.body.campaign_name
+              type: string
+            - name: store_id
+              required: true
+              source: $.http.body.store_id
+              type: number
+            - name: store_authorized_bc_id
+              required: true
+              source: $.http.body.store_authorized_bc_id
+              type: number
+            - name: promotion_flow_type
+              required: true
+              source: $.http.body.shopping_ads_type
+              type: number
+            - children:
+              - children:
+                - name: identity_id
+                  required: true
+                  source: $.http.body.identity_list[].identity_id
+                  type: string
+                - name: identity_type
+                  required: true
+                  source: $.http.body.identity_list[].identity_type
+                  type: number
+                - name: identity_authorized_bc_id
+                  required: false
+                  source: $.http.body.identity_list[].identity_authorized_bc_id
+                  type: number
+                - name: store_id
+                  required: false
+                  source: $.http.body.identity_list[].store_id
+                  type: number
+                - name: avatar_url
+                  required: false
+                  source: $.http.body.identity_list[].avatar_url
+                  type: string
+                - name: name
+                  required: false
+                  source: $.http.body.identity_list[].name
+                  type: string
+                - name: identity_authorized_shop_id
+                  required: false
+                  source: $.http.body.identity_list[].identity_authorized_shop_id
+                  type: number
+                - name: has_roi1_ads
+                  required: false
+                  source: $.http.body.identity_list[].has_roi1_ads
+                  type: boolean
+                - name: available_for_product
+                  required: false
+                  source: $.http.body.identity_list[].available_for_product
+                  type: boolean
+                - name: available_for_live
+                  required: false
+                  source: $.http.body.identity_list[].available_for_live
+                  type: boolean
+                - name: unavailable_reason_for_live
+                  required: false
+                  source: $.http.body.identity_list[].unavailable_reason_for_live
+                  type: number
+                - name: user_name
+                  required: false
+                  source: $.http.body.identity_list[].user_name
+                  type: string
+                is_expand: true
+                type: object
+              is_expand: false
+              name: identity_list
+              required: false
+              source: $.http.body.identity_list
+              sub_type: object
+              type: array
+            - name: optimize_goal
+              required: true
+              source: $.http.body.optimization_goal
+              type: number
+            - name: product_specific_type
+              required: false
+              source: $.http.body.product_specific_type
+              type: number
+            - children:
+              - type: string
+              is_expand: false
+              name: spu_list
+              required: false
+              source: $.http.body.item_group_ids[]
+              sub_type: string
+              type: array
+            - name: deep_bid_type
+              required: true
+              source: $.http.body.deep_bid_type
+              type: number
+            - name: roas_bid
+              required: false
+              source: $.http.body.roas_bid
+              type: number
+            - name: budget
+              required: false
+              source: $.http.body.budget
+              type: number
+            - name: schedule_type
+              required: true
+              source: $.http.body.schedule_type
+              type: number
+            - name: start_time_stamp
+              required: true
+              source: $.http.body.schedule_start_time
+              type: number
+            - name: end_time_stamp
+              required: false
+              source: $.http.body.schedule_end_time
+              type: number
+            - name: product_video_selection_type
+              required: false
+              source: $.http.body.product_video_specific_type
+              type: number
+            - children:
+              - children:
+                - name: item_id
+                  required: false
+                  source: $.http.body.item_list[].item_id
+                  type: number
+                - children:
+                  - name: identity_id
+                    required: true
+                    source: $.http.body.item_list[].identity_info.identity_id
+                    type: string
+                  - name: identity_type
+                    required: true
+                    source: $.http.body.item_list[].identity_info.identity_type
+                    type: number
+                  - name: identity_authorized_bc_id
+                    required: false
+                    source: $.http.body.item_list[].identity_info.identity_authorized_bc_id
+                    type: number
+                  - name: store_id
+                    required: false
+                    source: $.http.body.item_list[].identity_info.store_id
+                    type: number
+                  - name: identity_authorized_shop_id
+                    required: false
+                    source: $.http.body.item_list[].identity_info.identity_authorized_shop_id
+                    type: number
+                  is_expand: true
+                  name: identity_info
+                  required: false
+                  type: object
+                - children:
+                  - type: string
+                  is_expand: false
+                  name: spu_id_list
+                  required: false
+                  source: $.http.body.item_list[].spu_id_list[]
+                  sub_type: string
+                  type: array
+                - children:
+                  - name: video_id
+                    required: true
+                    source: $.http.body.item_list[].video_info.video_id
+                    type: string
+                  is_expand: false
+                  name: video_info
+                  required: false
+                  type: object
+                is_expand: true
+                type: object
+              is_expand: true
+              name: shop_item_list
+              required: false
+              source: $.http.body.item_list[]
+              sub_type: object
+              type: array
+            - name: shop_aca_mode
+              required: false
+              source: $.http.body.affiliate_posts_enabled
+              type: number
+            - children:
+              - children:
+                - name: item_id
+                  required: false
+                  source: $.http.body.custom_anchor_video_list[].item_id
+                  type: number
+                - children:
+                  - name: identity_id
+                    required: true
+                    source: $.http.body.custom_anchor_video_list[].identity_info.identity_id
+                    type: string
+                  - name: identity_type
+                    required: true
+                    source: $.http.body.custom_anchor_video_list[].identity_info.identity_type
+                    type: number
+                  - name: identity_authorized_bc_id
+                    required: false
+                    source: $.http.body.custom_anchor_video_list[].identity_info.identity_authorized_bc_id
+                    type: number
+                  - name: store_id
+                    required: false
+                    source: $.http.body.custom_anchor_video_list[].identity_info.store_id
+                    type: number
+                  - name: identity_authorized_shop_id
+                    required: false
+                    source: $.http.body.custom_anchor_video_list[].identity_info.identity_authorized_shop_id
+                    type: number
+                  is_expand: true
+                  name: identity_info
+                  required: false
+                  source: $.http.body.custom_anchor_video_list[].identity_info
+                  type: object
+                - children:
+                  - source: undefined
+                    type: string
+                  is_expand: true
+                  name: spu_id_list
+                  required: false
+                  source: $.http.body.custom_anchor_video_list[].spu_id_list
+                  sub_type: string
+                  type: array
+                is_expand: true
+                source: undefined
+                type: object
+              is_expand: true
+              name: custom_anchor_video_list
+              required: false
+              source: $.http.body.custom_anchor_video_list
+              sub_type: object
+              type: array
+            - children:
+              - is_expand: false
+                name: is_enabled
+                required: false
+                source: $.http.body.promotion_days.is_enabled
+                type: boolean
+              - is_expand: false
+                name: auto_schedule_enabled
+                required: false
+                source: $.http.body.promotion_days.auto_schedule_enabled
+                type: boolean
+              - children:
+                - children:
+                  - is_expand: false
+                    name: start_date
+                    required: false
+                    source: $.http.body.promotion_days.custom_schedule_list[].start_date
+                    type: string
+                  - is_expand: false
+                    name: end_date
+                    required: false
+                    source: $.http.body.promotion_days.custom_schedule_list[].end_date
+                    type: string
+                  - is_expand: false
+                    name: schedule_type
+                    required: false
+                    source: $.http.body.promotion_days.custom_schedule_list[].schedule_type
+                    type: number
+                  is_expand: true
+                  source: undefined
+                  type: object
+                is_expand: true
+                name: custom_schedule_list
+                required: false
+                source: $.http.body.promotion_days.custom_schedule_list
+                sub_type: object
+                type: array
+              - is_expand: false
+                name: roas_bid_multiplier
+                required: false
+                source: $.http.body.promotion_days.roas_bid_multiplier
+                type: number
+              is_expand: true
+              name: promotion_days
+              required: false
+              source: $.http.body.promotion_days
+              type: object
+            - is_expand: false
+              name: auto_budget_enabled
+              required: false
+              source: $.http.body.auto_budget_enabled
+              type: boolean
+            is_expand: true
+            name: gmv_max_data
+            required: true
+            type: object
+          - name: dedup_token
+            required: true
+            source: $.http.body.request_id
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.body.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.body.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.body.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.body.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.body.context_info.x_real_ip
+              type: string
+            - name: user_agent
+              required: false
+              source: $.http.body.context_info.user_agent
+              type: string
+            - name: referer
+              required: false
+              source: $.http.body.context_info.referer
+              type: string
+            is_expand: false
+            name: context_info
+            required: false
+            source: $.http.body.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          context_info: $.http.body.context_info
+          dedup_token: $.http.body.request_id
+          gmv_max_data:
+            advertiser_id: $.http.body.advertiser_id
+            auto_budget_enabled: $.http.body.auto_budget_enabled
+            budget: $.http.body.budget
+            campaign_name: $.http.body.campaign_name
+            custom_anchor_video_list: $.http.body.custom_anchor_video_list
+            deep_bid_type: $.http.body.deep_bid_type
+            end_time_stamp: $.http.body.schedule_end_time
+            identity_list: $.http.body.identity_list
+            optimize_goal: $.http.body.optimization_goal
+            product_specific_type: $.http.body.product_specific_type
+            product_video_selection_type: $.http.body.product_video_specific_type
+            promotion_days: $.http.body.promotion_days
+            promotion_flow_type: $.http.body.shopping_ads_type
+            roas_bid: $.http.body.roas_bid
+            schedule_type: $.http.body.schedule_type
+            shop_aca_mode: $.http.body.affiliate_posts_enabled
+            shop_item_list: $.http.body.item_list[]
+            spu_list: $.http.body.item_group_ids[]
+            start_time_stamp: $.http.body.schedule_start_time
+            store_authorized_bc_id: $.http.body.store_authorized_bc_id
+            store_id: $.http.body.store_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          advertiser_id: $.rpc.output.gmv_max_data.advertiser_id
+          affiliate_posts_enabled: $.rpc.output.gmv_max_data.shop_aca_mode
+          age_groups: $.rpc.output.gmv_max_data.age
+          auto_budget_enabled: $.rpc.output.gmv_max_data.auto_budget_enabled
+          budget: $.rpc.output.gmv_max_data.budget
+          campaign_custom_anchor_video_id: $.rpc.output.gmv_max_data.custom_anchor_video_ref_id
+          campaign_id: $.rpc.output.gmv_max_data.campaign_id
+          campaign_name: $.rpc.output.gmv_max_data.campaign_name
+          custom_anchor_video_list[][]:
+          - identity_info[]:
+            - identity_authorized_bc_id: $.rpc.output.gmv_max_data.custom_anchor_video_list[].identity_info.identity_authorized_bc_id
+              identity_authorized_shop_id: $.rpc.output.gmv_max_data.custom_anchor_video_list[].identity_info.identity_authorized_shop_id
+              identity_id: $.rpc.output.gmv_max_data.custom_anchor_video_list[].identity_info.identity_id
+              identity_type: $.rpc.output.gmv_max_data.custom_anchor_video_list[].identity_info.identity_type
+              store_id: $.rpc.output.gmv_max_data.custom_anchor_video_list[].identity_info.store_id
+            item_id: $.rpc.output.gmv_max_data.custom_anchor_video_list[].item_id
+            spu_id_list: $.rpc.output.gmv_max_data.custom_anchor_video_list[].spu_id_list
+          deep_bid_type: $.rpc.output.gmv_max_data.deep_bid_type
+          identity_list: $.rpc.output.gmv_max_data.identity_list
+          item_group_ids: $.rpc.output.gmv_max_data.spu_list
+          item_list[][]:
+          - identity_info[]:
+            - identity_authorized_bc_id: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.identity_authorized_bc_id
+              identity_authorized_shop_id: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.identity_authorized_shop_id
+              identity_id: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.identity_id
+              identity_type: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.identity_type
+              name: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.name
+              profile_image: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.avatar_url
+              store_id: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.store_id
+              user_name: $.rpc.output.gmv_max_data.shop_item_list[].identity_info.user_name
+            item_id: $.rpc.output.gmv_max_data.shop_item_list[].item_id
+            spu_id_list: $.rpc.output.gmv_max_data.shop_item_list[].spu_id_list
+            text: $.rpc.output.gmv_max_data.shop_item_list[].title
+            video_info[]:
+            - bit_rate: $.rpc.output.gmv_max_data.shop_item_list[].video_info.bitrate
+              definition: $.rpc.output.gmv_max_data.shop_item_list[].video_info.definition
+              duration: $.rpc.output.gmv_max_data.shop_item_list[].video_info.duration
+              format: $.rpc.output.gmv_max_data.shop_item_list[].video_info.format
+              fps: $.rpc.output.gmv_max_data.shop_item_list[].video_info.fps
+              height: $.rpc.output.gmv_max_data.shop_item_list[].video_info.height
+              preview_url: $.rpc.output.gmv_max_data.shop_item_list[].video_info.play_url
+              signature: $.rpc.output.gmv_max_data.shop_item_list[].video_info.file_md5
+              size: $.rpc.output.gmv_max_data.shop_item_list[].video_info.file_size
+              video_cover_url: $.rpc.output.gmv_max_data.shop_item_list[].video_info.cover_url
+              video_id: $.rpc.output.gmv_max_data.shop_item_list[].video_info.video_id
+              width: $.rpc.output.gmv_max_data.shop_item_list[].video_info.width
+          location_ids: $.rpc.output.gmv_max_data.particle_locations
+          operation_status: $.rpc.output.gmv_max_data.opt_status
+          optimization_goal: $.rpc.output.gmv_max_data.optimize_goal
+          placements: $.rpc.output.gmv_max_data.inventory_flow
+          product_specific_type: $.rpc.output.gmv_max_data.product_specific_type
+          product_video_specific_type: $.rpc.output.gmv_max_data.product_video_selection_type
+          promotion_days:
+            adjusted_roas_bid: $.rpc.output.gmv_max_data.promotion_days.adjusted_roas_bid
+            auto_schedule_enabled: $.rpc.output.gmv_max_data.promotion_days.auto_schedule_enabled
+            current_budget: $.rpc.output.gmv_max_data.promotion_days.current_budget
+            custom_schedule_list[][]:
+            - end_date: $.rpc.output.gmv_max_data.promotion_days.custom_schedule_list[].end_date
+              start_date: $.rpc.output.gmv_max_data.promotion_days.custom_schedule_list[].start_date
+            estimated_gross_revenue_increase: $.rpc.output.gmv_max_data.promotion_days.estimated_gross_revenue_increase
+            is_enabled: $.rpc.output.gmv_max_data.promotion_days.is_enabled
+            maximum_budget: $.rpc.output.gmv_max_data.promotion_days.maximum_budget
+            next_increase: $.rpc.output.gmv_max_data.promotion_days.next_increase
+            roas_bid_multiplier: $.rpc.output.gmv_max_data.promotion_days.roas_bid_multiplier
+          roas_bid: $.rpc.output.gmv_max_data.roas_bid
+          roi_protection_enabled: $.rpc.output.gmv_max_data.roi_protection_enabled
+          schedule_end_time: $.rpc.output.gmv_max_data.end_time_stamp
+          schedule_start_time: $.rpc.output.gmv_max_data.start_time_stamp
+          schedule_type: $.rpc.output.gmv_max_data.schedule_type
+          shopping_ads_type: $.rpc.output.gmv_max_data.promotion_flow_type
+          store_authorized_bc_id: $.rpc.output.gmv_max_data.store_authorized_bc_id
+          store_id: $.rpc.output.gmv_max_data.store_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

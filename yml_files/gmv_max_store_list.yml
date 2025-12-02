@@ -1,0 +1,147 @@
+info:
+  description: '{"en":"GmvMaxStoreList","zh":"GmvMaxStoreList"}'
+  title: '{"en":"GmvMaxStoreList","zh":"GmvMaxStoreList"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /gmv_max/store/list/:
+    get:
+      operationId: Gmv_max Store List
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get GMV Max store list [Smart Plus GMV Max Store List](https://business-api.tiktok.com/portal/docs?id=1822001044479041)
+      tags:
+      - Store
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.query.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.query.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.query.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.query.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.query.context_info.x_real_ip
+              type: string
+            - name: user_agent
+              required: false
+              source: $.http.query.context_info.user_agent
+              type: string
+            - name: referer
+              required: false
+              source: $.http.query.context_info.referer
+              type: string
+            is_expand: false
+            name: context_info
+            required: false
+            source: $.http.query.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          context_info: $.http.query.context_info
+        response_cookie: []
+        response_header: []
+        response_rule:
+          store_list[][]:
+          - exclusive_authorized_advertiser_info: $.rpc.output.store_list[].exclusive_authorized_adv_info
+            is_gmv_max_available: $.rpc.output.store_list[].is_gmv_max_available
+            is_owner_bc: $.rpc.output.store_list[].is_owner_bc
+            store_authorized_bc_id: $.rpc.output.store_list[].store_authorized_bc_id
+            store_authorized_bc_info: $.rpc.output.store_list[].store_authorized_bc_info
+            store_code: $.rpc.output.store_list[].store_code
+            store_id: $.rpc.output.store_list[].store_id
+            store_name: $.rpc.output.store_list[].store_name
+            store_role: $.rpc.output.store_list[].store_user_role
+            store_status: $.rpc.output.store_list[].shop_status
+            targeting_region_codes: $.rpc.output.store_list[].targeting_region_codes
+            thumbnail_url: $.rpc.output.store_list[].thumbnail_url
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SmartPlusAdgroupStatusUpdateBody model module.
  * @module model/SmartPlusAdgroupStatusUpdateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdgroupStatusUpdateBody {
   /**

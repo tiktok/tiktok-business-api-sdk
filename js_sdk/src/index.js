@@ -80,6 +80,24 @@ import {BlockedwordUpdateBody} from './model/BlockedwordUpdateBody.js';
 import {CampaignCreateBody} from './model/CampaignCreateBody.js';
 import {CampaignStatusUpdateBody} from './model/CampaignStatusUpdateBody.js';
 import {CampaignUpdateBody} from './model/CampaignUpdateBody.js';
+import {CampaigngmvMaxcreateCustomAnchorVideoList} from './model/CampaigngmvMaxcreateCustomAnchorVideoList.js';
+import {CampaigngmvMaxcreateCustomAnchorVideoListIdentityInfo} from './model/CampaigngmvMaxcreateCustomAnchorVideoListIdentityInfo.js';
+import {CampaigngmvMaxcreateIdentityList} from './model/CampaigngmvMaxcreateIdentityList.js';
+import {CampaigngmvMaxcreateItemList} from './model/CampaigngmvMaxcreateItemList.js';
+import {CampaigngmvMaxcreateItemListIdentityInfo} from './model/CampaigngmvMaxcreateItemListIdentityInfo.js';
+import {CampaigngmvMaxcreatePromotionDays} from './model/CampaigngmvMaxcreatePromotionDays.js';
+import {CampaigngmvMaxcreatePromotionDaysCustomScheduleList} from './model/CampaigngmvMaxcreatePromotionDaysCustomScheduleList.js';
+import {CampaigngmvMaxcreateVideoInfo} from './model/CampaigngmvMaxcreateVideoInfo.js';
+import {CampaigngmvMaxsessioncreateSession} from './model/CampaigngmvMaxsessioncreateSession.js';
+import {CampaigngmvMaxsessioncreateSessionProductList} from './model/CampaigngmvMaxsessioncreateSessionProductList.js';
+import {CampaigngmvMaxsessionupdateSession} from './model/CampaigngmvMaxsessionupdateSession.js';
+import {CampaigngmvMaxupdateCustomAnchorVideoList} from './model/CampaigngmvMaxupdateCustomAnchorVideoList.js';
+import {CampaigngmvMaxupdateCustomAnchorVideoListIdentityInfo} from './model/CampaigngmvMaxupdateCustomAnchorVideoListIdentityInfo.js';
+import {CampaigngmvMaxupdateItemList} from './model/CampaigngmvMaxupdateItemList.js';
+import {CampaigngmvMaxupdateItemListIdentityInfo} from './model/CampaigngmvMaxupdateItemListIdentityInfo.js';
+import {CampaigngmvMaxupdatePromotionDays} from './model/CampaigngmvMaxupdatePromotionDays.js';
+import {CampaigngmvMaxupdatePromotionDaysCustomScheduleList} from './model/CampaigngmvMaxupdatePromotionDaysCustomScheduleList.js';
+import {CampaigngmvMaxupdateVideoInfo} from './model/CampaigngmvMaxupdateVideoInfo.js';
 import {CatalogCapitalizeBody} from './model/CatalogCapitalizeBody.js';
 import {CatalogCreateBody} from './model/CatalogCreateBody.js';
 import {CatalogDeleteBody} from './model/CatalogDeleteBody.js';
@@ -93,6 +111,7 @@ import {CommentPostBody} from './model/CommentPostBody.js';
 import {CommentTaskCreateBody} from './model/CommentTaskCreateBody.js';
 import {ContextInfoCatalogFeedLog} from './model/ContextInfoCatalogFeedLog.js';
 import {ContextInfoCatalogProductLog} from './model/ContextInfoCatalogProductLog.js';
+import {ContextInfoGmvMaxReportGet} from './model/ContextInfoGmvMaxReportGet.js';
 import {ContextInfoSmartPlusAdReviewInfo} from './model/ContextInfoSmartPlusAdReviewInfo.js';
 import {ContextInfoSmartPlusMaterialReviewInfo} from './model/ContextInfoSmartPlusMaterialReviewInfo.js';
 import {CreativeAssetDeleteBody} from './model/CreativeAssetDeleteBody.js';
@@ -106,6 +125,7 @@ import {CreativeportfoliocreateShowcaseProducts} from './model/Creativeportfolio
 import {CreativeportfoliocreateSlideDimension} from './model/CreativeportfoliocreateSlideDimension.js';
 import {CreativeportfoliocreateStickerParam} from './model/CreativeportfoliocreateStickerParam.js';
 import {CreativeshareableLinkcreateSharedAssets} from './model/CreativeshareableLinkcreateSharedAssets.js';
+import {CustomAnchorVideoList} from './model/CustomAnchorVideoList.js';
 import {CustomAudienceApplyBody} from './model/CustomAudienceApplyBody.js';
 import {CustomAudienceCreateBody} from './model/CustomAudienceCreateBody.js';
 import {CustomAudienceDeleteBody} from './model/CustomAudienceDeleteBody.js';
@@ -133,6 +153,7 @@ import {EventDeleteBody} from './model/EventDeleteBody.js';
 import {EventUpdateBody} from './model/EventUpdateBody.js';
 import {EventsourceBindBody} from './model/EventsourceBindBody.js';
 import {EventsourceUnbindBody} from './model/EventsourceUnbindBody.js';
+import {ExclusiveAuthorizationCreateBody} from './model/ExclusiveAuthorizationCreateBody.js';
 import {ExtraInfoSettingSmartPlusAdReviewInfo} from './model/ExtraInfoSettingSmartPlusAdReviewInfo.js';
 import {ExtraInfoSettingSmartPlusMaterialReviewInfo} from './model/ExtraInfoSettingSmartPlusMaterialReviewInfo.js';
 import {FeedCreateBody} from './model/FeedCreateBody.js';
@@ -158,6 +179,7 @@ import {FilteringBcPartnerGet} from './model/FilteringBcPartnerGet.js';
 import {FilteringBcTransactionGet} from './model/FilteringBcTransactionGet.js';
 import {FilteringCampaignGet} from './model/FilteringCampaignGet.js';
 import {FilteringCreativePortfolioList} from './model/FilteringCreativePortfolioList.js';
+import {FilteringGmvMaxReportGet} from './model/FilteringGmvMaxReportGet.js';
 import {FilteringOptimizerRuleList} from './model/FilteringOptimizerRuleList.js';
 import {FilteringOptimizerRuleResultList} from './model/FilteringOptimizerRuleResultList.js';
 import {FilteringPixelList} from './model/FilteringPixelList.js';
@@ -167,7 +189,11 @@ import {FilteringSmartPlusCampaignGet} from './model/FilteringSmartPlusCampaignG
 import {FilteringSmartPlusMaterialReportBreakdown} from './model/FilteringSmartPlusMaterialReportBreakdown.js';
 import {FilteringSmartPlusMaterialReportOverview} from './model/FilteringSmartPlusMaterialReportOverview.js';
 import {FilteringVideoAdSearch} from './model/FilteringVideoAdSearch.js';
+import {GmvMaxCreateBody} from './model/GmvMaxCreateBody.js';
+import {GmvMaxUpdateBody} from './model/GmvMaxUpdateBody.js';
+import {GmvMaxcustomAnchorVideoListgetIdentityInfo} from './model/GmvMaxcustomAnchorVideoListgetIdentityInfo.js';
 import {IdentityCreateBody} from './model/IdentityCreateBody.js';
+import {IdentityList} from './model/IdentityList.js';
 import {ImageEditBody} from './model/ImageEditBody.js';
 import {ImageUploadBody} from './model/ImageUploadBody.js';
 import {InlineResponse200} from './model/InlineResponse200.js';
@@ -228,6 +254,9 @@ import {RuleBatchBindBody} from './model/RuleBatchBindBody.js';
 import {RuleCreateBody} from './model/RuleCreateBody.js';
 import {SavedAudienceCreateBody} from './model/SavedAudienceCreateBody.js';
 import {SavedAudienceDeleteBody} from './model/SavedAudienceDeleteBody.js';
+import {SessionCreateBody} from './model/SessionCreateBody.js';
+import {SessionDeleteBody} from './model/SessionDeleteBody.js';
+import {SessionUpdateBody} from './model/SessionUpdateBody.js';
 import {SetDeleteBody} from './model/SetDeleteBody.js';
 import {SetUpdateBody} from './model/SetUpdateBody.js';
 import {ShareCancelBody} from './model/ShareCancelBody.js';
@@ -294,7 +323,9 @@ import {IdentityApi} from './api/IdentityApi.js';
 import {MeasurementApi} from './api/MeasurementApi.js';
 import {RecommendToolApi} from './api/RecommendToolApi.js';
 import {ReportingApi} from './api/ReportingApi.js';
+import {StoreApi} from './api/StoreApi.js';
 import {ToolApi} from './api/ToolApi.js';
+import {VideoApi} from './api/VideoApi.js';
 
 /**
 * Comprehensive_collection_of_client_libraries_that_enable_our_developers_to_build_software_to_integrate_with_Business_API_faster_and_in_a_more_standardized_way_.<br>
@@ -325,7 +356,7 @@ import {ToolApi} from './api/ToolApi.js';
 * </pre>
 * </p>
 * @module index
-* @version 0.1.8
+* @version 0.1.9
 */
 export {
     /**
@@ -785,6 +816,114 @@ export {
     CampaignUpdateBody,
 
     /**
+     * The CampaigngmvMaxcreateCustomAnchorVideoList model constructor.
+     * @property {module:model/CampaigngmvMaxcreateCustomAnchorVideoList}
+     */
+    CampaigngmvMaxcreateCustomAnchorVideoList,
+
+    /**
+     * The CampaigngmvMaxcreateCustomAnchorVideoListIdentityInfo model constructor.
+     * @property {module:model/CampaigngmvMaxcreateCustomAnchorVideoListIdentityInfo}
+     */
+    CampaigngmvMaxcreateCustomAnchorVideoListIdentityInfo,
+
+    /**
+     * The CampaigngmvMaxcreateIdentityList model constructor.
+     * @property {module:model/CampaigngmvMaxcreateIdentityList}
+     */
+    CampaigngmvMaxcreateIdentityList,
+
+    /**
+     * The CampaigngmvMaxcreateItemList model constructor.
+     * @property {module:model/CampaigngmvMaxcreateItemList}
+     */
+    CampaigngmvMaxcreateItemList,
+
+    /**
+     * The CampaigngmvMaxcreateItemListIdentityInfo model constructor.
+     * @property {module:model/CampaigngmvMaxcreateItemListIdentityInfo}
+     */
+    CampaigngmvMaxcreateItemListIdentityInfo,
+
+    /**
+     * The CampaigngmvMaxcreatePromotionDays model constructor.
+     * @property {module:model/CampaigngmvMaxcreatePromotionDays}
+     */
+    CampaigngmvMaxcreatePromotionDays,
+
+    /**
+     * The CampaigngmvMaxcreatePromotionDaysCustomScheduleList model constructor.
+     * @property {module:model/CampaigngmvMaxcreatePromotionDaysCustomScheduleList}
+     */
+    CampaigngmvMaxcreatePromotionDaysCustomScheduleList,
+
+    /**
+     * The CampaigngmvMaxcreateVideoInfo model constructor.
+     * @property {module:model/CampaigngmvMaxcreateVideoInfo}
+     */
+    CampaigngmvMaxcreateVideoInfo,
+
+    /**
+     * The CampaigngmvMaxsessioncreateSession model constructor.
+     * @property {module:model/CampaigngmvMaxsessioncreateSession}
+     */
+    CampaigngmvMaxsessioncreateSession,
+
+    /**
+     * The CampaigngmvMaxsessioncreateSessionProductList model constructor.
+     * @property {module:model/CampaigngmvMaxsessioncreateSessionProductList}
+     */
+    CampaigngmvMaxsessioncreateSessionProductList,
+
+    /**
+     * The CampaigngmvMaxsessionupdateSession model constructor.
+     * @property {module:model/CampaigngmvMaxsessionupdateSession}
+     */
+    CampaigngmvMaxsessionupdateSession,
+
+    /**
+     * The CampaigngmvMaxupdateCustomAnchorVideoList model constructor.
+     * @property {module:model/CampaigngmvMaxupdateCustomAnchorVideoList}
+     */
+    CampaigngmvMaxupdateCustomAnchorVideoList,
+
+    /**
+     * The CampaigngmvMaxupdateCustomAnchorVideoListIdentityInfo model constructor.
+     * @property {module:model/CampaigngmvMaxupdateCustomAnchorVideoListIdentityInfo}
+     */
+    CampaigngmvMaxupdateCustomAnchorVideoListIdentityInfo,
+
+    /**
+     * The CampaigngmvMaxupdateItemList model constructor.
+     * @property {module:model/CampaigngmvMaxupdateItemList}
+     */
+    CampaigngmvMaxupdateItemList,
+
+    /**
+     * The CampaigngmvMaxupdateItemListIdentityInfo model constructor.
+     * @property {module:model/CampaigngmvMaxupdateItemListIdentityInfo}
+     */
+    CampaigngmvMaxupdateItemListIdentityInfo,
+
+    /**
+     * The CampaigngmvMaxupdatePromotionDays model constructor.
+     * @property {module:model/CampaigngmvMaxupdatePromotionDays}
+     */
+    CampaigngmvMaxupdatePromotionDays,
+
+    /**
+     * The CampaigngmvMaxupdatePromotionDaysCustomScheduleList model constructor.
+     * @property {module:model/CampaigngmvMaxupdatePromotionDaysCustomScheduleList}
+     */
+    CampaigngmvMaxupdatePromotionDaysCustomScheduleList,
+
+    /**
+     * The CampaigngmvMaxupdateVideoInfo model constructor.
+     * @property {module:model/CampaigngmvMaxupdateVideoInfo}
+     */
+    CampaigngmvMaxupdateVideoInfo,
+
+    /**
      * The CatalogCapitalizeBody model constructor.
      * @property {module:model/CatalogCapitalizeBody}
      */
@@ -863,6 +1002,12 @@ export {
     ContextInfoCatalogProductLog,
 
     /**
+     * The ContextInfoGmvMaxReportGet model constructor.
+     * @property {module:model/ContextInfoGmvMaxReportGet}
+     */
+    ContextInfoGmvMaxReportGet,
+
+    /**
      * The ContextInfoSmartPlusAdReviewInfo model constructor.
      * @property {module:model/ContextInfoSmartPlusAdReviewInfo}
      */
@@ -939,6 +1084,12 @@ export {
      * @property {module:model/CreativeshareableLinkcreateSharedAssets}
      */
     CreativeshareableLinkcreateSharedAssets,
+
+    /**
+     * The CustomAnchorVideoList model constructor.
+     * @property {module:model/CustomAnchorVideoList}
+     */
+    CustomAnchorVideoList,
 
     /**
      * The CustomAudienceApplyBody model constructor.
@@ -1103,6 +1254,12 @@ export {
     EventsourceUnbindBody,
 
     /**
+     * The ExclusiveAuthorizationCreateBody model constructor.
+     * @property {module:model/ExclusiveAuthorizationCreateBody}
+     */
+    ExclusiveAuthorizationCreateBody,
+
+    /**
      * The ExtraInfoSettingSmartPlusAdReviewInfo model constructor.
      * @property {module:model/ExtraInfoSettingSmartPlusAdReviewInfo}
      */
@@ -1253,6 +1410,12 @@ export {
     FilteringCreativePortfolioList,
 
     /**
+     * The FilteringGmvMaxReportGet model constructor.
+     * @property {module:model/FilteringGmvMaxReportGet}
+     */
+    FilteringGmvMaxReportGet,
+
+    /**
      * The FilteringOptimizerRuleList model constructor.
      * @property {module:model/FilteringOptimizerRuleList}
      */
@@ -1307,10 +1470,34 @@ export {
     FilteringVideoAdSearch,
 
     /**
+     * The GmvMaxCreateBody model constructor.
+     * @property {module:model/GmvMaxCreateBody}
+     */
+    GmvMaxCreateBody,
+
+    /**
+     * The GmvMaxUpdateBody model constructor.
+     * @property {module:model/GmvMaxUpdateBody}
+     */
+    GmvMaxUpdateBody,
+
+    /**
+     * The GmvMaxcustomAnchorVideoListgetIdentityInfo model constructor.
+     * @property {module:model/GmvMaxcustomAnchorVideoListgetIdentityInfo}
+     */
+    GmvMaxcustomAnchorVideoListgetIdentityInfo,
+
+    /**
      * The IdentityCreateBody model constructor.
      * @property {module:model/IdentityCreateBody}
      */
     IdentityCreateBody,
+
+    /**
+     * The IdentityList model constructor.
+     * @property {module:model/IdentityList}
+     */
+    IdentityList,
 
     /**
      * The ImageEditBody model constructor.
@@ -1671,6 +1858,24 @@ export {
      * @property {module:model/SavedAudienceDeleteBody}
      */
     SavedAudienceDeleteBody,
+
+    /**
+     * The SessionCreateBody model constructor.
+     * @property {module:model/SessionCreateBody}
+     */
+    SessionCreateBody,
+
+    /**
+     * The SessionDeleteBody model constructor.
+     * @property {module:model/SessionDeleteBody}
+     */
+    SessionDeleteBody,
+
+    /**
+     * The SessionUpdateBody model constructor.
+     * @property {module:model/SessionUpdateBody}
+     */
+    SessionUpdateBody,
 
     /**
      * The SetDeleteBody model constructor.
@@ -2069,8 +2274,20 @@ export {
     ReportingApi,
 
     /**
+    * The StoreApi service constructor.
+    * @property {module:api/StoreApi}
+    */
+    StoreApi,
+
+    /**
     * The ToolApi service constructor.
     * @property {module:api/ToolApi}
     */
-    ToolApi
+    ToolApi,
+
+    /**
+    * The VideoApi service constructor.
+    * @property {module:api/VideoApi}
+    */
+    VideoApi
 };

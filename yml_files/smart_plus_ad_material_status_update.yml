@@ -1,0 +1,183 @@
+info:
+  description: '{"en":"SPAdMaterialStatusUpdate","zh":"SPAdMaterialStatusUpdate"}'
+  title: '{"en":"SPAdMaterialStatusUpdate","zh":"SPAdMaterialStatusUpdate"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /smart_plus/ad/material_status/update/:
+    post:
+      operationId: Smart_plus Ad Material_status Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                ad_material_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  maxItems: 20
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.material_ids
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                operation_status:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1836026089521154
+                    enum_package_name: ACOStatusOptType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: DISABLE
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: ENABLE
+                      value: '8'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.operation_status
+                smart_plus_ad_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.ad_id
+              required:
+              - advertiser_id
+              - smart_plus_ad_id
+              - ad_material_ids
+              - operation_status
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update ad material status [Smart Plus Ad Material Status Update]
+      tags:
+      - Ad
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: ad_id
+            required: true
+            source: $.http.body.smart_plus_ad_id
+            type: number
+          - children:
+            - type: number
+            name: material_ids
+            required: true
+            source: $.http.body.ad_material_ids
+            sub_type: number
+            type: array
+          - name: operation_status
+            required: true
+            source: $.http.body.operation_status
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          ad_id: $.http.body.smart_plus_ad_id
+          advertiser_id: $.http.body.advertiser_id
+          material_ids: $.http.body.ad_material_ids
+          operation_status: $.http.body.operation_status
+        response_cookie: []
+        response_header: []
+        response_rule:
+          ad_material_ids: $.rpc.output.material_ids
+          operation_status: $.rpc.output.operation_status
+          smart_plus_ad_id: $.rpc.output.ad_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

@@ -1,0 +1,784 @@
+info:
+  description: '{"en":"GMV Max Reporting","zh":"GMV Max Reporting"}'
+  title: '{"en":"GMV Max Reporting","zh":"GMV Max Reporting"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /gmv_max/report/get/:
+    get:
+      operationId: Gmv_max Report Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+              maxItems: 1
+              minItems: 1
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.store_ids
+        description: ''
+        in: query
+        name: store_ids
+        required: true
+        x-open-field-id: 2
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              maxItems: 3
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.dimensions
+        description: ''
+        in: query
+        name: dimensions
+        required: true
+        x-open-field-id: 3
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              maxItems: 100
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.metrics
+        description: ''
+        in: query
+        name: metrics
+        required: true
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: enable_total_metrics
+        required: false
+        schema:
+          default: false
+          nullable: false
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.enable_total_metrics
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: start_date
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.start_date
+        x-open-field-id: 6
+      - description: ''
+        in: query
+        name: end_date
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.end_date
+        x-open-field-id: 7
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                campaign_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  maxItems: 100
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.filtering.campaign_ids
+                campaign_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.query.filtering.campaign_name
+                campaign_statuses:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: null
+                      enum_package_name: null
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: STATUS_DELETE
+                        value: delete
+                      - description: ''
+                        is_valid: true
+                        key: STATUS_DELIVERY_OK
+                        value: delivery_ok
+                      - description: ''
+                        is_valid: true
+                        key: STATUS_DISABLE
+                        value: disable
+                      - description: ''
+                        is_valid: true
+                        key: STATUS_NOT_DELIVERY
+                        value: not_delivery
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: string
+                  maxItems: 4
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.query.filtering.campaign_statuses
+                creative_delivery_statuses:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: null
+                      enum_package_name: null
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: IN_QUEUE
+                        value: '1'
+                      - description: ''
+                        is_valid: true
+                        key: LEARNING
+                        value: '2'
+                      - description: ''
+                        is_valid: true
+                        key: DELIVERING
+                        value: '3'
+                      - description: ''
+                        is_valid: true
+                        key: NOT_DELIVERYING
+                        value: '4'
+                      - description: ''
+                        is_valid: true
+                        key: AUTHORIZATION_NEEDED
+                        value: '5'
+                      - description: ''
+                        is_valid: true
+                        key: EXCLUDED
+                        value: '6'
+                      - description: ''
+                        is_valid: true
+                        key: UNAVAILABLE
+                        value: '7'
+                      - description: ''
+                        is_valid: true
+                        key: REJECTED
+                        value: '9'
+                      - description: ''
+                        is_valid: true
+                        key: NOT_ACTIVE
+                        value: '10'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 10
+                creative_types:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: null
+                      enum_package_name: null
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: ADS_AND_ORGANIC
+                        value: '1'
+                      - description: ''
+                        is_valid: true
+                        key: ORGANIC
+                        value: '2'
+                      - description: ''
+                        is_valid: true
+                        key: REMOVED
+                        value: '3'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  maxItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.query.filtering.creative_types
+                gmv_max_promotion_types:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-enum:
+                      enum_package_expired: false
+                      enum_package_id: null
+                      enum_package_name: null
+                      enums:
+                      - description: ''
+                        is_valid: true
+                        key: PRODUCT
+                        value: '0'
+                      - description: ''
+                        is_valid: true
+                        key: LIVE
+                        value: '1'
+                      key_format: string
+                      strict: true
+                      use_part: false
+                      validate_only: false
+                      value_format: int32
+                  maxItems: 2
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.query.filtering.gmv_max_promotion_types
+                item_group_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 100
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.query.filtering.item_group_ids
+                item_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 100
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.query.filtering.item_ids
+                room_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 100
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                  x-open-source: $.http.query.filtering.room_ids
+                search_word:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 9
+                  x-open-source: $.http.query.filtering.search_word
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.filtering
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 8
+      - description: ''
+        in: query
+        name: sort_field
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.sort_field
+        x-open-field-id: 9
+      - description: ''
+        in: query
+        name: sort_type
+        required: false
+        schema:
+          default: DESC
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: ASC
+              value: '0'
+            - description: ''
+              is_valid: true
+              key: DESC
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.sort_type
+        x-open-field-id: 10
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 11
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 1000
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 12
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                app_id:
+                  description: ''
+                  format: int64
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.context_info.app_id
+                core_user_id:
+                  description: ''
+                  format: int64
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.query.context_info.core_user_id
+                developer_id:
+                  description: ''
+                  format: int64
+                  nullable: false
+                  type: integer
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.query.context_info.developer_id
+                referer:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.query.context_info.referer
+                user_agent:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.query.context_info.user_agent
+                x_forwarded_for:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.query.context_info.x_forwarded_for
+                x_real_ip:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.query.context_info.x_real_ip
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.context_info
+        description: ''
+        in: query
+        name: context_info
+        required: false
+        x-open-field-id: 13
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id=1824721673497601)
+      tags:
+      - Reporting
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: store_ids
+            required: true
+            source: $.http.query.store_ids
+            sub_type: number
+            type: array
+          - children:
+            - type: string
+            is_expand: true
+            name: dimensions
+            required: true
+            source: $.http.query.dimensions
+            sub_type: string
+            type: array
+          - children:
+            - type: string
+            is_expand: true
+            name: metrics
+            required: false
+            source: $.http.query.metrics
+            sub_type: string
+            type: array
+          - name: enable_total_metrics
+            required: false
+            source: $.http.query.enable_total_metrics
+            type: boolean
+          - name: start_date
+            required: true
+            source: $.http.query.start_date
+            type: string
+          - name: end_date
+            required: true
+            source: $.http.query.end_date
+            type: string
+          - children:
+            - children:
+              - type: number
+              is_expand: true
+              name: campaign_ids
+              required: false
+              source: $.http.query.filtering.campaign_ids
+              sub_type: number
+              type: array
+            - name: campaign_name
+              required: false
+              source: $.http.query.filtering.campaign_name
+              type: string
+            - children:
+              - type: string
+              is_expand: true
+              name: campaign_statuses
+              required: false
+              source: $.http.query.filtering.campaign_statuses
+              sub_type: string
+              type: array
+            - children:
+              - type: string
+              is_expand: true
+              name: item_group_ids
+              required: false
+              source: $.http.query.filtering.item_group_ids
+              sub_type: string
+              type: array
+            - children:
+              - type: number
+              is_expand: true
+              name: gmv_max_promotion_types
+              required: false
+              source: $.http.query.filtering.gmv_max_promotion_types
+              sub_type: number
+              type: array
+            - children:
+              - type: number
+              is_expand: true
+              name: creative_types
+              required: false
+              source: $.http.query.filtering.creative_types
+              sub_type: number
+              type: array
+            - children:
+              - type: string
+              is_expand: true
+              name: item_ids
+              required: false
+              source: $.http.query.filtering.item_ids
+              sub_type: string
+              type: array
+            - children:
+              - type: string
+              is_expand: true
+              name: room_ids
+              required: false
+              source: $.http.query.filtering.room_ids
+              sub_type: string
+              type: array
+            - name: search_word
+              required: false
+              source: $.http.query.filtering.search_word
+              type: string
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: creative_delivery_statuses
+              required: false
+              source: $.http.query.filtering.creative_delivery_statuses
+              sub_type: number
+              type: array
+            is_expand: true
+            name: filtering
+            required: false
+            type: object
+          - name: sort_field
+            required: false
+            source: $.http.query.sort_field
+            type: string
+          - name: sort_type
+            required: false
+            source: $.http.query.sort_type
+            type: number
+          - name: page
+            required: false
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: false
+            source: $.http.query.page_size
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.context.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.context.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.context.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.context.source_ip
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.context.source_ip
+              type: string
+            - name: user_agent
+              required: false
+              source: $.context.is_same_identity
+              type: string
+            - name: referer
+              required: false
+              source: $.context.is_same_identity
+              type: string
+            is_expand: true
+            name: context_info
+            required: true
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          context_info:
+            app_id: $.context.app_id
+            core_user_id: $.context.core_user_id
+            developer_id: $.context.developer_id
+            referer: $.context.is_same_identity
+            user_agent: $.context.is_same_identity
+            x_forwarded_for: $.context.source_ip
+            x_real_ip: $.context.source_ip
+          dimensions: $.http.query.dimensions
+          enable_total_metrics: $.http.query.enable_total_metrics
+          end_date: $.http.query.end_date
+          filtering:
+            campaign_ids: $.http.query.filtering.campaign_ids
+            campaign_name: $.http.query.filtering.campaign_name
+            campaign_statuses: $.http.query.filtering.campaign_statuses
+            creative_delivery_statuses: $.http.query.filtering.creative_delivery_statuses
+            creative_types: $.http.query.filtering.creative_types
+            gmv_max_promotion_types: $.http.query.filtering.gmv_max_promotion_types
+            item_group_ids: $.http.query.filtering.item_group_ids
+            item_ids: $.http.query.filtering.item_ids
+            room_ids: $.http.query.filtering.room_ids
+            search_word: $.http.query.filtering.search_word
+          metrics: $.http.query.metrics
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          sort_field: $.http.query.sort_field
+          sort_type: $.http.query.sort_type
+          start_date: $.http.query.start_date
+          store_ids: $.http.query.store_ids
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list: $.rpc.output.stats
+          page_info: $.rpc.output.page_info
+          total_metrics: $.rpc.output.total_metrics
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

@@ -12,7 +12,7 @@ import {SmartPlusAdCreateBodyAdConfigurationUtmParams} from './SmartPlusAdCreate
 /**
  * The SmartPlusAdCreateBodyAdConfiguration model module.
  * @module model/SmartPlusAdCreateBodyAdConfiguration
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdCreateBodyAdConfiguration {
   /**

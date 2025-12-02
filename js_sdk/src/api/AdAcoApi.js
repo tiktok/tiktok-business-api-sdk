@@ -13,7 +13,7 @@ import {MaterialStatusUpdateBody} from '../model/MaterialStatusUpdateBody.js';
 /**
 * AdAco service.
 * @module api/AdAcoApi
-* @version 0.1.8
+* @version 0.1.9
 */
 export class AdAcoApi {
 

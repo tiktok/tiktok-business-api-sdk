@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BcmemberinviteExtUserRole model module.
  * @module model/BcmemberinviteExtUserRole
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class BcmemberinviteExtUserRole {
   /**

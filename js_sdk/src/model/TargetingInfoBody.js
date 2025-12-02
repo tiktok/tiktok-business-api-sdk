@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The TargetingInfoBody model module.
  * @module model/TargetingInfoBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class TargetingInfoBody {
   /**

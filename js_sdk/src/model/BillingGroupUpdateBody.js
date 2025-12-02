@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BillingGroupUpdateBody model module.
  * @module model/BillingGroupUpdateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class BillingGroupUpdateBody {
   /**

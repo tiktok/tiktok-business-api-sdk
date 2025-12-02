@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-10-02T15:20:10.801947-07:00[America/Los_Angeles]")public class IdentityApi {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")public class IdentityApi {
   private ApiClient apiClient;
 
   public IdentityApi() {
@@ -43,6 +43,76 @@ import java.util.Map;
     this.apiClient = apiClient;
   }
 
+  /**
+   * Get GMV Max identity info [Smart Plus GMV Max Identity Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001101474882)
+   * 
+   * @param advertiserId  (required)
+   * @param storeId  (required)
+   * @param storeAuthorizedBcId  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response gmvMaxIdentityGet(String advertiserId, String storeId, String storeAuthorizedBcId, String accessToken) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling gmvMaxIdentityGet");
+    }
+    // verify the required parameter 'storeId' is set
+    if (storeId == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeId' when calling gmvMaxIdentityGet");
+    }
+    // verify the required parameter 'storeAuthorizedBcId' is set
+    if (storeAuthorizedBcId == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeAuthorizedBcId' when calling gmvMaxIdentityGet");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling gmvMaxIdentityGet");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/gmv_max/identity/get/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "store_id", storeId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "store_authorized_bc_id", storeAuthorizedBcId));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
   /**
    * Create a customized user identity. [Identity Create](https://ads.tiktok.com/marketing_api/docs?rid&#x3D;uraumvplog&amp;id&#x3D;1740654203526146)
    * https://ads.tiktok.com/marketing_api/search?s&#x3D;identity%2Fcreate%2F&amp;type&#x3D;0&amp;version&#x3D;1.3

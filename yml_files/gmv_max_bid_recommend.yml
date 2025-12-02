@@ -1,0 +1,355 @@
+info:
+  description: '{"en":"GmvMaxBidRecommend","zh":"GmvMaxBidRecommend"}'
+  title: '{"en":"GmvMaxBidRecommend","zh":"GmvMaxBidRecommend"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /gmv_max/bid/recommend/:
+    get:
+      operationId: Gmv_max Bid Recommend
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: store_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.store_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: shopping_ads_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1810159239577601
+            enum_package_name: PromotionFlowType
+            enums:
+            - description: ''
+              is_valid: false
+              key: CATALOG_LISTING_ADS
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: LIVE
+              value: '2'
+            - description: "\u63A8\u5546\u54C1\u5E7F\u544A\uFF08VIDEO + PSA\uFF09"
+              is_valid: true
+              key: PRODUCT
+              value: '5'
+            - description: ''
+              is_valid: false
+              key: PRODUCT_SHOPPING_ADS
+              value: '4'
+            - description: ''
+              is_valid: false
+              key: UNSET
+              value: '0'
+            - description: ''
+              is_valid: false
+              key: VIDEO
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: true
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.promotion_flow_type
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: optimization_goal
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804193306612737
+            enum_package_name: OptimizeGoal
+            enums:
+            - description: ''
+              is_valid: false
+              key: ANCHOR_CLICK
+              value: '112'
+            - description: ''
+              is_valid: false
+              key: ANCHOR_CLICK_PURCHASE
+              value: '117'
+            - description: ''
+              is_valid: false
+              key: AUTOMATED_VALUE
+              value: '125'
+            - description: ''
+              is_valid: false
+              key: CLICK
+              value: '101'
+            - description: ''
+              is_valid: false
+              key: CONVERSATION
+              value: '124'
+            - description: ''
+              is_valid: false
+              key: CONVERSION_LEADS
+              value: '121'
+            - description: ''
+              is_valid: false
+              key: CONVERT
+              value: '100'
+            - description: ''
+              is_valid: false
+              key: DESTINATION_VISIT
+              value: '123'
+            - description: ''
+              is_valid: false
+              key: ENGAGED_VIEW
+              value: '118'
+            - description: ''
+              is_valid: false
+              key: ENGAGED_VIEW_FIFTEEM
+              value: '120'
+            - description: ''
+              is_valid: false
+              key: FOLLOWERS
+              value: '108'
+            - description: ''
+              is_valid: false
+              key: INSTALL
+              value: '105'
+            - description: ''
+              is_valid: false
+              key: IN_APP_EVENT
+              value: '106'
+            - description: ''
+              is_valid: false
+              key: LEAD_GENERATION
+              value: '107'
+            - description: ''
+              is_valid: false
+              key: MESSAGE
+              value: '119'
+            - description: ''
+              is_valid: false
+              key: MT_LIVE_FOLLOW
+              value: '126'
+            - description: ''
+              is_valid: false
+              key: MT_LIVE_ROOM
+              value: '113'
+            - description: ''
+              is_valid: false
+              key: MT_LIVE_SHOPPING
+              value: '116'
+            - description: ''
+              is_valid: false
+              key: PAGE_VISIT
+              value: '122'
+            - description: ''
+              is_valid: false
+              key: POST_ENGAGEMNT
+              value: '110'
+            - description: ''
+              is_valid: false
+              key: PREFERRED_LEAD
+              value: '127'
+            - description: ''
+              is_valid: false
+              key: PRODUCT_CLICK_IN_LIVE
+              value: '114'
+            - description: ''
+              is_valid: false
+              key: PROFILE_VIEWS
+              value: '109'
+            - description: ''
+              is_valid: false
+              key: REACH
+              value: '103'
+            - description: ''
+              is_valid: false
+              key: SHOW
+              value: '102'
+            - description: ''
+              is_valid: false
+              key: TRAFFIC_LANDING_PAGE_VIEW
+              value: '115'
+            - description: ''
+              is_valid: true
+              key: VALUE
+              value: '111'
+            - description: ''
+              is_valid: false
+              key: VIDEO_VIEW
+              value: '104'
+            key_format: string
+            strict: true
+            use_part: true
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.optimize_goal
+        x-open-field-id: 4
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+              maxItems: 50
+              minItems: 1
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.spu_list
+        description: ''
+        in: query
+        name: item_group_ids
+        required: false
+        x-open-field-id: 5
+      - description: ''
+        in: query
+        name: identity_id
+        required: false
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.identity_id
+        x-open-field-id: 6
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get GMV Max bid recommendation [Smart Plus GMV Max Bid Recommend](https://business-api.tiktok.com/portal/docs?id=1822001024720897)
+      tags:
+      - Campaign Creation
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: store_id
+            required: true
+            source: $.http.query.store_id
+            type: number
+          - name: promotion_flow_type
+            required: true
+            source: $.http.query.shopping_ads_type
+            type: number
+          - name: optimize_goal
+            required: true
+            source: $.http.query.optimization_goal
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: spu_list
+            required: false
+            source: $.http.query.item_group_ids[]
+            sub_type: number
+            type: array
+          - name: identity_id
+            required: false
+            source: $.http.query.identity_id
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          identity_id: $.http.query.identity_id
+          optimize_goal: $.http.query.optimization_goal
+          promotion_flow_type: $.http.query.shopping_ads_type
+          spu_list: $.http.query.item_group_ids[]
+          store_id: $.http.query.store_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          budget: $.rpc.output.budget
+          cpa_bid: $.rpc.output.cpa_bid
+          roas_bid: $.rpc.output.roas_bid
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

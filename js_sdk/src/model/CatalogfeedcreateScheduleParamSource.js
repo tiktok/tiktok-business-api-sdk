@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CatalogfeedcreateScheduleParamSource model module.
  * @module model/CatalogfeedcreateScheduleParamSource
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class CatalogfeedcreateScheduleParamSource {
   /**

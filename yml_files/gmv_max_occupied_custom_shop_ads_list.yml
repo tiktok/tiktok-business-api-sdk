@@ -1,0 +1,227 @@
+info:
+  description: '{"en":"GmvMaxRoi1List","zh":"GmvMaxRoi1List"}'
+  title: '{"en":"GmvMaxRoi1List","zh":"GmvMaxRoi1List"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /gmv_max/occupied_custom_shop_ads/list/:
+    get:
+      operationId: Gmv_max Occupied_custom_shop_ads List
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: store_id
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.store_id
+        x-open-field-id: 2
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.asset_ids
+        description: ''
+        in: query
+        name: asset_ids
+        required: true
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: occupied_asset_type
+        required: true
+        schema:
+          nullable: false
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1817683760236609
+            enum_package_name: MutexAssetIdType
+            enums:
+            - description: "bc\u4EE3\u6295tt user \u6388\u6743\u8D26\u53F7\u7C7B\u578B"
+              is_valid: true
+              key: IDENTITY_BC_AUTH_TT
+              value: '5'
+            - description: "TTS \u5E97\u94FA\u6388\u6743\u6765\u6E90\u7684identity"
+              is_valid: true
+              key: IDENTITY_TTS_TT
+              value: '8'
+            - description: "tt user \u6388\u6743\u8D26\u53F7\u7C7B\u578B"
+              is_valid: true
+              key: IDENTITY_TT_USER
+              value: '3'
+            - description: "\u9EA6\u54F2\u4F26\u5E97\u94FAID"
+              is_valid: true
+              key: SHOP
+              value: '100'
+            - description: "\u9EA6\u54F2\u4F26\u5546\u54C1"
+              is_valid: true
+              key: SPU
+              value: '101'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.mutex_asset_id_type
+        x-open-field-id: 4
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get GMV Max occupied custom shop ads [Smart Plus GMV Max Occupied Custom
+        Shop Ads List](https://business-api.tiktok.com/portal/docs?id=1822001136924674)
+      tags:
+      - Campaign Creation
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: store_id
+            required: true
+            source: $.http.query.store_id
+            type: number
+          - children:
+            - type: string
+            is_expand: false
+            name: asset_ids
+            required: true
+            source: $.http.query.asset_ids
+            sub_type: string
+            type: array
+          - name: mutex_asset_id_type
+            required: true
+            source: $.http.query.occupied_asset_type
+            type: number
+          - children:
+            - name: app_id
+              required: false
+              source: $.http.query.context_info.app_id
+              type: number
+            - name: core_user_id
+              required: false
+              source: $.http.query.context_info.core_user_id
+              type: number
+            - name: developer_id
+              required: false
+              source: $.http.query.context_info.developer_id
+              type: number
+            - name: x_forwarded_for
+              required: false
+              source: $.http.query.context_info.x_forwarded_for
+              type: string
+            - name: x_real_ip
+              required: false
+              source: $.http.query.context_info.x_real_ip
+              type: string
+            - name: user_agent
+              required: false
+              source: $.http.query.context_info.user_agent
+              type: string
+            - name: referer
+              required: false
+              source: $.http.query.context_info.referer
+              type: string
+            is_expand: false
+            name: context_info
+            required: false
+            source: $.http.query.context_info
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          asset_ids: $.http.query.asset_ids
+          context_info: $.http.query.context_info
+          mutex_asset_id_type: $.http.query.occupied_asset_type
+          store_id: $.http.query.store_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          occupied_custom_shop_ads: $.rpc.output.excluded_roi1_ads
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

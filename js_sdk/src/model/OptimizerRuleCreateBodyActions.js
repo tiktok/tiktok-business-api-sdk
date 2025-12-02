@@ -11,7 +11,7 @@ import {OptimizerRuleCreateBodyValue} from './OptimizerRuleCreateBodyValue.js';
 /**
  * The OptimizerRuleCreateBodyActions model module.
  * @module model/OptimizerRuleCreateBodyActions
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class OptimizerRuleCreateBodyActions {
   /**

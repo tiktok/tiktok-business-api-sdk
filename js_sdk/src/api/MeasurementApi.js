@@ -20,7 +20,7 @@ import {PixelUpdateBody} from '../model/PixelUpdateBody.js';
 /**
 * Measurement service.
 * @module api/MeasurementApi
-* @version 0.1.8
+* @version 0.1.9
 */
 export class MeasurementApi {
 
