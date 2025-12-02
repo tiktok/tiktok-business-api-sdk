@@ -16,6 +16,8 @@ import business_api.Pair;
 
 import javax.ws.rs.core.GenericType;
 
+import business_api_client.ContextInfoGmvMaxReportGet;
+import business_api_client.FilteringGmvMaxReportGet;
 import business_api_client.FilteringSmartPlusMaterialReportBreakdown;
 import business_api_client.FilteringSmartPlusMaterialReportOverview;
 import business_api_client.InlineResponse200;
@@ -27,7 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-10-02T15:20:10.801947-07:00[America/Los_Angeles]")public class ReportingApi {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")public class ReportingApi {
   private ApiClient apiClient;
 
   public ReportingApi() {
@@ -46,6 +48,108 @@ import java.util.Map;
     this.apiClient = apiClient;
   }
 
+  /**
+   * Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1824721673497601)
+   * 
+   * @param advertiserId  (required)
+   * @param storeIds  (required)
+   * @param dimensions  (required)
+   * @param metrics  (required)
+   * @param startDate  (required)
+   * @param endDate  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param enableTotalMetrics  (optional, default to false)
+   * @param filtering  (optional)
+   * @param sortField  (optional)
+   * @param sortType  (optional, default to DESC)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
+   * @param contextInfo  (optional)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response gmvMaxReportGet(String advertiserId, List<String> storeIds, List<String> dimensions, List<String> metrics, String startDate, String endDate, String accessToken, Boolean enableTotalMetrics, FilteringGmvMaxReportGet filtering, String sortField, String sortType, Long page, Long pageSize, ContextInfoGmvMaxReportGet contextInfo) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling gmvMaxReportGet");
+    }
+    // verify the required parameter 'storeIds' is set
+    if (storeIds == null) {
+      throw new ApiException(400, "Missing the required parameter 'storeIds' when calling gmvMaxReportGet");
+    }
+    // verify the required parameter 'dimensions' is set
+    if (dimensions == null) {
+      throw new ApiException(400, "Missing the required parameter 'dimensions' when calling gmvMaxReportGet");
+    }
+    // verify the required parameter 'metrics' is set
+    if (metrics == null) {
+      throw new ApiException(400, "Missing the required parameter 'metrics' when calling gmvMaxReportGet");
+    }
+    // verify the required parameter 'startDate' is set
+    if (startDate == null) {
+      throw new ApiException(400, "Missing the required parameter 'startDate' when calling gmvMaxReportGet");
+    }
+    // verify the required parameter 'endDate' is set
+    if (endDate == null) {
+      throw new ApiException(400, "Missing the required parameter 'endDate' when calling gmvMaxReportGet");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling gmvMaxReportGet");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/gmv_max/report/get/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "store_ids", storeIds));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "dimensions", dimensions));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "metrics", metrics));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "enable_total_metrics", enableTotalMetrics));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "start_date", startDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "end_date", endDate));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "filtering", filtering));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort_field", sortField));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "sort_type", sortType));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "context_info", contextInfo));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
   /**
    * Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302848100353)
    * 

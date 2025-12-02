@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OptimizerRuleCreateBodyNotificationEmailSetting model module.
  * @module model/OptimizerRuleCreateBodyNotificationEmailSetting
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class OptimizerRuleCreateBodyNotificationEmailSetting {
   /**

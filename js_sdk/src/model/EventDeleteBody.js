@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The EventDeleteBody model module.
  * @module model/EventDeleteBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class EventDeleteBody {
   /**

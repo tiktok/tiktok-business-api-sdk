@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The DateRange model module.
  * @module model/DateRange
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class DateRange {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The VideoDeleteBody model module.
  * @module model/VideoDeleteBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class VideoDeleteBody {
   /**

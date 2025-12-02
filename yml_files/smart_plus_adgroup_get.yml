@@ -1,0 +1,1002 @@
+info:
+  description: '{"en":"SPAdgroupGet","zh":"SPAdgroupGet"}'
+  title: '{"en":"SPAdgroupGet","zh":"SPAdgroupGet"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /smart_plus/adgroup/get/:
+    get:
+      operationId: Smart_plus Adgroup Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              nullable: false
+              properties:
+                adgroup_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.filtering.adgroup_ids
+                adgroup_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.query.filtering.adgroup_name
+                campaign_ids:
+                  description: ''
+                  items:
+                    nullable: false
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                    x-open-convert:
+                    - int64(%s)
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.query.filtering.campaign_ids
+                creation_filter_end_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                  x-open-source: $.http.query.filtering.creation_filter_end_time
+                creation_filter_start_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.query.filtering.creation_filter_start_time
+                objective_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1799789194562626
+                    enum_package_name: CampaignObjectiveType
+                    enums:
+                    - description: ''
+                      is_valid: false
+                      key: APP_INSTALL
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: APP_PROMOTION
+                      value: '16'
+                    - description: ''
+                      is_valid: false
+                      key: BRAND_AD
+                      value: '50'
+                    - description: ''
+                      is_valid: false
+                      key: CATALOG_SALES
+                      value: '6'
+                    - description: ''
+                      is_valid: false
+                      key: CONVERSIONS
+                      value: '3'
+                    - description: ''
+                      is_valid: false
+                      key: ENGAGEMENT
+                      value: '9'
+                    - description: ''
+                      is_valid: false
+                      key: EST_AD
+                      value: '51'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GENERATION
+                      value: '8'
+                    - description: ''
+                      is_valid: false
+                      key: NONE_TYPE
+                      value: '0'
+                    - description: ''
+                      is_valid: false
+                      key: PRODUCT_SALES
+                      value: '15'
+                    - description: ''
+                      is_valid: false
+                      key: REACH
+                      value: '5'
+                    - description: ''
+                      is_valid: false
+                      key: RF_APP_INSTALL
+                      value: '13'
+                    - description: ''
+                      is_valid: false
+                      key: RF_ENGAGEMENT
+                      value: '12'
+                    - description: ''
+                      is_valid: false
+                      key: RF_REACH
+                      value: '7'
+                    - description: ''
+                      is_valid: false
+                      key: RF_TRAFFIC
+                      value: '11'
+                    - description: ''
+                      is_valid: false
+                      key: RF_VIDEO_VIEW
+                      value: '10'
+                    - description: ''
+                      is_valid: false
+                      key: SHOP
+                      value: '14'
+                    - description: ''
+                      is_valid: false
+                      key: SS_HTC_AD
+                      value: '52'
+                    - description: ''
+                      is_valid: false
+                      key: TOPVIEW_REACH
+                      value: '50'
+                    - description: ''
+                      is_valid: false
+                      key: TRAFFIC
+                      value: '1'
+                    - description: ''
+                      is_valid: false
+                      key: VIDEO_VIEWS
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: WEB_CONVERSIONS
+                      value: '1003'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.query.filtering.objective_type
+                optimization_goal:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804192692022273
+                    enum_package_name: OptimizeGoalFilter
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ANCHOR_CLICK_PURCHASE
+                      value: '17'
+                    - description: ''
+                      is_valid: true
+                      key: CLICK
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: CONVERSATION
+                      value: '28'
+                    - description: ''
+                      is_valid: true
+                      key: CONVERSION_LEADS
+                      value: '25'
+                    - description: ''
+                      is_valid: true
+                      key: CONVERT
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: DESTINATION_VISIT
+                      value: '27'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGED_VIEW
+                      value: '18'
+                    - description: ''
+                      is_valid: true
+                      key: ENGAGED_VIEW_FIFTEEN
+                      value: '20'
+                    - description: ''
+                      is_valid: true
+                      key: FOLLOWERS
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: GMV
+                      value: '22'
+                    - description: ''
+                      is_valid: true
+                      key: INITIATE_CHECKOUTS
+                      value: '24'
+                    - description: ''
+                      is_valid: true
+                      key: INSTALL
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: IN_APP_EVENT
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GENERATION
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: MESSAGE
+                      value: '19'
+                    - description: ''
+                      is_valid: true
+                      key: MT_LIVE_ROOM
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: MT_LIVE_SHOPPING
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: PAGE_VISIT
+                      value: '26'
+                    - description: ''
+                      is_valid: true
+                      key: POST_ENGAGEMENT
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: PRODUCT_CLICK_IN_LIVE
+                      value: '14'
+                    - description: ''
+                      is_valid: true
+                      key: PROFILE_VIEWS
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: PURCHASES
+                      value: '23'
+                    - description: ''
+                      is_valid: true
+                      key: REACH
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: SHOW
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: TRAFFIC_LANDING_PAGE_VIEW
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: VALUE
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: VIDEO_VIEW
+                      value: '5'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 10
+                  x-open-source: $.http.query.filtering.optimization_goal
+                primary_status:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1827747639725058
+                    enum_package_name: AdgPrimaryStatus
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_ALL
+                      value: None
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELETE
+                      value: delete
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELIVERY_OK
+                      value: delivery_ok
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DISABLE
+                      value: disable
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_FROZEN
+                      value: frozen
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_NOT_DELETE
+                      value: no_delete
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_NOT_DELIVERY
+                      value: not_delivery
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_RF_CLOSED
+                      value: rf_closed
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_TIME_DONE
+                      value: time_done
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 5
+                  x-open-source: $.http.query.filtering.primary_status
+                promotion_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1827830268475394
+                    enum_package_name: PromotionTypeFilter
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: APP
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: INSTANT_FORM
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GEN_CLICK_TO_CALL
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GEN_CLICK_TO_SOCIAL_MEDIA_APP_MESSAGE
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: LEAD_GEN_CLICK_TO_TT_DIRECT_MESSAGE
+                      value: '6'
+                    - description: ''
+                      is_valid: false
+                      key: LIVE
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: OTHERS
+                      value: '11'
+                    - description: ''
+                      is_valid: false
+                      key: SHORT_VIDEO
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: WEBSITE
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 9
+                  x-open-source: $.http.query.filtering.promotion_type
+                secondary_status:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1836707190790321
+                    enum_package_name: AdgroupSecondaryStatus
+                    enums:
+                    - description: ''
+                      is_valid: false
+                      key: ADGROUP_STATUS_ADGROUP_PRE_ONLINE
+                      value: ad_pre_online
+                    - description: ''
+                      is_valid: false
+                      key: ADGROUP_STATUS_ADGROUP_QUOTA_LIMIT
+                      value: ad_quota_limit
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_ADVERTISER_AUDIT
+                      value: advertiser_audit
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_ADVERTISER_AUDIT_DENY
+                      value: advertiser_offline_audit
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_ALL
+                      value: None
+                    - description: ''
+                      is_valid: false
+                      key: ADGROUP_STATUS_ASSET_AUTHORIZATION_LOST
+                      value: ad_asset_authorization_lost
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_AUDIT
+                      value: ad_audit
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_AUDIT_DENY
+                      value: ad_offline_audit
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_BALANCE_EXCEED
+                      value: ad_offline_balance
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_BUDGET_EXCEED
+                      value: ad_offline_budget
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_CAMPAIGN_DELETE
+                      value: campaign_delete
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_CAMPAIGN_DISABLE
+                      value: campaign_disable
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_CAMPAIGN_EXCEED
+                      value: campaign_offline_budget
+                    - description: ''
+                      is_valid: false
+                      key: ADGROUP_STATUS_CLOSED
+                      value: rf_closed_others
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_CREATE
+                      value: ad_create
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_DELETE
+                      value: ad_delete
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_DELIVERY_OK
+                      value: ad_delivery_ok
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_DISABLE
+                      value: ad_disable
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_FROZEN
+                      value: ad_frozen
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_IDENTITY_USED_BY_GMV_MAX_AD
+                      value: roi2_mutex_enable
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_INDUSTRY_QUALIFICATION_DENY
+                      value: ad_industry_qualification_rejected
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_INDUSTRY_QUALIFICATION_EXPIRED
+                      value: ad_industry_qualification_expired
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_INDUSTRY_QUALIFICATION_MISSING
+                      value: ad_industry_qualification_missing
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_LIVE_NOT_START
+                      value: ad_live_not_start
+                    - description: ''
+                      is_valid: false
+                      key: ADGROUP_STATUS_LIVE_OFFLINE
+                      value: live_offline
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_NOT_DELETE
+                      value: no_delete
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_NOT_START
+                      value: ad_time_no_reach
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_PARTIAL_AUDIT_DELIVERY_OK
+                      value: ad_partial_audit_and_delivery_ok
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_PARTIAL_AUDIT_NO_DELIVERY
+                      value: ad_partial_audit_but_no_delivery
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_PIXEL_UNBIND
+                      value: ad_pixel_unbind
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_PROMOTE_AD_NOT_APPROVED
+                      value: promote_creative_not_approved
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_PROMOTE_WITHDRAW_ORDER
+                      value: promote_withdraw_order
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_REAUDIT
+                      value: ad_reaudit
+                    - description: ''
+                      is_valid: false
+                      key: ADGROUP_STATUS_REVIEW_PARTIALLY_APPROVED
+                      value: ads_review_partially_approved
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_ADGROUP_INVALID
+                      value: rf_no_ad_group
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_AD_AUDIT_DENY
+                      value: rf_creative_not_approved
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_BOOKING
+                      value: rf_booking
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_CLOSED_OTHERS
+                      value: rf_closed_others
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_DEDUCTION_FAILED
+                      value: rf_deduction_failed
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_NO_DELIVERY_CREATIVE
+                      value: rf_no_delivery_creative
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_NO_VALID_CREATIVE
+                      value: rf_no_valid_creative
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_SCHEDULE
+                      value: rf_schedule
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_SHORT_BALANCE
+                      value: rf_short_balance
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_TERMINATE
+                      value: rf_terminate
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_TIME_DONE
+                      value: ad_rf_completed
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_RF_WITHDRAW_ORDER
+                      value: rf_withdraw_order
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_SEARCH_KEYWORDS_IN_REVIEW
+                      value: keyword_in_review
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_SEARCH_KEYWORDS_NOT_AVAILABLE
+                      value: keyword_not_available
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_SEARCH_KEYWORDS_PARTIAL_APPROVED
+                      value: keyword_partial_approved
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_SHADOW_ADGROUP_REAUDIT
+                      value: shadow_ad_reaudit
+                    - description: ''
+                      is_valid: true
+                      key: ADGROUP_STATUS_TIME_DONE
+                      value: ad_time_done
+                    - description: ''
+                      is_valid: false
+                      key: ADGROUP_STATUS_TRANSCODING_FAIL
+                      value: ad_transcoding_fail
+                    - description: ''
+                      is_valid: true
+                      key: ADVERTISER_ACCOUNT_INVALID
+                      value: rf_account_invalid
+                    - description: ''
+                      is_valid: true
+                      key: ADVERTISER_ACCOUNT_PUNISH
+                      value: advertiser_punish
+                    - description: ''
+                      is_valid: true
+                      key: ADVERTISER_CONTRACT_PENDING
+                      value: advertiser_contract_pending
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELETE
+                      value: delete
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DELIVERY_OK
+                      value: delivery_ok
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_DISABLE
+                      value: disable
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_FROZEN
+                      value: frozen
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_NOT_DELIVERY
+                      value: not_delivery
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_RF_CLOSED
+                      value: rf_closed
+                    - description: ''
+                      is_valid: true
+                      key: STATUS_TIME_DONE
+                      value: time_done
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: string
+                  x-open-field-id: 4
+                  x-open-source: $.http.query.filtering.secondary_status
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.filtering
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          default: 1
+          format: int64
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          default: 10
+          format: int64
+          maximum: 1000
+          minimum: 1
+          nullable: false
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 4
+      - content:
+          application/json:
+            schema:
+              items:
+                nullable: false
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              nullable: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.fields
+        description: ''
+        in: query
+        name: fields
+        required: false
+        x-open-field-id: 5
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Retrieve ad group details [Smart Plus AdGroup Get]
+      tags:
+      - Adgroup
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - children:
+              - type: number
+              is_expand: false
+              name: adgroup_ids
+              required: false
+              source: $.http.query.filtering.adgroup_ids
+              sub_type: number
+              type: array
+            - children:
+              - type: number
+              is_expand: false
+              name: campaign_ids
+              required: false
+              source: $.http.query.filtering.campaign_ids
+              sub_type: number
+              type: array
+            - name: objective_type
+              required: false
+              source: $.http.query.filtering.objective_type
+              type: number
+            - name: secondary_status
+              required: false
+              source: $.http.query.filtering.secondary_status
+              type: string
+            - name: primary_status
+              required: false
+              source: $.http.query.filtering.primary_status
+              type: string
+            - name: adgroup_name
+              required: false
+              source: $.http.query.filtering.adgroup_name
+              type: string
+            - name: creation_filter_start_time
+              required: false
+              source: $.http.query.filtering.creation_filter_start_time
+              type: string
+            - name: creation_filter_end_time
+              required: false
+              source: $.http.query.filtering.creation_filter_end_time
+              type: string
+            - name: promotion_type
+              required: false
+              source: $.http.query.filtering.promotion_type
+              type: number
+            - name: optimization_goal
+              required: false
+              source: $.http.query.filtering.optimization_goal
+              type: number
+            is_expand: false
+            name: filtering
+            required: false
+            source: $.http.query.filtering
+            type: object
+          - name: page
+            required: true
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: true
+            source: $.http.query.page_size
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: fields
+            required: false
+            source: $.http.query.fields
+            sub_type: string
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          fields: $.http.query.fields
+          filtering: $.http.query.filtering
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list[][]:
+          - adgroup_id: $.rpc.output.adgroup_list[].adgroup_id
+            adgroup_name: $.rpc.output.adgroup_list[].name
+            advertiser_id: $.rpc.output.adgroup_list[].advertiser_id
+            app_id: $.rpc.output.adgroup_list[].ad_ref_app_id
+            attribution_event_count: $.rpc.output.adgroup_list[].attribution_statistic_type
+            bid_price: $.rpc.output.adgroup_list[].bid
+            bid_type: $.rpc.output.adgroup_list[].smart_bid_type
+            billing_event: $.rpc.output.adgroup_list[].pricing
+            budget: $.rpc.output.adgroup_list[].budget
+            budget_mode: $.rpc.output.adgroup_list[].budget_mode
+            campaign_id: $.rpc.output.adgroup_list[].campaign_id
+            campaign_name: $.rpc.output.adgroup_list[].campaign_name
+            catalog_authorized_bc_id: $.rpc.output.adgroup_list[].catalog_authorized_bc
+            catalog_id: $.rpc.output.adgroup_list[].product_platform_id
+            click_attribution_window: $.rpc.output.adgroup_list[].attribution_window_click
+            comment_disabled: $.rpc.output.adgroup_list[].is_comment_disable
+            conversion_bid_price: $.rpc.output.adgroup_list[].cpa_bid
+            create_time: $.rpc.output.adgroup_list[].display_create_time
+            custom_conversion_id: $.rpc.output.adgroup_list[].custom_conversion_id
+            dayparting: $.rpc.output.adgroup_list[].dayparting
+            deep_bid_type: $.rpc.output.adgroup_list[].deep_bid_type
+            deep_cpabid: $.rpc.output.adgroup_list[].deep_cpabid
+            deep_funnel_event_source: $.rpc.output.adgroup_list[].deep_funnel_event_source
+            deep_funnel_event_source_id: $.rpc.output.adgroup_list[].deep_funnel_event_source_id
+            deep_funnel_optimization_event: $.rpc.output.adgroup_list[].deep_funnel_optimization_event
+            deep_funnel_toggle: $.rpc.output.adgroup_list[].deep_funnel_toggle
+            engaged_view_attribution_window: $.rpc.output.adgroup_list[].attribution_window_engaged_view
+            identity_authorized_bc_id: $.rpc.output.adgroup_list[].identity_bc_id
+            identity_id: $.rpc.output.adgroup_list[].identity_id
+            identity_type: $.rpc.output.adgroup_list[].identity_type
+            incentive_offer_type: $.rpc.output.adgroup_list[].compensation_activity
+            message_event_set_id: $.rpc.output.adgroup_list[].ad_ref_message_event_set_id
+            messaging_app_account_id: $.rpc.output.adgroup_list[].ima_account_id
+            messaging_app_type: $.rpc.output.adgroup_list[].ima_type
+            min_budget: $.rpc.output.adgroup_list[].min_budget
+            modify_time: $.rpc.output.adgroup_list[].display_modify_time
+            movie_premiere_date: $.rpc.output.adgroup_list[].movie_premiere_date
+            operation_status: $.rpc.output.adgroup_list[].operation_status
+            optimization_event: $.rpc.output.adgroup_list[].external_action
+            optimization_goal: $.rpc.output.adgroup_list[].optimize_goal
+            pacing: $.rpc.output.adgroup_list[].flow_control_mode
+            phone_info[]:
+            - phone_number: $.rpc.output.adgroup_list[].phone_number
+              phone_region_calling_code: $.rpc.output.adgroup_list[].phone_zip_code
+              phone_region_code: $.rpc.output.adgroup_list[].phone_country_code
+            pixel_id: $.rpc.output.adgroup_list[].ad_ref_pixel_id
+            placement_type: $.rpc.output.adgroup_list[].inventory_flow_type
+            placements: $.rpc.output.adgroup_list[].inventory_flow
+            product_set_id: $.rpc.output.adgroup_list[].product_set_id
+            product_source: $.rpc.output.adgroup_list[].product_source
+            promotion_target_type: $.rpc.output.adgroup_list[].promotion_target_type
+            promotion_type: $.rpc.output.adgroup_list[].external_type
+            promotion_website_type: $.rpc.output.adgroup_list[].promotion_website_type
+            roas_bid: $.rpc.output.adgroup_list[].roas_bid
+            schedule_end_time: $.rpc.output.adgroup_list[].end_time_stamp
+            schedule_start_time: $.rpc.output.adgroup_list[].start_time_stamp
+            schedule_type: $.rpc.output.adgroup_list[].schedule_type
+            scheduled_budget: $.rpc.output.adgroup_list[].scheduled_budget
+            search_result_enabled: $.rpc.output.adgroup_list[].search_result_enabled
+            secondary_optimization_event: $.rpc.output.adgroup_list[].deep_external_action
+            secondary_status: $.rpc.output.adgroup_list[].secondary_status
+            share_disabled: $.rpc.output.adgroup_list[].is_share_disable
+            skip_learning_phase: $.rpc.output.adgroup_list[].cpa_skip_first_phrase
+            suggestion_audience_enabled: $.rpc.output.adgroup_list[].suggestion_audience_enabled
+            targeting_optimization_mode: $.rpc.output.adgroup_list[].spc_targeting_switch
+            targeting_spec[]:
+            - actions[][]:
+              - action_category_ids: $.rpc.output.adgroup_list[].audience.action_v2[].action_category_ids
+                action_period: $.rpc.output.adgroup_list[].audience.action_v2[].action_period
+                action_scene: $.rpc.output.adgroup_list[].audience.action_v2[].action_scene
+                video_user_actions: $.rpc.output.adgroup_list[].audience.action_v2[].video_user_actions
+              age_groups: $.rpc.output.adgroup_list[].audience.age_groups
+              app_targeting_type: $.rpc.output.adgroup_list[].audience.dpa_local_audience
+              audience_ids: $.rpc.output.adgroup_list[].audience.retargeting_tags
+              blocked_pangle_app_ids: $.rpc.output.adgroup_list[].audience.exclude_app_package_id
+              brand_safety_type: $.rpc.output.adgroup_list[].audience.brand_safety
+              carrier_ids: $.rpc.output.adgroup_list[].audience.carriers
+              category_exclusion_ids: $.rpc.output.adgroup_list[].audience.category_exclusion_ids
+              contextual_tags: $.rpc.output.adgroup_list[].audience.contextual_tags
+              device_model_ids: $.rpc.output.adgroup_list[].audience.device_models
+              device_price_ranges: $.rpc.output.adgroup_list[].audience.launch_price
+              excluded_audience_ids: $.rpc.output.adgroup_list[].audience.retargeting_tags_exclude
+              excluded_pangle_audience_package_ids: $.rpc.output.adgroup_list[].audience.flow_package_exclude
+              gender: $.rpc.output.adgroup_list[].audience.gender
+              household_income: $.rpc.output.adgroup_list[].audience.household_income
+              included_pangle_audience_package_ids: $.rpc.output.adgroup_list[].audience.flow_package_include
+              interest_category_ids: $.rpc.output.adgroup_list[].audience.ad_tag_v2
+              interest_keyword_ids: $.rpc.output.adgroup_list[].audience.interest_keywords_i18n
+              isp_ids: $.rpc.output.adgroup_list[].audience.internet_service_providers
+              languages: $.rpc.output.adgroup_list[].audience.language_list
+              location_ids: $.rpc.output.adgroup_list[].audience.particle_locations
+              min_android_version: $.rpc.output.adgroup_list[].audience.min_android_version
+              min_ios_version: $.rpc.output.adgroup_list[].audience.min_ios_version
+              network_types: $.rpc.output.adgroup_list[].audience.ac
+              operating_systems: $.rpc.output.adgroup_list[].audience.platform
+              purchase_intention_keyword_ids: $.rpc.output.adgroup_list[].audience.in_market_tags
+              saved_audience_id: $.rpc.output.adgroup_list[].audience.saved_audience_id
+              smart_audience_enabled: $.rpc.output.adgroup_list[].audience.smart_audience_enabled
+              smart_interest_behavior_enabled: $.rpc.output.adgroup_list[].audience.smart_interest_behavior_enabled
+              spc_audience_age: $.rpc.output.adgroup_list[].audience.exclude_age_under_eighteen
+              spending_power: $.rpc.output.adgroup_list[].audience.spending_power
+              zipcode_ids: $.rpc.output.adgroup_list[].audience.zipcode_ids
+            vbo_window: $.rpc.output.adgroup_list[].vbo_date_type
+            video_download_disabled: $.rpc.output.adgroup_list[].ad_download_status
+            view_attribution_window: $.rpc.output.adgroup_list[].attribution_window_view
+            zalo_id_type: $.rpc.output.adgroup_list[].ima_id_type
+          page_info: $.rpc.output.page_info
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

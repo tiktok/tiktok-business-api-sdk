@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ContextInfoSmartPlusMaterialReviewInfo model module.
  * @module model/ContextInfoSmartPlusMaterialReviewInfo
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class ContextInfoSmartPlusMaterialReviewInfo {
   /**

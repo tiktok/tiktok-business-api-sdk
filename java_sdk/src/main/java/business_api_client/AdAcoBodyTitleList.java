@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * AdAcoBodyTitleList
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-10-02T15:20:10.801947-07:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
 public class AdAcoBodyTitleList {
   @JsonProperty("title")
   private String title = null;

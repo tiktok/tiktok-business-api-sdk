@@ -10,7 +10,7 @@ import {AppcreateTrackingUrl} from './AppcreateTrackingUrl.js';
 /**
  * The AppCreateBody model module.
  * @module model/AppCreateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class AppCreateBody {
   /**

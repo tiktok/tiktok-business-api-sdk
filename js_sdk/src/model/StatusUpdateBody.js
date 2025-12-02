@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The StatusUpdateBody model module.
  * @module model/StatusUpdateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class StatusUpdateBody {
   /**

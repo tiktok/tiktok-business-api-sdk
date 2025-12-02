@@ -1,0 +1,1646 @@
+info:
+  description: '{"en":"SPAdCreate","zh":"SPAdCreate"}'
+  title: '{"en":"SPAdCreate","zh":"SPAdCreate"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /smart_plus/ad/create/:
+    post:
+      operationId: Smart_plus Ad Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                ad_configuration:
+                  description: ''
+                  nullable: false
+                  properties:
+                    auto_disclaimer_types:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1827620303506497
+                          enum_package_name: AutoDisclaimerType
+                          enums:
+                          - description: "\u6C7D\u8F66\u6298\u6263"
+                            is_valid: true
+                            key: DISCOUNT
+                            value: '2'
+                          - description: "\u6C7D\u8F66\u6392\u653E"
+                            is_valid: true
+                            key: EMISSION
+                            value: '1'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 11
+                    call_to_action_id:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-convert:
+                      - int64(%s)
+                      x-open-field-id: 8
+                      x-open-source: $.http.body.common_material.call_to_action_id
+                    catalog_creative_toggle:
+                      description: ''
+                      nullable: false
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 6
+                      x-open-source: $.http.body.common_material.catalog_creative_toggle
+                    dark_post_status:
+                      default: 'OFF'
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1843735142813698
+                        enum_package_name: DarkPostStatus
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: 'OFF'
+                          value: '2'
+                        - description: ''
+                          is_valid: true
+                          key: 'ON'
+                          value: '1'
+                        - description: ''
+                          is_valid: false
+                          key: Partly
+                          value: '3'
+                        key_format: string
+                        strict: true
+                        use_part: true
+                        validate_only: false
+                        value_format: int32
+                      x-open-field-id: 15
+                    end_card_cta:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1824616467253313
+                        enum_package_name: EndCardCTA
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: BOOK_NOW
+                          value: book_now
+                        - description: ''
+                          is_valid: true
+                          key: CONTACT_US
+                          value: contact_us
+                        - description: ''
+                          is_valid: true
+                          key: LEARN_MORE
+                          value: learn_more
+                        - description: ''
+                          is_valid: true
+                          key: ORDER_NOW
+                          value: order_now
+                        - description: ''
+                          is_valid: true
+                          key: READ_MORE
+                          value: read_more
+                        - description: ''
+                          is_valid: true
+                          key: SEARCH_INVENTORY
+                          value: search_inventory
+                        - description: ''
+                          is_valid: true
+                          key: SHOP_NOW
+                          value: shop_now
+                        - description: ''
+                          is_valid: true
+                          key: SIGN_UP
+                          value: sign_up
+                        - description: ''
+                          is_valid: true
+                          key: VIEW_MORE
+                          value: cta_view_more
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: false
+                        value_format: string
+                      x-open-field-id: 9
+                    fallback_type:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1810699520231426
+                        enum_package_name: FallbackType
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: APP_INSTALL
+                          value: '1'
+                        - description: ''
+                          is_valid: true
+                          key: UNSET
+                          value: '0'
+                        - description: ''
+                          is_valid: true
+                          key: WEBSITE
+                          value: '2'
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: false
+                        value_format: int32
+                      x-open-field-id: 14
+                    identity_id:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.common_material.identity_id
+                    identity_type:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1800331041544193
+                        enum_package_name: IdentityType
+                        enums:
+                        - description: ''
+                          is_valid: false
+                          key: AUTH_CODE
+                          value: '2'
+                        - description: ''
+                          is_valid: false
+                          key: BC_AUTH_TT
+                          value: '5'
+                        - description: ''
+                          is_valid: false
+                          key: BC_SELF_TT
+                          value: '4'
+                        - description: ''
+                          is_valid: true
+                          key: CUSTOMIZED_USER
+                          value: '1'
+                        - description: "TTS \u6388\u6743\u6765\u6E90TT\u8D26\u53F7"
+                          is_valid: false
+                          key: TTS_TT
+                          value: '8'
+                        - description: ''
+                          is_valid: false
+                          key: TT_USER
+                          value: '3'
+                        - description: ''
+                          is_valid: false
+                          key: UNSET
+                          value: '0'
+                        key_format: string
+                        strict: true
+                        use_part: true
+                        validate_only: false
+                        value_format: int32
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.common_material.identity_type
+                    phone_info:
+                      description: ''
+                      nullable: false
+                      properties:
+                        phone_number:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 1
+                        phone_region_calling_code:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 2
+                        phone_region_code:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 3
+                      type: object
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 13
+                    product_display_field_list:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1824616319490050
+                          enum_package_name: ProductDisplayField
+                          enums:
+                          - description: "dealer\u6240\u5904\u7684\u57CE\u5E02"
+                            is_valid: true
+                            key: ADDRESS_CITY
+                            value: '10'
+                          - description: ''
+                            is_valid: false
+                            key: AREA_SIZE
+                            value: '14'
+                          - description: "dealer\u540D\u79F0"
+                            is_valid: true
+                            key: DEALER_NAME
+                            value: '1'
+                          - description: ''
+                            is_valid: false
+                            key: ESTATE_PRICE
+                            value: '17'
+                          - description: "\u5916\u8868\u989C\u8272"
+                            is_valid: true
+                            key: EXTERIOR_COLOR
+                            value: '8'
+                          - description: "\u54C1\u724C"
+                            is_valid: true
+                            key: MAKE
+                            value: '2'
+                          - description: "\u5DF2\u8DD1\u516C\u91CC\u6570"
+                            is_valid: true
+                            key: MILEAGE
+                            value: '5'
+                          - description: "\u578B\u53F7"
+                            is_valid: true
+                            key: MODEL
+                            value: '3'
+                          - description: ''
+                            is_valid: false
+                            key: NUM_BED_AND_BATH
+                            value: '18'
+                          - description: "\u4EF7\u683C"
+                            is_valid: true
+                            key: PRICE
+                            value: '6'
+                          - description: ''
+                            is_valid: false
+                            key: PROPERTY_TYPE
+                            value: '15'
+                          - description: ''
+                            is_valid: false
+                            key: REAL_ESTATE_TITLE
+                            value: '19'
+                          - description: "\u6298\u6263\u4EF7\u683C"
+                            is_valid: true
+                            key: SALE_PRICE
+                            value: '7'
+                          - description: "\u6C7D\u8F66\u914D\u7F6E"
+                            is_valid: true
+                            key: TRIM
+                            value: '9'
+                          - description: "\u6C7D\u8F66\u72B6\u6001"
+                            is_valid: true
+                            key: VEHICLE_STATE
+                            value: '11'
+                          - description: "\u4E0A\u5E02\u5E74\u4EFD"
+                            is_valid: true
+                            key: YEAR
+                            value: '4'
+                          - description: ''
+                            is_valid: false
+                            key: YEAR_BUILT
+                            value: '16'
+                          key_format: string
+                          strict: true
+                          use_part: true
+                          validate_only: false
+                          value_format: int32
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 10
+                    product_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 5
+                      x-open-source: $.http.body.common_material.product_ids
+                    product_set_id:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-convert:
+                      - int64(%s)
+                      x-open-field-id: 4
+                      x-open-source: $.http.body.common_material.product_set_id
+                    product_specific_type:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1807533365234690
+                        enum_package_name: ProductSpecificType
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: ALL
+                          value: '1'
+                        - description: ''
+                          is_valid: true
+                          key: CUSTOMIZED_PRODUCTS
+                          value: '3'
+                        - description: ''
+                          is_valid: true
+                          key: PRODUCT_SET
+                          value: '2'
+                        - description: ''
+                          is_valid: false
+                          key: UNSET
+                          value: '0'
+                        key_format: string
+                        strict: true
+                        use_part: true
+                        validate_only: false
+                        value_format: int32
+                      x-open-field-id: 3
+                      x-open-source: $.http.body.common_material.product_specific_type
+                    tracking_info:
+                      description: ''
+                      nullable: false
+                      properties:
+                        click_tracking_url:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 2
+                          x-open-source: $.http.body.common_material.tracking_info.action_track_url
+                        impression_tracking_url:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-field-id: 1
+                          x-open-source: $.http.body.common_material.tracking_info.track_url
+                        tracking_app_id:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-convert:
+                          - int64(%s)
+                          x-open-field-id: 3
+                          x-open-source: $.http.body.common_material.tracking_info.tracking_app_id
+                        tracking_message_event_set_id:
+                          description: ''
+                          nullable: false
+                          type: string
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                          x-open-convert:
+                          - int64(%s)
+                          x-open-field-id: 4
+                      type: object
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 12
+                      x-open-source: $.http.body.common_material.tracking_info
+                    utm_params:
+                      description: ''
+                      items:
+                        nullable: false
+                        properties:
+                          key:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.common_material.utms[].field
+                          value:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                            x-open-source: $.http.body.common_material.utms[].value
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                      maxItems: 14
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 7
+                      x-open-source: $.http.body.common_material.utms
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 13
+                  x-open-source: $.http.body.common_material
+                ad_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.ad_name
+                ad_text_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      ad_text:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.title_list[].title
+                    required:
+                    - ad_text
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 5
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.title_list
+                adgroup_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.adgroup_id
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                auto_message_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      auto_message_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 1
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 12
+                call_to_action_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      call_to_action:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1807533165224961
+                          enum_package_name: CallToAction
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: APPLY_NOW
+                            value: apply_now
+                          - description: ''
+                            is_valid: true
+                            key: BOOK_NOW
+                            value: book_now
+                          - description: ''
+                            is_valid: true
+                            key: CALL_NOW
+                            value: call_to_action_call
+                          - description: ''
+                            is_valid: true
+                            key: CHECK_AVAILABILITY
+                            value: cta_check_availability
+                          - description: ''
+                            is_valid: true
+                            key: CONTACT_US
+                            value: contact_us
+                          - description: ''
+                            is_valid: true
+                            key: DOWNLOAD_NOW
+                            value: download_now
+                          - description: ''
+                            is_valid: true
+                            key: EXPERIENCE_NOW
+                            value: experience_now
+                          - description: ''
+                            is_valid: true
+                            key: GET_QUOTE
+                            value: get_quote
+                          - description: ''
+                            is_valid: true
+                            key: GET_SHOWTIMES
+                            value: get_showtimes
+                          - description: ''
+                            is_valid: true
+                            key: GET_TICKETS_NOW
+                            value: get_tickets_now
+                          - description: ''
+                            is_valid: true
+                            key: INSTALL_NOW
+                            value: install_now
+                          - description: ''
+                            is_valid: true
+                            key: INTERESTED
+                            value: interested
+                          - description: ''
+                            is_valid: true
+                            key: JOIN_THIS_HASHTAG
+                            value: join_this_hashtag
+                          - description: ''
+                            is_valid: true
+                            key: LEARN_MORE
+                            value: learn_more
+                          - description: ''
+                            is_valid: true
+                            key: LISTEN_NOW
+                            value: listen_now
+                          - description: ''
+                            is_valid: true
+                            key: ORDER_NOW
+                            value: order_now
+                          - description: ''
+                            is_valid: true
+                            key: PLAY_GAME
+                            value: play_game_cta
+                          - description: ''
+                            is_valid: true
+                            key: PREORDER_NOW
+                            value: preorder_now
+                          - description: ''
+                            is_valid: true
+                            key: READ_MORE
+                            value: read_more
+                          - description: ''
+                            is_valid: true
+                            key: SEND_MESSAGE
+                            value: Promote_more_messages_send_message
+                          - description: ''
+                            is_valid: true
+                            key: SHOOT_WITH_THIS_EFFECT
+                            value: shoot_with_this_effect
+                          - description: ''
+                            is_valid: true
+                            key: SHOP_NOW
+                            value: shop_now
+                          - description: ''
+                            is_valid: true
+                            key: SIGN_UP
+                            value: sign_up
+                          - description: ''
+                            is_valid: true
+                            key: SUBSCRIBE
+                            value: subscribe
+                          - description: ''
+                            is_valid: true
+                            key: VIEW_NOW
+                            value: view_now
+                          - description: ''
+                            is_valid: true
+                            key: VIEW_PROFILE
+                            value: view_profile
+                          - description: ''
+                            is_valid: true
+                            key: VIEW_VIDEO_WITH_THIS_EFFECT
+                            value: view_video_with_this_effect
+                          - description: ''
+                            is_valid: true
+                            key: VISIT_STORE
+                            value: visit_store
+                          - description: ''
+                            is_valid: true
+                            key: WATCH_LIVE
+                            value: watch_live
+                          - description: ''
+                            is_valid: true
+                            key: WATCH_NOW
+                            value: watch_now
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: string
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.call_to_action_list[].call_to_action
+                    required:
+                    - call_to_action
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 3
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 11
+                  x-open-source: $.http.body.call_to_action_list
+                creative_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      creative_info:
+                        description: ''
+                        nullable: false
+                        properties:
+                          ad_format:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1818582044296193
+                              enum_package_name: AdFormat
+                              enums:
+                              - description: ''
+                                is_valid: false
+                                key: CAROUSEL
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: CAROUSEL_ADS
+                                value: '4'
+                              - description: ''
+                                is_valid: true
+                                key: CATALOG_CAROUSEL
+                                value: '5'
+                              - description: ''
+                                is_valid: false
+                                key: LIVE_CONTENT
+                                value: '3'
+                              - description: ''
+                                is_valid: false
+                                key: SINGLE_IMAGE
+                                value: '0'
+                              - description: ''
+                                is_valid: true
+                                key: SINGLE_VIDEO
+                                value: '1'
+                              key_format: string
+                              strict: true
+                              use_part: true
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 9
+                          aigc_disclosure_type:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1807533197774914
+                              enum_package_name: AigcDisclosureType
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: NOT_DECLARED
+                                value: '1'
+                              - description: ''
+                                is_valid: true
+                                key: SELF_DISCLOSURE
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: UNSET
+                                value: '0'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 8
+                            x-open-source: $.http.body.media_info_list[].media_info.aigc_disclosure_type
+                          identity_authorized_bc_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 7
+                            x-open-source: $.http.body.media_info_list[].media_info.identity_bc_id
+                          identity_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 4
+                            x-open-source: $.http.body.media_info_list[].media_info.identity_id
+                          identity_type:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1800331041544193
+                              enum_package_name: IdentityType
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: AUTH_CODE
+                                value: '2'
+                              - description: ''
+                                is_valid: true
+                                key: BC_AUTH_TT
+                                value: '5'
+                              - description: ''
+                                is_valid: false
+                                key: BC_SELF_TT
+                                value: '4'
+                              - description: ''
+                                is_valid: true
+                                key: CUSTOMIZED_USER
+                                value: '1'
+                              - description: "TTS \u6388\u6743\u6765\u6E90TT\u8D26\
+                                  \u53F7"
+                                is_valid: false
+                                key: TTS_TT
+                                value: '8'
+                              - description: ''
+                                is_valid: true
+                                key: TT_USER
+                                value: '3'
+                              - description: ''
+                                is_valid: false
+                                key: UNSET
+                                value: '0'
+                              key_format: string
+                              strict: true
+                              use_part: true
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 5
+                            x-open-source: $.http.body.media_info_list[].media_info.identity_type
+                          image_info:
+                            description: ''
+                            items:
+                              nullable: false
+                              properties:
+                                web_uri:
+                                  description: ''
+                                  nullable: false
+                                  type: string
+                                  x-open-allow-strlist: false
+                                  x-open-allow-strnum: false
+                                  x-open-field-id: 1
+                                  x-open-source: $.http.body.media_info_list[].media_info.image_info[].web_uri
+                              required:
+                              - web_uri
+                              type: object
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                            maxItems: 35
+                            nullable: false
+                            type: array
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 1
+                            x-open-source: $.http.body.media_info_list[].media_info.image_info
+                          music_info:
+                            description: ''
+                            nullable: false
+                            properties:
+                              music_id:
+                                description: ''
+                                nullable: false
+                                type: string
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-convert:
+                                - int64(%s)
+                                x-open-field-id: 1
+                                x-open-source: $.http.body.media_info_list[].media_info.music_info.music_id
+                            required:
+                            - music_id
+                            type: object
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 6
+                            x-open-source: $.http.body.media_info_list[].media_info.music_info
+                          tiktok_item_id:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-convert:
+                            - int64(%s)
+                            x-open-field-id: 3
+                            x-open-source: $.http.body.media_info_list[].media_info.aweme_item_id
+                          video_info:
+                            description: ''
+                            nullable: false
+                            properties:
+                              file_name:
+                                description: ''
+                                nullable: false
+                                type: string
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 2
+                                x-open-source: $.http.body.media_info_list[].media_info.video_info.file_name
+                              video_id:
+                                description: ''
+                                nullable: false
+                                type: string
+                                x-open-allow-strlist: false
+                                x-open-allow-strnum: false
+                                x-open-field-id: 1
+                                x-open-source: $.http.body.media_info_list[].media_info.video_info.video_id
+                            required:
+                            - video_id
+                            type: object
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                            x-open-source: $.http.body.media_info_list[].media_info.video_info
+                        required:
+                        - ad_format
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.media_info_list[].media_info
+                    required:
+                    - creative_info
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 31
+                  minItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.media_info_list
+                deeplink_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      deeplink:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.open_url_list[].open_url
+                      deeplink_type:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1810700429234178
+                          enum_package_name: DeeplinkType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: DEFERRED_DEEPLINK
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: NORMAL
+                            value: '0'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.open_url_list[].auto_open
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 10
+                  x-open-source: $.http.body.open_url_list
+                interactive_add_on_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      card_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.card_list[].card_id
+                    required:
+                    - card_id
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.card_list
+                landing_page_url_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      landing_page_url:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.external_url_list[].external_url
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 1
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.external_url_list
+                operation_status:
+                  default: ENABLE
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804192764187649
+                    enum_package_name: OptStatus
+                    enums:
+                    - description: "\u6682\u505C"
+                      is_valid: true
+                      key: DISABLE
+                      value: '1'
+                    - description: "\u542F\u7528"
+                      is_valid: true
+                      key: ENABLE
+                      value: '0'
+                    - description: "\u7EC8\u6B62,\u4E0D\u80FD\u518D\u6B21\u88AB\u542F\
+                        \u7528"
+                      is_valid: false
+                      key: FROZEN
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: true
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.opt_status
+                page_list:
+                  description: ''
+                  items:
+                    nullable: false
+                    properties:
+                      page_id:
+                        description: ''
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.page_list[].page_id
+                    required:
+                    - page_id
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  maxItems: 3
+                  nullable: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.page_list
+              required:
+              - advertiser_id
+              - adgroup_id
+              - ad_name
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a new ad [Smart Plus Ad Create]
+      tags:
+      - Ad
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: adgroup_id
+            required: false
+            source: $.http.body.adgroup_id
+            type: number
+          - name: ad_name
+            required: false
+            source: $.http.body.ad_name
+            type: string
+          - name: opt_status
+            required: false
+            source: $.http.body.operation_status
+            type: number
+          - children:
+            - children:
+              - children:
+                - children:
+                  - children:
+                    - name: web_uri
+                      required: true
+                      source: $.http.body.creative_list[].creative_info.image_info[].web_uri
+                      type: string
+                    is_expand: true
+                    type: object
+                  is_expand: true
+                  name: image_info
+                  required: false
+                  sub_type: object
+                  type: array
+                - children:
+                  - name: video_id
+                    required: true
+                    source: $.http.body.creative_list[].creative_info.video_info.video_id
+                    type: string
+                  - name: file_name
+                    required: false
+                    source: $.http.body.creative_list[].creative_info.video_info.file_name
+                    type: string
+                  is_expand: true
+                  name: video_info
+                  required: false
+                  type: object
+                - name: aweme_item_id
+                  required: false
+                  source: $.http.body.creative_list[].creative_info.tiktok_item_id
+                  type: number
+                - name: identity_id
+                  required: false
+                  source: $.http.body.creative_list[].creative_info.identity_id
+                  type: string
+                - name: identity_type
+                  required: false
+                  source: $.http.body.creative_list[].creative_info.identity_type
+                  type: number
+                - children:
+                  - name: music_id
+                    required: true
+                    source: $.http.body.creative_list[].creative_info.music_info.music_id
+                    type: number
+                  is_expand: true
+                  name: music_info
+                  required: false
+                  type: object
+                - name: identity_bc_id
+                  required: false
+                  source: $.http.body.creative_list[].creative_info.identity_authorized_bc_id
+                  type: number
+                - name: aigc_disclosure_type
+                  required: false
+                  source: $.http.body.creative_list[].creative_info.aigc_disclosure_type
+                  type: number
+                - name: ad_format
+                  required: true
+                  source: $.http.body.creative_list[].creative_info.ad_format
+                  type: number
+                is_expand: true
+                name: media_info
+                required: true
+                type: object
+              is_expand: true
+              type: object
+            is_expand: false
+            name: media_info_list
+            required: false
+            sub_type: object
+            type: array
+          - children:
+            - children:
+              - name: title
+                required: true
+                source: $.http.body.ad_text_list[].ad_text
+                type: string
+              is_expand: true
+              type: object
+            is_expand: false
+            name: title_list
+            required: false
+            sub_type: object
+            type: array
+          - children:
+            - children:
+              - name: page_id
+                required: true
+                source: $.http.body.page_list[].page_id
+                type: number
+              is_expand: true
+              type: object
+            is_expand: false
+            name: page_list
+            required: false
+            source: $.http.body.page_list
+            sub_type: object
+            type: array
+          - children:
+            - children:
+              - name: card_id
+                required: true
+                source: $.http.body.card_list[].card_id
+                type: number
+              is_expand: true
+              type: object
+            is_expand: false
+            name: card_list
+            required: false
+            source: $.http.body.interactive_add_on_list
+            sub_type: object
+            type: array
+          - children:
+            - children:
+              - name: external_url
+                required: false
+                source: $.http.body.landing_page_url_list[].landing_page_url
+                type: string
+              is_expand: true
+              type: object
+            is_expand: false
+            name: external_url_list
+            required: false
+            sub_type: object
+            type: array
+          - children:
+            - children:
+              - name: open_url
+                required: false
+                source: $.http.body.deeplink_list[].deeplink
+                type: string
+              - name: auto_open
+                required: false
+                source: $.http.body.deeplink_list[].deeplink_type
+                type: number
+              is_expand: true
+              type: object
+            is_expand: false
+            name: open_url_list
+            required: false
+            sub_type: object
+            type: array
+          - children:
+            - children:
+              - name: call_to_action
+                required: true
+                source: $.http.body.call_to_action_list[].call_to_action
+                type: string
+              is_expand: true
+              type: object
+            is_expand: false
+            name: call_to_action_list
+            required: false
+            source: $.http.body.call_to_action_list
+            sub_type: object
+            type: array
+          - children:
+            - name: identity_type
+              required: false
+              source: $.http.body.ad_configuration.identity_type
+              type: number
+            - name: identity_id
+              required: false
+              source: $.http.body.ad_configuration.identity_id
+              type: string
+            - name: product_specific_type
+              required: false
+              source: $.http.body.ad_configuration.product_specific_type
+              type: number
+            - name: product_set_id
+              required: false
+              source: $.http.body.ad_configuration.product_set_id
+              type: number
+            - children:
+              - type: number
+              is_expand: false
+              name: product_ids
+              required: false
+              source: $.http.body.ad_configuration.product_ids[]
+              sub_type: number
+              type: array
+            - name: catalog_creative_toggle
+              required: false
+              source: $.http.body.ad_configuration.catalog_creative_toggle
+              type: boolean
+            - children:
+              - children:
+                - name: field
+                  required: false
+                  source: $.http.body.ad_configuration.utm_params[].key
+                  type: string
+                - name: value
+                  required: false
+                  source: $.http.body.ad_configuration.utm_params[].value
+                  type: string
+                is_expand: true
+                type: object
+              is_expand: false
+              name: utms
+              required: false
+              sub_type: object
+              type: array
+            - name: call_to_action_id
+              required: false
+              source: $.http.body.ad_configuration.call_to_action_id
+              type: number
+            - is_expand: false
+              name: end_card_cta
+              required: false
+              source: $.http.body.ad_configuration.end_card_cta
+              type: string
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: auto_disclaimer_type_list
+              required: false
+              source: $.http.body.ad_configuration.auto_disclaimer_types[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: product_display_field_list
+              required: false
+              source: $.http.body.ad_configuration.product_display_field_list[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                name: track_url
+                required: false
+                source: $.http.body.ad_configuration.tracking_info.impression_tracking_url
+                type: string
+              - is_expand: false
+                name: action_track_url
+                required: false
+                source: $.http.body.ad_configuration.tracking_info.click_tracking_url
+                type: string
+              - is_expand: false
+                name: tracking_app_id
+                required: false
+                source: $.http.body.ad_configuration.tracking_info.tracking_app_id
+                type: number
+              - is_expand: false
+                name: tracking_message_event_set_id
+                required: false
+                source: $.http.body.ad_configuration.tracking_info.tracking_message_event_set_id
+                type: number
+              is_expand: true
+              name: tracking_info
+              required: false
+              type: object
+            - is_expand: false
+              name: phone_number
+              required: false
+              source: $.http.body.ad_configuration.phone_info.phone_number
+              type: string
+            - is_expand: false
+              name: phone_country_code
+              required: false
+              source: $.http.body.ad_configuration.phone_info.phone_region_code
+              type: string
+            - is_expand: false
+              name: phone_zip_code
+              required: false
+              source: $.http.body.ad_configuration.phone_info.phone_region_calling_code
+              type: string
+            - is_expand: false
+              name: fallback_type
+              required: false
+              source: $.http.body.ad_configuration.fallback_type
+              type: number
+            - is_expand: false
+              name: dark_post_status
+              required: false
+              source: $.http.body.ad_configuration.dark_post_status
+              type: number
+            is_expand: true
+            name: common_material
+            required: false
+            type: object
+          - children:
+            - children:
+              - name: auto_message_id
+                required: true
+                source: $.http.body.auto_message_list[].auto_message_id
+                type: number
+              is_expand: true
+              type: object
+            is_expand: true
+            name: auto_message_list
+            required: false
+            sub_type: object
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          ad_name: $.http.body.ad_name
+          adgroup_id: $.http.body.adgroup_id
+          advertiser_id: $.http.body.advertiser_id
+          auto_message_list[][]:
+          - auto_message_id: $.http.body.auto_message_list[].auto_message_id
+          call_to_action_list: $.http.body.call_to_action_list
+          card_list: $.http.body.interactive_add_on_list
+          common_material:
+            auto_disclaimer_type_list: $.http.body.ad_configuration.auto_disclaimer_types[]
+            call_to_action_id: $.http.body.ad_configuration.call_to_action_id
+            catalog_creative_toggle: $.http.body.ad_configuration.catalog_creative_toggle
+            dark_post_status: $.http.body.ad_configuration.dark_post_status
+            end_card_cta: $.http.body.ad_configuration.end_card_cta
+            fallback_type: $.http.body.ad_configuration.fallback_type
+            identity_id: $.http.body.ad_configuration.identity_id
+            identity_type: $.http.body.ad_configuration.identity_type
+            phone_country_code: $.http.body.ad_configuration.phone_info.phone_region_code
+            phone_number: $.http.body.ad_configuration.phone_info.phone_number
+            phone_zip_code: $.http.body.ad_configuration.phone_info.phone_region_calling_code
+            product_display_field_list: $.http.body.ad_configuration.product_display_field_list[]
+            product_ids: $.http.body.ad_configuration.product_ids[]
+            product_set_id: $.http.body.ad_configuration.product_set_id
+            product_specific_type: $.http.body.ad_configuration.product_specific_type
+            tracking_info:
+              action_track_url: $.http.body.ad_configuration.tracking_info.click_tracking_url
+              track_url: $.http.body.ad_configuration.tracking_info.impression_tracking_url
+              tracking_app_id: $.http.body.ad_configuration.tracking_info.tracking_app_id
+              tracking_message_event_set_id: $.http.body.ad_configuration.tracking_info.tracking_message_event_set_id
+            utms[][]:
+            - field: $.http.body.ad_configuration.utm_params[].key
+              value: $.http.body.ad_configuration.utm_params[].value
+          external_url_list[][]:
+          - external_url: $.http.body.landing_page_url_list[].landing_page_url
+          media_info_list[][]:
+          - media_info[]:
+            - ad_format: $.http.body.creative_list[].creative_info.ad_format
+              aigc_disclosure_type: $.http.body.creative_list[].creative_info.aigc_disclosure_type
+              aweme_item_id: $.http.body.creative_list[].creative_info.tiktok_item_id
+              identity_bc_id: $.http.body.creative_list[].creative_info.identity_authorized_bc_id
+              identity_id: $.http.body.creative_list[].creative_info.identity_id
+              identity_type: $.http.body.creative_list[].creative_info.identity_type
+              image_info[][]:
+              - web_uri: $.http.body.creative_list[].creative_info.image_info[].web_uri
+              music_info[]:
+              - music_id: $.http.body.creative_list[].creative_info.music_info.music_id
+              video_info[]:
+              - file_name: $.http.body.creative_list[].creative_info.video_info.file_name
+                video_id: $.http.body.creative_list[].creative_info.video_info.video_id
+          open_url_list[][]:
+          - auto_open: $.http.body.deeplink_list[].deeplink_type
+            open_url: $.http.body.deeplink_list[].deeplink
+          opt_status: $.http.body.operation_status
+          page_list: $.http.body.page_list
+          title_list[][]:
+          - title: $.http.body.ad_text_list[].ad_text
+        response_cookie: []
+        response_header: []
+        response_rule:
+          ad_configuration:
+            auto_disclaimer_types: $.rpc.output.asset_group_data.common_material.auto_disclaimer_type_list
+            call_to_action_id: $.rpc.output.asset_group_data.common_material.call_to_action_id
+            catalog_creative_toggle: $.rpc.output.asset_group_data.common_material.catalog_creative_toggle
+            dark_post_status: $.rpc.output.asset_group_data.common_material.dark_post_status
+            end_card_cta: $.rpc.output.asset_group_data.common_material.end_card_cta
+            fallback_type: $.rpc.output.asset_group_data.common_material.fallback_type
+            identity_id: $.rpc.output.asset_group_data.common_material.identity_id
+            identity_type: $.rpc.output.asset_group_data.common_material.identity_type
+            phone_info:
+              phone_number: $.rpc.output.asset_group_data.common_material.phone_number
+              phone_region_calling_code: $.rpc.output.asset_group_data.common_material.phone_zip_code
+              phone_region_code: $.rpc.output.asset_group_data.common_material.phone_country_code
+            product_display_field_list: $.rpc.output.asset_group_data.common_material.product_display_field_list
+            product_ids: $.rpc.output.asset_group_data.common_material.product_ids
+            product_set_id: $.rpc.output.asset_group_data.common_material.product_set_id
+            product_specific_type: $.rpc.output.asset_group_data.common_material.product_specific_type
+            tracking_info:
+              click_tracking_url: $.rpc.output.asset_group_data.common_material.tracking_info.action_track_url
+              impression_tracking_url: $.rpc.output.asset_group_data.common_material.tracking_info.track_url
+              tracking_app_id: $.rpc.output.asset_group_data.common_material.tracking_info.tracking_app_id
+              tracking_message_event_set_id: $.rpc.output.asset_group_data.common_material.tracking_info.tracking_message_event_set_id
+            utm_params[][]:
+            - key: $.rpc.output.asset_group_data.common_material.utms[].field
+              value: $.rpc.output.asset_group_data.common_material.utms[].value
+          ad_name: $.rpc.output.asset_group_data.ad_name
+          ad_text_list[][]:
+          - ad_text: $.rpc.output.asset_group_data.title_list[].title
+          adgroup_id: $.rpc.output.asset_group_data.adgroup_id
+          adgroup_name: $.rpc.output.asset_group_data.adgroup_name
+          advertiser_id: $.rpc.output.asset_group_data.advertiser_id
+          auto_message_list[][]:
+          - auto_message_id: $.rpc.output.asset_group_data.auto_message_list[].auto_message_id
+          call_to_action_list[][]:
+          - call_to_action: $.rpc.output.asset_group_data.call_to_action_list[].call_to_action
+          campaign_id: $.rpc.output.asset_group_data.campaign_id
+          campaign_name: $.rpc.output.asset_group_data.campaign_name
+          create_time: $.rpc.output.asset_group_data.create_time
+          creative_list[][]:
+          - ad_material_id: $.rpc.output.asset_group_data.media_info_list[].id
+            creative_info[]:
+            - ad_format: $.rpc.output.asset_group_data.media_info_list[].media_info.ad_format
+              aigc_disclosure_type: $.rpc.output.asset_group_data.media_info_list[].media_info.aigc_disclosure_type
+              identity_authorized_bc_id: $.rpc.output.asset_group_data.media_info_list[].media_info.identity_bc_id
+              identity_id: $.rpc.output.asset_group_data.media_info_list[].media_info.identity_id
+              identity_type: $.rpc.output.asset_group_data.media_info_list[].media_info.identity_type
+              image_info[][]:
+              - web_uri: $.rpc.output.asset_group_data.media_info_list[].media_info.image_info[].web_uri
+              material_name: $.rpc.output.asset_group_data.media_info_list[].media_info.material_name
+              music_info[]:
+              - music_id: $.rpc.output.asset_group_data.media_info_list[].media_info.music_info.music_id
+              tiktok_item_id: $.rpc.output.asset_group_data.media_info_list[].media_info.aweme_item_id
+              video_info[]:
+              - file_name: $.rpc.output.asset_group_data.media_info_list[].media_info.video_info.file_name
+                video_id: $.rpc.output.asset_group_data.media_info_list[].media_info.video_info.video_id
+            material_operation_status: $.rpc.output.asset_group_data.media_info_list[].aco_opt_status
+          deeplink_list[][]:
+          - deeplink: $.rpc.output.asset_group_data.open_url_list[].open_url
+            deeplink_type: $.rpc.output.asset_group_data.open_url_list[].auto_open
+          interactive_add_on_list[][]:
+          - card_id: $.rpc.output.asset_group_data.card_list[].card_id
+          landing_page_url_list[][]:
+          - landing_page_url: $.rpc.output.asset_group_data.external_url_list[].external_url
+          modify_time: $.rpc.output.asset_group_data.modify_time
+          operation_status: $.rpc.output.asset_group_data.opt_status
+          page_list[][]:
+          - page_id: $.rpc.output.asset_group_data.page_list[].page_id
+          secondary_status: $.rpc.output.asset_group_data.secondary_status
+          smart_plus_ad_id: $.rpc.output.asset_group_data.ad_id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

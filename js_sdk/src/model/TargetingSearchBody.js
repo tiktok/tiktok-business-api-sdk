@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The TargetingSearchBody model module.
  * @module model/TargetingSearchBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class TargetingSearchBody {
   /**

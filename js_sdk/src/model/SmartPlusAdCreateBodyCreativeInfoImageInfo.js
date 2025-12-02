@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SmartPlusAdCreateBodyCreativeInfoImageInfo model module.
  * @module model/SmartPlusAdCreateBodyCreativeInfoImageInfo
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdCreateBodyCreativeInfoImageInfo {
   /**

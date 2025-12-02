@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The ContextInfoSmartPlusAdReviewInfo model module.
  * @module model/ContextInfoSmartPlusAdReviewInfo
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class ContextInfoSmartPlusAdReviewInfo {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdAcoBodyLandingPageUrls model module.
  * @module model/AdAcoBodyLandingPageUrls
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class AdAcoBodyLandingPageUrls {
   /**

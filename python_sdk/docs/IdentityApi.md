@@ -10,9 +10,62 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**gmv_max_identity_get**](IdentityApi.md#gmv_max_identity_get) | **GET** /open_api/v1.3/gmv_max/identity/get/ | Get GMV Max identity info [Smart Plus GMV Max Identity Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001101474882)
 [**identity_create**](IdentityApi.md#identity_create) | **POST** /open_api/v1.3/identity/create/ | Create a customized user identity. [Identity Create](https://ads.tiktok.com/marketing_api/docs?rid&#x3D;uraumvplog&amp;id&#x3D;1740654203526146)
 [**identity_get**](IdentityApi.md#identity_get) | **GET** /open_api/v1.3/identity/get/ | Get a list of identities under an ad account. You can filter results by identity type. [Identity Get](https://ads.tiktok.com/marketing_api/docs?rid&#x3D;uraumvplog&amp;id&#x3D;1740218420781057)
 [**identity_video_info**](IdentityApi.md#identity_video_info) | **GET** /open_api/v1.3/identity/video/info/ | Get the information about a TikTok post that you own, if your identity is AUTH_CODE, TT_USER or BC_AUTH_TT. [Identity Video Info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738958351620097)
+
+# **gmv_max_identity_get**
+> InlineResponse200 gmv_max_identity_get(advertiser_id, store_id, store_authorized_bc_id, access_token)
+
+Get GMV Max identity info [Smart Plus GMV Max Identity Get](https://business-api.tiktok.com/portal/docs?id=1822001101474882)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.IdentityApi()
+advertiser_id = 'advertiser_id_example' # str | 
+store_id = 'store_id_example' # str | 
+store_authorized_bc_id = 'store_authorized_bc_id_example' # str | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+
+try:
+    # Get GMV Max identity info [Smart Plus GMV Max Identity Get](https://business-api.tiktok.com/portal/docs?id=1822001101474882)
+    api_response = api_instance.gmv_max_identity_get(advertiser_id, store_id, store_authorized_bc_id, access_token)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling IdentityApi->gmv_max_identity_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**|  | [required]
+ **store_id** | **str**|  | [required]
+ **store_authorized_bc_id** | **str**|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **identity_create**
 > InlineResponse200 identity_create(access_token, body=body)

@@ -19,7 +19,7 @@ import {AdAcoBodyTitleList} from './AdAcoBodyTitleList.js';
 /**
  * The AdAcoUpdateBody model module.
  * @module model/AdAcoUpdateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class AdAcoUpdateBody {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CommentTaskCreateBody model module.
  * @module model/CommentTaskCreateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class CommentTaskCreateBody {
   /**

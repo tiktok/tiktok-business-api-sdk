@@ -12,7 +12,7 @@ import {SmartPlusAdCreateBodyCreativeInfoVideoInfo} from './SmartPlusAdCreateBod
 /**
  * The SmartPlusAdUpdateBodyCreativeInfo model module.
  * @module model/SmartPlusAdUpdateBodyCreativeInfo
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdUpdateBodyCreativeInfo {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CustomAudienceDeleteBody model module.
  * @module model/CustomAudienceDeleteBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class CustomAudienceDeleteBody {
   /**

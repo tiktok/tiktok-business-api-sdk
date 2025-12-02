@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SmartPlusAdgroupCreateBodyTargetingSpecActions model module.
  * @module model/SmartPlusAdgroupCreateBodyTargetingSpecActions
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdgroupCreateBodyTargetingSpecActions {
   /**

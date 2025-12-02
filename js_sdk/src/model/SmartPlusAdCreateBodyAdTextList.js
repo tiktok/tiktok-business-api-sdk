@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SmartPlusAdCreateBodyAdTextList model module.
  * @module model/SmartPlusAdCreateBodyAdTextList
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdCreateBodyAdTextList {
   /**

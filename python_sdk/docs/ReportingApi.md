@@ -10,12 +10,85 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**gmv_max_report_get**](ReportingApi.md#gmv_max_report_get) | **GET** /open_api/v1.3/gmv_max/report/get/ | Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1824721673497601)
 [**report_integrated_get**](ReportingApi.md#report_integrated_get) | **GET** /open_api/v1.3/report/integrated/get/ | Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302848100353)
 [**report_task_cancel**](ReportingApi.md#report_task_cancel) | **POST** /open_api/v1.3/report/task/cancel/ | Cancel an asynchronous report task. [Report Task Cancel](https://business-api.tiktok.com/portal/docs?id&#x3D;1803615367145537)
 [**report_task_check**](ReportingApi.md#report_task_check) | **GET** /open_api/v1.3/report/task/check/ | Get the status of an async report task. [Report Task Check](https://business-api.tiktok.com/portal/docs?id&#x3D;1740302781443073)
 [**report_task_create**](ReportingApi.md#report_task_create) | **POST** /open_api/v1.3/report/task/create/ | 
 [**smart_plus_material_report_breakdown**](ReportingApi.md#smart_plus_material_report_breakdown) | **GET** /open_api/v1.3/smart_plus/material_report/breakdown/ | Get breakdown of material reports [Smart Plus Material Report Breakdown]
 [**smart_plus_material_report_overview**](ReportingApi.md#smart_plus_material_report_overview) | **GET** /open_api/v1.3/smart_plus/material_report/overview/ | Get overview of material reports [Smart Plus Material Report Overview]
+
+# **gmv_max_report_get**
+> InlineResponse200 gmv_max_report_get(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, enable_total_metrics=enable_total_metrics, filtering=filtering, sort_field=sort_field, sort_type=sort_type, page=page, page_size=page_size, context_info=context_info)
+
+Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id=1824721673497601)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.ReportingApi()
+advertiser_id = 'advertiser_id_example' # str | 
+store_ids = ['store_ids_example'] # list[str] | 
+dimensions = ['dimensions_example'] # list[str] | 
+metrics = ['metrics_example'] # list[str] | 
+start_date = 'start_date_example' # str | 
+end_date = 'end_date_example' # str | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+enable_total_metrics = false # bool |  (optional) (default to false)
+filtering = business_api_client.FilteringGmvMaxReportGet() # FilteringGmvMaxReportGet |  (optional)
+sort_field = 'sort_field_example' # str |  (optional)
+sort_type = 'DESC' # str |  (optional) (default to DESC)
+page = 1 # int |  (optional) (default to 1)
+page_size = 10 # int |  (optional) (default to 10)
+context_info = business_api_client.ContextInfoGmvMaxReportGet() # ContextInfoGmvMaxReportGet |  (optional)
+
+try:
+    # Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id=1824721673497601)
+    api_response = api_instance.gmv_max_report_get(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, enable_total_metrics=enable_total_metrics, filtering=filtering, sort_field=sort_field, sort_type=sort_type, page=page, page_size=page_size, context_info=context_info)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ReportingApi->gmv_max_report_get: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**|  | [required]
+ **store_ids** | [**list[str]**](str.md)|  | [required]
+ **dimensions** | [**list[str]**](str.md)|  | [required]
+ **metrics** | [**list[str]**](str.md)|  | [required]
+ **start_date** | **str**|  | [required]
+ **end_date** | **str**|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+ **enable_total_metrics** | **bool**|  | [optional] [default to false]
+ **filtering** | [**FilteringGmvMaxReportGet**](FilteringGmvMaxReportGet.md)|  | [optional] 
+ **sort_field** | **str**|  | [optional] 
+ **sort_type** | **str**|  | [optional] [default to DESC]
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 10]
+ **context_info** | [**ContextInfoGmvMaxReportGet**](ContextInfoGmvMaxReportGet.md)|  | [optional] 
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **report_integrated_get**
 > InlineResponse200 report_integrated_get(report_type, access_token, page=page, page_size=page_size, enable_total_metrics=enable_total_metrics, multi_adv_report_in_utc_time=multi_adv_report_in_utc_time, query_mode=query_mode, advertiser_id=advertiser_id, advertiser_ids=advertiser_ids, bc_id=bc_id, service_type=service_type, data_level=data_level, dimensions=dimensions, metrics=metrics, start_date=start_date, end_date=end_date, query_lifetime=query_lifetime, order_field=order_field, order_type=order_type, filtering=filtering)

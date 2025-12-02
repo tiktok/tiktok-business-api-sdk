@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The FilteringSmartPlusMaterialReportOverview model module.
  * @module model/FilteringSmartPlusMaterialReportOverview
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class FilteringSmartPlusMaterialReportOverview {
   /**

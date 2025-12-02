@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AssetShareBody model module.
  * @module model/AssetShareBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class AssetShareBody {
   /**

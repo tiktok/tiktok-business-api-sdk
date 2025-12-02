@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SmartPlusAdCreateBodyAdConfigurationTrackingInfo model module.
  * @module model/SmartPlusAdCreateBodyAdConfigurationTrackingInfo
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SmartPlusAdCreateBodyAdConfigurationTrackingInfo {
   /**

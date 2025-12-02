@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The Oauth2AccessTokenBody model module.
  * @module model/Oauth2AccessTokenBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class Oauth2AccessTokenBody {
   /**

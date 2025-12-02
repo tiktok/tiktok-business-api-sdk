@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The PixelupdateAdvancedMatchingFields model module.
  * @module model/PixelupdateAdvancedMatchingFields
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class PixelupdateAdvancedMatchingFields {
   /**

@@ -28,6 +28,178 @@ class ReportingApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
+    def gmv_max_report_get(self, advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, **kwargs):  # noqa: E501
+        """Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id=1824721673497601)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gmv_max_report_get(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] store_ids: (required)
+        :param list[str] dimensions: (required)
+        :param list[str] metrics: (required)
+        :param str start_date: (required)
+        :param str end_date: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param bool enable_total_metrics:
+        :param FilteringGmvMaxReportGet filtering:
+        :param str sort_field:
+        :param str sort_type:
+        :param int page:
+        :param int page_size:
+        :param ContextInfoGmvMaxReportGet context_info:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.gmv_max_report_get_with_http_info(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, **kwargs)  # noqa: E501
+        else:
+            (data) = self.gmv_max_report_get_with_http_info(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, **kwargs)  # noqa: E501
+            return data
+
+    def gmv_max_report_get_with_http_info(self, advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, **kwargs):  # noqa: E501
+        """Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id=1824721673497601)  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.gmv_max_report_get_with_http_info(advertiser_id, store_ids, dimensions, metrics, start_date, end_date, access_token, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str advertiser_id: (required)
+        :param list[str] store_ids: (required)
+        :param list[str] dimensions: (required)
+        :param list[str] metrics: (required)
+        :param str start_date: (required)
+        :param str end_date: (required)
+        :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
+        :param bool enable_total_metrics:
+        :param FilteringGmvMaxReportGet filtering:
+        :param str sort_field:
+        :param str sort_type:
+        :param int page:
+        :param int page_size:
+        :param ContextInfoGmvMaxReportGet context_info:
+        :return: InlineResponse200
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['advertiser_id', 'store_ids', 'dimensions', 'metrics', 'start_date', 'end_date', 'access_token', 'enable_total_metrics', 'filtering', 'sort_field', 'sort_type', 'page', 'page_size', 'context_info']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method gmv_max_report_get" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'advertiser_id' is set
+        if ('advertiser_id' not in params or
+                params['advertiser_id'] is None):
+            raise ValueError("Missing the required parameter `advertiser_id` when calling `gmv_max_report_get`")  # noqa: E501
+        # verify the required parameter 'store_ids' is set
+        if ('store_ids' not in params or
+                params['store_ids'] is None):
+            raise ValueError("Missing the required parameter `store_ids` when calling `gmv_max_report_get`")  # noqa: E501
+        # verify the required parameter 'dimensions' is set
+        if ('dimensions' not in params or
+                params['dimensions'] is None):
+            raise ValueError("Missing the required parameter `dimensions` when calling `gmv_max_report_get`")  # noqa: E501
+        # verify the required parameter 'metrics' is set
+        if ('metrics' not in params or
+                params['metrics'] is None):
+            raise ValueError("Missing the required parameter `metrics` when calling `gmv_max_report_get`")  # noqa: E501
+        # verify the required parameter 'start_date' is set
+        if ('start_date' not in params or
+                params['start_date'] is None):
+            raise ValueError("Missing the required parameter `start_date` when calling `gmv_max_report_get`")  # noqa: E501
+        # verify the required parameter 'end_date' is set
+        if ('end_date' not in params or
+                params['end_date'] is None):
+            raise ValueError("Missing the required parameter `end_date` when calling `gmv_max_report_get`")  # noqa: E501
+        # verify the required parameter 'access_token' is set
+        if ('access_token' not in params or
+                params['access_token'] is None):
+            raise ValueError("Missing the required parameter `access_token` when calling `gmv_max_report_get`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'advertiser_id' in params:
+            query_params.append(('advertiser_id', params['advertiser_id']))  # noqa: E501
+        if 'store_ids' in params:
+            query_params.append(('store_ids', params['store_ids']))  # noqa: E501
+            collection_formats['store_ids'] = 'multi'  # noqa: E501
+        if 'dimensions' in params:
+            query_params.append(('dimensions', params['dimensions']))  # noqa: E501
+            collection_formats['dimensions'] = 'multi'  # noqa: E501
+        if 'metrics' in params:
+            query_params.append(('metrics', params['metrics']))  # noqa: E501
+            collection_formats['metrics'] = 'multi'  # noqa: E501
+        if 'enable_total_metrics' in params:
+            query_params.append(('enable_total_metrics', params['enable_total_metrics']))  # noqa: E501
+        if 'start_date' in params:
+            query_params.append(('start_date', params['start_date']))  # noqa: E501
+        if 'end_date' in params:
+            query_params.append(('end_date', params['end_date']))  # noqa: E501
+        if 'filtering' in params:
+            query_params.append(('filtering', params['filtering']))  # noqa: E501
+        if 'sort_field' in params:
+            query_params.append(('sort_field', params['sort_field']))  # noqa: E501
+        if 'sort_type' in params:
+            query_params.append(('sort_type', params['sort_type']))  # noqa: E501
+        if 'page' in params:
+            query_params.append(('page', params['page']))  # noqa: E501
+        if 'page_size' in params:
+            query_params.append(('page_size', params['page_size']))  # noqa: E501
+        if 'context_info' in params:
+            query_params.append(('context_info', params['context_info']))  # noqa: E501
+
+        header_params = {}
+        if 'access_token' in params:
+            header_params['Access-Token'] = params['access_token']  # noqa: E501
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/open_api/v1.3/gmv_max/report/get/', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse200',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def report_integrated_get(self, report_type, access_token, **kwargs):  # noqa: E501
         """Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id=1740302848100353)  # noqa: E501
 

@@ -1,0 +1,12 @@
+# CampaigngmvMaxsessionupdateSession
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**budget** | **float** |  | [optional] 
+**schedule_end_time** | **str** |  | [optional] 
+**schedule_start_time** | **str** |  | [optional] 
+**schedule_type** | **str** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+

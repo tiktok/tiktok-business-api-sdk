@@ -1,0 +1,1400 @@
+info:
+  description: '{"en":"SPAdgroupUpdate","zh":"SPAdgroupUpdate"}'
+  title: '{"en":"SPAdgroupUpdate","zh":"SPAdgroupUpdate"}'
+  version: 1.0.0
+openapi: 3.0.1
+paths:
+  /smart_plus/adgroup/update/:
+    post:
+      operationId: Smart_plus Adgroup Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                adgroup_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.adgroup_id
+                adgroup_name:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.name
+                advertiser_id:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                bid_price:
+                  description: ''
+                  format: double
+                  nullable: false
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 10
+                  x-open-source: $.http.body.bid
+                budget:
+                  description: ''
+                  format: double
+                  nullable: false
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.budget
+                comment_disabled:
+                  description: ''
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int32(%s)
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.is_comment_disable
+                conversion_bid_price:
+                  description: ''
+                  format: double
+                  nullable: false
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 13
+                dayparting:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 9
+                  x-open-source: $.http.body.dayparting
+                min_budget:
+                  description: ''
+                  format: double
+                  nullable: false
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 11
+                pacing:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1810156218235905
+                    enum_package_name: FlowControlMode
+                    enums:
+                    - description: "\u5C3D\u5FEB\u6295\u653E"
+                      is_valid: true
+                      key: PACING_MODE_FAST
+                      value: '0'
+                    - description: "\u5E73\u5747\u6295\u653E"
+                      is_valid: true
+                      key: PACING_MODE_SMOOTH
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 12
+                roas_bid:
+                  description: ''
+                  format: double
+                  nullable: false
+                  type: number
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 14
+                  x-open-source: $.http.body.roas_bid
+                schedule_end_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - datetime_to_timestamp(%s,"date-time","utc")
+                  x-open-field-id: 8
+                  x-open-source: $.http.body.end_time_stamp
+                schedule_start_time:
+                  description: ''
+                  format: datetime
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - datetime_to_timestamp(%s,"date-time","utc")
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.start_time_stamp
+                schedule_type:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1807532710001665
+                    enum_package_name: ScheduleType
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: SCHEDULE_FROM_NOW
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: SCHEDULE_START_END
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.schedule_type
+                share_disabled:
+                  description: ''
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int32(%s)
+                  x-open-field-id: 15
+                  x-open-source: $.http.body.is_share_disable
+                suggestion_audience_enabled:
+                  description: ''
+                  nullable: false
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 16
+                targeting_optimization_mode:
+                  description: ''
+                  nullable: false
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1838600430487746
+                    enum_package_name: SpcTargetingSwitch
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AUTOMATIC
+                      value: '0'
+                    - description: ''
+                      is_valid: true
+                      key: MANUAL
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 17
+                targeting_spec:
+                  description: ''
+                  nullable: false
+                  properties:
+                    actions:
+                      description: ''
+                      items:
+                        nullable: false
+                        properties:
+                          action_category_ids:
+                            description: ''
+                            items:
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-convert:
+                              - int64(%s)
+                            nullable: false
+                            type: array
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 4
+                          action_period:
+                            description: ''
+                            format: int64
+                            nullable: false
+                            type: integer
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 2
+                          action_scene:
+                            description: ''
+                            nullable: false
+                            type: string
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-enum:
+                              enum_package_expired: false
+                              enum_package_id: 1800966577028098
+                              enum_package_name: ActionScene
+                              enums:
+                              - description: ''
+                                is_valid: true
+                                key: CREATOR_RELATED
+                                value: '11'
+                              - description: ''
+                                is_valid: true
+                                key: HASHTAG_RELATED
+                                value: '13'
+                              - description: ''
+                                is_valid: true
+                                key: VIDEO_RELATED
+                                value: '2'
+                              key_format: string
+                              strict: true
+                              use_part: false
+                              validate_only: false
+                              value_format: int32
+                            x-open-field-id: 1
+                          video_user_actions:
+                            description: ''
+                            items:
+                              nullable: false
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: 1804237663605761
+                                enum_package_name: VideoAction
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: COMMENTED
+                                  value: '2'
+                                - description: ''
+                                  is_valid: true
+                                  key: FOLLOWING
+                                  value: '4'
+                                - description: ''
+                                  is_valid: true
+                                  key: LIKED
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: SHARED
+                                  value: '3'
+                                - description: ''
+                                  is_valid: true
+                                  key: VIEW_HASHTAG
+                                  value: '6'
+                                - description: ''
+                                  is_valid: true
+                                  key: VIEW_HOMEPAGE
+                                  value: '5'
+                                - description: ''
+                                  is_valid: true
+                                  key: WATCHED_TO_END
+                                  value: '0'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                            nullable: false
+                            type: array
+                            x-open-allow-strlist: false
+                            x-open-allow-strnum: false
+                            x-open-field-id: 3
+                        type: object
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 15
+                    age_groups:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1804615806530625
+                          enum_package_name: AgeType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: AGE_13_17
+                            value: '30'
+                          - description: ''
+                            is_valid: true
+                            key: AGE_18_24
+                            value: '42'
+                          - description: ''
+                            is_valid: true
+                            key: AGE_25_34
+                            value: '59'
+                          - description: ''
+                            is_valid: true
+                            key: AGE_35_44
+                            value: '79'
+                          - description: ''
+                            is_valid: true
+                            key: AGE_45_54
+                            value: '99'
+                          - description: ''
+                            is_valid: true
+                            key: AGE_55_100
+                            value: '155'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                      x-open-source: $.http.body.audience.age_groups
+                    audience_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 7
+                    blocked_pangle_app_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 28
+                    carrier_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 23
+                    device_model_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 26
+                    device_price_ranges:
+                      description: ''
+                      items:
+                        format: int64
+                        nullable: false
+                        type: integer
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 25
+                    excluded_audience_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 6
+                      x-open-source: $.http.body.audience.retargeting_tags_exclude
+                    excluded_pangle_audience_package_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 9
+                    gender:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1804229882527745
+                        enum_package_name: AudienceGenderType
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: GENDER_FEMALE
+                          value: '2'
+                        - description: ''
+                          is_valid: true
+                          key: GENDER_MALE
+                          value: '1'
+                        - description: ''
+                          is_valid: true
+                          key: GENDER_UNLIMITED
+                          value: '0'
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: false
+                        value_format: int32
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.audience.gender
+                    household_income:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1810164011458562
+                          enum_package_name: HHILabel
+                          enums:
+                          - description: "\u9ED8\u8BA4\u503C\uFF0C\u4EE3\u8868\u6CA1\
+                              \u6709hhi\u6807\u7B7E\uFF0C\u4E0D\u4F1A\u4F7F\u7528\u5230"
+                            is_valid: false
+                            key: Default
+                            value: '0'
+                          - description: top10%
+                            is_valid: true
+                            key: TOP10
+                            value: '2'
+                          - description: top10%~top25%
+                            is_valid: true
+                            key: TOP10_25
+                            value: '3'
+                          - description: top25%~top50%
+                            is_valid: true
+                            key: TOP25_50
+                            value: '4'
+                          - description: top5%
+                            is_valid: true
+                            key: TOP5
+                            value: '1'
+                          key_format: string
+                          strict: true
+                          use_part: true
+                          validate_only: false
+                          value_format: int32
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 19
+                    included_pangle_audience_package_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 8
+                    interest_category_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 12
+                    interest_keyword_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 13
+                    isp_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 24
+                    languages:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.audience.language_list
+                    location_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 10
+                      x-open-source: $.http.body.audience.particle_locations
+                    min_android_version:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 20
+                    min_ios_version:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 21
+                    network_types:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1810160639116290
+                          enum_package_name: AccessType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: 2G
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: 3G
+                            value: '3'
+                          - description: ''
+                            is_valid: true
+                            key: 4G
+                            value: '4'
+                          - description: ''
+                            is_valid: true
+                            key: 5G
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: WIFI
+                            value: '1'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 22
+                    operating_systems:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1800967646681090
+                          enum_package_name: PlatformType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: ANDROID
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: IOS
+                            value: '2'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                    purchase_intention_keyword_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 14
+                    saved_audience_id:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-convert:
+                      - int64(%s)
+                      x-open-field-id: 27
+                    smart_audience_enabled:
+                      description: ''
+                      nullable: false
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 17
+                    smart_interest_behavior_enabled:
+                      description: ''
+                      nullable: false
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 16
+                    spc_audience_age:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1836070828374017
+                        enum_package_name: ExcludeAgeUnder18Type
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: OVER_EIGHTEEN
+                          value: '1'
+                        - description: ''
+                          is_valid: true
+                          key: OVER_TWENTY_FIVE
+                          value: '2'
+                        - description: ''
+                          is_valid: false
+                          key: UNSET
+                          value: '0'
+                        key_format: string
+                        strict: true
+                        use_part: true
+                        validate_only: false
+                        value_format: int32
+                      x-open-field-id: 5
+                      x-open-source: $.http.body.audience.exclude_age_under_eighteen
+                    spending_power:
+                      description: ''
+                      nullable: false
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-enum:
+                        enum_package_expired: false
+                        enum_package_id: 1810164182046722
+                        enum_package_name: SpendingPowerType
+                        enums:
+                        - description: ''
+                          is_valid: true
+                          key: ALL
+                          value: ALL
+                        - description: ''
+                          is_valid: true
+                          key: HIGH
+                          value: HIGH
+                        key_format: string
+                        strict: true
+                        use_part: false
+                        validate_only: false
+                        value_format: string
+                      x-open-field-id: 18
+                    zipcode_ids:
+                      description: ''
+                      items:
+                        nullable: false
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                      nullable: false
+                      type: array
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 11
+                      x-open-source: $.http.body.audience.zipcode_ids
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 18
+                  x-open-source: $.http.body.audience
+              required:
+              - advertiser_id
+              - adgroup_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response
+                      codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                      Will be shown only if it is an error request.
+                    format: int64
+                    nullable: true
+                    type: integer
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked
+                      in the document for the API given in the description.
+                    nullable: true
+                    properties: {}
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return
+                      Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies
+                      the request.
+                    nullable: true
+                    type: string
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update an ad group [Smart Plus AdGroup Update]
+      tags:
+      - Adgroup
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: adgroup_id
+            required: true
+            source: $.http.body.adgroup_id
+            type: number
+          - name: name
+            required: false
+            source: $.http.body.adgroup_name
+            type: string
+          - name: is_comment_disable
+            required: false
+            source: $.http.body.comment_disabled
+            type: number
+          - name: budget
+            required: false
+            source: $.http.body.budget
+            type: number
+          - name: schedule_type
+            required: false
+            source: $.http.body.schedule_type
+            type: number
+          - name: start_time_stamp
+            required: false
+            source: $.http.body.schedule_start_time
+            type: number
+          - name: end_time_stamp
+            required: false
+            source: $.http.body.schedule_end_time
+            type: number
+          - name: dayparting
+            required: false
+            source: $.http.body.dayparting
+            type: string
+          - name: bid
+            required: false
+            source: $.http.body.bid_price
+            type: number
+          - name: roas_bid
+            required: false
+            source: $.http.body.roas_bid
+            type: number
+          - children:
+            - children:
+              - type: string
+              is_expand: false
+              name: language_list
+              required: false
+              source: $.http.body.targeting_spec.languages[]
+              sub_type: string
+              type: array
+            - name: gender
+              required: false
+              source: $.http.body.targeting_spec.gender
+              type: number
+            - children:
+              - type: number
+              is_expand: false
+              name: age_groups
+              required: false
+              source: $.http.body.targeting_spec.age_groups[]
+              sub_type: number
+              type: array
+            - name: exclude_age_under_eighteen
+              required: false
+              source: $.http.body.targeting_spec.spc_audience_age
+              type: number
+            - children:
+              - type: number
+              is_expand: false
+              name: retargeting_tags_exclude
+              required: false
+              source: $.http.body.targeting_spec.excluded_audience_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - type: number
+              is_expand: false
+              name: particle_locations
+              required: false
+              source: $.http.body.targeting_spec.location_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - type: number
+              is_expand: false
+              name: zipcode_ids
+              required: false
+              source: $.http.body.targeting_spec.zipcode_ids[]
+              sub_type: number
+              type: array
+            - is_expand: false
+              name: smart_interest_behavior_enabled
+              required: false
+              source: $.http.body.targeting_spec.smart_interest_behavior_enabled
+              type: boolean
+            - is_expand: false
+              name: smart_audience_enabled
+              required: false
+              source: $.http.body.targeting_spec.smart_audience_enabled
+              type: boolean
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: retargeting_tags
+              required: false
+              source: $.http.body.targeting_spec.audience_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: string
+              is_expand: false
+              name: internet_service_providers
+              required: false
+              source: $.http.body.targeting_spec.isp_ids[]
+              sub_type: string
+              type: array
+            - is_expand: false
+              name: saved_audience_id
+              required: false
+              source: $.http.body.targeting_spec.saved_audience_id
+              type: number
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: household_income
+              required: false
+              source: $.http.body.targeting_spec.household_income[]
+              sub_type: number
+              type: array
+            - is_expand: false
+              name: spending_power
+              required: false
+              source: $.http.body.targeting_spec.spending_power
+              type: string
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: in_market_tags
+              required: false
+              source: $.http.body.targeting_spec.purchase_intention_keyword_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: interest_keywords_i18n
+              required: false
+              source: $.http.body.targeting_spec.interest_keyword_ids
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: ad_tag_v2
+              required: false
+              source: $.http.body.targeting_spec.interest_category_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: carriers
+              required: false
+              source: $.http.body.targeting_spec.carrier_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: device_models
+              required: false
+              source: $.http.body.targeting_spec.device_model_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: flow_package_include
+              required: false
+              source: $.http.body.targeting_spec.included_pangle_audience_package_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: flow_package_exclude
+              required: false
+              source: $.http.body.targeting_spec.excluded_pangle_audience_package_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: exclude_app_package_id
+              required: false
+              source: $.http.body.targeting_spec.blocked_pangle_app_ids[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: platform
+              required: false
+              source: $.http.body.targeting_spec.operating_systems[]
+              sub_type: number
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: ac
+              required: false
+              source: $.http.body.targeting_spec.network_types[]
+              sub_type: number
+              type: array
+            - is_expand: false
+              name: min_android_version
+              required: false
+              source: $.http.body.targeting_spec.min_android_version
+              type: string
+            - is_expand: false
+              name: min_ios_version
+              required: false
+              source: $.http.body.targeting_spec.min_ios_version
+              type: string
+            - children:
+              - children:
+                - is_expand: false
+                  name: action_scene
+                  required: false
+                  source: $.http.body.targeting_spec.actions[].action_scene
+                  type: number
+                - is_expand: false
+                  name: action_period
+                  required: false
+                  source: $.http.body.targeting_spec.actions[].action_period
+                  type: number
+                - children:
+                  - is_expand: false
+                    source: undefined
+                    type: number
+                  is_expand: false
+                  name: video_user_actions
+                  required: false
+                  source: $.http.body.targeting_spec.actions[].video_user_actions
+                  sub_type: number
+                  type: array
+                - children:
+                  - is_expand: false
+                    source: undefined
+                    type: number
+                  is_expand: false
+                  name: action_category_ids
+                  required: false
+                  source: $.http.body.targeting_spec.actions[].action_category_ids
+                  sub_type: number
+                  type: array
+                is_expand: true
+                source: undefined
+                type: object
+              is_expand: false
+              name: action_v2
+              required: false
+              source: $.http.body.targeting_spec.actions[]
+              sub_type: object
+              type: array
+            - children:
+              - is_expand: false
+                source: undefined
+                type: number
+              is_expand: false
+              name: launch_price
+              required: false
+              source: $.http.body.targeting_spec.device_price_ranges[]
+              sub_type: number
+              type: array
+            is_expand: true
+            name: audience
+            required: false
+            type: object
+          - name: is_share_disable
+            required: false
+            source: $.http.body.share_disabled
+            type: number
+          - name: cpa_bid
+            required: false
+            source: $.http.body.conversion_bid_price
+            type: number
+          - name: suggestion_audience_enabled
+            required: false
+            source: $.http.body.suggestion_audience_enabled
+            type: boolean
+          - name: flow_control_mode
+            required: false
+            source: $.http.body.pacing
+            type: number
+          - name: spc_targeting_switch
+            required: false
+            source: $.http.body.targeting_optimization_mode
+            type: number
+          - name: min_budget
+            required: false
+            source: $.http.body.min_budget
+            type: number
+          - name: movie_premiere_date
+            required: false
+            source: $.http.body.movie_premiere_date
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          adgroup_id: $.http.body.adgroup_id
+          advertiser_id: $.http.body.advertiser_id
+          audience:
+            ac: $.http.body.targeting_spec.network_types[]
+            action_v2: $.http.body.targeting_spec.actions[]
+            ad_tag_v2: $.http.body.targeting_spec.interest_category_ids[]
+            age_groups: $.http.body.targeting_spec.age_groups[]
+            carriers: $.http.body.targeting_spec.carrier_ids[]
+            device_models: $.http.body.targeting_spec.device_model_ids[]
+            exclude_age_under_eighteen: $.http.body.targeting_spec.spc_audience_age
+            exclude_app_package_id: $.http.body.targeting_spec.blocked_pangle_app_ids[]
+            flow_package_exclude: $.http.body.targeting_spec.excluded_pangle_audience_package_ids[]
+            flow_package_include: $.http.body.targeting_spec.included_pangle_audience_package_ids[]
+            gender: $.http.body.targeting_spec.gender
+            household_income: $.http.body.targeting_spec.household_income[]
+            in_market_tags: $.http.body.targeting_spec.purchase_intention_keyword_ids[]
+            interest_keywords_i18n: $.http.body.targeting_spec.interest_keyword_ids
+            internet_service_providers: $.http.body.targeting_spec.isp_ids[]
+            language_list: $.http.body.targeting_spec.languages[]
+            launch_price: $.http.body.targeting_spec.device_price_ranges[]
+            min_android_version: $.http.body.targeting_spec.min_android_version
+            min_ios_version: $.http.body.targeting_spec.min_ios_version
+            particle_locations: $.http.body.targeting_spec.location_ids[]
+            platform: $.http.body.targeting_spec.operating_systems[]
+            retargeting_tags: $.http.body.targeting_spec.audience_ids[]
+            retargeting_tags_exclude: $.http.body.targeting_spec.excluded_audience_ids[]
+            saved_audience_id: $.http.body.targeting_spec.saved_audience_id
+            smart_audience_enabled: $.http.body.targeting_spec.smart_audience_enabled
+            smart_interest_behavior_enabled: $.http.body.targeting_spec.smart_interest_behavior_enabled
+            spending_power: $.http.body.targeting_spec.spending_power
+            zipcode_ids: $.http.body.targeting_spec.zipcode_ids[]
+          bid: $.http.body.bid_price
+          budget: $.http.body.budget
+          cpa_bid: $.http.body.conversion_bid_price
+          dayparting: $.http.body.dayparting
+          end_time_stamp: $.http.body.schedule_end_time
+          flow_control_mode: $.http.body.pacing
+          is_comment_disable: $.http.body.comment_disabled
+          is_share_disable: $.http.body.share_disabled
+          min_budget: $.http.body.min_budget
+          movie_premiere_date: $.http.body.movie_premiere_date
+          name: $.http.body.adgroup_name
+          roas_bid: $.http.body.roas_bid
+          schedule_type: $.http.body.schedule_type
+          spc_targeting_switch: $.http.body.targeting_optimization_mode
+          start_time_stamp: $.http.body.schedule_start_time
+          suggestion_audience_enabled: $.http.body.suggestion_audience_enabled
+        response_cookie: []
+        response_header: []
+        response_rule:
+          adgroup_id: $.rpc.output.adgroup_data.adgroup_id
+          adgroup_name: $.rpc.output.adgroup_data.name
+          advertiser_id: $.rpc.output.adgroup_data.advertiser_id
+          app_id: $.rpc.output.adgroup_data.ad_ref_app_id
+          attribution_event_count: $.rpc.output.adgroup_data.attribution_statistic_type
+          bid_price: $.rpc.output.adgroup_data.bid
+          bid_type: $.rpc.output.adgroup_data.smart_bid_type
+          billing_event: $.rpc.output.adgroup_data.pricing
+          budget: $.rpc.output.adgroup_data.budget
+          budget_mode: $.rpc.output.adgroup_data.budget_mode
+          campaign_id: $.rpc.output.adgroup_data.campaign_id
+          campaign_name: $.rpc.output.adgroup_data.campaign_name
+          catalog_authorized_bc_id: $.rpc.output.adgroup_data.catalog_authorized_bc
+          catalog_id: $.rpc.output.adgroup_data.product_platform_id
+          click_attribution_window: $.rpc.output.adgroup_data.attribution_window_click
+          comment_disabled: $.rpc.output.adgroup_data.is_comment_disable
+          conversion_bid_price: $.rpc.output.adgroup_data.cpa_bid
+          create_time: $.rpc.output.adgroup_data.display_create_time
+          custom_conversion_id: $.rpc.output.adgroup_data.custom_conversion_id
+          dayparting: $.rpc.output.adgroup_data.dayparting
+          deep_bid_type: $.rpc.output.adgroup_data.deep_bid_type
+          deep_cpabid: $.rpc.output.adgroup_data.deep_cpabid
+          deep_funnel_event_source: $.rpc.output.adgroup_data.deep_funnel_event_source
+          deep_funnel_event_source_id: $.rpc.output.adgroup_data.deep_funnel_event_source_id
+          deep_funnel_optimization_event: $.rpc.output.adgroup_data.deep_funnel_optimization_event
+          deep_funnel_optimization_status: $.rpc.output.adgroup_data.deep_funnel_toggle
+          engaged_view_attribution_window: $.rpc.output.adgroup_data.attribution_window_engaged_view
+          identity_authorized_bc_id: $.rpc.output.adgroup_data.identity_bc_id
+          identity_id: $.rpc.output.adgroup_data.identity_id
+          identity_type: $.rpc.output.adgroup_data.identity_type
+          incentive_offer_type: $.rpc.output.adgroup_data.compensation_activity
+          message_event_set_id: $.rpc.output.adgroup_data.ad_ref_message_event_set_id
+          messaging_app_account_id: $.rpc.output.adgroup_data.ima_account_id
+          messaging_app_type: $.rpc.output.adgroup_data.ima_type
+          min_budget: $.rpc.output.adgroup_data.min_budget
+          modify_time: $.rpc.output.adgroup_data.display_modify_time
+          movie_premiere_date: $.rpc.output.adgroup_data.movie_premiere_date
+          operation_status: $.rpc.output.adgroup_data.operation_status
+          optimization_event: $.rpc.output.adgroup_data.external_action
+          optimization_goal: $.rpc.output.adgroup_data.optimize_goal
+          pacing: $.rpc.output.adgroup_data.flow_control_mode
+          phone_info:
+            phone_number: $.rpc.output.adgroup_data.phone_number
+            phone_region_calling_code: $.rpc.output.adgroup_data.phone_zip_code
+            phone_region_code: $.rpc.output.adgroup_data.phone_country_code
+          pixel_id: $.rpc.output.adgroup_data.ad_ref_pixel_id
+          placement_type: $.rpc.output.adgroup_data.inventory_flow_type
+          placements: $.rpc.output.adgroup_data.inventory_flow
+          product_set_id: $.rpc.output.adgroup_data.product_set_id
+          product_source: $.rpc.output.adgroup_data.product_source
+          promotion_target_type: $.rpc.output.adgroup_data.promotion_target_type
+          promotion_type: $.rpc.output.adgroup_data.external_type
+          promotion_website_type: $.rpc.output.adgroup_data.promotion_website_type
+          roas_bid: $.rpc.output.adgroup_data.roas_bid
+          schedule_end_time: $.rpc.output.adgroup_data.end_time_stamp
+          schedule_start_time: $.rpc.output.adgroup_data.start_time_stamp
+          schedule_type: $.rpc.output.adgroup_data.schedule_type
+          scheduled_budget: $.rpc.output.adgroup_data.scheduled_budget
+          search_result_enabled: $.rpc.output.adgroup_data.search_result_enabled
+          secondary_optimization_event: $.rpc.output.adgroup_data.deep_external_action
+          secondary_status: $.rpc.output.adgroup_data.secondary_status
+          share_disabled: $.rpc.output.adgroup_data.is_share_disable
+          skip_learning_phase: $.rpc.output.adgroup_data.cpa_skip_first_phrase
+          suggestion_audience_enabled: $.rpc.output.adgroup_data.suggestion_audience_enabled
+          targeting_optimization_mode: $.rpc.output.adgroup_data.spc_targeting_switch
+          targeting_spec:
+            actions[][]:
+            - action_category_ids: $.rpc.output.adgroup_data.audience.action_v2[].action_category_ids
+              action_period: $.rpc.output.adgroup_data.audience.action_v2[].action_period
+              action_scene: $.rpc.output.adgroup_data.audience.action_v2[].action_scene
+              video_user_actions: $.rpc.output.adgroup_data.audience.action_v2[].video_user_actions
+            age_groups: $.rpc.output.adgroup_data.audience.age_groups
+            app_targeting_type: $.rpc.output.adgroup_data.audience.dpa_local_audience
+            audience_ids: $.rpc.output.adgroup_data.audience.retargeting_tags
+            blocked_pangle_app_ids: $.rpc.output.adgroup_data.audience.exclude_app_package_id
+            brand_safety_type: $.rpc.output.adgroup_data.audience.brand_safety
+            carrier_ids: $.rpc.output.adgroup_data.audience.carriers
+            category_exclusion_ids: $.rpc.output.adgroup_data.audience.category_exclusion_ids
+            device_model_ids: $.rpc.output.adgroup_data.audience.device_models
+            device_price_ranges: $.rpc.output.adgroup_data.audience.launch_price
+            excluded_audience_ids: $.rpc.output.adgroup_data.audience.retargeting_tags_exclude
+            excluded_pangle_audience_package_ids: $.rpc.output.adgroup_data.audience.flow_package_exclude
+            gender: $.rpc.output.adgroup_data.audience.gender
+            household_income: $.rpc.output.adgroup_data.audience.household_income
+            included_pangle_audience_package_ids: $.rpc.output.adgroup_data.audience.flow_package_include
+            interest_category_ids: $.rpc.output.adgroup_data.audience.ad_tag_v2
+            interest_keyword_ids: $.rpc.output.adgroup_data.audience.interest_keywords_i18n
+            isp_ids: $.rpc.output.adgroup_data.audience.internet_service_providers
+            languages: $.rpc.output.adgroup_data.audience.language_list
+            location_ids: $.rpc.output.adgroup_data.audience.particle_locations
+            min_android_version: $.rpc.output.adgroup_data.audience.min_android_version
+            min_ios_version: $.rpc.output.adgroup_data.audience.min_ios_version
+            network_types: $.rpc.output.adgroup_data.audience.ac
+            operating_systems: $.rpc.output.adgroup_data.audience.platform
+            purchase_intention_keyword_ids: $.rpc.output.adgroup_data.audience.in_market_tags
+            saved_audience_id: $.rpc.output.adgroup_data.audience.saved_audience_id
+            smart_audience_enabled: $.rpc.output.adgroup_data.audience.smart_audience_enabled
+            smart_interest_behavior_enabled: $.rpc.output.adgroup_data.audience.smart_interest_behavior_enabled
+            spc_audience_age: $.rpc.output.adgroup_data.audience.exclude_age_under_eighteen
+            spending_power: $.rpc.output.adgroup_data.audience.spending_power
+            zipcode_ids: $.rpc.output.adgroup_data.audience.zipcode_ids
+          vbo_window: $.rpc.output.adgroup_data.vbo_date_type
+          video_download_disabled: $.rpc.output.adgroup_data.ad_download_status
+          view_attribution_window: $.rpc.output.adgroup_data.attribution_window_view
+          zalo_id_type: $.rpc.output.adgroup_data.ima_id_type
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: true
+servers:
+- url: business-api.tiktok.com

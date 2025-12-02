@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CatalogcreateCatalogConf model module.
  * @module model/CatalogcreateCatalogConf
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class CatalogcreateCatalogConf {
   /**

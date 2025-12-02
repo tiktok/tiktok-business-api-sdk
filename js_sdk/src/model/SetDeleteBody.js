@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SetDeleteBody model module.
  * @module model/SetDeleteBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class SetDeleteBody {
   /**

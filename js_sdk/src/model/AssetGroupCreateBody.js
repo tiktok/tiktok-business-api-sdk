@@ -11,7 +11,7 @@ import {BcassetGroupcreateMembers} from './BcassetGroupcreateMembers.js';
 /**
  * The AssetGroupCreateBody model module.
  * @module model/AssetGroupCreateBody
- * @version 0.1.8
+ * @version 0.1.9
  */
 export class AssetGroupCreateBody {
   /**
