@@ -27,31 +27,35 @@ class AdcreateCreatives(object):
         'ad_format': 'str',
         'ad_name': 'str',
         'ad_text': 'str',
+        'ad_texts': 'list[str]',
+        'aigc_disclosure_type': 'str',
         'app_name': 'str',
+        'auto_disclaimer_types': 'list[str]',
+        'auto_message_id': 'str',
         'avatar_icon_web_uri': 'str',
         'brand_safety_postbid_partner': 'str',
         'brand_safety_vast_url': 'str',
         'call_to_action': 'str',
         'call_to_action_id': 'str',
         'card_id': 'str',
-        'card_image_id': 'str',
-        'card_image_index': 'int',
-        'card_show_price': 'bool',
-        'card_tags': 'list[str]',
-        'card_type': 'str',
+        'carousel_image_index': 'int',
         'catalog_id': 'str',
         'click_tracking_url': 'str',
+        'cpp_url': 'str',
         'creative_authorized': 'bool',
         'creative_type': 'str',
         'dark_post_status': 'str',
         'deeplink': 'str',
+        'deeplink_format_type': 'str',
         'deeplink_type': 'str',
+        'deeplink_utm_params': 'list[AdcreateDeeplinkUtmParams]',
         'disclaimer_clickable_texts': 'list[AdcreateDisclaimerClickableTexts]',
         'disclaimer_text': 'AdcreateDisclaimerText',
         'disclaimer_type': 'str',
         'display_name': 'str',
         'dynamic_destination': 'str',
         'dynamic_format': 'str',
+        'end_card_cta': 'str',
         'fallback_type': 'str',
         'identity_authorized_bc_id': 'str',
         'identity_id': 'str',
@@ -63,21 +67,32 @@ class AdcreateCreatives(object):
         'item_group_ids': 'list[str]',
         'item_stitch_status': 'str',
         'landing_page_url': 'str',
+        'music_id': 'str',
         'operation_status': 'str',
         'page_id': 'int',
         'page_image_index': 'int',
+        'phone_number': 'str',
+        'phone_region_calling_code': 'str',
+        'phone_region_code': 'str',
         'playable_url': 'str',
+        'product_display_field_list': 'list[str]',
         'product_set_id': 'str',
         'product_specific_type': 'str',
         'promotional_music_disabled': 'bool',
+        'schedule_id': 'str',
         'shopping_ads_deeplink_type': 'str',
         'shopping_ads_fallback_type': 'str',
         'shopping_ads_video_package_id': 'str',
-        'shopping_ads_word_set': 'list[int]',
+        'showcase_products': 'list[AdcreateShowcaseProducts]',
         'sku_ids': 'list[str]',
         'tiktok_item_id': 'str',
+        'tiktok_page_category': 'str',
+        'tracking_app_id': 'str',
+        'tracking_message_event_set_id': 'str',
+        'tracking_offline_event_set_ids': 'list[str]',
         'tracking_pixel_id': 'int',
-        'vast_moat_enabled': 'bool',
+        'utm_params': 'list[AdcreateUtmParams]',
+        'vehicle_ids': 'list[str]',
         'vertical_video_strategy': 'str',
         'video_id': 'str',
         'video_view_tracking_url': 'str',
@@ -89,31 +104,35 @@ class AdcreateCreatives(object):
         'ad_format': 'ad_format',
         'ad_name': 'ad_name',
         'ad_text': 'ad_text',
+        'ad_texts': 'ad_texts',
+        'aigc_disclosure_type': 'aigc_disclosure_type',
         'app_name': 'app_name',
+        'auto_disclaimer_types': 'auto_disclaimer_types',
+        'auto_message_id': 'auto_message_id',
         'avatar_icon_web_uri': 'avatar_icon_web_uri',
         'brand_safety_postbid_partner': 'brand_safety_postbid_partner',
         'brand_safety_vast_url': 'brand_safety_vast_url',
         'call_to_action': 'call_to_action',
         'call_to_action_id': 'call_to_action_id',
         'card_id': 'card_id',
-        'card_image_id': 'card_image_id',
-        'card_image_index': 'card_image_index',
-        'card_show_price': 'card_show_price',
-        'card_tags': 'card_tags',
-        'card_type': 'card_type',
+        'carousel_image_index': 'carousel_image_index',
         'catalog_id': 'catalog_id',
         'click_tracking_url': 'click_tracking_url',
+        'cpp_url': 'cpp_url',
         'creative_authorized': 'creative_authorized',
         'creative_type': 'creative_type',
         'dark_post_status': 'dark_post_status',
         'deeplink': 'deeplink',
+        'deeplink_format_type': 'deeplink_format_type',
         'deeplink_type': 'deeplink_type',
+        'deeplink_utm_params': 'deeplink_utm_params',
         'disclaimer_clickable_texts': 'disclaimer_clickable_texts',
         'disclaimer_text': 'disclaimer_text',
         'disclaimer_type': 'disclaimer_type',
         'display_name': 'display_name',
         'dynamic_destination': 'dynamic_destination',
         'dynamic_format': 'dynamic_format',
+        'end_card_cta': 'end_card_cta',
         'fallback_type': 'fallback_type',
         'identity_authorized_bc_id': 'identity_authorized_bc_id',
         'identity_id': 'identity_id',
@@ -125,21 +144,32 @@ class AdcreateCreatives(object):
         'item_group_ids': 'item_group_ids',
         'item_stitch_status': 'item_stitch_status',
         'landing_page_url': 'landing_page_url',
+        'music_id': 'music_id',
         'operation_status': 'operation_status',
         'page_id': 'page_id',
         'page_image_index': 'page_image_index',
+        'phone_number': 'phone_number',
+        'phone_region_calling_code': 'phone_region_calling_code',
+        'phone_region_code': 'phone_region_code',
         'playable_url': 'playable_url',
+        'product_display_field_list': 'product_display_field_list',
         'product_set_id': 'product_set_id',
         'product_specific_type': 'product_specific_type',
         'promotional_music_disabled': 'promotional_music_disabled',
+        'schedule_id': 'schedule_id',
         'shopping_ads_deeplink_type': 'shopping_ads_deeplink_type',
         'shopping_ads_fallback_type': 'shopping_ads_fallback_type',
         'shopping_ads_video_package_id': 'shopping_ads_video_package_id',
-        'shopping_ads_word_set': 'shopping_ads_word_set',
+        'showcase_products': 'showcase_products',
         'sku_ids': 'sku_ids',
         'tiktok_item_id': 'tiktok_item_id',
+        'tiktok_page_category': 'tiktok_page_category',
+        'tracking_app_id': 'tracking_app_id',
+        'tracking_message_event_set_id': 'tracking_message_event_set_id',
+        'tracking_offline_event_set_ids': 'tracking_offline_event_set_ids',
         'tracking_pixel_id': 'tracking_pixel_id',
-        'vast_moat_enabled': 'vast_moat_enabled',
+        'utm_params': 'utm_params',
+        'vehicle_ids': 'vehicle_ids',
         'vertical_video_strategy': 'vertical_video_strategy',
         'video_id': 'video_id',
         'video_view_tracking_url': 'video_view_tracking_url',
@@ -147,36 +177,40 @@ class AdcreateCreatives(object):
         'viewability_vast_url': 'viewability_vast_url'
     }
 
-    def __init__(self, ad_format=None, ad_name=None, ad_text=None, app_name=None, avatar_icon_web_uri=None, brand_safety_postbid_partner=None, brand_safety_vast_url=None, call_to_action=None, call_to_action_id=None, card_id=None, card_image_id=None, card_image_index=None, card_show_price=None, card_tags=None, card_type=None, catalog_id=None, click_tracking_url=None, creative_authorized=None, creative_type=None, dark_post_status=None, deeplink=None, deeplink_type=None, disclaimer_clickable_texts=None, disclaimer_text=None, disclaimer_type=None, display_name=None, dynamic_destination=None, dynamic_format=None, fallback_type=None, identity_authorized_bc_id=None, identity_id=None, identity_type=None, image_ids=None, impression_tracking_url=None, instant_product_page_used=None, item_duet_status=None, item_group_ids=None, item_stitch_status=None, landing_page_url=None, operation_status=None, page_id=None, page_image_index=None, playable_url=None, product_set_id=None, product_specific_type=None, promotional_music_disabled=None, shopping_ads_deeplink_type=None, shopping_ads_fallback_type=None, shopping_ads_video_package_id=None, shopping_ads_word_set=None, sku_ids=None, tiktok_item_id=None, tracking_pixel_id=None, vast_moat_enabled=None, vertical_video_strategy=None, video_id=None, video_view_tracking_url=None, viewability_postbid_partner=None, viewability_vast_url=None):  # noqa: E501
+    def __init__(self, ad_format=None, ad_name=None, ad_text=None, ad_texts=None, aigc_disclosure_type='NOT_DECLARED', app_name=None, auto_disclaimer_types=None, auto_message_id=None, avatar_icon_web_uri=None, brand_safety_postbid_partner=None, brand_safety_vast_url=None, call_to_action=None, call_to_action_id=None, card_id=None, carousel_image_index=None, catalog_id=None, click_tracking_url=None, cpp_url=None, creative_authorized=False, creative_type=None, dark_post_status=None, deeplink=None, deeplink_format_type=None, deeplink_type='NORMAL', deeplink_utm_params=None, disclaimer_clickable_texts=None, disclaimer_text=None, disclaimer_type=None, display_name=None, dynamic_destination=None, dynamic_format=None, end_card_cta=None, fallback_type=None, identity_authorized_bc_id=None, identity_id=None, identity_type=None, image_ids=None, impression_tracking_url=None, instant_product_page_used=None, item_duet_status=None, item_group_ids=None, item_stitch_status=None, landing_page_url=None, music_id=None, operation_status='ENABLE', page_id=None, page_image_index=None, phone_number=None, phone_region_calling_code=None, phone_region_code=None, playable_url=None, product_display_field_list=None, product_set_id=None, product_specific_type=None, promotional_music_disabled=True, schedule_id=None, shopping_ads_deeplink_type='NONE', shopping_ads_fallback_type=None, shopping_ads_video_package_id=None, showcase_products=None, sku_ids=None, tiktok_item_id=None, tiktok_page_category=None, tracking_app_id=None, tracking_message_event_set_id=None, tracking_offline_event_set_ids=None, tracking_pixel_id=None, utm_params=None, vehicle_ids=None, vertical_video_strategy=None, video_id=None, video_view_tracking_url=None, viewability_postbid_partner=None, viewability_vast_url=None):  # noqa: E501
         """AdcreateCreatives - a model defined in Swagger"""  # noqa: E501
         self._ad_format = None
         self._ad_name = None
         self._ad_text = None
+        self._ad_texts = None
+        self._aigc_disclosure_type = None
         self._app_name = None
+        self._auto_disclaimer_types = None
+        self._auto_message_id = None
         self._avatar_icon_web_uri = None
         self._brand_safety_postbid_partner = None
         self._brand_safety_vast_url = None
         self._call_to_action = None
         self._call_to_action_id = None
         self._card_id = None
-        self._card_image_id = None
-        self._card_image_index = None
-        self._card_show_price = None
-        self._card_tags = None
-        self._card_type = None
+        self._carousel_image_index = None
         self._catalog_id = None
         self._click_tracking_url = None
+        self._cpp_url = None
         self._creative_authorized = None
         self._creative_type = None
         self._dark_post_status = None
         self._deeplink = None
+        self._deeplink_format_type = None
         self._deeplink_type = None
+        self._deeplink_utm_params = None
         self._disclaimer_clickable_texts = None
         self._disclaimer_text = None
         self._disclaimer_type = None
         self._display_name = None
         self._dynamic_destination = None
         self._dynamic_format = None
+        self._end_card_cta = None
         self._fallback_type = None
         self._identity_authorized_bc_id = None
         self._identity_id = None
@@ -188,21 +222,32 @@ class AdcreateCreatives(object):
         self._item_group_ids = None
         self._item_stitch_status = None
         self._landing_page_url = None
+        self._music_id = None
         self._operation_status = None
         self._page_id = None
         self._page_image_index = None
+        self._phone_number = None
+        self._phone_region_calling_code = None
+        self._phone_region_code = None
         self._playable_url = None
+        self._product_display_field_list = None
         self._product_set_id = None
         self._product_specific_type = None
         self._promotional_music_disabled = None
+        self._schedule_id = None
         self._shopping_ads_deeplink_type = None
         self._shopping_ads_fallback_type = None
         self._shopping_ads_video_package_id = None
-        self._shopping_ads_word_set = None
+        self._showcase_products = None
         self._sku_ids = None
         self._tiktok_item_id = None
+        self._tiktok_page_category = None
+        self._tracking_app_id = None
+        self._tracking_message_event_set_id = None
+        self._tracking_offline_event_set_ids = None
         self._tracking_pixel_id = None
-        self._vast_moat_enabled = None
+        self._utm_params = None
+        self._vehicle_ids = None
         self._vertical_video_strategy = None
         self._video_id = None
         self._video_view_tracking_url = None
@@ -215,8 +260,16 @@ class AdcreateCreatives(object):
             self.ad_name = ad_name
         if ad_text is not None:
             self.ad_text = ad_text
+        if ad_texts is not None:
+            self.ad_texts = ad_texts
+        if aigc_disclosure_type is not None:
+            self.aigc_disclosure_type = aigc_disclosure_type
         if app_name is not None:
             self.app_name = app_name
+        if auto_disclaimer_types is not None:
+            self.auto_disclaimer_types = auto_disclaimer_types
+        if auto_message_id is not None:
+            self.auto_message_id = auto_message_id
         if avatar_icon_web_uri is not None:
             self.avatar_icon_web_uri = avatar_icon_web_uri
         if brand_safety_postbid_partner is not None:
@@ -229,20 +282,14 @@ class AdcreateCreatives(object):
             self.call_to_action_id = call_to_action_id
         if card_id is not None:
             self.card_id = card_id
-        if card_image_id is not None:
-            self.card_image_id = card_image_id
-        if card_image_index is not None:
-            self.card_image_index = card_image_index
-        if card_show_price is not None:
-            self.card_show_price = card_show_price
-        if card_tags is not None:
-            self.card_tags = card_tags
-        if card_type is not None:
-            self.card_type = card_type
+        if carousel_image_index is not None:
+            self.carousel_image_index = carousel_image_index
         if catalog_id is not None:
             self.catalog_id = catalog_id
         if click_tracking_url is not None:
             self.click_tracking_url = click_tracking_url
+        if cpp_url is not None:
+            self.cpp_url = cpp_url
         if creative_authorized is not None:
             self.creative_authorized = creative_authorized
         if creative_type is not None:
@@ -251,8 +298,12 @@ class AdcreateCreatives(object):
             self.dark_post_status = dark_post_status
         if deeplink is not None:
             self.deeplink = deeplink
+        if deeplink_format_type is not None:
+            self.deeplink_format_type = deeplink_format_type
         if deeplink_type is not None:
             self.deeplink_type = deeplink_type
+        if deeplink_utm_params is not None:
+            self.deeplink_utm_params = deeplink_utm_params
         if disclaimer_clickable_texts is not None:
             self.disclaimer_clickable_texts = disclaimer_clickable_texts
         if disclaimer_text is not None:
@@ -265,6 +316,8 @@ class AdcreateCreatives(object):
             self.dynamic_destination = dynamic_destination
         if dynamic_format is not None:
             self.dynamic_format = dynamic_format
+        if end_card_cta is not None:
+            self.end_card_cta = end_card_cta
         if fallback_type is not None:
             self.fallback_type = fallback_type
         if identity_authorized_bc_id is not None:
@@ -287,36 +340,58 @@ class AdcreateCreatives(object):
             self.item_stitch_status = item_stitch_status
         if landing_page_url is not None:
             self.landing_page_url = landing_page_url
+        if music_id is not None:
+            self.music_id = music_id
         if operation_status is not None:
             self.operation_status = operation_status
         if page_id is not None:
             self.page_id = page_id
         if page_image_index is not None:
             self.page_image_index = page_image_index
+        if phone_number is not None:
+            self.phone_number = phone_number
+        if phone_region_calling_code is not None:
+            self.phone_region_calling_code = phone_region_calling_code
+        if phone_region_code is not None:
+            self.phone_region_code = phone_region_code
         if playable_url is not None:
             self.playable_url = playable_url
+        if product_display_field_list is not None:
+            self.product_display_field_list = product_display_field_list
         if product_set_id is not None:
             self.product_set_id = product_set_id
         if product_specific_type is not None:
             self.product_specific_type = product_specific_type
         if promotional_music_disabled is not None:
             self.promotional_music_disabled = promotional_music_disabled
+        if schedule_id is not None:
+            self.schedule_id = schedule_id
         if shopping_ads_deeplink_type is not None:
             self.shopping_ads_deeplink_type = shopping_ads_deeplink_type
         if shopping_ads_fallback_type is not None:
             self.shopping_ads_fallback_type = shopping_ads_fallback_type
         if shopping_ads_video_package_id is not None:
             self.shopping_ads_video_package_id = shopping_ads_video_package_id
-        if shopping_ads_word_set is not None:
-            self.shopping_ads_word_set = shopping_ads_word_set
+        if showcase_products is not None:
+            self.showcase_products = showcase_products
         if sku_ids is not None:
             self.sku_ids = sku_ids
         if tiktok_item_id is not None:
             self.tiktok_item_id = tiktok_item_id
+        if tiktok_page_category is not None:
+            self.tiktok_page_category = tiktok_page_category
+        if tracking_app_id is not None:
+            self.tracking_app_id = tracking_app_id
+        if tracking_message_event_set_id is not None:
+            self.tracking_message_event_set_id = tracking_message_event_set_id
+        if tracking_offline_event_set_ids is not None:
+            self.tracking_offline_event_set_ids = tracking_offline_event_set_ids
         if tracking_pixel_id is not None:
             self.tracking_pixel_id = tracking_pixel_id
-        if vast_moat_enabled is not None:
-            self.vast_moat_enabled = vast_moat_enabled
+        if utm_params is not None:
+            self.utm_params = utm_params
+        if vehicle_ids is not None:
+            self.vehicle_ids = vehicle_ids
         if vertical_video_strategy is not None:
             self.vertical_video_strategy = vertical_video_strategy
         if video_id is not None:
@@ -332,7 +407,6 @@ class AdcreateCreatives(object):
     def ad_format(self):
         """Gets the ad_format of this AdcreateCreatives.  # noqa: E501
 
-        The creative type. Enum values- SINGLE_IMAGE, SINGLE_VIDEO, LIVE_CONTENT. For in-feed ads on TikTok, set this field to SINGLE_VIDEO. For live shopping events on TikTok, set this field to LIVE_CONTENT.  # noqa: E501
 
         :return: The ad_format of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -343,7 +417,6 @@ class AdcreateCreatives(object):
     def ad_format(self, ad_format):
         """Sets the ad_format of this AdcreateCreatives.
 
-        The creative type. Enum values- SINGLE_IMAGE, SINGLE_VIDEO, LIVE_CONTENT. For in-feed ads on TikTok, set this field to SINGLE_VIDEO. For live shopping events on TikTok, set this field to LIVE_CONTENT.  # noqa: E501
 
         :param ad_format: The ad_format of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -355,7 +428,6 @@ class AdcreateCreatives(object):
     def ad_name(self):
         """Gets the ad_name of this AdcreateCreatives.  # noqa: E501
 
-        Ad name. Set as \" \" (Empty string) for it to be automatically generated. The format of auto-generated ad name is- creative name + creation time (e.g. adcreative20210111190739). Character limit is 512 and cannot contain emoji. Note- Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :return: The ad_name of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -366,7 +438,6 @@ class AdcreateCreatives(object):
     def ad_name(self, ad_name):
         """Sets the ad_name of this AdcreateCreatives.
 
-        Ad name. Set as \" \" (Empty string) for it to be automatically generated. The format of auto-generated ad name is- creative name + creation time (e.g. adcreative20210111190739). Character limit is 512 and cannot contain emoji. Note- Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :param ad_name: The ad_name of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -378,7 +449,6 @@ class AdcreateCreatives(object):
     def ad_text(self):
         """Gets the ad_text of this AdcreateCreatives.  # noqa: E501
 
-        An ad text. It is shown to your audience as part of your ad creative, to deliver the message you intend to communicate to them. If you don't know how to create effective ad texts, you can try the Smart Text feature, which generates ad text recommendations based on the industry and language.This field is required for image or video ads (ad_format is SINGLE_IMAGE or SINGLE_VIDEO)Ad text must be 1-100 characters long and cannot contain emoji.Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :return: The ad_text of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -389,7 +459,6 @@ class AdcreateCreatives(object):
     def ad_text(self, ad_text):
         """Sets the ad_text of this AdcreateCreatives.
 
-        An ad text. It is shown to your audience as part of your ad creative, to deliver the message you intend to communicate to them. If you don't know how to create effective ad texts, you can try the Smart Text feature, which generates ad text recommendations based on the industry and language.This field is required for image or video ads (ad_format is SINGLE_IMAGE or SINGLE_VIDEO)Ad text must be 1-100 characters long and cannot contain emoji.Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :param ad_text: The ad_text of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -398,10 +467,51 @@ class AdcreateCreatives(object):
         self._ad_text = ad_text
 
     @property
+    def ad_texts(self):
+        """Gets the ad_texts of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The ad_texts of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._ad_texts
+
+    @ad_texts.setter
+    def ad_texts(self, ad_texts):
+        """Sets the ad_texts of this AdcreateCreatives.
+
+
+        :param ad_texts: The ad_texts of this AdcreateCreatives.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._ad_texts = ad_texts
+
+    @property
+    def aigc_disclosure_type(self):
+        """Gets the aigc_disclosure_type of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The aigc_disclosure_type of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._aigc_disclosure_type
+
+    @aigc_disclosure_type.setter
+    def aigc_disclosure_type(self, aigc_disclosure_type):
+        """Sets the aigc_disclosure_type of this AdcreateCreatives.
+
+
+        :param aigc_disclosure_type: The aigc_disclosure_type of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._aigc_disclosure_type = aigc_disclosure_type
+
+    @property
     def app_name(self):
         """Gets the app_name of this AdcreateCreatives.  # noqa: E501
 
-        App name that is displayed in the ad.  If not specified, the name in the app store will be used. Number of characters allowed- 1-40. If the name in the app store exceeds 40 characters, you must pass in a new app name with this field.  # noqa: E501
 
         :return: The app_name of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -412,7 +522,6 @@ class AdcreateCreatives(object):
     def app_name(self, app_name):
         """Sets the app_name of this AdcreateCreatives.
 
-        App name that is displayed in the ad.  If not specified, the name in the app store will be used. Number of characters allowed- 1-40. If the name in the app store exceeds 40 characters, you must pass in a new app name with this field.  # noqa: E501
 
         :param app_name: The app_name of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -421,10 +530,51 @@ class AdcreateCreatives(object):
         self._app_name = app_name
 
     @property
+    def auto_disclaimer_types(self):
+        """Gets the auto_disclaimer_types of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The auto_disclaimer_types of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._auto_disclaimer_types
+
+    @auto_disclaimer_types.setter
+    def auto_disclaimer_types(self, auto_disclaimer_types):
+        """Sets the auto_disclaimer_types of this AdcreateCreatives.
+
+
+        :param auto_disclaimer_types: The auto_disclaimer_types of this AdcreateCreatives.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._auto_disclaimer_types = auto_disclaimer_types
+
+    @property
+    def auto_message_id(self):
+        """Gets the auto_message_id of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The auto_message_id of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._auto_message_id
+
+    @auto_message_id.setter
+    def auto_message_id(self, auto_message_id):
+        """Sets the auto_message_id of this AdcreateCreatives.
+
+
+        :param auto_message_id: The auto_message_id of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._auto_message_id = auto_message_id
+
+    @property
     def avatar_icon_web_uri(self):
         """Gets the avatar_icon_web_uri of this AdcreateCreatives.  # noqa: E501
 
-        ID of the avatar image. It can be uploaded through the [Upload an image](https://ads.tiktok.com/marketing_api/docs?id=1739067433456642) endpoint (picture ratio requirement is 1- 1  # noqa: E501
 
         :return: The avatar_icon_web_uri of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -435,7 +585,6 @@ class AdcreateCreatives(object):
     def avatar_icon_web_uri(self, avatar_icon_web_uri):
         """Sets the avatar_icon_web_uri of this AdcreateCreatives.
 
-        ID of the avatar image. It can be uploaded through the [Upload an image](https://ads.tiktok.com/marketing_api/docs?id=1739067433456642) endpoint (picture ratio requirement is 1- 1  # noqa: E501
 
         :param avatar_icon_web_uri: The avatar_icon_web_uri of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -447,7 +596,6 @@ class AdcreateCreatives(object):
     def brand_safety_postbid_partner(self):
         """Gets the brand_safety_postbid_partner of this AdcreateCreatives.  # noqa: E501
 
-        Post-bid third-party brand safety measurement partner. Enum values- `DOUBLE_VERIFY`, `IAS`, `ZEFR`. You can use [/tool/vast_option/](https://ads.tiktok.com/marketing_api/docs?id=1755436556897281) to get available post-bid third-party measurement partners.  # noqa: E501
 
         :return: The brand_safety_postbid_partner of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -458,7 +606,6 @@ class AdcreateCreatives(object):
     def brand_safety_postbid_partner(self, brand_safety_postbid_partner):
         """Sets the brand_safety_postbid_partner of this AdcreateCreatives.
 
-        Post-bid third-party brand safety measurement partner. Enum values- `DOUBLE_VERIFY`, `IAS`, `ZEFR`. You can use [/tool/vast_option/](https://ads.tiktok.com/marketing_api/docs?id=1755436556897281) to get available post-bid third-party measurement partners.  # noqa: E501
 
         :param brand_safety_postbid_partner: The brand_safety_postbid_partner of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -470,7 +617,6 @@ class AdcreateCreatives(object):
     def brand_safety_vast_url(self):
         """Gets the brand_safety_vast_url of this AdcreateCreatives.  # noqa: E501
 
-        The wrapped VAST URL used by the post-bid third-party partner to measure brand safety. Required when `brand_safety_postbid_partner` = `IAS`. You need to get the URL from the measurement partner IAS  # noqa: E501
 
         :return: The brand_safety_vast_url of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -481,7 +627,6 @@ class AdcreateCreatives(object):
     def brand_safety_vast_url(self, brand_safety_vast_url):
         """Sets the brand_safety_vast_url of this AdcreateCreatives.
 
-        The wrapped VAST URL used by the post-bid third-party partner to measure brand safety. Required when `brand_safety_postbid_partner` = `IAS`. You need to get the URL from the measurement partner IAS  # noqa: E501
 
         :param brand_safety_vast_url: The brand_safety_vast_url of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -493,7 +638,6 @@ class AdcreateCreatives(object):
     def call_to_action(self):
         """Gets the call_to_action of this AdcreateCreatives.  # noqa: E501
 
-        Call-to-action text. For TikTok ads, either this field or `call_to_action_id` must be specified. If both are specified, this field will be ignored. For enum values, see [Enumeration - Call-to-Action](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). For live shopping events, the call to action must be `WATCH_LIVE`.  # noqa: E501
 
         :return: The call_to_action of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -504,7 +648,6 @@ class AdcreateCreatives(object):
     def call_to_action(self, call_to_action):
         """Sets the call_to_action of this AdcreateCreatives.
 
-        Call-to-action text. For TikTok ads, either this field or `call_to_action_id` must be specified. If both are specified, this field will be ignored. For enum values, see [Enumeration - Call-to-Action](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). For live shopping events, the call to action must be `WATCH_LIVE`.  # noqa: E501
 
         :param call_to_action: The call_to_action of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -516,7 +659,6 @@ class AdcreateCreatives(object):
     def call_to_action_id(self):
         """Gets the call_to_action_id of this AdcreateCreatives.  # noqa: E501
 
-        The ID of the CTA portfolio that you want to use in your ads. A CTA portfolio is a group of auto-optimized CTAs. If both this field and `call_to_action` are specified, this field will be used, and `call_to_action` will be ignored. For details about auto-optimized CTAs, see [CTA Recommendations - Auto-Optimized CTAs](https://ads.tiktok.com/marketing_api/docs?id=1740307296329730).  # noqa: E501
 
         :return: The call_to_action_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -527,7 +669,6 @@ class AdcreateCreatives(object):
     def call_to_action_id(self, call_to_action_id):
         """Sets the call_to_action_id of this AdcreateCreatives.
 
-        The ID of the CTA portfolio that you want to use in your ads. A CTA portfolio is a group of auto-optimized CTAs. If both this field and `call_to_action` are specified, this field will be used, and `call_to_action` will be ignored. For details about auto-optimized CTAs, see [CTA Recommendations - Auto-Optimized CTAs](https://ads.tiktok.com/marketing_api/docs?id=1740307296329730).  # noqa: E501
 
         :param call_to_action_id: The call_to_action_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -539,7 +680,6 @@ class AdcreateCreatives(object):
     def card_id(self):
         """Gets the card_id of this AdcreateCreatives.  # noqa: E501
 
-        Image card ID, gift code card ID, premium badge ID, Countdown Sticker ID, or Download Card ID. To learn about how to get an image card ID or gift card ID, please see [Use Cards in Ads]  # noqa: E501
 
         :return: The card_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -550,7 +690,6 @@ class AdcreateCreatives(object):
     def card_id(self, card_id):
         """Sets the card_id of this AdcreateCreatives.
 
-        Image card ID, gift code card ID, premium badge ID, Countdown Sticker ID, or Download Card ID. To learn about how to get an image card ID or gift card ID, please see [Use Cards in Ads]  # noqa: E501
 
         :param card_id: The card_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -559,125 +698,30 @@ class AdcreateCreatives(object):
         self._card_id = card_id
 
     @property
-    def card_image_id(self):
-        """Gets the card_image_id of this AdcreateCreatives.  # noqa: E501
+    def carousel_image_index(self):
+        """Gets the carousel_image_index of this AdcreateCreatives.  # noqa: E501
 
-        Required if card_type=IMAGE  # noqa: E501
 
-        :return: The card_image_id of this AdcreateCreatives.  # noqa: E501
-        :rtype: str
-        """
-        return self._card_image_id
-
-    @card_image_id.setter
-    def card_image_id(self, card_image_id):
-        """Sets the card_image_id of this AdcreateCreatives.
-
-        Required if card_type=IMAGE  # noqa: E501
-
-        :param card_image_id: The card_image_id of this AdcreateCreatives.  # noqa: E501
-        :type: str
-        """
-
-        self._card_image_id = card_image_id
-
-    @property
-    def card_image_index(self):
-        """Gets the card_image_index of this AdcreateCreatives.  # noqa: E501
-
-        The index of product additional image list. The clients can use it to specify card image of product cards.  # noqa: E501
-
-        :return: The card_image_index of this AdcreateCreatives.  # noqa: E501
+        :return: The carousel_image_index of this AdcreateCreatives.  # noqa: E501
         :rtype: int
         """
-        return self._card_image_index
+        return self._carousel_image_index
 
-    @card_image_index.setter
-    def card_image_index(self, card_image_index):
-        """Sets the card_image_index of this AdcreateCreatives.
+    @carousel_image_index.setter
+    def carousel_image_index(self, carousel_image_index):
+        """Sets the carousel_image_index of this AdcreateCreatives.
 
-        The index of product additional image list. The clients can use it to specify card image of product cards.  # noqa: E501
 
-        :param card_image_index: The card_image_index of this AdcreateCreatives.  # noqa: E501
+        :param carousel_image_index: The carousel_image_index of this AdcreateCreatives.  # noqa: E501
         :type: int
         """
 
-        self._card_image_index = card_image_index
-
-    @property
-    def card_show_price(self):
-        """Gets the card_show_price of this AdcreateCreatives.  # noqa: E501
-
-        Whether to show price on card or not  # noqa: E501
-
-        :return: The card_show_price of this AdcreateCreatives.  # noqa: E501
-        :rtype: bool
-        """
-        return self._card_show_price
-
-    @card_show_price.setter
-    def card_show_price(self, card_show_price):
-        """Sets the card_show_price of this AdcreateCreatives.
-
-        Whether to show price on card or not  # noqa: E501
-
-        :param card_show_price: The card_show_price of this AdcreateCreatives.  # noqa: E501
-        :type: bool
-        """
-
-        self._card_show_price = card_show_price
-
-    @property
-    def card_tags(self):
-        """Gets the card_tags of this AdcreateCreatives.  # noqa: E501
-
-        Enum values- `BRAND`,  `DESC`. Max size = 2.  # noqa: E501
-
-        :return: The card_tags of this AdcreateCreatives.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._card_tags
-
-    @card_tags.setter
-    def card_tags(self, card_tags):
-        """Sets the card_tags of this AdcreateCreatives.
-
-        Enum values- `BRAND`,  `DESC`. Max size = 2.  # noqa: E501
-
-        :param card_tags: The card_tags of this AdcreateCreatives.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._card_tags = card_tags
-
-    @property
-    def card_type(self):
-        """Gets the card_type of this AdcreateCreatives.  # noqa: E501
-
-        Enum values- `IMAGE`, `PRODUCT`  # noqa: E501
-
-        :return: The card_type of this AdcreateCreatives.  # noqa: E501
-        :rtype: str
-        """
-        return self._card_type
-
-    @card_type.setter
-    def card_type(self, card_type):
-        """Sets the card_type of this AdcreateCreatives.
-
-        Enum values- `IMAGE`, `PRODUCT`  # noqa: E501
-
-        :param card_type: The card_type of this AdcreateCreatives.  # noqa: E501
-        :type: str
-        """
-
-        self._card_type = card_type
+        self._carousel_image_index = carousel_image_index
 
     @property
     def catalog_id(self):
         """Gets the catalog_id of this AdcreateCreatives.  # noqa: E501
 
-        Product catalog ID. Required for shop purchases ads. Products whose links are shown in the ad are from this catalog.  # noqa: E501
 
         :return: The catalog_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -688,7 +732,6 @@ class AdcreateCreatives(object):
     def catalog_id(self, catalog_id):
         """Sets the catalog_id of this AdcreateCreatives.
 
-        Product catalog ID. Required for shop purchases ads. Products whose links are shown in the ad are from this catalog.  # noqa: E501
 
         :param catalog_id: The catalog_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -700,7 +743,6 @@ class AdcreateCreatives(object):
     def click_tracking_url(self):
         """Gets the click_tracking_url of this AdcreateCreatives.  # noqa: E501
 
-        Click monitoring URL. Currently Pangle does not support DCM, Sizmek or Flashtalking.  # noqa: E501
 
         :return: The click_tracking_url of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -711,7 +753,6 @@ class AdcreateCreatives(object):
     def click_tracking_url(self, click_tracking_url):
         """Sets the click_tracking_url of this AdcreateCreatives.
 
-        Click monitoring URL. Currently Pangle does not support DCM, Sizmek or Flashtalking.  # noqa: E501
 
         :param click_tracking_url: The click_tracking_url of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -720,10 +761,30 @@ class AdcreateCreatives(object):
         self._click_tracking_url = click_tracking_url
 
     @property
+    def cpp_url(self):
+        """Gets the cpp_url of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The cpp_url of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._cpp_url
+
+    @cpp_url.setter
+    def cpp_url(self, cpp_url):
+        """Sets the cpp_url of this AdcreateCreatives.
+
+
+        :param cpp_url: The cpp_url of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._cpp_url = cpp_url
+
+    @property
     def creative_authorized(self):
         """Gets the creative_authorized of this AdcreateCreatives.  # noqa: E501
 
-        Whether you grant displaying some of your ads in our TikTok For Business Creative Center. Only valid for non-US advertisers, the default value is `false`.  # noqa: E501
 
         :return: The creative_authorized of this AdcreateCreatives.  # noqa: E501
         :rtype: bool
@@ -734,7 +795,6 @@ class AdcreateCreatives(object):
     def creative_authorized(self, creative_authorized):
         """Sets the creative_authorized of this AdcreateCreatives.
 
-        Whether you grant displaying some of your ads in our TikTok For Business Creative Center. Only valid for non-US advertisers, the default value is `false`.  # noqa: E501
 
         :param creative_authorized: The creative_authorized of this AdcreateCreatives.  # noqa: E501
         :type: bool
@@ -746,7 +806,6 @@ class AdcreateCreatives(object):
     def creative_type(self):
         """Gets the creative_type of this AdcreateCreatives.  # noqa: E501
 
-        Creative type for Shop Purchases or Product Sales scenarios. Required when `objective_type` is `SHOP_PURCHASES` or `PRODUCT_SALES.  # noqa: E501
 
         :return: The creative_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -757,7 +816,6 @@ class AdcreateCreatives(object):
     def creative_type(self, creative_type):
         """Sets the creative_type of this AdcreateCreatives.
 
-        Creative type for Shop Purchases or Product Sales scenarios. Required when `objective_type` is `SHOP_PURCHASES` or `PRODUCT_SALES.  # noqa: E501
 
         :param creative_type: The creative_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -769,7 +827,6 @@ class AdcreateCreatives(object):
     def dark_post_status(self):
         """Gets the dark_post_status of this AdcreateCreatives.  # noqa: E501
 
-        You can set this field to either `ON` or `OFF`. Default is `OFF`. If the ad is created as a dark post, it will not appear in the creator's homepage.  # noqa: E501
 
         :return: The dark_post_status of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -780,7 +837,6 @@ class AdcreateCreatives(object):
     def dark_post_status(self, dark_post_status):
         """Sets the dark_post_status of this AdcreateCreatives.
 
-        You can set this field to either `ON` or `OFF`. Default is `OFF`. If the ad is created as a dark post, it will not appear in the creator's homepage.  # noqa: E501
 
         :param dark_post_status: The dark_post_status of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -792,7 +848,6 @@ class AdcreateCreatives(object):
     def deeplink(self):
         """Gets the deeplink of this AdcreateCreatives.  # noqa: E501
 
-        The specific location where you want your audience to go if they have your app installed. See `deeplink_type` for more.  # noqa: E501
 
         :return: The deeplink of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -803,7 +858,6 @@ class AdcreateCreatives(object):
     def deeplink(self, deeplink):
         """Sets the deeplink of this AdcreateCreatives.
 
-        The specific location where you want your audience to go if they have your app installed. See `deeplink_type` for more.  # noqa: E501
 
         :param deeplink: The deeplink of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -812,10 +866,30 @@ class AdcreateCreatives(object):
         self._deeplink = deeplink
 
     @property
+    def deeplink_format_type(self):
+        """Gets the deeplink_format_type of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The deeplink_format_type of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._deeplink_format_type
+
+    @deeplink_format_type.setter
+    def deeplink_format_type(self, deeplink_format_type):
+        """Sets the deeplink_format_type of this AdcreateCreatives.
+
+
+        :param deeplink_format_type: The deeplink_format_type of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._deeplink_format_type = deeplink_format_type
+
+    @property
     def deeplink_type(self):
         """Gets the deeplink_type of this AdcreateCreatives.  # noqa: E501
 
-        The open URL type. Allowed values differs based on campaign objectives. Allowed values- `NORMAL`(supported in Traffic, Conversion), `DEFERRED_DEEPLINK`(supported in App Install). The default value is `NORMAL`. For an ad that will be included in an iOS 14 campaign, this field cannot be set to `DEFERRED_DEEPLINK`.  # noqa: E501
 
         :return: The deeplink_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -826,7 +900,6 @@ class AdcreateCreatives(object):
     def deeplink_type(self, deeplink_type):
         """Sets the deeplink_type of this AdcreateCreatives.
 
-        The open URL type. Allowed values differs based on campaign objectives. Allowed values- `NORMAL`(supported in Traffic, Conversion), `DEFERRED_DEEPLINK`(supported in App Install). The default value is `NORMAL`. For an ad that will be included in an iOS 14 campaign, this field cannot be set to `DEFERRED_DEEPLINK`.  # noqa: E501
 
         :param deeplink_type: The deeplink_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -835,10 +908,30 @@ class AdcreateCreatives(object):
         self._deeplink_type = deeplink_type
 
     @property
+    def deeplink_utm_params(self):
+        """Gets the deeplink_utm_params of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The deeplink_utm_params of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[AdcreateDeeplinkUtmParams]
+        """
+        return self._deeplink_utm_params
+
+    @deeplink_utm_params.setter
+    def deeplink_utm_params(self, deeplink_utm_params):
+        """Sets the deeplink_utm_params of this AdcreateCreatives.
+
+
+        :param deeplink_utm_params: The deeplink_utm_params of this AdcreateCreatives.  # noqa: E501
+        :type: list[AdcreateDeeplinkUtmParams]
+        """
+
+        self._deeplink_utm_params = deeplink_utm_params
+
+    @property
     def disclaimer_clickable_texts(self):
         """Gets the disclaimer_clickable_texts of this AdcreateCreatives.  # noqa: E501
 
-        The clickable disclaimer or clickable disclaimers that you want to add to the ad. Required when `disclaimer_type` = `TEXT_LINK`. Max size- 3. If you use multiple clickable disclaimers, both the overall length for all the texts you pass in and the length of individual text need to be no more than 40 characters.  # noqa: E501
 
         :return: The disclaimer_clickable_texts of this AdcreateCreatives.  # noqa: E501
         :rtype: list[AdcreateDisclaimerClickableTexts]
@@ -849,7 +942,6 @@ class AdcreateCreatives(object):
     def disclaimer_clickable_texts(self, disclaimer_clickable_texts):
         """Sets the disclaimer_clickable_texts of this AdcreateCreatives.
 
-        The clickable disclaimer or clickable disclaimers that you want to add to the ad. Required when `disclaimer_type` = `TEXT_LINK`. Max size- 3. If you use multiple clickable disclaimers, both the overall length for all the texts you pass in and the length of individual text need to be no more than 40 characters.  # noqa: E501
 
         :param disclaimer_clickable_texts: The disclaimer_clickable_texts of this AdcreateCreatives.  # noqa: E501
         :type: list[AdcreateDisclaimerClickableTexts]
@@ -882,7 +974,6 @@ class AdcreateCreatives(object):
     def disclaimer_type(self):
         """Gets the disclaimer_type of this AdcreateCreatives.  # noqa: E501
 
-        Type of disclaimer that you want to add to the ad. Enum values- `TEXT_LINK`(clickable disclaimers), `TEXT_ONLY`(text-only disclaimers). See [Include disclaimers in ads](https://ads.tiktok.com/marketing_api/docs?id=1739953274550273) to learn about how to configure disclaimer settings. Disclaimers are currently an allowlist-only feature for advertisers not registered in Canada and America using auction ad objectives, and for all advertisers using Reach & Frequency ad objectives. If you would like to access it, please contact your TikTok representative. The disclaimer feature only supports the following advertising objectives- `APP_PROMOTION`, `WEB_CONVERSIONS`, `APP_INSTALL`, `CONVERSIONS`, `REACH`, `TRAFFIC`, `VIDEO_VIEWS`, `ENGAGEMENT`, `LEAD_GENERATION`, `RF_REACH`, `RF_TRAFFIC`, `RF_VIDEO_VIEW`.  The disclaimer feature only supports TikTok placement. The disclaimer feature is not supported for Automated Creative Optimization ads. Once added to your ads, the disclaimer cannot be deleted.  # noqa: E501
 
         :return: The disclaimer_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -893,7 +984,6 @@ class AdcreateCreatives(object):
     def disclaimer_type(self, disclaimer_type):
         """Sets the disclaimer_type of this AdcreateCreatives.
 
-        Type of disclaimer that you want to add to the ad. Enum values- `TEXT_LINK`(clickable disclaimers), `TEXT_ONLY`(text-only disclaimers). See [Include disclaimers in ads](https://ads.tiktok.com/marketing_api/docs?id=1739953274550273) to learn about how to configure disclaimer settings. Disclaimers are currently an allowlist-only feature for advertisers not registered in Canada and America using auction ad objectives, and for all advertisers using Reach & Frequency ad objectives. If you would like to access it, please contact your TikTok representative. The disclaimer feature only supports the following advertising objectives- `APP_PROMOTION`, `WEB_CONVERSIONS`, `APP_INSTALL`, `CONVERSIONS`, `REACH`, `TRAFFIC`, `VIDEO_VIEWS`, `ENGAGEMENT`, `LEAD_GENERATION`, `RF_REACH`, `RF_TRAFFIC`, `RF_VIDEO_VIEW`.  The disclaimer feature only supports TikTok placement. The disclaimer feature is not supported for Automated Creative Optimization ads. Once added to your ads, the disclaimer cannot be deleted.  # noqa: E501
 
         :param disclaimer_type: The disclaimer_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -905,7 +995,6 @@ class AdcreateCreatives(object):
     def display_name(self):
         """Gets the display_name of this AdcreateCreatives.  # noqa: E501
 
-        The display name of landing page or pure exposure ad, length limit- 1-40 English characters, or 1-20 Chinese/Japanese/Korean characters, required when the promotion type is landing page or pure exposure  # noqa: E501
 
         :return: The display_name of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -916,7 +1005,6 @@ class AdcreateCreatives(object):
     def display_name(self, display_name):
         """Sets the display_name of this AdcreateCreatives.
 
-        The display name of landing page or pure exposure ad, length limit- 1-40 English characters, or 1-20 Chinese/Japanese/Korean characters, required when the promotion type is landing page or pure exposure  # noqa: E501
 
         :param display_name: The display_name of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -928,7 +1016,6 @@ class AdcreateCreatives(object):
     def dynamic_destination(self):
         """Gets the dynamic_destination of this AdcreateCreatives.  # noqa: E501
 
-        Enum values- `UNSET`, `DLP`(Dynamic Landing Page)  # noqa: E501
 
         :return: The dynamic_destination of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -939,7 +1026,6 @@ class AdcreateCreatives(object):
     def dynamic_destination(self, dynamic_destination):
         """Sets the dynamic_destination of this AdcreateCreatives.
 
-        Enum values- `UNSET`, `DLP`(Dynamic Landing Page)  # noqa: E501
 
         :param dynamic_destination: The dynamic_destination of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -951,7 +1037,6 @@ class AdcreateCreatives(object):
     def dynamic_format(self):
         """Gets the dynamic_format of this AdcreateCreatives.  # noqa: E501
 
-        Enum values- `UNSET`, `DYNAMIC_CREATIVE`(smart creative).  # noqa: E501
 
         :return: The dynamic_format of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -962,7 +1047,6 @@ class AdcreateCreatives(object):
     def dynamic_format(self, dynamic_format):
         """Sets the dynamic_format of this AdcreateCreatives.
 
-        Enum values- `UNSET`, `DYNAMIC_CREATIVE`(smart creative).  # noqa: E501
 
         :param dynamic_format: The dynamic_format of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -971,10 +1055,30 @@ class AdcreateCreatives(object):
         self._dynamic_format = dynamic_format
 
     @property
+    def end_card_cta(self):
+        """Gets the end_card_cta of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The end_card_cta of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._end_card_cta
+
+    @end_card_cta.setter
+    def end_card_cta(self, end_card_cta):
+        """Sets the end_card_cta of this AdcreateCreatives.
+
+
+        :param end_card_cta: The end_card_cta of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._end_card_cta = end_card_cta
+
+    @property
     def fallback_type(self):
         """Gets the fallback_type of this AdcreateCreatives.  # noqa: E501
 
-        Fallback Type. If the audience do not have the app installed, you can have them fall back to install the app, or to view a specific web page. Allowed values- `APP_INSTALL`, `WEBSITE`, `UNSET`. If website is chosen, you need to specify the url via `landing_page_url` field.  # noqa: E501
 
         :return: The fallback_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -985,7 +1089,6 @@ class AdcreateCreatives(object):
     def fallback_type(self, fallback_type):
         """Sets the fallback_type of this AdcreateCreatives.
 
-        Fallback Type. If the audience do not have the app installed, you can have them fall back to install the app, or to view a specific web page. Allowed values- `APP_INSTALL`, `WEBSITE`, `UNSET`. If website is chosen, you need to specify the url via `landing_page_url` field.  # noqa: E501
 
         :param fallback_type: The fallback_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -997,7 +1100,6 @@ class AdcreateCreatives(object):
     def identity_authorized_bc_id(self):
         """Gets the identity_authorized_bc_id of this AdcreateCreatives.  # noqa: E501
 
-        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
 
         :return: The identity_authorized_bc_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1008,7 +1110,6 @@ class AdcreateCreatives(object):
     def identity_authorized_bc_id(self, identity_authorized_bc_id):
         """Sets the identity_authorized_bc_id of this AdcreateCreatives.
 
-        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
 
         :param identity_authorized_bc_id: The identity_authorized_bc_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1020,7 +1121,6 @@ class AdcreateCreatives(object):
     def identity_id(self):
         """Gets the identity_id of this AdcreateCreatives.  # noqa: E501
 
-        Identity ID, required when you use Spark Ads (`tiktok_item_id`). If you are not using Spark Ads, we still highly recommend you to pass in `ideneity_id` and `identity_type` (`CUSTOMIZED_USER`) for better management of ads information.  # noqa: E501
 
         :return: The identity_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1031,7 +1131,6 @@ class AdcreateCreatives(object):
     def identity_id(self, identity_id):
         """Sets the identity_id of this AdcreateCreatives.
 
-        Identity ID, required when you use Spark Ads (`tiktok_item_id`). If you are not using Spark Ads, we still highly recommend you to pass in `ideneity_id` and `identity_type` (`CUSTOMIZED_USER`) for better management of ads information.  # noqa: E501
 
         :param identity_id: The identity_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1043,7 +1142,6 @@ class AdcreateCreatives(object):
     def identity_type(self):
         """Gets the identity_type of this AdcreateCreatives.  # noqa: E501
 
-        Identity type. Enum- `CUSTOMIZED_USER`, `AUTH_CODE`, `TT_USER`, `BC_AUTH_TT`.  For details about identities, see [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097).  # noqa: E501
 
         :return: The identity_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1054,7 +1152,6 @@ class AdcreateCreatives(object):
     def identity_type(self, identity_type):
         """Sets the identity_type of this AdcreateCreatives.
 
-        Identity type. Enum- `CUSTOMIZED_USER`, `AUTH_CODE`, `TT_USER`, `BC_AUTH_TT`.  For details about identities, see [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097).  # noqa: E501
 
         :param identity_type: The identity_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1066,7 +1163,6 @@ class AdcreateCreatives(object):
     def image_ids(self):
         """Gets the image_ids of this AdcreateCreatives.  # noqa: E501
 
-        A list of image IDs (image used in an ad or as a video cover). You can get the image ID when you upload an image using the [/file/image/ad/upload/](https://ads.tiktok.com/marketing_api/docs?id=1739067433456642) endpoint. When the ad_format is `SINGLE_VIDEO`, the value of this field will be used as the video cover (thumbnail) (only one value is allowed), and the aspect ratio of the image should be the same as the video.  # noqa: E501
 
         :return: The image_ids of this AdcreateCreatives.  # noqa: E501
         :rtype: list[str]
@@ -1077,7 +1173,6 @@ class AdcreateCreatives(object):
     def image_ids(self, image_ids):
         """Sets the image_ids of this AdcreateCreatives.
 
-        A list of image IDs (image used in an ad or as a video cover). You can get the image ID when you upload an image using the [/file/image/ad/upload/](https://ads.tiktok.com/marketing_api/docs?id=1739067433456642) endpoint. When the ad_format is `SINGLE_VIDEO`, the value of this field will be used as the video cover (thumbnail) (only one value is allowed), and the aspect ratio of the image should be the same as the video.  # noqa: E501
 
         :param image_ids: The image_ids of this AdcreateCreatives.  # noqa: E501
         :type: list[str]
@@ -1089,7 +1184,6 @@ class AdcreateCreatives(object):
     def impression_tracking_url(self):
         """Gets the impression_tracking_url of this AdcreateCreatives.  # noqa: E501
 
-        Display monitoring URL  # noqa: E501
 
         :return: The impression_tracking_url of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1100,7 +1194,6 @@ class AdcreateCreatives(object):
     def impression_tracking_url(self, impression_tracking_url):
         """Sets the impression_tracking_url of this AdcreateCreatives.
 
-        Display monitoring URL  # noqa: E501
 
         :param impression_tracking_url: The impression_tracking_url of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1112,7 +1205,6 @@ class AdcreateCreatives(object):
     def instant_product_page_used(self):
         """Gets the instant_product_page_used of this AdcreateCreatives.  # noqa: E501
 
-        Using TikTok instant page or not. When dynamic_destination = DLP, you don't need this parameter.When dynamic_destination = UNSET, you need to turn on this parameter to use instant page and pass page id.  # noqa: E501
 
         :return: The instant_product_page_used of this AdcreateCreatives.  # noqa: E501
         :rtype: bool
@@ -1123,7 +1215,6 @@ class AdcreateCreatives(object):
     def instant_product_page_used(self, instant_product_page_used):
         """Sets the instant_product_page_used of this AdcreateCreatives.
 
-        Using TikTok instant page or not. When dynamic_destination = DLP, you don't need this parameter.When dynamic_destination = UNSET, you need to turn on this parameter to use instant page and pass page id.  # noqa: E501
 
         :param instant_product_page_used: The instant_product_page_used of this AdcreateCreatives.  # noqa: E501
         :type: bool
@@ -1135,7 +1226,6 @@ class AdcreateCreatives(object):
     def item_duet_status(self):
         """Gets the item_duet_status of this AdcreateCreatives.  # noqa: E501
 
-        Whether to enable dueting for the Spark Ad. This field is valid only when `promotional_music_disabled` is set to `false`. Enum values- `ENABLE`, `DISABLE`. This field is only valid for Spark Ad posts.  # noqa: E501
 
         :return: The item_duet_status of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1146,7 +1236,6 @@ class AdcreateCreatives(object):
     def item_duet_status(self, item_duet_status):
         """Sets the item_duet_status of this AdcreateCreatives.
 
-        Whether to enable dueting for the Spark Ad. This field is valid only when `promotional_music_disabled` is set to `false`. Enum values- `ENABLE`, `DISABLE`. This field is only valid for Spark Ad posts.  # noqa: E501
 
         :param item_duet_status: The item_duet_status of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1158,7 +1247,6 @@ class AdcreateCreatives(object):
     def item_group_ids(self):
         """Gets the item_group_ids of this AdcreateCreatives.  # noqa: E501
 
-        Product SPU ID  # noqa: E501
 
         :return: The item_group_ids of this AdcreateCreatives.  # noqa: E501
         :rtype: list[str]
@@ -1169,7 +1257,6 @@ class AdcreateCreatives(object):
     def item_group_ids(self, item_group_ids):
         """Sets the item_group_ids of this AdcreateCreatives.
 
-        Product SPU ID  # noqa: E501
 
         :param item_group_ids: The item_group_ids of this AdcreateCreatives.  # noqa: E501
         :type: list[str]
@@ -1181,7 +1268,6 @@ class AdcreateCreatives(object):
     def item_stitch_status(self):
         """Gets the item_stitch_status of this AdcreateCreatives.  # noqa: E501
 
-        Whether to enable stitching for the Spark Ad. This field is valid only when `promotional_music_disabled` is set to `false`. Enum values- `ENABLE`, `DISABLE`. This field is only valid for Spark Ad posts.  # noqa: E501
 
         :return: The item_stitch_status of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1192,7 +1278,6 @@ class AdcreateCreatives(object):
     def item_stitch_status(self, item_stitch_status):
         """Sets the item_stitch_status of this AdcreateCreatives.
 
-        Whether to enable stitching for the Spark Ad. This field is valid only when `promotional_music_disabled` is set to `false`. Enum values- `ENABLE`, `DISABLE`. This field is only valid for Spark Ad posts.  # noqa: E501
 
         :param item_stitch_status: The item_stitch_status of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1204,7 +1289,6 @@ class AdcreateCreatives(object):
     def landing_page_url(self):
         """Gets the landing_page_url of this AdcreateCreatives.  # noqa: E501
 
-        Landing page URL.  # noqa: E501
 
         :return: The landing_page_url of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1215,7 +1299,6 @@ class AdcreateCreatives(object):
     def landing_page_url(self, landing_page_url):
         """Sets the landing_page_url of this AdcreateCreatives.
 
-        Landing page URL.  # noqa: E501
 
         :param landing_page_url: The landing_page_url of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1224,10 +1307,30 @@ class AdcreateCreatives(object):
         self._landing_page_url = landing_page_url
 
     @property
+    def music_id(self):
+        """Gets the music_id of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The music_id of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._music_id
+
+    @music_id.setter
+    def music_id(self, music_id):
+        """Sets the music_id of this AdcreateCreatives.
+
+
+        :param music_id: The music_id of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._music_id = music_id
+
+    @property
     def operation_status(self):
         """Gets the operation_status of this AdcreateCreatives.  # noqa: E501
 
-        The status of the ad when created. Enum values- `ENABLE` - The ad is enabled when created. `DISABLE` - The ad is disabled when created. Default value- `ENABLE`. If you want to update the status of the ad after creation, use the [/ad/status/update/](https://ads.tiktok.com/marketing_api/docs?id=1739953422970882) endpoint.  # noqa: E501
 
         :return: The operation_status of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1238,7 +1341,6 @@ class AdcreateCreatives(object):
     def operation_status(self, operation_status):
         """Sets the operation_status of this AdcreateCreatives.
 
-        The status of the ad when created. Enum values- `ENABLE` - The ad is enabled when created. `DISABLE` - The ad is disabled when created. Default value- `ENABLE`. If you want to update the status of the ad after creation, use the [/ad/status/update/](https://ads.tiktok.com/marketing_api/docs?id=1739953422970882) endpoint.  # noqa: E501
 
         :param operation_status: The operation_status of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1250,7 +1352,6 @@ class AdcreateCreatives(object):
     def page_id(self):
         """Gets the page_id of this AdcreateCreatives.  # noqa: E501
 
-        Page (Instant form, Custom TikTok Instant Page or App Profile Page) ID, which can be created by [Instant Page Editor SDK](https://ads.tiktok.com/marketing_api/docs?id=1740307202170881). Instant Forms are for `LEAD_GENERATION` campaign objective. Only applicable for TikTok placement. Before creating for the first time, you need to sign the `LeadAds` agreement through the [/term/confirm/](https://ads.tiktok.com/marketing_api/docs?id=1737192284435457) endpoint. This field is ignored for `SHOP_PURCHASES` objective. Note- We will sunset the Collection Ads on Feb.16,2023. To ensure a seamless experience, please don't set a storefront page as your instant page.  # noqa: E501
 
         :return: The page_id of this AdcreateCreatives.  # noqa: E501
         :rtype: int
@@ -1261,7 +1362,6 @@ class AdcreateCreatives(object):
     def page_id(self, page_id):
         """Sets the page_id of this AdcreateCreatives.
 
-        Page (Instant form, Custom TikTok Instant Page or App Profile Page) ID, which can be created by [Instant Page Editor SDK](https://ads.tiktok.com/marketing_api/docs?id=1740307202170881). Instant Forms are for `LEAD_GENERATION` campaign objective. Only applicable for TikTok placement. Before creating for the first time, you need to sign the `LeadAds` agreement through the [/term/confirm/](https://ads.tiktok.com/marketing_api/docs?id=1737192284435457) endpoint. This field is ignored for `SHOP_PURCHASES` objective. Note- We will sunset the Collection Ads on Feb.16,2023. To ensure a seamless experience, please don't set a storefront page as your instant page.  # noqa: E501
 
         :param page_id: The page_id of this AdcreateCreatives.  # noqa: E501
         :type: int
@@ -1273,7 +1373,6 @@ class AdcreateCreatives(object):
     def page_image_index(self):
         """Gets the page_image_index of this AdcreateCreatives.  # noqa: E501
 
-        The index of page.  # noqa: E501
 
         :return: The page_image_index of this AdcreateCreatives.  # noqa: E501
         :rtype: int
@@ -1284,7 +1383,6 @@ class AdcreateCreatives(object):
     def page_image_index(self, page_image_index):
         """Sets the page_image_index of this AdcreateCreatives.
 
-        The index of page.  # noqa: E501
 
         :param page_image_index: The page_image_index of this AdcreateCreatives.  # noqa: E501
         :type: int
@@ -1293,10 +1391,72 @@ class AdcreateCreatives(object):
         self._page_image_index = page_image_index
 
     @property
+    def phone_number(self):
+        """Gets the phone_number of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The phone_number of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone_number
+
+    @phone_number.setter
+    def phone_number(self, phone_number):
+        """Sets the phone_number of this AdcreateCreatives.
+
+
+        :param phone_number: The phone_number of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._phone_number = phone_number
+
+    @property
+    def phone_region_calling_code(self):
+        """Gets the phone_region_calling_code of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The phone_region_calling_code of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone_region_calling_code
+
+    @phone_region_calling_code.setter
+    def phone_region_calling_code(self, phone_region_calling_code):
+        """Sets the phone_region_calling_code of this AdcreateCreatives.
+
+
+        :param phone_region_calling_code: The phone_region_calling_code of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._phone_region_calling_code = phone_region_calling_code
+
+    @property
+    def phone_region_code(self):
+        """Gets the phone_region_code of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The phone_region_code of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._phone_region_code
+
+    @phone_region_code.setter
+    def phone_region_code(self, phone_region_code):
+        """Sets the phone_region_code of this AdcreateCreatives.
+
+
+        :param phone_region_code: The phone_region_code of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._phone_region_code = phone_region_code
+
+    @property
     def playable_url(self):
         """Gets the playable_url of this AdcreateCreatives.  # noqa: E501
 
-        Playable material url, valid in Pangle and TikTok placement. You can get the url via the [/playable/get/](https://ads.tiktok.com/marketing_api/docs?id=1737732758495234) endpoint. Note that all ads in the same ad group share the same playble material.  # noqa: E501
 
         :return: The playable_url of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1307,7 +1467,6 @@ class AdcreateCreatives(object):
     def playable_url(self, playable_url):
         """Sets the playable_url of this AdcreateCreatives.
 
-        Playable material url, valid in Pangle and TikTok placement. You can get the url via the [/playable/get/](https://ads.tiktok.com/marketing_api/docs?id=1737732758495234) endpoint. Note that all ads in the same ad group share the same playble material.  # noqa: E501
 
         :param playable_url: The playable_url of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1316,10 +1475,30 @@ class AdcreateCreatives(object):
         self._playable_url = playable_url
 
     @property
+    def product_display_field_list(self):
+        """Gets the product_display_field_list of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The product_display_field_list of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._product_display_field_list
+
+    @product_display_field_list.setter
+    def product_display_field_list(self, product_display_field_list):
+        """Sets the product_display_field_list of this AdcreateCreatives.
+
+
+        :param product_display_field_list: The product_display_field_list of this AdcreateCreatives.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._product_display_field_list = product_display_field_list
+
+    @property
     def product_set_id(self):
         """Gets the product_set_id of this AdcreateCreatives.  # noqa: E501
 
-        The ID of the product set.  # noqa: E501
 
         :return: The product_set_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1330,7 +1509,6 @@ class AdcreateCreatives(object):
     def product_set_id(self, product_set_id):
         """Sets the product_set_id of this AdcreateCreatives.
 
-        The ID of the product set.  # noqa: E501
 
         :param product_set_id: The product_set_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1342,7 +1520,6 @@ class AdcreateCreatives(object):
     def product_specific_type(self):
         """Gets the product_specific_type of this AdcreateCreatives.  # noqa: E501
 
-        Different dimensions to choose products. Enum values- `ALL`,` PRODUCT_SET`, `CUSTOMIZED_PRODUCTS`. If you choose `ALL`, you don't need to input `sku_ids` or  `item_group_ids`  or `product_set_id`.  `item_group_ids`  or `product_set_id` are required if `product_specific_type`=`PRODUCT_SET`. `sku_ids` are required if `product_specific_type`=`CUSTOMIZED_PRODUCTS`  # noqa: E501
 
         :return: The product_specific_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1353,7 +1530,6 @@ class AdcreateCreatives(object):
     def product_specific_type(self, product_specific_type):
         """Sets the product_specific_type of this AdcreateCreatives.
 
-        Different dimensions to choose products. Enum values- `ALL`,` PRODUCT_SET`, `CUSTOMIZED_PRODUCTS`. If you choose `ALL`, you don't need to input `sku_ids` or  `item_group_ids`  or `product_set_id`.  `item_group_ids`  or `product_set_id` are required if `product_specific_type`=`PRODUCT_SET`. `sku_ids` are required if `product_specific_type`=`CUSTOMIZED_PRODUCTS`  # noqa: E501
 
         :param product_specific_type: The product_specific_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1365,7 +1541,6 @@ class AdcreateCreatives(object):
     def promotional_music_disabled(self):
         """Gets the promotional_music_disabled of this AdcreateCreatives.  # noqa: E501
 
-        Whether to disable the promotional use of the music in the Spark Ad. The default value is `true`. If you want to allow dueting and stitching for the TikTok video, you need to set this field to `false`. This field is only valid for Spark Ad posts.  # noqa: E501
 
         :return: The promotional_music_disabled of this AdcreateCreatives.  # noqa: E501
         :rtype: bool
@@ -1376,7 +1551,6 @@ class AdcreateCreatives(object):
     def promotional_music_disabled(self, promotional_music_disabled):
         """Sets the promotional_music_disabled of this AdcreateCreatives.
 
-        Whether to disable the promotional use of the music in the Spark Ad. The default value is `true`. If you want to allow dueting and stitching for the TikTok video, you need to set this field to `false`. This field is only valid for Spark Ad posts.  # noqa: E501
 
         :param promotional_music_disabled: The promotional_music_disabled of this AdcreateCreatives.  # noqa: E501
         :type: bool
@@ -1385,10 +1559,30 @@ class AdcreateCreatives(object):
         self._promotional_music_disabled = promotional_music_disabled
 
     @property
+    def schedule_id(self):
+        """Gets the schedule_id of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The schedule_id of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._schedule_id
+
+    @schedule_id.setter
+    def schedule_id(self, schedule_id):
+        """Sets the schedule_id of this AdcreateCreatives.
+
+
+        :param schedule_id: The schedule_id of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._schedule_id = schedule_id
+
+    @property
     def shopping_ads_deeplink_type(self):
         """Gets the shopping_ads_deeplink_type of this AdcreateCreatives.  # noqa: E501
 
-        Indicates the source of the direct link used in the Shopping Ad. When specified as `CUSTOM`, the direct link is written in the deeplink field. <br data-tomark-pass>  Optional values- `NONE`(not enabled),`CUSTOM`(custom direct link),`SHOPPING_ADS`(commodity direct link). The default value is `NONE`.  # noqa: E501
 
         :return: The shopping_ads_deeplink_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1399,7 +1593,6 @@ class AdcreateCreatives(object):
     def shopping_ads_deeplink_type(self, shopping_ads_deeplink_type):
         """Sets the shopping_ads_deeplink_type of this AdcreateCreatives.
 
-        Indicates the source of the direct link used in the Shopping Ad. When specified as `CUSTOM`, the direct link is written in the deeplink field. <br data-tomark-pass>  Optional values- `NONE`(not enabled),`CUSTOM`(custom direct link),`SHOPPING_ADS`(commodity direct link). The default value is `NONE`.  # noqa: E501
 
         :param shopping_ads_deeplink_type: The shopping_ads_deeplink_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1411,7 +1604,6 @@ class AdcreateCreatives(object):
     def shopping_ads_fallback_type(self):
         """Gets the shopping_ads_fallback_type of this AdcreateCreatives.  # noqa: E501
 
-        In the Shopping Ads redirection scenario, the fallback behavior of deeplink evokes failed.  When specified as `CUSTOM`, fallback_url written to the `landing_page_url`. Optional values- `DEFAULT`(Application Installation),`CUSTOM`(Custom Landing Page),`SHOPPING_ADS`(Catalog Product Link). Required when the corresponding campaign `objective_type` is `PRODUCT_SALES`.  # noqa: E501
 
         :return: The shopping_ads_fallback_type of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1422,7 +1614,6 @@ class AdcreateCreatives(object):
     def shopping_ads_fallback_type(self, shopping_ads_fallback_type):
         """Sets the shopping_ads_fallback_type of this AdcreateCreatives.
 
-        In the Shopping Ads redirection scenario, the fallback behavior of deeplink evokes failed.  When specified as `CUSTOM`, fallback_url written to the `landing_page_url`. Optional values- `DEFAULT`(Application Installation),`CUSTOM`(Custom Landing Page),`SHOPPING_ADS`(Catalog Product Link). Required when the corresponding campaign `objective_type` is `PRODUCT_SALES`.  # noqa: E501
 
         :param shopping_ads_fallback_type: The shopping_ads_fallback_type of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1434,7 +1625,6 @@ class AdcreateCreatives(object):
     def shopping_ads_video_package_id(self):
         """Gets the shopping_ads_video_package_id of this AdcreateCreatives.  # noqa: E501
 
-        Product video package ID. Use the [/catalog/video/get/](https://ads.tiktok.com/marketing_api/docs?id=1740574099715073) endpoint to get video package IDs.|  # noqa: E501
 
         :return: The shopping_ads_video_package_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1445,7 +1635,6 @@ class AdcreateCreatives(object):
     def shopping_ads_video_package_id(self, shopping_ads_video_package_id):
         """Sets the shopping_ads_video_package_id of this AdcreateCreatives.
 
-        Product video package ID. Use the [/catalog/video/get/](https://ads.tiktok.com/marketing_api/docs?id=1740574099715073) endpoint to get video package IDs.|  # noqa: E501
 
         :param shopping_ads_video_package_id: The shopping_ads_video_package_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1454,33 +1643,30 @@ class AdcreateCreatives(object):
         self._shopping_ads_video_package_id = shopping_ads_video_package_id
 
     @property
-    def shopping_ads_word_set(self):
-        """Gets the shopping_ads_word_set of this AdcreateCreatives.  # noqa: E501
+    def showcase_products(self):
+        """Gets the showcase_products of this AdcreateCreatives.  # noqa: E501
 
-        Shopping Ads word set  # noqa: E501
 
-        :return: The shopping_ads_word_set of this AdcreateCreatives.  # noqa: E501
-        :rtype: list[int]
+        :return: The showcase_products of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[AdcreateShowcaseProducts]
         """
-        return self._shopping_ads_word_set
+        return self._showcase_products
 
-    @shopping_ads_word_set.setter
-    def shopping_ads_word_set(self, shopping_ads_word_set):
-        """Sets the shopping_ads_word_set of this AdcreateCreatives.
+    @showcase_products.setter
+    def showcase_products(self, showcase_products):
+        """Sets the showcase_products of this AdcreateCreatives.
 
-        Shopping Ads word set  # noqa: E501
 
-        :param shopping_ads_word_set: The shopping_ads_word_set of this AdcreateCreatives.  # noqa: E501
-        :type: list[int]
+        :param showcase_products: The showcase_products of this AdcreateCreatives.  # noqa: E501
+        :type: list[AdcreateShowcaseProducts]
         """
 
-        self._shopping_ads_word_set = shopping_ads_word_set
+        self._showcase_products = showcase_products
 
     @property
     def sku_ids(self):
         """Gets the sku_ids of this AdcreateCreatives.  # noqa: E501
 
-        IDs of the SKUs  # noqa: E501
 
         :return: The sku_ids of this AdcreateCreatives.  # noqa: E501
         :rtype: list[str]
@@ -1491,7 +1677,6 @@ class AdcreateCreatives(object):
     def sku_ids(self, sku_ids):
         """Sets the sku_ids of this AdcreateCreatives.
 
-        IDs of the SKUs  # noqa: E501
 
         :param sku_ids: The sku_ids of this AdcreateCreatives.  # noqa: E501
         :type: list[str]
@@ -1503,7 +1688,6 @@ class AdcreateCreatives(object):
     def tiktok_item_id(self):
         """Gets the tiktok_item_id of this AdcreateCreatives.  # noqa: E501
 
-        The ID of the TikTok post to be used as an ad (Spark Ad). Pass in the `item_id` you get from the response of the [/tt_video/info/](https://ads.tiktok.com/marketing_api/docs?id=1738376324021250) or [/identity/video/get/](https://ads.tiktok.com/marketing_api/docs?id=1740218475032577) endpoint. This field is required for Spark Ads.  Note- By using Spark Ads, you confirm that you have the rights to use the music in the videos for commercial purposes  # noqa: E501
 
         :return: The tiktok_item_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1514,7 +1698,6 @@ class AdcreateCreatives(object):
     def tiktok_item_id(self, tiktok_item_id):
         """Sets the tiktok_item_id of this AdcreateCreatives.
 
-        The ID of the TikTok post to be used as an ad (Spark Ad). Pass in the `item_id` you get from the response of the [/tt_video/info/](https://ads.tiktok.com/marketing_api/docs?id=1738376324021250) or [/identity/video/get/](https://ads.tiktok.com/marketing_api/docs?id=1740218475032577) endpoint. This field is required for Spark Ads.  Note- By using Spark Ads, you confirm that you have the rights to use the music in the videos for commercial purposes  # noqa: E501
 
         :param tiktok_item_id: The tiktok_item_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1523,10 +1706,93 @@ class AdcreateCreatives(object):
         self._tiktok_item_id = tiktok_item_id
 
     @property
+    def tiktok_page_category(self):
+        """Gets the tiktok_page_category of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The tiktok_page_category of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._tiktok_page_category
+
+    @tiktok_page_category.setter
+    def tiktok_page_category(self, tiktok_page_category):
+        """Sets the tiktok_page_category of this AdcreateCreatives.
+
+
+        :param tiktok_page_category: The tiktok_page_category of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._tiktok_page_category = tiktok_page_category
+
+    @property
+    def tracking_app_id(self):
+        """Gets the tracking_app_id of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The tracking_app_id of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._tracking_app_id
+
+    @tracking_app_id.setter
+    def tracking_app_id(self, tracking_app_id):
+        """Sets the tracking_app_id of this AdcreateCreatives.
+
+
+        :param tracking_app_id: The tracking_app_id of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._tracking_app_id = tracking_app_id
+
+    @property
+    def tracking_message_event_set_id(self):
+        """Gets the tracking_message_event_set_id of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The tracking_message_event_set_id of this AdcreateCreatives.  # noqa: E501
+        :rtype: str
+        """
+        return self._tracking_message_event_set_id
+
+    @tracking_message_event_set_id.setter
+    def tracking_message_event_set_id(self, tracking_message_event_set_id):
+        """Sets the tracking_message_event_set_id of this AdcreateCreatives.
+
+
+        :param tracking_message_event_set_id: The tracking_message_event_set_id of this AdcreateCreatives.  # noqa: E501
+        :type: str
+        """
+
+        self._tracking_message_event_set_id = tracking_message_event_set_id
+
+    @property
+    def tracking_offline_event_set_ids(self):
+        """Gets the tracking_offline_event_set_ids of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The tracking_offline_event_set_ids of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._tracking_offline_event_set_ids
+
+    @tracking_offline_event_set_ids.setter
+    def tracking_offline_event_set_ids(self, tracking_offline_event_set_ids):
+        """Sets the tracking_offline_event_set_ids of this AdcreateCreatives.
+
+
+        :param tracking_offline_event_set_ids: The tracking_offline_event_set_ids of this AdcreateCreatives.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._tracking_offline_event_set_ids = tracking_offline_event_set_ids
+
+    @property
     def tracking_pixel_id(self):
         """Gets the tracking_pixel_id of this AdcreateCreatives.  # noqa: E501
 
-        The pixel ID that you'd like to track. You can use this field to track offsite events. It supports the campaign objectives for both Auction ads (`REACH`, `VIDEO_VIEWS`, `TRAFFIC`, `CONVERSIONS`, `WEB_CONVERSIONS`, `LEAD_GENERATION`, `APP_PROMOTION`, `PRODUCT_SALES`, `ENGAGEMENT`) and Reach & Frequency ads (`RF_REACH`, `RF_TRAFFIC`, `RF_VIDEO_VIEW`). For Auction objectives. If `pixel_id`!=0 at the ad group level  and  you want to use pixel to track offsite events, then the pixel ID you pass in the `tracking_pixel_id` field must be the same ID that you specified in the `pixel_id` field for the ad group. Otherwise, you can pass in any pixel ID that you'd like to track in the `tracking_pixel_id` field. This field is an allowlist feature if your campaign objective is `ENGAGEMENT`/ `PRODUCT_SALES` (when `product_source` = `CATALOG` / `STORE` and `shopping_ads_type` = `VIDEO`) /`APP_PROMOTION`(when `app_promotion_type` = `APP_RETARGETING` ). If you want to use the field, please reach out to your TikTok representative.For Reach & Frequency objectives You can pass in any pixel ID that you'd like to track in the `tracking_pixel_id` field.  # noqa: E501
 
         :return: The tracking_pixel_id of this AdcreateCreatives.  # noqa: E501
         :rtype: int
@@ -1537,7 +1803,6 @@ class AdcreateCreatives(object):
     def tracking_pixel_id(self, tracking_pixel_id):
         """Sets the tracking_pixel_id of this AdcreateCreatives.
 
-        The pixel ID that you'd like to track. You can use this field to track offsite events. It supports the campaign objectives for both Auction ads (`REACH`, `VIDEO_VIEWS`, `TRAFFIC`, `CONVERSIONS`, `WEB_CONVERSIONS`, `LEAD_GENERATION`, `APP_PROMOTION`, `PRODUCT_SALES`, `ENGAGEMENT`) and Reach & Frequency ads (`RF_REACH`, `RF_TRAFFIC`, `RF_VIDEO_VIEW`). For Auction objectives. If `pixel_id`!=0 at the ad group level  and  you want to use pixel to track offsite events, then the pixel ID you pass in the `tracking_pixel_id` field must be the same ID that you specified in the `pixel_id` field for the ad group. Otherwise, you can pass in any pixel ID that you'd like to track in the `tracking_pixel_id` field. This field is an allowlist feature if your campaign objective is `ENGAGEMENT`/ `PRODUCT_SALES` (when `product_source` = `CATALOG` / `STORE` and `shopping_ads_type` = `VIDEO`) /`APP_PROMOTION`(when `app_promotion_type` = `APP_RETARGETING` ). If you want to use the field, please reach out to your TikTok representative.For Reach & Frequency objectives You can pass in any pixel ID that you'd like to track in the `tracking_pixel_id` field.  # noqa: E501
 
         :param tracking_pixel_id: The tracking_pixel_id of this AdcreateCreatives.  # noqa: E501
         :type: int
@@ -1546,27 +1811,46 @@ class AdcreateCreatives(object):
         self._tracking_pixel_id = tracking_pixel_id
 
     @property
-    def vast_moat_enabled(self):
-        """Gets the vast_moat_enabled of this AdcreateCreatives.  # noqa: E501
+    def utm_params(self):
+        """Gets the utm_params of this AdcreateCreatives.  # noqa: E501
 
-        Whether Moat Viewability Verification is enabled for the ad. TikTok has partnered with Moat to launch viewability measurement for Brand Auction and Reach & Frequency In-feed ads purchased on TikTok for Business. Default value- `false`.  # noqa: E501
 
-        :return: The vast_moat_enabled of this AdcreateCreatives.  # noqa: E501
-        :rtype: bool
+        :return: The utm_params of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[AdcreateUtmParams]
         """
-        return self._vast_moat_enabled
+        return self._utm_params
 
-    @vast_moat_enabled.setter
-    def vast_moat_enabled(self, vast_moat_enabled):
-        """Sets the vast_moat_enabled of this AdcreateCreatives.
+    @utm_params.setter
+    def utm_params(self, utm_params):
+        """Sets the utm_params of this AdcreateCreatives.
 
-        Whether Moat Viewability Verification is enabled for the ad. TikTok has partnered with Moat to launch viewability measurement for Brand Auction and Reach & Frequency In-feed ads purchased on TikTok for Business. Default value- `false`.  # noqa: E501
 
-        :param vast_moat_enabled: The vast_moat_enabled of this AdcreateCreatives.  # noqa: E501
-        :type: bool
+        :param utm_params: The utm_params of this AdcreateCreatives.  # noqa: E501
+        :type: list[AdcreateUtmParams]
         """
 
-        self._vast_moat_enabled = vast_moat_enabled
+        self._utm_params = utm_params
+
+    @property
+    def vehicle_ids(self):
+        """Gets the vehicle_ids of this AdcreateCreatives.  # noqa: E501
+
+
+        :return: The vehicle_ids of this AdcreateCreatives.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._vehicle_ids
+
+    @vehicle_ids.setter
+    def vehicle_ids(self, vehicle_ids):
+        """Sets the vehicle_ids of this AdcreateCreatives.
+
+
+        :param vehicle_ids: The vehicle_ids of this AdcreateCreatives.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._vehicle_ids = vehicle_ids
 
     @property
     def vertical_video_strategy(self):
@@ -1593,7 +1877,6 @@ class AdcreateCreatives(object):
     def video_id(self):
         """Gets the video_id of this AdcreateCreatives.  # noqa: E501
 
-        Video ID. Required when the creative type is standard videos. For Spark Ads, use `tiktok_item_id` to specify the TikTok post ID. You can find out video IDs by using the [/file/video/ad/search/](https://ads.tiktok.com/marketing_api/docs?id=1740050472224769) endpoint. Note- To ensure a smooth integration journey, we recommned that you use [/file/video/ad/upload/](https://ads.tiktok.com/marketing_api/docs?id=1737587322856449)(`upload_type` = `UPLOAD_BY_VIDEO_ID`)to bind video ID with your advertiser ID.  # noqa: E501
 
         :return: The video_id of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1604,7 +1887,6 @@ class AdcreateCreatives(object):
     def video_id(self, video_id):
         """Sets the video_id of this AdcreateCreatives.
 
-        Video ID. Required when the creative type is standard videos. For Spark Ads, use `tiktok_item_id` to specify the TikTok post ID. You can find out video IDs by using the [/file/video/ad/search/](https://ads.tiktok.com/marketing_api/docs?id=1740050472224769) endpoint. Note- To ensure a smooth integration journey, we recommned that you use [/file/video/ad/upload/](https://ads.tiktok.com/marketing_api/docs?id=1737587322856449)(`upload_type` = `UPLOAD_BY_VIDEO_ID`)to bind video ID with your advertiser ID.  # noqa: E501
 
         :param video_id: The video_id of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1616,7 +1898,6 @@ class AdcreateCreatives(object):
     def video_view_tracking_url(self):
         """Gets the video_view_tracking_url of this AdcreateCreatives.  # noqa: E501
 
-        The monitoring URL for video view.  # noqa: E501
 
         :return: The video_view_tracking_url of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1627,7 +1908,6 @@ class AdcreateCreatives(object):
     def video_view_tracking_url(self, video_view_tracking_url):
         """Sets the video_view_tracking_url of this AdcreateCreatives.
 
-        The monitoring URL for video view.  # noqa: E501
 
         :param video_view_tracking_url: The video_view_tracking_url of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1639,7 +1919,6 @@ class AdcreateCreatives(object):
     def viewability_postbid_partner(self):
         """Gets the viewability_postbid_partner of this AdcreateCreatives.  # noqa: E501
 
-        Post-bid third-party viewability measurement partner. Enum values- `MOAT`, `DOUBLE_VERIFY`, `IAS`. You can use [/tool/vast_option/](https://ads.tiktok.com/marketing_api/docs?id=1755436556897281) to get available post-bid third-party measurement partners. Note - ost-bid third-party viewability measurement is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative.  See [Brand safety](https://ads.tiktok.com/marketing_api/docs?id=1739381752981505) to learn about the supported advertising objectives, supported markets, and the general introduction of post-bid measurement.  # noqa: E501
 
         :return: The viewability_postbid_partner of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1650,7 +1929,6 @@ class AdcreateCreatives(object):
     def viewability_postbid_partner(self, viewability_postbid_partner):
         """Sets the viewability_postbid_partner of this AdcreateCreatives.
 
-        Post-bid third-party viewability measurement partner. Enum values- `MOAT`, `DOUBLE_VERIFY`, `IAS`. You can use [/tool/vast_option/](https://ads.tiktok.com/marketing_api/docs?id=1755436556897281) to get available post-bid third-party measurement partners. Note - ost-bid third-party viewability measurement is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative.  See [Brand safety](https://ads.tiktok.com/marketing_api/docs?id=1739381752981505) to learn about the supported advertising objectives, supported markets, and the general introduction of post-bid measurement.  # noqa: E501
 
         :param viewability_postbid_partner: The viewability_postbid_partner of this AdcreateCreatives.  # noqa: E501
         :type: str
@@ -1662,7 +1940,6 @@ class AdcreateCreatives(object):
     def viewability_vast_url(self):
         """Gets the viewability_vast_url of this AdcreateCreatives.  # noqa: E501
 
-        The wrapped VAST URL used by the post-bid third-party partner to measure viewability. Required when `viewability_postbid_partner` = `IAS`. You need to get the URL from the measurement partner IAS. Post-bid third-party viewability measurement is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. Post-bid third-party measurement is not supported for ACO ads. Post-bid third-party measurement is not supported for ad groups where `promotion_type` is set as `LIVE_SHOPPING`.  # noqa: E501
 
         :return: The viewability_vast_url of this AdcreateCreatives.  # noqa: E501
         :rtype: str
@@ -1673,7 +1950,6 @@ class AdcreateCreatives(object):
     def viewability_vast_url(self, viewability_vast_url):
         """Sets the viewability_vast_url of this AdcreateCreatives.
 
-        The wrapped VAST URL used by the post-bid third-party partner to measure viewability. Required when `viewability_postbid_partner` = `IAS`. You need to get the URL from the measurement partner IAS. Post-bid third-party viewability measurement is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. Post-bid third-party measurement is not supported for ACO ads. Post-bid third-party measurement is not supported for ad groups where `promotion_type` is set as `LIVE_SHOPPING`.  # noqa: E501
 
         :param viewability_vast_url: The viewability_vast_url of this AdcreateCreatives.  # noqa: E501
         :type: str

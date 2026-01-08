@@ -17,9 +17,9 @@ export class AdUpdateBody {
    * Constructs a new <code>AdUpdateBody</code>.
    * @alias module:model/AdUpdateBody
    * @class
-   * @param adgroup_id {String} Ad group ID
-   * @param advertiser_id {String} Advertiser ID
-   * @param creatives {Array.<module:model/AdupdateCreatives>} Advertising creatives.
+   * @param adgroup_id {String} 
+   * @param advertiser_id {String} 
+   * @param creatives {Array.<module:model/AdupdateCreatives>} 
    */
   constructor(adgroup_id, advertiser_id, creatives) {
     this.adgroup_id = adgroup_id;
@@ -43,26 +43,30 @@ export class AdUpdateBody {
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
       if (data.hasOwnProperty('creatives'))
         obj.creatives = ApiClient.convertToType(data['creatives'], [AdupdateCreatives]);
+      if (data.hasOwnProperty('patch_update'))
+        obj.patch_update = ApiClient.convertToType(data['patch_update'], 'Boolean');
     }
     return obj;
   }
 }
 
 /**
- * Ad group ID
  * @member {String} adgroup_id
  */
 AdUpdateBody.prototype.adgroup_id = undefined;
 
 /**
- * Advertiser ID
  * @member {String} advertiser_id
  */
 AdUpdateBody.prototype.advertiser_id = undefined;
 
 /**
- * Advertising creatives.
  * @member {Array.<module:model/AdupdateCreatives>} creatives
  */
 AdUpdateBody.prototype.creatives = undefined;
+
+/**
+ * @member {Boolean} patch_update
+ */
+AdUpdateBody.prototype.patch_update = undefined;
 

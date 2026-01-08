@@ -19,7 +19,7 @@ import java.util.List;
  * AdStatusUpdateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdStatusUpdateBody {
   @JsonProperty("aco_ad_ids")
   private List<String> acoAdIds = null;
@@ -47,10 +47,10 @@ public class AdStatusUpdateBody {
   }
 
    /**
-   * A list of ACO ad IDs. Only support &#x60;ENABLE&#x60; and &#x60;DISABLE&#x60; for ACO ads.  Allowed quantity- &#x60;1-20&#x60;. Either &#x60;ad_ids&#x60; or &#x60;aco_ad_ids&#x60; has to be set.
+   * Get acoAdIds
    * @return acoAdIds
   **/
-  @Schema(description = "A list of ACO ad IDs. Only support `ENABLE` and `DISABLE` for ACO ads.  Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.")
+  @Schema(description = "")
   public List<String> getAcoAdIds() {
     return acoAdIds;
   }
@@ -73,10 +73,10 @@ public class AdStatusUpdateBody {
   }
 
    /**
-   * A list of ad IDs. Allowed quantity- &#x60;1-20&#x60;. Either &#x60;ad_ids&#x60; or &#x60;aco_ad_ids&#x60; has to be set.
+   * Get adIds
    * @return adIds
   **/
-  @Schema(description = "A list of ad IDs. Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.")
+  @Schema(description = "")
   public List<String> getAdIds() {
     return adIds;
   }
@@ -91,10 +91,10 @@ public class AdStatusUpdateBody {
   }
 
    /**
-   * Advertiser ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Advertiser ID")
+  @Schema(required = true, description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -109,10 +109,10 @@ public class AdStatusUpdateBody {
   }
 
    /**
-   * The operation being made. Enum values- &#x60;DELETE&#x60; (delete),&#x60; DISABLE&#x60; (pause), &#x60;ENABLE&#x60; (enable).  The status of deleted ads cannot be modified.
+   * Get operationStatus
    * @return operationStatus
   **/
-  @Schema(required = true, description = "The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable).  The status of deleted ads cannot be modified.")
+  @Schema(required = true, description = "")
   public String getOperationStatus() {
     return operationStatus;
   }

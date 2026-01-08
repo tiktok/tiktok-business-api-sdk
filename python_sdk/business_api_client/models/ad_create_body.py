@@ -49,7 +49,6 @@ class AdCreateBody(object):
     def adgroup_id(self):
         """Gets the adgroup_id of this AdCreateBody.  # noqa: E501
 
-        Ad group ID  # noqa: E501
 
         :return: The adgroup_id of this AdCreateBody.  # noqa: E501
         :rtype: str
@@ -60,7 +59,6 @@ class AdCreateBody(object):
     def adgroup_id(self, adgroup_id):
         """Sets the adgroup_id of this AdCreateBody.
 
-        Ad group ID  # noqa: E501
 
         :param adgroup_id: The adgroup_id of this AdCreateBody.  # noqa: E501
         :type: str
@@ -74,7 +72,6 @@ class AdCreateBody(object):
     def advertiser_id(self):
         """Gets the advertiser_id of this AdCreateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this AdCreateBody.  # noqa: E501
         :rtype: str
@@ -85,7 +82,6 @@ class AdCreateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this AdCreateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this AdCreateBody.  # noqa: E501
         :type: str
@@ -99,7 +95,6 @@ class AdCreateBody(object):
     def creatives(self):
         """Gets the creatives of this AdCreateBody.  # noqa: E501
 
-        Advertising creatives.  # noqa: E501
 
         :return: The creatives of this AdCreateBody.  # noqa: E501
         :rtype: list[AdcreateCreatives]
@@ -110,7 +105,6 @@ class AdCreateBody(object):
     def creatives(self, creatives):
         """Sets the creatives of this AdCreateBody.
 
-        Advertising creatives.  # noqa: E501
 
         :param creatives: The creatives of this AdCreateBody.  # noqa: E501
         :type: list[AdcreateCreatives]

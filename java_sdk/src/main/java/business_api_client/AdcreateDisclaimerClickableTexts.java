@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * AdcreateDisclaimerClickableTexts
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdcreateDisclaimerClickableTexts {
   @JsonProperty("text")
   private String text = null;
@@ -31,10 +31,10 @@ public class AdcreateDisclaimerClickableTexts {
   }
 
    /**
-   * The disclaimer text. Length limit- 40 characters.
+   * Get text
    * @return text
   **/
-  @Schema(description = "The disclaimer text. Length limit- 40 characters.")
+  @Schema(description = "")
   public String getText() {
     return text;
   }
@@ -49,10 +49,10 @@ public class AdcreateDisclaimerClickableTexts {
   }
 
    /**
-   * The URL for the clickable disclaimer. When users tap each text, they will be redirected to the URL and see more disclaimer details.
+   * Get url
    * @return url
   **/
-  @Schema(description = "The URL for the clickable disclaimer. When users tap each text, they will be redirected to the URL and see more disclaimer details.")
+  @Schema(description = "")
   public String getUrl() {
     return url;
   }

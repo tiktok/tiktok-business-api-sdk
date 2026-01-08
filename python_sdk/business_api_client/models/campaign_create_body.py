@@ -27,79 +27,173 @@ class CampaignCreateBody(object):
         'advertiser_id': 'str',
         'app_id': 'str',
         'app_promotion_type': 'str',
+        'bid_type': 'str',
         'budget': 'float',
         'budget_mode': 'str',
         'budget_optimize_on': 'bool',
+        'campaign_app_profile_page_state': 'str',
         'campaign_name': 'str',
+        'campaign_product_source': 'str',
         'campaign_type': 'str',
+        'catalog_enabled': 'bool',
+        'deep_bid_type': 'str',
+        'disable_skan_campaign': 'bool',
+        'internal_channel': 'str',
+        'is_advanced_dedicated_campaign': 'bool',
+        'is_search_campaign': 'bool',
         'objective_type': 'str',
         'operation_status': 'str',
         'optimization_goal': 'str',
+        'plugin_partner': 'str',
+        'po_number': 'str',
+        'postback_window_mode': 'str',
+        'request_id': 'str',
         'rf_campaign_type': 'str',
-        'special_industries': 'list[str]'
+        'roas_bid': 'float',
+        'rta_bid_enabled': 'bool',
+        'rta_id': 'str',
+        'rta_product_selection_enabled': 'bool',
+        'sales_destination': 'str',
+        'special_industries': 'list[str]',
+        'virtual_objective_type': 'str'
     }
 
     attribute_map = {
         'advertiser_id': 'advertiser_id',
         'app_id': 'app_id',
         'app_promotion_type': 'app_promotion_type',
+        'bid_type': 'bid_type',
         'budget': 'budget',
         'budget_mode': 'budget_mode',
         'budget_optimize_on': 'budget_optimize_on',
+        'campaign_app_profile_page_state': 'campaign_app_profile_page_state',
         'campaign_name': 'campaign_name',
+        'campaign_product_source': 'campaign_product_source',
         'campaign_type': 'campaign_type',
+        'catalog_enabled': 'catalog_enabled',
+        'deep_bid_type': 'deep_bid_type',
+        'disable_skan_campaign': 'disable_skan_campaign',
+        'internal_channel': 'internal_channel',
+        'is_advanced_dedicated_campaign': 'is_advanced_dedicated_campaign',
+        'is_search_campaign': 'is_search_campaign',
         'objective_type': 'objective_type',
         'operation_status': 'operation_status',
         'optimization_goal': 'optimization_goal',
+        'plugin_partner': 'plugin_partner',
+        'po_number': 'po_number',
+        'postback_window_mode': 'postback_window_mode',
+        'request_id': 'request_id',
         'rf_campaign_type': 'rf_campaign_type',
-        'special_industries': 'special_industries'
+        'roas_bid': 'roas_bid',
+        'rta_bid_enabled': 'rta_bid_enabled',
+        'rta_id': 'rta_id',
+        'rta_product_selection_enabled': 'rta_product_selection_enabled',
+        'sales_destination': 'sales_destination',
+        'special_industries': 'special_industries',
+        'virtual_objective_type': 'virtual_objective_type'
     }
 
-    def __init__(self, advertiser_id=None, app_id=None, app_promotion_type=None, budget=None, budget_mode=None, budget_optimize_on=None, campaign_name=None, campaign_type=None, objective_type=None, operation_status=None, optimization_goal=None, rf_campaign_type=None, special_industries=None):  # noqa: E501
+    def __init__(self, advertiser_id=None, app_id=None, app_promotion_type=None, bid_type=None, budget=None, budget_mode=None, budget_optimize_on=False, campaign_app_profile_page_state=None, campaign_name=None, campaign_product_source=None, campaign_type=None, catalog_enabled=None, deep_bid_type=None, disable_skan_campaign=None, internal_channel=None, is_advanced_dedicated_campaign=None, is_search_campaign=None, objective_type=None, operation_status='ENABLE', optimization_goal=None, plugin_partner=None, po_number=None, postback_window_mode=None, request_id=None, rf_campaign_type=None, roas_bid=None, rta_bid_enabled=False, rta_id=None, rta_product_selection_enabled=None, sales_destination=None, special_industries=None, virtual_objective_type=None):  # noqa: E501
         """CampaignCreateBody - a model defined in Swagger"""  # noqa: E501
         self._advertiser_id = None
         self._app_id = None
         self._app_promotion_type = None
+        self._bid_type = None
         self._budget = None
         self._budget_mode = None
         self._budget_optimize_on = None
+        self._campaign_app_profile_page_state = None
         self._campaign_name = None
+        self._campaign_product_source = None
         self._campaign_type = None
+        self._catalog_enabled = None
+        self._deep_bid_type = None
+        self._disable_skan_campaign = None
+        self._internal_channel = None
+        self._is_advanced_dedicated_campaign = None
+        self._is_search_campaign = None
         self._objective_type = None
         self._operation_status = None
         self._optimization_goal = None
+        self._plugin_partner = None
+        self._po_number = None
+        self._postback_window_mode = None
+        self._request_id = None
         self._rf_campaign_type = None
+        self._roas_bid = None
+        self._rta_bid_enabled = None
+        self._rta_id = None
+        self._rta_product_selection_enabled = None
+        self._sales_destination = None
         self._special_industries = None
+        self._virtual_objective_type = None
         self.discriminator = None
         self.advertiser_id = advertiser_id
         if app_id is not None:
             self.app_id = app_id
         if app_promotion_type is not None:
             self.app_promotion_type = app_promotion_type
+        if bid_type is not None:
+            self.bid_type = bid_type
         if budget is not None:
             self.budget = budget
         if budget_mode is not None:
             self.budget_mode = budget_mode
         if budget_optimize_on is not None:
             self.budget_optimize_on = budget_optimize_on
+        if campaign_app_profile_page_state is not None:
+            self.campaign_app_profile_page_state = campaign_app_profile_page_state
         self.campaign_name = campaign_name
+        if campaign_product_source is not None:
+            self.campaign_product_source = campaign_product_source
         if campaign_type is not None:
             self.campaign_type = campaign_type
+        if catalog_enabled is not None:
+            self.catalog_enabled = catalog_enabled
+        if deep_bid_type is not None:
+            self.deep_bid_type = deep_bid_type
+        if disable_skan_campaign is not None:
+            self.disable_skan_campaign = disable_skan_campaign
+        if internal_channel is not None:
+            self.internal_channel = internal_channel
+        if is_advanced_dedicated_campaign is not None:
+            self.is_advanced_dedicated_campaign = is_advanced_dedicated_campaign
+        if is_search_campaign is not None:
+            self.is_search_campaign = is_search_campaign
         self.objective_type = objective_type
         if operation_status is not None:
             self.operation_status = operation_status
         if optimization_goal is not None:
             self.optimization_goal = optimization_goal
+        if plugin_partner is not None:
+            self.plugin_partner = plugin_partner
+        if po_number is not None:
+            self.po_number = po_number
+        if postback_window_mode is not None:
+            self.postback_window_mode = postback_window_mode
+        if request_id is not None:
+            self.request_id = request_id
         if rf_campaign_type is not None:
             self.rf_campaign_type = rf_campaign_type
+        if roas_bid is not None:
+            self.roas_bid = roas_bid
+        if rta_bid_enabled is not None:
+            self.rta_bid_enabled = rta_bid_enabled
+        if rta_id is not None:
+            self.rta_id = rta_id
+        if rta_product_selection_enabled is not None:
+            self.rta_product_selection_enabled = rta_product_selection_enabled
+        if sales_destination is not None:
+            self.sales_destination = sales_destination
         if special_industries is not None:
             self.special_industries = special_industries
+        if virtual_objective_type is not None:
+            self.virtual_objective_type = virtual_objective_type
 
     @property
     def advertiser_id(self):
         """Gets the advertiser_id of this CampaignCreateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -110,7 +204,6 @@ class CampaignCreateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this CampaignCreateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -124,7 +217,6 @@ class CampaignCreateBody(object):
     def app_id(self):
         """Gets the app_id of this CampaignCreateBody.  # noqa: E501
 
-        App ID, required when the campaign is an iOS 14 Dedicated Campaign (camapign_type=IOS14_CAMPAIGN) with the advertising objective (objective_type) as PRODUCT_SALES.  # noqa: E501
 
         :return: The app_id of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -135,7 +227,6 @@ class CampaignCreateBody(object):
     def app_id(self, app_id):
         """Sets the app_id of this CampaignCreateBody.
 
-        App ID, required when the campaign is an iOS 14 Dedicated Campaign (camapign_type=IOS14_CAMPAIGN) with the advertising objective (objective_type) as PRODUCT_SALES.  # noqa: E501
 
         :param app_id: The app_id of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -147,7 +238,6 @@ class CampaignCreateBody(object):
     def app_promotion_type(self):
         """Gets the app_promotion_type of this CampaignCreateBody.  # noqa: E501
 
-        App promotion type. Required when `objective_type` is `APP_PROMOTION`. Enum values- `APP_INSTALL`, `APP_RETARGETING`. Note- `APP_INSTALL` can be used in an iOS14 Dedicated Campaign, while `APP_RETARGETING` cannot be used.  # noqa: E501
 
         :return: The app_promotion_type of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -158,7 +248,6 @@ class CampaignCreateBody(object):
     def app_promotion_type(self, app_promotion_type):
         """Sets the app_promotion_type of this CampaignCreateBody.
 
-        App promotion type. Required when `objective_type` is `APP_PROMOTION`. Enum values- `APP_INSTALL`, `APP_RETARGETING`. Note- `APP_INSTALL` can be used in an iOS14 Dedicated Campaign, while `APP_RETARGETING` cannot be used.  # noqa: E501
 
         :param app_promotion_type: The app_promotion_type of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -167,10 +256,30 @@ class CampaignCreateBody(object):
         self._app_promotion_type = app_promotion_type
 
     @property
+    def bid_type(self):
+        """Gets the bid_type of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The bid_type of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._bid_type
+
+    @bid_type.setter
+    def bid_type(self, bid_type):
+        """Sets the bid_type of this CampaignCreateBody.
+
+
+        :param bid_type: The bid_type of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._bid_type = bid_type
+
+    @property
     def budget(self):
         """Gets the budget of this CampaignCreateBody.  # noqa: E501
 
-        Campaign budget, required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.  # noqa: E501
 
         :return: The budget of this CampaignCreateBody.  # noqa: E501
         :rtype: float
@@ -181,7 +290,6 @@ class CampaignCreateBody(object):
     def budget(self, budget):
         """Sets the budget of this CampaignCreateBody.
 
-        Campaign budget, required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.  # noqa: E501
 
         :param budget: The budget of this CampaignCreateBody.  # noqa: E501
         :type: float
@@ -193,7 +301,6 @@ class CampaignCreateBody(object):
     def budget_mode(self):
         """Gets the budget_mode of this CampaignCreateBody.  # noqa: E501
 
-        Budget mode. When Campaign Budget Optimization is enabled, only BUDGET_MODE_DAY is supported. When \"objective_type\" is RF_REACH, only BUDGET_MODE_INFINITE is supported. To learn about how to set budget types, see Budget setting.  # noqa: E501
 
         :return: The budget_mode of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -204,7 +311,6 @@ class CampaignCreateBody(object):
     def budget_mode(self, budget_mode):
         """Sets the budget_mode of this CampaignCreateBody.
 
-        Budget mode. When Campaign Budget Optimization is enabled, only BUDGET_MODE_DAY is supported. When \"objective_type\" is RF_REACH, only BUDGET_MODE_INFINITE is supported. To learn about how to set budget types, see Budget setting.  # noqa: E501
 
         :param budget_mode: The budget_mode of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -216,7 +322,6 @@ class CampaignCreateBody(object):
     def budget_optimize_on(self):
         """Gets the budget_optimize_on of this CampaignCreateBody.  # noqa: E501
 
-        Whether to enable Campaign Budget Optimization. True: Enabled. False: Not enabled. Default: True. For details about Campaign Budget Optimization (CBO), see Campaign Budget Optimization.  # noqa: E501
 
         :return: The budget_optimize_on of this CampaignCreateBody.  # noqa: E501
         :rtype: bool
@@ -227,7 +332,6 @@ class CampaignCreateBody(object):
     def budget_optimize_on(self, budget_optimize_on):
         """Sets the budget_optimize_on of this CampaignCreateBody.
 
-        Whether to enable Campaign Budget Optimization. True: Enabled. False: Not enabled. Default: True. For details about Campaign Budget Optimization (CBO), see Campaign Budget Optimization.  # noqa: E501
 
         :param budget_optimize_on: The budget_optimize_on of this CampaignCreateBody.  # noqa: E501
         :type: bool
@@ -236,10 +340,30 @@ class CampaignCreateBody(object):
         self._budget_optimize_on = budget_optimize_on
 
     @property
+    def campaign_app_profile_page_state(self):
+        """Gets the campaign_app_profile_page_state of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The campaign_app_profile_page_state of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._campaign_app_profile_page_state
+
+    @campaign_app_profile_page_state.setter
+    def campaign_app_profile_page_state(self, campaign_app_profile_page_state):
+        """Sets the campaign_app_profile_page_state of this CampaignCreateBody.
+
+
+        :param campaign_app_profile_page_state: The campaign_app_profile_page_state of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._campaign_app_profile_page_state = campaign_app_profile_page_state
+
+    @property
     def campaign_name(self):
         """Gets the campaign_name of this CampaignCreateBody.  # noqa: E501
 
-        Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :return: The campaign_name of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -250,7 +374,6 @@ class CampaignCreateBody(object):
     def campaign_name(self, campaign_name):
         """Sets the campaign_name of this CampaignCreateBody.
 
-        Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :param campaign_name: The campaign_name of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -261,10 +384,30 @@ class CampaignCreateBody(object):
         self._campaign_name = campaign_name
 
     @property
+    def campaign_product_source(self):
+        """Gets the campaign_product_source of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The campaign_product_source of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._campaign_product_source
+
+    @campaign_product_source.setter
+    def campaign_product_source(self, campaign_product_source):
+        """Sets the campaign_product_source of this CampaignCreateBody.
+
+
+        :param campaign_product_source: The campaign_product_source of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._campaign_product_source = campaign_product_source
+
+    @property
     def campaign_type(self):
         """Gets the campaign_type of this CampaignCreateBody.  # noqa: E501
 
-        Enums values: REGULAR_CAMPAIGN, IOS14_CAMPAIGN. The value IOS14_CAMPAIGN supports the advertising objective PRODUCT_SALES only. For iOS 14 Dedicated Campaign with objectives other than PRODUCT_SALES , set campaign_type as REGULAR_CAMPAIGN.  # noqa: E501
 
         :return: The campaign_type of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -275,7 +418,6 @@ class CampaignCreateBody(object):
     def campaign_type(self, campaign_type):
         """Sets the campaign_type of this CampaignCreateBody.
 
-        Enums values: REGULAR_CAMPAIGN, IOS14_CAMPAIGN. The value IOS14_CAMPAIGN supports the advertising objective PRODUCT_SALES only. For iOS 14 Dedicated Campaign with objectives other than PRODUCT_SALES , set campaign_type as REGULAR_CAMPAIGN.  # noqa: E501
 
         :param campaign_type: The campaign_type of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -284,10 +426,135 @@ class CampaignCreateBody(object):
         self._campaign_type = campaign_type
 
     @property
+    def catalog_enabled(self):
+        """Gets the catalog_enabled of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The catalog_enabled of this CampaignCreateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._catalog_enabled
+
+    @catalog_enabled.setter
+    def catalog_enabled(self, catalog_enabled):
+        """Sets the catalog_enabled of this CampaignCreateBody.
+
+
+        :param catalog_enabled: The catalog_enabled of this CampaignCreateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._catalog_enabled = catalog_enabled
+
+    @property
+    def deep_bid_type(self):
+        """Gets the deep_bid_type of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The deep_bid_type of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._deep_bid_type
+
+    @deep_bid_type.setter
+    def deep_bid_type(self, deep_bid_type):
+        """Sets the deep_bid_type of this CampaignCreateBody.
+
+
+        :param deep_bid_type: The deep_bid_type of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._deep_bid_type = deep_bid_type
+
+    @property
+    def disable_skan_campaign(self):
+        """Gets the disable_skan_campaign of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The disable_skan_campaign of this CampaignCreateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._disable_skan_campaign
+
+    @disable_skan_campaign.setter
+    def disable_skan_campaign(self, disable_skan_campaign):
+        """Sets the disable_skan_campaign of this CampaignCreateBody.
+
+
+        :param disable_skan_campaign: The disable_skan_campaign of this CampaignCreateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._disable_skan_campaign = disable_skan_campaign
+
+    @property
+    def internal_channel(self):
+        """Gets the internal_channel of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The internal_channel of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._internal_channel
+
+    @internal_channel.setter
+    def internal_channel(self, internal_channel):
+        """Sets the internal_channel of this CampaignCreateBody.
+
+
+        :param internal_channel: The internal_channel of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._internal_channel = internal_channel
+
+    @property
+    def is_advanced_dedicated_campaign(self):
+        """Gets the is_advanced_dedicated_campaign of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The is_advanced_dedicated_campaign of this CampaignCreateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_advanced_dedicated_campaign
+
+    @is_advanced_dedicated_campaign.setter
+    def is_advanced_dedicated_campaign(self, is_advanced_dedicated_campaign):
+        """Sets the is_advanced_dedicated_campaign of this CampaignCreateBody.
+
+
+        :param is_advanced_dedicated_campaign: The is_advanced_dedicated_campaign of this CampaignCreateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_advanced_dedicated_campaign = is_advanced_dedicated_campaign
+
+    @property
+    def is_search_campaign(self):
+        """Gets the is_search_campaign of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The is_search_campaign of this CampaignCreateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_search_campaign
+
+    @is_search_campaign.setter
+    def is_search_campaign(self, is_search_campaign):
+        """Sets the is_search_campaign of this CampaignCreateBody.
+
+
+        :param is_search_campaign: The is_search_campaign of this CampaignCreateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_search_campaign = is_search_campaign
+
+    @property
     def objective_type(self):
         """Gets the objective_type of this CampaignCreateBody.  # noqa: E501
 
-        Advertising objective. For enum values and descriptions, see Objectives.  # noqa: E501
 
         :return: The objective_type of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -298,7 +565,6 @@ class CampaignCreateBody(object):
     def objective_type(self, objective_type):
         """Sets the objective_type of this CampaignCreateBody.
 
-        Advertising objective. For enum values and descriptions, see Objectives.  # noqa: E501
 
         :param objective_type: The objective_type of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -312,7 +578,6 @@ class CampaignCreateBody(object):
     def operation_status(self):
         """Gets the operation_status of this CampaignCreateBody.  # noqa: E501
 
-        The field operation_status is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. If you pass in this field without applying for allowlisting first, the field will be ignored and no error message will appear. For Reach & Frequency campaigns, please specify operation_status as ENABLE or do not pass in operation_status. Do not specify operation_status as DISABLE.  The status of the campaign when created. Enum values: ENABLE : The campaign is enabled when created. DISABLE : The campaign is disabled when created. Default value: ENABLE. If you want to update the status of the campaign after creation, use the /campaign/status/update/ endpoint.  # noqa: E501
 
         :return: The operation_status of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -323,7 +588,6 @@ class CampaignCreateBody(object):
     def operation_status(self, operation_status):
         """Sets the operation_status of this CampaignCreateBody.
 
-        The field operation_status is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. If you pass in this field without applying for allowlisting first, the field will be ignored and no error message will appear. For Reach & Frequency campaigns, please specify operation_status as ENABLE or do not pass in operation_status. Do not specify operation_status as DISABLE.  The status of the campaign when created. Enum values: ENABLE : The campaign is enabled when created. DISABLE : The campaign is disabled when created. Default value: ENABLE. If you want to update the status of the campaign after creation, use the /campaign/status/update/ endpoint.  # noqa: E501
 
         :param operation_status: The operation_status of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -335,7 +599,6 @@ class CampaignCreateBody(object):
     def optimization_goal(self):
         """Gets the optimization_goal of this CampaignCreateBody.  # noqa: E501
 
-        Optimization goal at the campaign level. Required when Campaign Budget Optimization is enabled. Allowed values: CONVERT, INSTALL, VALUE, IN_APP_EVENT and LEAD_GENERATION.  # noqa: E501
 
         :return: The optimization_goal of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -346,7 +609,6 @@ class CampaignCreateBody(object):
     def optimization_goal(self, optimization_goal):
         """Sets the optimization_goal of this CampaignCreateBody.
 
-        Optimization goal at the campaign level. Required when Campaign Budget Optimization is enabled. Allowed values: CONVERT, INSTALL, VALUE, IN_APP_EVENT and LEAD_GENERATION.  # noqa: E501
 
         :param optimization_goal: The optimization_goal of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -355,10 +617,93 @@ class CampaignCreateBody(object):
         self._optimization_goal = optimization_goal
 
     @property
+    def plugin_partner(self):
+        """Gets the plugin_partner of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The plugin_partner of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._plugin_partner
+
+    @plugin_partner.setter
+    def plugin_partner(self, plugin_partner):
+        """Sets the plugin_partner of this CampaignCreateBody.
+
+
+        :param plugin_partner: The plugin_partner of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._plugin_partner = plugin_partner
+
+    @property
+    def po_number(self):
+        """Gets the po_number of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The po_number of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._po_number
+
+    @po_number.setter
+    def po_number(self, po_number):
+        """Sets the po_number of this CampaignCreateBody.
+
+
+        :param po_number: The po_number of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._po_number = po_number
+
+    @property
+    def postback_window_mode(self):
+        """Gets the postback_window_mode of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The postback_window_mode of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._postback_window_mode
+
+    @postback_window_mode.setter
+    def postback_window_mode(self, postback_window_mode):
+        """Sets the postback_window_mode of this CampaignCreateBody.
+
+
+        :param postback_window_mode: The postback_window_mode of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._postback_window_mode = postback_window_mode
+
+    @property
+    def request_id(self):
+        """Gets the request_id of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The request_id of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._request_id
+
+    @request_id.setter
+    def request_id(self, request_id):
+        """Sets the request_id of this CampaignCreateBody.
+
+
+        :param request_id: The request_id of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._request_id = request_id
+
+    @property
     def rf_campaign_type(self):
         """Gets the rf_campaign_type of this CampaignCreateBody.  # noqa: E501
 
-        When `objective_type` is specified as `RF_REACH`, use this field to set the campaign as a TikTok Pulse campaign, then you can get available premium contextual tags. Do not pass in this field when `objective_type` is not specified as `RF_REACH`.Enum values- `STANDARD` (Reach & Frequency campaign), `PULSE`(TikTok Pulse campaign). Note<- This is an allowlist-only feature. If you would like to access it, please contact your TikTok representative. This field cannot be updated after creation. If you select `rf_campaign_type` to `PULSE` , then you must enter contextual tags of `PREMIUM` type in the `contextual_tag_ids`  field in [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945). In this case, the CPM in your ad group is fixed. If you set `rf_campaign_type` to `PULSE`, then the targeting locations cannot be updated in  [/adgroup/rf/update/](https://ads.tiktok.com/marketing_api/docs?id=1738235402874882). If you set `rf_campaign_type` to `PULSE`, then `feed_type` cannot be `TOP_FEED` in  [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945).  # noqa: E501
 
         :return: The rf_campaign_type of this CampaignCreateBody.  # noqa: E501
         :rtype: str
@@ -369,7 +714,6 @@ class CampaignCreateBody(object):
     def rf_campaign_type(self, rf_campaign_type):
         """Sets the rf_campaign_type of this CampaignCreateBody.
 
-        When `objective_type` is specified as `RF_REACH`, use this field to set the campaign as a TikTok Pulse campaign, then you can get available premium contextual tags. Do not pass in this field when `objective_type` is not specified as `RF_REACH`.Enum values- `STANDARD` (Reach & Frequency campaign), `PULSE`(TikTok Pulse campaign). Note<- This is an allowlist-only feature. If you would like to access it, please contact your TikTok representative. This field cannot be updated after creation. If you select `rf_campaign_type` to `PULSE` , then you must enter contextual tags of `PREMIUM` type in the `contextual_tag_ids`  field in [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945). In this case, the CPM in your ad group is fixed. If you set `rf_campaign_type` to `PULSE`, then the targeting locations cannot be updated in  [/adgroup/rf/update/](https://ads.tiktok.com/marketing_api/docs?id=1738235402874882). If you set `rf_campaign_type` to `PULSE`, then `feed_type` cannot be `TOP_FEED` in  [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945).  # noqa: E501
 
         :param rf_campaign_type: The rf_campaign_type of this CampaignCreateBody.  # noqa: E501
         :type: str
@@ -378,10 +722,114 @@ class CampaignCreateBody(object):
         self._rf_campaign_type = rf_campaign_type
 
     @property
+    def roas_bid(self):
+        """Gets the roas_bid of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The roas_bid of this CampaignCreateBody.  # noqa: E501
+        :rtype: float
+        """
+        return self._roas_bid
+
+    @roas_bid.setter
+    def roas_bid(self, roas_bid):
+        """Sets the roas_bid of this CampaignCreateBody.
+
+
+        :param roas_bid: The roas_bid of this CampaignCreateBody.  # noqa: E501
+        :type: float
+        """
+
+        self._roas_bid = roas_bid
+
+    @property
+    def rta_bid_enabled(self):
+        """Gets the rta_bid_enabled of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The rta_bid_enabled of this CampaignCreateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._rta_bid_enabled
+
+    @rta_bid_enabled.setter
+    def rta_bid_enabled(self, rta_bid_enabled):
+        """Sets the rta_bid_enabled of this CampaignCreateBody.
+
+
+        :param rta_bid_enabled: The rta_bid_enabled of this CampaignCreateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._rta_bid_enabled = rta_bid_enabled
+
+    @property
+    def rta_id(self):
+        """Gets the rta_id of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The rta_id of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._rta_id
+
+    @rta_id.setter
+    def rta_id(self, rta_id):
+        """Sets the rta_id of this CampaignCreateBody.
+
+
+        :param rta_id: The rta_id of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._rta_id = rta_id
+
+    @property
+    def rta_product_selection_enabled(self):
+        """Gets the rta_product_selection_enabled of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The rta_product_selection_enabled of this CampaignCreateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._rta_product_selection_enabled
+
+    @rta_product_selection_enabled.setter
+    def rta_product_selection_enabled(self, rta_product_selection_enabled):
+        """Sets the rta_product_selection_enabled of this CampaignCreateBody.
+
+
+        :param rta_product_selection_enabled: The rta_product_selection_enabled of this CampaignCreateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._rta_product_selection_enabled = rta_product_selection_enabled
+
+    @property
+    def sales_destination(self):
+        """Gets the sales_destination of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The sales_destination of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._sales_destination
+
+    @sales_destination.setter
+    def sales_destination(self, sales_destination):
+        """Sets the sales_destination of this CampaignCreateBody.
+
+
+        :param sales_destination: The sales_destination of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._sales_destination = sales_destination
+
+    @property
     def special_industries(self):
         """Gets the special_industries of this CampaignCreateBody.  # noqa: E501
 
-        Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: Once you've specified the industry type, the system will adjust your ad group target options to help you comply with advertising policies. See Ad targeting to know more.  # noqa: E501
 
         :return: The special_industries of this CampaignCreateBody.  # noqa: E501
         :rtype: list[str]
@@ -392,13 +840,33 @@ class CampaignCreateBody(object):
     def special_industries(self, special_industries):
         """Sets the special_industries of this CampaignCreateBody.
 
-        Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: Once you've specified the industry type, the system will adjust your ad group target options to help you comply with advertising policies. See Ad targeting to know more.  # noqa: E501
 
         :param special_industries: The special_industries of this CampaignCreateBody.  # noqa: E501
         :type: list[str]
         """
 
         self._special_industries = special_industries
+
+    @property
+    def virtual_objective_type(self):
+        """Gets the virtual_objective_type of this CampaignCreateBody.  # noqa: E501
+
+
+        :return: The virtual_objective_type of this CampaignCreateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._virtual_objective_type
+
+    @virtual_objective_type.setter
+    def virtual_objective_type(self, virtual_objective_type):
+        """Sets the virtual_objective_type of this CampaignCreateBody.
+
+
+        :param virtual_objective_type: The virtual_objective_type of this CampaignCreateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._virtual_objective_type = virtual_objective_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

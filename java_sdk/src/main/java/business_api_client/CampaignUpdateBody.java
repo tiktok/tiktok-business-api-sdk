@@ -19,7 +19,7 @@ import java.util.List;
  * CampaignUpdateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class CampaignUpdateBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -27,17 +27,14 @@ public class CampaignUpdateBody {
   @JsonProperty("budget")
   private Float budget = null;
 
-  @JsonProperty("budget_mode")
-  private String budgetMode = null;
-
   @JsonProperty("campaign_id")
   private String campaignId = null;
 
   @JsonProperty("campaign_name")
   private String campaignName = null;
 
-  @JsonProperty("roas_bid")
-  private Float roasBid = null;
+  @JsonProperty("po_number")
+  private String poNumber = null;
 
   @JsonProperty("special_industries")
   private List<String> specialIndustries = null;
@@ -48,10 +45,10 @@ public class CampaignUpdateBody {
   }
 
    /**
-   * Advertiser ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Advertiser ID")
+  @Schema(required = true, description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -66,10 +63,10 @@ public class CampaignUpdateBody {
   }
 
    /**
-   * Campaign budget. Required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.
+   * Get budget
    * @return budget
   **/
-  @Schema(description = "Campaign budget. Required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.")
+  @Schema(description = "")
   public Float getBudget() {
     return budget;
   }
@@ -78,34 +75,16 @@ public class CampaignUpdateBody {
     this.budget = budget;
   }
 
-  public CampaignUpdateBody budgetMode(String budgetMode) {
-    this.budgetMode = budgetMode;
-    return this;
-  }
-
-   /**
-   * Budget type. When Campaign Budgeet Optimization is enabled, only BUDGET_MODE_DAY is supported. To learn about how to set budget types, see Budget setting.
-   * @return budgetMode
-  **/
-  @Schema(description = "Budget type. When Campaign Budgeet Optimization is enabled, only BUDGET_MODE_DAY is supported. To learn about how to set budget types, see Budget setting.")
-  public String getBudgetMode() {
-    return budgetMode;
-  }
-
-  public void setBudgetMode(String budgetMode) {
-    this.budgetMode = budgetMode;
-  }
-
   public CampaignUpdateBody campaignId(String campaignId) {
     this.campaignId = campaignId;
     return this;
   }
 
    /**
-   * Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.
+   * Get campaignId
    * @return campaignId
   **/
-  @Schema(required = true, description = "Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.")
+  @Schema(required = true, description = "")
   public String getCampaignId() {
     return campaignId;
   }
@@ -120,10 +99,10 @@ public class CampaignUpdateBody {
   }
 
    /**
-   * Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.
+   * Get campaignName
    * @return campaignName
   **/
-  @Schema(description = "Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.")
+  @Schema(description = "")
   public String getCampaignName() {
     return campaignName;
   }
@@ -132,22 +111,22 @@ public class CampaignUpdateBody {
     this.campaignName = campaignName;
   }
 
-  public CampaignUpdateBody roasBid(Float roasBid) {
-    this.roasBid = roasBid;
+  public CampaignUpdateBody poNumber(String poNumber) {
+    this.poNumber = poNumber;
     return this;
   }
 
    /**
-   * ROAS (Return On Advertising Spend) goal to optimize value. This field can be modified only when Campaign Budget Optimization(budget_optimize_on) is enabled , optimization_goal is VALUE and deep_bid_type is VO_MIN_ROAS. Value range: 0.01-1000.
-   * @return roasBid
+   * Get poNumber
+   * @return poNumber
   **/
-  @Schema(description = "ROAS (Return On Advertising Spend) goal to optimize value. This field can be modified only when Campaign Budget Optimization(budget_optimize_on) is enabled , optimization_goal is VALUE and deep_bid_type is VO_MIN_ROAS. Value range: 0.01-1000.")
-  public Float getRoasBid() {
-    return roasBid;
+  @Schema(description = "")
+  public String getPoNumber() {
+    return poNumber;
   }
 
-  public void setRoasBid(Float roasBid) {
-    this.roasBid = roasBid;
+  public void setPoNumber(String poNumber) {
+    this.poNumber = poNumber;
   }
 
   public CampaignUpdateBody specialIndustries(List<String> specialIndustries) {
@@ -164,10 +143,10 @@ public class CampaignUpdateBody {
   }
 
    /**
-   * Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: The ONLY supported operation here is that you can clear all the values for the field if you&#x27;ve specifed it when creating a campaign. If you&#x27;ve not specified the field when creating a campaign, you cannot specify it now either.
+   * Get specialIndustries
    * @return specialIndustries
   **/
-  @Schema(description = "Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: The ONLY supported operation here is that you can clear all the values for the field if you've specifed it when creating a campaign. If you've not specified the field when creating a campaign, you cannot specify it now either.")
+  @Schema(description = "")
   public List<String> getSpecialIndustries() {
     return specialIndustries;
   }
@@ -188,16 +167,15 @@ public class CampaignUpdateBody {
     CampaignUpdateBody campaignUpdateBody = (CampaignUpdateBody) o;
     return Objects.equals(this.advertiserId, campaignUpdateBody.advertiserId) &&
         Objects.equals(this.budget, campaignUpdateBody.budget) &&
-        Objects.equals(this.budgetMode, campaignUpdateBody.budgetMode) &&
         Objects.equals(this.campaignId, campaignUpdateBody.campaignId) &&
         Objects.equals(this.campaignName, campaignUpdateBody.campaignName) &&
-        Objects.equals(this.roasBid, campaignUpdateBody.roasBid) &&
+        Objects.equals(this.poNumber, campaignUpdateBody.poNumber) &&
         Objects.equals(this.specialIndustries, campaignUpdateBody.specialIndustries);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(advertiserId, budget, budgetMode, campaignId, campaignName, roasBid, specialIndustries);
+    return Objects.hash(advertiserId, budget, campaignId, campaignName, poNumber, specialIndustries);
   }
 
 
@@ -208,10 +186,9 @@ public class CampaignUpdateBody {
     
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
     sb.append("    budget: ").append(toIndentedString(budget)).append("\n");
-    sb.append("    budgetMode: ").append(toIndentedString(budgetMode)).append("\n");
     sb.append("    campaignId: ").append(toIndentedString(campaignId)).append("\n");
     sb.append("    campaignName: ").append(toIndentedString(campaignName)).append("\n");
-    sb.append("    roasBid: ").append(toIndentedString(roasBid)).append("\n");
+    sb.append("    poNumber: ").append(toIndentedString(poNumber)).append("\n");
     sb.append("    specialIndustries: ").append(toIndentedString(specialIndustries)).append("\n");
     sb.append("}");
     return sb.toString();

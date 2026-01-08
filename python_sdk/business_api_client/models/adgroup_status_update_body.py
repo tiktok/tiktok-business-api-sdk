@@ -26,30 +26,34 @@ class AdgroupStatusUpdateBody(object):
     swagger_types = {
         'adgroup_ids': 'list[str]',
         'advertiser_id': 'str',
+        'allow_partial_success': 'bool',
         'operation_status': 'str'
     }
 
     attribute_map = {
         'adgroup_ids': 'adgroup_ids',
         'advertiser_id': 'advertiser_id',
+        'allow_partial_success': 'allow_partial_success',
         'operation_status': 'operation_status'
     }
 
-    def __init__(self, adgroup_ids=None, advertiser_id=None, operation_status=None):  # noqa: E501
+    def __init__(self, adgroup_ids=None, advertiser_id=None, allow_partial_success=False, operation_status=None):  # noqa: E501
         """AdgroupStatusUpdateBody - a model defined in Swagger"""  # noqa: E501
         self._adgroup_ids = None
         self._advertiser_id = None
+        self._allow_partial_success = None
         self._operation_status = None
         self.discriminator = None
         self.adgroup_ids = adgroup_ids
         self.advertiser_id = advertiser_id
+        if allow_partial_success is not None:
+            self.allow_partial_success = allow_partial_success
         self.operation_status = operation_status
 
     @property
     def adgroup_ids(self):
         """Gets the adgroup_ids of this AdgroupStatusUpdateBody.  # noqa: E501
 
-        The ID of the ad group(s) to be operated. The allowed quantity range is `1-20`.  # noqa: E501
 
         :return: The adgroup_ids of this AdgroupStatusUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -60,7 +64,6 @@ class AdgroupStatusUpdateBody(object):
     def adgroup_ids(self, adgroup_ids):
         """Sets the adgroup_ids of this AdgroupStatusUpdateBody.
 
-        The ID of the ad group(s) to be operated. The allowed quantity range is `1-20`.  # noqa: E501
 
         :param adgroup_ids: The adgroup_ids of this AdgroupStatusUpdateBody.  # noqa: E501
         :type: list[str]
@@ -74,7 +77,6 @@ class AdgroupStatusUpdateBody(object):
     def advertiser_id(self):
         """Gets the advertiser_id of this AdgroupStatusUpdateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this AdgroupStatusUpdateBody.  # noqa: E501
         :rtype: str
@@ -85,7 +87,6 @@ class AdgroupStatusUpdateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this AdgroupStatusUpdateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this AdgroupStatusUpdateBody.  # noqa: E501
         :type: str
@@ -96,10 +97,30 @@ class AdgroupStatusUpdateBody(object):
         self._advertiser_id = advertiser_id
 
     @property
+    def allow_partial_success(self):
+        """Gets the allow_partial_success of this AdgroupStatusUpdateBody.  # noqa: E501
+
+
+        :return: The allow_partial_success of this AdgroupStatusUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_partial_success
+
+    @allow_partial_success.setter
+    def allow_partial_success(self, allow_partial_success):
+        """Sets the allow_partial_success of this AdgroupStatusUpdateBody.
+
+
+        :param allow_partial_success: The allow_partial_success of this AdgroupStatusUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_partial_success = allow_partial_success
+
+    @property
     def operation_status(self):
         """Gets the operation_status of this AdgroupStatusUpdateBody.  # noqa: E501
 
-        The operation being made.Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.  # noqa: E501
 
         :return: The operation_status of this AdgroupStatusUpdateBody.  # noqa: E501
         :rtype: str
@@ -110,7 +131,6 @@ class AdgroupStatusUpdateBody(object):
     def operation_status(self, operation_status):
         """Sets the operation_status of this AdgroupStatusUpdateBody.
 
-        The operation being made.Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.  # noqa: E501
 
         :param operation_status: The operation_status of this AdgroupStatusUpdateBody.  # noqa: E501
         :type: str

@@ -14,7 +14,6 @@ import {ApiClient} from '../ApiClient.js';
 export class AdcreateDisclaimerText {
   /**
    * Constructs a new <code>AdcreateDisclaimerText</code>.
-   * The text-only disclaimer that you want to add to the ad.  Required when &#x60;disclaimer_type&#x60; &#x3D; &#x60;TEXT_ONLY&#x60;.
    * @alias module:model/AdcreateDisclaimerText
    * @class
    */
@@ -39,7 +38,6 @@ export class AdcreateDisclaimerText {
 }
 
 /**
- * The disclaimer text. Length limit- 90 characters.
  * @member {String} text
  */
 AdcreateDisclaimerText.prototype.text = undefined;

@@ -26,43 +26,38 @@ class CampaignUpdateBody(object):
     swagger_types = {
         'advertiser_id': 'str',
         'budget': 'float',
-        'budget_mode': 'str',
         'campaign_id': 'str',
         'campaign_name': 'str',
-        'roas_bid': 'float',
+        'po_number': 'str',
         'special_industries': 'list[str]'
     }
 
     attribute_map = {
         'advertiser_id': 'advertiser_id',
         'budget': 'budget',
-        'budget_mode': 'budget_mode',
         'campaign_id': 'campaign_id',
         'campaign_name': 'campaign_name',
-        'roas_bid': 'roas_bid',
+        'po_number': 'po_number',
         'special_industries': 'special_industries'
     }
 
-    def __init__(self, advertiser_id=None, budget=None, budget_mode=None, campaign_id=None, campaign_name=None, roas_bid=None, special_industries=None):  # noqa: E501
+    def __init__(self, advertiser_id=None, budget=None, campaign_id=None, campaign_name=None, po_number=None, special_industries=None):  # noqa: E501
         """CampaignUpdateBody - a model defined in Swagger"""  # noqa: E501
         self._advertiser_id = None
         self._budget = None
-        self._budget_mode = None
         self._campaign_id = None
         self._campaign_name = None
-        self._roas_bid = None
+        self._po_number = None
         self._special_industries = None
         self.discriminator = None
         self.advertiser_id = advertiser_id
         if budget is not None:
             self.budget = budget
-        if budget_mode is not None:
-            self.budget_mode = budget_mode
         self.campaign_id = campaign_id
         if campaign_name is not None:
             self.campaign_name = campaign_name
-        if roas_bid is not None:
-            self.roas_bid = roas_bid
+        if po_number is not None:
+            self.po_number = po_number
         if special_industries is not None:
             self.special_industries = special_industries
 
@@ -70,7 +65,6 @@ class CampaignUpdateBody(object):
     def advertiser_id(self):
         """Gets the advertiser_id of this CampaignUpdateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this CampaignUpdateBody.  # noqa: E501
         :rtype: str
@@ -81,7 +75,6 @@ class CampaignUpdateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this CampaignUpdateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this CampaignUpdateBody.  # noqa: E501
         :type: str
@@ -95,7 +88,6 @@ class CampaignUpdateBody(object):
     def budget(self):
         """Gets the budget of this CampaignUpdateBody.  # noqa: E501
 
-        Campaign budget. Required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.  # noqa: E501
 
         :return: The budget of this CampaignUpdateBody.  # noqa: E501
         :rtype: float
@@ -106,7 +98,6 @@ class CampaignUpdateBody(object):
     def budget(self, budget):
         """Sets the budget of this CampaignUpdateBody.
 
-        Campaign budget. Required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.  # noqa: E501
 
         :param budget: The budget of this CampaignUpdateBody.  # noqa: E501
         :type: float
@@ -115,33 +106,9 @@ class CampaignUpdateBody(object):
         self._budget = budget
 
     @property
-    def budget_mode(self):
-        """Gets the budget_mode of this CampaignUpdateBody.  # noqa: E501
-
-        Budget type. When Campaign Budgeet Optimization is enabled, only BUDGET_MODE_DAY is supported. To learn about how to set budget types, see Budget setting.  # noqa: E501
-
-        :return: The budget_mode of this CampaignUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._budget_mode
-
-    @budget_mode.setter
-    def budget_mode(self, budget_mode):
-        """Sets the budget_mode of this CampaignUpdateBody.
-
-        Budget type. When Campaign Budgeet Optimization is enabled, only BUDGET_MODE_DAY is supported. To learn about how to set budget types, see Budget setting.  # noqa: E501
-
-        :param budget_mode: The budget_mode of this CampaignUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._budget_mode = budget_mode
-
-    @property
     def campaign_id(self):
         """Gets the campaign_id of this CampaignUpdateBody.  # noqa: E501
 
-        Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :return: The campaign_id of this CampaignUpdateBody.  # noqa: E501
         :rtype: str
@@ -152,7 +119,6 @@ class CampaignUpdateBody(object):
     def campaign_id(self, campaign_id):
         """Sets the campaign_id of this CampaignUpdateBody.
 
-        Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :param campaign_id: The campaign_id of this CampaignUpdateBody.  # noqa: E501
         :type: str
@@ -166,7 +132,6 @@ class CampaignUpdateBody(object):
     def campaign_name(self):
         """Gets the campaign_name of this CampaignUpdateBody.  # noqa: E501
 
-        Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :return: The campaign_name of this CampaignUpdateBody.  # noqa: E501
         :rtype: str
@@ -177,7 +142,6 @@ class CampaignUpdateBody(object):
     def campaign_name(self, campaign_name):
         """Sets the campaign_name of this CampaignUpdateBody.
 
-        Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.  # noqa: E501
 
         :param campaign_name: The campaign_name of this CampaignUpdateBody.  # noqa: E501
         :type: str
@@ -186,33 +150,30 @@ class CampaignUpdateBody(object):
         self._campaign_name = campaign_name
 
     @property
-    def roas_bid(self):
-        """Gets the roas_bid of this CampaignUpdateBody.  # noqa: E501
+    def po_number(self):
+        """Gets the po_number of this CampaignUpdateBody.  # noqa: E501
 
-        ROAS (Return On Advertising Spend) goal to optimize value. This field can be modified only when Campaign Budget Optimization(budget_optimize_on) is enabled , optimization_goal is VALUE and deep_bid_type is VO_MIN_ROAS. Value range: 0.01-1000.  # noqa: E501
 
-        :return: The roas_bid of this CampaignUpdateBody.  # noqa: E501
-        :rtype: float
+        :return: The po_number of this CampaignUpdateBody.  # noqa: E501
+        :rtype: str
         """
-        return self._roas_bid
+        return self._po_number
 
-    @roas_bid.setter
-    def roas_bid(self, roas_bid):
-        """Sets the roas_bid of this CampaignUpdateBody.
+    @po_number.setter
+    def po_number(self, po_number):
+        """Sets the po_number of this CampaignUpdateBody.
 
-        ROAS (Return On Advertising Spend) goal to optimize value. This field can be modified only when Campaign Budget Optimization(budget_optimize_on) is enabled , optimization_goal is VALUE and deep_bid_type is VO_MIN_ROAS. Value range: 0.01-1000.  # noqa: E501
 
-        :param roas_bid: The roas_bid of this CampaignUpdateBody.  # noqa: E501
-        :type: float
+        :param po_number: The po_number of this CampaignUpdateBody.  # noqa: E501
+        :type: str
         """
 
-        self._roas_bid = roas_bid
+        self._po_number = po_number
 
     @property
     def special_industries(self):
         """Gets the special_industries of this CampaignUpdateBody.  # noqa: E501
 
-        Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: The ONLY supported operation here is that you can clear all the values for the field if you've specifed it when creating a campaign. If you've not specified the field when creating a campaign, you cannot specify it now either.  # noqa: E501
 
         :return: The special_industries of this CampaignUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -223,7 +184,6 @@ class CampaignUpdateBody(object):
     def special_industries(self, special_industries):
         """Sets the special_industries of this CampaignUpdateBody.
 
-        Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: The ONLY supported operation here is that you can clear all the values for the field if you've specifed it when creating a campaign. If you've not specified the field when creating a campaign, you cannot specify it now either.  # noqa: E501
 
         :param special_industries: The special_industries of this CampaignUpdateBody.  # noqa: E501
         :type: list[str]

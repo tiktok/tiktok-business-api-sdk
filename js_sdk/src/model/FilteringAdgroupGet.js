@@ -34,76 +34,117 @@ export class FilteringAdgroupGet {
         obj.adgroup_ids = ApiClient.convertToType(data['adgroup_ids'], ['String']);
       if (data.hasOwnProperty('adgroup_name'))
         obj.adgroup_name = ApiClient.convertToType(data['adgroup_name'], 'String');
+      if (data.hasOwnProperty('bid_strategy'))
+        obj.bid_strategy = ApiClient.convertToType(data['bid_strategy'], 'String');
       if (data.hasOwnProperty('billing_events'))
         obj.billing_events = ApiClient.convertToType(data['billing_events'], ['String']);
+      if (data.hasOwnProperty('buying_types'))
+        obj.buying_types = ApiClient.convertToType(data['buying_types'], ['String']);
       if (data.hasOwnProperty('campaign_ids'))
         obj.campaign_ids = ApiClient.convertToType(data['campaign_ids'], ['String']);
+      if (data.hasOwnProperty('campaign_system_origins'))
+        obj.campaign_system_origins = ApiClient.convertToType(data['campaign_system_origins'], ['String']);
       if (data.hasOwnProperty('creation_filter_end_time'))
         obj.creation_filter_end_time = ApiClient.convertToType(data['creation_filter_end_time'], 'String');
       if (data.hasOwnProperty('creation_filter_start_time'))
         obj.creation_filter_start_time = ApiClient.convertToType(data['creation_filter_start_time'], 'String');
+      if (data.hasOwnProperty('creative_material_mode'))
+        obj.creative_material_mode = ApiClient.convertToType(data['creative_material_mode'], 'String');
       if (data.hasOwnProperty('objective_type'))
         obj.objective_type = ApiClient.convertToType(data['objective_type'], 'String');
+      if (data.hasOwnProperty('optimization_goal'))
+        obj.optimization_goal = ApiClient.convertToType(data['optimization_goal'], 'String');
       if (data.hasOwnProperty('primary_status'))
         obj.primary_status = ApiClient.convertToType(data['primary_status'], 'String');
+      if (data.hasOwnProperty('promotion_type'))
+        obj.promotion_type = ApiClient.convertToType(data['promotion_type'], 'String');
       if (data.hasOwnProperty('secondary_status'))
         obj.secondary_status = ApiClient.convertToType(data['secondary_status'], 'String');
+      if (data.hasOwnProperty('split_test_enabled'))
+        obj.split_test_enabled = ApiClient.convertToType(data['split_test_enabled'], 'Boolean');
     }
     return obj;
   }
 }
 
 /**
- * List of Ad group ID. Allowed number of IDs- `1-100`
  * @member {Array.<String>} adgroup_ids
  */
 FilteringAdgroupGet.prototype.adgroup_ids = undefined;
 
 /**
- * Ad group name.
  * @member {String} adgroup_name
  */
 FilteringAdgroupGet.prototype.adgroup_name = undefined;
 
 /**
- * Events that you want to pay for.  For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).
+ * @member {String} bid_strategy
+ */
+FilteringAdgroupGet.prototype.bid_strategy = undefined;
+
+/**
  * @member {Array.<String>} billing_events
  */
 FilteringAdgroupGet.prototype.billing_events = undefined;
 
 /**
- * List of campaign IDs. Allowed number of IDs- `1-100`
+ * @member {Array.<String>} buying_types
+ */
+FilteringAdgroupGet.prototype.buying_types = undefined;
+
+/**
  * @member {Array.<String>} campaign_ids
  */
 FilteringAdgroupGet.prototype.campaign_ids = undefined;
 
 /**
- * Filter by higher range of ad group creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ad groups created earlier than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.
+ * @member {Array.<String>} campaign_system_origins
+ */
+FilteringAdgroupGet.prototype.campaign_system_origins = undefined;
+
+/**
  * @member {String} creation_filter_end_time
  */
 FilteringAdgroupGet.prototype.creation_filter_end_time = undefined;
 
 /**
- * Filter by lower range of ad group creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ad groups created later than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.
  * @member {String} creation_filter_start_time
  */
 FilteringAdgroupGet.prototype.creation_filter_start_time = undefined;
 
 /**
- * Advertising objective. For details, see [Enumeration - Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). Whether you choose `WEB_CONVERSIONS` or  `CONVERSIONS` as the objective filter, we will return data of both `WEB_CONVERSIONS` and  `CONVERSIONS`.
+ * @member {String} creative_material_mode
+ */
+FilteringAdgroupGet.prototype.creative_material_mode = undefined;
+
+/**
  * @member {String} objective_type
  */
 FilteringAdgroupGet.prototype.objective_type = undefined;
 
 /**
- * Primary status. For enum values, see [Enumeration - Primary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). The default value is `STATUS_NOT_DELETE`, which returns ad groups in all status excluding `STATUS_DELETE`. If you want to get ad groups in all status including `STATUS_DELETE`, use `STATUS_ALL` instead.
- * @member {String} primary_status
+ * @member {String} optimization_goal
  */
-FilteringAdgroupGet.prototype.primary_status = undefined;
+FilteringAdgroupGet.prototype.optimization_goal = undefined;
 
 /**
- * Ad group status（secondary status). For enum values, see [Enumeration - Ad Group Status - Secondary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). his field is not returned in the sandbox environment because the ad group is not actually delivered. See [Supported secondary statuses for a primary status](https://ads.tiktok.com/marketing_api/docs?id=1757239620352002) to learn about the valid values you can pass in via `secondary_status` for the primary status you specify.
+ * @member {String} primary_status
+ * @default 'STATUS_NOT_DELETE'
+ */
+FilteringAdgroupGet.prototype.primary_status = 'STATUS_NOT_DELETE';
+
+/**
+ * @member {String} promotion_type
+ */
+FilteringAdgroupGet.prototype.promotion_type = undefined;
+
+/**
  * @member {String} secondary_status
  */
 FilteringAdgroupGet.prototype.secondary_status = undefined;
+
+/**
+ * @member {Boolean} split_test_enabled
+ */
+FilteringAdgroupGet.prototype.split_test_enabled = undefined;
 

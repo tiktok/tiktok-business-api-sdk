@@ -29,7 +29,7 @@ class CampaignCreationApi(object):
         self.api_client = api_client
 
     def campaign_create(self, access_token, **kwargs):  # noqa: E501
-        """To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id=1739318962329602)  # noqa: E501
+        """Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id=1739318962329602)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -38,7 +38,7 @@ class CampaignCreationApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param CampaignCreateBody body: Campaign create body parameters
+        :param CampaignCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -51,7 +51,7 @@ class CampaignCreationApi(object):
             return data
 
     def campaign_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id=1739318962329602)  # noqa: E501
+        """Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id=1739318962329602)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -60,7 +60,7 @@ class CampaignCreationApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param CampaignCreateBody body: Campaign create body parameters
+        :param CampaignCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -130,7 +130,7 @@ class CampaignCreationApi(object):
             collection_formats=collection_formats)
 
     def campaign_get(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id=1739315828649986)  # noqa: E501
+        """Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id=1739315828649986)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -138,12 +138,13 @@ class CampaignCreationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
+        :param str advertiser_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringCampaignGet filtering: Filtering Parameters
-        :param int page: Current page
-        :param int page_size: Page size
-        :param list[str] fields: Supported values include`campaign_id `, ` campaign_name `, ` advertiser_id `, `budget `, `budget_mode `, `status `, `operation_status`, `objective `, `objective_type `, `create_time `, `modify_time`, `is_new_structure`, `campaign_app_profile_page_state` , `special_industries`, `secondary_status`.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default.
+        :param FilteringCampaignGet filtering:
+        :param int page:
+        :param int page_size:
+        :param list[str] fields:
+        :param list[str] exclude_field_types_in_response:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,7 +157,7 @@ class CampaignCreationApi(object):
             return data
 
     def campaign_get_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id=1739315828649986)  # noqa: E501
+        """Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id=1739315828649986)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -164,18 +165,19 @@ class CampaignCreationApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
+        :param str advertiser_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringCampaignGet filtering: Filtering Parameters
-        :param int page: Current page
-        :param int page_size: Page size
-        :param list[str] fields: Supported values include`campaign_id `, ` campaign_name `, ` advertiser_id `, `budget `, `budget_mode `, `status `, `operation_status`, `objective `, `objective_type `, `create_time `, `modify_time`, `is_new_structure`, `campaign_app_profile_page_state` , `special_industries`, `secondary_status`.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default.
+        :param FilteringCampaignGet filtering:
+        :param int page:
+        :param int page_size:
+        :param list[str] fields:
+        :param list[str] exclude_field_types_in_response:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['advertiser_id', 'access_token', 'filtering', 'page', 'page_size', 'fields']  # noqa: E501
+        all_params = ['advertiser_id', 'access_token', 'filtering', 'page', 'page_size', 'fields', 'exclude_field_types_in_response']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -215,6 +217,9 @@ class CampaignCreationApi(object):
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
             collection_formats['fields'] = 'multi'  # noqa: E501
+        if 'exclude_field_types_in_response' in params:
+            query_params.append(('exclude_field_types_in_response', params['exclude_field_types_in_response']))  # noqa: E501
+            collection_formats['exclude_field_types_in_response'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
@@ -1081,7 +1086,7 @@ class CampaignCreationApi(object):
             collection_formats=collection_formats)
 
     def campaign_status_update(self, access_token, **kwargs):  # noqa: E501
-        """Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id=1739320994354178)  # noqa: E501
+        """Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id=1739320994354178)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1090,7 +1095,7 @@ class CampaignCreationApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param CampaignStatusUpdateBody body: Campaign status update body parameters
+        :param CampaignStatusUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1103,7 +1108,7 @@ class CampaignCreationApi(object):
             return data
 
     def campaign_status_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id=1739320994354178)  # noqa: E501
+        """Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id=1739320994354178)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1112,7 +1117,7 @@ class CampaignCreationApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param CampaignStatusUpdateBody body: Campaign status update body parameters
+        :param CampaignStatusUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1182,7 +1187,7 @@ class CampaignCreationApi(object):
             collection_formats=collection_formats)
 
     def campaign_update(self, access_token, **kwargs):  # noqa: E501
-        """To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id=1739320422086657)  # noqa: E501
+        """Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id=1739320422086657)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1191,7 +1196,7 @@ class CampaignCreationApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param CampaignUpdateBody body: Campaign update body parameters
+        :param CampaignUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1204,7 +1209,7 @@ class CampaignCreationApi(object):
             return data
 
     def campaign_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id=1739320422086657)  # noqa: E501
+        """Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id=1739320422086657)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1213,7 +1218,7 @@ class CampaignCreationApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param CampaignUpdateBody body: Campaign update body parameters
+        :param CampaignUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.

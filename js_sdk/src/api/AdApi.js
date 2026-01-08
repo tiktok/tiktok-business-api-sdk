@@ -49,10 +49,10 @@ export class AdApi {
      */
 
     /**
-     * Upload your ad creatives (pictures, videos, texts, call-to-action) and create an ad. For different placements, the creative formats and requirements are different. Upload your ad creatives according to the placement requirements. Each ad group can have up to 20 ads. See here to learn about how to create ads. [Ad create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953377508354)
+     * Create ad. [Ad Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953377508354)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/AdCreateBody} opts.body Ad create body parameters
+     * @param {module:model/AdCreateBody} opts.body 
      * @param {module:api/AdApi~adCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -97,14 +97,15 @@ export class AdApi {
      */
 
     /**
-     * Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1735735588640770)
-     * @param {String} advertiser_id Advertiser ID
+     * Get ads. [Ad Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1735735588640770)
+     * @param {String} advertiser_id 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/FilteringAdGet} opts.filtering Filters on the data. This parameter is an array of filter objects.
-     * @param {Number} opts.page Current page number
-     * @param {Number} opts.page_size Page size
-     * @param {Array.<String>} opts.fields Fields that you want to get. For the list of fields that you can specify, see the fields under &#x60;list&#x60; in the response. If not set, all fields are returned by default.
+     * @param {module:model/FilteringAdGet} opts.filtering 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
+     * @param {Array.<String>} opts.fields 
+     * @param {Array.<String>} opts.exclude_field_types_in_response 
      * @param {module:api/AdApi~adGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -124,7 +125,7 @@ export class AdApi {
         
       };
       let queryParams = {
-        'advertiser_id': advertiser_id,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi')
+        'advertiser_id': advertiser_id,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi'),'exclude_field_types_in_response': this.apiClient.buildCollectionParam(opts['exclude_field_types_in_response'], 'multi')
       };
       let headerParams = {
         'Access-Token': Access_Token
@@ -153,10 +154,10 @@ export class AdApi {
      */
 
     /**
-     * To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+     * Update ad status. [Ad Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953422970882)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/AdStatusUpdateBody} opts.body Ad status update body parameters
+     * @param {module:model/AdStatusUpdateBody} opts.body 
      * @param {module:api/AdApi~adStatusUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -201,10 +202,10 @@ export class AdApi {
      */
 
     /**
-     * Modify your custom ad creatives such as call-to-action, ad name, text image and video material. To update ACO ads, use the /ad/aco/update/ endpoint. [Ad update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+     * Update ad. [Ad Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953405142018)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/AdUpdateBody} opts.body Ad create body parameters
+     * @param {module:model/AdUpdateBody} opts.body 
      * @param {module:api/AdApi~adUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */

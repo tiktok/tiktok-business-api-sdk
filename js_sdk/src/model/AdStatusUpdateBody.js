@@ -16,8 +16,8 @@ export class AdStatusUpdateBody {
    * Constructs a new <code>AdStatusUpdateBody</code>.
    * @alias module:model/AdStatusUpdateBody
    * @class
-   * @param advertiser_id {String} Advertiser ID
-   * @param operation_status {String} The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable).  The status of deleted ads cannot be modified.
+   * @param advertiser_id {String} 
+   * @param operation_status {String} 
    */
   constructor(advertiser_id, operation_status) {
     this.advertiser_id = advertiser_id;
@@ -48,25 +48,21 @@ export class AdStatusUpdateBody {
 }
 
 /**
- * A list of ACO ad IDs. Only support `ENABLE` and `DISABLE` for ACO ads.  Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.
  * @member {Array.<String>} aco_ad_ids
  */
 AdStatusUpdateBody.prototype.aco_ad_ids = undefined;
 
 /**
- * A list of ad IDs. Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.
  * @member {Array.<String>} ad_ids
  */
 AdStatusUpdateBody.prototype.ad_ids = undefined;
 
 /**
- * Advertiser ID
  * @member {String} advertiser_id
  */
 AdStatusUpdateBody.prototype.advertiser_id = undefined;
 
 /**
- * The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable).  The status of deleted ads cannot be modified.
  * @member {String} operation_status
  */
 AdStatusUpdateBody.prototype.operation_status = undefined;

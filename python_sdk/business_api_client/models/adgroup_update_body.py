@@ -29,47 +29,47 @@ class AdgroupUpdateBody(object):
         'adgroup_name': 'str',
         'advertiser_id': 'str',
         'age_groups': 'list[str]',
-        'app_download_url': 'str',
-        'app_id': 'str',
         'audience_ids': 'list[str]',
-        'audience_rule': 'AdgroupcreateAudienceRule',
+        'audience_rule': 'object',
         'audience_type': 'str',
         'auto_targeting_enabled': 'bool',
+        'automated_keywords_enabled': 'bool',
         'bid_price': 'float',
         'bid_type': 'str',
-        'billing_event': 'str',
         'blocked_pangle_app_ids': 'list[str]',
         'brand_safety_type': 'str',
         'budget': 'float',
         'carrier_ids': 'list[str]',
         'catalog_authorized_bc_id': 'str',
-        'comment_disabled': 'str',
+        'category_exclusion_ids': 'list[str]',
+        'comment_disabled': 'bool',
         'contextual_tag_ids': 'list[str]',
         'conversion_bid_price': 'float',
-        'conversion_id': 'int',
-        'creative_material_mode': 'str',
         'dayparting': 'str',
         'deep_bid_type': 'str',
         'deep_cpa_bid': 'float',
+        'deep_funnel_event_source': 'str',
+        'deep_funnel_event_source_id': 'str',
+        'deep_funnel_optimization_event': 'str',
+        'deep_funnel_optimization_status': 'str',
         'device_model_ids': 'list[str]',
         'device_price_ranges': 'list[int]',
+        'exclude_age_under_eighteen': 'bool',
         'excluded_audience_ids': 'list[str]',
-        'excluded_custom_actions': 'AdgroupcreateExcludedCustomActions',
+        'excluded_custom_actions': 'list[AdgroupcreateExcludedCustomActions]',
         'excluded_pangle_audience_package_ids': 'list[str]',
         'frequency': 'int',
         'frequency_schedule': 'int',
         'gender': 'str',
         'household_income': 'list[str]',
-        'identity_authorized_bc_id': 'str',
-        'identity_id': 'str',
-        'identity_type': 'str',
-        'included_custom_actions': 'AdgroupcreateIncludedCustomActions',
+        'included_custom_actions': 'list[AdgroupcreateIncludedCustomActions]',
         'included_pangle_audience_package_ids': 'list[str]',
         'interest_category_ids': 'list[str]',
         'interest_keyword_ids': 'list[str]',
-        'interest_keywords': 'list[str]',
         'ios14_targeting': 'str',
         'is_hfss': 'bool',
+        'is_lhf_compliance': 'bool',
+        'isp_ids': 'list[str]',
         'languages': 'list[str]',
         'location_ids': 'list[str]',
         'min_android_version': 'str',
@@ -80,14 +80,23 @@ class AdgroupUpdateBody(object):
         'pacing': 'str',
         'purchase_intention_keyword_ids': 'list[str]',
         'roas_bid': 'float',
+        'saved_audience_id': 'str',
         'schedule_end_time': 'str',
         'schedule_start_time': 'str',
         'schedule_type': 'str',
+        'search_keywords': 'list[AdgroupupdateSearchKeywords]',
+        'search_result_enabled': 'bool',
         'secondary_optimization_event': 'str',
+        'share_disabled': 'bool',
         'shopping_ads_retargeting_actions_days': 'int',
+        'shopping_ads_retargeting_custom_audience_relation': 'str',
         'shopping_ads_retargeting_type': 'str',
+        'smart_audience_enabled': 'bool',
+        'smart_interest_behavior_enabled': 'bool',
         'spending_power': 'str',
-        'targeting_expansion': 'AdgroupcreateTargetingExpansion'
+        'targeting_expansion': 'AdgroupupdateTargetingExpansion',
+        'vertical_sensitivity_id': 'str',
+        'zipcode_ids': 'list[str]'
     }
 
     attribute_map = {
@@ -96,30 +105,32 @@ class AdgroupUpdateBody(object):
         'adgroup_name': 'adgroup_name',
         'advertiser_id': 'advertiser_id',
         'age_groups': 'age_groups',
-        'app_download_url': 'app_download_url',
-        'app_id': 'app_id',
         'audience_ids': 'audience_ids',
         'audience_rule': 'audience_rule',
         'audience_type': 'audience_type',
         'auto_targeting_enabled': 'auto_targeting_enabled',
+        'automated_keywords_enabled': 'automated_keywords_enabled',
         'bid_price': 'bid_price',
         'bid_type': 'bid_type',
-        'billing_event': 'billing_event',
         'blocked_pangle_app_ids': 'blocked_pangle_app_ids',
         'brand_safety_type': 'brand_safety_type',
         'budget': 'budget',
         'carrier_ids': 'carrier_ids',
         'catalog_authorized_bc_id': 'catalog_authorized_bc_id',
+        'category_exclusion_ids': 'category_exclusion_ids',
         'comment_disabled': 'comment_disabled',
         'contextual_tag_ids': 'contextual_tag_ids',
         'conversion_bid_price': 'conversion_bid_price',
-        'conversion_id': 'conversion_id',
-        'creative_material_mode': 'creative_material_mode',
         'dayparting': 'dayparting',
         'deep_bid_type': 'deep_bid_type',
         'deep_cpa_bid': 'deep_cpa_bid',
+        'deep_funnel_event_source': 'deep_funnel_event_source',
+        'deep_funnel_event_source_id': 'deep_funnel_event_source_id',
+        'deep_funnel_optimization_event': 'deep_funnel_optimization_event',
+        'deep_funnel_optimization_status': 'deep_funnel_optimization_status',
         'device_model_ids': 'device_model_ids',
         'device_price_ranges': 'device_price_ranges',
+        'exclude_age_under_eighteen': 'exclude_age_under_eighteen',
         'excluded_audience_ids': 'excluded_audience_ids',
         'excluded_custom_actions': 'excluded_custom_actions',
         'excluded_pangle_audience_package_ids': 'excluded_pangle_audience_package_ids',
@@ -127,16 +138,14 @@ class AdgroupUpdateBody(object):
         'frequency_schedule': 'frequency_schedule',
         'gender': 'gender',
         'household_income': 'household_income',
-        'identity_authorized_bc_id': 'identity_authorized_bc_id',
-        'identity_id': 'identity_id',
-        'identity_type': 'identity_type',
         'included_custom_actions': 'included_custom_actions',
         'included_pangle_audience_package_ids': 'included_pangle_audience_package_ids',
         'interest_category_ids': 'interest_category_ids',
         'interest_keyword_ids': 'interest_keyword_ids',
-        'interest_keywords': 'interest_keywords',
         'ios14_targeting': 'ios14_targeting',
         'is_hfss': 'is_hfss',
+        'is_lhf_compliance': 'is_lhf_compliance',
+        'isp_ids': 'isp_ids',
         'languages': 'languages',
         'location_ids': 'location_ids',
         'min_android_version': 'min_android_version',
@@ -147,47 +156,58 @@ class AdgroupUpdateBody(object):
         'pacing': 'pacing',
         'purchase_intention_keyword_ids': 'purchase_intention_keyword_ids',
         'roas_bid': 'roas_bid',
+        'saved_audience_id': 'saved_audience_id',
         'schedule_end_time': 'schedule_end_time',
         'schedule_start_time': 'schedule_start_time',
         'schedule_type': 'schedule_type',
+        'search_keywords': 'search_keywords',
+        'search_result_enabled': 'search_result_enabled',
         'secondary_optimization_event': 'secondary_optimization_event',
+        'share_disabled': 'share_disabled',
         'shopping_ads_retargeting_actions_days': 'shopping_ads_retargeting_actions_days',
+        'shopping_ads_retargeting_custom_audience_relation': 'shopping_ads_retargeting_custom_audience_relation',
         'shopping_ads_retargeting_type': 'shopping_ads_retargeting_type',
+        'smart_audience_enabled': 'smart_audience_enabled',
+        'smart_interest_behavior_enabled': 'smart_interest_behavior_enabled',
         'spending_power': 'spending_power',
-        'targeting_expansion': 'targeting_expansion'
+        'targeting_expansion': 'targeting_expansion',
+        'vertical_sensitivity_id': 'vertical_sensitivity_id',
+        'zipcode_ids': 'zipcode_ids'
     }
 
-    def __init__(self, actions=None, adgroup_id=None, adgroup_name=None, advertiser_id=None, age_groups=None, app_download_url=None, app_id=None, audience_ids=None, audience_rule=None, audience_type=None, auto_targeting_enabled=None, bid_price=None, bid_type=None, billing_event=None, blocked_pangle_app_ids=None, brand_safety_type=None, budget=None, carrier_ids=None, catalog_authorized_bc_id=None, comment_disabled=None, contextual_tag_ids=None, conversion_bid_price=None, conversion_id=None, creative_material_mode=None, dayparting=None, deep_bid_type=None, deep_cpa_bid=None, device_model_ids=None, device_price_ranges=None, excluded_audience_ids=None, excluded_custom_actions=None, excluded_pangle_audience_package_ids=None, frequency=None, frequency_schedule=None, gender=None, household_income=None, identity_authorized_bc_id=None, identity_id=None, identity_type=None, included_custom_actions=None, included_pangle_audience_package_ids=None, interest_category_ids=None, interest_keyword_ids=None, interest_keywords=None, ios14_targeting=None, is_hfss=None, languages=None, location_ids=None, min_android_version=None, min_ios_version=None, network_types=None, next_day_retention=None, operating_systems=None, pacing=None, purchase_intention_keyword_ids=None, roas_bid=None, schedule_end_time=None, schedule_start_time=None, schedule_type=None, secondary_optimization_event=None, shopping_ads_retargeting_actions_days=None, shopping_ads_retargeting_type=None, spending_power=None, targeting_expansion=None):  # noqa: E501
+    def __init__(self, actions=None, adgroup_id=None, adgroup_name=None, advertiser_id=None, age_groups=None, audience_ids=None, audience_rule=None, audience_type=None, auto_targeting_enabled=None, automated_keywords_enabled=False, bid_price=None, bid_type=None, blocked_pangle_app_ids=None, brand_safety_type=None, budget=None, carrier_ids=None, catalog_authorized_bc_id=None, category_exclusion_ids=None, comment_disabled=None, contextual_tag_ids=None, conversion_bid_price=None, dayparting=None, deep_bid_type=None, deep_cpa_bid=None, deep_funnel_event_source=None, deep_funnel_event_source_id=None, deep_funnel_optimization_event=None, deep_funnel_optimization_status=None, device_model_ids=None, device_price_ranges=None, exclude_age_under_eighteen=False, excluded_audience_ids=None, excluded_custom_actions=None, excluded_pangle_audience_package_ids=None, frequency=None, frequency_schedule=None, gender=None, household_income=None, included_custom_actions=None, included_pangle_audience_package_ids=None, interest_category_ids=None, interest_keyword_ids=None, ios14_targeting=None, is_hfss=None, is_lhf_compliance=None, isp_ids=None, languages=None, location_ids=None, min_android_version=None, min_ios_version=None, network_types=None, next_day_retention=None, operating_systems=None, pacing=None, purchase_intention_keyword_ids=None, roas_bid=None, saved_audience_id=None, schedule_end_time=None, schedule_start_time=None, schedule_type=None, search_keywords=None, search_result_enabled=None, secondary_optimization_event=None, share_disabled=None, shopping_ads_retargeting_actions_days=None, shopping_ads_retargeting_custom_audience_relation=None, shopping_ads_retargeting_type=None, smart_audience_enabled=None, smart_interest_behavior_enabled=None, spending_power=None, targeting_expansion=None, vertical_sensitivity_id=None, zipcode_ids=None):  # noqa: E501
         """AdgroupUpdateBody - a model defined in Swagger"""  # noqa: E501
         self._actions = None
         self._adgroup_id = None
         self._adgroup_name = None
         self._advertiser_id = None
         self._age_groups = None
-        self._app_download_url = None
-        self._app_id = None
         self._audience_ids = None
         self._audience_rule = None
         self._audience_type = None
         self._auto_targeting_enabled = None
+        self._automated_keywords_enabled = None
         self._bid_price = None
         self._bid_type = None
-        self._billing_event = None
         self._blocked_pangle_app_ids = None
         self._brand_safety_type = None
         self._budget = None
         self._carrier_ids = None
         self._catalog_authorized_bc_id = None
+        self._category_exclusion_ids = None
         self._comment_disabled = None
         self._contextual_tag_ids = None
         self._conversion_bid_price = None
-        self._conversion_id = None
-        self._creative_material_mode = None
         self._dayparting = None
         self._deep_bid_type = None
         self._deep_cpa_bid = None
+        self._deep_funnel_event_source = None
+        self._deep_funnel_event_source_id = None
+        self._deep_funnel_optimization_event = None
+        self._deep_funnel_optimization_status = None
         self._device_model_ids = None
         self._device_price_ranges = None
+        self._exclude_age_under_eighteen = None
         self._excluded_audience_ids = None
         self._excluded_custom_actions = None
         self._excluded_pangle_audience_package_ids = None
@@ -195,16 +215,14 @@ class AdgroupUpdateBody(object):
         self._frequency_schedule = None
         self._gender = None
         self._household_income = None
-        self._identity_authorized_bc_id = None
-        self._identity_id = None
-        self._identity_type = None
         self._included_custom_actions = None
         self._included_pangle_audience_package_ids = None
         self._interest_category_ids = None
         self._interest_keyword_ids = None
-        self._interest_keywords = None
         self._ios14_targeting = None
         self._is_hfss = None
+        self._is_lhf_compliance = None
+        self._isp_ids = None
         self._languages = None
         self._location_ids = None
         self._min_android_version = None
@@ -215,14 +233,23 @@ class AdgroupUpdateBody(object):
         self._pacing = None
         self._purchase_intention_keyword_ids = None
         self._roas_bid = None
+        self._saved_audience_id = None
         self._schedule_end_time = None
         self._schedule_start_time = None
         self._schedule_type = None
+        self._search_keywords = None
+        self._search_result_enabled = None
         self._secondary_optimization_event = None
+        self._share_disabled = None
         self._shopping_ads_retargeting_actions_days = None
+        self._shopping_ads_retargeting_custom_audience_relation = None
         self._shopping_ads_retargeting_type = None
+        self._smart_audience_enabled = None
+        self._smart_interest_behavior_enabled = None
         self._spending_power = None
         self._targeting_expansion = None
+        self._vertical_sensitivity_id = None
+        self._zipcode_ids = None
         self.discriminator = None
         if actions is not None:
             self.actions = actions
@@ -232,10 +259,6 @@ class AdgroupUpdateBody(object):
         self.advertiser_id = advertiser_id
         if age_groups is not None:
             self.age_groups = age_groups
-        if app_download_url is not None:
-            self.app_download_url = app_download_url
-        if app_id is not None:
-            self.app_id = app_id
         if audience_ids is not None:
             self.audience_ids = audience_ids
         if audience_rule is not None:
@@ -244,12 +267,12 @@ class AdgroupUpdateBody(object):
             self.audience_type = audience_type
         if auto_targeting_enabled is not None:
             self.auto_targeting_enabled = auto_targeting_enabled
+        if automated_keywords_enabled is not None:
+            self.automated_keywords_enabled = automated_keywords_enabled
         if bid_price is not None:
             self.bid_price = bid_price
         if bid_type is not None:
             self.bid_type = bid_type
-        if billing_event is not None:
-            self.billing_event = billing_event
         if blocked_pangle_app_ids is not None:
             self.blocked_pangle_app_ids = blocked_pangle_app_ids
         if brand_safety_type is not None:
@@ -260,26 +283,34 @@ class AdgroupUpdateBody(object):
             self.carrier_ids = carrier_ids
         if catalog_authorized_bc_id is not None:
             self.catalog_authorized_bc_id = catalog_authorized_bc_id
+        if category_exclusion_ids is not None:
+            self.category_exclusion_ids = category_exclusion_ids
         if comment_disabled is not None:
             self.comment_disabled = comment_disabled
         if contextual_tag_ids is not None:
             self.contextual_tag_ids = contextual_tag_ids
         if conversion_bid_price is not None:
             self.conversion_bid_price = conversion_bid_price
-        if conversion_id is not None:
-            self.conversion_id = conversion_id
-        if creative_material_mode is not None:
-            self.creative_material_mode = creative_material_mode
         if dayparting is not None:
             self.dayparting = dayparting
         if deep_bid_type is not None:
             self.deep_bid_type = deep_bid_type
         if deep_cpa_bid is not None:
             self.deep_cpa_bid = deep_cpa_bid
+        if deep_funnel_event_source is not None:
+            self.deep_funnel_event_source = deep_funnel_event_source
+        if deep_funnel_event_source_id is not None:
+            self.deep_funnel_event_source_id = deep_funnel_event_source_id
+        if deep_funnel_optimization_event is not None:
+            self.deep_funnel_optimization_event = deep_funnel_optimization_event
+        if deep_funnel_optimization_status is not None:
+            self.deep_funnel_optimization_status = deep_funnel_optimization_status
         if device_model_ids is not None:
             self.device_model_ids = device_model_ids
         if device_price_ranges is not None:
             self.device_price_ranges = device_price_ranges
+        if exclude_age_under_eighteen is not None:
+            self.exclude_age_under_eighteen = exclude_age_under_eighteen
         if excluded_audience_ids is not None:
             self.excluded_audience_ids = excluded_audience_ids
         if excluded_custom_actions is not None:
@@ -294,12 +325,6 @@ class AdgroupUpdateBody(object):
             self.gender = gender
         if household_income is not None:
             self.household_income = household_income
-        if identity_authorized_bc_id is not None:
-            self.identity_authorized_bc_id = identity_authorized_bc_id
-        if identity_id is not None:
-            self.identity_id = identity_id
-        if identity_type is not None:
-            self.identity_type = identity_type
         if included_custom_actions is not None:
             self.included_custom_actions = included_custom_actions
         if included_pangle_audience_package_ids is not None:
@@ -308,12 +333,14 @@ class AdgroupUpdateBody(object):
             self.interest_category_ids = interest_category_ids
         if interest_keyword_ids is not None:
             self.interest_keyword_ids = interest_keyword_ids
-        if interest_keywords is not None:
-            self.interest_keywords = interest_keywords
         if ios14_targeting is not None:
             self.ios14_targeting = ios14_targeting
         if is_hfss is not None:
             self.is_hfss = is_hfss
+        if is_lhf_compliance is not None:
+            self.is_lhf_compliance = is_lhf_compliance
+        if isp_ids is not None:
+            self.isp_ids = isp_ids
         if languages is not None:
             self.languages = languages
         if location_ids is not None:
@@ -334,28 +361,45 @@ class AdgroupUpdateBody(object):
             self.purchase_intention_keyword_ids = purchase_intention_keyword_ids
         if roas_bid is not None:
             self.roas_bid = roas_bid
+        if saved_audience_id is not None:
+            self.saved_audience_id = saved_audience_id
         if schedule_end_time is not None:
             self.schedule_end_time = schedule_end_time
         if schedule_start_time is not None:
             self.schedule_start_time = schedule_start_time
         if schedule_type is not None:
             self.schedule_type = schedule_type
+        if search_keywords is not None:
+            self.search_keywords = search_keywords
+        if search_result_enabled is not None:
+            self.search_result_enabled = search_result_enabled
         if secondary_optimization_event is not None:
             self.secondary_optimization_event = secondary_optimization_event
+        if share_disabled is not None:
+            self.share_disabled = share_disabled
         if shopping_ads_retargeting_actions_days is not None:
             self.shopping_ads_retargeting_actions_days = shopping_ads_retargeting_actions_days
+        if shopping_ads_retargeting_custom_audience_relation is not None:
+            self.shopping_ads_retargeting_custom_audience_relation = shopping_ads_retargeting_custom_audience_relation
         if shopping_ads_retargeting_type is not None:
             self.shopping_ads_retargeting_type = shopping_ads_retargeting_type
+        if smart_audience_enabled is not None:
+            self.smart_audience_enabled = smart_audience_enabled
+        if smart_interest_behavior_enabled is not None:
+            self.smart_interest_behavior_enabled = smart_interest_behavior_enabled
         if spending_power is not None:
             self.spending_power = spending_power
         if targeting_expansion is not None:
             self.targeting_expansion = targeting_expansion
+        if vertical_sensitivity_id is not None:
+            self.vertical_sensitivity_id = vertical_sensitivity_id
+        if zipcode_ids is not None:
+            self.zipcode_ids = zipcode_ids
 
     @property
     def actions(self):
         """Gets the actions of this AdgroupUpdateBody.  # noqa: E501
 
-        A list of action category objects.  # noqa: E501
 
         :return: The actions of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[AdgroupcreateActions]
@@ -366,7 +410,6 @@ class AdgroupUpdateBody(object):
     def actions(self, actions):
         """Sets the actions of this AdgroupUpdateBody.
 
-        A list of action category objects.  # noqa: E501
 
         :param actions: The actions of this AdgroupUpdateBody.  # noqa: E501
         :type: list[AdgroupcreateActions]
@@ -378,7 +421,6 @@ class AdgroupUpdateBody(object):
     def adgroup_id(self):
         """Gets the adgroup_id of this AdgroupUpdateBody.  # noqa: E501
 
-        Ad group ID  # noqa: E501
 
         :return: The adgroup_id of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -389,7 +431,6 @@ class AdgroupUpdateBody(object):
     def adgroup_id(self, adgroup_id):
         """Sets the adgroup_id of this AdgroupUpdateBody.
 
-        Ad group ID  # noqa: E501
 
         :param adgroup_id: The adgroup_id of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -403,7 +444,6 @@ class AdgroupUpdateBody(object):
     def adgroup_name(self):
         """Gets the adgroup_name of this AdgroupUpdateBody.  # noqa: E501
 
-        Ad group name. Character limit is 512 and cannot contain emoji.  # noqa: E501
 
         :return: The adgroup_name of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -414,7 +454,6 @@ class AdgroupUpdateBody(object):
     def adgroup_name(self, adgroup_name):
         """Sets the adgroup_name of this AdgroupUpdateBody.
 
-        Ad group name. Character limit is 512 and cannot contain emoji.  # noqa: E501
 
         :param adgroup_name: The adgroup_name of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -426,7 +465,6 @@ class AdgroupUpdateBody(object):
     def advertiser_id(self):
         """Gets the advertiser_id of this AdgroupUpdateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -437,7 +475,6 @@ class AdgroupUpdateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this AdgroupUpdateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -451,7 +488,6 @@ class AdgroupUpdateBody(object):
     def age_groups(self):
         """Gets the age_groups of this AdgroupUpdateBody.  # noqa: E501
 
-        Age groups you want to target. For enum values, see [Enumeration - Targeting Age Group](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The age_groups of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -462,7 +498,6 @@ class AdgroupUpdateBody(object):
     def age_groups(self, age_groups):
         """Sets the age_groups of this AdgroupUpdateBody.
 
-        Age groups you want to target. For enum values, see [Enumeration - Targeting Age Group](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param age_groups: The age_groups of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -471,56 +506,9 @@ class AdgroupUpdateBody(object):
         self._age_groups = age_groups
 
     @property
-    def app_download_url(self):
-        """Gets the app_download_url of this AdgroupUpdateBody.  # noqa: E501
-
-        App download link  # noqa: E501
-
-        :return: The app_download_url of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._app_download_url
-
-    @app_download_url.setter
-    def app_download_url(self, app_download_url):
-        """Sets the app_download_url of this AdgroupUpdateBody.
-
-        App download link  # noqa: E501
-
-        :param app_download_url: The app_download_url of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._app_download_url = app_download_url
-
-    @property
-    def app_id(self):
-        """Gets the app_id of this AdgroupUpdateBody.  # noqa: E501
-
-        The Application id of the promoted app. You can get `app_id` by using the [/app/list/](https://ads.tiktok.com/marketing_api/docs?id=1740859313270786) endpoint. Required in the following use cases- When `objective_type` is `APP_INSTALL`.When `objective_type` is `APP_PROMOTION` and `app_promotion_type` is `APP_RETARGETING` (App retargeting).When `objective_type` is `APP_PROMOTION` , `app_promotion_type` is `APP_INSTALL`(App install), and it is not an iOS14 Dedicated Campaign.When `objective_type` is `CONVERSIONS` and `promotion_type` is `APP_ANDROID` or `APP_IOS`  # noqa: E501
-
-        :return: The app_id of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._app_id
-
-    @app_id.setter
-    def app_id(self, app_id):
-        """Sets the app_id of this AdgroupUpdateBody.
-
-        The Application id of the promoted app. You can get `app_id` by using the [/app/list/](https://ads.tiktok.com/marketing_api/docs?id=1740859313270786) endpoint. Required in the following use cases- When `objective_type` is `APP_INSTALL`.When `objective_type` is `APP_PROMOTION` and `app_promotion_type` is `APP_RETARGETING` (App retargeting).When `objective_type` is `APP_PROMOTION` , `app_promotion_type` is `APP_INSTALL`(App install), and it is not an iOS14 Dedicated Campaign.When `objective_type` is `CONVERSIONS` and `promotion_type` is `APP_ANDROID` or `APP_IOS`  # noqa: E501
-
-        :param app_id: The app_id of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._app_id = app_id
-
-    @property
     def audience_ids(self):
         """Gets the audience_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        List of audience IDs. You can get audience IDs by using the [/dmp/custom_audience/list/](https://ads.tiktok.com/marketing_api/docs?id=1739940506015746) endpoint.  # noqa: E501
 
         :return: The audience_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -531,7 +519,6 @@ class AdgroupUpdateBody(object):
     def audience_ids(self, audience_ids):
         """Sets the audience_ids of this AdgroupUpdateBody.
 
-        List of audience IDs. You can get audience IDs by using the [/dmp/custom_audience/list/](https://ads.tiktok.com/marketing_api/docs?id=1739940506015746) endpoint.  # noqa: E501
 
         :param audience_ids: The audience_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -545,7 +532,7 @@ class AdgroupUpdateBody(object):
 
 
         :return: The audience_rule of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: AdgroupcreateAudienceRule
+        :rtype: object
         """
         return self._audience_rule
 
@@ -555,7 +542,7 @@ class AdgroupUpdateBody(object):
 
 
         :param audience_rule: The audience_rule of this AdgroupUpdateBody.  # noqa: E501
-        :type: AdgroupcreateAudienceRule
+        :type: object
         """
 
         self._audience_rule = audience_rule
@@ -564,7 +551,6 @@ class AdgroupUpdateBody(object):
     def audience_type(self):
         """Gets the audience_type of this AdgroupUpdateBody.  # noqa: E501
 
-        App retargeting audience type, required when objective_type is `CONVERSIONS` and externla_type is app-related. Currently, the only supported enumeration is `NEW_CUSTOM_AUDIENCE`; for this type, you must pass audience IDs to the `audience_ids` field when creating or updating the ad group. The audiences to be used must be either Custom File Audience or App Activity Audience. Optionally, you can specify the `excluded_audience_ids` field. If both `audience_ids` and `excluded_audience_ids` are specified, they cannot contain the same IDs  # noqa: E501
 
         :return: The audience_type of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -575,7 +561,6 @@ class AdgroupUpdateBody(object):
     def audience_type(self, audience_type):
         """Sets the audience_type of this AdgroupUpdateBody.
 
-        App retargeting audience type, required when objective_type is `CONVERSIONS` and externla_type is app-related. Currently, the only supported enumeration is `NEW_CUSTOM_AUDIENCE`; for this type, you must pass audience IDs to the `audience_ids` field when creating or updating the ad group. The audiences to be used must be either Custom File Audience or App Activity Audience. Optionally, you can specify the `excluded_audience_ids` field. If both `audience_ids` and `excluded_audience_ids` are specified, they cannot contain the same IDs  # noqa: E501
 
         :param audience_type: The audience_type of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -587,7 +572,6 @@ class AdgroupUpdateBody(object):
     def auto_targeting_enabled(self):
         """Gets the auto_targeting_enabled of this AdgroupUpdateBody.  # noqa: E501
 
-        Whether to enable automated targeting.  # noqa: E501
 
         :return: The auto_targeting_enabled of this AdgroupUpdateBody.  # noqa: E501
         :rtype: bool
@@ -598,7 +582,6 @@ class AdgroupUpdateBody(object):
     def auto_targeting_enabled(self, auto_targeting_enabled):
         """Sets the auto_targeting_enabled of this AdgroupUpdateBody.
 
-        Whether to enable automated targeting.  # noqa: E501
 
         :param auto_targeting_enabled: The auto_targeting_enabled of this AdgroupUpdateBody.  # noqa: E501
         :type: bool
@@ -607,10 +590,30 @@ class AdgroupUpdateBody(object):
         self._auto_targeting_enabled = auto_targeting_enabled
 
     @property
+    def automated_keywords_enabled(self):
+        """Gets the automated_keywords_enabled of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The automated_keywords_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._automated_keywords_enabled
+
+    @automated_keywords_enabled.setter
+    def automated_keywords_enabled(self, automated_keywords_enabled):
+        """Sets the automated_keywords_enabled of this AdgroupUpdateBody.
+
+
+        :param automated_keywords_enabled: The automated_keywords_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._automated_keywords_enabled = automated_keywords_enabled
+
+    @property
     def bid_price(self):
         """Gets the bid_price of this AdgroupUpdateBody.  # noqa: E501
 
-        The maximum cost per result you are willing to bid (for Bid Cap bidding strategy), or an average cost per result that you want to achieve (for Cost Cap bidding strategy). When Campaign Budget Optimization (`budget_optimize_on`) is on, we suggest that you set the same bid value for all ad groups in the campaign. Note- To specify `bid_price`, you need to set `bid_type` as `BID_TYPE_CUSTOM`.`bid_price` needs to be lower than budget set at the campaign level and ad group level. See [Bidding-Bidding limits](https://ads.tiktok.com/marketing_api/docs?id=1745292444424193) to learn more about the bid verification mechanism.  # noqa: E501
 
         :return: The bid_price of this AdgroupUpdateBody.  # noqa: E501
         :rtype: float
@@ -621,7 +624,6 @@ class AdgroupUpdateBody(object):
     def bid_price(self, bid_price):
         """Sets the bid_price of this AdgroupUpdateBody.
 
-        The maximum cost per result you are willing to bid (for Bid Cap bidding strategy), or an average cost per result that you want to achieve (for Cost Cap bidding strategy). When Campaign Budget Optimization (`budget_optimize_on`) is on, we suggest that you set the same bid value for all ad groups in the campaign. Note- To specify `bid_price`, you need to set `bid_type` as `BID_TYPE_CUSTOM`.`bid_price` needs to be lower than budget set at the campaign level and ad group level. See [Bidding-Bidding limits](https://ads.tiktok.com/marketing_api/docs?id=1745292444424193) to learn more about the bid verification mechanism.  # noqa: E501
 
         :param bid_price: The bid_price of this AdgroupUpdateBody.  # noqa: E501
         :type: float
@@ -633,7 +635,6 @@ class AdgroupUpdateBody(object):
     def bid_type(self):
         """Gets the bid_type of this AdgroupUpdateBody.  # noqa: E501
 
-        Bidding strategy that determines how the system manages your cost per result, spends your budget, and how it delivers ads. Required when Campaign Budget Optimization (CBO) is enabled (`budget_optimize_on` = `TRUE`). For enum values, see [Enumeration - Bidding Strategy](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The bid_type of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -644,7 +645,6 @@ class AdgroupUpdateBody(object):
     def bid_type(self, bid_type):
         """Sets the bid_type of this AdgroupUpdateBody.
 
-        Bidding strategy that determines how the system manages your cost per result, spends your budget, and how it delivers ads. Required when Campaign Budget Optimization (CBO) is enabled (`budget_optimize_on` = `TRUE`). For enum values, see [Enumeration - Bidding Strategy](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param bid_type: The bid_type of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -653,33 +653,9 @@ class AdgroupUpdateBody(object):
         self._bid_type = bid_type
 
     @property
-    def billing_event(self):
-        """Gets the billing_event of this AdgroupUpdateBody.  # noqa: E501
-
-        Events that you want to pay for. For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).|  # noqa: E501
-
-        :return: The billing_event of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._billing_event
-
-    @billing_event.setter
-    def billing_event(self, billing_event):
-        """Sets the billing_event of this AdgroupUpdateBody.
-
-        Events that you want to pay for. For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).|  # noqa: E501
-
-        :param billing_event: The billing_event of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._billing_event = billing_event
-
-    @property
     def blocked_pangle_app_ids(self):
         """Gets the blocked_pangle_app_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        Pangle app block list ID. You can get an ID via the `app_package_id` field returned by [Get Pangle block list](https://ads.tiktok.com/marketing_api/docs?id=1740039957181441). It only takes effect when Pangle placement is selected.  # noqa: E501
 
         :return: The blocked_pangle_app_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -690,7 +666,6 @@ class AdgroupUpdateBody(object):
     def blocked_pangle_app_ids(self, blocked_pangle_app_ids):
         """Sets the blocked_pangle_app_ids of this AdgroupUpdateBody.
 
-        Pangle app block list ID. You can get an ID via the `app_package_id` field returned by [Get Pangle block list](https://ads.tiktok.com/marketing_api/docs?id=1740039957181441). It only takes effect when Pangle placement is selected.  # noqa: E501
 
         :param blocked_pangle_app_ids: The blocked_pangle_app_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -702,7 +677,6 @@ class AdgroupUpdateBody(object):
     def brand_safety_type(self):
         """Gets the brand_safety_type of this AdgroupUpdateBody.  # noqa: E501
 
-        Valid only when `placements` is set as `PLACEMENT_TIKTOK`. Default value- `NO_BRAND_SAFETY`. Enum values- `NO_BRAND_SAFETY`-  To not use any brand safety solution.  Full inventory, which means your ads may appear next to some content featuring mature themes. `STANDARD_INVENTORY`- Use TikTok's brand safety solution. Standard inventory means that ads will appear next to content that is appropriate for most brands. `LIMITED_INVENTORY`- Use TikTok's brand safety solution. Limited inventory means that your ads will not appear next to content that contains mature themes.`THIRD_PARTY`- Use a third-party brand safety solution. You also need to pass in a value to the `brand_safety_partner` field. To get the countries and regions that your ads can be deployed to based on your brand safety settings, use the [/tool/region/] function. Note -   Pre-bid first-party Brand Safety solutions for `APP_PROMOTION`, `APP_INSTALL`, `WEB_CONVERSIONS`, `CONVERSIONS`, `TRAFFIC`,  `LEAD_GENERATION` objectives in Auction ads, and pre-bid third-party brand safety solutions are currently allowlist-only features. If you would like to access them, please contact your TikTok representative.  Pre-bid third-party Brand Safety solutions are not supported for TikTok Pulse campaigns (`rf_campaign_type` =`PULSE`).  See [Brand safety](https://ads.tiktok.com/marketing_api/docs?id=1739381752981505) to learn about the supported advertising objectives, supported markets, and the general introduction of pre-bid Brand Safety filtering.  Once set, this field cannot be modified.  # noqa: E501
 
         :return: The brand_safety_type of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -713,7 +687,6 @@ class AdgroupUpdateBody(object):
     def brand_safety_type(self, brand_safety_type):
         """Sets the brand_safety_type of this AdgroupUpdateBody.
 
-        Valid only when `placements` is set as `PLACEMENT_TIKTOK`. Default value- `NO_BRAND_SAFETY`. Enum values- `NO_BRAND_SAFETY`-  To not use any brand safety solution.  Full inventory, which means your ads may appear next to some content featuring mature themes. `STANDARD_INVENTORY`- Use TikTok's brand safety solution. Standard inventory means that ads will appear next to content that is appropriate for most brands. `LIMITED_INVENTORY`- Use TikTok's brand safety solution. Limited inventory means that your ads will not appear next to content that contains mature themes.`THIRD_PARTY`- Use a third-party brand safety solution. You also need to pass in a value to the `brand_safety_partner` field. To get the countries and regions that your ads can be deployed to based on your brand safety settings, use the [/tool/region/] function. Note -   Pre-bid first-party Brand Safety solutions for `APP_PROMOTION`, `APP_INSTALL`, `WEB_CONVERSIONS`, `CONVERSIONS`, `TRAFFIC`,  `LEAD_GENERATION` objectives in Auction ads, and pre-bid third-party brand safety solutions are currently allowlist-only features. If you would like to access them, please contact your TikTok representative.  Pre-bid third-party Brand Safety solutions are not supported for TikTok Pulse campaigns (`rf_campaign_type` =`PULSE`).  See [Brand safety](https://ads.tiktok.com/marketing_api/docs?id=1739381752981505) to learn about the supported advertising objectives, supported markets, and the general introduction of pre-bid Brand Safety filtering.  Once set, this field cannot be modified.  # noqa: E501
 
         :param brand_safety_type: The brand_safety_type of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -725,7 +698,6 @@ class AdgroupUpdateBody(object):
     def budget(self):
         """Gets the budget of this AdgroupUpdateBody.  # noqa: E501
 
-        Ad group budget. The setting will be ignored when Campaign Budget Optimization (`budget_optimize_on` = `TRUE`) is enabled. For how to configure budget settings, see [Budget](https://ads.tiktok.com/marketing_api/docs?id=1739381246298114). To directly see the daily budget value range for a currency, see [Currency-Daily budget value range](https://ads.tiktok.com/marketing_api/docs?id=1737585839634433).  # noqa: E501
 
         :return: The budget of this AdgroupUpdateBody.  # noqa: E501
         :rtype: float
@@ -736,7 +708,6 @@ class AdgroupUpdateBody(object):
     def budget(self, budget):
         """Sets the budget of this AdgroupUpdateBody.
 
-        Ad group budget. The setting will be ignored when Campaign Budget Optimization (`budget_optimize_on` = `TRUE`) is enabled. For how to configure budget settings, see [Budget](https://ads.tiktok.com/marketing_api/docs?id=1739381246298114). To directly see the daily budget value range for a currency, see [Currency-Daily budget value range](https://ads.tiktok.com/marketing_api/docs?id=1737585839634433).  # noqa: E501
 
         :param budget: The budget of this AdgroupUpdateBody.  # noqa: E501
         :type: float
@@ -748,7 +719,6 @@ class AdgroupUpdateBody(object):
     def carrier_ids(self):
         """Gets the carrier_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        Carriers that you want to target. A carrier is valid only when the `in_use` field for the carrier is `true`. The carriers must be consistent with the location(s) that you want to target. Use [/tool/carrier/](https://ads.tiktok.com/marketing_api/docs?id=1737168013095938) endpoint to get the enum values.  # noqa: E501
 
         :return: The carrier_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -759,7 +729,6 @@ class AdgroupUpdateBody(object):
     def carrier_ids(self, carrier_ids):
         """Sets the carrier_ids of this AdgroupUpdateBody.
 
-        Carriers that you want to target. A carrier is valid only when the `in_use` field for the carrier is `true`. The carriers must be consistent with the location(s) that you want to target. Use [/tool/carrier/](https://ads.tiktok.com/marketing_api/docs?id=1737168013095938) endpoint to get the enum values.  # noqa: E501
 
         :param carrier_ids: The carrier_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -771,7 +740,6 @@ class AdgroupUpdateBody(object):
     def catalog_authorized_bc_id(self):
         """Gets the catalog_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
 
-        For catalogs in Business Center, you must specify the ID of the Business Center that a catalog belongs to.  # noqa: E501
 
         :return: The catalog_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -782,7 +750,6 @@ class AdgroupUpdateBody(object):
     def catalog_authorized_bc_id(self, catalog_authorized_bc_id):
         """Sets the catalog_authorized_bc_id of this AdgroupUpdateBody.
 
-        For catalogs in Business Center, you must specify the ID of the Business Center that a catalog belongs to.  # noqa: E501
 
         :param catalog_authorized_bc_id: The catalog_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -791,13 +758,33 @@ class AdgroupUpdateBody(object):
         self._catalog_authorized_bc_id = catalog_authorized_bc_id
 
     @property
+    def category_exclusion_ids(self):
+        """Gets the category_exclusion_ids of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The category_exclusion_ids of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._category_exclusion_ids
+
+    @category_exclusion_ids.setter
+    def category_exclusion_ids(self, category_exclusion_ids):
+        """Sets the category_exclusion_ids of this AdgroupUpdateBody.
+
+
+        :param category_exclusion_ids: The category_exclusion_ids of this AdgroupUpdateBody.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._category_exclusion_ids = category_exclusion_ids
+
+    @property
     def comment_disabled(self):
         """Gets the comment_disabled of this AdgroupUpdateBody.  # noqa: E501
 
-        Whether to allow comments on your ads on TikTok.  # noqa: E501
 
         :return: The comment_disabled of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
+        :rtype: bool
         """
         return self._comment_disabled
 
@@ -805,10 +792,9 @@ class AdgroupUpdateBody(object):
     def comment_disabled(self, comment_disabled):
         """Sets the comment_disabled of this AdgroupUpdateBody.
 
-        Whether to allow comments on your ads on TikTok.  # noqa: E501
 
         :param comment_disabled: The comment_disabled of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
+        :type: bool
         """
 
         self._comment_disabled = comment_disabled
@@ -817,7 +803,6 @@ class AdgroupUpdateBody(object):
     def contextual_tag_ids(self):
         """Gets the contextual_tag_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        Contextual tag IDs. You can use [/tool/contextual_tag/get/](https://ads.tiktok.com/marketing_api/docs?id=1747747118654465) to get available contextual tags.  See [Contextual targeting](https://ads.tiktok.com/marketing_api/docs?id=1745292519923713)  to learn more about how to use contextual targeting.<p><span style=\"color-darkred\"><b>Note</b></span>- This is an allowlist-only feature. If you would like to access it, please contact your TikTok representative.Only supports `REACH` and `VIDEO_VIEWS` as objectives (`objective_type`) at the campaign level. Not supported when `brand_safety_type` is set to `THIRD_PARTY`.  # noqa: E501
 
         :return: The contextual_tag_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -828,7 +813,6 @@ class AdgroupUpdateBody(object):
     def contextual_tag_ids(self, contextual_tag_ids):
         """Sets the contextual_tag_ids of this AdgroupUpdateBody.
 
-        Contextual tag IDs. You can use [/tool/contextual_tag/get/](https://ads.tiktok.com/marketing_api/docs?id=1747747118654465) to get available contextual tags.  See [Contextual targeting](https://ads.tiktok.com/marketing_api/docs?id=1745292519923713)  to learn more about how to use contextual targeting.<p><span style=\"color-darkred\"><b>Note</b></span>- This is an allowlist-only feature. If you would like to access it, please contact your TikTok representative.Only supports `REACH` and `VIDEO_VIEWS` as objectives (`objective_type`) at the campaign level. Not supported when `brand_safety_type` is set to `THIRD_PARTY`.  # noqa: E501
 
         :param contextual_tag_ids: The contextual_tag_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -840,7 +824,6 @@ class AdgroupUpdateBody(object):
     def conversion_bid_price(self):
         """Gets the conversion_bid_price of this AdgroupUpdateBody.  # noqa: E501
 
-        Where you can set a target cost per conversion for oCPM(Optimized Cost per Mille); Required when `billing_event` = `OCPM` and `bid_type` = `BID_TYPE_CUSTOM`.`conversion_bid_price` needs to be lower than budget set at the campaign level and ad group level. See [Bidding-Bidding limits](https://ads.tiktok.com/marketing_api/docs?id=1745292444424193) to learn more about the bid verification mechanism.  # noqa: E501
 
         :return: The conversion_bid_price of this AdgroupUpdateBody.  # noqa: E501
         :rtype: float
@@ -851,7 +834,6 @@ class AdgroupUpdateBody(object):
     def conversion_bid_price(self, conversion_bid_price):
         """Sets the conversion_bid_price of this AdgroupUpdateBody.
 
-        Where you can set a target cost per conversion for oCPM(Optimized Cost per Mille); Required when `billing_event` = `OCPM` and `bid_type` = `BID_TYPE_CUSTOM`.`conversion_bid_price` needs to be lower than budget set at the campaign level and ad group level. See [Bidding-Bidding limits](https://ads.tiktok.com/marketing_api/docs?id=1745292444424193) to learn more about the bid verification mechanism.  # noqa: E501
 
         :param conversion_bid_price: The conversion_bid_price of this AdgroupUpdateBody.  # noqa: E501
         :type: float
@@ -860,56 +842,9 @@ class AdgroupUpdateBody(object):
         self._conversion_bid_price = conversion_bid_price
 
     @property
-    def conversion_id(self):
-        """Gets the conversion_id of this AdgroupUpdateBody.  # noqa: E501
-
-        Conversion Id  # noqa: E501
-
-        :return: The conversion_id of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: int
-        """
-        return self._conversion_id
-
-    @conversion_id.setter
-    def conversion_id(self, conversion_id):
-        """Sets the conversion_id of this AdgroupUpdateBody.
-
-        Conversion Id  # noqa: E501
-
-        :param conversion_id: The conversion_id of this AdgroupUpdateBody.  # noqa: E501
-        :type: int
-        """
-
-        self._conversion_id = conversion_id
-
-    @property
-    def creative_material_mode(self):
-        """Gets the creative_material_mode of this AdgroupUpdateBody.  # noqa: E501
-
-        The strategy that your creatives will be delivered.<br data-tomark-pass>`Note`- When you choose automated ad, your creative materials will automatically be combined for delivery. Tiktok Ads' smart optimization algorithm is applied and will be used to achieve the best ad performance during delivery. <br data-tomark-pass>Optional values include- `CUSTOM` (custom), `DYNAMIC` (automated). Default value is `CUSTOM` (custom). See [help center](https://ads.tiktok.com/help/article?aid=6670043695674294277) for more.  # noqa: E501
-
-        :return: The creative_material_mode of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._creative_material_mode
-
-    @creative_material_mode.setter
-    def creative_material_mode(self, creative_material_mode):
-        """Sets the creative_material_mode of this AdgroupUpdateBody.
-
-        The strategy that your creatives will be delivered.<br data-tomark-pass>`Note`- When you choose automated ad, your creative materials will automatically be combined for delivery. Tiktok Ads' smart optimization algorithm is applied and will be used to achieve the best ad performance during delivery. <br data-tomark-pass>Optional values include- `CUSTOM` (custom), `DYNAMIC` (automated). Default value is `CUSTOM` (custom). See [help center](https://ads.tiktok.com/help/article?aid=6670043695674294277) for more.  # noqa: E501
-
-        :param creative_material_mode: The creative_material_mode of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._creative_material_mode = creative_material_mode
-
-    @property
     def dayparting(self):
         """Gets the dayparting of this AdgroupUpdateBody.  # noqa: E501
 
-        Ad delivery arrangement, in the format of a string that consists of 48 x 7 characters. Each character is mapped to a 30-minute timeframe from Monday to Sunday. Each character can be set to either 0 or 1. 1 represents delivery in the 30-minute timeframe, and 0 stands for non-delivery in the 30-minute timeframe. The first character is mapped to 0-01-0-30 of Monday; The second character is mapped to 0-31-1-00 of Monday, and the last character represents 23-31-0-00 Sunday.  # noqa: E501
 
         :return: The dayparting of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -920,7 +855,6 @@ class AdgroupUpdateBody(object):
     def dayparting(self, dayparting):
         """Sets the dayparting of this AdgroupUpdateBody.
 
-        Ad delivery arrangement, in the format of a string that consists of 48 x 7 characters. Each character is mapped to a 30-minute timeframe from Monday to Sunday. Each character can be set to either 0 or 1. 1 represents delivery in the 30-minute timeframe, and 0 stands for non-delivery in the 30-minute timeframe. The first character is mapped to 0-01-0-30 of Monday; The second character is mapped to 0-31-1-00 of Monday, and the last character represents 23-31-0-00 Sunday.  # noqa: E501
 
         :param dayparting: The dayparting of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -932,7 +866,6 @@ class AdgroupUpdateBody(object):
     def deep_bid_type(self):
         """Gets the deep_bid_type of this AdgroupUpdateBody.  # noqa: E501
 
-        Bidding strategy for in-app events. Required when Campaign Budget Optimization (CBO) is enabled (`budget_optimize_on` = `TRUE`)  and `optimization_goal` is `VALUE`. Enum values- `VO_MIN_ROAS` (allowlisted), `VO_HIGHEST_VALUE` (allowlisted). For details, see [Enumeration - Deep-level Bidding Strategy](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The deep_bid_type of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -943,7 +876,6 @@ class AdgroupUpdateBody(object):
     def deep_bid_type(self, deep_bid_type):
         """Sets the deep_bid_type of this AdgroupUpdateBody.
 
-        Bidding strategy for in-app events. Required when Campaign Budget Optimization (CBO) is enabled (`budget_optimize_on` = `TRUE`)  and `optimization_goal` is `VALUE`. Enum values- `VO_MIN_ROAS` (allowlisted), `VO_HIGHEST_VALUE` (allowlisted). For details, see [Enumeration - Deep-level Bidding Strategy](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param deep_bid_type: The deep_bid_type of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -955,7 +887,6 @@ class AdgroupUpdateBody(object):
     def deep_cpa_bid(self):
         """Gets the deep_cpa_bid of this AdgroupUpdateBody.  # noqa: E501
 
-        Deep CPA bid  # noqa: E501
 
         :return: The deep_cpa_bid of this AdgroupUpdateBody.  # noqa: E501
         :rtype: float
@@ -966,7 +897,6 @@ class AdgroupUpdateBody(object):
     def deep_cpa_bid(self, deep_cpa_bid):
         """Sets the deep_cpa_bid of this AdgroupUpdateBody.
 
-        Deep CPA bid  # noqa: E501
 
         :param deep_cpa_bid: The deep_cpa_bid of this AdgroupUpdateBody.  # noqa: E501
         :type: float
@@ -975,10 +905,93 @@ class AdgroupUpdateBody(object):
         self._deep_cpa_bid = deep_cpa_bid
 
     @property
+    def deep_funnel_event_source(self):
+        """Gets the deep_funnel_event_source of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The deep_funnel_event_source of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._deep_funnel_event_source
+
+    @deep_funnel_event_source.setter
+    def deep_funnel_event_source(self, deep_funnel_event_source):
+        """Sets the deep_funnel_event_source of this AdgroupUpdateBody.
+
+
+        :param deep_funnel_event_source: The deep_funnel_event_source of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._deep_funnel_event_source = deep_funnel_event_source
+
+    @property
+    def deep_funnel_event_source_id(self):
+        """Gets the deep_funnel_event_source_id of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The deep_funnel_event_source_id of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._deep_funnel_event_source_id
+
+    @deep_funnel_event_source_id.setter
+    def deep_funnel_event_source_id(self, deep_funnel_event_source_id):
+        """Sets the deep_funnel_event_source_id of this AdgroupUpdateBody.
+
+
+        :param deep_funnel_event_source_id: The deep_funnel_event_source_id of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._deep_funnel_event_source_id = deep_funnel_event_source_id
+
+    @property
+    def deep_funnel_optimization_event(self):
+        """Gets the deep_funnel_optimization_event of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The deep_funnel_optimization_event of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._deep_funnel_optimization_event
+
+    @deep_funnel_optimization_event.setter
+    def deep_funnel_optimization_event(self, deep_funnel_optimization_event):
+        """Sets the deep_funnel_optimization_event of this AdgroupUpdateBody.
+
+
+        :param deep_funnel_optimization_event: The deep_funnel_optimization_event of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._deep_funnel_optimization_event = deep_funnel_optimization_event
+
+    @property
+    def deep_funnel_optimization_status(self):
+        """Gets the deep_funnel_optimization_status of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The deep_funnel_optimization_status of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._deep_funnel_optimization_status
+
+    @deep_funnel_optimization_status.setter
+    def deep_funnel_optimization_status(self, deep_funnel_optimization_status):
+        """Sets the deep_funnel_optimization_status of this AdgroupUpdateBody.
+
+
+        :param deep_funnel_optimization_status: The deep_funnel_optimization_status of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._deep_funnel_optimization_status = deep_funnel_optimization_status
+
+    @property
     def device_model_ids(self):
         """Gets the device_model_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        IDs of the device models that you want to target. Use [/tool/device_model/](https://ads.tiktok.com/marketing_api/docs?id=1737172880570369) to get the complete list of device model IDs and their statuses, and only active devices (`is_active` = `True` in the response of  [/tool/device_model/](https://ads.tiktok.com/marketing_api/docs?id=1737172880570369)) can be used to create ads.  # noqa: E501
 
         :return: The device_model_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -989,7 +1002,6 @@ class AdgroupUpdateBody(object):
     def device_model_ids(self, device_model_ids):
         """Sets the device_model_ids of this AdgroupUpdateBody.
 
-        IDs of the device models that you want to target. Use [/tool/device_model/](https://ads.tiktok.com/marketing_api/docs?id=1737172880570369) to get the complete list of device model IDs and their statuses, and only active devices (`is_active` = `True` in the response of  [/tool/device_model/](https://ads.tiktok.com/marketing_api/docs?id=1737172880570369)) can be used to create ads.  # noqa: E501
 
         :param device_model_ids: The device_model_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1001,7 +1013,6 @@ class AdgroupUpdateBody(object):
     def device_price_ranges(self):
         """Gets the device_price_ranges of this AdgroupUpdateBody.  # noqa: E501
 
-        Targeting device price range. 10000 means 1000+. The numbers must be in multiples of 50. The upper limit you set will be added by 50 and the resulting new number will be used as the actual upper limit for device targeting. The actual upper limit is shown in the ad group settings in TikTok Ads Manager. If you set and get the price range of [0, 250], it actually means [0, 300].  # noqa: E501
 
         :return: The device_price_ranges of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[int]
@@ -1012,7 +1023,6 @@ class AdgroupUpdateBody(object):
     def device_price_ranges(self, device_price_ranges):
         """Sets the device_price_ranges of this AdgroupUpdateBody.
 
-        Targeting device price range. 10000 means 1000+. The numbers must be in multiples of 50. The upper limit you set will be added by 50 and the resulting new number will be used as the actual upper limit for device targeting. The actual upper limit is shown in the ad group settings in TikTok Ads Manager. If you set and get the price range of [0, 250], it actually means [0, 300].  # noqa: E501
 
         :param device_price_ranges: The device_price_ranges of this AdgroupUpdateBody.  # noqa: E501
         :type: list[int]
@@ -1021,10 +1031,30 @@ class AdgroupUpdateBody(object):
         self._device_price_ranges = device_price_ranges
 
     @property
+    def exclude_age_under_eighteen(self):
+        """Gets the exclude_age_under_eighteen of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The exclude_age_under_eighteen of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._exclude_age_under_eighteen
+
+    @exclude_age_under_eighteen.setter
+    def exclude_age_under_eighteen(self, exclude_age_under_eighteen):
+        """Sets the exclude_age_under_eighteen of this AdgroupUpdateBody.
+
+
+        :param exclude_age_under_eighteen: The exclude_age_under_eighteen of this AdgroupUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._exclude_age_under_eighteen = exclude_age_under_eighteen
+
+    @property
     def excluded_audience_ids(self):
         """Gets the excluded_audience_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        List of audience ID to be excluded. You can get audience IDs by using the [/dmp/custom_audience/list/](https://ads.tiktok.com/marketing_api/docs?id=1739940506015746) endpoint.  # noqa: E501
 
         :return: The excluded_audience_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1035,7 +1065,6 @@ class AdgroupUpdateBody(object):
     def excluded_audience_ids(self, excluded_audience_ids):
         """Sets the excluded_audience_ids of this AdgroupUpdateBody.
 
-        List of audience ID to be excluded. You can get audience IDs by using the [/dmp/custom_audience/list/](https://ads.tiktok.com/marketing_api/docs?id=1739940506015746) endpoint.  # noqa: E501
 
         :param excluded_audience_ids: The excluded_audience_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1049,7 +1078,7 @@ class AdgroupUpdateBody(object):
 
 
         :return: The excluded_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: AdgroupcreateExcludedCustomActions
+        :rtype: list[AdgroupcreateExcludedCustomActions]
         """
         return self._excluded_custom_actions
 
@@ -1059,7 +1088,7 @@ class AdgroupUpdateBody(object):
 
 
         :param excluded_custom_actions: The excluded_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :type: AdgroupcreateExcludedCustomActions
+        :type: list[AdgroupcreateExcludedCustomActions]
         """
 
         self._excluded_custom_actions = excluded_custom_actions
@@ -1068,7 +1097,6 @@ class AdgroupUpdateBody(object):
     def excluded_pangle_audience_package_ids(self):
         """Gets the excluded_pangle_audience_package_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        IDs of the Pangle audiences that you want to exclude. Valid only for Pangle placement. You can get audience IDs (`package_id`) by using the [/pangle_audience_package/get/](https://ads.tiktok.com/marketing_api/docs?id=1740040177229826) endpoint. You need to set `bind_type` to `EXCLUDE`. Do not specify this field and `included_pangle_audience_package_ids` at the same time.  # noqa: E501
 
         :return: The excluded_pangle_audience_package_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1079,7 +1107,6 @@ class AdgroupUpdateBody(object):
     def excluded_pangle_audience_package_ids(self, excluded_pangle_audience_package_ids):
         """Sets the excluded_pangle_audience_package_ids of this AdgroupUpdateBody.
 
-        IDs of the Pangle audiences that you want to exclude. Valid only for Pangle placement. You can get audience IDs (`package_id`) by using the [/pangle_audience_package/get/](https://ads.tiktok.com/marketing_api/docs?id=1740040177229826) endpoint. You need to set `bind_type` to `EXCLUDE`. Do not specify this field and `included_pangle_audience_package_ids` at the same time.  # noqa: E501
 
         :param excluded_pangle_audience_package_ids: The excluded_pangle_audience_package_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1091,7 +1118,6 @@ class AdgroupUpdateBody(object):
     def frequency(self):
         """Gets the frequency of this AdgroupUpdateBody.  # noqa: E501
 
-        Frequency, together with `frequency_schedule`, controls how often people see your ad (only available for `REACH` ads). The below conditions should be both met-1 <= `frequency` <= `frequency_schedule` * 3 1 <= `frequency_schedule` <=7 For example, `frequency` = 2 & `frequency_schedule` = 3 means \"show ads no more than twice every 3 day\".  # noqa: E501
 
         :return: The frequency of this AdgroupUpdateBody.  # noqa: E501
         :rtype: int
@@ -1102,7 +1128,6 @@ class AdgroupUpdateBody(object):
     def frequency(self, frequency):
         """Sets the frequency of this AdgroupUpdateBody.
 
-        Frequency, together with `frequency_schedule`, controls how often people see your ad (only available for `REACH` ads). The below conditions should be both met-1 <= `frequency` <= `frequency_schedule` * 3 1 <= `frequency_schedule` <=7 For example, `frequency` = 2 & `frequency_schedule` = 3 means \"show ads no more than twice every 3 day\".  # noqa: E501
 
         :param frequency: The frequency of this AdgroupUpdateBody.  # noqa: E501
         :type: int
@@ -1114,7 +1139,6 @@ class AdgroupUpdateBody(object):
     def frequency_schedule(self):
         """Gets the frequency_schedule of this AdgroupUpdateBody.  # noqa: E501
 
-        Frequency_schedule`, together with `frequency`, controls how often people see your ad (only available for `REACH` ads). See `frequency` fields for more.  # noqa: E501
 
         :return: The frequency_schedule of this AdgroupUpdateBody.  # noqa: E501
         :rtype: int
@@ -1125,7 +1149,6 @@ class AdgroupUpdateBody(object):
     def frequency_schedule(self, frequency_schedule):
         """Sets the frequency_schedule of this AdgroupUpdateBody.
 
-        Frequency_schedule`, together with `frequency`, controls how often people see your ad (only available for `REACH` ads). See `frequency` fields for more.  # noqa: E501
 
         :param frequency_schedule: The frequency_schedule of this AdgroupUpdateBody.  # noqa: E501
         :type: int
@@ -1137,7 +1160,6 @@ class AdgroupUpdateBody(object):
     def gender(self):
         """Gets the gender of this AdgroupUpdateBody.  # noqa: E501
 
-        Gender that you want to target. Enum values- `GENDER_FEMALE`,`GENDER_MALE`,`GENDER_UNLIMITED`  # noqa: E501
 
         :return: The gender of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1148,7 +1170,6 @@ class AdgroupUpdateBody(object):
     def gender(self, gender):
         """Sets the gender of this AdgroupUpdateBody.
 
-        Gender that you want to target. Enum values- `GENDER_FEMALE`,`GENDER_MALE`,`GENDER_UNLIMITED`  # noqa: E501
 
         :param gender: The gender of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1160,7 +1181,6 @@ class AdgroupUpdateBody(object):
     def household_income(self):
         """Gets the household_income of this AdgroupUpdateBody.  # noqa: E501
 
-        Household income that you want to target. Enum values- `TOP5`(Top 5% of ZIP codes), `TOP10`(Top 10% of ZIP codes), `TOP10_25`(Top 10% -25% of ZIP codes), `TOP25_50`(Top 25% - 50% of ZIP codes). Note-  It only supports the ad objectives for Auction ads. See [Advertising objectives](https://ads.tiktok.com/marketing_api/docs?id=1737585562434561) for details. It  is only applicable the TikTok Placement in US. If you have specified `special_industries` at the campaign level, then you cannot use the field here. `household_income` is an allowlist-only feature that is only available in US. If you would like to access it, please contact your TikTok representative.  # noqa: E501
 
         :return: The household_income of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1171,7 +1191,6 @@ class AdgroupUpdateBody(object):
     def household_income(self, household_income):
         """Sets the household_income of this AdgroupUpdateBody.
 
-        Household income that you want to target. Enum values- `TOP5`(Top 5% of ZIP codes), `TOP10`(Top 10% of ZIP codes), `TOP10_25`(Top 10% -25% of ZIP codes), `TOP25_50`(Top 25% - 50% of ZIP codes). Note-  It only supports the ad objectives for Auction ads. See [Advertising objectives](https://ads.tiktok.com/marketing_api/docs?id=1737585562434561) for details. It  is only applicable the TikTok Placement in US. If you have specified `special_industries` at the campaign level, then you cannot use the field here. `household_income` is an allowlist-only feature that is only available in US. If you would like to access it, please contact your TikTok representative.  # noqa: E501
 
         :param household_income: The household_income of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1180,81 +1199,12 @@ class AdgroupUpdateBody(object):
         self._household_income = household_income
 
     @property
-    def identity_authorized_bc_id(self):
-        """Gets the identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
-
-        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
-
-        :return: The identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._identity_authorized_bc_id
-
-    @identity_authorized_bc_id.setter
-    def identity_authorized_bc_id(self, identity_authorized_bc_id):
-        """Sets the identity_authorized_bc_id of this AdgroupUpdateBody.
-
-        ID of the Business Center that a TikTok Account User in Business Center identity is associated with. Required when `identity_type` is `BC_AUTH_TT`.  # noqa: E501
-
-        :param identity_authorized_bc_id: The identity_authorized_bc_id of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._identity_authorized_bc_id = identity_authorized_bc_id
-
-    @property
-    def identity_id(self):
-        """Gets the identity_id of this AdgroupUpdateBody.  # noqa: E501
-
-        Identity ID. Required and only valid when `objective_type` is `SHOP_PURCHASES` or `PRODUCT_SALES`.  # noqa: E501
-
-        :return: The identity_id of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._identity_id
-
-    @identity_id.setter
-    def identity_id(self, identity_id):
-        """Sets the identity_id of this AdgroupUpdateBody.
-
-        Identity ID. Required and only valid when `objective_type` is `SHOP_PURCHASES` or `PRODUCT_SALES`.  # noqa: E501
-
-        :param identity_id: The identity_id of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._identity_id = identity_id
-
-    @property
-    def identity_type(self):
-        """Gets the identity_type of this AdgroupUpdateBody.  # noqa: E501
-
-        Identity type. Enum values- `AUTH_CODE` (Authorized Post User), `TT_USER` (TikTok Business Account User), `BC_AUTH_TT`(The TikTok account that a Business Center is authorized to access). Required and only valid when `objective_type` is `SHOP_PURCHASES` or `PRODUCT_SALES`. See [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097) for details.  # noqa: E501
-
-        :return: The identity_type of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: str
-        """
-        return self._identity_type
-
-    @identity_type.setter
-    def identity_type(self, identity_type):
-        """Sets the identity_type of this AdgroupUpdateBody.
-
-        Identity type. Enum values- `AUTH_CODE` (Authorized Post User), `TT_USER` (TikTok Business Account User), `BC_AUTH_TT`(The TikTok account that a Business Center is authorized to access). Required and only valid when `objective_type` is `SHOP_PURCHASES` or `PRODUCT_SALES`. See [Identities](https://ads.tiktok.com/marketing_api/docs?id=1738958351620097) for details.  # noqa: E501
-
-        :param identity_type: The identity_type of this AdgroupUpdateBody.  # noqa: E501
-        :type: str
-        """
-
-        self._identity_type = identity_type
-
-    @property
     def included_custom_actions(self):
         """Gets the included_custom_actions of this AdgroupUpdateBody.  # noqa: E501
 
 
         :return: The included_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: AdgroupcreateIncludedCustomActions
+        :rtype: list[AdgroupcreateIncludedCustomActions]
         """
         return self._included_custom_actions
 
@@ -1264,7 +1214,7 @@ class AdgroupUpdateBody(object):
 
 
         :param included_custom_actions: The included_custom_actions of this AdgroupUpdateBody.  # noqa: E501
-        :type: AdgroupcreateIncludedCustomActions
+        :type: list[AdgroupcreateIncludedCustomActions]
         """
 
         self._included_custom_actions = included_custom_actions
@@ -1273,7 +1223,6 @@ class AdgroupUpdateBody(object):
     def included_pangle_audience_package_ids(self):
         """Gets the included_pangle_audience_package_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        IDs of the Pangle audiences that you want to include. Valid only for Pangle placement. You can get audience IDs (`package_id`) by using the [/pangle_audience_package/get/](https://ads.tiktok.com/marketing_api/docs?id=1740040177229826) endpoint. You need to set `bind_type` to `INCLUDE`.  Do not specify this field and `excluded_pangle_audience_package_ids` at the sa  # noqa: E501
 
         :return: The included_pangle_audience_package_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1284,7 +1233,6 @@ class AdgroupUpdateBody(object):
     def included_pangle_audience_package_ids(self, included_pangle_audience_package_ids):
         """Sets the included_pangle_audience_package_ids of this AdgroupUpdateBody.
 
-        IDs of the Pangle audiences that you want to include. Valid only for Pangle placement. You can get audience IDs (`package_id`) by using the [/pangle_audience_package/get/](https://ads.tiktok.com/marketing_api/docs?id=1740040177229826) endpoint. You need to set `bind_type` to `INCLUDE`.  Do not specify this field and `excluded_pangle_audience_package_ids` at the sa  # noqa: E501
 
         :param included_pangle_audience_package_ids: The included_pangle_audience_package_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1296,7 +1244,6 @@ class AdgroupUpdateBody(object):
     def interest_category_ids(self):
         """Gets the interest_category_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        Interest classification. If the interest is specified, users that do not meet interest target will be excluded during delivery. Do not specify if you wish to target everyone. Use [/tool/target_recommend_tags/](https://ads.tiktok.com/marketing_api/docs?id=1736275204260866) to get a list of recommended interest categories based on your targeting regions and your industries. Use [/tool/interest_category/](https://ads.tiktok.com/marketing_api/docs?id=1737174348712961) endpoint to get the complete list of interest categories.  # noqa: E501
 
         :return: The interest_category_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1307,7 +1254,6 @@ class AdgroupUpdateBody(object):
     def interest_category_ids(self, interest_category_ids):
         """Sets the interest_category_ids of this AdgroupUpdateBody.
 
-        Interest classification. If the interest is specified, users that do not meet interest target will be excluded during delivery. Do not specify if you wish to target everyone. Use [/tool/target_recommend_tags/](https://ads.tiktok.com/marketing_api/docs?id=1736275204260866) to get a list of recommended interest categories based on your targeting regions and your industries. Use [/tool/interest_category/](https://ads.tiktok.com/marketing_api/docs?id=1737174348712961) endpoint to get the complete list of interest categories.  # noqa: E501
 
         :param interest_category_ids: The interest_category_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1319,7 +1265,6 @@ class AdgroupUpdateBody(object):
     def interest_keyword_ids(self):
         """Gets the interest_keyword_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        IDs of interest keywords that you want to use to target audience. You can get recommended interest keywords IDs by using the [/tool/interest_keyword/recommend/](https://ads.tiktok.com/marketing_api/docs?id=1737180852720642) endpoint.  # noqa: E501
 
         :return: The interest_keyword_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1330,7 +1275,6 @@ class AdgroupUpdateBody(object):
     def interest_keyword_ids(self, interest_keyword_ids):
         """Sets the interest_keyword_ids of this AdgroupUpdateBody.
 
-        IDs of interest keywords that you want to use to target audience. You can get recommended interest keywords IDs by using the [/tool/interest_keyword/recommend/](https://ads.tiktok.com/marketing_api/docs?id=1737180852720642) endpoint.  # noqa: E501
 
         :param interest_keyword_ids: The interest_keyword_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1339,33 +1283,9 @@ class AdgroupUpdateBody(object):
         self._interest_keyword_ids = interest_keyword_ids
 
     @property
-    def interest_keywords(self):
-        """Gets the interest_keywords of this AdgroupUpdateBody.  # noqa: E501
-
-         Interest Keywords  # noqa: E501
-
-        :return: The interest_keywords of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._interest_keywords
-
-    @interest_keywords.setter
-    def interest_keywords(self, interest_keywords):
-        """Sets the interest_keywords of this AdgroupUpdateBody.
-
-         Interest Keywords  # noqa: E501
-
-        :param interest_keywords: The interest_keywords of this AdgroupUpdateBody.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._interest_keywords = interest_keywords
-
-    @property
     def ios14_targeting(self):
         """Gets the ios14_targeting of this AdgroupUpdateBody.  # noqa: E501
 
-        The iOS devices that you want to target. When `campaign_type` of the campaign is set as `IOS14_CAMPAIGN`,  `ios14_targeting` is required and must be specified as `IOS14_PLUS`. Enum values-`UNSET`- Devices with iOS 14.4 or earlier versions. The default value for ad groups that were created before the introduction of this field.`IOS14_MINUS`- Devices with versions earlier than iOS 14.0, which are not affected by the iOS 14 privacy update. This is the default value for ad groups that are created after the introduction of this field.`IOS14_PLUS`- Devices with iOS 14.5 and above. The iOS 14 privacy update has been enforced in this group of devices. Specify this value if you want to create an iOS 14 campaign.  Each iOS 14 campaign can have up to 2 active ad groups. <br data-tomark-pass> If `IOS14_PLUS` is specified, this field cannot be updated. If `IOS14_PLUS` is specified for this field, the system will verify if related fields meet the requirements for an iOS 14 campaign. The following fields will be checked. `app_id`- It must not be an ID of an Android app.`operating_systems`- It must not be `ANDROID` or `PC`.`min_ios_version`- You must specify a value for this field, and the the value must not contradict with the selection for `ios14_targeting`.`min_android_version`- Must not be specified.`optimization_goal`- Can only be set to `IN_APP_EVENT`, `INSTALL`, or `CLICK`.`shopping_ads_retargeting_type`- Must not be specified.`shopping_ads_retargeting_actions_days`- Must not be specified. `conversion_window`- Must not be specified.On the Ad level, `deeplink_type` must not be set to `DEFERRED_DEEPLINK`.  # noqa: E501
 
         :return: The ios14_targeting of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1376,7 +1296,6 @@ class AdgroupUpdateBody(object):
     def ios14_targeting(self, ios14_targeting):
         """Sets the ios14_targeting of this AdgroupUpdateBody.
 
-        The iOS devices that you want to target. When `campaign_type` of the campaign is set as `IOS14_CAMPAIGN`,  `ios14_targeting` is required and must be specified as `IOS14_PLUS`. Enum values-`UNSET`- Devices with iOS 14.4 or earlier versions. The default value for ad groups that were created before the introduction of this field.`IOS14_MINUS`- Devices with versions earlier than iOS 14.0, which are not affected by the iOS 14 privacy update. This is the default value for ad groups that are created after the introduction of this field.`IOS14_PLUS`- Devices with iOS 14.5 and above. The iOS 14 privacy update has been enforced in this group of devices. Specify this value if you want to create an iOS 14 campaign.  Each iOS 14 campaign can have up to 2 active ad groups. <br data-tomark-pass> If `IOS14_PLUS` is specified, this field cannot be updated. If `IOS14_PLUS` is specified for this field, the system will verify if related fields meet the requirements for an iOS 14 campaign. The following fields will be checked. `app_id`- It must not be an ID of an Android app.`operating_systems`- It must not be `ANDROID` or `PC`.`min_ios_version`- You must specify a value for this field, and the the value must not contradict with the selection for `ios14_targeting`.`min_android_version`- Must not be specified.`optimization_goal`- Can only be set to `IN_APP_EVENT`, `INSTALL`, or `CLICK`.`shopping_ads_retargeting_type`- Must not be specified.`shopping_ads_retargeting_actions_days`- Must not be specified. `conversion_window`- Must not be specified.On the Ad level, `deeplink_type` must not be set to `DEFERRED_DEEPLINK`.  # noqa: E501
 
         :param ios14_targeting: The ios14_targeting of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1388,7 +1307,6 @@ class AdgroupUpdateBody(object):
     def is_hfss(self):
         """Gets the is_hfss of this AdgroupUpdateBody.  # noqa: E501
 
-        Whether the promoted content is HFSS foods (foods that are high in fat, salt, or sugar).  # noqa: E501
 
         :return: The is_hfss of this AdgroupUpdateBody.  # noqa: E501
         :rtype: bool
@@ -1399,7 +1317,6 @@ class AdgroupUpdateBody(object):
     def is_hfss(self, is_hfss):
         """Sets the is_hfss of this AdgroupUpdateBody.
 
-        Whether the promoted content is HFSS foods (foods that are high in fat, salt, or sugar).  # noqa: E501
 
         :param is_hfss: The is_hfss of this AdgroupUpdateBody.  # noqa: E501
         :type: bool
@@ -1408,10 +1325,51 @@ class AdgroupUpdateBody(object):
         self._is_hfss = is_hfss
 
     @property
+    def is_lhf_compliance(self):
+        """Gets the is_lhf_compliance of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The is_lhf_compliance of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_lhf_compliance
+
+    @is_lhf_compliance.setter
+    def is_lhf_compliance(self, is_lhf_compliance):
+        """Sets the is_lhf_compliance of this AdgroupUpdateBody.
+
+
+        :param is_lhf_compliance: The is_lhf_compliance of this AdgroupUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_lhf_compliance = is_lhf_compliance
+
+    @property
+    def isp_ids(self):
+        """Gets the isp_ids of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The isp_ids of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._isp_ids
+
+    @isp_ids.setter
+    def isp_ids(self, isp_ids):
+        """Sets the isp_ids of this AdgroupUpdateBody.
+
+
+        :param isp_ids: The isp_ids of this AdgroupUpdateBody.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._isp_ids = isp_ids
+
+    @property
     def languages(self):
         """Gets the languages of this AdgroupUpdateBody.  # noqa: E501
 
-        Codes of the languages that you want to target. For the list of languages codes supported, see [Enumeration - Language Code](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).You can get language codes via [/tool/language/](https://ads.tiktok.com/marketing_api/docs?id=1737188554152962), and if you don't want to limit the languages you target, assign an empty value to this field or do not pass in this field.  # noqa: E501
 
         :return: The languages of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1422,7 +1380,6 @@ class AdgroupUpdateBody(object):
     def languages(self, languages):
         """Sets the languages of this AdgroupUpdateBody.
 
-        Codes of the languages that you want to target. For the list of languages codes supported, see [Enumeration - Language Code](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).You can get language codes via [/tool/language/](https://ads.tiktok.com/marketing_api/docs?id=1737188554152962), and if you don't want to limit the languages you target, assign an empty value to this field or do not pass in this field.  # noqa: E501
 
         :param languages: The languages of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1434,7 +1391,6 @@ class AdgroupUpdateBody(object):
     def location_ids(self):
         """Gets the location_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        IDs of the locations that you want to target. To get the available locations and corresponding IDs based on your placement and objective, use the [/tool/region/](https://ads.tiktok.com/marketing_api/docs?id=1737189539571713) endpoint. To get the list of location IDs, see [Location IDs](https://ads.tiktok.com/marketing_api/docs?id=1739311040498689).  # noqa: E501
 
         :return: The location_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1445,7 +1401,6 @@ class AdgroupUpdateBody(object):
     def location_ids(self, location_ids):
         """Sets the location_ids of this AdgroupUpdateBody.
 
-        IDs of the locations that you want to target. To get the available locations and corresponding IDs based on your placement and objective, use the [/tool/region/](https://ads.tiktok.com/marketing_api/docs?id=1737189539571713) endpoint. To get the list of location IDs, see [Location IDs](https://ads.tiktok.com/marketing_api/docs?id=1739311040498689).  # noqa: E501
 
         :param location_ids: The location_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1457,7 +1412,6 @@ class AdgroupUpdateBody(object):
     def min_android_version(self):
         """Gets the min_android_version of this AdgroupUpdateBody.  # noqa: E501
 
-        Minimum device Android version. For enum values, see [Enumeration - Minimum Android Version](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The min_android_version of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1468,7 +1422,6 @@ class AdgroupUpdateBody(object):
     def min_android_version(self, min_android_version):
         """Sets the min_android_version of this AdgroupUpdateBody.
 
-        Minimum device Android version. For enum values, see [Enumeration - Minimum Android Version](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param min_android_version: The min_android_version of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1480,7 +1433,6 @@ class AdgroupUpdateBody(object):
     def min_ios_version(self):
         """Gets the min_ios_version of this AdgroupUpdateBody.  # noqa: E501
 
-        Minimum iOS version. For enum values, see [Enumeration - Minimum iOS Version](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). This field is required when `ios14_targeting` is specified.  # noqa: E501
 
         :return: The min_ios_version of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1491,7 +1443,6 @@ class AdgroupUpdateBody(object):
     def min_ios_version(self, min_ios_version):
         """Sets the min_ios_version of this AdgroupUpdateBody.
 
-        Minimum iOS version. For enum values, see [Enumeration - Minimum iOS Version](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). This field is required when `ios14_targeting` is specified.  # noqa: E501
 
         :param min_ios_version: The min_ios_version of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1503,7 +1454,6 @@ class AdgroupUpdateBody(object):
     def network_types(self):
         """Gets the network_types of this AdgroupUpdateBody.  # noqa: E501
 
-        Device connection types that you want to target. Default- `unlimited`. For enum values, see [Enumeration - Connection Type](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The network_types of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1514,7 +1464,6 @@ class AdgroupUpdateBody(object):
     def network_types(self, network_types):
         """Sets the network_types of this AdgroupUpdateBody.
 
-        Device connection types that you want to target. Default- `unlimited`. For enum values, see [Enumeration - Connection Type](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param network_types: The network_types of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1526,7 +1475,6 @@ class AdgroupUpdateBody(object):
     def next_day_retention(self):
         """Gets the next_day_retention of this AdgroupUpdateBody.  # noqa: E501
 
-        Day 2 retention ratio. Formula- `next_day_retention` = `conversion_bid_price`/`deep_cpa_bid`. Value range is (0,1]. Only valid when `placements` is `PLACEMENT_PANGLE` and `secondary_optimization_event` is `NEXT_DAY_OPEN`. If you want to use this field, please pass in `conversion_bid_price`, `deep_cpa_bid`, and `next_day_retention` at the same time, and make sure the value of them meets the calculation formula. Otherwise there might be unexpected errors.  # noqa: E501
 
         :return: The next_day_retention of this AdgroupUpdateBody.  # noqa: E501
         :rtype: float
@@ -1537,7 +1485,6 @@ class AdgroupUpdateBody(object):
     def next_day_retention(self, next_day_retention):
         """Sets the next_day_retention of this AdgroupUpdateBody.
 
-        Day 2 retention ratio. Formula- `next_day_retention` = `conversion_bid_price`/`deep_cpa_bid`. Value range is (0,1]. Only valid when `placements` is `PLACEMENT_PANGLE` and `secondary_optimization_event` is `NEXT_DAY_OPEN`. If you want to use this field, please pass in `conversion_bid_price`, `deep_cpa_bid`, and `next_day_retention` at the same time, and make sure the value of them meets the calculation formula. Otherwise there might be unexpected errors.  # noqa: E501
 
         :param next_day_retention: The next_day_retention of this AdgroupUpdateBody.  # noqa: E501
         :type: float
@@ -1549,7 +1496,6 @@ class AdgroupUpdateBody(object):
     def operating_systems(self):
         """Gets the operating_systems of this AdgroupUpdateBody.  # noqa: E501
 
-        Device operating systems that you want to target. Only one value is allowed.  Enum values- `ANDROID`, `IOS`. This field is required in two scenarios- `objective_type` = `APP_INSTALL``objective`=`TRAFFIC` and `optimization_event` = `APP_IOS` or `APP_ANDROID`  # noqa: E501
 
         :return: The operating_systems of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1560,7 +1506,6 @@ class AdgroupUpdateBody(object):
     def operating_systems(self, operating_systems):
         """Sets the operating_systems of this AdgroupUpdateBody.
 
-        Device operating systems that you want to target. Only one value is allowed.  Enum values- `ANDROID`, `IOS`. This field is required in two scenarios- `objective_type` = `APP_INSTALL``objective`=`TRAFFIC` and `optimization_event` = `APP_IOS` or `APP_ANDROID`  # noqa: E501
 
         :param operating_systems: The operating_systems of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1572,7 +1517,6 @@ class AdgroupUpdateBody(object):
     def pacing(self):
         """Gets the pacing of this AdgroupUpdateBody.  # noqa: E501
 
-        You can choose between `PACING_MODE_SMOOTH` and `PACING_MODE_FAST`. For `PACING_MODE_SMOOTH`, the budget is allocated evenly within the scheduled time. `PACING_MODE_FAST` would consume budget and produce results as soon as possible. When Campaign Budget Optimization (`budget_optimize_on`) is on, your setting will be ignored and it will be set as `PACING_MODE_SMOOTH`. Otherwise, this field is required.  # noqa: E501
 
         :return: The pacing of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1583,7 +1527,6 @@ class AdgroupUpdateBody(object):
     def pacing(self, pacing):
         """Sets the pacing of this AdgroupUpdateBody.
 
-        You can choose between `PACING_MODE_SMOOTH` and `PACING_MODE_FAST`. For `PACING_MODE_SMOOTH`, the budget is allocated evenly within the scheduled time. `PACING_MODE_FAST` would consume budget and produce results as soon as possible. When Campaign Budget Optimization (`budget_optimize_on`) is on, your setting will be ignored and it will be set as `PACING_MODE_SMOOTH`. Otherwise, this field is required.  # noqa: E501
 
         :param pacing: The pacing of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1595,7 +1538,6 @@ class AdgroupUpdateBody(object):
     def purchase_intention_keyword_ids(self):
         """Gets the purchase_intention_keyword_ids of this AdgroupUpdateBody.  # noqa: E501
 
-        IDs of purchase intention keywords that you want to use to target audiences with an interest in purchases related to a content category. To get purchase intention keyword IDs, you need to set `audience_type` as `PURCHASE_INTENTION` when calling [/tool/interest_keyword/recommend/](https://ads.tiktok.com/marketing_api/docs?id=1737180852720642) and then get purchase intention keyword IDs from `keyword_id` in the response. Note-Do not pass in `purchase_intention_keyword_ids` and `interest_keyword_ids` at the same time. Otherwise, keyword conflict will occur.`purchase_intention_keyword_ids` only supports auctions ads with the corresponding advertising objective(`objective_type`) as App promotion (`APP_PROMOTION`), Conversions (`CONVERSIONS` ) ，or Product sales (`PRODUCT_SALES` when the corresponding `promotion_type` = `APP_ANDROID`, `APP_IOS`, or `WEBSITE`）, and the placement setting should include TikTok.  # noqa: E501
 
         :return: The purchase_intention_keyword_ids of this AdgroupUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -1606,7 +1548,6 @@ class AdgroupUpdateBody(object):
     def purchase_intention_keyword_ids(self, purchase_intention_keyword_ids):
         """Sets the purchase_intention_keyword_ids of this AdgroupUpdateBody.
 
-        IDs of purchase intention keywords that you want to use to target audiences with an interest in purchases related to a content category. To get purchase intention keyword IDs, you need to set `audience_type` as `PURCHASE_INTENTION` when calling [/tool/interest_keyword/recommend/](https://ads.tiktok.com/marketing_api/docs?id=1737180852720642) and then get purchase intention keyword IDs from `keyword_id` in the response. Note-Do not pass in `purchase_intention_keyword_ids` and `interest_keyword_ids` at the same time. Otherwise, keyword conflict will occur.`purchase_intention_keyword_ids` only supports auctions ads with the corresponding advertising objective(`objective_type`) as App promotion (`APP_PROMOTION`), Conversions (`CONVERSIONS` ) ，or Product sales (`PRODUCT_SALES` when the corresponding `promotion_type` = `APP_ANDROID`, `APP_IOS`, or `WEBSITE`）, and the placement setting should include TikTok.  # noqa: E501
 
         :param purchase_intention_keyword_ids: The purchase_intention_keyword_ids of this AdgroupUpdateBody.  # noqa: E501
         :type: list[str]
@@ -1618,7 +1559,6 @@ class AdgroupUpdateBody(object):
     def roas_bid(self):
         """Gets the roas_bid of this AdgroupUpdateBody.  # noqa: E501
 
-        ROAS goal for Value Optimization. Required when `deep_bid_type` is `VO_MIN_ROAS`.  # noqa: E501
 
         :return: The roas_bid of this AdgroupUpdateBody.  # noqa: E501
         :rtype: float
@@ -1629,7 +1569,6 @@ class AdgroupUpdateBody(object):
     def roas_bid(self, roas_bid):
         """Sets the roas_bid of this AdgroupUpdateBody.
 
-        ROAS goal for Value Optimization. Required when `deep_bid_type` is `VO_MIN_ROAS`.  # noqa: E501
 
         :param roas_bid: The roas_bid of this AdgroupUpdateBody.  # noqa: E501
         :type: float
@@ -1638,10 +1577,30 @@ class AdgroupUpdateBody(object):
         self._roas_bid = roas_bid
 
     @property
+    def saved_audience_id(self):
+        """Gets the saved_audience_id of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The saved_audience_id of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._saved_audience_id
+
+    @saved_audience_id.setter
+    def saved_audience_id(self, saved_audience_id):
+        """Sets the saved_audience_id of this AdgroupUpdateBody.
+
+
+        :param saved_audience_id: The saved_audience_id of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._saved_audience_id = saved_audience_id
+
+    @property
     def schedule_end_time(self):
         """Gets the schedule_end_time of this AdgroupUpdateBody.  # noqa: E501
 
-        Schedule end time (UTC+0), in the format of \"YYYY-MM-DD HH-MM-SS\". This field is required when `schedule_type` is `SCHEDULE_START_END` or `budget_mode` is `BUDGET_MODE_TOTAL`  # noqa: E501
 
         :return: The schedule_end_time of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1652,7 +1611,6 @@ class AdgroupUpdateBody(object):
     def schedule_end_time(self, schedule_end_time):
         """Sets the schedule_end_time of this AdgroupUpdateBody.
 
-        Schedule end time (UTC+0), in the format of \"YYYY-MM-DD HH-MM-SS\". This field is required when `schedule_type` is `SCHEDULE_START_END` or `budget_mode` is `BUDGET_MODE_TOTAL`  # noqa: E501
 
         :param schedule_end_time: The schedule_end_time of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1664,7 +1622,6 @@ class AdgroupUpdateBody(object):
     def schedule_start_time(self):
         """Gets the schedule_start_time of this AdgroupUpdateBody.  # noqa: E501
 
-        Schedule start time (UTC+0), in the format of \"YYYY-MM-DD HH-MM-SS\". The start time can be up to 12 hours earlier than the current time.  # noqa: E501
 
         :return: The schedule_start_time of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1675,7 +1632,6 @@ class AdgroupUpdateBody(object):
     def schedule_start_time(self, schedule_start_time):
         """Sets the schedule_start_time of this AdgroupUpdateBody.
 
-        Schedule start time (UTC+0), in the format of \"YYYY-MM-DD HH-MM-SS\". The start time can be up to 12 hours earlier than the current time.  # noqa: E501
 
         :param schedule_start_time: The schedule_start_time of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1687,7 +1643,6 @@ class AdgroupUpdateBody(object):
     def schedule_type(self):
         """Gets the schedule_type of this AdgroupUpdateBody.  # noqa: E501
 
-        The schedule type can be either `SCHEDULE_START_END` or `SCHEDULE_FROM_NOW`. If you choose `SCHEDULE_START_END`, you need to specify a start time and an end time. If you choose `SCHEDULE_FROM_NOW`, you only need to specify a start time and the end time will be automatically set to 10 years later than the start time. If `budget_mode` is `BUDGET_MODE_TOTAL`, this field must be set to `SCHEDULE_START_END`.  # noqa: E501
 
         :return: The schedule_type of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1698,7 +1653,6 @@ class AdgroupUpdateBody(object):
     def schedule_type(self, schedule_type):
         """Sets the schedule_type of this AdgroupUpdateBody.
 
-        The schedule type can be either `SCHEDULE_START_END` or `SCHEDULE_FROM_NOW`. If you choose `SCHEDULE_START_END`, you need to specify a start time and an end time. If you choose `SCHEDULE_FROM_NOW`, you only need to specify a start time and the end time will be automatically set to 10 years later than the start time. If `budget_mode` is `BUDGET_MODE_TOTAL`, this field must be set to `SCHEDULE_START_END`.  # noqa: E501
 
         :param schedule_type: The schedule_type of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1707,10 +1661,51 @@ class AdgroupUpdateBody(object):
         self._schedule_type = schedule_type
 
     @property
+    def search_keywords(self):
+        """Gets the search_keywords of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The search_keywords of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: list[AdgroupupdateSearchKeywords]
+        """
+        return self._search_keywords
+
+    @search_keywords.setter
+    def search_keywords(self, search_keywords):
+        """Sets the search_keywords of this AdgroupUpdateBody.
+
+
+        :param search_keywords: The search_keywords of this AdgroupUpdateBody.  # noqa: E501
+        :type: list[AdgroupupdateSearchKeywords]
+        """
+
+        self._search_keywords = search_keywords
+
+    @property
+    def search_result_enabled(self):
+        """Gets the search_result_enabled of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The search_result_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._search_result_enabled
+
+    @search_result_enabled.setter
+    def search_result_enabled(self, search_result_enabled):
+        """Sets the search_result_enabled of this AdgroupUpdateBody.
+
+
+        :param search_result_enabled: The search_result_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._search_result_enabled = search_result_enabled
+
+    @property
     def secondary_optimization_event(self):
         """Gets the secondary_optimization_event of this AdgroupUpdateBody.  # noqa: E501
 
-        The secondary goal when optimization goal (`optimization_goal`) is Install (`INSTALL`) or Value (`VALUE`). For enum values, see [Conversion events - Secondary-goal events](https://ads.tiktok.com/marketing_api/docs?id=1739361474981889).  # noqa: E501
 
         :return: The secondary_optimization_event of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1721,7 +1716,6 @@ class AdgroupUpdateBody(object):
     def secondary_optimization_event(self, secondary_optimization_event):
         """Sets the secondary_optimization_event of this AdgroupUpdateBody.
 
-        The secondary goal when optimization goal (`optimization_goal`) is Install (`INSTALL`) or Value (`VALUE`). For enum values, see [Conversion events - Secondary-goal events](https://ads.tiktok.com/marketing_api/docs?id=1739361474981889).  # noqa: E501
 
         :param secondary_optimization_event: The secondary_optimization_event of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1730,10 +1724,30 @@ class AdgroupUpdateBody(object):
         self._secondary_optimization_event = secondary_optimization_event
 
     @property
+    def share_disabled(self):
+        """Gets the share_disabled of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The share_disabled of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._share_disabled
+
+    @share_disabled.setter
+    def share_disabled(self, share_disabled):
+        """Sets the share_disabled of this AdgroupUpdateBody.
+
+
+        :param share_disabled: The share_disabled of this AdgroupUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._share_disabled = share_disabled
+
+    @property
     def shopping_ads_retargeting_actions_days(self):
         """Gets the shopping_ads_retargeting_actions_days of this AdgroupUpdateBody.  # noqa: E501
 
-        The valid time range for the specified audience action. Audiences who have completed the specified action within the time range will be retargeted by the shopping ads. Required when `shopping_ads_retargeting_type` is `LAB1` or `LAB2`.  # noqa: E501
 
         :return: The shopping_ads_retargeting_actions_days of this AdgroupUpdateBody.  # noqa: E501
         :rtype: int
@@ -1744,7 +1758,6 @@ class AdgroupUpdateBody(object):
     def shopping_ads_retargeting_actions_days(self, shopping_ads_retargeting_actions_days):
         """Sets the shopping_ads_retargeting_actions_days of this AdgroupUpdateBody.
 
-        The valid time range for the specified audience action. Audiences who have completed the specified action within the time range will be retargeted by the shopping ads. Required when `shopping_ads_retargeting_type` is `LAB1` or `LAB2`.  # noqa: E501
 
         :param shopping_ads_retargeting_actions_days: The shopping_ads_retargeting_actions_days of this AdgroupUpdateBody.  # noqa: E501
         :type: int
@@ -1753,10 +1766,30 @@ class AdgroupUpdateBody(object):
         self._shopping_ads_retargeting_actions_days = shopping_ads_retargeting_actions_days
 
     @property
+    def shopping_ads_retargeting_custom_audience_relation(self):
+        """Gets the shopping_ads_retargeting_custom_audience_relation of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The shopping_ads_retargeting_custom_audience_relation of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._shopping_ads_retargeting_custom_audience_relation
+
+    @shopping_ads_retargeting_custom_audience_relation.setter
+    def shopping_ads_retargeting_custom_audience_relation(self, shopping_ads_retargeting_custom_audience_relation):
+        """Sets the shopping_ads_retargeting_custom_audience_relation of this AdgroupUpdateBody.
+
+
+        :param shopping_ads_retargeting_custom_audience_relation: The shopping_ads_retargeting_custom_audience_relation of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._shopping_ads_retargeting_custom_audience_relation = shopping_ads_retargeting_custom_audience_relation
+
+    @property
     def shopping_ads_retargeting_type(self):
         """Gets the shopping_ads_retargeting_type of this AdgroupUpdateBody.  # noqa: E501
 
-        Valid when the campaign `objective_type` is `PRODUCT_SALES`. The retargeting type of shopping ads. Enum values- `LAB1`- Retargeting audiences who viewed products or added products to cart but didn't purchase products. `LAB2`- Retargeting audiences who added products to cart but didn't purchase products. `LAB3`- Retargeting audiences using custom combination. `OFF`- No retargeting.  # noqa: E501
 
         :return: The shopping_ads_retargeting_type of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1767,7 +1800,6 @@ class AdgroupUpdateBody(object):
     def shopping_ads_retargeting_type(self, shopping_ads_retargeting_type):
         """Sets the shopping_ads_retargeting_type of this AdgroupUpdateBody.
 
-        Valid when the campaign `objective_type` is `PRODUCT_SALES`. The retargeting type of shopping ads. Enum values- `LAB1`- Retargeting audiences who viewed products or added products to cart but didn't purchase products. `LAB2`- Retargeting audiences who added products to cart but didn't purchase products. `LAB3`- Retargeting audiences using custom combination. `OFF`- No retargeting.  # noqa: E501
 
         :param shopping_ads_retargeting_type: The shopping_ads_retargeting_type of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1776,10 +1808,51 @@ class AdgroupUpdateBody(object):
         self._shopping_ads_retargeting_type = shopping_ads_retargeting_type
 
     @property
+    def smart_audience_enabled(self):
+        """Gets the smart_audience_enabled of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The smart_audience_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._smart_audience_enabled
+
+    @smart_audience_enabled.setter
+    def smart_audience_enabled(self, smart_audience_enabled):
+        """Sets the smart_audience_enabled of this AdgroupUpdateBody.
+
+
+        :param smart_audience_enabled: The smart_audience_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._smart_audience_enabled = smart_audience_enabled
+
+    @property
+    def smart_interest_behavior_enabled(self):
+        """Gets the smart_interest_behavior_enabled of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The smart_interest_behavior_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._smart_interest_behavior_enabled
+
+    @smart_interest_behavior_enabled.setter
+    def smart_interest_behavior_enabled(self, smart_interest_behavior_enabled):
+        """Sets the smart_interest_behavior_enabled of this AdgroupUpdateBody.
+
+
+        :param smart_interest_behavior_enabled: The smart_interest_behavior_enabled of this AdgroupUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._smart_interest_behavior_enabled = smart_interest_behavior_enabled
+
+    @property
     def spending_power(self):
         """Gets the spending_power of this AdgroupUpdateBody.  # noqa: E501
 
-        Spending power that you want to target. Enum values- `ALL`, `HIGH`.   If it is set to `HIGH`, you can target high spending users who typically spend more on purchases than average users.  Note-  It is only applicable to the TikTok placement. Your `placements` field must contain the enum value of `PLACEMENT_TIKTOK` . It only supports the ad objectives for Auction ads. See [Advertising objectives](https://ads.tiktok.com/marketing_api/docs?id=1737585562434561) for details.  It cannot be used with special industries targeting at the same time. If you have specified `special_industries` at the campaign level, then you cannot use the field here. When `auto_targeting_enabled` is `True` at the ad group level, then `spending_power`  will be automatically set to `ALL`.  Enum values are `ALL` and `HIGH`. Even if you don't specify this field,  then we will still return `ALL` spending power users.  # noqa: E501
 
         :return: The spending_power of this AdgroupUpdateBody.  # noqa: E501
         :rtype: str
@@ -1790,7 +1863,6 @@ class AdgroupUpdateBody(object):
     def spending_power(self, spending_power):
         """Sets the spending_power of this AdgroupUpdateBody.
 
-        Spending power that you want to target. Enum values- `ALL`, `HIGH`.   If it is set to `HIGH`, you can target high spending users who typically spend more on purchases than average users.  Note-  It is only applicable to the TikTok placement. Your `placements` field must contain the enum value of `PLACEMENT_TIKTOK` . It only supports the ad objectives for Auction ads. See [Advertising objectives](https://ads.tiktok.com/marketing_api/docs?id=1737585562434561) for details.  It cannot be used with special industries targeting at the same time. If you have specified `special_industries` at the campaign level, then you cannot use the field here. When `auto_targeting_enabled` is `True` at the ad group level, then `spending_power`  will be automatically set to `ALL`.  Enum values are `ALL` and `HIGH`. Even if you don't specify this field,  then we will still return `ALL` spending power users.  # noqa: E501
 
         :param spending_power: The spending_power of this AdgroupUpdateBody.  # noqa: E501
         :type: str
@@ -1804,7 +1876,7 @@ class AdgroupUpdateBody(object):
 
 
         :return: The targeting_expansion of this AdgroupUpdateBody.  # noqa: E501
-        :rtype: AdgroupcreateTargetingExpansion
+        :rtype: AdgroupupdateTargetingExpansion
         """
         return self._targeting_expansion
 
@@ -1814,10 +1886,52 @@ class AdgroupUpdateBody(object):
 
 
         :param targeting_expansion: The targeting_expansion of this AdgroupUpdateBody.  # noqa: E501
-        :type: AdgroupcreateTargetingExpansion
+        :type: AdgroupupdateTargetingExpansion
         """
 
         self._targeting_expansion = targeting_expansion
+
+    @property
+    def vertical_sensitivity_id(self):
+        """Gets the vertical_sensitivity_id of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The vertical_sensitivity_id of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._vertical_sensitivity_id
+
+    @vertical_sensitivity_id.setter
+    def vertical_sensitivity_id(self, vertical_sensitivity_id):
+        """Sets the vertical_sensitivity_id of this AdgroupUpdateBody.
+
+
+        :param vertical_sensitivity_id: The vertical_sensitivity_id of this AdgroupUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._vertical_sensitivity_id = vertical_sensitivity_id
+
+    @property
+    def zipcode_ids(self):
+        """Gets the zipcode_ids of this AdgroupUpdateBody.  # noqa: E501
+
+
+        :return: The zipcode_ids of this AdgroupUpdateBody.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._zipcode_ids
+
+    @zipcode_ids.setter
+    def zipcode_ids(self, zipcode_ids):
+        """Sets the zipcode_ids of this AdgroupUpdateBody.
+
+
+        :param zipcode_ids: The zipcode_ids of this AdgroupUpdateBody.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._zipcode_ids = zipcode_ids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

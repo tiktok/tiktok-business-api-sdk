@@ -10,11 +10,11 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adgroup_create**](AdgroupApi.md#adgroup_create) | **POST** /open_api/v1.3/adgroup/create/ | Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739499616346114)
-[**adgroup_get**](AdgroupApi.md#adgroup_get) | **GET** /open_api/v1.3/adgroup/get/ | Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739314558673922)
+[**adgroup_create**](AdgroupApi.md#adgroup_create) | **POST** /open_api/v1.3/adgroup/create/ | Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739499616346114)
+[**adgroup_get**](AdgroupApi.md#adgroup_get) | **GET** /open_api/v1.3/adgroup/get/ | Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739314558673922)
 [**adgroup_quota**](AdgroupApi.md#adgroup_quota) | **GET** /open_api/v1.3/adgroup/quota/ | Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1768463039162369)
-[**adgroup_status_update**](AdgroupApi.md#adgroup_status_update) | **POST** /open_api/v1.3/adgroup/status/update/ | Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
-[**adgroup_update**](AdgroupApi.md#adgroup_update) | **POST** /open_api/v1.3/adgroup/update/ | Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739586761631745)
+[**adgroup_status_update**](AdgroupApi.md#adgroup_status_update) | **POST** /open_api/v1.3/adgroup/status/update/ | Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739591716326402)
+[**adgroup_update**](AdgroupApi.md#adgroup_update) | **POST** /open_api/v1.3/adgroup/update/ | Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739586761631745)
 [**smart_plus_adgroup_create**](AdgroupApi.md#smart_plus_adgroup_create) | **POST** /open_api/v1.3/smart_plus/adgroup/create/ | Create a new ad group [Smart Plus AdGroup Create]
 [**smart_plus_adgroup_get**](AdgroupApi.md#smart_plus_adgroup_get) | **GET** /open_api/v1.3/smart_plus/adgroup/get/ | Retrieve ad group details [Smart Plus AdGroup Get]
 [**smart_plus_adgroup_status_update**](AdgroupApi.md#smart_plus_adgroup_status_update) | **POST** /open_api/v1.3/smart_plus/adgroup/status/update/ | Update ad group status [Smart Plus AdGroup Status Update]
@@ -23,7 +23,7 @@ Method | HTTP request | Description
 # **adgroup_create**
 > InlineResponse200 adgroup_create(access_token, body=body)
 
-Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id=1739499616346114)
+Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id=1739499616346114)
 
 ### Example
 ```python
@@ -36,10 +36,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = business_api_client.AdgroupApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-body = business_api_client.AdgroupCreateBody() # AdgroupCreateBody | Adgroup create body parameters (optional)
+body = business_api_client.AdgroupCreateBody() # AdgroupCreateBody |  (optional)
 
 try:
-    # Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id=1739499616346114)
+    # Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id=1739499616346114)
     api_response = api_instance.adgroup_create(access_token, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -51,7 +51,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **body** | [**AdgroupCreateBody**](AdgroupCreateBody.md)| Adgroup create body parameters | [optional] 
+ **body** | [**AdgroupCreateBody**](AdgroupCreateBody.md)|  | [optional] 
 
 ### Return type
 
@@ -69,9 +69,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **adgroup_get**
-> InlineResponse200 adgroup_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields)
+> InlineResponse200 adgroup_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields, exclude_field_types_in_response=exclude_field_types_in_response)
 
-Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id=1739314558673922)
+Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id=1739314558673922)
 
 ### Example
 ```python
@@ -83,16 +83,17 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = business_api_client.AdgroupApi()
-advertiser_id = 'advertiser_id_example' # str | Advertiser ID
+advertiser_id = 'advertiser_id_example' # str | 
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-filtering = business_api_client.FilteringAdgroupGet() # FilteringAdgroupGet | Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by (optional)
-page = 56 # int | Current page number. Default value is `1` (optional)
-page_size = 56 # int | Page size. Default value is- `10`. Range of values- `1-1000` (optional)
+filtering = business_api_client.FilteringAdgroupGet() # FilteringAdgroupGet |  (optional)
+page = 1 # int |  (optional) (default to 1)
+page_size = 10 # int |  (optional) (default to 10)
 fields = ['fields_example'] # list[str] |  (optional)
+exclude_field_types_in_response = ['exclude_field_types_in_response_example'] # list[str] |  (optional)
 
 try:
-    # Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id=1739314558673922)
-    api_response = api_instance.adgroup_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields)
+    # Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id=1739314558673922)
+    api_response = api_instance.adgroup_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields, exclude_field_types_in_response=exclude_field_types_in_response)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling AdgroupApi->adgroup_get: %s\n" % e)
@@ -102,12 +103,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **str**| Advertiser ID | [required]
+ **advertiser_id** | **str**|  | [required]
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **filtering** | [**FilteringAdgroupGet**](FilteringAdgroupGet.md)| Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by | [optional] 
- **page** | **int**| Current page number. Default value is &#x60;1&#x60; | [optional] 
- **page_size** | **int**| Page size. Default value is- &#x60;10&#x60;. Range of values- &#x60;1-1000&#x60; | [optional] 
+ **filtering** | [**FilteringAdgroupGet**](FilteringAdgroupGet.md)|  | [optional] 
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 10]
  **fields** | [**list[str]**](str.md)|  | [optional] 
+ **exclude_field_types_in_response** | [**list[str]**](str.md)|  | [optional] 
 
 ### Return type
 
@@ -175,7 +177,7 @@ No authorization required
 # **adgroup_status_update**
 > InlineResponse200 adgroup_status_update(access_token, body=body)
 
-Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id=1739591716326402)
+Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id=1739591716326402)
 
 ### Example
 ```python
@@ -188,10 +190,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = business_api_client.AdgroupApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-body = business_api_client.AdgroupStatusUpdateBody() # AdgroupStatusUpdateBody | Adgroup status update body parameters (optional)
+body = business_api_client.AdgroupStatusUpdateBody() # AdgroupStatusUpdateBody |  (optional)
 
 try:
-    # Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id=1739591716326402)
+    # Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id=1739591716326402)
     api_response = api_instance.adgroup_status_update(access_token, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -203,7 +205,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **body** | [**AdgroupStatusUpdateBody**](AdgroupStatusUpdateBody.md)| Adgroup status update body parameters | [optional] 
+ **body** | [**AdgroupStatusUpdateBody**](AdgroupStatusUpdateBody.md)|  | [optional] 
 
 ### Return type
 
@@ -223,7 +225,7 @@ No authorization required
 # **adgroup_update**
 > InlineResponse200 adgroup_update(access_token, body=body)
 
-Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id=1739586761631745)
+Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id=1739586761631745)
 
 ### Example
 ```python
@@ -236,10 +238,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = business_api_client.AdgroupApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-body = business_api_client.AdgroupUpdateBody() # AdgroupUpdateBody | Adgroup update body parameters (optional)
+body = business_api_client.AdgroupUpdateBody() # AdgroupUpdateBody |  (optional)
 
 try:
-    # Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id=1739586761631745)
+    # Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id=1739586761631745)
     api_response = api_instance.adgroup_update(access_token, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -251,7 +253,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **body** | [**AdgroupUpdateBody**](AdgroupUpdateBody.md)| Adgroup update body parameters | [optional] 
+ **body** | [**AdgroupUpdateBody**](AdgroupUpdateBody.md)|  | [optional] 
 
 ### Return type
 

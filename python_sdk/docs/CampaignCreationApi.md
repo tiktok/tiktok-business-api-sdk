@@ -10,8 +10,8 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**campaign_create**](CampaignCreationApi.md#campaign_create) | **POST** /open_api/v1.3/campaign/create/ | To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739318962329602)
-[**campaign_get**](CampaignCreationApi.md#campaign_get) | **GET** /open_api/v1.3/campaign/get/ | Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739315828649986)
+[**campaign_create**](CampaignCreationApi.md#campaign_create) | **POST** /open_api/v1.3/campaign/create/ | Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739318962329602)
+[**campaign_get**](CampaignCreationApi.md#campaign_get) | **GET** /open_api/v1.3/campaign/get/ | Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739315828649986)
 [**campaign_gmv_max_create**](CampaignCreationApi.md#campaign_gmv_max_create) | **POST** /open_api/v1.3/campaign/gmv_max/create/ | Create GMV Max campaign [Smart Plus GMV Max Campaign Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1822000988713089)
 [**campaign_gmv_max_info**](CampaignCreationApi.md#campaign_gmv_max_info) | **GET** /open_api/v1.3/campaign/gmv_max/info/ | Get GMV Max campaign info [Smart Plus GMV Max Campaign Info](https://business-api.tiktok.com/portal/docs?id&#x3D;1822000968821762)
 [**campaign_gmv_max_session_create**](CampaignCreationApi.md#campaign_gmv_max_session_create) | **POST** /open_api/v1.3/campaign/gmv_max/session/create/ | Create GMV Max session [Smart Plus GMV Max Session Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1835246967275522)
@@ -20,8 +20,8 @@ Method | HTTP request | Description
 [**campaign_gmv_max_session_list**](CampaignCreationApi.md#campaign_gmv_max_session_list) | **GET** /open_api/v1.3/campaign/gmv_max/session/list/ | Get GMV Max session list [Smart Plus GMV Max Session List](https://business-api.tiktok.com/portal/docs?id&#x3D;1835246996436162)
 [**campaign_gmv_max_session_update**](CampaignCreationApi.md#campaign_gmv_max_session_update) | **POST** /open_api/v1.3/campaign/gmv_max/session/update/ | Update GMV Max session [Smart Plus GMV Max Session Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1835247009119233)
 [**campaign_gmv_max_update**](CampaignCreationApi.md#campaign_gmv_max_update) | **POST** /open_api/v1.3/campaign/gmv_max/update/ | Update GMV Max campaign [Smart Plus GMV Max Campaign Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001009002497)
-[**campaign_status_update**](CampaignCreationApi.md#campaign_status_update) | **POST** /open_api/v1.3/campaign/status/update/ | Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
-[**campaign_update**](CampaignCreationApi.md#campaign_update) | **POST** /open_api/v1.3/campaign/update/ | To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320422086657)
+[**campaign_status_update**](CampaignCreationApi.md#campaign_status_update) | **POST** /open_api/v1.3/campaign/status/update/ | Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320994354178)
+[**campaign_update**](CampaignCreationApi.md#campaign_update) | **POST** /open_api/v1.3/campaign/update/ | Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320422086657)
 [**gmv_max_bid_recommend**](CampaignCreationApi.md#gmv_max_bid_recommend) | **GET** /open_api/v1.3/gmv_max/bid/recommend/ | Get GMV Max bid recommendation [Smart Plus GMV Max Bid Recommend](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001024720897)
 [**gmv_max_custom_anchor_video_list_get**](CampaignCreationApi.md#gmv_max_custom_anchor_video_list_get) | **GET** /open_api/v1.3/gmv_max/custom_anchor_video_list/get/ | Get GMV Max custom anchor video list [Smart Plus GMV Max Custom Anchor Video List Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1830215925061633)
 [**gmv_max_occupied_custom_shop_ads_list**](CampaignCreationApi.md#gmv_max_occupied_custom_shop_ads_list) | **GET** /open_api/v1.3/gmv_max/occupied_custom_shop_ads/list/ | Get GMV Max occupied custom shop ads [Smart Plus GMV Max Occupied Custom Shop Ads List](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001136924674)
@@ -33,7 +33,7 @@ Method | HTTP request | Description
 # **campaign_create**
 > InlineResponse200 campaign_create(access_token, body=body)
 
-To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id=1739318962329602)
+Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id=1739318962329602)
 
 ### Example
 ```python
@@ -46,10 +46,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = business_api_client.CampaignCreationApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-body = business_api_client.CampaignCreateBody() # CampaignCreateBody | Campaign create body parameters (optional)
+body = business_api_client.CampaignCreateBody() # CampaignCreateBody |  (optional)
 
 try:
-    # To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id=1739318962329602)
+    # Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id=1739318962329602)
     api_response = api_instance.campaign_create(access_token, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -61,7 +61,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **body** | [**CampaignCreateBody**](CampaignCreateBody.md)| Campaign create body parameters | [optional] 
+ **body** | [**CampaignCreateBody**](CampaignCreateBody.md)|  | [optional] 
 
 ### Return type
 
@@ -79,9 +79,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **campaign_get**
-> InlineResponse200 campaign_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields)
+> InlineResponse200 campaign_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields, exclude_field_types_in_response=exclude_field_types_in_response)
 
-Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id=1739315828649986)
+Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id=1739315828649986)
 
 ### Example
 ```python
@@ -93,16 +93,17 @@ from pprint import pprint
 
 # create an instance of the API class
 api_instance = business_api_client.CampaignCreationApi()
-advertiser_id = 'advertiser_id_example' # str | Advertiser ID
+advertiser_id = 'advertiser_id_example' # str | 
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-filtering = business_api_client.FilteringCampaignGet() # FilteringCampaignGet | Filtering Parameters (optional)
-page = 56 # int | Current page (optional)
-page_size = 56 # int | Page size (optional)
-fields = ['fields_example'] # list[str] | Supported values include`campaign_id `, ` campaign_name `, ` advertiser_id `, `budget `, `budget_mode `, `status `, `operation_status`, `objective `, `objective_type `, `create_time `, `modify_time`, `is_new_structure`, `campaign_app_profile_page_state` , `special_industries`, `secondary_status`.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default. (optional)
+filtering = business_api_client.FilteringCampaignGet() # FilteringCampaignGet |  (optional)
+page = 1 # int |  (optional) (default to 1)
+page_size = 10 # int |  (optional) (default to 10)
+fields = ['fields_example'] # list[str] |  (optional)
+exclude_field_types_in_response = ['exclude_field_types_in_response_example'] # list[str] |  (optional)
 
 try:
-    # Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id=1739315828649986)
-    api_response = api_instance.campaign_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields)
+    # Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id=1739315828649986)
+    api_response = api_instance.campaign_get(advertiser_id, access_token, filtering=filtering, page=page, page_size=page_size, fields=fields, exclude_field_types_in_response=exclude_field_types_in_response)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CampaignCreationApi->campaign_get: %s\n" % e)
@@ -112,12 +113,13 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **str**| Advertiser ID | [required]
+ **advertiser_id** | **str**|  | [required]
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **filtering** | [**FilteringCampaignGet**](FilteringCampaignGet.md)| Filtering Parameters | [optional] 
- **page** | **int**| Current page | [optional] 
- **page_size** | **int**| Page size | [optional] 
- **fields** | [**list[str]**](str.md)| Supported values include&#x60;campaign_id &#x60;, &#x60; campaign_name &#x60;, &#x60; advertiser_id &#x60;, &#x60;budget &#x60;, &#x60;budget_mode &#x60;, &#x60;status &#x60;, &#x60;operation_status&#x60;, &#x60;objective &#x60;, &#x60;objective_type &#x60;, &#x60;create_time &#x60;, &#x60;modify_time&#x60;, &#x60;is_new_structure&#x60;, &#x60;campaign_app_profile_page_state&#x60; , &#x60;special_industries&#x60;, &#x60;secondary_status&#x60;.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default. | [optional] 
+ **filtering** | [**FilteringCampaignGet**](FilteringCampaignGet.md)|  | [optional] 
+ **page** | **int**|  | [optional] [default to 1]
+ **page_size** | **int**|  | [optional] [default to 10]
+ **fields** | [**list[str]**](str.md)|  | [optional] 
+ **exclude_field_types_in_response** | [**list[str]**](str.md)|  | [optional] 
 
 ### Return type
 
@@ -527,7 +529,7 @@ No authorization required
 # **campaign_status_update**
 > InlineResponse200 campaign_status_update(access_token, body=body)
 
-Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id=1739320994354178)
+Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id=1739320994354178)
 
 ### Example
 ```python
@@ -540,10 +542,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = business_api_client.CampaignCreationApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-body = business_api_client.CampaignStatusUpdateBody() # CampaignStatusUpdateBody | Campaign status update body parameters (optional)
+body = business_api_client.CampaignStatusUpdateBody() # CampaignStatusUpdateBody |  (optional)
 
 try:
-    # Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id=1739320994354178)
+    # Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id=1739320994354178)
     api_response = api_instance.campaign_status_update(access_token, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -555,7 +557,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **body** | [**CampaignStatusUpdateBody**](CampaignStatusUpdateBody.md)| Campaign status update body parameters | [optional] 
+ **body** | [**CampaignStatusUpdateBody**](CampaignStatusUpdateBody.md)|  | [optional] 
 
 ### Return type
 
@@ -575,7 +577,7 @@ No authorization required
 # **campaign_update**
 > InlineResponse200 campaign_update(access_token, body=body)
 
-To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id=1739320422086657)
+Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id=1739320422086657)
 
 ### Example
 ```python
@@ -588,10 +590,10 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = business_api_client.CampaignCreationApi()
 access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-body = business_api_client.CampaignUpdateBody() # CampaignUpdateBody | Campaign update body parameters (optional)
+body = business_api_client.CampaignUpdateBody() # CampaignUpdateBody |  (optional)
 
 try:
-    # To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id=1739320422086657)
+    # Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id=1739320422086657)
     api_response = api_instance.campaign_update(access_token, body=body)
     pprint(api_response)
 except ApiException as e:
@@ -603,7 +605,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
- **body** | [**CampaignUpdateBody**](CampaignUpdateBody.md)| Campaign update body parameters | [optional] 
+ **body** | [**CampaignUpdateBody**](CampaignUpdateBody.md)|  | [optional] 
 
 ### Return type
 

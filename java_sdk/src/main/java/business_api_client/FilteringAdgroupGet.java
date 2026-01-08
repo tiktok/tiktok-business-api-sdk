@@ -19,7 +19,7 @@ import java.util.List;
  * FilteringAdgroupGet
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class FilteringAdgroupGet {
   @JsonProperty("adgroup_ids")
   private List<String> adgroupIds = null;
@@ -27,11 +27,20 @@ public class FilteringAdgroupGet {
   @JsonProperty("adgroup_name")
   private String adgroupName = null;
 
+  @JsonProperty("bid_strategy")
+  private String bidStrategy = null;
+
   @JsonProperty("billing_events")
   private List<String> billingEvents = null;
 
+  @JsonProperty("buying_types")
+  private List<String> buyingTypes = null;
+
   @JsonProperty("campaign_ids")
   private List<String> campaignIds = null;
+
+  @JsonProperty("campaign_system_origins")
+  private List<String> campaignSystemOrigins = null;
 
   @JsonProperty("creation_filter_end_time")
   private String creationFilterEndTime = null;
@@ -39,14 +48,26 @@ public class FilteringAdgroupGet {
   @JsonProperty("creation_filter_start_time")
   private String creationFilterStartTime = null;
 
+  @JsonProperty("creative_material_mode")
+  private String creativeMaterialMode = null;
+
   @JsonProperty("objective_type")
   private String objectiveType = null;
 
+  @JsonProperty("optimization_goal")
+  private String optimizationGoal = null;
+
   @JsonProperty("primary_status")
-  private String primaryStatus = null;
+  private String primaryStatus = "STATUS_NOT_DELETE";
+
+  @JsonProperty("promotion_type")
+  private String promotionType = null;
 
   @JsonProperty("secondary_status")
   private String secondaryStatus = null;
+
+  @JsonProperty("split_test_enabled")
+  private Boolean splitTestEnabled = null;
 
   public FilteringAdgroupGet adgroupIds(List<String> adgroupIds) {
     this.adgroupIds = adgroupIds;
@@ -62,10 +83,10 @@ public class FilteringAdgroupGet {
   }
 
    /**
-   * List of Ad group ID. Allowed number of IDs- &#x60;1-100&#x60;
+   * Get adgroupIds
    * @return adgroupIds
   **/
-  @Schema(description = "List of Ad group ID. Allowed number of IDs- `1-100`")
+  @Schema(description = "")
   public List<String> getAdgroupIds() {
     return adgroupIds;
   }
@@ -80,16 +101,34 @@ public class FilteringAdgroupGet {
   }
 
    /**
-   * Ad group name.
+   * Get adgroupName
    * @return adgroupName
   **/
-  @Schema(description = "Ad group name.")
+  @Schema(description = "")
   public String getAdgroupName() {
     return adgroupName;
   }
 
   public void setAdgroupName(String adgroupName) {
     this.adgroupName = adgroupName;
+  }
+
+  public FilteringAdgroupGet bidStrategy(String bidStrategy) {
+    this.bidStrategy = bidStrategy;
+    return this;
+  }
+
+   /**
+   * Get bidStrategy
+   * @return bidStrategy
+  **/
+  @Schema(description = "")
+  public String getBidStrategy() {
+    return bidStrategy;
+  }
+
+  public void setBidStrategy(String bidStrategy) {
+    this.bidStrategy = bidStrategy;
   }
 
   public FilteringAdgroupGet billingEvents(List<String> billingEvents) {
@@ -106,16 +145,42 @@ public class FilteringAdgroupGet {
   }
 
    /**
-   * Events that you want to pay for.  For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138).
+   * Get billingEvents
    * @return billingEvents
   **/
-  @Schema(description = "Events that you want to pay for.  For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).")
+  @Schema(description = "")
   public List<String> getBillingEvents() {
     return billingEvents;
   }
 
   public void setBillingEvents(List<String> billingEvents) {
     this.billingEvents = billingEvents;
+  }
+
+  public FilteringAdgroupGet buyingTypes(List<String> buyingTypes) {
+    this.buyingTypes = buyingTypes;
+    return this;
+  }
+
+  public FilteringAdgroupGet addBuyingTypesItem(String buyingTypesItem) {
+    if (this.buyingTypes == null) {
+      this.buyingTypes = new ArrayList<String>();
+    }
+    this.buyingTypes.add(buyingTypesItem);
+    return this;
+  }
+
+   /**
+   * Get buyingTypes
+   * @return buyingTypes
+  **/
+  @Schema(description = "")
+  public List<String> getBuyingTypes() {
+    return buyingTypes;
+  }
+
+  public void setBuyingTypes(List<String> buyingTypes) {
+    this.buyingTypes = buyingTypes;
   }
 
   public FilteringAdgroupGet campaignIds(List<String> campaignIds) {
@@ -132,10 +197,10 @@ public class FilteringAdgroupGet {
   }
 
    /**
-   * List of campaign IDs. Allowed number of IDs- &#x60;1-100&#x60;
+   * Get campaignIds
    * @return campaignIds
   **/
-  @Schema(description = "List of campaign IDs. Allowed number of IDs- `1-100`")
+  @Schema(description = "")
   public List<String> getCampaignIds() {
     return campaignIds;
   }
@@ -144,16 +209,42 @@ public class FilteringAdgroupGet {
     this.campaignIds = campaignIds;
   }
 
+  public FilteringAdgroupGet campaignSystemOrigins(List<String> campaignSystemOrigins) {
+    this.campaignSystemOrigins = campaignSystemOrigins;
+    return this;
+  }
+
+  public FilteringAdgroupGet addCampaignSystemOriginsItem(String campaignSystemOriginsItem) {
+    if (this.campaignSystemOrigins == null) {
+      this.campaignSystemOrigins = new ArrayList<String>();
+    }
+    this.campaignSystemOrigins.add(campaignSystemOriginsItem);
+    return this;
+  }
+
+   /**
+   * Get campaignSystemOrigins
+   * @return campaignSystemOrigins
+  **/
+  @Schema(description = "")
+  public List<String> getCampaignSystemOrigins() {
+    return campaignSystemOrigins;
+  }
+
+  public void setCampaignSystemOrigins(List<String> campaignSystemOrigins) {
+    this.campaignSystemOrigins = campaignSystemOrigins;
+  }
+
   public FilteringAdgroupGet creationFilterEndTime(String creationFilterEndTime) {
     this.creationFilterEndTime = creationFilterEndTime;
     return this;
   }
 
    /**
-   * Filter by higher range of ad group creation time, in the format of &#x60;YYYY-MM-DD HH:MM:SS&#x60; (UTC time zone). Ad groups created earlier than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won&#x27;t be affected.
+   * Get creationFilterEndTime
    * @return creationFilterEndTime
   **/
-  @Schema(description = "Filter by higher range of ad group creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ad groups created earlier than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.")
+  @Schema(description = "")
   public String getCreationFilterEndTime() {
     return creationFilterEndTime;
   }
@@ -168,10 +259,10 @@ public class FilteringAdgroupGet {
   }
 
    /**
-   * Filter by lower range of ad group creation time, in the format of &#x60;YYYY-MM-DD HH:MM:SS&#x60; (UTC time zone). Ad groups created later than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won&#x27;t be affected.
+   * Get creationFilterStartTime
    * @return creationFilterStartTime
   **/
-  @Schema(description = "Filter by lower range of ad group creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ad groups created later than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.")
+  @Schema(description = "")
   public String getCreationFilterStartTime() {
     return creationFilterStartTime;
   }
@@ -180,16 +271,34 @@ public class FilteringAdgroupGet {
     this.creationFilterStartTime = creationFilterStartTime;
   }
 
+  public FilteringAdgroupGet creativeMaterialMode(String creativeMaterialMode) {
+    this.creativeMaterialMode = creativeMaterialMode;
+    return this;
+  }
+
+   /**
+   * Get creativeMaterialMode
+   * @return creativeMaterialMode
+  **/
+  @Schema(description = "")
+  public String getCreativeMaterialMode() {
+    return creativeMaterialMode;
+  }
+
+  public void setCreativeMaterialMode(String creativeMaterialMode) {
+    this.creativeMaterialMode = creativeMaterialMode;
+  }
+
   public FilteringAdgroupGet objectiveType(String objectiveType) {
     this.objectiveType = objectiveType;
     return this;
   }
 
    /**
-   * Advertising objective. For details, see [Enumeration - Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138). Whether you choose &#x60;WEB_CONVERSIONS&#x60; or  &#x60;CONVERSIONS&#x60; as the objective filter, we will return data of both &#x60;WEB_CONVERSIONS&#x60; and  &#x60;CONVERSIONS&#x60;.
+   * Get objectiveType
    * @return objectiveType
   **/
-  @Schema(description = "Advertising objective. For details, see [Enumeration - Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). Whether you choose `WEB_CONVERSIONS` or  `CONVERSIONS` as the objective filter, we will return data of both `WEB_CONVERSIONS` and  `CONVERSIONS`.")
+  @Schema(description = "")
   public String getObjectiveType() {
     return objectiveType;
   }
@@ -198,16 +307,34 @@ public class FilteringAdgroupGet {
     this.objectiveType = objectiveType;
   }
 
+  public FilteringAdgroupGet optimizationGoal(String optimizationGoal) {
+    this.optimizationGoal = optimizationGoal;
+    return this;
+  }
+
+   /**
+   * Get optimizationGoal
+   * @return optimizationGoal
+  **/
+  @Schema(description = "")
+  public String getOptimizationGoal() {
+    return optimizationGoal;
+  }
+
+  public void setOptimizationGoal(String optimizationGoal) {
+    this.optimizationGoal = optimizationGoal;
+  }
+
   public FilteringAdgroupGet primaryStatus(String primaryStatus) {
     this.primaryStatus = primaryStatus;
     return this;
   }
 
    /**
-   * Primary status. For enum values, see [Enumeration - Primary Status](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138). The default value is &#x60;STATUS_NOT_DELETE&#x60;, which returns ad groups in all status excluding &#x60;STATUS_DELETE&#x60;. If you want to get ad groups in all status including &#x60;STATUS_DELETE&#x60;, use &#x60;STATUS_ALL&#x60; instead.
+   * Get primaryStatus
    * @return primaryStatus
   **/
-  @Schema(description = "Primary status. For enum values, see [Enumeration - Primary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). The default value is `STATUS_NOT_DELETE`, which returns ad groups in all status excluding `STATUS_DELETE`. If you want to get ad groups in all status including `STATUS_DELETE`, use `STATUS_ALL` instead.")
+  @Schema(description = "")
   public String getPrimaryStatus() {
     return primaryStatus;
   }
@@ -216,22 +343,58 @@ public class FilteringAdgroupGet {
     this.primaryStatus = primaryStatus;
   }
 
+  public FilteringAdgroupGet promotionType(String promotionType) {
+    this.promotionType = promotionType;
+    return this;
+  }
+
+   /**
+   * Get promotionType
+   * @return promotionType
+  **/
+  @Schema(description = "")
+  public String getPromotionType() {
+    return promotionType;
+  }
+
+  public void setPromotionType(String promotionType) {
+    this.promotionType = promotionType;
+  }
+
   public FilteringAdgroupGet secondaryStatus(String secondaryStatus) {
     this.secondaryStatus = secondaryStatus;
     return this;
   }
 
    /**
-   * Ad group status（secondary status). For enum values, see [Enumeration - Ad Group Status - Secondary Status](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138). his field is not returned in the sandbox environment because the ad group is not actually delivered. See [Supported secondary statuses for a primary status](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1757239620352002) to learn about the valid values you can pass in via &#x60;secondary_status&#x60; for the primary status you specify.
+   * Get secondaryStatus
    * @return secondaryStatus
   **/
-  @Schema(description = "Ad group status（secondary status). For enum values, see [Enumeration - Ad Group Status - Secondary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). his field is not returned in the sandbox environment because the ad group is not actually delivered. See [Supported secondary statuses for a primary status](https://ads.tiktok.com/marketing_api/docs?id=1757239620352002) to learn about the valid values you can pass in via `secondary_status` for the primary status you specify.")
+  @Schema(description = "")
   public String getSecondaryStatus() {
     return secondaryStatus;
   }
 
   public void setSecondaryStatus(String secondaryStatus) {
     this.secondaryStatus = secondaryStatus;
+  }
+
+  public FilteringAdgroupGet splitTestEnabled(Boolean splitTestEnabled) {
+    this.splitTestEnabled = splitTestEnabled;
+    return this;
+  }
+
+   /**
+   * Get splitTestEnabled
+   * @return splitTestEnabled
+  **/
+  @Schema(description = "")
+  public Boolean isSplitTestEnabled() {
+    return splitTestEnabled;
+  }
+
+  public void setSplitTestEnabled(Boolean splitTestEnabled) {
+    this.splitTestEnabled = splitTestEnabled;
   }
 
 
@@ -246,18 +409,25 @@ public class FilteringAdgroupGet {
     FilteringAdgroupGet filteringAdgroupGet = (FilteringAdgroupGet) o;
     return Objects.equals(this.adgroupIds, filteringAdgroupGet.adgroupIds) &&
         Objects.equals(this.adgroupName, filteringAdgroupGet.adgroupName) &&
+        Objects.equals(this.bidStrategy, filteringAdgroupGet.bidStrategy) &&
         Objects.equals(this.billingEvents, filteringAdgroupGet.billingEvents) &&
+        Objects.equals(this.buyingTypes, filteringAdgroupGet.buyingTypes) &&
         Objects.equals(this.campaignIds, filteringAdgroupGet.campaignIds) &&
+        Objects.equals(this.campaignSystemOrigins, filteringAdgroupGet.campaignSystemOrigins) &&
         Objects.equals(this.creationFilterEndTime, filteringAdgroupGet.creationFilterEndTime) &&
         Objects.equals(this.creationFilterStartTime, filteringAdgroupGet.creationFilterStartTime) &&
+        Objects.equals(this.creativeMaterialMode, filteringAdgroupGet.creativeMaterialMode) &&
         Objects.equals(this.objectiveType, filteringAdgroupGet.objectiveType) &&
+        Objects.equals(this.optimizationGoal, filteringAdgroupGet.optimizationGoal) &&
         Objects.equals(this.primaryStatus, filteringAdgroupGet.primaryStatus) &&
-        Objects.equals(this.secondaryStatus, filteringAdgroupGet.secondaryStatus);
+        Objects.equals(this.promotionType, filteringAdgroupGet.promotionType) &&
+        Objects.equals(this.secondaryStatus, filteringAdgroupGet.secondaryStatus) &&
+        Objects.equals(this.splitTestEnabled, filteringAdgroupGet.splitTestEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adgroupIds, adgroupName, billingEvents, campaignIds, creationFilterEndTime, creationFilterStartTime, objectiveType, primaryStatus, secondaryStatus);
+    return Objects.hash(adgroupIds, adgroupName, bidStrategy, billingEvents, buyingTypes, campaignIds, campaignSystemOrigins, creationFilterEndTime, creationFilterStartTime, creativeMaterialMode, objectiveType, optimizationGoal, primaryStatus, promotionType, secondaryStatus, splitTestEnabled);
   }
 
 
@@ -268,13 +438,20 @@ public class FilteringAdgroupGet {
     
     sb.append("    adgroupIds: ").append(toIndentedString(adgroupIds)).append("\n");
     sb.append("    adgroupName: ").append(toIndentedString(adgroupName)).append("\n");
+    sb.append("    bidStrategy: ").append(toIndentedString(bidStrategy)).append("\n");
     sb.append("    billingEvents: ").append(toIndentedString(billingEvents)).append("\n");
+    sb.append("    buyingTypes: ").append(toIndentedString(buyingTypes)).append("\n");
     sb.append("    campaignIds: ").append(toIndentedString(campaignIds)).append("\n");
+    sb.append("    campaignSystemOrigins: ").append(toIndentedString(campaignSystemOrigins)).append("\n");
     sb.append("    creationFilterEndTime: ").append(toIndentedString(creationFilterEndTime)).append("\n");
     sb.append("    creationFilterStartTime: ").append(toIndentedString(creationFilterStartTime)).append("\n");
+    sb.append("    creativeMaterialMode: ").append(toIndentedString(creativeMaterialMode)).append("\n");
     sb.append("    objectiveType: ").append(toIndentedString(objectiveType)).append("\n");
+    sb.append("    optimizationGoal: ").append(toIndentedString(optimizationGoal)).append("\n");
     sb.append("    primaryStatus: ").append(toIndentedString(primaryStatus)).append("\n");
+    sb.append("    promotionType: ").append(toIndentedString(promotionType)).append("\n");
     sb.append("    secondaryStatus: ").append(toIndentedString(secondaryStatus)).append("\n");
+    sb.append("    splitTestEnabled: ").append(toIndentedString(splitTestEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,19 +19,25 @@ import java.util.List;
  * FilteringAdGet
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class FilteringAdGet {
   @JsonProperty("ad_ids")
   private List<String> adIds = null;
 
+  @JsonProperty("ad_name")
+  private String adName = null;
+
   @JsonProperty("adgroup_ids")
   private List<String> adgroupIds = null;
 
-  @JsonProperty("billing_events")
-  private List<String> billingEvents = null;
+  @JsonProperty("buying_types")
+  private List<String> buyingTypes = null;
 
   @JsonProperty("campaign_ids")
   private List<String> campaignIds = null;
+
+  @JsonProperty("campaign_system_origins")
+  private List<String> campaignSystemOrigins = null;
 
   @JsonProperty("creation_filter_end_time")
   private String creationFilterEndTime = null;
@@ -39,11 +45,23 @@ public class FilteringAdGet {
   @JsonProperty("creation_filter_start_time")
   private String creationFilterStartTime = null;
 
+  @JsonProperty("creative_material_mode")
+  private String creativeMaterialMode = null;
+
+  @JsonProperty("destination")
+  private String destination = null;
+
+  @JsonProperty("modified_after")
+  private String modifiedAfter = null;
+
   @JsonProperty("objective_type")
   private String objectiveType = null;
 
+  @JsonProperty("optimization_goal")
+  private String optimizationGoal = null;
+
   @JsonProperty("primary_status")
-  private String primaryStatus = null;
+  private String primaryStatus = "STATUS_NOT_DELETE";
 
   @JsonProperty("secondary_status")
   private String secondaryStatus = null;
@@ -62,16 +80,34 @@ public class FilteringAdGet {
   }
 
    /**
-   * A list of Ad ID，quantity- &#x60;1-100&#x60;
+   * Get adIds
    * @return adIds
   **/
-  @Schema(description = "A list of Ad ID，quantity- `1-100`")
+  @Schema(description = "")
   public List<String> getAdIds() {
     return adIds;
   }
 
   public void setAdIds(List<String> adIds) {
     this.adIds = adIds;
+  }
+
+  public FilteringAdGet adName(String adName) {
+    this.adName = adName;
+    return this;
+  }
+
+   /**
+   * Get adName
+   * @return adName
+  **/
+  @Schema(description = "")
+  public String getAdName() {
+    return adName;
+  }
+
+  public void setAdName(String adName) {
+    this.adName = adName;
   }
 
   public FilteringAdGet adgroupIds(List<String> adgroupIds) {
@@ -88,10 +124,10 @@ public class FilteringAdGet {
   }
 
    /**
-   * A list of Ad group ID, quantity- &#x60;1-100&#x60;
+   * Get adgroupIds
    * @return adgroupIds
   **/
-  @Schema(description = "A list of Ad group ID, quantity- `1-100`")
+  @Schema(description = "")
   public List<String> getAdgroupIds() {
     return adgroupIds;
   }
@@ -100,30 +136,30 @@ public class FilteringAdGet {
     this.adgroupIds = adgroupIds;
   }
 
-  public FilteringAdGet billingEvents(List<String> billingEvents) {
-    this.billingEvents = billingEvents;
+  public FilteringAdGet buyingTypes(List<String> buyingTypes) {
+    this.buyingTypes = buyingTypes;
     return this;
   }
 
-  public FilteringAdGet addBillingEventsItem(String billingEventsItem) {
-    if (this.billingEvents == null) {
-      this.billingEvents = new ArrayList<String>();
+  public FilteringAdGet addBuyingTypesItem(String buyingTypesItem) {
+    if (this.buyingTypes == null) {
+      this.buyingTypes = new ArrayList<String>();
     }
-    this.billingEvents.add(billingEventsItem);
+    this.buyingTypes.add(buyingTypesItem);
     return this;
   }
 
    /**
-   * Billing events. For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138).
-   * @return billingEvents
+   * Get buyingTypes
+   * @return buyingTypes
   **/
-  @Schema(description = "Billing events. For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).")
-  public List<String> getBillingEvents() {
-    return billingEvents;
+  @Schema(description = "")
+  public List<String> getBuyingTypes() {
+    return buyingTypes;
   }
 
-  public void setBillingEvents(List<String> billingEvents) {
-    this.billingEvents = billingEvents;
+  public void setBuyingTypes(List<String> buyingTypes) {
+    this.buyingTypes = buyingTypes;
   }
 
   public FilteringAdGet campaignIds(List<String> campaignIds) {
@@ -140,10 +176,10 @@ public class FilteringAdGet {
   }
 
    /**
-   * A list of Campaign IDs, quantity- &#x60;1-100&#x60;
+   * Get campaignIds
    * @return campaignIds
   **/
-  @Schema(description = "A list of Campaign IDs, quantity- `1-100`")
+  @Schema(description = "")
   public List<String> getCampaignIds() {
     return campaignIds;
   }
@@ -152,16 +188,42 @@ public class FilteringAdGet {
     this.campaignIds = campaignIds;
   }
 
+  public FilteringAdGet campaignSystemOrigins(List<String> campaignSystemOrigins) {
+    this.campaignSystemOrigins = campaignSystemOrigins;
+    return this;
+  }
+
+  public FilteringAdGet addCampaignSystemOriginsItem(String campaignSystemOriginsItem) {
+    if (this.campaignSystemOrigins == null) {
+      this.campaignSystemOrigins = new ArrayList<String>();
+    }
+    this.campaignSystemOrigins.add(campaignSystemOriginsItem);
+    return this;
+  }
+
+   /**
+   * Get campaignSystemOrigins
+   * @return campaignSystemOrigins
+  **/
+  @Schema(description = "")
+  public List<String> getCampaignSystemOrigins() {
+    return campaignSystemOrigins;
+  }
+
+  public void setCampaignSystemOrigins(List<String> campaignSystemOrigins) {
+    this.campaignSystemOrigins = campaignSystemOrigins;
+  }
+
   public FilteringAdGet creationFilterEndTime(String creationFilterEndTime) {
     this.creationFilterEndTime = creationFilterEndTime;
     return this;
   }
 
    /**
-   * Filter by higher range of ad creation time, in the format of &#x60;YYYY-MM-DD HH:MM:SS&#x60; (UTC time zone). Ads created earlier than this time will be returned.
+   * Get creationFilterEndTime
    * @return creationFilterEndTime
   **/
-  @Schema(description = "Filter by higher range of ad creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ads created earlier than this time will be returned.")
+  @Schema(description = "")
   public String getCreationFilterEndTime() {
     return creationFilterEndTime;
   }
@@ -176,10 +238,10 @@ public class FilteringAdGet {
   }
 
    /**
-   * Filter by lower range of ad creation time, in the format of &#x60;YYYY-MM-DD HH:MM:SS&#x60; (UTC time zone). Ads created later than this time will be returned. Suggestion A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won&#x27;t be affected.
+   * Get creationFilterStartTime
    * @return creationFilterStartTime
   **/
-  @Schema(description = "Filter by lower range of ad creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ads created later than this time will be returned. Suggestion A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.")
+  @Schema(description = "")
   public String getCreationFilterStartTime() {
     return creationFilterStartTime;
   }
@@ -188,16 +250,70 @@ public class FilteringAdGet {
     this.creationFilterStartTime = creationFilterStartTime;
   }
 
+  public FilteringAdGet creativeMaterialMode(String creativeMaterialMode) {
+    this.creativeMaterialMode = creativeMaterialMode;
+    return this;
+  }
+
+   /**
+   * Get creativeMaterialMode
+   * @return creativeMaterialMode
+  **/
+  @Schema(description = "")
+  public String getCreativeMaterialMode() {
+    return creativeMaterialMode;
+  }
+
+  public void setCreativeMaterialMode(String creativeMaterialMode) {
+    this.creativeMaterialMode = creativeMaterialMode;
+  }
+
+  public FilteringAdGet destination(String destination) {
+    this.destination = destination;
+    return this;
+  }
+
+   /**
+   * Get destination
+   * @return destination
+  **/
+  @Schema(description = "")
+  public String getDestination() {
+    return destination;
+  }
+
+  public void setDestination(String destination) {
+    this.destination = destination;
+  }
+
+  public FilteringAdGet modifiedAfter(String modifiedAfter) {
+    this.modifiedAfter = modifiedAfter;
+    return this;
+  }
+
+   /**
+   * Get modifiedAfter
+   * @return modifiedAfter
+  **/
+  @Schema(description = "")
+  public String getModifiedAfter() {
+    return modifiedAfter;
+  }
+
+  public void setModifiedAfter(String modifiedAfter) {
+    this.modifiedAfter = modifiedAfter;
+  }
+
   public FilteringAdGet objectiveType(String objectiveType) {
     this.objectiveType = objectiveType;
     return this;
   }
 
    /**
-   * Advertising Objective. For enum values, see [Enumeration - Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138). Note- Whether you choose &#x60;WEB_CONVERSIONS&#x60; or  &#x60;CONVERSIONS&#x60; as the objective filter, we will return data of both &#x60;WEB_CONVERSIONS&#x60; and  &#x60;CONVERSIONS&#x60;.
+   * Get objectiveType
    * @return objectiveType
   **/
-  @Schema(description = "Advertising Objective. For enum values, see [Enumeration - Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). Note- Whether you choose `WEB_CONVERSIONS` or  `CONVERSIONS` as the objective filter, we will return data of both `WEB_CONVERSIONS` and  `CONVERSIONS`.")
+  @Schema(description = "")
   public String getObjectiveType() {
     return objectiveType;
   }
@@ -206,16 +322,34 @@ public class FilteringAdGet {
     this.objectiveType = objectiveType;
   }
 
+  public FilteringAdGet optimizationGoal(String optimizationGoal) {
+    this.optimizationGoal = optimizationGoal;
+    return this;
+  }
+
+   /**
+   * Get optimizationGoal
+   * @return optimizationGoal
+  **/
+  @Schema(description = "")
+  public String getOptimizationGoal() {
+    return optimizationGoal;
+  }
+
+  public void setOptimizationGoal(String optimizationGoal) {
+    this.optimizationGoal = optimizationGoal;
+  }
+
   public FilteringAdGet primaryStatus(String primaryStatus) {
     this.primaryStatus = primaryStatus;
     return this;
   }
 
    /**
-   * Primary status. For enum values, see [Enumeration -Primary status](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138).
+   * Get primaryStatus
    * @return primaryStatus
   **/
-  @Schema(description = "Primary status. For enum values, see [Enumeration -Primary status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).")
+  @Schema(description = "")
   public String getPrimaryStatus() {
     return primaryStatus;
   }
@@ -230,10 +364,10 @@ public class FilteringAdGet {
   }
 
    /**
-   * Ad status（secondary status). For enum values, see [Enumeration - Ad Status - Secondary Status](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138). his field is not returned in the sandbox environment because the ad is not actually delivered. [Supported secondary statuses for a primary status](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1757239620352002) to learn about the valid values you can pass in via &#x60;secondary_status&#x60; for the primary status you specify.
+   * Get secondaryStatus
    * @return secondaryStatus
   **/
-  @Schema(description = "Ad status（secondary status). For enum values, see [Enumeration - Ad Status - Secondary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). his field is not returned in the sandbox environment because the ad is not actually delivered. [Supported secondary statuses for a primary status](https://ads.tiktok.com/marketing_api/docs?id=1757239620352002) to learn about the valid values you can pass in via `secondary_status` for the primary status you specify.")
+  @Schema(description = "")
   public String getSecondaryStatus() {
     return secondaryStatus;
   }
@@ -253,19 +387,25 @@ public class FilteringAdGet {
     }
     FilteringAdGet filteringAdGet = (FilteringAdGet) o;
     return Objects.equals(this.adIds, filteringAdGet.adIds) &&
+        Objects.equals(this.adName, filteringAdGet.adName) &&
         Objects.equals(this.adgroupIds, filteringAdGet.adgroupIds) &&
-        Objects.equals(this.billingEvents, filteringAdGet.billingEvents) &&
+        Objects.equals(this.buyingTypes, filteringAdGet.buyingTypes) &&
         Objects.equals(this.campaignIds, filteringAdGet.campaignIds) &&
+        Objects.equals(this.campaignSystemOrigins, filteringAdGet.campaignSystemOrigins) &&
         Objects.equals(this.creationFilterEndTime, filteringAdGet.creationFilterEndTime) &&
         Objects.equals(this.creationFilterStartTime, filteringAdGet.creationFilterStartTime) &&
+        Objects.equals(this.creativeMaterialMode, filteringAdGet.creativeMaterialMode) &&
+        Objects.equals(this.destination, filteringAdGet.destination) &&
+        Objects.equals(this.modifiedAfter, filteringAdGet.modifiedAfter) &&
         Objects.equals(this.objectiveType, filteringAdGet.objectiveType) &&
+        Objects.equals(this.optimizationGoal, filteringAdGet.optimizationGoal) &&
         Objects.equals(this.primaryStatus, filteringAdGet.primaryStatus) &&
         Objects.equals(this.secondaryStatus, filteringAdGet.secondaryStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adIds, adgroupIds, billingEvents, campaignIds, creationFilterEndTime, creationFilterStartTime, objectiveType, primaryStatus, secondaryStatus);
+    return Objects.hash(adIds, adName, adgroupIds, buyingTypes, campaignIds, campaignSystemOrigins, creationFilterEndTime, creationFilterStartTime, creativeMaterialMode, destination, modifiedAfter, objectiveType, optimizationGoal, primaryStatus, secondaryStatus);
   }
 
 
@@ -275,12 +415,18 @@ public class FilteringAdGet {
     sb.append("class FilteringAdGet {\n");
     
     sb.append("    adIds: ").append(toIndentedString(adIds)).append("\n");
+    sb.append("    adName: ").append(toIndentedString(adName)).append("\n");
     sb.append("    adgroupIds: ").append(toIndentedString(adgroupIds)).append("\n");
-    sb.append("    billingEvents: ").append(toIndentedString(billingEvents)).append("\n");
+    sb.append("    buyingTypes: ").append(toIndentedString(buyingTypes)).append("\n");
     sb.append("    campaignIds: ").append(toIndentedString(campaignIds)).append("\n");
+    sb.append("    campaignSystemOrigins: ").append(toIndentedString(campaignSystemOrigins)).append("\n");
     sb.append("    creationFilterEndTime: ").append(toIndentedString(creationFilterEndTime)).append("\n");
     sb.append("    creationFilterStartTime: ").append(toIndentedString(creationFilterStartTime)).append("\n");
+    sb.append("    creativeMaterialMode: ").append(toIndentedString(creativeMaterialMode)).append("\n");
+    sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
+    sb.append("    modifiedAfter: ").append(toIndentedString(modifiedAfter)).append("\n");
     sb.append("    objectiveType: ").append(toIndentedString(objectiveType)).append("\n");
+    sb.append("    optimizationGoal: ").append(toIndentedString(optimizationGoal)).append("\n");
     sb.append("    primaryStatus: ").append(toIndentedString(primaryStatus)).append("\n");
     sb.append("    secondaryStatus: ").append(toIndentedString(secondaryStatus)).append("\n");
     sb.append("}");

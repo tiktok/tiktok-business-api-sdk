@@ -20,7 +20,7 @@ import java.util.List;
  * AdCreateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdCreateBody {
   @JsonProperty("adgroup_id")
   private String adgroupId = null;
@@ -37,10 +37,10 @@ public class AdCreateBody {
   }
 
    /**
-   * Ad group ID
+   * Get adgroupId
    * @return adgroupId
   **/
-  @Schema(required = true, description = "Ad group ID")
+  @Schema(required = true, description = "")
   public String getAdgroupId() {
     return adgroupId;
   }
@@ -55,10 +55,10 @@ public class AdCreateBody {
   }
 
    /**
-   * Advertiser ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Advertiser ID")
+  @Schema(required = true, description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -78,10 +78,10 @@ public class AdCreateBody {
   }
 
    /**
-   * Advertising creatives.
+   * Get creatives
    * @return creatives
   **/
-  @Schema(required = true, description = "Advertising creatives.")
+  @Schema(required = true, description = "")
   public List<AdcreateCreatives> getCreatives() {
     return creatives;
   }

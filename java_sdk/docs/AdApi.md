@@ -4,10 +4,10 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adCreate**](AdApi.md#adCreate) | **POST** /open_api/v1.3/ad/create/ | Upload your ad creatives (pictures, videos, texts, call-to-action) and create an ad. For different placements, the creative formats and requirements are different. Upload your ad creatives according to the placement requirements. Each ad group can have up to 20 ads. See here to learn about how to create ads. [Ad create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953377508354)
-[**adGet**](AdApi.md#adGet) | **GET** /open_api/v1.3/ad/get/ | Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1735735588640770)
-[**adStatusUpdate**](AdApi.md#adStatusUpdate) | **POST** /open_api/v1.3/ad/status/update/ | To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
-[**adUpdate**](AdApi.md#adUpdate) | **POST** /open_api/v1.3/ad/update/ | Modify your custom ad creatives such as call-to-action, ad name, text image and video material. To update ACO ads, use the /ad/aco/update/ endpoint. [Ad update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+[**adCreate**](AdApi.md#adCreate) | **POST** /open_api/v1.3/ad/create/ | Create ad. [Ad Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953377508354)
+[**adGet**](AdApi.md#adGet) | **GET** /open_api/v1.3/ad/get/ | Get ads. [Ad Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1735735588640770)
+[**adStatusUpdate**](AdApi.md#adStatusUpdate) | **POST** /open_api/v1.3/ad/status/update/ | Update ad status. [Ad Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953422970882)
+[**adUpdate**](AdApi.md#adUpdate) | **POST** /open_api/v1.3/ad/update/ | Update ad. [Ad Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953405142018)
 [**smartPlusAdAppeal**](AdApi.md#smartPlusAdAppeal) | **POST** /open_api/v1.3/smart_plus/ad/appeal/ | Submit ad appeal [Smart Plus Ad Appeal]
 [**smartPlusAdCreate**](AdApi.md#smartPlusAdCreate) | **POST** /open_api/v1.3/smart_plus/ad/create/ | Create a new ad [Smart Plus Ad Create]
 [**smartPlusAdGet**](AdApi.md#smartPlusAdGet) | **GET** /open_api/v1.3/smart_plus/ad/get/ | Retrieve ad details [Smart Plus Ad Get]
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 # **adCreate**
 > Response adCreate(accessToken, body)
 
-Upload your ad creatives (pictures, videos, texts, call-to-action) and create an ad. For different placements, the creative formats and requirements are different. Upload your ad creatives according to the placement requirements. Each ad group can have up to 20 ads. See here to learn about how to create ads. [Ad create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953377508354)
+Create ad. [Ad Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953377508354)
 
 ### Example
 ```java
@@ -32,7 +32,7 @@ Upload your ad creatives (pictures, videos, texts, call-to-action) and create an
 
 AdApi apiInstance = new AdApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-AdCreateBody body = new AdCreateBody(); // AdCreateBody | Ad create body parameters
+AdCreateBody body = new AdCreateBody(); // AdCreateBody | 
 try {
     Response result = apiInstance.adCreate(accessToken, body);
     System.out.println(result);
@@ -47,7 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**AdCreateBody**](AdCreateBody.md)| Ad create body parameters | [optional]
+ **body** | [**AdCreateBody**](AdCreateBody.md)|  | [optional]
 
 ### Return type
 
@@ -64,9 +64,9 @@ No authorization required
 
 <a name="adGet"></a>
 # **adGet**
-> Response adGet(advertiserId, accessToken, filtering, page, pageSize, fields)
+> Response adGet(advertiserId, accessToken, filtering, page, pageSize, fields, excludeFieldTypesInResponse)
 
-Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1735735588640770)
+Get ads. [Ad Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1735735588640770)
 
 ### Example
 ```java
@@ -76,14 +76,15 @@ Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketi
 
 
 AdApi apiInstance = new AdApi();
-String advertiserId = "advertiserId_example"; // String | Advertiser ID
+String advertiserId = "advertiserId_example"; // String | 
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-FilteringAdGet filtering = new FilteringAdGet(); // FilteringAdGet | Filters on the data. This parameter is an array of filter objects.
-Integer page = 56; // Integer | Current page number
-Integer pageSize = 56; // Integer | Page size
-List<String> fields = Arrays.asList("fields_example"); // List<String> | Fields that you want to get. For the list of fields that you can specify, see the fields under `list` in the response. If not set, all fields are returned by default.
+FilteringAdGet filtering = new FilteringAdGet(); // FilteringAdGet | 
+Integer page = 1; // Integer | 
+Integer pageSize = 10; // Integer | 
+List<String> fields = Arrays.asList("fields_example"); // List<String> | 
+List<String> excludeFieldTypesInResponse = Arrays.asList("excludeFieldTypesInResponse_example"); // List<String> | 
 try {
-    Response result = apiInstance.adGet(advertiserId, accessToken, filtering, page, pageSize, fields);
+    Response result = apiInstance.adGet(advertiserId, accessToken, filtering, page, pageSize, fields, excludeFieldTypesInResponse);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AdApi#adGet");
@@ -95,12 +96,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiserId** | **String**| Advertiser ID |[required] 
+ **advertiserId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **filtering** | [**FilteringAdGet**](FilteringAdGet.md)| Filters on the data. This parameter is an array of filter objects. | [optional]
- **page** | **Integer**| Current page number | [optional]
- **pageSize** | **Integer**| Page size | [optional]
- **fields** | [**List&lt;String&gt;**](String.md)| Fields that you want to get. For the list of fields that you can specify, see the fields under &#x60;list&#x60; in the response. If not set, all fields are returned by default. | [optional]
+ **filtering** | [**FilteringAdGet**](FilteringAdGet.md)|  | [optional]
+ **page** | **Integer**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Integer**|  | [optional] [default to 10] [enum: ]
+ **fields** | [**List&lt;String&gt;**](String.md)|  | [optional]
+ **excludeFieldTypesInResponse** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
 ### Return type
 
@@ -119,7 +121,7 @@ No authorization required
 # **adStatusUpdate**
 > Response adStatusUpdate(accessToken, body)
 
-To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+Update ad status. [Ad Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953422970882)
 
 ### Example
 ```java
@@ -130,7 +132,7 @@ To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.
 
 AdApi apiInstance = new AdApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-AdStatusUpdateBody body = new AdStatusUpdateBody(); // AdStatusUpdateBody | Ad status update body parameters
+AdStatusUpdateBody body = new AdStatusUpdateBody(); // AdStatusUpdateBody | 
 try {
     Response result = apiInstance.adStatusUpdate(accessToken, body);
     System.out.println(result);
@@ -145,7 +147,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**AdStatusUpdateBody**](AdStatusUpdateBody.md)| Ad status update body parameters | [optional]
+ **body** | [**AdStatusUpdateBody**](AdStatusUpdateBody.md)|  | [optional]
 
 ### Return type
 
@@ -164,7 +166,7 @@ No authorization required
 # **adUpdate**
 > Response adUpdate(accessToken, body)
 
-Modify your custom ad creatives such as call-to-action, ad name, text image and video material. To update ACO ads, use the /ad/aco/update/ endpoint. [Ad update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+Update ad. [Ad Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953405142018)
 
 ### Example
 ```java
@@ -175,7 +177,7 @@ Modify your custom ad creatives such as call-to-action, ad name, text image and 
 
 AdApi apiInstance = new AdApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-AdUpdateBody body = new AdUpdateBody(); // AdUpdateBody | Ad create body parameters
+AdUpdateBody body = new AdUpdateBody(); // AdUpdateBody | 
 try {
     Response result = apiInstance.adUpdate(accessToken, body);
     System.out.println(result);
@@ -190,7 +192,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**AdUpdateBody**](AdUpdateBody.md)| Ad create body parameters | [optional]
+ **body** | [**AdUpdateBody**](AdUpdateBody.md)|  | [optional]
 
 ### Return type
 

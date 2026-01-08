@@ -14,10 +14,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.v3.oas.annotations.media.Schema;
 /**
- * The text-only disclaimer that you want to add to the ad.  Required when &#x60;disclaimer_type&#x60; &#x3D; &#x60;TEXT_ONLY&#x60;.
+ * AdcreateDisclaimerText
  */
-@Schema(description = "The text-only disclaimer that you want to add to the ad.  Required when `disclaimer_type` = `TEXT_ONLY`.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdcreateDisclaimerText {
   @JsonProperty("text")
   private String text = null;
@@ -28,10 +28,10 @@ public class AdcreateDisclaimerText {
   }
 
    /**
-   * The disclaimer text. Length limit- 90 characters.
+   * Get text
    * @return text
   **/
-  @Schema(description = "The disclaimer text. Length limit- 90 characters.")
+  @Schema(description = "")
   public String getText() {
     return text;
   }

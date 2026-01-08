@@ -47,7 +47,6 @@ class AdgroupcreateIncludedCustomActions(object):
     def code(self):
         """Gets the code of this AdgroupcreateIncludedCustomActions.  # noqa: E501
 
-        The custom action used to filter out the audiences to be retargeted. Enum values- `VIEW_PRODUCT`- The audience viewed the product. `ADD_TO_CART`- The audience added the product to the cart. `PURCHASE`- The audience purchased the product.  # noqa: E501
 
         :return: The code of this AdgroupcreateIncludedCustomActions.  # noqa: E501
         :rtype: str
@@ -58,7 +57,6 @@ class AdgroupcreateIncludedCustomActions(object):
     def code(self, code):
         """Sets the code of this AdgroupcreateIncludedCustomActions.
 
-        The custom action used to filter out the audiences to be retargeted. Enum values- `VIEW_PRODUCT`- The audience viewed the product. `ADD_TO_CART`- The audience added the product to the cart. `PURCHASE`- The audience purchased the product.  # noqa: E501
 
         :param code: The code of this AdgroupcreateIncludedCustomActions.  # noqa: E501
         :type: str
@@ -70,7 +68,6 @@ class AdgroupcreateIncludedCustomActions(object):
     def days(self):
         """Gets the days of this AdgroupcreateIncludedCustomActions.  # noqa: E501
 
-        The time range used to filter out the audiences that completed the specified action.  # noqa: E501
 
         :return: The days of this AdgroupcreateIncludedCustomActions.  # noqa: E501
         :rtype: int
@@ -81,7 +78,6 @@ class AdgroupcreateIncludedCustomActions(object):
     def days(self, days):
         """Sets the days of this AdgroupcreateIncludedCustomActions.
 
-        The time range used to filter out the audiences that completed the specified action.  # noqa: E501
 
         :param days: The days of this AdgroupcreateIncludedCustomActions.  # noqa: E501
         :type: int

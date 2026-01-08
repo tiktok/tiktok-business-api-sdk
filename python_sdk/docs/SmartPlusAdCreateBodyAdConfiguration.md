@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **auto_disclaimer_types** | **list[str]** |  | [optional] 
 **call_to_action_id** | **str** |  | [optional] 
 **catalog_creative_toggle** | **bool** |  | [optional] 
-**dark_post_status** | **str** |  | [optional] [default to 'OFF']
+**dark_post_status** | **str** |  | [optional] 
 **end_card_cta** | **str** |  | [optional] 
 **fallback_type** | **str** |  | [optional] 
 **identity_id** | **str** |  | [optional] 

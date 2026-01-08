@@ -25,54 +25,84 @@ class FilteringAdGet(object):
     """
     swagger_types = {
         'ad_ids': 'list[str]',
+        'ad_name': 'str',
         'adgroup_ids': 'list[str]',
-        'billing_events': 'list[str]',
+        'buying_types': 'list[str]',
         'campaign_ids': 'list[str]',
+        'campaign_system_origins': 'list[str]',
         'creation_filter_end_time': 'str',
         'creation_filter_start_time': 'str',
+        'creative_material_mode': 'str',
+        'destination': 'str',
+        'modified_after': 'str',
         'objective_type': 'str',
+        'optimization_goal': 'str',
         'primary_status': 'str',
         'secondary_status': 'str'
     }
 
     attribute_map = {
         'ad_ids': 'ad_ids',
+        'ad_name': 'ad_name',
         'adgroup_ids': 'adgroup_ids',
-        'billing_events': 'billing_events',
+        'buying_types': 'buying_types',
         'campaign_ids': 'campaign_ids',
+        'campaign_system_origins': 'campaign_system_origins',
         'creation_filter_end_time': 'creation_filter_end_time',
         'creation_filter_start_time': 'creation_filter_start_time',
+        'creative_material_mode': 'creative_material_mode',
+        'destination': 'destination',
+        'modified_after': 'modified_after',
         'objective_type': 'objective_type',
+        'optimization_goal': 'optimization_goal',
         'primary_status': 'primary_status',
         'secondary_status': 'secondary_status'
     }
 
-    def __init__(self, ad_ids=None, adgroup_ids=None, billing_events=None, campaign_ids=None, creation_filter_end_time=None, creation_filter_start_time=None, objective_type=None, primary_status=None, secondary_status=None):  # noqa: E501
+    def __init__(self, ad_ids=None, ad_name=None, adgroup_ids=None, buying_types=None, campaign_ids=None, campaign_system_origins=None, creation_filter_end_time=None, creation_filter_start_time=None, creative_material_mode=None, destination=None, modified_after=None, objective_type=None, optimization_goal=None, primary_status='STATUS_NOT_DELETE', secondary_status=None):  # noqa: E501
         """FilteringAdGet - a model defined in Swagger"""  # noqa: E501
         self._ad_ids = None
+        self._ad_name = None
         self._adgroup_ids = None
-        self._billing_events = None
+        self._buying_types = None
         self._campaign_ids = None
+        self._campaign_system_origins = None
         self._creation_filter_end_time = None
         self._creation_filter_start_time = None
+        self._creative_material_mode = None
+        self._destination = None
+        self._modified_after = None
         self._objective_type = None
+        self._optimization_goal = None
         self._primary_status = None
         self._secondary_status = None
         self.discriminator = None
         if ad_ids is not None:
             self.ad_ids = ad_ids
+        if ad_name is not None:
+            self.ad_name = ad_name
         if adgroup_ids is not None:
             self.adgroup_ids = adgroup_ids
-        if billing_events is not None:
-            self.billing_events = billing_events
+        if buying_types is not None:
+            self.buying_types = buying_types
         if campaign_ids is not None:
             self.campaign_ids = campaign_ids
+        if campaign_system_origins is not None:
+            self.campaign_system_origins = campaign_system_origins
         if creation_filter_end_time is not None:
             self.creation_filter_end_time = creation_filter_end_time
         if creation_filter_start_time is not None:
             self.creation_filter_start_time = creation_filter_start_time
+        if creative_material_mode is not None:
+            self.creative_material_mode = creative_material_mode
+        if destination is not None:
+            self.destination = destination
+        if modified_after is not None:
+            self.modified_after = modified_after
         if objective_type is not None:
             self.objective_type = objective_type
+        if optimization_goal is not None:
+            self.optimization_goal = optimization_goal
         if primary_status is not None:
             self.primary_status = primary_status
         if secondary_status is not None:
@@ -82,7 +112,6 @@ class FilteringAdGet(object):
     def ad_ids(self):
         """Gets the ad_ids of this FilteringAdGet.  # noqa: E501
 
-        A list of Ad ID，quantity- `1-100`  # noqa: E501
 
         :return: The ad_ids of this FilteringAdGet.  # noqa: E501
         :rtype: list[str]
@@ -93,7 +122,6 @@ class FilteringAdGet(object):
     def ad_ids(self, ad_ids):
         """Sets the ad_ids of this FilteringAdGet.
 
-        A list of Ad ID，quantity- `1-100`  # noqa: E501
 
         :param ad_ids: The ad_ids of this FilteringAdGet.  # noqa: E501
         :type: list[str]
@@ -102,10 +130,30 @@ class FilteringAdGet(object):
         self._ad_ids = ad_ids
 
     @property
+    def ad_name(self):
+        """Gets the ad_name of this FilteringAdGet.  # noqa: E501
+
+
+        :return: The ad_name of this FilteringAdGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._ad_name
+
+    @ad_name.setter
+    def ad_name(self, ad_name):
+        """Sets the ad_name of this FilteringAdGet.
+
+
+        :param ad_name: The ad_name of this FilteringAdGet.  # noqa: E501
+        :type: str
+        """
+
+        self._ad_name = ad_name
+
+    @property
     def adgroup_ids(self):
         """Gets the adgroup_ids of this FilteringAdGet.  # noqa: E501
 
-        A list of Ad group ID, quantity- `1-100`  # noqa: E501
 
         :return: The adgroup_ids of this FilteringAdGet.  # noqa: E501
         :rtype: list[str]
@@ -116,7 +164,6 @@ class FilteringAdGet(object):
     def adgroup_ids(self, adgroup_ids):
         """Sets the adgroup_ids of this FilteringAdGet.
 
-        A list of Ad group ID, quantity- `1-100`  # noqa: E501
 
         :param adgroup_ids: The adgroup_ids of this FilteringAdGet.  # noqa: E501
         :type: list[str]
@@ -125,33 +172,30 @@ class FilteringAdGet(object):
         self._adgroup_ids = adgroup_ids
 
     @property
-    def billing_events(self):
-        """Gets the billing_events of this FilteringAdGet.  # noqa: E501
+    def buying_types(self):
+        """Gets the buying_types of this FilteringAdGet.  # noqa: E501
 
-        Billing events. For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
-        :return: The billing_events of this FilteringAdGet.  # noqa: E501
+        :return: The buying_types of this FilteringAdGet.  # noqa: E501
         :rtype: list[str]
         """
-        return self._billing_events
+        return self._buying_types
 
-    @billing_events.setter
-    def billing_events(self, billing_events):
-        """Sets the billing_events of this FilteringAdGet.
+    @buying_types.setter
+    def buying_types(self, buying_types):
+        """Sets the buying_types of this FilteringAdGet.
 
-        Billing events. For enum values, see [Enumeration - Billing Event](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
-        :param billing_events: The billing_events of this FilteringAdGet.  # noqa: E501
+        :param buying_types: The buying_types of this FilteringAdGet.  # noqa: E501
         :type: list[str]
         """
 
-        self._billing_events = billing_events
+        self._buying_types = buying_types
 
     @property
     def campaign_ids(self):
         """Gets the campaign_ids of this FilteringAdGet.  # noqa: E501
 
-        A list of Campaign IDs, quantity- `1-100`  # noqa: E501
 
         :return: The campaign_ids of this FilteringAdGet.  # noqa: E501
         :rtype: list[str]
@@ -162,7 +206,6 @@ class FilteringAdGet(object):
     def campaign_ids(self, campaign_ids):
         """Sets the campaign_ids of this FilteringAdGet.
 
-        A list of Campaign IDs, quantity- `1-100`  # noqa: E501
 
         :param campaign_ids: The campaign_ids of this FilteringAdGet.  # noqa: E501
         :type: list[str]
@@ -171,10 +214,30 @@ class FilteringAdGet(object):
         self._campaign_ids = campaign_ids
 
     @property
+    def campaign_system_origins(self):
+        """Gets the campaign_system_origins of this FilteringAdGet.  # noqa: E501
+
+
+        :return: The campaign_system_origins of this FilteringAdGet.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._campaign_system_origins
+
+    @campaign_system_origins.setter
+    def campaign_system_origins(self, campaign_system_origins):
+        """Sets the campaign_system_origins of this FilteringAdGet.
+
+
+        :param campaign_system_origins: The campaign_system_origins of this FilteringAdGet.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._campaign_system_origins = campaign_system_origins
+
+    @property
     def creation_filter_end_time(self):
         """Gets the creation_filter_end_time of this FilteringAdGet.  # noqa: E501
 
-        Filter by higher range of ad creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ads created earlier than this time will be returned.  # noqa: E501
 
         :return: The creation_filter_end_time of this FilteringAdGet.  # noqa: E501
         :rtype: str
@@ -185,7 +248,6 @@ class FilteringAdGet(object):
     def creation_filter_end_time(self, creation_filter_end_time):
         """Sets the creation_filter_end_time of this FilteringAdGet.
 
-        Filter by higher range of ad creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ads created earlier than this time will be returned.  # noqa: E501
 
         :param creation_filter_end_time: The creation_filter_end_time of this FilteringAdGet.  # noqa: E501
         :type: str
@@ -197,7 +259,6 @@ class FilteringAdGet(object):
     def creation_filter_start_time(self):
         """Gets the creation_filter_start_time of this FilteringAdGet.  # noqa: E501
 
-        Filter by lower range of ad creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ads created later than this time will be returned. Suggestion A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.  # noqa: E501
 
         :return: The creation_filter_start_time of this FilteringAdGet.  # noqa: E501
         :rtype: str
@@ -208,7 +269,6 @@ class FilteringAdGet(object):
     def creation_filter_start_time(self, creation_filter_start_time):
         """Sets the creation_filter_start_time of this FilteringAdGet.
 
-        Filter by lower range of ad creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Ads created later than this time will be returned. Suggestion A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.  # noqa: E501
 
         :param creation_filter_start_time: The creation_filter_start_time of this FilteringAdGet.  # noqa: E501
         :type: str
@@ -217,10 +277,72 @@ class FilteringAdGet(object):
         self._creation_filter_start_time = creation_filter_start_time
 
     @property
+    def creative_material_mode(self):
+        """Gets the creative_material_mode of this FilteringAdGet.  # noqa: E501
+
+
+        :return: The creative_material_mode of this FilteringAdGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._creative_material_mode
+
+    @creative_material_mode.setter
+    def creative_material_mode(self, creative_material_mode):
+        """Sets the creative_material_mode of this FilteringAdGet.
+
+
+        :param creative_material_mode: The creative_material_mode of this FilteringAdGet.  # noqa: E501
+        :type: str
+        """
+
+        self._creative_material_mode = creative_material_mode
+
+    @property
+    def destination(self):
+        """Gets the destination of this FilteringAdGet.  # noqa: E501
+
+
+        :return: The destination of this FilteringAdGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._destination
+
+    @destination.setter
+    def destination(self, destination):
+        """Sets the destination of this FilteringAdGet.
+
+
+        :param destination: The destination of this FilteringAdGet.  # noqa: E501
+        :type: str
+        """
+
+        self._destination = destination
+
+    @property
+    def modified_after(self):
+        """Gets the modified_after of this FilteringAdGet.  # noqa: E501
+
+
+        :return: The modified_after of this FilteringAdGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._modified_after
+
+    @modified_after.setter
+    def modified_after(self, modified_after):
+        """Sets the modified_after of this FilteringAdGet.
+
+
+        :param modified_after: The modified_after of this FilteringAdGet.  # noqa: E501
+        :type: str
+        """
+
+        self._modified_after = modified_after
+
+    @property
     def objective_type(self):
         """Gets the objective_type of this FilteringAdGet.  # noqa: E501
 
-        Advertising Objective. For enum values, see [Enumeration - Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). Note- Whether you choose `WEB_CONVERSIONS` or  `CONVERSIONS` as the objective filter, we will return data of both `WEB_CONVERSIONS` and  `CONVERSIONS`.  # noqa: E501
 
         :return: The objective_type of this FilteringAdGet.  # noqa: E501
         :rtype: str
@@ -231,7 +353,6 @@ class FilteringAdGet(object):
     def objective_type(self, objective_type):
         """Sets the objective_type of this FilteringAdGet.
 
-        Advertising Objective. For enum values, see [Enumeration - Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). Note- Whether you choose `WEB_CONVERSIONS` or  `CONVERSIONS` as the objective filter, we will return data of both `WEB_CONVERSIONS` and  `CONVERSIONS`.  # noqa: E501
 
         :param objective_type: The objective_type of this FilteringAdGet.  # noqa: E501
         :type: str
@@ -240,10 +361,30 @@ class FilteringAdGet(object):
         self._objective_type = objective_type
 
     @property
+    def optimization_goal(self):
+        """Gets the optimization_goal of this FilteringAdGet.  # noqa: E501
+
+
+        :return: The optimization_goal of this FilteringAdGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._optimization_goal
+
+    @optimization_goal.setter
+    def optimization_goal(self, optimization_goal):
+        """Sets the optimization_goal of this FilteringAdGet.
+
+
+        :param optimization_goal: The optimization_goal of this FilteringAdGet.  # noqa: E501
+        :type: str
+        """
+
+        self._optimization_goal = optimization_goal
+
+    @property
     def primary_status(self):
         """Gets the primary_status of this FilteringAdGet.  # noqa: E501
 
-        Primary status. For enum values, see [Enumeration -Primary status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The primary_status of this FilteringAdGet.  # noqa: E501
         :rtype: str
@@ -254,7 +395,6 @@ class FilteringAdGet(object):
     def primary_status(self, primary_status):
         """Sets the primary_status of this FilteringAdGet.
 
-        Primary status. For enum values, see [Enumeration -Primary status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param primary_status: The primary_status of this FilteringAdGet.  # noqa: E501
         :type: str
@@ -266,7 +406,6 @@ class FilteringAdGet(object):
     def secondary_status(self):
         """Gets the secondary_status of this FilteringAdGet.  # noqa: E501
 
-        Ad status（secondary status). For enum values, see [Enumeration - Ad Status - Secondary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). his field is not returned in the sandbox environment because the ad is not actually delivered. [Supported secondary statuses for a primary status](https://ads.tiktok.com/marketing_api/docs?id=1757239620352002) to learn about the valid values you can pass in via `secondary_status` for the primary status you specify.  # noqa: E501
 
         :return: The secondary_status of this FilteringAdGet.  # noqa: E501
         :rtype: str
@@ -277,7 +416,6 @@ class FilteringAdGet(object):
     def secondary_status(self, secondary_status):
         """Sets the secondary_status of this FilteringAdGet.
 
-        Ad status（secondary status). For enum values, see [Enumeration - Ad Status - Secondary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138). his field is not returned in the sandbox environment because the ad is not actually delivered. [Supported secondary statuses for a primary status](https://ads.tiktok.com/marketing_api/docs?id=1757239620352002) to learn about the valid values you can pass in via `secondary_status` for the primary status you specify.  # noqa: E501
 
         :param secondary_status: The secondary_status of this FilteringAdGet.  # noqa: E501
         :type: str

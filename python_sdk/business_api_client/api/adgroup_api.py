@@ -29,7 +29,7 @@ class AdgroupApi(object):
         self.api_client = api_client
 
     def adgroup_create(self, access_token, **kwargs):  # noqa: E501
-        """Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id=1739499616346114)  # noqa: E501
+        """Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id=1739499616346114)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -38,7 +38,7 @@ class AdgroupApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdgroupCreateBody body: Adgroup create body parameters
+        :param AdgroupCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -51,7 +51,7 @@ class AdgroupApi(object):
             return data
 
     def adgroup_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id=1739499616346114)  # noqa: E501
+        """Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id=1739499616346114)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -60,7 +60,7 @@ class AdgroupApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdgroupCreateBody body: Adgroup create body parameters
+        :param AdgroupCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -130,7 +130,7 @@ class AdgroupApi(object):
             collection_formats=collection_formats)
 
     def adgroup_get(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id=1739314558673922)  # noqa: E501
+        """Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id=1739314558673922)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -138,12 +138,13 @@ class AdgroupApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
+        :param str advertiser_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdgroupGet filtering: Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by
-        :param int page: Current page number. Default value is `1`
-        :param int page_size: Page size. Default value is- `10`. Range of values- `1-1000`
+        :param FilteringAdgroupGet filtering:
+        :param int page:
+        :param int page_size:
         :param list[str] fields:
+        :param list[str] exclude_field_types_in_response:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,7 +157,7 @@ class AdgroupApi(object):
             return data
 
     def adgroup_get_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id=1739314558673922)  # noqa: E501
+        """Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id=1739314558673922)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -164,18 +165,19 @@ class AdgroupApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
+        :param str advertiser_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdgroupGet filtering: Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by
-        :param int page: Current page number. Default value is `1`
-        :param int page_size: Page size. Default value is- `10`. Range of values- `1-1000`
+        :param FilteringAdgroupGet filtering:
+        :param int page:
+        :param int page_size:
         :param list[str] fields:
+        :param list[str] exclude_field_types_in_response:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['advertiser_id', 'access_token', 'filtering', 'page', 'page_size', 'fields']  # noqa: E501
+        all_params = ['advertiser_id', 'access_token', 'filtering', 'page', 'page_size', 'fields', 'exclude_field_types_in_response']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -215,6 +217,9 @@ class AdgroupApi(object):
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
             collection_formats['fields'] = 'multi'  # noqa: E501
+        if 'exclude_field_types_in_response' in params:
+            query_params.append(('exclude_field_types_in_response', params['exclude_field_types_in_response']))  # noqa: E501
+            collection_formats['exclude_field_types_in_response'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
@@ -349,7 +354,7 @@ class AdgroupApi(object):
             collection_formats=collection_formats)
 
     def adgroup_status_update(self, access_token, **kwargs):  # noqa: E501
-        """Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id=1739591716326402)  # noqa: E501
+        """Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id=1739591716326402)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -358,7 +363,7 @@ class AdgroupApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdgroupStatusUpdateBody body: Adgroup status update body parameters
+        :param AdgroupStatusUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -371,7 +376,7 @@ class AdgroupApi(object):
             return data
 
     def adgroup_status_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id=1739591716326402)  # noqa: E501
+        """Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id=1739591716326402)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -380,7 +385,7 @@ class AdgroupApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdgroupStatusUpdateBody body: Adgroup status update body parameters
+        :param AdgroupStatusUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -450,7 +455,7 @@ class AdgroupApi(object):
             collection_formats=collection_formats)
 
     def adgroup_update(self, access_token, **kwargs):  # noqa: E501
-        """Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id=1739586761631745)  # noqa: E501
+        """Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id=1739586761631745)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -459,7 +464,7 @@ class AdgroupApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdgroupUpdateBody body: Adgroup update body parameters
+        :param AdgroupUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -472,7 +477,7 @@ class AdgroupApi(object):
             return data
 
     def adgroup_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id=1739586761631745)  # noqa: E501
+        """Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id=1739586761631745)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -481,7 +486,7 @@ class AdgroupApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdgroupUpdateBody body: Adgroup update body parameters
+        :param AdgroupUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.

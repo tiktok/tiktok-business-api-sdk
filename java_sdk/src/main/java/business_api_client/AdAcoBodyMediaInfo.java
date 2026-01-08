@@ -21,7 +21,7 @@ import java.util.List;
  * Material information.
  */
 @Schema(description = "Material information.")
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdAcoBodyMediaInfo {
   @JsonProperty("identity_id")
   private String identityId = null;
