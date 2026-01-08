@@ -26,20 +26,23 @@ class CampaignStatusUpdateBody(object):
     swagger_types = {
         'advertiser_id': 'str',
         'campaign_ids': 'list[str]',
-        'operation_status': 'str'
+        'operation_status': 'str',
+        'postback_window_mode': 'str'
     }
 
     attribute_map = {
         'advertiser_id': 'advertiser_id',
         'campaign_ids': 'campaign_ids',
-        'operation_status': 'operation_status'
+        'operation_status': 'operation_status',
+        'postback_window_mode': 'postback_window_mode'
     }
 
-    def __init__(self, advertiser_id=None, campaign_ids=None, operation_status=None):  # noqa: E501
+    def __init__(self, advertiser_id=None, campaign_ids=None, operation_status=None, postback_window_mode=None):  # noqa: E501
         """CampaignStatusUpdateBody - a model defined in Swagger"""  # noqa: E501
         self._advertiser_id = None
         self._campaign_ids = None
         self._operation_status = None
+        self._postback_window_mode = None
         self.discriminator = None
         if advertiser_id is not None:
             self.advertiser_id = advertiser_id
@@ -47,12 +50,13 @@ class CampaignStatusUpdateBody(object):
             self.campaign_ids = campaign_ids
         if operation_status is not None:
             self.operation_status = operation_status
+        if postback_window_mode is not None:
+            self.postback_window_mode = postback_window_mode
 
     @property
     def advertiser_id(self):
         """Gets the advertiser_id of this CampaignStatusUpdateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this CampaignStatusUpdateBody.  # noqa: E501
         :rtype: str
@@ -63,7 +67,6 @@ class CampaignStatusUpdateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this CampaignStatusUpdateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this CampaignStatusUpdateBody.  # noqa: E501
         :type: str
@@ -75,7 +78,6 @@ class CampaignStatusUpdateBody(object):
     def campaign_ids(self):
         """Gets the campaign_ids of this CampaignStatusUpdateBody.  # noqa: E501
 
-        A list of campaign IDs, with an allowed quantity range `1-20`.  # noqa: E501
 
         :return: The campaign_ids of this CampaignStatusUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -86,7 +88,6 @@ class CampaignStatusUpdateBody(object):
     def campaign_ids(self, campaign_ids):
         """Sets the campaign_ids of this CampaignStatusUpdateBody.
 
-        A list of campaign IDs, with an allowed quantity range `1-20`.  # noqa: E501
 
         :param campaign_ids: The campaign_ids of this CampaignStatusUpdateBody.  # noqa: E501
         :type: list[str]
@@ -98,7 +99,6 @@ class CampaignStatusUpdateBody(object):
     def operation_status(self):
         """Gets the operation_status of this CampaignStatusUpdateBody.  # noqa: E501
 
-        The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.  # noqa: E501
 
         :return: The operation_status of this CampaignStatusUpdateBody.  # noqa: E501
         :rtype: str
@@ -109,13 +109,33 @@ class CampaignStatusUpdateBody(object):
     def operation_status(self, operation_status):
         """Sets the operation_status of this CampaignStatusUpdateBody.
 
-        The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.  # noqa: E501
 
         :param operation_status: The operation_status of this CampaignStatusUpdateBody.  # noqa: E501
         :type: str
         """
 
         self._operation_status = operation_status
+
+    @property
+    def postback_window_mode(self):
+        """Gets the postback_window_mode of this CampaignStatusUpdateBody.  # noqa: E501
+
+
+        :return: The postback_window_mode of this CampaignStatusUpdateBody.  # noqa: E501
+        :rtype: str
+        """
+        return self._postback_window_mode
+
+    @postback_window_mode.setter
+    def postback_window_mode(self, postback_window_mode):
+        """Sets the postback_window_mode of this CampaignStatusUpdateBody.
+
+
+        :param postback_window_mode: The postback_window_mode of this CampaignStatusUpdateBody.  # noqa: E501
+        :type: str
+        """
+
+        self._postback_window_mode = postback_window_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

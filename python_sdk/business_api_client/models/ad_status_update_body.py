@@ -55,7 +55,6 @@ class AdStatusUpdateBody(object):
     def aco_ad_ids(self):
         """Gets the aco_ad_ids of this AdStatusUpdateBody.  # noqa: E501
 
-        A list of ACO ad IDs. Only support `ENABLE` and `DISABLE` for ACO ads.  Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.  # noqa: E501
 
         :return: The aco_ad_ids of this AdStatusUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -66,7 +65,6 @@ class AdStatusUpdateBody(object):
     def aco_ad_ids(self, aco_ad_ids):
         """Sets the aco_ad_ids of this AdStatusUpdateBody.
 
-        A list of ACO ad IDs. Only support `ENABLE` and `DISABLE` for ACO ads.  Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.  # noqa: E501
 
         :param aco_ad_ids: The aco_ad_ids of this AdStatusUpdateBody.  # noqa: E501
         :type: list[str]
@@ -78,7 +76,6 @@ class AdStatusUpdateBody(object):
     def ad_ids(self):
         """Gets the ad_ids of this AdStatusUpdateBody.  # noqa: E501
 
-        A list of ad IDs. Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.  # noqa: E501
 
         :return: The ad_ids of this AdStatusUpdateBody.  # noqa: E501
         :rtype: list[str]
@@ -89,7 +86,6 @@ class AdStatusUpdateBody(object):
     def ad_ids(self, ad_ids):
         """Sets the ad_ids of this AdStatusUpdateBody.
 
-        A list of ad IDs. Allowed quantity- `1-20`. Either `ad_ids` or `aco_ad_ids` has to be set.  # noqa: E501
 
         :param ad_ids: The ad_ids of this AdStatusUpdateBody.  # noqa: E501
         :type: list[str]
@@ -101,7 +97,6 @@ class AdStatusUpdateBody(object):
     def advertiser_id(self):
         """Gets the advertiser_id of this AdStatusUpdateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this AdStatusUpdateBody.  # noqa: E501
         :rtype: str
@@ -112,7 +107,6 @@ class AdStatusUpdateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this AdStatusUpdateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this AdStatusUpdateBody.  # noqa: E501
         :type: str
@@ -126,7 +120,6 @@ class AdStatusUpdateBody(object):
     def operation_status(self):
         """Gets the operation_status of this AdStatusUpdateBody.  # noqa: E501
 
-        The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable).  The status of deleted ads cannot be modified.  # noqa: E501
 
         :return: The operation_status of this AdStatusUpdateBody.  # noqa: E501
         :rtype: str
@@ -137,7 +130,6 @@ class AdStatusUpdateBody(object):
     def operation_status(self, operation_status):
         """Sets the operation_status of this AdStatusUpdateBody.
 
-        The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable).  The status of deleted ads cannot be modified.  # noqa: E501
 
         :param operation_status: The operation_status of this AdStatusUpdateBody.  # noqa: E501
         :type: str

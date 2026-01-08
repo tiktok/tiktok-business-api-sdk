@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")public class AdgroupApi {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")public class AdgroupApi {
   private ApiClient apiClient;
 
   public AdgroupApi() {
@@ -51,10 +51,10 @@ import java.util.Map;
   }
 
   /**
-   * Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739499616346114)
+   * Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739499616346114)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Adgroup create body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -104,18 +104,19 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739314558673922)
+   * Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739314558673922)
    * 
-   * @param advertiserId Advertiser ID (required)
+   * @param advertiserId  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param filtering Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by (optional)
-   * @param page Current page number. Default value is &#x60;1&#x60; (optional)
-   * @param pageSize Page size. Default value is- &#x60;10&#x60;. Range of values- &#x60;1-1000&#x60; (optional)
+   * @param filtering  (optional)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
    * @param fields  (optional)
+   * @param excludeFieldTypesInResponse  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response adgroupGet(String advertiserId, String accessToken, FilteringAdgroupGet filtering, Integer page, Integer pageSize, List<String> fields) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response adgroupGet(String advertiserId, String accessToken, FilteringAdgroupGet filtering, Integer page, Integer pageSize, List<String> fields, List<String> excludeFieldTypesInResponse) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'advertiserId' is set
     if (advertiserId == null) {
@@ -138,6 +139,7 @@ import java.util.Map;
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
     localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "fields", fields));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "exclude_field_types_in_response", excludeFieldTypesInResponse));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
@@ -228,10 +230,10 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
+   * Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739591716326402)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Adgroup status update body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -281,10 +283,10 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739586761631745)
+   * Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739586761631745)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Adgroup update body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */

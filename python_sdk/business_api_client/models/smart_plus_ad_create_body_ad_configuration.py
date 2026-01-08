@@ -59,7 +59,7 @@ class SmartPlusAdCreateBodyAdConfiguration(object):
         'utm_params': 'utm_params'
     }
 
-    def __init__(self, auto_disclaimer_types=None, call_to_action_id=None, catalog_creative_toggle=None, dark_post_status='OFF', end_card_cta=None, fallback_type=None, identity_id=None, identity_type=None, phone_info=None, product_display_field_list=None, product_ids=None, product_set_id=None, product_specific_type=None, tracking_info=None, utm_params=None):  # noqa: E501
+    def __init__(self, auto_disclaimer_types=None, call_to_action_id=None, catalog_creative_toggle=None, dark_post_status=None, end_card_cta=None, fallback_type=None, identity_id=None, identity_type=None, phone_info=None, product_display_field_list=None, product_ids=None, product_set_id=None, product_specific_type=None, tracking_info=None, utm_params=None):  # noqa: E501
         """SmartPlusAdCreateBodyAdConfiguration - a model defined in Swagger"""  # noqa: E501
         self._auto_disclaimer_types = None
         self._call_to_action_id = None

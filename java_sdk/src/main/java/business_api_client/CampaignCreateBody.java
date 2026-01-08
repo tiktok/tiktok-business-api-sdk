@@ -19,7 +19,7 @@ import java.util.List;
  * CampaignCreateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class CampaignCreateBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -30,6 +30,9 @@ public class CampaignCreateBody {
   @JsonProperty("app_promotion_type")
   private String appPromotionType = null;
 
+  @JsonProperty("bid_type")
+  private String bidType = null;
+
   @JsonProperty("budget")
   private Float budget = null;
 
@@ -37,28 +40,82 @@ public class CampaignCreateBody {
   private String budgetMode = null;
 
   @JsonProperty("budget_optimize_on")
-  private Boolean budgetOptimizeOn = null;
+  private Boolean budgetOptimizeOn = false;
+
+  @JsonProperty("campaign_app_profile_page_state")
+  private String campaignAppProfilePageState = null;
 
   @JsonProperty("campaign_name")
   private String campaignName = null;
 
+  @JsonProperty("campaign_product_source")
+  private String campaignProductSource = null;
+
   @JsonProperty("campaign_type")
   private String campaignType = null;
+
+  @JsonProperty("catalog_enabled")
+  private Boolean catalogEnabled = null;
+
+  @JsonProperty("deep_bid_type")
+  private String deepBidType = null;
+
+  @JsonProperty("disable_skan_campaign")
+  private Boolean disableSkanCampaign = null;
+
+  @JsonProperty("internal_channel")
+  private String internalChannel = null;
+
+  @JsonProperty("is_advanced_dedicated_campaign")
+  private Boolean isAdvancedDedicatedCampaign = null;
+
+  @JsonProperty("is_search_campaign")
+  private Boolean isSearchCampaign = null;
 
   @JsonProperty("objective_type")
   private String objectiveType = null;
 
   @JsonProperty("operation_status")
-  private String operationStatus = null;
+  private String operationStatus = "ENABLE";
 
   @JsonProperty("optimization_goal")
   private String optimizationGoal = null;
 
+  @JsonProperty("plugin_partner")
+  private String pluginPartner = null;
+
+  @JsonProperty("po_number")
+  private String poNumber = null;
+
+  @JsonProperty("postback_window_mode")
+  private String postbackWindowMode = null;
+
+  @JsonProperty("request_id")
+  private String requestId = null;
+
   @JsonProperty("rf_campaign_type")
   private String rfCampaignType = null;
 
+  @JsonProperty("roas_bid")
+  private Float roasBid = null;
+
+  @JsonProperty("rta_bid_enabled")
+  private Boolean rtaBidEnabled = false;
+
+  @JsonProperty("rta_id")
+  private String rtaId = null;
+
+  @JsonProperty("rta_product_selection_enabled")
+  private Boolean rtaProductSelectionEnabled = null;
+
+  @JsonProperty("sales_destination")
+  private String salesDestination = null;
+
   @JsonProperty("special_industries")
   private List<String> specialIndustries = null;
+
+  @JsonProperty("virtual_objective_type")
+  private String virtualObjectiveType = null;
 
   public CampaignCreateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
@@ -66,10 +123,10 @@ public class CampaignCreateBody {
   }
 
    /**
-   * Advertiser ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Advertiser ID")
+  @Schema(required = true, description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -84,10 +141,10 @@ public class CampaignCreateBody {
   }
 
    /**
-   * App ID, required when the campaign is an iOS 14 Dedicated Campaign (camapign_type&#x3D;IOS14_CAMPAIGN) with the advertising objective (objective_type) as PRODUCT_SALES.
+   * Get appId
    * @return appId
   **/
-  @Schema(description = "App ID, required when the campaign is an iOS 14 Dedicated Campaign (camapign_type=IOS14_CAMPAIGN) with the advertising objective (objective_type) as PRODUCT_SALES.")
+  @Schema(description = "")
   public String getAppId() {
     return appId;
   }
@@ -102,10 +159,10 @@ public class CampaignCreateBody {
   }
 
    /**
-   * App promotion type. Required when &#x60;objective_type&#x60; is &#x60;APP_PROMOTION&#x60;. Enum values- &#x60;APP_INSTALL&#x60;, &#x60;APP_RETARGETING&#x60;. Note- &#x60;APP_INSTALL&#x60; can be used in an iOS14 Dedicated Campaign, while &#x60;APP_RETARGETING&#x60; cannot be used.
+   * Get appPromotionType
    * @return appPromotionType
   **/
-  @Schema(description = "App promotion type. Required when `objective_type` is `APP_PROMOTION`. Enum values- `APP_INSTALL`, `APP_RETARGETING`. Note- `APP_INSTALL` can be used in an iOS14 Dedicated Campaign, while `APP_RETARGETING` cannot be used.")
+  @Schema(description = "")
   public String getAppPromotionType() {
     return appPromotionType;
   }
@@ -114,16 +171,34 @@ public class CampaignCreateBody {
     this.appPromotionType = appPromotionType;
   }
 
+  public CampaignCreateBody bidType(String bidType) {
+    this.bidType = bidType;
+    return this;
+  }
+
+   /**
+   * Get bidType
+   * @return bidType
+  **/
+  @Schema(description = "")
+  public String getBidType() {
+    return bidType;
+  }
+
+  public void setBidType(String bidType) {
+    this.bidType = bidType;
+  }
+
   public CampaignCreateBody budget(Float budget) {
     this.budget = budget;
     return this;
   }
 
    /**
-   * Campaign budget, required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.
+   * Get budget
    * @return budget
   **/
-  @Schema(description = "Campaign budget, required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.")
+  @Schema(description = "")
   public Float getBudget() {
     return budget;
   }
@@ -138,10 +213,10 @@ public class CampaignCreateBody {
   }
 
    /**
-   * Budget mode. When Campaign Budget Optimization is enabled, only BUDGET_MODE_DAY is supported. When \&quot;objective_type\&quot; is RF_REACH, only BUDGET_MODE_INFINITE is supported. To learn about how to set budget types, see Budget setting.
+   * Get budgetMode
    * @return budgetMode
   **/
-  @Schema(description = "Budget mode. When Campaign Budget Optimization is enabled, only BUDGET_MODE_DAY is supported. When \"objective_type\" is RF_REACH, only BUDGET_MODE_INFINITE is supported. To learn about how to set budget types, see Budget setting.")
+  @Schema(description = "")
   public String getBudgetMode() {
     return budgetMode;
   }
@@ -156,10 +231,10 @@ public class CampaignCreateBody {
   }
 
    /**
-   * Whether to enable Campaign Budget Optimization. True: Enabled. False: Not enabled. Default: True. For details about Campaign Budget Optimization (CBO), see Campaign Budget Optimization.
+   * Get budgetOptimizeOn
    * @return budgetOptimizeOn
   **/
-  @Schema(description = "Whether to enable Campaign Budget Optimization. True: Enabled. False: Not enabled. Default: True. For details about Campaign Budget Optimization (CBO), see Campaign Budget Optimization.")
+  @Schema(description = "")
   public Boolean isBudgetOptimizeOn() {
     return budgetOptimizeOn;
   }
@@ -168,16 +243,34 @@ public class CampaignCreateBody {
     this.budgetOptimizeOn = budgetOptimizeOn;
   }
 
+  public CampaignCreateBody campaignAppProfilePageState(String campaignAppProfilePageState) {
+    this.campaignAppProfilePageState = campaignAppProfilePageState;
+    return this;
+  }
+
+   /**
+   * Get campaignAppProfilePageState
+   * @return campaignAppProfilePageState
+  **/
+  @Schema(description = "")
+  public String getCampaignAppProfilePageState() {
+    return campaignAppProfilePageState;
+  }
+
+  public void setCampaignAppProfilePageState(String campaignAppProfilePageState) {
+    this.campaignAppProfilePageState = campaignAppProfilePageState;
+  }
+
   public CampaignCreateBody campaignName(String campaignName) {
     this.campaignName = campaignName;
     return this;
   }
 
    /**
-   * Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.
+   * Get campaignName
    * @return campaignName
   **/
-  @Schema(required = true, description = "Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.")
+  @Schema(required = true, description = "")
   public String getCampaignName() {
     return campaignName;
   }
@@ -186,16 +279,34 @@ public class CampaignCreateBody {
     this.campaignName = campaignName;
   }
 
+  public CampaignCreateBody campaignProductSource(String campaignProductSource) {
+    this.campaignProductSource = campaignProductSource;
+    return this;
+  }
+
+   /**
+   * Get campaignProductSource
+   * @return campaignProductSource
+  **/
+  @Schema(description = "")
+  public String getCampaignProductSource() {
+    return campaignProductSource;
+  }
+
+  public void setCampaignProductSource(String campaignProductSource) {
+    this.campaignProductSource = campaignProductSource;
+  }
+
   public CampaignCreateBody campaignType(String campaignType) {
     this.campaignType = campaignType;
     return this;
   }
 
    /**
-   * Enums values: REGULAR_CAMPAIGN, IOS14_CAMPAIGN. The value IOS14_CAMPAIGN supports the advertising objective PRODUCT_SALES only. For iOS 14 Dedicated Campaign with objectives other than PRODUCT_SALES , set campaign_type as REGULAR_CAMPAIGN.
+   * Get campaignType
    * @return campaignType
   **/
-  @Schema(description = "Enums values: REGULAR_CAMPAIGN, IOS14_CAMPAIGN. The value IOS14_CAMPAIGN supports the advertising objective PRODUCT_SALES only. For iOS 14 Dedicated Campaign with objectives other than PRODUCT_SALES , set campaign_type as REGULAR_CAMPAIGN.")
+  @Schema(description = "")
   public String getCampaignType() {
     return campaignType;
   }
@@ -204,16 +315,124 @@ public class CampaignCreateBody {
     this.campaignType = campaignType;
   }
 
+  public CampaignCreateBody catalogEnabled(Boolean catalogEnabled) {
+    this.catalogEnabled = catalogEnabled;
+    return this;
+  }
+
+   /**
+   * Get catalogEnabled
+   * @return catalogEnabled
+  **/
+  @Schema(description = "")
+  public Boolean isCatalogEnabled() {
+    return catalogEnabled;
+  }
+
+  public void setCatalogEnabled(Boolean catalogEnabled) {
+    this.catalogEnabled = catalogEnabled;
+  }
+
+  public CampaignCreateBody deepBidType(String deepBidType) {
+    this.deepBidType = deepBidType;
+    return this;
+  }
+
+   /**
+   * Get deepBidType
+   * @return deepBidType
+  **/
+  @Schema(description = "")
+  public String getDeepBidType() {
+    return deepBidType;
+  }
+
+  public void setDeepBidType(String deepBidType) {
+    this.deepBidType = deepBidType;
+  }
+
+  public CampaignCreateBody disableSkanCampaign(Boolean disableSkanCampaign) {
+    this.disableSkanCampaign = disableSkanCampaign;
+    return this;
+  }
+
+   /**
+   * Get disableSkanCampaign
+   * @return disableSkanCampaign
+  **/
+  @Schema(description = "")
+  public Boolean isDisableSkanCampaign() {
+    return disableSkanCampaign;
+  }
+
+  public void setDisableSkanCampaign(Boolean disableSkanCampaign) {
+    this.disableSkanCampaign = disableSkanCampaign;
+  }
+
+  public CampaignCreateBody internalChannel(String internalChannel) {
+    this.internalChannel = internalChannel;
+    return this;
+  }
+
+   /**
+   * Get internalChannel
+   * @return internalChannel
+  **/
+  @Schema(description = "")
+  public String getInternalChannel() {
+    return internalChannel;
+  }
+
+  public void setInternalChannel(String internalChannel) {
+    this.internalChannel = internalChannel;
+  }
+
+  public CampaignCreateBody isAdvancedDedicatedCampaign(Boolean isAdvancedDedicatedCampaign) {
+    this.isAdvancedDedicatedCampaign = isAdvancedDedicatedCampaign;
+    return this;
+  }
+
+   /**
+   * Get isAdvancedDedicatedCampaign
+   * @return isAdvancedDedicatedCampaign
+  **/
+  @Schema(description = "")
+  public Boolean isIsAdvancedDedicatedCampaign() {
+    return isAdvancedDedicatedCampaign;
+  }
+
+  public void setIsAdvancedDedicatedCampaign(Boolean isAdvancedDedicatedCampaign) {
+    this.isAdvancedDedicatedCampaign = isAdvancedDedicatedCampaign;
+  }
+
+  public CampaignCreateBody isSearchCampaign(Boolean isSearchCampaign) {
+    this.isSearchCampaign = isSearchCampaign;
+    return this;
+  }
+
+   /**
+   * Get isSearchCampaign
+   * @return isSearchCampaign
+  **/
+  @Schema(description = "")
+  public Boolean isIsSearchCampaign() {
+    return isSearchCampaign;
+  }
+
+  public void setIsSearchCampaign(Boolean isSearchCampaign) {
+    this.isSearchCampaign = isSearchCampaign;
+  }
+
   public CampaignCreateBody objectiveType(String objectiveType) {
     this.objectiveType = objectiveType;
     return this;
   }
 
    /**
-   * Advertising objective. For enum values and descriptions, see Objectives.
+   * Get objectiveType
    * @return objectiveType
   **/
-  @Schema(required = true, description = "Advertising objective. For enum values and descriptions, see Objectives.")
+  @Schema(required = true, description = "")
   public String getObjectiveType() {
     return objectiveType;
   }
@@ -228,10 +447,10 @@ public class CampaignCreateBody {
   }
 
    /**
-   * The field operation_status is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. If you pass in this field without applying for allowlisting first, the field will be ignored and no error message will appear. For Reach &amp; Frequency campaigns, please specify operation_status as ENABLE or do not pass in operation_status. Do not specify operation_status as DISABLE.  The status of the campaign when created. Enum values: ENABLE : The campaign is enabled when created. DISABLE : The campaign is disabled when created. Default value: ENABLE. If you want to update the status of the campaign after creation, use the /campaign/status/update/ endpoint.
+   * Get operationStatus
    * @return operationStatus
   **/
-  @Schema(description = "The field operation_status is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. If you pass in this field without applying for allowlisting first, the field will be ignored and no error message will appear. For Reach & Frequency campaigns, please specify operation_status as ENABLE or do not pass in operation_status. Do not specify operation_status as DISABLE.  The status of the campaign when created. Enum values: ENABLE : The campaign is enabled when created. DISABLE : The campaign is disabled when created. Default value: ENABLE. If you want to update the status of the campaign after creation, use the /campaign/status/update/ endpoint.")
+  @Schema(description = "")
   public String getOperationStatus() {
     return operationStatus;
   }
@@ -246,10 +465,10 @@ public class CampaignCreateBody {
   }
 
    /**
-   * Optimization goal at the campaign level. Required when Campaign Budget Optimization is enabled. Allowed values: CONVERT, INSTALL, VALUE, IN_APP_EVENT and LEAD_GENERATION.
+   * Get optimizationGoal
    * @return optimizationGoal
   **/
-  @Schema(description = "Optimization goal at the campaign level. Required when Campaign Budget Optimization is enabled. Allowed values: CONVERT, INSTALL, VALUE, IN_APP_EVENT and LEAD_GENERATION.")
+  @Schema(description = "")
   public String getOptimizationGoal() {
     return optimizationGoal;
   }
@@ -258,22 +477,184 @@ public class CampaignCreateBody {
     this.optimizationGoal = optimizationGoal;
   }
 
+  public CampaignCreateBody pluginPartner(String pluginPartner) {
+    this.pluginPartner = pluginPartner;
+    return this;
+  }
+
+   /**
+   * Get pluginPartner
+   * @return pluginPartner
+  **/
+  @Schema(description = "")
+  public String getPluginPartner() {
+    return pluginPartner;
+  }
+
+  public void setPluginPartner(String pluginPartner) {
+    this.pluginPartner = pluginPartner;
+  }
+
+  public CampaignCreateBody poNumber(String poNumber) {
+    this.poNumber = poNumber;
+    return this;
+  }
+
+   /**
+   * Get poNumber
+   * @return poNumber
+  **/
+  @Schema(description = "")
+  public String getPoNumber() {
+    return poNumber;
+  }
+
+  public void setPoNumber(String poNumber) {
+    this.poNumber = poNumber;
+  }
+
+  public CampaignCreateBody postbackWindowMode(String postbackWindowMode) {
+    this.postbackWindowMode = postbackWindowMode;
+    return this;
+  }
+
+   /**
+   * Get postbackWindowMode
+   * @return postbackWindowMode
+  **/
+  @Schema(description = "")
+  public String getPostbackWindowMode() {
+    return postbackWindowMode;
+  }
+
+  public void setPostbackWindowMode(String postbackWindowMode) {
+    this.postbackWindowMode = postbackWindowMode;
+  }
+
+  public CampaignCreateBody requestId(String requestId) {
+    this.requestId = requestId;
+    return this;
+  }
+
+   /**
+   * Get requestId
+   * @return requestId
+  **/
+  @Schema(description = "")
+  public String getRequestId() {
+    return requestId;
+  }
+
+  public void setRequestId(String requestId) {
+    this.requestId = requestId;
+  }
+
   public CampaignCreateBody rfCampaignType(String rfCampaignType) {
     this.rfCampaignType = rfCampaignType;
     return this;
   }
 
    /**
-   * When &#x60;objective_type&#x60; is specified as &#x60;RF_REACH&#x60;, use this field to set the campaign as a TikTok Pulse campaign, then you can get available premium contextual tags. Do not pass in this field when &#x60;objective_type&#x60; is not specified as &#x60;RF_REACH&#x60;.Enum values- &#x60;STANDARD&#x60; (Reach &amp; Frequency campaign), &#x60;PULSE&#x60;(TikTok Pulse campaign). Note&lt;- This is an allowlist-only feature. If you would like to access it, please contact your TikTok representative. This field cannot be updated after creation. If you select &#x60;rf_campaign_type&#x60; to &#x60;PULSE&#x60; , then you must enter contextual tags of &#x60;PREMIUM&#x60; type in the &#x60;contextual_tag_ids&#x60;  field in [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738235338194945). In this case, the CPM in your ad group is fixed. If you set &#x60;rf_campaign_type&#x60; to &#x60;PULSE&#x60;, then the targeting locations cannot be updated in  [/adgroup/rf/update/](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738235402874882). If you set &#x60;rf_campaign_type&#x60; to &#x60;PULSE&#x60;, then &#x60;feed_type&#x60; cannot be &#x60;TOP_FEED&#x60; in  [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738235338194945).
+   * Get rfCampaignType
    * @return rfCampaignType
   **/
-  @Schema(description = "When `objective_type` is specified as `RF_REACH`, use this field to set the campaign as a TikTok Pulse campaign, then you can get available premium contextual tags. Do not pass in this field when `objective_type` is not specified as `RF_REACH`.Enum values- `STANDARD` (Reach & Frequency campaign), `PULSE`(TikTok Pulse campaign). Note<- This is an allowlist-only feature. If you would like to access it, please contact your TikTok representative. This field cannot be updated after creation. If you select `rf_campaign_type` to `PULSE` , then you must enter contextual tags of `PREMIUM` type in the `contextual_tag_ids`  field in [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945). In this case, the CPM in your ad group is fixed. If you set `rf_campaign_type` to `PULSE`, then the targeting locations cannot be updated in  [/adgroup/rf/update/](https://ads.tiktok.com/marketing_api/docs?id=1738235402874882). If you set `rf_campaign_type` to `PULSE`, then `feed_type` cannot be `TOP_FEED` in  [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945).")
+  @Schema(description = "")
   public String getRfCampaignType() {
     return rfCampaignType;
   }
 
   public void setRfCampaignType(String rfCampaignType) {
     this.rfCampaignType = rfCampaignType;
+  }
+
+  public CampaignCreateBody roasBid(Float roasBid) {
+    this.roasBid = roasBid;
+    return this;
+  }
+
+   /**
+   * Get roasBid
+   * @return roasBid
+  **/
+  @Schema(description = "")
+  public Float getRoasBid() {
+    return roasBid;
+  }
+
+  public void setRoasBid(Float roasBid) {
+    this.roasBid = roasBid;
+  }
+
+  public CampaignCreateBody rtaBidEnabled(Boolean rtaBidEnabled) {
+    this.rtaBidEnabled = rtaBidEnabled;
+    return this;
+  }
+
+   /**
+   * Get rtaBidEnabled
+   * @return rtaBidEnabled
+  **/
+  @Schema(description = "")
+  public Boolean isRtaBidEnabled() {
+    return rtaBidEnabled;
+  }
+
+  public void setRtaBidEnabled(Boolean rtaBidEnabled) {
+    this.rtaBidEnabled = rtaBidEnabled;
+  }
+
+  public CampaignCreateBody rtaId(String rtaId) {
+    this.rtaId = rtaId;
+    return this;
+  }
+
+   /**
+   * Get rtaId
+   * @return rtaId
+  **/
+  @Schema(description = "")
+  public String getRtaId() {
+    return rtaId;
+  }
+
+  public void setRtaId(String rtaId) {
+    this.rtaId = rtaId;
+  }
+
+  public CampaignCreateBody rtaProductSelectionEnabled(Boolean rtaProductSelectionEnabled) {
+    this.rtaProductSelectionEnabled = rtaProductSelectionEnabled;
+    return this;
+  }
+
+   /**
+   * Get rtaProductSelectionEnabled
+   * @return rtaProductSelectionEnabled
+  **/
+  @Schema(description = "")
+  public Boolean isRtaProductSelectionEnabled() {
+    return rtaProductSelectionEnabled;
+  }
+
+  public void setRtaProductSelectionEnabled(Boolean rtaProductSelectionEnabled) {
+    this.rtaProductSelectionEnabled = rtaProductSelectionEnabled;
+  }
+
+  public CampaignCreateBody salesDestination(String salesDestination) {
+    this.salesDestination = salesDestination;
+    return this;
+  }
+
+   /**
+   * Get salesDestination
+   * @return salesDestination
+  **/
+  @Schema(description = "")
+  public String getSalesDestination() {
+    return salesDestination;
+  }
+
+  public void setSalesDestination(String salesDestination) {
+    this.salesDestination = salesDestination;
   }
 
   public CampaignCreateBody specialIndustries(List<String> specialIndustries) {
@@ -290,16 +671,34 @@ public class CampaignCreateBody {
   }
 
    /**
-   * Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: Once you&#x27;ve specified the industry type, the system will adjust your ad group target options to help you comply with advertising policies. See Ad targeting to know more.
+   * Get specialIndustries
    * @return specialIndustries
   **/
-  @Schema(description = "Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: Once you've specified the industry type, the system will adjust your ad group target options to help you comply with advertising policies. See Ad targeting to know more.")
+  @Schema(description = "")
   public List<String> getSpecialIndustries() {
     return specialIndustries;
   }
 
   public void setSpecialIndustries(List<String> specialIndustries) {
     this.specialIndustries = specialIndustries;
+  }
+
+  public CampaignCreateBody virtualObjectiveType(String virtualObjectiveType) {
+    this.virtualObjectiveType = virtualObjectiveType;
+    return this;
+  }
+
+   /**
+   * Get virtualObjectiveType
+   * @return virtualObjectiveType
+  **/
+  @Schema(description = "")
+  public String getVirtualObjectiveType() {
+    return virtualObjectiveType;
+  }
+
+  public void setVirtualObjectiveType(String virtualObjectiveType) {
+    this.virtualObjectiveType = virtualObjectiveType;
   }
 
 
@@ -315,21 +714,40 @@ public class CampaignCreateBody {
     return Objects.equals(this.advertiserId, campaignCreateBody.advertiserId) &&
         Objects.equals(this.appId, campaignCreateBody.appId) &&
         Objects.equals(this.appPromotionType, campaignCreateBody.appPromotionType) &&
+        Objects.equals(this.bidType, campaignCreateBody.bidType) &&
         Objects.equals(this.budget, campaignCreateBody.budget) &&
         Objects.equals(this.budgetMode, campaignCreateBody.budgetMode) &&
         Objects.equals(this.budgetOptimizeOn, campaignCreateBody.budgetOptimizeOn) &&
+        Objects.equals(this.campaignAppProfilePageState, campaignCreateBody.campaignAppProfilePageState) &&
         Objects.equals(this.campaignName, campaignCreateBody.campaignName) &&
+        Objects.equals(this.campaignProductSource, campaignCreateBody.campaignProductSource) &&
         Objects.equals(this.campaignType, campaignCreateBody.campaignType) &&
+        Objects.equals(this.catalogEnabled, campaignCreateBody.catalogEnabled) &&
+        Objects.equals(this.deepBidType, campaignCreateBody.deepBidType) &&
+        Objects.equals(this.disableSkanCampaign, campaignCreateBody.disableSkanCampaign) &&
+        Objects.equals(this.internalChannel, campaignCreateBody.internalChannel) &&
+        Objects.equals(this.isAdvancedDedicatedCampaign, campaignCreateBody.isAdvancedDedicatedCampaign) &&
+        Objects.equals(this.isSearchCampaign, campaignCreateBody.isSearchCampaign) &&
         Objects.equals(this.objectiveType, campaignCreateBody.objectiveType) &&
         Objects.equals(this.operationStatus, campaignCreateBody.operationStatus) &&
         Objects.equals(this.optimizationGoal, campaignCreateBody.optimizationGoal) &&
+        Objects.equals(this.pluginPartner, campaignCreateBody.pluginPartner) &&
+        Objects.equals(this.poNumber, campaignCreateBody.poNumber) &&
+        Objects.equals(this.postbackWindowMode, campaignCreateBody.postbackWindowMode) &&
+        Objects.equals(this.requestId, campaignCreateBody.requestId) &&
         Objects.equals(this.rfCampaignType, campaignCreateBody.rfCampaignType) &&
-        Objects.equals(this.specialIndustries, campaignCreateBody.specialIndustries);
+        Objects.equals(this.roasBid, campaignCreateBody.roasBid) &&
+        Objects.equals(this.rtaBidEnabled, campaignCreateBody.rtaBidEnabled) &&
+        Objects.equals(this.rtaId, campaignCreateBody.rtaId) &&
+        Objects.equals(this.rtaProductSelectionEnabled, campaignCreateBody.rtaProductSelectionEnabled) &&
+        Objects.equals(this.salesDestination, campaignCreateBody.salesDestination) &&
+        Objects.equals(this.specialIndustries, campaignCreateBody.specialIndustries) &&
+        Objects.equals(this.virtualObjectiveType, campaignCreateBody.virtualObjectiveType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(advertiserId, appId, appPromotionType, budget, budgetMode, budgetOptimizeOn, campaignName, campaignType, objectiveType, operationStatus, optimizationGoal, rfCampaignType, specialIndustries);
+    return Objects.hash(advertiserId, appId, appPromotionType, bidType, budget, budgetMode, budgetOptimizeOn, campaignAppProfilePageState, campaignName, campaignProductSource, campaignType, catalogEnabled, deepBidType, disableSkanCampaign, internalChannel, isAdvancedDedicatedCampaign, isSearchCampaign, objectiveType, operationStatus, optimizationGoal, pluginPartner, poNumber, postbackWindowMode, requestId, rfCampaignType, roasBid, rtaBidEnabled, rtaId, rtaProductSelectionEnabled, salesDestination, specialIndustries, virtualObjectiveType);
   }
 
 
@@ -341,16 +759,35 @@ public class CampaignCreateBody {
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
     sb.append("    appId: ").append(toIndentedString(appId)).append("\n");
     sb.append("    appPromotionType: ").append(toIndentedString(appPromotionType)).append("\n");
+    sb.append("    bidType: ").append(toIndentedString(bidType)).append("\n");
     sb.append("    budget: ").append(toIndentedString(budget)).append("\n");
     sb.append("    budgetMode: ").append(toIndentedString(budgetMode)).append("\n");
     sb.append("    budgetOptimizeOn: ").append(toIndentedString(budgetOptimizeOn)).append("\n");
+    sb.append("    campaignAppProfilePageState: ").append(toIndentedString(campaignAppProfilePageState)).append("\n");
     sb.append("    campaignName: ").append(toIndentedString(campaignName)).append("\n");
+    sb.append("    campaignProductSource: ").append(toIndentedString(campaignProductSource)).append("\n");
     sb.append("    campaignType: ").append(toIndentedString(campaignType)).append("\n");
+    sb.append("    catalogEnabled: ").append(toIndentedString(catalogEnabled)).append("\n");
+    sb.append("    deepBidType: ").append(toIndentedString(deepBidType)).append("\n");
+    sb.append("    disableSkanCampaign: ").append(toIndentedString(disableSkanCampaign)).append("\n");
+    sb.append("    internalChannel: ").append(toIndentedString(internalChannel)).append("\n");
+    sb.append("    isAdvancedDedicatedCampaign: ").append(toIndentedString(isAdvancedDedicatedCampaign)).append("\n");
+    sb.append("    isSearchCampaign: ").append(toIndentedString(isSearchCampaign)).append("\n");
     sb.append("    objectiveType: ").append(toIndentedString(objectiveType)).append("\n");
     sb.append("    operationStatus: ").append(toIndentedString(operationStatus)).append("\n");
     sb.append("    optimizationGoal: ").append(toIndentedString(optimizationGoal)).append("\n");
+    sb.append("    pluginPartner: ").append(toIndentedString(pluginPartner)).append("\n");
+    sb.append("    poNumber: ").append(toIndentedString(poNumber)).append("\n");
+    sb.append("    postbackWindowMode: ").append(toIndentedString(postbackWindowMode)).append("\n");
+    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("    rfCampaignType: ").append(toIndentedString(rfCampaignType)).append("\n");
+    sb.append("    roasBid: ").append(toIndentedString(roasBid)).append("\n");
+    sb.append("    rtaBidEnabled: ").append(toIndentedString(rtaBidEnabled)).append("\n");
+    sb.append("    rtaId: ").append(toIndentedString(rtaId)).append("\n");
+    sb.append("    rtaProductSelectionEnabled: ").append(toIndentedString(rtaProductSelectionEnabled)).append("\n");
+    sb.append("    salesDestination: ").append(toIndentedString(salesDestination)).append("\n");
     sb.append("    specialIndustries: ").append(toIndentedString(specialIndustries)).append("\n");
+    sb.append("    virtualObjectiveType: ").append(toIndentedString(virtualObjectiveType)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -19,10 +19,25 @@ import java.util.List;
  * FilteringCampaignGet
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class FilteringCampaignGet {
+  @JsonProperty("buying_types")
+  private List<String> buyingTypes = null;
+
   @JsonProperty("campaign_ids")
   private List<String> campaignIds = null;
+
+  @JsonProperty("campaign_name")
+  private String campaignName = null;
+
+  @JsonProperty("campaign_product_source")
+  private String campaignProductSource = null;
+
+  @JsonProperty("campaign_system_origins")
+  private List<String> campaignSystemOrigins = null;
+
+  @JsonProperty("campaign_type")
+  private String campaignType = null;
 
   @JsonProperty("creation_filter_end_time")
   private String creationFilterEndTime = null;
@@ -30,17 +45,55 @@ public class FilteringCampaignGet {
   @JsonProperty("creation_filter_start_time")
   private String creationFilterStartTime = null;
 
+  @JsonProperty("creative_campaign_type")
+  private List<String> creativeCampaignType = null;
+
+  @JsonProperty("is_smart_performance_campaign")
+  private Boolean isSmartPerformanceCampaign = null;
+
   @JsonProperty("objective_type")
   private String objectiveType = null;
+
+  @JsonProperty("optimization_goal")
+  private String optimizationGoal = null;
 
   @JsonProperty("primary_status")
   private String primaryStatus = null;
 
+  @JsonProperty("sales_destination")
+  private String salesDestination = null;
+
   @JsonProperty("secondary_status")
   private String secondaryStatus = null;
 
-  @JsonProperty("targeting_broaden_required")
-  private Boolean targetingBroadenRequired = null;
+  @JsonProperty("split_test_enabled")
+  private Boolean splitTestEnabled = null;
+
+  public FilteringCampaignGet buyingTypes(List<String> buyingTypes) {
+    this.buyingTypes = buyingTypes;
+    return this;
+  }
+
+  public FilteringCampaignGet addBuyingTypesItem(String buyingTypesItem) {
+    if (this.buyingTypes == null) {
+      this.buyingTypes = new ArrayList<String>();
+    }
+    this.buyingTypes.add(buyingTypesItem);
+    return this;
+  }
+
+   /**
+   * Get buyingTypes
+   * @return buyingTypes
+  **/
+  @Schema(description = "")
+  public List<String> getBuyingTypes() {
+    return buyingTypes;
+  }
+
+  public void setBuyingTypes(List<String> buyingTypes) {
+    this.buyingTypes = buyingTypes;
+  }
 
   public FilteringCampaignGet campaignIds(List<String> campaignIds) {
     this.campaignIds = campaignIds;
@@ -56,10 +109,10 @@ public class FilteringCampaignGet {
   }
 
    /**
-   * Filter by campaign IDs. Allowable quantity- &#x60;1-100&#x60;.
+   * Get campaignIds
    * @return campaignIds
   **/
-  @Schema(description = "Filter by campaign IDs. Allowable quantity- `1-100`.")
+  @Schema(description = "")
   public List<String> getCampaignIds() {
     return campaignIds;
   }
@@ -68,16 +121,96 @@ public class FilteringCampaignGet {
     this.campaignIds = campaignIds;
   }
 
+  public FilteringCampaignGet campaignName(String campaignName) {
+    this.campaignName = campaignName;
+    return this;
+  }
+
+   /**
+   * Get campaignName
+   * @return campaignName
+  **/
+  @Schema(description = "")
+  public String getCampaignName() {
+    return campaignName;
+  }
+
+  public void setCampaignName(String campaignName) {
+    this.campaignName = campaignName;
+  }
+
+  public FilteringCampaignGet campaignProductSource(String campaignProductSource) {
+    this.campaignProductSource = campaignProductSource;
+    return this;
+  }
+
+   /**
+   * Get campaignProductSource
+   * @return campaignProductSource
+  **/
+  @Schema(description = "")
+  public String getCampaignProductSource() {
+    return campaignProductSource;
+  }
+
+  public void setCampaignProductSource(String campaignProductSource) {
+    this.campaignProductSource = campaignProductSource;
+  }
+
+  public FilteringCampaignGet campaignSystemOrigins(List<String> campaignSystemOrigins) {
+    this.campaignSystemOrigins = campaignSystemOrigins;
+    return this;
+  }
+
+  public FilteringCampaignGet addCampaignSystemOriginsItem(String campaignSystemOriginsItem) {
+    if (this.campaignSystemOrigins == null) {
+      this.campaignSystemOrigins = new ArrayList<String>();
+    }
+    this.campaignSystemOrigins.add(campaignSystemOriginsItem);
+    return this;
+  }
+
+   /**
+   * Get campaignSystemOrigins
+   * @return campaignSystemOrigins
+  **/
+  @Schema(description = "")
+  public List<String> getCampaignSystemOrigins() {
+    return campaignSystemOrigins;
+  }
+
+  public void setCampaignSystemOrigins(List<String> campaignSystemOrigins) {
+    this.campaignSystemOrigins = campaignSystemOrigins;
+  }
+
+  public FilteringCampaignGet campaignType(String campaignType) {
+    this.campaignType = campaignType;
+    return this;
+  }
+
+   /**
+   * Get campaignType
+   * @return campaignType
+  **/
+  @Schema(description = "")
+  public String getCampaignType() {
+    return campaignType;
+  }
+
+  public void setCampaignType(String campaignType) {
+    this.campaignType = campaignType;
+  }
+
   public FilteringCampaignGet creationFilterEndTime(String creationFilterEndTime) {
     this.creationFilterEndTime = creationFilterEndTime;
     return this;
   }
 
    /**
-   * Filter by higher range of campaign creation time, in the format of &#x60;YYYY-MM-DD HH:MM:SS&#x60; (UTC time zone). Campaigns created later than this time will be returned.Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won&#x27;t be affected.
+   * Get creationFilterEndTime
    * @return creationFilterEndTime
   **/
-  @Schema(description = "Filter by higher range of campaign creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Campaigns created later than this time will be returned.Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.")
+  @Schema(description = "")
   public String getCreationFilterEndTime() {
     return creationFilterEndTime;
   }
@@ -92,10 +225,10 @@ public class FilteringCampaignGet {
   }
 
    /**
-   * Filter by lower range of campaign creation time, in the format of &#x60;YYYY-MM-DD HH:MM:SS&#x60; (UTC time zone). Campaigns created later than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won&#x27;t be affected
+   * Get creationFilterStartTime
    * @return creationFilterStartTime
   **/
-  @Schema(description = "Filter by lower range of campaign creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Campaigns created later than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected")
+  @Schema(description = "")
   public String getCreationFilterStartTime() {
     return creationFilterStartTime;
   }
@@ -104,16 +237,60 @@ public class FilteringCampaignGet {
     this.creationFilterStartTime = creationFilterStartTime;
   }
 
+  public FilteringCampaignGet creativeCampaignType(List<String> creativeCampaignType) {
+    this.creativeCampaignType = creativeCampaignType;
+    return this;
+  }
+
+  public FilteringCampaignGet addCreativeCampaignTypeItem(String creativeCampaignTypeItem) {
+    if (this.creativeCampaignType == null) {
+      this.creativeCampaignType = new ArrayList<String>();
+    }
+    this.creativeCampaignType.add(creativeCampaignTypeItem);
+    return this;
+  }
+
+   /**
+   * Get creativeCampaignType
+   * @return creativeCampaignType
+  **/
+  @Schema(description = "")
+  public List<String> getCreativeCampaignType() {
+    return creativeCampaignType;
+  }
+
+  public void setCreativeCampaignType(List<String> creativeCampaignType) {
+    this.creativeCampaignType = creativeCampaignType;
+  }
+
+  public FilteringCampaignGet isSmartPerformanceCampaign(Boolean isSmartPerformanceCampaign) {
+    this.isSmartPerformanceCampaign = isSmartPerformanceCampaign;
+    return this;
+  }
+
+   /**
+   * Get isSmartPerformanceCampaign
+   * @return isSmartPerformanceCampaign
+  **/
+  @Schema(description = "")
+  public Boolean isIsSmartPerformanceCampaign() {
+    return isSmartPerformanceCampaign;
+  }
+
+  public void setIsSmartPerformanceCampaign(Boolean isSmartPerformanceCampaign) {
+    this.isSmartPerformanceCampaign = isSmartPerformanceCampaign;
+  }
+
   public FilteringCampaignGet objectiveType(String objectiveType) {
     this.objectiveType = objectiveType;
     return this;
   }
 
    /**
-   * Filter by  advertising objectives, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138).
+   * Get objectiveType
    * @return objectiveType
   **/
-  @Schema(description = "Filter by  advertising objectives, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).")
+  @Schema(description = "")
   public String getObjectiveType() {
     return objectiveType;
   }
@@ -122,16 +299,34 @@ public class FilteringCampaignGet {
     this.objectiveType = objectiveType;
   }
 
+  public FilteringCampaignGet optimizationGoal(String optimizationGoal) {
+    this.optimizationGoal = optimizationGoal;
+    return this;
+  }
+
+   /**
+   * Get optimizationGoal
+   * @return optimizationGoal
+  **/
+  @Schema(description = "")
+  public String getOptimizationGoal() {
+    return optimizationGoal;
+  }
+
+  public void setOptimizationGoal(String optimizationGoal) {
+    this.optimizationGoal = optimizationGoal;
+  }
+
   public FilteringCampaignGet primaryStatus(String primaryStatus) {
     this.primaryStatus = primaryStatus;
     return this;
   }
 
    /**
-   * Primary status. For enum values, see [Enumeration-Primary Status](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174886619138).
+   * Get primaryStatus
    * @return primaryStatus
   **/
-  @Schema(description = "Primary status. For enum values, see [Enumeration-Primary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).")
+  @Schema(description = "")
   public String getPrimaryStatus() {
     return primaryStatus;
   }
@@ -140,16 +335,34 @@ public class FilteringCampaignGet {
     this.primaryStatus = primaryStatus;
   }
 
+  public FilteringCampaignGet salesDestination(String salesDestination) {
+    this.salesDestination = salesDestination;
+    return this;
+  }
+
+   /**
+   * Get salesDestination
+   * @return salesDestination
+  **/
+  @Schema(description = "")
+  public String getSalesDestination() {
+    return salesDestination;
+  }
+
+  public void setSalesDestination(String salesDestination) {
+    this.salesDestination = salesDestination;
+  }
+
   public FilteringCampaignGet secondaryStatus(String secondaryStatus) {
     this.secondaryStatus = secondaryStatus;
     return this;
   }
 
    /**
-   * Filter by campaign status（Secondary status).  For enum values, see [Enumeration- Campaign Status - Secondary Status]
+   * Get secondaryStatus
    * @return secondaryStatus
   **/
-  @Schema(description = "Filter by campaign status（Secondary status).  For enum values, see [Enumeration- Campaign Status - Secondary Status]")
+  @Schema(description = "")
   public String getSecondaryStatus() {
     return secondaryStatus;
   }
@@ -158,22 +371,22 @@ public class FilteringCampaignGet {
     this.secondaryStatus = secondaryStatus;
   }
 
-  public FilteringCampaignGet targetingBroadenRequired(Boolean targetingBroadenRequired) {
-    this.targetingBroadenRequired = targetingBroadenRequired;
+  public FilteringCampaignGet splitTestEnabled(Boolean splitTestEnabled) {
+    this.splitTestEnabled = splitTestEnabled;
     return this;
   }
 
    /**
-   * Get targetingBroadenRequired
-   * @return targetingBroadenRequired
+   * Get splitTestEnabled
+   * @return splitTestEnabled
   **/
   @Schema(description = "")
-  public Boolean isTargetingBroadenRequired() {
-    return targetingBroadenRequired;
+  public Boolean isSplitTestEnabled() {
+    return splitTestEnabled;
   }
 
-  public void setTargetingBroadenRequired(Boolean targetingBroadenRequired) {
-    this.targetingBroadenRequired = targetingBroadenRequired;
+  public void setSplitTestEnabled(Boolean splitTestEnabled) {
+    this.splitTestEnabled = splitTestEnabled;
   }
 
 
@@ -186,18 +399,27 @@ public class FilteringCampaignGet {
       return false;
     }
     FilteringCampaignGet filteringCampaignGet = (FilteringCampaignGet) o;
-    return Objects.equals(this.campaignIds, filteringCampaignGet.campaignIds) &&
+    return Objects.equals(this.buyingTypes, filteringCampaignGet.buyingTypes) &&
+        Objects.equals(this.campaignIds, filteringCampaignGet.campaignIds) &&
+        Objects.equals(this.campaignName, filteringCampaignGet.campaignName) &&
+        Objects.equals(this.campaignProductSource, filteringCampaignGet.campaignProductSource) &&
+        Objects.equals(this.campaignSystemOrigins, filteringCampaignGet.campaignSystemOrigins) &&
+        Objects.equals(this.campaignType, filteringCampaignGet.campaignType) &&
         Objects.equals(this.creationFilterEndTime, filteringCampaignGet.creationFilterEndTime) &&
         Objects.equals(this.creationFilterStartTime, filteringCampaignGet.creationFilterStartTime) &&
+        Objects.equals(this.creativeCampaignType, filteringCampaignGet.creativeCampaignType) &&
+        Objects.equals(this.isSmartPerformanceCampaign, filteringCampaignGet.isSmartPerformanceCampaign) &&
         Objects.equals(this.objectiveType, filteringCampaignGet.objectiveType) &&
+        Objects.equals(this.optimizationGoal, filteringCampaignGet.optimizationGoal) &&
         Objects.equals(this.primaryStatus, filteringCampaignGet.primaryStatus) &&
+        Objects.equals(this.salesDestination, filteringCampaignGet.salesDestination) &&
         Objects.equals(this.secondaryStatus, filteringCampaignGet.secondaryStatus) &&
-        Objects.equals(this.targetingBroadenRequired, filteringCampaignGet.targetingBroadenRequired);
+        Objects.equals(this.splitTestEnabled, filteringCampaignGet.splitTestEnabled);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(campaignIds, creationFilterEndTime, creationFilterStartTime, objectiveType, primaryStatus, secondaryStatus, targetingBroadenRequired);
+    return Objects.hash(buyingTypes, campaignIds, campaignName, campaignProductSource, campaignSystemOrigins, campaignType, creationFilterEndTime, creationFilterStartTime, creativeCampaignType, isSmartPerformanceCampaign, objectiveType, optimizationGoal, primaryStatus, salesDestination, secondaryStatus, splitTestEnabled);
   }
 
 
@@ -206,13 +428,22 @@ public class FilteringCampaignGet {
     StringBuilder sb = new StringBuilder();
     sb.append("class FilteringCampaignGet {\n");
     
+    sb.append("    buyingTypes: ").append(toIndentedString(buyingTypes)).append("\n");
     sb.append("    campaignIds: ").append(toIndentedString(campaignIds)).append("\n");
+    sb.append("    campaignName: ").append(toIndentedString(campaignName)).append("\n");
+    sb.append("    campaignProductSource: ").append(toIndentedString(campaignProductSource)).append("\n");
+    sb.append("    campaignSystemOrigins: ").append(toIndentedString(campaignSystemOrigins)).append("\n");
+    sb.append("    campaignType: ").append(toIndentedString(campaignType)).append("\n");
     sb.append("    creationFilterEndTime: ").append(toIndentedString(creationFilterEndTime)).append("\n");
     sb.append("    creationFilterStartTime: ").append(toIndentedString(creationFilterStartTime)).append("\n");
+    sb.append("    creativeCampaignType: ").append(toIndentedString(creativeCampaignType)).append("\n");
+    sb.append("    isSmartPerformanceCampaign: ").append(toIndentedString(isSmartPerformanceCampaign)).append("\n");
     sb.append("    objectiveType: ").append(toIndentedString(objectiveType)).append("\n");
+    sb.append("    optimizationGoal: ").append(toIndentedString(optimizationGoal)).append("\n");
     sb.append("    primaryStatus: ").append(toIndentedString(primaryStatus)).append("\n");
+    sb.append("    salesDestination: ").append(toIndentedString(salesDestination)).append("\n");
     sb.append("    secondaryStatus: ").append(toIndentedString(secondaryStatus)).append("\n");
-    sb.append("    targetingBroadenRequired: ").append(toIndentedString(targetingBroadenRequired)).append("\n");
+    sb.append("    splitTestEnabled: ").append(toIndentedString(splitTestEnabled)).append("\n");
     sb.append("}");
     return sb.toString();
   }

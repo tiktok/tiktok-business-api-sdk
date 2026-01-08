@@ -27,22 +27,21 @@ import {AdStatusUpdateBody} from './model/AdStatusUpdateBody.js';
 import {AdUpdateBody} from './model/AdUpdateBody.js';
 import {AdUploadBody} from './model/AdUploadBody.js';
 import {AdcreateCreatives} from './model/AdcreateCreatives.js';
+import {AdcreateDeeplinkUtmParams} from './model/AdcreateDeeplinkUtmParams.js';
 import {AdcreateDisclaimerClickableTexts} from './model/AdcreateDisclaimerClickableTexts.js';
 import {AdcreateDisclaimerText} from './model/AdcreateDisclaimerText.js';
+import {AdcreateShowcaseProducts} from './model/AdcreateShowcaseProducts.js';
+import {AdcreateUtmParams} from './model/AdcreateUtmParams.js';
 import {AdgroupCreateBody} from './model/AdgroupCreateBody.js';
 import {AdgroupStatusUpdateBody} from './model/AdgroupStatusUpdateBody.js';
 import {AdgroupUpdateBody} from './model/AdgroupUpdateBody.js';
 import {AdgroupcreateActions} from './model/AdgroupcreateActions.js';
-import {AdgroupcreateAudienceRule} from './model/AdgroupcreateAudienceRule.js';
-import {AdgroupcreateAudienceRuleExclusions} from './model/AdgroupcreateAudienceRuleExclusions.js';
-import {AdgroupcreateAudienceRuleExclusionsEventSources} from './model/AdgroupcreateAudienceRuleExclusionsEventSources.js';
-import {AdgroupcreateAudienceRuleExclusionsFilter} from './model/AdgroupcreateAudienceRuleExclusionsFilter.js';
-import {AdgroupcreateAudienceRuleExclusionsFilterFilters} from './model/AdgroupcreateAudienceRuleExclusionsFilterFilters.js';
-import {AdgroupcreateAudienceRuleExclusionsRules} from './model/AdgroupcreateAudienceRuleExclusionsRules.js';
-import {AdgroupcreateAudienceRuleInclusions} from './model/AdgroupcreateAudienceRuleInclusions.js';
+import {AdgroupcreateAppConfig} from './model/AdgroupcreateAppConfig.js';
 import {AdgroupcreateExcludedCustomActions} from './model/AdgroupcreateExcludedCustomActions.js';
 import {AdgroupcreateIncludedCustomActions} from './model/AdgroupcreateIncludedCustomActions.js';
-import {AdgroupcreateTargetingExpansion} from './model/AdgroupcreateTargetingExpansion.js';
+import {AdgroupcreateSearchKeywords} from './model/AdgroupcreateSearchKeywords.js';
+import {AdgroupupdateSearchKeywords} from './model/AdgroupupdateSearchKeywords.js';
+import {AdgroupupdateTargetingExpansion} from './model/AdgroupupdateTargetingExpansion.js';
 import {AdminDeleteBody} from './model/AdminDeleteBody.js';
 import {AdupdateCreatives} from './model/AdupdateCreatives.js';
 import {AdvertiserCreateBody} from './model/AdvertiserCreateBody.js';
@@ -498,6 +497,12 @@ export {
     AdcreateCreatives,
 
     /**
+     * The AdcreateDeeplinkUtmParams model constructor.
+     * @property {module:model/AdcreateDeeplinkUtmParams}
+     */
+    AdcreateDeeplinkUtmParams,
+
+    /**
      * The AdcreateDisclaimerClickableTexts model constructor.
      * @property {module:model/AdcreateDisclaimerClickableTexts}
      */
@@ -508,6 +513,18 @@ export {
      * @property {module:model/AdcreateDisclaimerText}
      */
     AdcreateDisclaimerText,
+
+    /**
+     * The AdcreateShowcaseProducts model constructor.
+     * @property {module:model/AdcreateShowcaseProducts}
+     */
+    AdcreateShowcaseProducts,
+
+    /**
+     * The AdcreateUtmParams model constructor.
+     * @property {module:model/AdcreateUtmParams}
+     */
+    AdcreateUtmParams,
 
     /**
      * The AdgroupCreateBody model constructor.
@@ -534,46 +551,10 @@ export {
     AdgroupcreateActions,
 
     /**
-     * The AdgroupcreateAudienceRule model constructor.
-     * @property {module:model/AdgroupcreateAudienceRule}
+     * The AdgroupcreateAppConfig model constructor.
+     * @property {module:model/AdgroupcreateAppConfig}
      */
-    AdgroupcreateAudienceRule,
-
-    /**
-     * The AdgroupcreateAudienceRuleExclusions model constructor.
-     * @property {module:model/AdgroupcreateAudienceRuleExclusions}
-     */
-    AdgroupcreateAudienceRuleExclusions,
-
-    /**
-     * The AdgroupcreateAudienceRuleExclusionsEventSources model constructor.
-     * @property {module:model/AdgroupcreateAudienceRuleExclusionsEventSources}
-     */
-    AdgroupcreateAudienceRuleExclusionsEventSources,
-
-    /**
-     * The AdgroupcreateAudienceRuleExclusionsFilter model constructor.
-     * @property {module:model/AdgroupcreateAudienceRuleExclusionsFilter}
-     */
-    AdgroupcreateAudienceRuleExclusionsFilter,
-
-    /**
-     * The AdgroupcreateAudienceRuleExclusionsFilterFilters model constructor.
-     * @property {module:model/AdgroupcreateAudienceRuleExclusionsFilterFilters}
-     */
-    AdgroupcreateAudienceRuleExclusionsFilterFilters,
-
-    /**
-     * The AdgroupcreateAudienceRuleExclusionsRules model constructor.
-     * @property {module:model/AdgroupcreateAudienceRuleExclusionsRules}
-     */
-    AdgroupcreateAudienceRuleExclusionsRules,
-
-    /**
-     * The AdgroupcreateAudienceRuleInclusions model constructor.
-     * @property {module:model/AdgroupcreateAudienceRuleInclusions}
-     */
-    AdgroupcreateAudienceRuleInclusions,
+    AdgroupcreateAppConfig,
 
     /**
      * The AdgroupcreateExcludedCustomActions model constructor.
@@ -588,10 +569,22 @@ export {
     AdgroupcreateIncludedCustomActions,
 
     /**
-     * The AdgroupcreateTargetingExpansion model constructor.
-     * @property {module:model/AdgroupcreateTargetingExpansion}
+     * The AdgroupcreateSearchKeywords model constructor.
+     * @property {module:model/AdgroupcreateSearchKeywords}
      */
-    AdgroupcreateTargetingExpansion,
+    AdgroupcreateSearchKeywords,
+
+    /**
+     * The AdgroupupdateSearchKeywords model constructor.
+     * @property {module:model/AdgroupupdateSearchKeywords}
+     */
+    AdgroupupdateSearchKeywords,
+
+    /**
+     * The AdgroupupdateTargetingExpansion model constructor.
+     * @property {module:model/AdgroupupdateTargetingExpansion}
+     */
+    AdgroupupdateTargetingExpansion,
 
     /**
      * The AdminDeleteBody model constructor.

@@ -85,9 +85,8 @@ SmartPlusAdCreateBodyAdConfiguration.prototype.catalog_creative_toggle = undefin
 
 /**
  * @member {String} dark_post_status
- * @default 'OFF'
  */
-SmartPlusAdCreateBodyAdConfiguration.prototype.dark_post_status = 'OFF';
+SmartPlusAdCreateBodyAdConfiguration.prototype.dark_post_status = undefined;
 
 /**
  * @member {String} end_card_cta

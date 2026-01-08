@@ -19,7 +19,7 @@ import java.util.List;
  * CampaignStatusUpdateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class CampaignStatusUpdateBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
@@ -30,16 +30,19 @@ public class CampaignStatusUpdateBody {
   @JsonProperty("operation_status")
   private String operationStatus = null;
 
+  @JsonProperty("postback_window_mode")
+  private String postbackWindowMode = null;
+
   public CampaignStatusUpdateBody advertiserId(String advertiserId) {
     this.advertiserId = advertiserId;
     return this;
   }
 
    /**
-   * Advertiser ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(description = "Advertiser ID")
+  @Schema(description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -62,10 +65,10 @@ public class CampaignStatusUpdateBody {
   }
 
    /**
-   * A list of campaign IDs, with an allowed quantity range &#x60;1-20&#x60;.
+   * Get campaignIds
    * @return campaignIds
   **/
-  @Schema(description = "A list of campaign IDs, with an allowed quantity range `1-20`.")
+  @Schema(description = "")
   public List<String> getCampaignIds() {
     return campaignIds;
   }
@@ -80,16 +83,34 @@ public class CampaignStatusUpdateBody {
   }
 
    /**
-   * The operation being made. Enum values- &#x60;DELETE&#x60; (delete),&#x60; DISABLE&#x60; (pause), &#x60;ENABLE&#x60; (enable). The status of deleted ads cannot be modified.
+   * Get operationStatus
    * @return operationStatus
   **/
-  @Schema(description = "The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.")
+  @Schema(description = "")
   public String getOperationStatus() {
     return operationStatus;
   }
 
   public void setOperationStatus(String operationStatus) {
     this.operationStatus = operationStatus;
+  }
+
+  public CampaignStatusUpdateBody postbackWindowMode(String postbackWindowMode) {
+    this.postbackWindowMode = postbackWindowMode;
+    return this;
+  }
+
+   /**
+   * Get postbackWindowMode
+   * @return postbackWindowMode
+  **/
+  @Schema(description = "")
+  public String getPostbackWindowMode() {
+    return postbackWindowMode;
+  }
+
+  public void setPostbackWindowMode(String postbackWindowMode) {
+    this.postbackWindowMode = postbackWindowMode;
   }
 
 
@@ -104,12 +125,13 @@ public class CampaignStatusUpdateBody {
     CampaignStatusUpdateBody campaignStatusUpdateBody = (CampaignStatusUpdateBody) o;
     return Objects.equals(this.advertiserId, campaignStatusUpdateBody.advertiserId) &&
         Objects.equals(this.campaignIds, campaignStatusUpdateBody.campaignIds) &&
-        Objects.equals(this.operationStatus, campaignStatusUpdateBody.operationStatus);
+        Objects.equals(this.operationStatus, campaignStatusUpdateBody.operationStatus) &&
+        Objects.equals(this.postbackWindowMode, campaignStatusUpdateBody.postbackWindowMode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(advertiserId, campaignIds, operationStatus);
+    return Objects.hash(advertiserId, campaignIds, operationStatus, postbackWindowMode);
   }
 
 
@@ -121,6 +143,7 @@ public class CampaignStatusUpdateBody {
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
     sb.append("    campaignIds: ").append(toIndentedString(campaignIds)).append("\n");
     sb.append("    operationStatus: ").append(toIndentedString(operationStatus)).append("\n");
+    sb.append("    postbackWindowMode: ").append(toIndentedString(postbackWindowMode)).append("\n");
     sb.append("}");
     return sb.toString();
   }

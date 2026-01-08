@@ -47,7 +47,6 @@ class AdcreateDisclaimerClickableTexts(object):
     def text(self):
         """Gets the text of this AdcreateDisclaimerClickableTexts.  # noqa: E501
 
-        The disclaimer text. Length limit- 40 characters.  # noqa: E501
 
         :return: The text of this AdcreateDisclaimerClickableTexts.  # noqa: E501
         :rtype: str
@@ -58,7 +57,6 @@ class AdcreateDisclaimerClickableTexts(object):
     def text(self, text):
         """Sets the text of this AdcreateDisclaimerClickableTexts.
 
-        The disclaimer text. Length limit- 40 characters.  # noqa: E501
 
         :param text: The text of this AdcreateDisclaimerClickableTexts.  # noqa: E501
         :type: str
@@ -70,7 +68,6 @@ class AdcreateDisclaimerClickableTexts(object):
     def url(self):
         """Gets the url of this AdcreateDisclaimerClickableTexts.  # noqa: E501
 
-        The URL for the clickable disclaimer. When users tap each text, they will be redirected to the URL and see more disclaimer details.  # noqa: E501
 
         :return: The url of this AdcreateDisclaimerClickableTexts.  # noqa: E501
         :rtype: str
@@ -81,7 +78,6 @@ class AdcreateDisclaimerClickableTexts(object):
     def url(self, url):
         """Sets the url of this AdcreateDisclaimerClickableTexts.
 
-        The URL for the clickable disclaimer. When users tap each text, they will be redirected to the URL and see more disclaimer details.  # noqa: E501
 
         :param url: The url of this AdcreateDisclaimerClickableTexts.  # noqa: E501
         :type: str

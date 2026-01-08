@@ -40,13 +40,11 @@ export class AdcreateDisclaimerClickableTexts {
 }
 
 /**
- * The disclaimer text. Length limit- 40 characters.
  * @member {String} text
  */
 AdcreateDisclaimerClickableTexts.prototype.text = undefined;
 
 /**
- * The URL for the clickable disclaimer. When users tap each text, they will be redirected to the URL and see more disclaimer details.
  * @member {String} url
  */
 AdcreateDisclaimerClickableTexts.prototype.url = undefined;

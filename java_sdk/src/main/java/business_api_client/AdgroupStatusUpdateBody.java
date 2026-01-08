@@ -19,13 +19,16 @@ import java.util.List;
  * AdgroupStatusUpdateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdgroupStatusUpdateBody {
   @JsonProperty("adgroup_ids")
   private List<String> adgroupIds = new ArrayList<String>();
 
   @JsonProperty("advertiser_id")
   private String advertiserId = null;
+
+  @JsonProperty("allow_partial_success")
+  private Boolean allowPartialSuccess = false;
 
   @JsonProperty("operation_status")
   private String operationStatus = null;
@@ -41,10 +44,10 @@ public class AdgroupStatusUpdateBody {
   }
 
    /**
-   * The ID of the ad group(s) to be operated. The allowed quantity range is &#x60;1-20&#x60;.
+   * Get adgroupIds
    * @return adgroupIds
   **/
-  @Schema(required = true, description = "The ID of the ad group(s) to be operated. The allowed quantity range is `1-20`.")
+  @Schema(required = true, description = "")
   public List<String> getAdgroupIds() {
     return adgroupIds;
   }
@@ -59,10 +62,10 @@ public class AdgroupStatusUpdateBody {
   }
 
    /**
-   * Advertiser ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Advertiser ID")
+  @Schema(required = true, description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -71,16 +74,34 @@ public class AdgroupStatusUpdateBody {
     this.advertiserId = advertiserId;
   }
 
+  public AdgroupStatusUpdateBody allowPartialSuccess(Boolean allowPartialSuccess) {
+    this.allowPartialSuccess = allowPartialSuccess;
+    return this;
+  }
+
+   /**
+   * Get allowPartialSuccess
+   * @return allowPartialSuccess
+  **/
+  @Schema(description = "")
+  public Boolean isAllowPartialSuccess() {
+    return allowPartialSuccess;
+  }
+
+  public void setAllowPartialSuccess(Boolean allowPartialSuccess) {
+    this.allowPartialSuccess = allowPartialSuccess;
+  }
+
   public AdgroupStatusUpdateBody operationStatus(String operationStatus) {
     this.operationStatus = operationStatus;
     return this;
   }
 
    /**
-   * The operation being made.Enum values- &#x60;DELETE&#x60; (delete),&#x60; DISABLE&#x60; (pause), &#x60;ENABLE&#x60; (enable). The status of deleted ads cannot be modified.
+   * Get operationStatus
    * @return operationStatus
   **/
-  @Schema(required = true, description = "The operation being made.Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.")
+  @Schema(required = true, description = "")
   public String getOperationStatus() {
     return operationStatus;
   }
@@ -101,12 +122,13 @@ public class AdgroupStatusUpdateBody {
     AdgroupStatusUpdateBody adgroupStatusUpdateBody = (AdgroupStatusUpdateBody) o;
     return Objects.equals(this.adgroupIds, adgroupStatusUpdateBody.adgroupIds) &&
         Objects.equals(this.advertiserId, adgroupStatusUpdateBody.advertiserId) &&
+        Objects.equals(this.allowPartialSuccess, adgroupStatusUpdateBody.allowPartialSuccess) &&
         Objects.equals(this.operationStatus, adgroupStatusUpdateBody.operationStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adgroupIds, advertiserId, operationStatus);
+    return Objects.hash(adgroupIds, advertiserId, allowPartialSuccess, operationStatus);
   }
 
 
@@ -117,6 +139,7 @@ public class AdgroupStatusUpdateBody {
     
     sb.append("    adgroupIds: ").append(toIndentedString(adgroupIds)).append("\n");
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
+    sb.append("    allowPartialSuccess: ").append(toIndentedString(allowPartialSuccess)).append("\n");
     sb.append("    operationStatus: ").append(toIndentedString(operationStatus)).append("\n");
     sb.append("}");
     return sb.toString();

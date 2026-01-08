@@ -22,7 +22,7 @@ import java.util.List;
  * SmartPlusAdCreateBodyAdConfiguration
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class SmartPlusAdCreateBodyAdConfiguration {
   @JsonProperty("auto_disclaimer_types")
   private List<String> autoDisclaimerTypes = null;
@@ -34,7 +34,7 @@ public class SmartPlusAdCreateBodyAdConfiguration {
   private Boolean catalogCreativeToggle = null;
 
   @JsonProperty("dark_post_status")
-  private String darkPostStatus = "OFF";
+  private String darkPostStatus = null;
 
   @JsonProperty("end_card_cta")
   private String endCardCta = null;

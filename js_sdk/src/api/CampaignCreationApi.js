@@ -49,10 +49,10 @@ export class CampaignCreationApi {
      */
 
     /**
-     * To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739318962329602)
+     * Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739318962329602)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/CampaignCreateBody} opts.body Campaign create body parameters
+     * @param {module:model/CampaignCreateBody} opts.body 
      * @param {module:api/CampaignCreationApi~campaignCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -97,14 +97,15 @@ export class CampaignCreationApi {
      */
 
     /**
-     * Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739315828649986)
-     * @param {String} advertiser_id Advertiser ID
+     * Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739315828649986)
+     * @param {String} advertiser_id 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/FilteringCampaignGet} opts.filtering Filtering Parameters
-     * @param {Number} opts.page Current page
-     * @param {Number} opts.page_size Page size
-     * @param {Array.<String>} opts.fields Supported values include&#x60;campaign_id &#x60;, &#x60; campaign_name &#x60;, &#x60; advertiser_id &#x60;, &#x60;budget &#x60;, &#x60;budget_mode &#x60;, &#x60;status &#x60;, &#x60;operation_status&#x60;, &#x60;objective &#x60;, &#x60;objective_type &#x60;, &#x60;create_time &#x60;, &#x60;modify_time&#x60;, &#x60;is_new_structure&#x60;, &#x60;campaign_app_profile_page_state&#x60; , &#x60;special_industries&#x60;, &#x60;secondary_status&#x60;.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default.
+     * @param {module:model/FilteringCampaignGet} opts.filtering 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
+     * @param {Array.<String>} opts.fields 
+     * @param {Array.<String>} opts.exclude_field_types_in_response 
      * @param {module:api/CampaignCreationApi~campaignGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -124,7 +125,7 @@ export class CampaignCreationApi {
         
       };
       let queryParams = {
-        'advertiser_id': advertiser_id,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi')
+        'advertiser_id': advertiser_id,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi'),'exclude_field_types_in_response': this.apiClient.buildCollectionParam(opts['exclude_field_types_in_response'], 'multi')
       };
       let headerParams = {
         'Access-Token': Access_Token
@@ -561,10 +562,10 @@ export class CampaignCreationApi {
      */
 
     /**
-     * Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
+     * Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320994354178)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/CampaignStatusUpdateBody} opts.body Campaign status update body parameters
+     * @param {module:model/CampaignStatusUpdateBody} opts.body 
      * @param {module:api/CampaignCreationApi~campaignStatusUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -609,10 +610,10 @@ export class CampaignCreationApi {
      */
 
     /**
-     * To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320422086657)
+     * Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320422086657)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/CampaignUpdateBody} opts.body Campaign update body parameters
+     * @param {module:model/CampaignUpdateBody} opts.body 
      * @param {module:api/CampaignCreationApi~campaignUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */

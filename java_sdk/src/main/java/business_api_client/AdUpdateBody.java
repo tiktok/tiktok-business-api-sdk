@@ -20,7 +20,7 @@ import java.util.List;
  * AdUpdateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdUpdateBody {
   @JsonProperty("adgroup_id")
   private String adgroupId = null;
@@ -31,16 +31,19 @@ public class AdUpdateBody {
   @JsonProperty("creatives")
   private List<AdupdateCreatives> creatives = new ArrayList<AdupdateCreatives>();
 
+  @JsonProperty("patch_update")
+  private Boolean patchUpdate = null;
+
   public AdUpdateBody adgroupId(String adgroupId) {
     this.adgroupId = adgroupId;
     return this;
   }
 
    /**
-   * Ad group ID
+   * Get adgroupId
    * @return adgroupId
   **/
-  @Schema(required = true, description = "Ad group ID")
+  @Schema(required = true, description = "")
   public String getAdgroupId() {
     return adgroupId;
   }
@@ -55,10 +58,10 @@ public class AdUpdateBody {
   }
 
    /**
-   * Advertiser ID
+   * Get advertiserId
    * @return advertiserId
   **/
-  @Schema(required = true, description = "Advertiser ID")
+  @Schema(required = true, description = "")
   public String getAdvertiserId() {
     return advertiserId;
   }
@@ -78,16 +81,34 @@ public class AdUpdateBody {
   }
 
    /**
-   * Advertising creatives.
+   * Get creatives
    * @return creatives
   **/
-  @Schema(required = true, description = "Advertising creatives.")
+  @Schema(required = true, description = "")
   public List<AdupdateCreatives> getCreatives() {
     return creatives;
   }
 
   public void setCreatives(List<AdupdateCreatives> creatives) {
     this.creatives = creatives;
+  }
+
+  public AdUpdateBody patchUpdate(Boolean patchUpdate) {
+    this.patchUpdate = patchUpdate;
+    return this;
+  }
+
+   /**
+   * Get patchUpdate
+   * @return patchUpdate
+  **/
+  @Schema(description = "")
+  public Boolean isPatchUpdate() {
+    return patchUpdate;
+  }
+
+  public void setPatchUpdate(Boolean patchUpdate) {
+    this.patchUpdate = patchUpdate;
   }
 
 
@@ -102,12 +123,13 @@ public class AdUpdateBody {
     AdUpdateBody adUpdateBody = (AdUpdateBody) o;
     return Objects.equals(this.adgroupId, adUpdateBody.adgroupId) &&
         Objects.equals(this.advertiserId, adUpdateBody.advertiserId) &&
-        Objects.equals(this.creatives, adUpdateBody.creatives);
+        Objects.equals(this.creatives, adUpdateBody.creatives) &&
+        Objects.equals(this.patchUpdate, adUpdateBody.patchUpdate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(adgroupId, advertiserId, creatives);
+    return Objects.hash(adgroupId, advertiserId, creatives, patchUpdate);
   }
 
 
@@ -119,6 +141,7 @@ public class AdUpdateBody {
     sb.append("    adgroupId: ").append(toIndentedString(adgroupId)).append("\n");
     sb.append("    advertiserId: ").append(toIndentedString(advertiserId)).append("\n");
     sb.append("    creatives: ").append(toIndentedString(creatives)).append("\n");
+    sb.append("    patchUpdate: ").append(toIndentedString(patchUpdate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

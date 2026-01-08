@@ -24,55 +24,120 @@ class FilteringCampaignGet(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'buying_types': 'list[str]',
         'campaign_ids': 'list[str]',
+        'campaign_name': 'str',
+        'campaign_product_source': 'str',
+        'campaign_system_origins': 'list[str]',
+        'campaign_type': 'str',
         'creation_filter_end_time': 'str',
         'creation_filter_start_time': 'str',
+        'creative_campaign_type': 'list[str]',
+        'is_smart_performance_campaign': 'bool',
         'objective_type': 'str',
+        'optimization_goal': 'str',
         'primary_status': 'str',
+        'sales_destination': 'str',
         'secondary_status': 'str',
-        'targeting_broaden_required': 'bool'
+        'split_test_enabled': 'bool'
     }
 
     attribute_map = {
+        'buying_types': 'buying_types',
         'campaign_ids': 'campaign_ids',
+        'campaign_name': 'campaign_name',
+        'campaign_product_source': 'campaign_product_source',
+        'campaign_system_origins': 'campaign_system_origins',
+        'campaign_type': 'campaign_type',
         'creation_filter_end_time': 'creation_filter_end_time',
         'creation_filter_start_time': 'creation_filter_start_time',
+        'creative_campaign_type': 'creative_campaign_type',
+        'is_smart_performance_campaign': 'is_smart_performance_campaign',
         'objective_type': 'objective_type',
+        'optimization_goal': 'optimization_goal',
         'primary_status': 'primary_status',
+        'sales_destination': 'sales_destination',
         'secondary_status': 'secondary_status',
-        'targeting_broaden_required': 'targeting_broaden_required'
+        'split_test_enabled': 'split_test_enabled'
     }
 
-    def __init__(self, campaign_ids=None, creation_filter_end_time=None, creation_filter_start_time=None, objective_type=None, primary_status=None, secondary_status=None, targeting_broaden_required=None):  # noqa: E501
+    def __init__(self, buying_types=None, campaign_ids=None, campaign_name=None, campaign_product_source=None, campaign_system_origins=None, campaign_type=None, creation_filter_end_time=None, creation_filter_start_time=None, creative_campaign_type=None, is_smart_performance_campaign=None, objective_type=None, optimization_goal=None, primary_status=None, sales_destination=None, secondary_status=None, split_test_enabled=None):  # noqa: E501
         """FilteringCampaignGet - a model defined in Swagger"""  # noqa: E501
+        self._buying_types = None
         self._campaign_ids = None
+        self._campaign_name = None
+        self._campaign_product_source = None
+        self._campaign_system_origins = None
+        self._campaign_type = None
         self._creation_filter_end_time = None
         self._creation_filter_start_time = None
+        self._creative_campaign_type = None
+        self._is_smart_performance_campaign = None
         self._objective_type = None
+        self._optimization_goal = None
         self._primary_status = None
+        self._sales_destination = None
         self._secondary_status = None
-        self._targeting_broaden_required = None
+        self._split_test_enabled = None
         self.discriminator = None
+        if buying_types is not None:
+            self.buying_types = buying_types
         if campaign_ids is not None:
             self.campaign_ids = campaign_ids
+        if campaign_name is not None:
+            self.campaign_name = campaign_name
+        if campaign_product_source is not None:
+            self.campaign_product_source = campaign_product_source
+        if campaign_system_origins is not None:
+            self.campaign_system_origins = campaign_system_origins
+        if campaign_type is not None:
+            self.campaign_type = campaign_type
         if creation_filter_end_time is not None:
             self.creation_filter_end_time = creation_filter_end_time
         if creation_filter_start_time is not None:
             self.creation_filter_start_time = creation_filter_start_time
+        if creative_campaign_type is not None:
+            self.creative_campaign_type = creative_campaign_type
+        if is_smart_performance_campaign is not None:
+            self.is_smart_performance_campaign = is_smart_performance_campaign
         if objective_type is not None:
             self.objective_type = objective_type
+        if optimization_goal is not None:
+            self.optimization_goal = optimization_goal
         if primary_status is not None:
             self.primary_status = primary_status
+        if sales_destination is not None:
+            self.sales_destination = sales_destination
         if secondary_status is not None:
             self.secondary_status = secondary_status
-        if targeting_broaden_required is not None:
-            self.targeting_broaden_required = targeting_broaden_required
+        if split_test_enabled is not None:
+            self.split_test_enabled = split_test_enabled
+
+    @property
+    def buying_types(self):
+        """Gets the buying_types of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The buying_types of this FilteringCampaignGet.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._buying_types
+
+    @buying_types.setter
+    def buying_types(self, buying_types):
+        """Sets the buying_types of this FilteringCampaignGet.
+
+
+        :param buying_types: The buying_types of this FilteringCampaignGet.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._buying_types = buying_types
 
     @property
     def campaign_ids(self):
         """Gets the campaign_ids of this FilteringCampaignGet.  # noqa: E501
 
-        Filter by campaign IDs. Allowable quantity- `1-100`.  # noqa: E501
 
         :return: The campaign_ids of this FilteringCampaignGet.  # noqa: E501
         :rtype: list[str]
@@ -83,7 +148,6 @@ class FilteringCampaignGet(object):
     def campaign_ids(self, campaign_ids):
         """Sets the campaign_ids of this FilteringCampaignGet.
 
-        Filter by campaign IDs. Allowable quantity- `1-100`.  # noqa: E501
 
         :param campaign_ids: The campaign_ids of this FilteringCampaignGet.  # noqa: E501
         :type: list[str]
@@ -92,10 +156,93 @@ class FilteringCampaignGet(object):
         self._campaign_ids = campaign_ids
 
     @property
+    def campaign_name(self):
+        """Gets the campaign_name of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The campaign_name of this FilteringCampaignGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._campaign_name
+
+    @campaign_name.setter
+    def campaign_name(self, campaign_name):
+        """Sets the campaign_name of this FilteringCampaignGet.
+
+
+        :param campaign_name: The campaign_name of this FilteringCampaignGet.  # noqa: E501
+        :type: str
+        """
+
+        self._campaign_name = campaign_name
+
+    @property
+    def campaign_product_source(self):
+        """Gets the campaign_product_source of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The campaign_product_source of this FilteringCampaignGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._campaign_product_source
+
+    @campaign_product_source.setter
+    def campaign_product_source(self, campaign_product_source):
+        """Sets the campaign_product_source of this FilteringCampaignGet.
+
+
+        :param campaign_product_source: The campaign_product_source of this FilteringCampaignGet.  # noqa: E501
+        :type: str
+        """
+
+        self._campaign_product_source = campaign_product_source
+
+    @property
+    def campaign_system_origins(self):
+        """Gets the campaign_system_origins of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The campaign_system_origins of this FilteringCampaignGet.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._campaign_system_origins
+
+    @campaign_system_origins.setter
+    def campaign_system_origins(self, campaign_system_origins):
+        """Sets the campaign_system_origins of this FilteringCampaignGet.
+
+
+        :param campaign_system_origins: The campaign_system_origins of this FilteringCampaignGet.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._campaign_system_origins = campaign_system_origins
+
+    @property
+    def campaign_type(self):
+        """Gets the campaign_type of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The campaign_type of this FilteringCampaignGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._campaign_type
+
+    @campaign_type.setter
+    def campaign_type(self, campaign_type):
+        """Sets the campaign_type of this FilteringCampaignGet.
+
+
+        :param campaign_type: The campaign_type of this FilteringCampaignGet.  # noqa: E501
+        :type: str
+        """
+
+        self._campaign_type = campaign_type
+
+    @property
     def creation_filter_end_time(self):
         """Gets the creation_filter_end_time of this FilteringCampaignGet.  # noqa: E501
 
-        Filter by higher range of campaign creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Campaigns created later than this time will be returned.Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.  # noqa: E501
 
         :return: The creation_filter_end_time of this FilteringCampaignGet.  # noqa: E501
         :rtype: str
@@ -106,7 +253,6 @@ class FilteringCampaignGet(object):
     def creation_filter_end_time(self, creation_filter_end_time):
         """Sets the creation_filter_end_time of this FilteringCampaignGet.
 
-        Filter by higher range of campaign creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Campaigns created later than this time will be returned.Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected.  # noqa: E501
 
         :param creation_filter_end_time: The creation_filter_end_time of this FilteringCampaignGet.  # noqa: E501
         :type: str
@@ -118,7 +264,6 @@ class FilteringCampaignGet(object):
     def creation_filter_start_time(self):
         """Gets the creation_filter_start_time of this FilteringCampaignGet.  # noqa: E501
 
-        Filter by lower range of campaign creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Campaigns created later than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected  # noqa: E501
 
         :return: The creation_filter_start_time of this FilteringCampaignGet.  # noqa: E501
         :rtype: str
@@ -129,7 +274,6 @@ class FilteringCampaignGet(object):
     def creation_filter_start_time(self, creation_filter_start_time):
         """Sets the creation_filter_start_time of this FilteringCampaignGet.
 
-        Filter by lower range of campaign creation time, in the format of `YYYY-MM-DD HH:MM:SS` (UTC time zone). Campaigns created later than this time will be returned. Suggestion- A time range within 6 months is suggested when applying a creation time filter, to ensure that the success and speed of the task won't be affected  # noqa: E501
 
         :param creation_filter_start_time: The creation_filter_start_time of this FilteringCampaignGet.  # noqa: E501
         :type: str
@@ -138,10 +282,51 @@ class FilteringCampaignGet(object):
         self._creation_filter_start_time = creation_filter_start_time
 
     @property
+    def creative_campaign_type(self):
+        """Gets the creative_campaign_type of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The creative_campaign_type of this FilteringCampaignGet.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._creative_campaign_type
+
+    @creative_campaign_type.setter
+    def creative_campaign_type(self, creative_campaign_type):
+        """Sets the creative_campaign_type of this FilteringCampaignGet.
+
+
+        :param creative_campaign_type: The creative_campaign_type of this FilteringCampaignGet.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._creative_campaign_type = creative_campaign_type
+
+    @property
+    def is_smart_performance_campaign(self):
+        """Gets the is_smart_performance_campaign of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The is_smart_performance_campaign of this FilteringCampaignGet.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_smart_performance_campaign
+
+    @is_smart_performance_campaign.setter
+    def is_smart_performance_campaign(self, is_smart_performance_campaign):
+        """Sets the is_smart_performance_campaign of this FilteringCampaignGet.
+
+
+        :param is_smart_performance_campaign: The is_smart_performance_campaign of this FilteringCampaignGet.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_smart_performance_campaign = is_smart_performance_campaign
+
+    @property
     def objective_type(self):
         """Gets the objective_type of this FilteringCampaignGet.  # noqa: E501
 
-        Filter by  advertising objectives, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The objective_type of this FilteringCampaignGet.  # noqa: E501
         :rtype: str
@@ -152,7 +337,6 @@ class FilteringCampaignGet(object):
     def objective_type(self, objective_type):
         """Sets the objective_type of this FilteringCampaignGet.
 
-        Filter by  advertising objectives, see [Enumeration-Advertising Objective](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param objective_type: The objective_type of this FilteringCampaignGet.  # noqa: E501
         :type: str
@@ -161,10 +345,30 @@ class FilteringCampaignGet(object):
         self._objective_type = objective_type
 
     @property
+    def optimization_goal(self):
+        """Gets the optimization_goal of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The optimization_goal of this FilteringCampaignGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._optimization_goal
+
+    @optimization_goal.setter
+    def optimization_goal(self, optimization_goal):
+        """Sets the optimization_goal of this FilteringCampaignGet.
+
+
+        :param optimization_goal: The optimization_goal of this FilteringCampaignGet.  # noqa: E501
+        :type: str
+        """
+
+        self._optimization_goal = optimization_goal
+
+    @property
     def primary_status(self):
         """Gets the primary_status of this FilteringCampaignGet.  # noqa: E501
 
-        Primary status. For enum values, see [Enumeration-Primary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :return: The primary_status of this FilteringCampaignGet.  # noqa: E501
         :rtype: str
@@ -175,7 +379,6 @@ class FilteringCampaignGet(object):
     def primary_status(self, primary_status):
         """Sets the primary_status of this FilteringCampaignGet.
 
-        Primary status. For enum values, see [Enumeration-Primary Status](https://ads.tiktok.com/marketing_api/docs?id=1737174886619138).  # noqa: E501
 
         :param primary_status: The primary_status of this FilteringCampaignGet.  # noqa: E501
         :type: str
@@ -184,10 +387,30 @@ class FilteringCampaignGet(object):
         self._primary_status = primary_status
 
     @property
+    def sales_destination(self):
+        """Gets the sales_destination of this FilteringCampaignGet.  # noqa: E501
+
+
+        :return: The sales_destination of this FilteringCampaignGet.  # noqa: E501
+        :rtype: str
+        """
+        return self._sales_destination
+
+    @sales_destination.setter
+    def sales_destination(self, sales_destination):
+        """Sets the sales_destination of this FilteringCampaignGet.
+
+
+        :param sales_destination: The sales_destination of this FilteringCampaignGet.  # noqa: E501
+        :type: str
+        """
+
+        self._sales_destination = sales_destination
+
+    @property
     def secondary_status(self):
         """Gets the secondary_status of this FilteringCampaignGet.  # noqa: E501
 
-        Filter by campaign status（Secondary status).  For enum values, see [Enumeration- Campaign Status - Secondary Status]  # noqa: E501
 
         :return: The secondary_status of this FilteringCampaignGet.  # noqa: E501
         :rtype: str
@@ -198,7 +421,6 @@ class FilteringCampaignGet(object):
     def secondary_status(self, secondary_status):
         """Sets the secondary_status of this FilteringCampaignGet.
 
-        Filter by campaign status（Secondary status).  For enum values, see [Enumeration- Campaign Status - Secondary Status]  # noqa: E501
 
         :param secondary_status: The secondary_status of this FilteringCampaignGet.  # noqa: E501
         :type: str
@@ -207,25 +429,25 @@ class FilteringCampaignGet(object):
         self._secondary_status = secondary_status
 
     @property
-    def targeting_broaden_required(self):
-        """Gets the targeting_broaden_required of this FilteringCampaignGet.  # noqa: E501
+    def split_test_enabled(self):
+        """Gets the split_test_enabled of this FilteringCampaignGet.  # noqa: E501
 
 
-        :return: The targeting_broaden_required of this FilteringCampaignGet.  # noqa: E501
+        :return: The split_test_enabled of this FilteringCampaignGet.  # noqa: E501
         :rtype: bool
         """
-        return self._targeting_broaden_required
+        return self._split_test_enabled
 
-    @targeting_broaden_required.setter
-    def targeting_broaden_required(self, targeting_broaden_required):
-        """Sets the targeting_broaden_required of this FilteringCampaignGet.
+    @split_test_enabled.setter
+    def split_test_enabled(self, split_test_enabled):
+        """Sets the split_test_enabled of this FilteringCampaignGet.
 
 
-        :param targeting_broaden_required: The targeting_broaden_required of this FilteringCampaignGet.  # noqa: E501
+        :param split_test_enabled: The split_test_enabled of this FilteringCampaignGet.  # noqa: E501
         :type: bool
         """
 
-        self._targeting_broaden_required = targeting_broaden_required
+        self._split_test_enabled = split_test_enabled
 
     def to_dict(self):
         """Returns the model properties as a dict"""

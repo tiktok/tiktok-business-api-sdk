@@ -4,11 +4,11 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**adgroupCreate**](AdgroupApi.md#adgroupCreate) | **POST** /open_api/v1.3/adgroup/create/ | Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739499616346114)
-[**adgroupGet**](AdgroupApi.md#adgroupGet) | **GET** /open_api/v1.3/adgroup/get/ | Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739314558673922)
+[**adgroupCreate**](AdgroupApi.md#adgroupCreate) | **POST** /open_api/v1.3/adgroup/create/ | Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739499616346114)
+[**adgroupGet**](AdgroupApi.md#adgroupGet) | **GET** /open_api/v1.3/adgroup/get/ | Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739314558673922)
 [**adgroupQuota**](AdgroupApi.md#adgroupQuota) | **GET** /open_api/v1.3/adgroup/quota/ | Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1768463039162369)
-[**adgroupStatusUpdate**](AdgroupApi.md#adgroupStatusUpdate) | **POST** /open_api/v1.3/adgroup/status/update/ | Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
-[**adgroupUpdate**](AdgroupApi.md#adgroupUpdate) | **POST** /open_api/v1.3/adgroup/update/ | Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739586761631745)
+[**adgroupStatusUpdate**](AdgroupApi.md#adgroupStatusUpdate) | **POST** /open_api/v1.3/adgroup/status/update/ | Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739591716326402)
+[**adgroupUpdate**](AdgroupApi.md#adgroupUpdate) | **POST** /open_api/v1.3/adgroup/update/ | Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739586761631745)
 [**smartPlusAdgroupCreate**](AdgroupApi.md#smartPlusAdgroupCreate) | **POST** /open_api/v1.3/smart_plus/adgroup/create/ | Create a new ad group [Smart Plus AdGroup Create]
 [**smartPlusAdgroupGet**](AdgroupApi.md#smartPlusAdgroupGet) | **GET** /open_api/v1.3/smart_plus/adgroup/get/ | Retrieve ad group details [Smart Plus AdGroup Get]
 [**smartPlusAdgroupStatusUpdate**](AdgroupApi.md#smartPlusAdgroupStatusUpdate) | **POST** /open_api/v1.3/smart_plus/adgroup/status/update/ | Update ad group status [Smart Plus AdGroup Status Update]
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 # **adgroupCreate**
 > Response adgroupCreate(accessToken, body)
 
-Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739499616346114)
+Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739499616346114)
 
 ### Example
 ```java
@@ -29,7 +29,7 @@ Create an ad group. At the ad group level, you can configure placement, audience
 
 AdgroupApi apiInstance = new AdgroupApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-AdgroupCreateBody body = new AdgroupCreateBody(); // AdgroupCreateBody | Adgroup create body parameters
+AdgroupCreateBody body = new AdgroupCreateBody(); // AdgroupCreateBody | 
 try {
     Response result = apiInstance.adgroupCreate(accessToken, body);
     System.out.println(result);
@@ -44,7 +44,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**AdgroupCreateBody**](AdgroupCreateBody.md)| Adgroup create body parameters | [optional]
+ **body** | [**AdgroupCreateBody**](AdgroupCreateBody.md)|  | [optional]
 
 ### Return type
 
@@ -61,9 +61,9 @@ No authorization required
 
 <a name="adgroupGet"></a>
 # **adgroupGet**
-> Response adgroupGet(advertiserId, accessToken, filtering, page, pageSize, fields)
+> Response adgroupGet(advertiserId, accessToken, filtering, page, pageSize, fields, excludeFieldTypesInResponse)
 
-Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739314558673922)
+Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739314558673922)
 
 ### Example
 ```java
@@ -73,14 +73,15 @@ Obtain detailed information of an ad group or ad groups. [Adgroup get](https://a
 
 
 AdgroupApi apiInstance = new AdgroupApi();
-String advertiserId = "advertiserId_example"; // String | Advertiser ID
+String advertiserId = "advertiserId_example"; // String | 
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-FilteringAdgroupGet filtering = new FilteringAdgroupGet(); // FilteringAdgroupGet | Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by
-Integer page = 56; // Integer | Current page number. Default value is `1`
-Integer pageSize = 56; // Integer | Page size. Default value is- `10`. Range of values- `1-1000`
+FilteringAdgroupGet filtering = new FilteringAdgroupGet(); // FilteringAdgroupGet | 
+Integer page = 1; // Integer | 
+Integer pageSize = 10; // Integer | 
 List<String> fields = Arrays.asList("fields_example"); // List<String> | 
+List<String> excludeFieldTypesInResponse = Arrays.asList("excludeFieldTypesInResponse_example"); // List<String> | 
 try {
-    Response result = apiInstance.adgroupGet(advertiserId, accessToken, filtering, page, pageSize, fields);
+    Response result = apiInstance.adgroupGet(advertiserId, accessToken, filtering, page, pageSize, fields, excludeFieldTypesInResponse);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling AdgroupApi#adgroupGet");
@@ -92,12 +93,13 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiserId** | **String**| Advertiser ID |[required] 
+ **advertiserId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **filtering** | [**FilteringAdgroupGet**](FilteringAdgroupGet.md)| Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by | [optional]
- **page** | **Integer**| Current page number. Default value is &#x60;1&#x60; | [optional]
- **pageSize** | **Integer**| Page size. Default value is- &#x60;10&#x60;. Range of values- &#x60;1-1000&#x60; | [optional]
+ **filtering** | [**FilteringAdgroupGet**](FilteringAdgroupGet.md)|  | [optional]
+ **page** | **Integer**|  | [optional] [default to 1] [enum: ]
+ **pageSize** | **Integer**|  | [optional] [default to 10] [enum: ]
  **fields** | [**List&lt;String&gt;**](String.md)|  | [optional]
+ **excludeFieldTypesInResponse** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
 ### Return type
 
@@ -161,7 +163,7 @@ No authorization required
 # **adgroupStatusUpdate**
 > Response adgroupStatusUpdate(accessToken, body)
 
-Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
+Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739591716326402)
 
 ### Example
 ```java
@@ -172,7 +174,7 @@ Enable, disable or delete an ad group. [Adgroup status update](https://ads.tikto
 
 AdgroupApi apiInstance = new AdgroupApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-AdgroupStatusUpdateBody body = new AdgroupStatusUpdateBody(); // AdgroupStatusUpdateBody | Adgroup status update body parameters
+AdgroupStatusUpdateBody body = new AdgroupStatusUpdateBody(); // AdgroupStatusUpdateBody | 
 try {
     Response result = apiInstance.adgroupStatusUpdate(accessToken, body);
     System.out.println(result);
@@ -187,7 +189,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**AdgroupStatusUpdateBody**](AdgroupStatusUpdateBody.md)| Adgroup status update body parameters | [optional]
+ **body** | [**AdgroupStatusUpdateBody**](AdgroupStatusUpdateBody.md)|  | [optional]
 
 ### Return type
 
@@ -206,7 +208,7 @@ No authorization required
 # **adgroupUpdate**
 > Response adgroupUpdate(accessToken, body)
 
-Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739586761631745)
+Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739586761631745)
 
 ### Example
 ```java
@@ -217,7 +219,7 @@ Obtain detailed information of an ad group or ad groups. [Adgroup update](https:
 
 AdgroupApi apiInstance = new AdgroupApi();
 String accessToken = "accessToken_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
-AdgroupUpdateBody body = new AdgroupUpdateBody(); // AdgroupUpdateBody | Adgroup update body parameters
+AdgroupUpdateBody body = new AdgroupUpdateBody(); // AdgroupUpdateBody | 
 try {
     Response result = apiInstance.adgroupUpdate(accessToken, body);
     System.out.println(result);
@@ -232,7 +234,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **body** | [**AdgroupUpdateBody**](AdgroupUpdateBody.md)| Adgroup update body parameters | [optional]
+ **body** | [**AdgroupUpdateBody**](AdgroupUpdateBody.md)|  | [optional]
 
 ### Return type
 

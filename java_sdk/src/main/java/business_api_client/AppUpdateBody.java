@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
  * AppUpdateBody
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AppUpdateBody {
   @JsonProperty("advertiser_id")
   private String advertiserId = null;

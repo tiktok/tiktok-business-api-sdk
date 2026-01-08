@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")public class AdApi {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")public class AdApi {
   private ApiClient apiClient;
 
   public AdApi() {
@@ -57,10 +57,10 @@ import java.util.Map;
   }
 
   /**
-   * Upload your ad creatives (pictures, videos, texts, call-to-action) and create an ad. For different placements, the creative formats and requirements are different. Upload your ad creatives according to the placement requirements. Each ad group can have up to 20 ads. See here to learn about how to create ads. [Ad create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953377508354)
+   * Create ad. [Ad Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953377508354)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Ad create body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -110,18 +110,19 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1735735588640770)
+   * Get ads. [Ad Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1735735588640770)
    * 
-   * @param advertiserId Advertiser ID (required)
+   * @param advertiserId  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param filtering Filters on the data. This parameter is an array of filter objects. (optional)
-   * @param page Current page number (optional)
-   * @param pageSize Page size (optional)
-   * @param fields Fields that you want to get. For the list of fields that you can specify, see the fields under &#x60;list&#x60; in the response. If not set, all fields are returned by default. (optional)
+   * @param filtering  (optional)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
+   * @param fields  (optional)
+   * @param excludeFieldTypesInResponse  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response adGet(String advertiserId, String accessToken, FilteringAdGet filtering, Integer page, Integer pageSize, List<String> fields) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response adGet(String advertiserId, String accessToken, FilteringAdGet filtering, Integer page, Integer pageSize, List<String> fields, List<String> excludeFieldTypesInResponse) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'advertiserId' is set
     if (advertiserId == null) {
@@ -144,6 +145,7 @@ import java.util.Map;
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
     localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "fields", fields));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "exclude_field_types_in_response", excludeFieldTypesInResponse));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
@@ -176,10 +178,10 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+   * Update ad status. [Ad Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953422970882)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Ad status update body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -229,10 +231,10 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Modify your custom ad creatives such as call-to-action, ad name, text image and video material. To update ACO ads, use the /ad/aco/update/ endpoint. [Ad update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739953422970882)
+   * Update ad. [Ad Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739953405142018)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Ad create body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */

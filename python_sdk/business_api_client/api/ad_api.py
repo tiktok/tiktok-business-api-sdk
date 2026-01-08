@@ -29,7 +29,7 @@ class AdApi(object):
         self.api_client = api_client
 
     def ad_create(self, access_token, **kwargs):  # noqa: E501
-        """Upload your ad creatives (pictures, videos, texts, call-to-action) and create an ad. For different placements, the creative formats and requirements are different. Upload your ad creatives according to the placement requirements. Each ad group can have up to 20 ads. See here to learn about how to create ads. [Ad create](https://ads.tiktok.com/marketing_api/docs?id=1739953377508354)  # noqa: E501
+        """Create ad. [Ad Create](https://business-api.tiktok.com/portal/docs?id=1739953377508354)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -38,7 +38,7 @@ class AdApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdCreateBody body: Ad create body parameters
+        :param AdCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -51,7 +51,7 @@ class AdApi(object):
             return data
 
     def ad_create_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Upload your ad creatives (pictures, videos, texts, call-to-action) and create an ad. For different placements, the creative formats and requirements are different. Upload your ad creatives according to the placement requirements. Each ad group can have up to 20 ads. See here to learn about how to create ads. [Ad create](https://ads.tiktok.com/marketing_api/docs?id=1739953377508354)  # noqa: E501
+        """Create ad. [Ad Create](https://business-api.tiktok.com/portal/docs?id=1739953377508354)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -60,7 +60,7 @@ class AdApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdCreateBody body: Ad create body parameters
+        :param AdCreateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -130,7 +130,7 @@ class AdApi(object):
             collection_formats=collection_formats)
 
     def ad_get(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketing_api/docs?id=1735735588640770)  # noqa: E501
+        """Get ads. [Ad Get](https://business-api.tiktok.com/portal/docs?id=1735735588640770)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -138,12 +138,13 @@ class AdApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
+        :param str advertiser_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdGet filtering: Filters on the data. This parameter is an array of filter objects.
-        :param int page: Current page number
-        :param int page_size: Page size
-        :param list[str] fields: Fields that you want to get. For the list of fields that you can specify, see the fields under `list` in the response. If not set, all fields are returned by default.
+        :param FilteringAdGet filtering:
+        :param int page:
+        :param int page_size:
+        :param list[str] fields:
+        :param list[str] exclude_field_types_in_response:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -156,7 +157,7 @@ class AdApi(object):
             return data
 
     def ad_get_with_http_info(self, advertiser_id, access_token, **kwargs):  # noqa: E501
-        """Get the data of regular ads and ACO ads. [Ad get](https://ads.tiktok.com/marketing_api/docs?id=1735735588640770)  # noqa: E501
+        """Get ads. [Ad Get](https://business-api.tiktok.com/portal/docs?id=1735735588640770)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -164,18 +165,19 @@ class AdApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str advertiser_id: Advertiser ID (required)
+        :param str advertiser_id: (required)
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param FilteringAdGet filtering: Filters on the data. This parameter is an array of filter objects.
-        :param int page: Current page number
-        :param int page_size: Page size
-        :param list[str] fields: Fields that you want to get. For the list of fields that you can specify, see the fields under `list` in the response. If not set, all fields are returned by default.
+        :param FilteringAdGet filtering:
+        :param int page:
+        :param int page_size:
+        :param list[str] fields:
+        :param list[str] exclude_field_types_in_response:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['advertiser_id', 'access_token', 'filtering', 'page', 'page_size', 'fields']  # noqa: E501
+        all_params = ['advertiser_id', 'access_token', 'filtering', 'page', 'page_size', 'fields', 'exclude_field_types_in_response']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -215,6 +217,9 @@ class AdApi(object):
         if 'fields' in params:
             query_params.append(('fields', params['fields']))  # noqa: E501
             collection_formats['fields'] = 'multi'  # noqa: E501
+        if 'exclude_field_types_in_response' in params:
+            query_params.append(('exclude_field_types_in_response', params['exclude_field_types_in_response']))  # noqa: E501
+            collection_formats['exclude_field_types_in_response'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
@@ -248,7 +253,7 @@ class AdApi(object):
             collection_formats=collection_formats)
 
     def ad_status_update(self, access_token, **kwargs):  # noqa: E501
-        """To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.com/marketing_api/docs?id=1739953422970882)  # noqa: E501
+        """Update ad status. [Ad Status Update](https://business-api.tiktok.com/portal/docs?id=1739953422970882)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -257,7 +262,7 @@ class AdApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdStatusUpdateBody body: Ad status update body parameters
+        :param AdStatusUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -270,7 +275,7 @@ class AdApi(object):
             return data
 
     def ad_status_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """To enable, disable or delete an ad or ads [Ad status update](https://ads.tiktok.com/marketing_api/docs?id=1739953422970882)  # noqa: E501
+        """Update ad status. [Ad Status Update](https://business-api.tiktok.com/portal/docs?id=1739953422970882)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -279,7 +284,7 @@ class AdApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdStatusUpdateBody body: Ad status update body parameters
+        :param AdStatusUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -349,7 +354,7 @@ class AdApi(object):
             collection_formats=collection_formats)
 
     def ad_update(self, access_token, **kwargs):  # noqa: E501
-        """Modify your custom ad creatives such as call-to-action, ad name, text image and video material. To update ACO ads, use the /ad/aco/update/ endpoint. [Ad update](https://ads.tiktok.com/marketing_api/docs?id=1739953422970882)  # noqa: E501
+        """Update ad. [Ad Update](https://business-api.tiktok.com/portal/docs?id=1739953405142018)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -358,7 +363,7 @@ class AdApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdUpdateBody body: Ad create body parameters
+        :param AdUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.
@@ -371,7 +376,7 @@ class AdApi(object):
             return data
 
     def ad_update_with_http_info(self, access_token, **kwargs):  # noqa: E501
-        """Modify your custom ad creatives such as call-to-action, ad name, text image and video material. To update ACO ads, use the /ad/aco/update/ endpoint. [Ad update](https://ads.tiktok.com/marketing_api/docs?id=1739953422970882)  # noqa: E501
+        """Update ad. [Ad Update](https://business-api.tiktok.com/portal/docs?id=1739953405142018)  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -380,7 +385,7 @@ class AdApi(object):
 
         :param async_req bool
         :param str access_token: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). (required)
-        :param AdUpdateBody body: Ad create body parameters
+        :param AdUpdateBody body:
         :return: InlineResponse200
                  If the method is called asynchronously,
                  returns the request thread.

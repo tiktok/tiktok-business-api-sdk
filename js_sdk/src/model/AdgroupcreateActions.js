@@ -44,25 +44,21 @@ export class AdgroupcreateActions {
 }
 
 /**
- * IDs of the action categories (behaviors) or hashtags that you want to target. This field is valid only when TikTok placement is the only placement selected.
  * @member {Array.<String>} action_category_ids
  */
 AdgroupcreateActions.prototype.action_category_ids = undefined;
 
 /**
- * Select a time period to include actions from. Supported values- `0`, `7`, `15`. If `action_scene` is `CREATOR_RELATED` or `HASHTAG_RELATED`, 0 will be used regardless of the value you pass in. `0` means that there is no definite timeframe to select actions from.
  * @member {Number} action_period
  */
 AdgroupcreateActions.prototype.action_period = undefined;
 
 /**
- * Where you can collect information about user actions. Enum values- `VIDEO_RELATED`, `CREATOR_RELATED`, `HASHTAG_RELATED`.
  * @member {String} action_scene
  */
 AdgroupcreateActions.prototype.action_scene = undefined;
 
 /**
- * Video-related Actions. If `action_scene` is `VIDEO_RELATED`, the allowed values are- `WATCHED_TO_END`,`LIKED`,`COMMENTED`,`SHARED`. If `action_scene` is `CREATOR_RELATED`, the allowed values are- `FOLLOWING`, `VIEW_HOMEPAGE`. If `action_scene` is `HASHTAG_RELATED`, the allowed value is `VIEW_HASHTAG`.
  * @member {Array.<String>} video_user_actions
  */
 AdgroupcreateActions.prototype.video_user_actions = undefined;

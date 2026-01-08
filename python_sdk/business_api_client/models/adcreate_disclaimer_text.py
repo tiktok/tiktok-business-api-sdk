@@ -42,7 +42,6 @@ class AdcreateDisclaimerText(object):
     def text(self):
         """Gets the text of this AdcreateDisclaimerText.  # noqa: E501
 
-        The disclaimer text. Length limit- 90 characters.  # noqa: E501
 
         :return: The text of this AdcreateDisclaimerText.  # noqa: E501
         :rtype: str
@@ -53,7 +52,6 @@ class AdcreateDisclaimerText(object):
     def text(self, text):
         """Sets the text of this AdcreateDisclaimerText.
 
-        The disclaimer text. Length limit- 90 characters.  # noqa: E501
 
         :param text: The text of this AdcreateDisclaimerText.  # noqa: E501
         :type: str

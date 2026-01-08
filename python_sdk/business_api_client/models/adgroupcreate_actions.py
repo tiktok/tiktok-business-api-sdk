@@ -57,7 +57,6 @@ class AdgroupcreateActions(object):
     def action_category_ids(self):
         """Gets the action_category_ids of this AdgroupcreateActions.  # noqa: E501
 
-        IDs of the action categories (behaviors) or hashtags that you want to target. This field is valid only when TikTok placement is the only placement selected.  # noqa: E501
 
         :return: The action_category_ids of this AdgroupcreateActions.  # noqa: E501
         :rtype: list[str]
@@ -68,7 +67,6 @@ class AdgroupcreateActions(object):
     def action_category_ids(self, action_category_ids):
         """Sets the action_category_ids of this AdgroupcreateActions.
 
-        IDs of the action categories (behaviors) or hashtags that you want to target. This field is valid only when TikTok placement is the only placement selected.  # noqa: E501
 
         :param action_category_ids: The action_category_ids of this AdgroupcreateActions.  # noqa: E501
         :type: list[str]
@@ -80,7 +78,6 @@ class AdgroupcreateActions(object):
     def action_period(self):
         """Gets the action_period of this AdgroupcreateActions.  # noqa: E501
 
-        Select a time period to include actions from. Supported values- `0`, `7`, `15`. If `action_scene` is `CREATOR_RELATED` or `HASHTAG_RELATED`, 0 will be used regardless of the value you pass in. `0` means that there is no definite timeframe to select actions from.  # noqa: E501
 
         :return: The action_period of this AdgroupcreateActions.  # noqa: E501
         :rtype: int
@@ -91,7 +88,6 @@ class AdgroupcreateActions(object):
     def action_period(self, action_period):
         """Sets the action_period of this AdgroupcreateActions.
 
-        Select a time period to include actions from. Supported values- `0`, `7`, `15`. If `action_scene` is `CREATOR_RELATED` or `HASHTAG_RELATED`, 0 will be used regardless of the value you pass in. `0` means that there is no definite timeframe to select actions from.  # noqa: E501
 
         :param action_period: The action_period of this AdgroupcreateActions.  # noqa: E501
         :type: int
@@ -103,7 +99,6 @@ class AdgroupcreateActions(object):
     def action_scene(self):
         """Gets the action_scene of this AdgroupcreateActions.  # noqa: E501
 
-        Where you can collect information about user actions. Enum values- `VIDEO_RELATED`, `CREATOR_RELATED`, `HASHTAG_RELATED`.  # noqa: E501
 
         :return: The action_scene of this AdgroupcreateActions.  # noqa: E501
         :rtype: str
@@ -114,7 +109,6 @@ class AdgroupcreateActions(object):
     def action_scene(self, action_scene):
         """Sets the action_scene of this AdgroupcreateActions.
 
-        Where you can collect information about user actions. Enum values- `VIDEO_RELATED`, `CREATOR_RELATED`, `HASHTAG_RELATED`.  # noqa: E501
 
         :param action_scene: The action_scene of this AdgroupcreateActions.  # noqa: E501
         :type: str
@@ -126,7 +120,6 @@ class AdgroupcreateActions(object):
     def video_user_actions(self):
         """Gets the video_user_actions of this AdgroupcreateActions.  # noqa: E501
 
-        Video-related Actions. If `action_scene` is `VIDEO_RELATED`, the allowed values are- `WATCHED_TO_END`,`LIKED`,`COMMENTED`,`SHARED`. If `action_scene` is `CREATOR_RELATED`, the allowed values are- `FOLLOWING`, `VIEW_HOMEPAGE`. If `action_scene` is `HASHTAG_RELATED`, the allowed value is `VIEW_HASHTAG`.  # noqa: E501
 
         :return: The video_user_actions of this AdgroupcreateActions.  # noqa: E501
         :rtype: list[str]
@@ -137,7 +130,6 @@ class AdgroupcreateActions(object):
     def video_user_actions(self, video_user_actions):
         """Sets the video_user_actions of this AdgroupcreateActions.
 
-        Video-related Actions. If `action_scene` is `VIDEO_RELATED`, the allowed values are- `WATCHED_TO_END`,`LIKED`,`COMMENTED`,`SHARED`. If `action_scene` is `CREATOR_RELATED`, the allowed values are- `FOLLOWING`, `VIEW_HOMEPAGE`. If `action_scene` is `HASHTAG_RELATED`, the allowed value is `VIEW_HASHTAG`.  # noqa: E501
 
         :param video_user_actions: The video_user_actions of this AdgroupcreateActions.  # noqa: E501
         :type: list[str]

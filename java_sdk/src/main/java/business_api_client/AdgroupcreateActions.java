@@ -19,7 +19,7 @@ import java.util.List;
  * AdgroupcreateActions
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
 public class AdgroupcreateActions {
   @JsonProperty("action_category_ids")
   private List<String> actionCategoryIds = null;
@@ -47,10 +47,10 @@ public class AdgroupcreateActions {
   }
 
    /**
-   * IDs of the action categories (behaviors) or hashtags that you want to target. This field is valid only when TikTok placement is the only placement selected.
+   * Get actionCategoryIds
    * @return actionCategoryIds
   **/
-  @Schema(description = "IDs of the action categories (behaviors) or hashtags that you want to target. This field is valid only when TikTok placement is the only placement selected.")
+  @Schema(description = "")
   public List<String> getActionCategoryIds() {
     return actionCategoryIds;
   }
@@ -65,10 +65,10 @@ public class AdgroupcreateActions {
   }
 
    /**
-   * Select a time period to include actions from. Supported values- &#x60;0&#x60;, &#x60;7&#x60;, &#x60;15&#x60;. If &#x60;action_scene&#x60; is &#x60;CREATOR_RELATED&#x60; or &#x60;HASHTAG_RELATED&#x60;, 0 will be used regardless of the value you pass in. &#x60;0&#x60; means that there is no definite timeframe to select actions from.
+   * Get actionPeriod
    * @return actionPeriod
   **/
-  @Schema(description = "Select a time period to include actions from. Supported values- `0`, `7`, `15`. If `action_scene` is `CREATOR_RELATED` or `HASHTAG_RELATED`, 0 will be used regardless of the value you pass in. `0` means that there is no definite timeframe to select actions from.")
+  @Schema(description = "")
   public Integer getActionPeriod() {
     return actionPeriod;
   }
@@ -83,10 +83,10 @@ public class AdgroupcreateActions {
   }
 
    /**
-   * Where you can collect information about user actions. Enum values- &#x60;VIDEO_RELATED&#x60;, &#x60;CREATOR_RELATED&#x60;, &#x60;HASHTAG_RELATED&#x60;.
+   * Get actionScene
    * @return actionScene
   **/
-  @Schema(description = "Where you can collect information about user actions. Enum values- `VIDEO_RELATED`, `CREATOR_RELATED`, `HASHTAG_RELATED`.")
+  @Schema(description = "")
   public String getActionScene() {
     return actionScene;
   }
@@ -109,10 +109,10 @@ public class AdgroupcreateActions {
   }
 
    /**
-   * Video-related Actions. If &#x60;action_scene&#x60; is &#x60;VIDEO_RELATED&#x60;, the allowed values are- &#x60;WATCHED_TO_END&#x60;,&#x60;LIKED&#x60;,&#x60;COMMENTED&#x60;,&#x60;SHARED&#x60;. If &#x60;action_scene&#x60; is &#x60;CREATOR_RELATED&#x60;, the allowed values are- &#x60;FOLLOWING&#x60;, &#x60;VIEW_HOMEPAGE&#x60;. If &#x60;action_scene&#x60; is &#x60;HASHTAG_RELATED&#x60;, the allowed value is &#x60;VIEW_HASHTAG&#x60;.
+   * Get videoUserActions
    * @return videoUserActions
   **/
-  @Schema(description = "Video-related Actions. If `action_scene` is `VIDEO_RELATED`, the allowed values are- `WATCHED_TO_END`,`LIKED`,`COMMENTED`,`SHARED`. If `action_scene` is `CREATOR_RELATED`, the allowed values are- `FOLLOWING`, `VIEW_HOMEPAGE`. If `action_scene` is `HASHTAG_RELATED`, the allowed value is `VIEW_HASHTAG`.")
+  @Schema(description = "")
   public List<String> getVideoUserActions() {
     return videoUserActions;
   }

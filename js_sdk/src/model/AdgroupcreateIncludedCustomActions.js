@@ -14,7 +14,6 @@ import {ApiClient} from '../ApiClient.js';
 export class AdgroupcreateIncludedCustomActions {
   /**
    * Constructs a new <code>AdgroupcreateIncludedCustomActions</code>.
-   * The custom action that you want to use as \&quot;Include\&quot; conditions for filtering out the shopping ads audiences to be retargeted. When &#x60;shopping_ads_retargeting_type&#x60; is &#x60;LAB3&#x60;, you need to pass in either &#x60;included_custom_actions&#x60; or &#x60;excluded_custom_actions&#x60;.
    * @alias module:model/AdgroupcreateIncludedCustomActions
    * @class
    */
@@ -41,13 +40,11 @@ export class AdgroupcreateIncludedCustomActions {
 }
 
 /**
- * The custom action used to filter out the audiences to be retargeted. Enum values- `VIEW_PRODUCT`- The audience viewed the product. `ADD_TO_CART`- The audience added the product to the cart. `PURCHASE`- The audience purchased the product.
  * @member {String} code
  */
 AdgroupcreateIncludedCustomActions.prototype.code = undefined;
 
 /**
- * The time range used to filter out the audiences that completed the specified action.
  * @member {Number} days
  */
 AdgroupcreateIncludedCustomActions.prototype.days = undefined;

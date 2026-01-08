@@ -4,8 +4,8 @@ All URIs are relative to *https://business-api.tiktok.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**campaignCreate**](CampaignCreationApi.md#campaignCreate) | **POST** /open_api/v1.3/campaign/create/ | To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739318962329602)
-[**campaignGet**](CampaignCreationApi.md#campaignGet) | **GET** /open_api/v1.3/campaign/get/ | Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739315828649986)
+[**campaignCreate**](CampaignCreationApi.md#campaignCreate) | **POST** /open_api/v1.3/campaign/create/ | Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739318962329602)
+[**campaignGet**](CampaignCreationApi.md#campaignGet) | **GET** /open_api/v1.3/campaign/get/ | Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739315828649986)
 [**campaignGmvMaxCreate**](CampaignCreationApi.md#campaignGmvMaxCreate) | **POST** /open_api/v1.3/campaign/gmv_max/create/ | Create GMV Max campaign [Smart Plus GMV Max Campaign Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1822000988713089)
 [**campaignGmvMaxInfo**](CampaignCreationApi.md#campaignGmvMaxInfo) | **GET** /open_api/v1.3/campaign/gmv_max/info/ | Get GMV Max campaign info [Smart Plus GMV Max Campaign Info](https://business-api.tiktok.com/portal/docs?id&#x3D;1822000968821762)
 [**campaignGmvMaxSessionCreate**](CampaignCreationApi.md#campaignGmvMaxSessionCreate) | **POST** /open_api/v1.3/campaign/gmv_max/session/create/ | Create GMV Max session [Smart Plus GMV Max Session Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1835246967275522)
@@ -14,8 +14,8 @@ Method | HTTP request | Description
 [**campaignGmvMaxSessionList**](CampaignCreationApi.md#campaignGmvMaxSessionList) | **GET** /open_api/v1.3/campaign/gmv_max/session/list/ | Get GMV Max session list [Smart Plus GMV Max Session List](https://business-api.tiktok.com/portal/docs?id&#x3D;1835246996436162)
 [**campaignGmvMaxSessionUpdate**](CampaignCreationApi.md#campaignGmvMaxSessionUpdate) | **POST** /open_api/v1.3/campaign/gmv_max/session/update/ | Update GMV Max session [Smart Plus GMV Max Session Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1835247009119233)
 [**campaignGmvMaxUpdate**](CampaignCreationApi.md#campaignGmvMaxUpdate) | **POST** /open_api/v1.3/campaign/gmv_max/update/ | Update GMV Max campaign [Smart Plus GMV Max Campaign Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001009002497)
-[**campaignStatusUpdate**](CampaignCreationApi.md#campaignStatusUpdate) | **POST** /open_api/v1.3/campaign/status/update/ | Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
-[**campaignUpdate**](CampaignCreationApi.md#campaignUpdate) | **POST** /open_api/v1.3/campaign/update/ | To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320422086657)
+[**campaignStatusUpdate**](CampaignCreationApi.md#campaignStatusUpdate) | **POST** /open_api/v1.3/campaign/status/update/ | Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320994354178)
+[**campaignUpdate**](CampaignCreationApi.md#campaignUpdate) | **POST** /open_api/v1.3/campaign/update/ | Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320422086657)
 [**gmvMaxBidRecommend**](CampaignCreationApi.md#gmvMaxBidRecommend) | **GET** /open_api/v1.3/gmv_max/bid/recommend/ | Get GMV Max bid recommendation [Smart Plus GMV Max Bid Recommend](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001024720897)
 [**gmvMaxCustomAnchorVideoListGet**](CampaignCreationApi.md#gmvMaxCustomAnchorVideoListGet) | **GET** /open_api/v1.3/gmv_max/custom_anchor_video_list/get/ | Get GMV Max custom anchor video list [Smart Plus GMV Max Custom Anchor Video List Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1830215925061633)
 [**gmvMaxOccupiedCustomShopAdsList**](CampaignCreationApi.md#gmvMaxOccupiedCustomShopAdsList) | **GET** /open_api/v1.3/gmv_max/occupied_custom_shop_ads/list/ | Get GMV Max occupied custom shop ads [Smart Plus GMV Max Occupied Custom Shop Ads List](https://business-api.tiktok.com/portal/docs?id&#x3D;1822001136924674)
@@ -28,7 +28,7 @@ Method | HTTP request | Description
 # **campaignCreate**
 > InlineResponse200 campaignCreate(Access_Token, opts)
 
-To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739318962329602)
+Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739318962329602)
 
 ### Example
 ```javascript
@@ -37,7 +37,7 @@ import {js_sdk} from 'business_api_client';
 let apiInstance = new js_sdk.CampaignCreationApi();
 let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
-  'body': new js_sdk.CampaignCreateBody() // CampaignCreateBody | Campaign create body parameters
+  'body': new js_sdk.CampaignCreateBody() // CampaignCreateBody | 
 };
 apiInstance.campaignCreate(Access_Token, opts, (error, data, response) => {
   if (error) {
@@ -53,7 +53,7 @@ apiInstance.campaignCreate(Access_Token, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
- **body** | [**CampaignCreateBody**](CampaignCreateBody.md)| Campaign create body parameters | [optional] 
+ **body** | [**CampaignCreateBody**](CampaignCreateBody.md)|  | [optional] 
 
 ### Return type
 
@@ -72,20 +72,21 @@ No authorization required
 # **campaignGet**
 > InlineResponse200 campaignGet(advertiser_id, Access_Token, opts)
 
-Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739315828649986)
+Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739315828649986)
 
 ### Example
 ```javascript
 import {js_sdk} from 'business_api_client';
 
 let apiInstance = new js_sdk.CampaignCreationApi();
-let advertiser_id = "advertiser_id_example"; // String | Advertiser ID
+let advertiser_id = "advertiser_id_example"; // String | 
 let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
-  'filtering': new js_sdk.FilteringCampaignGet(), // FilteringCampaignGet | Filtering Parameters
-  'page': 56, // Number | Current page
-  'page_size': 56, // Number | Page size
-  'fields': ["fields_example"] // [String] | Supported values include`campaign_id `, ` campaign_name `, ` advertiser_id `, `budget `, `budget_mode `, `status `, `operation_status`, `objective `, `objective_type `, `create_time `, `modify_time`, `is_new_structure`, `campaign_app_profile_page_state` , `special_industries`, `secondary_status`.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default.
+  'filtering': new js_sdk.FilteringCampaignGet(), // FilteringCampaignGet | 
+  'page': 1, // Number | 
+  'page_size': 10, // Number | 
+  'fields': ["fields_example"], // [String] | 
+  'exclude_field_types_in_response': ["exclude_field_types_in_response_example"] // [String] | 
 };
 apiInstance.campaignGet(advertiser_id, Access_Token, opts, (error, data, response) => {
   if (error) {
@@ -100,12 +101,13 @@ apiInstance.campaignGet(advertiser_id, Access_Token, opts, (error, data, respons
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **advertiser_id** | **String**| Advertiser ID |[required]  
+ **advertiser_id** | **String**|  |[required]  
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
- **filtering** | [**FilteringCampaignGet**](FilteringCampaignGet.md)| Filtering Parameters | [optional] 
- **page** | **Number**| Current page | [optional] 
- **page_size** | **Number**| Page size | [optional] 
- **fields** | [**[String]**](String.md)| Supported values include&#x60;campaign_id &#x60;, &#x60; campaign_name &#x60;, &#x60; advertiser_id &#x60;, &#x60;budget &#x60;, &#x60;budget_mode &#x60;, &#x60;status &#x60;, &#x60;operation_status&#x60;, &#x60;objective &#x60;, &#x60;objective_type &#x60;, &#x60;create_time &#x60;, &#x60;modify_time&#x60;, &#x60;is_new_structure&#x60;, &#x60;campaign_app_profile_page_state&#x60; , &#x60;special_industries&#x60;, &#x60;secondary_status&#x60;.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default. | [optional] 
+ **filtering** | [**FilteringCampaignGet**](FilteringCampaignGet.md)|  | [optional] 
+ **page** | **Number**|  | [optional] [default to 1]
+ **page_size** | **Number**|  | [optional] [default to 10]
+ **fields** | [**[String]**](String.md)|  | [optional] 
+ **exclude_field_types_in_response** | [**[String]**](String.md)|  | [optional] 
 
 ### Return type
 
@@ -479,7 +481,7 @@ No authorization required
 # **campaignStatusUpdate**
 > InlineResponse200 campaignStatusUpdate(Access_Token, opts)
 
-Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
+Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320994354178)
 
 ### Example
 ```javascript
@@ -488,7 +490,7 @@ import {js_sdk} from 'business_api_client';
 let apiInstance = new js_sdk.CampaignCreationApi();
 let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
-  'body': new js_sdk.CampaignStatusUpdateBody() // CampaignStatusUpdateBody | Campaign status update body parameters
+  'body': new js_sdk.CampaignStatusUpdateBody() // CampaignStatusUpdateBody | 
 };
 apiInstance.campaignStatusUpdate(Access_Token, opts, (error, data, response) => {
   if (error) {
@@ -504,7 +506,7 @@ apiInstance.campaignStatusUpdate(Access_Token, opts, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
- **body** | [**CampaignStatusUpdateBody**](CampaignStatusUpdateBody.md)| Campaign status update body parameters | [optional] 
+ **body** | [**CampaignStatusUpdateBody**](CampaignStatusUpdateBody.md)|  | [optional] 
 
 ### Return type
 
@@ -523,7 +525,7 @@ No authorization required
 # **campaignUpdate**
 > InlineResponse200 campaignUpdate(Access_Token, opts)
 
-To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320422086657)
+Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320422086657)
 
 ### Example
 ```javascript
@@ -532,7 +534,7 @@ import {js_sdk} from 'business_api_client';
 let apiInstance = new js_sdk.CampaignCreationApi();
 let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
 let opts = { 
-  'body': new js_sdk.CampaignUpdateBody() // CampaignUpdateBody | Campaign update body parameters
+  'body': new js_sdk.CampaignUpdateBody() // CampaignUpdateBody | 
 };
 apiInstance.campaignUpdate(Access_Token, opts, (error, data, response) => {
   if (error) {
@@ -548,7 +550,7 @@ apiInstance.campaignUpdate(Access_Token, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
- **body** | [**CampaignUpdateBody**](CampaignUpdateBody.md)| Campaign update body parameters | [optional] 
+ **body** | [**CampaignUpdateBody**](CampaignUpdateBody.md)|  | [optional] 
 
 ### Return type
 

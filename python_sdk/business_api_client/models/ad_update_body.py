@@ -26,30 +26,34 @@ class AdUpdateBody(object):
     swagger_types = {
         'adgroup_id': 'str',
         'advertiser_id': 'str',
-        'creatives': 'list[AdupdateCreatives]'
+        'creatives': 'list[AdupdateCreatives]',
+        'patch_update': 'bool'
     }
 
     attribute_map = {
         'adgroup_id': 'adgroup_id',
         'advertiser_id': 'advertiser_id',
-        'creatives': 'creatives'
+        'creatives': 'creatives',
+        'patch_update': 'patch_update'
     }
 
-    def __init__(self, adgroup_id=None, advertiser_id=None, creatives=None):  # noqa: E501
+    def __init__(self, adgroup_id=None, advertiser_id=None, creatives=None, patch_update=None):  # noqa: E501
         """AdUpdateBody - a model defined in Swagger"""  # noqa: E501
         self._adgroup_id = None
         self._advertiser_id = None
         self._creatives = None
+        self._patch_update = None
         self.discriminator = None
         self.adgroup_id = adgroup_id
         self.advertiser_id = advertiser_id
         self.creatives = creatives
+        if patch_update is not None:
+            self.patch_update = patch_update
 
     @property
     def adgroup_id(self):
         """Gets the adgroup_id of this AdUpdateBody.  # noqa: E501
 
-        Ad group ID  # noqa: E501
 
         :return: The adgroup_id of this AdUpdateBody.  # noqa: E501
         :rtype: str
@@ -60,7 +64,6 @@ class AdUpdateBody(object):
     def adgroup_id(self, adgroup_id):
         """Sets the adgroup_id of this AdUpdateBody.
 
-        Ad group ID  # noqa: E501
 
         :param adgroup_id: The adgroup_id of this AdUpdateBody.  # noqa: E501
         :type: str
@@ -74,7 +77,6 @@ class AdUpdateBody(object):
     def advertiser_id(self):
         """Gets the advertiser_id of this AdUpdateBody.  # noqa: E501
 
-        Advertiser ID  # noqa: E501
 
         :return: The advertiser_id of this AdUpdateBody.  # noqa: E501
         :rtype: str
@@ -85,7 +87,6 @@ class AdUpdateBody(object):
     def advertiser_id(self, advertiser_id):
         """Sets the advertiser_id of this AdUpdateBody.
 
-        Advertiser ID  # noqa: E501
 
         :param advertiser_id: The advertiser_id of this AdUpdateBody.  # noqa: E501
         :type: str
@@ -99,7 +100,6 @@ class AdUpdateBody(object):
     def creatives(self):
         """Gets the creatives of this AdUpdateBody.  # noqa: E501
 
-        Advertising creatives.  # noqa: E501
 
         :return: The creatives of this AdUpdateBody.  # noqa: E501
         :rtype: list[AdupdateCreatives]
@@ -110,7 +110,6 @@ class AdUpdateBody(object):
     def creatives(self, creatives):
         """Sets the creatives of this AdUpdateBody.
 
-        Advertising creatives.  # noqa: E501
 
         :param creatives: The creatives of this AdUpdateBody.  # noqa: E501
         :type: list[AdupdateCreatives]
@@ -119,6 +118,27 @@ class AdUpdateBody(object):
             raise ValueError("Invalid value for `creatives`, must not be `None`")  # noqa: E501
 
         self._creatives = creatives
+
+    @property
+    def patch_update(self):
+        """Gets the patch_update of this AdUpdateBody.  # noqa: E501
+
+
+        :return: The patch_update of this AdUpdateBody.  # noqa: E501
+        :rtype: bool
+        """
+        return self._patch_update
+
+    @patch_update.setter
+    def patch_update(self, patch_update):
+        """Sets the patch_update of this AdUpdateBody.
+
+
+        :param patch_update: The patch_update of this AdUpdateBody.  # noqa: E501
+        :type: bool
+        """
+
+        self._patch_update = patch_update
 
     def to_dict(self):
         """Returns the model properties as a dict"""

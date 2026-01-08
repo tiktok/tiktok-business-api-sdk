@@ -37,7 +37,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2025-12-02T15:00:15.368932-08:00[America/Los_Angeles]")public class CampaignCreationApi {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")public class CampaignCreationApi {
   private ApiClient apiClient;
 
   public CampaignCreationApi() {
@@ -57,10 +57,10 @@ import java.util.Map;
   }
 
   /**
-   * To create a campaign. To advertise on TikTok Ads, you need to create a campaign and set the Advertising objectives and budget. A regular campaign can contain one or more ad groups. [Campaign Create](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739318962329602)
+   * Create campaign. [Campaign Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739318962329602)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Campaign create body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -110,18 +110,19 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Get all campaigns for an ad account. Optionally, you can use filters in your request to return only certain campaigns. [Campaign get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739315828649986)
+   * Get campaigns. [Campaign Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739315828649986)
    * 
-   * @param advertiserId Advertiser ID (required)
+   * @param advertiserId  (required)
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param filtering Filtering Parameters (optional)
-   * @param page Current page (optional)
-   * @param pageSize Page size (optional)
-   * @param fields Supported values include&#x60;campaign_id &#x60;, &#x60; campaign_name &#x60;, &#x60; advertiser_id &#x60;, &#x60;budget &#x60;, &#x60;budget_mode &#x60;, &#x60;status &#x60;, &#x60;operation_status&#x60;, &#x60;objective &#x60;, &#x60;objective_type &#x60;, &#x60;create_time &#x60;, &#x60;modify_time&#x60;, &#x60;is_new_structure&#x60;, &#x60;campaign_app_profile_page_state&#x60; , &#x60;special_industries&#x60;, &#x60;secondary_status&#x60;.For the exhaustive of the fields, see the Response section. When not specified, all fields are returned by default. (optional)
+   * @param filtering  (optional)
+   * @param page  (optional, default to 1)
+   * @param pageSize  (optional, default to 10)
+   * @param fields  (optional)
+   * @param excludeFieldTypesInResponse  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
-  public Response campaignGet(String advertiserId, String accessToken, FilteringCampaignGet filtering, Integer page, Integer pageSize, List<String> fields) throws ApiException, SDKException, SDKExceptionForEvent {
+  public Response campaignGet(String advertiserId, String accessToken, FilteringCampaignGet filtering, Integer page, Integer pageSize, List<String> fields, List<String> excludeFieldTypesInResponse) throws ApiException, SDKException, SDKExceptionForEvent {
     Object localVarPostBody = null;
     // verify the required parameter 'advertiserId' is set
     if (advertiserId == null) {
@@ -144,6 +145,7 @@ import java.util.Map;
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page", page));
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "page_size", pageSize));
     localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "fields", fields));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "exclude_field_types_in_response", excludeFieldTypesInResponse));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
@@ -633,10 +635,10 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * Enable, disable or delete a campaign. [Campaign status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320994354178)
+   * Update campaign status. [Campaign Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320994354178)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Campaign status update body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */
@@ -686,10 +688,10 @@ import java.util.Map;
     return return_response;
   }
   /**
-   * To modify a campaign after it has been created. Information like campaign name, budget, and budget type can be updated. [Campaign Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739320422086657)
+   * Update campaign. [Campaign Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739320422086657)
    * 
    * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
-   * @param body Campaign update body parameters (optional)
+   * @param body  (optional)
    * @return InlineResponse200
    * @throws ApiException if fails to make API call
    */

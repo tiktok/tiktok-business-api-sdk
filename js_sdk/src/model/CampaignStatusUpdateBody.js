@@ -36,26 +36,30 @@ export class CampaignStatusUpdateBody {
         obj.campaign_ids = ApiClient.convertToType(data['campaign_ids'], ['String']);
       if (data.hasOwnProperty('operation_status'))
         obj.operation_status = ApiClient.convertToType(data['operation_status'], 'String');
+      if (data.hasOwnProperty('postback_window_mode'))
+        obj.postback_window_mode = ApiClient.convertToType(data['postback_window_mode'], 'String');
     }
     return obj;
   }
 }
 
 /**
- * Advertiser ID
  * @member {String} advertiser_id
  */
 CampaignStatusUpdateBody.prototype.advertiser_id = undefined;
 
 /**
- * A list of campaign IDs, with an allowed quantity range `1-20`.
  * @member {Array.<String>} campaign_ids
  */
 CampaignStatusUpdateBody.prototype.campaign_ids = undefined;
 
 /**
- * The operation being made. Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.
  * @member {String} operation_status
  */
 CampaignStatusUpdateBody.prototype.operation_status = undefined;
+
+/**
+ * @member {String} postback_window_mode
+ */
+CampaignStatusUpdateBody.prototype.postback_window_mode = undefined;
 

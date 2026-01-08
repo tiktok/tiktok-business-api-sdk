@@ -16,9 +16,9 @@ export class AdgroupStatusUpdateBody {
    * Constructs a new <code>AdgroupStatusUpdateBody</code>.
    * @alias module:model/AdgroupStatusUpdateBody
    * @class
-   * @param adgroup_ids {Array.<String>} The ID of the ad group(s) to be operated. The allowed quantity range is `1-20`.
-   * @param advertiser_id {String} Advertiser ID
-   * @param operation_status {String} The operation being made.Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.
+   * @param adgroup_ids {Array.<String>} 
+   * @param advertiser_id {String} 
+   * @param operation_status {String} 
    */
   constructor(adgroup_ids, advertiser_id, operation_status) {
     this.adgroup_ids = adgroup_ids;
@@ -40,6 +40,8 @@ export class AdgroupStatusUpdateBody {
         obj.adgroup_ids = ApiClient.convertToType(data['adgroup_ids'], ['String']);
       if (data.hasOwnProperty('advertiser_id'))
         obj.advertiser_id = ApiClient.convertToType(data['advertiser_id'], 'String');
+      if (data.hasOwnProperty('allow_partial_success'))
+        obj.allow_partial_success = ApiClient.convertToType(data['allow_partial_success'], 'Boolean');
       if (data.hasOwnProperty('operation_status'))
         obj.operation_status = ApiClient.convertToType(data['operation_status'], 'String');
     }
@@ -48,19 +50,22 @@ export class AdgroupStatusUpdateBody {
 }
 
 /**
- * The ID of the ad group(s) to be operated. The allowed quantity range is `1-20`.
  * @member {Array.<String>} adgroup_ids
  */
 AdgroupStatusUpdateBody.prototype.adgroup_ids = undefined;
 
 /**
- * Advertiser ID
  * @member {String} advertiser_id
  */
 AdgroupStatusUpdateBody.prototype.advertiser_id = undefined;
 
 /**
- * The operation being made.Enum values- `DELETE` (delete),` DISABLE` (pause), `ENABLE` (enable). The status of deleted ads cannot be modified.
+ * @member {Boolean} allow_partial_success
+ * @default false
+ */
+AdgroupStatusUpdateBody.prototype.allow_partial_success = false;
+
+/**
  * @member {String} operation_status
  */
 AdgroupStatusUpdateBody.prototype.operation_status = undefined;

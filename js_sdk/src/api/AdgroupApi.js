@@ -43,10 +43,10 @@ export class AdgroupApi {
      */
 
     /**
-     * Create an ad group. At the ad group level, you can configure placement, audience settings (see Ad Targeting), budget, schedules, as well as bidding and optimization options for ads. To learn about the procedure and the essential data fields to create an ad group, see Create an Ad Group. [Ad Update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739499616346114)
+     * Create adgroup. [Adgroup Create](https://business-api.tiktok.com/portal/docs?id&#x3D;1739499616346114)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/AdgroupCreateBody} opts.body Adgroup create body parameters
+     * @param {module:model/AdgroupCreateBody} opts.body 
      * @param {module:api/AdgroupApi~adgroupCreateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -91,14 +91,15 @@ export class AdgroupApi {
      */
 
     /**
-     * Obtain detailed information of an ad group or ad groups. [Adgroup get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739314558673922)
-     * @param {String} advertiser_id Advertiser ID
+     * Get adgroups. [Adgroup Get](https://business-api.tiktok.com/portal/docs?id&#x3D;1739314558673922)
+     * @param {String} advertiser_id 
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/FilteringAdgroupGet} opts.filtering Filter conditions. Set these conditions according to your requirements. If not set, all ad groups under the advertiser will be returned. The request can be filtered by
-     * @param {Number} opts.page Current page number. Default value is &#x60;1&#x60;
-     * @param {Number} opts.page_size Page size. Default value is- &#x60;10&#x60;. Range of values- &#x60;1-1000&#x60;
+     * @param {module:model/FilteringAdgroupGet} opts.filtering 
+     * @param {Number} opts.page  (default to <.>)
+     * @param {Number} opts.page_size  (default to <.>)
      * @param {Array.<String>} opts.fields 
+     * @param {Array.<String>} opts.exclude_field_types_in_response 
      * @param {module:api/AdgroupApi~adgroupGetCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -118,7 +119,7 @@ export class AdgroupApi {
         
       };
       let queryParams = {
-        'advertiser_id': advertiser_id,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi')
+        'advertiser_id': advertiser_id,'filtering': opts['filtering'],'page': opts['page'],'page_size': opts['page_size'],'fields': this.apiClient.buildCollectionParam(opts['fields'], 'multi'),'exclude_field_types_in_response': this.apiClient.buildCollectionParam(opts['exclude_field_types_in_response'], 'multi')
       };
       let headerParams = {
         'Access-Token': Access_Token
@@ -198,10 +199,10 @@ export class AdgroupApi {
      */
 
     /**
-     * Enable, disable or delete an ad group. [Adgroup status update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739591716326402)
+     * Update adgroup status. [Adgroup Status Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739591716326402)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/AdgroupStatusUpdateBody} opts.body Adgroup status update body parameters
+     * @param {module:model/AdgroupStatusUpdateBody} opts.body 
      * @param {module:api/AdgroupApi~adgroupStatusUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */
@@ -246,10 +247,10 @@ export class AdgroupApi {
      */
 
     /**
-     * Obtain detailed information of an ad group or ad groups. [Adgroup update](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1739586761631745)
+     * Update adgroup. [Adgroup Update](https://business-api.tiktok.com/portal/docs?id&#x3D;1739586761631745)
      * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
      * @param {Object} opts Optional parameters
-     * @param {module:model/AdgroupUpdateBody} opts.body Adgroup update body parameters
+     * @param {module:model/AdgroupUpdateBody} opts.body 
      * @param {module:api/AdgroupApi~adgroupUpdateCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
      */

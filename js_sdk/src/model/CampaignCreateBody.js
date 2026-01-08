@@ -16,9 +16,9 @@ export class CampaignCreateBody {
    * Constructs a new <code>CampaignCreateBody</code>.
    * @alias module:model/CampaignCreateBody
    * @class
-   * @param advertiser_id {String} Advertiser ID
-   * @param campaign_name {String} Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.
-   * @param objective_type {String} Advertising objective. For enum values and descriptions, see Objectives.
+   * @param advertiser_id {String} 
+   * @param campaign_name {String} 
+   * @param objective_type {String} 
    */
   constructor(advertiser_id, campaign_name, objective_type) {
     this.advertiser_id = advertiser_id;
@@ -42,106 +42,229 @@ export class CampaignCreateBody {
         obj.app_id = ApiClient.convertToType(data['app_id'], 'String');
       if (data.hasOwnProperty('app_promotion_type'))
         obj.app_promotion_type = ApiClient.convertToType(data['app_promotion_type'], 'String');
+      if (data.hasOwnProperty('bid_type'))
+        obj.bid_type = ApiClient.convertToType(data['bid_type'], 'String');
       if (data.hasOwnProperty('budget'))
         obj.budget = ApiClient.convertToType(data['budget'], 'Number');
       if (data.hasOwnProperty('budget_mode'))
         obj.budget_mode = ApiClient.convertToType(data['budget_mode'], 'String');
       if (data.hasOwnProperty('budget_optimize_on'))
         obj.budget_optimize_on = ApiClient.convertToType(data['budget_optimize_on'], 'Boolean');
+      if (data.hasOwnProperty('campaign_app_profile_page_state'))
+        obj.campaign_app_profile_page_state = ApiClient.convertToType(data['campaign_app_profile_page_state'], 'String');
       if (data.hasOwnProperty('campaign_name'))
         obj.campaign_name = ApiClient.convertToType(data['campaign_name'], 'String');
+      if (data.hasOwnProperty('campaign_product_source'))
+        obj.campaign_product_source = ApiClient.convertToType(data['campaign_product_source'], 'String');
       if (data.hasOwnProperty('campaign_type'))
         obj.campaign_type = ApiClient.convertToType(data['campaign_type'], 'String');
+      if (data.hasOwnProperty('catalog_enabled'))
+        obj.catalog_enabled = ApiClient.convertToType(data['catalog_enabled'], 'Boolean');
+      if (data.hasOwnProperty('deep_bid_type'))
+        obj.deep_bid_type = ApiClient.convertToType(data['deep_bid_type'], 'String');
+      if (data.hasOwnProperty('disable_skan_campaign'))
+        obj.disable_skan_campaign = ApiClient.convertToType(data['disable_skan_campaign'], 'Boolean');
+      if (data.hasOwnProperty('internal_channel'))
+        obj.internal_channel = ApiClient.convertToType(data['internal_channel'], 'String');
+      if (data.hasOwnProperty('is_advanced_dedicated_campaign'))
+        obj.is_advanced_dedicated_campaign = ApiClient.convertToType(data['is_advanced_dedicated_campaign'], 'Boolean');
+      if (data.hasOwnProperty('is_search_campaign'))
+        obj.is_search_campaign = ApiClient.convertToType(data['is_search_campaign'], 'Boolean');
       if (data.hasOwnProperty('objective_type'))
         obj.objective_type = ApiClient.convertToType(data['objective_type'], 'String');
       if (data.hasOwnProperty('operation_status'))
         obj.operation_status = ApiClient.convertToType(data['operation_status'], 'String');
       if (data.hasOwnProperty('optimization_goal'))
         obj.optimization_goal = ApiClient.convertToType(data['optimization_goal'], 'String');
+      if (data.hasOwnProperty('plugin_partner'))
+        obj.plugin_partner = ApiClient.convertToType(data['plugin_partner'], 'String');
+      if (data.hasOwnProperty('po_number'))
+        obj.po_number = ApiClient.convertToType(data['po_number'], 'String');
+      if (data.hasOwnProperty('postback_window_mode'))
+        obj.postback_window_mode = ApiClient.convertToType(data['postback_window_mode'], 'String');
+      if (data.hasOwnProperty('request_id'))
+        obj.request_id = ApiClient.convertToType(data['request_id'], 'String');
       if (data.hasOwnProperty('rf_campaign_type'))
         obj.rf_campaign_type = ApiClient.convertToType(data['rf_campaign_type'], 'String');
+      if (data.hasOwnProperty('roas_bid'))
+        obj.roas_bid = ApiClient.convertToType(data['roas_bid'], 'Number');
+      if (data.hasOwnProperty('rta_bid_enabled'))
+        obj.rta_bid_enabled = ApiClient.convertToType(data['rta_bid_enabled'], 'Boolean');
+      if (data.hasOwnProperty('rta_id'))
+        obj.rta_id = ApiClient.convertToType(data['rta_id'], 'String');
+      if (data.hasOwnProperty('rta_product_selection_enabled'))
+        obj.rta_product_selection_enabled = ApiClient.convertToType(data['rta_product_selection_enabled'], 'Boolean');
+      if (data.hasOwnProperty('sales_destination'))
+        obj.sales_destination = ApiClient.convertToType(data['sales_destination'], 'String');
       if (data.hasOwnProperty('special_industries'))
         obj.special_industries = ApiClient.convertToType(data['special_industries'], ['String']);
+      if (data.hasOwnProperty('virtual_objective_type'))
+        obj.virtual_objective_type = ApiClient.convertToType(data['virtual_objective_type'], 'String');
     }
     return obj;
   }
 }
 
 /**
- * Advertiser ID
  * @member {String} advertiser_id
  */
 CampaignCreateBody.prototype.advertiser_id = undefined;
 
 /**
- * App ID, required when the campaign is an iOS 14 Dedicated Campaign (camapign_type=IOS14_CAMPAIGN) with the advertising objective (objective_type) as PRODUCT_SALES.
  * @member {String} app_id
  */
 CampaignCreateBody.prototype.app_id = undefined;
 
 /**
- * App promotion type. Required when `objective_type` is `APP_PROMOTION`. Enum values- `APP_INSTALL`, `APP_RETARGETING`. Note- `APP_INSTALL` can be used in an iOS14 Dedicated Campaign, while `APP_RETARGETING` cannot be used.
  * @member {String} app_promotion_type
  */
 CampaignCreateBody.prototype.app_promotion_type = undefined;
 
 /**
- * Campaign budget, required when budget_mode is BUDGET_MODE_DAY or BUDGET_MODE_TOTAL. To learn about the mininum budget and how to set budget types, see Budget settings.
+ * @member {String} bid_type
+ */
+CampaignCreateBody.prototype.bid_type = undefined;
+
+/**
  * @member {Number} budget
  */
 CampaignCreateBody.prototype.budget = undefined;
 
 /**
- * Budget mode. When Campaign Budget Optimization is enabled, only BUDGET_MODE_DAY is supported. When \"objective_type\" is RF_REACH, only BUDGET_MODE_INFINITE is supported. To learn about how to set budget types, see Budget setting.
  * @member {String} budget_mode
  */
 CampaignCreateBody.prototype.budget_mode = undefined;
 
 /**
- * Whether to enable Campaign Budget Optimization. True: Enabled. False: Not enabled. Default: True. For details about Campaign Budget Optimization (CBO), see Campaign Budget Optimization.
  * @member {Boolean} budget_optimize_on
+ * @default false
  */
-CampaignCreateBody.prototype.budget_optimize_on = undefined;
+CampaignCreateBody.prototype.budget_optimize_on = false;
 
 /**
- * Campaign name. It can contain up to 512 characters. Emoji is not supported. Note: Each word in Chinese or Japanese counts as two characters, while each letter in English counts as one character.
+ * @member {String} campaign_app_profile_page_state
+ */
+CampaignCreateBody.prototype.campaign_app_profile_page_state = undefined;
+
+/**
  * @member {String} campaign_name
  */
 CampaignCreateBody.prototype.campaign_name = undefined;
 
 /**
- * Enums values: REGULAR_CAMPAIGN, IOS14_CAMPAIGN. The value IOS14_CAMPAIGN supports the advertising objective PRODUCT_SALES only. For iOS 14 Dedicated Campaign with objectives other than PRODUCT_SALES , set campaign_type as REGULAR_CAMPAIGN.
+ * @member {String} campaign_product_source
+ */
+CampaignCreateBody.prototype.campaign_product_source = undefined;
+
+/**
  * @member {String} campaign_type
  */
 CampaignCreateBody.prototype.campaign_type = undefined;
 
 /**
- * Advertising objective. For enum values and descriptions, see Objectives.
+ * @member {Boolean} catalog_enabled
+ */
+CampaignCreateBody.prototype.catalog_enabled = undefined;
+
+/**
+ * @member {String} deep_bid_type
+ */
+CampaignCreateBody.prototype.deep_bid_type = undefined;
+
+/**
+ * @member {Boolean} disable_skan_campaign
+ */
+CampaignCreateBody.prototype.disable_skan_campaign = undefined;
+
+/**
+ * @member {String} internal_channel
+ */
+CampaignCreateBody.prototype.internal_channel = undefined;
+
+/**
+ * @member {Boolean} is_advanced_dedicated_campaign
+ */
+CampaignCreateBody.prototype.is_advanced_dedicated_campaign = undefined;
+
+/**
+ * @member {Boolean} is_search_campaign
+ */
+CampaignCreateBody.prototype.is_search_campaign = undefined;
+
+/**
  * @member {String} objective_type
  */
 CampaignCreateBody.prototype.objective_type = undefined;
 
 /**
- * The field operation_status is currently an allowlist-only feature. If you would like to access it, please contact your TikTok representative. If you pass in this field without applying for allowlisting first, the field will be ignored and no error message will appear. For Reach & Frequency campaigns, please specify operation_status as ENABLE or do not pass in operation_status. Do not specify operation_status as DISABLE.  The status of the campaign when created. Enum values: ENABLE : The campaign is enabled when created. DISABLE : The campaign is disabled when created. Default value: ENABLE. If you want to update the status of the campaign after creation, use the /campaign/status/update/ endpoint.
  * @member {String} operation_status
+ * @default 'ENABLE'
  */
-CampaignCreateBody.prototype.operation_status = undefined;
+CampaignCreateBody.prototype.operation_status = 'ENABLE';
 
 /**
- * Optimization goal at the campaign level. Required when Campaign Budget Optimization is enabled. Allowed values: CONVERT, INSTALL, VALUE, IN_APP_EVENT and LEAD_GENERATION.
  * @member {String} optimization_goal
  */
 CampaignCreateBody.prototype.optimization_goal = undefined;
 
 /**
- * When `objective_type` is specified as `RF_REACH`, use this field to set the campaign as a TikTok Pulse campaign, then you can get available premium contextual tags. Do not pass in this field when `objective_type` is not specified as `RF_REACH`.Enum values- `STANDARD` (Reach & Frequency campaign), `PULSE`(TikTok Pulse campaign). Note<- This is an allowlist-only feature. If you would like to access it, please contact your TikTok representative. This field cannot be updated after creation. If you select `rf_campaign_type` to `PULSE` , then you must enter contextual tags of `PREMIUM` type in the `contextual_tag_ids`  field in [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945). In this case, the CPM in your ad group is fixed. If you set `rf_campaign_type` to `PULSE`, then the targeting locations cannot be updated in  [/adgroup/rf/update/](https://ads.tiktok.com/marketing_api/docs?id=1738235402874882). If you set `rf_campaign_type` to `PULSE`, then `feed_type` cannot be `TOP_FEED` in  [/adgroup/rf/create/](https://ads.tiktok.com/marketing_api/docs?id=1738235338194945).
+ * @member {String} plugin_partner
+ */
+CampaignCreateBody.prototype.plugin_partner = undefined;
+
+/**
+ * @member {String} po_number
+ */
+CampaignCreateBody.prototype.po_number = undefined;
+
+/**
+ * @member {String} postback_window_mode
+ */
+CampaignCreateBody.prototype.postback_window_mode = undefined;
+
+/**
+ * @member {String} request_id
+ */
+CampaignCreateBody.prototype.request_id = undefined;
+
+/**
  * @member {String} rf_campaign_type
  */
 CampaignCreateBody.prototype.rf_campaign_type = undefined;
 
 /**
- * Ad categories. Enum values: HOUSING(Ads for real estate listings, homeowners insurance, mortgage loans or other related opportunities.) EMPLOYMENT(Ads for job offers, internship, professional certification programs or other related opportunities.) CREDIT(Ads for credit card offers, auto loans, long-term financing or other related opportunities.) Note: Once you've specified the industry type, the system will adjust your ad group target options to help you comply with advertising policies. See Ad targeting to know more.
+ * @member {Number} roas_bid
+ */
+CampaignCreateBody.prototype.roas_bid = undefined;
+
+/**
+ * @member {Boolean} rta_bid_enabled
+ * @default false
+ */
+CampaignCreateBody.prototype.rta_bid_enabled = false;
+
+/**
+ * @member {String} rta_id
+ */
+CampaignCreateBody.prototype.rta_id = undefined;
+
+/**
+ * @member {Boolean} rta_product_selection_enabled
+ */
+CampaignCreateBody.prototype.rta_product_selection_enabled = undefined;
+
+/**
+ * @member {String} sales_destination
+ */
+CampaignCreateBody.prototype.sales_destination = undefined;
+
+/**
  * @member {Array.<String>} special_industries
  */
 CampaignCreateBody.prototype.special_industries = undefined;
+
+/**
+ * @member {String} virtual_objective_type
+ */
+CampaignCreateBody.prototype.virtual_objective_type = undefined;
 
