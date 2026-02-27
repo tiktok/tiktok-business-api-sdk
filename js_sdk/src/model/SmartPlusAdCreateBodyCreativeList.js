@@ -10,7 +10,7 @@ import {SmartPlusAdCreateBodyCreativeInfo} from './SmartPlusAdCreateBodyCreative
 /**
  * The SmartPlusAdCreateBodyCreativeList model module.
  * @module model/SmartPlusAdCreateBodyCreativeList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class SmartPlusAdCreateBodyCreativeList {
   /**

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The SmartPlusCampaignUpdateBody model module.
  * @module model/SmartPlusCampaignUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class SmartPlusCampaignUpdateBody {
   /**

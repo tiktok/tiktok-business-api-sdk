@@ -18,7 +18,7 @@ import {SmartPlusAdgroupUpdateBody} from '../model/SmartPlusAdgroupUpdateBody.js
 /**
 * Adgroup service.
 * @module api/AdgroupApi
-* @version 0.1.9
+* @version 1.2.1
 */
 export class AdgroupApi {
 

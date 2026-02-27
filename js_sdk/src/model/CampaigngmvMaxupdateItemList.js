@@ -11,7 +11,7 @@ import {CampaigngmvMaxupdateVideoInfo} from './CampaigngmvMaxupdateVideoInfo.js'
 /**
  * The CampaigngmvMaxupdateItemList model module.
  * @module model/CampaigngmvMaxupdateItemList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CampaigngmvMaxupdateItemList {
   /**

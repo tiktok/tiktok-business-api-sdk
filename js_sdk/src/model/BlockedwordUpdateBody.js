@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BlockedwordUpdateBody model module.
  * @module model/BlockedwordUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class BlockedwordUpdateBody {
   /**

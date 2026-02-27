@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The IdentityList model module.
  * @module model/IdentityList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class IdentityList extends Array {
   /**

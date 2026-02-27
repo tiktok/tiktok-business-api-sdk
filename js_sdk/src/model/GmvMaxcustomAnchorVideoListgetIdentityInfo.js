@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The GmvMaxcustomAnchorVideoListgetIdentityInfo model module.
  * @module model/GmvMaxcustomAnchorVideoListgetIdentityInfo
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class GmvMaxcustomAnchorVideoListgetIdentityInfo {
   /**

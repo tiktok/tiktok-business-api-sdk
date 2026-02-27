@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CampaigngmvMaxupdateItemListIdentityInfo model module.
  * @module model/CampaigngmvMaxupdateItemListIdentityInfo
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CampaigngmvMaxupdateItemListIdentityInfo {
   /**

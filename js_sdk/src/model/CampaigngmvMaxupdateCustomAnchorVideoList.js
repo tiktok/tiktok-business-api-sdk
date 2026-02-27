@@ -10,7 +10,7 @@ import {CampaigngmvMaxupdateCustomAnchorVideoListIdentityInfo} from './Campaigng
 /**
  * The CampaigngmvMaxupdateCustomAnchorVideoList model module.
  * @module model/CampaigngmvMaxupdateCustomAnchorVideoList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CampaigngmvMaxupdateCustomAnchorVideoList {
   /**

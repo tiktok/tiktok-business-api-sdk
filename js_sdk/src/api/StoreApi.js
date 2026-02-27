@@ -11,7 +11,7 @@ import {InlineResponse200} from '../model/InlineResponse200.js';
 /**
 * Store service.
 * @module api/StoreApi
-* @version 0.1.9
+* @version 1.2.1
 */
 export class StoreApi {
 

@@ -10,7 +10,7 @@ import {CatalogsetupdateConditions} from './CatalogsetupdateConditions.js';
 /**
  * The SetUpdateBody model module.
  * @module model/SetUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class SetUpdateBody {
   /**

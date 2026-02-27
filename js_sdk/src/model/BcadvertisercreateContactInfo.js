@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The BcadvertisercreateContactInfo model module.
  * @module model/BcadvertisercreateContactInfo
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class BcadvertisercreateContactInfo {
   /**

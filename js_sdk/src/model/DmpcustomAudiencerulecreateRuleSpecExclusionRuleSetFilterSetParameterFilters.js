@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters model module.
  * @module model/DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class DmpcustomAudiencerulecreateRuleSpecExclusionRuleSetFilterSetParameterFilters {
   /**

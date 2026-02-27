@@ -24,7 +24,7 @@ import {SmartPlusAdUpdateBody} from '../model/SmartPlusAdUpdateBody.js';
 /**
 * Ad service.
 * @module api/AdApi
-* @version 0.1.9
+* @version 1.2.1
 */
 export class AdApi {
 

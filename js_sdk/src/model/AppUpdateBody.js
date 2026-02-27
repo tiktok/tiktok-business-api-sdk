@@ -10,7 +10,7 @@ import {AppupdateTrackingUrl} from './AppupdateTrackingUrl.js';
 /**
  * The AppUpdateBody model module.
  * @module model/AppUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class AppUpdateBody {
   /**

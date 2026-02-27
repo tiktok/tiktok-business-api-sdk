@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CampaigngmvMaxsessioncreateSessionProductList model module.
  * @module model/CampaigngmvMaxsessioncreateSessionProductList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CampaigngmvMaxsessioncreateSessionProductList {
   /**

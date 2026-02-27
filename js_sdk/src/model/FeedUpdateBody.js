@@ -10,7 +10,7 @@ import {CatalogfeedcreateScheduleParam} from './CatalogfeedcreateScheduleParam.j
 /**
  * The FeedUpdateBody model module.
  * @module model/FeedUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class FeedUpdateBody {
   /**

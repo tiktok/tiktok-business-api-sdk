@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeportfoliocreateAdvancedGestureImage model module.
  * @module model/CreativeportfoliocreateAdvancedGestureImage
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CreativeportfoliocreateAdvancedGestureImage {
   /**

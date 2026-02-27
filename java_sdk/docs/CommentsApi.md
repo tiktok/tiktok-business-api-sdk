@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
  **originalCommentId** | **String**|  | [optional] [default to 0]
  **app** | **String**|  | [optional] [default to TIKTOK]
  **page** | **Long**|  | [optional] [default to 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 100]
 
 ### Return type
 

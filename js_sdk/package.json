@@ -1,7 +1,7 @@
 {
   "name": "business_api_client",
   "type": "module",
-  "version": "0.1.9",
+  "version": "1.2.1",
   "description": "Comprehensive_collection_of_client_libraries_that_enable_our_developers_to_build_software_to_integrate_with_Business_API_faster_and_in_a_more_standardized_way_",
   "license": "Unlicense",
   "main": "src/index.js",

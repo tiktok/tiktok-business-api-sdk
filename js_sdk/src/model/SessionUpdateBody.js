@@ -10,7 +10,7 @@ import {CampaigngmvMaxsessionupdateSession} from './CampaigngmvMaxsessionupdateS
 /**
  * The SessionUpdateBody model module.
  * @module model/SessionUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class SessionUpdateBody {
   /**

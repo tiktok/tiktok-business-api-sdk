@@ -10,7 +10,7 @@ import {OptimizerRuleCreateBodyNotificationEmailSetting} from './OptimizerRuleCr
 /**
  * The OptimizerRuleCreateBodyNotification model module.
  * @module model/OptimizerRuleCreateBodyNotification
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class OptimizerRuleCreateBodyNotification {
   /**

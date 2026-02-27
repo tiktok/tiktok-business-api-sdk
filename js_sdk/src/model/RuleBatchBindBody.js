@@ -10,7 +10,7 @@ import {OptimizerrulebatchBindBindInfo} from './OptimizerrulebatchBindBindInfo.j
 /**
  * The RuleBatchBindBody model module.
  * @module model/RuleBatchBindBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class RuleBatchBindBody {
   /**
