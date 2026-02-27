@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CampaigngmvMaxcreateVideoInfo model module.
  * @module model/CampaigngmvMaxcreateVideoInfo
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CampaigngmvMaxcreateVideoInfo {
   /**

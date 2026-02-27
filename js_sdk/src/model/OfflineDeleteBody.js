@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The OfflineDeleteBody model module.
  * @module model/OfflineDeleteBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class OfflineDeleteBody {
   /**

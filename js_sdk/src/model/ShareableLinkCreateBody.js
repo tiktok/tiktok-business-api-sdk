@@ -10,7 +10,7 @@ import {CreativeshareableLinkcreateSharedAssets} from './CreativeshareableLinkcr
 /**
  * The ShareableLinkCreateBody model module.
  * @module model/ShareableLinkCreateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class ShareableLinkCreateBody {
   /**

@@ -342,4 +342,4 @@ from business_api_client.tiktok_business.tiktok_response import *
 from business_api_client.tiktok_business.tiktok_utils import *
 
 # sdk current version
-__version__ = '0.1.9'
+__version__ = '1.2.1'

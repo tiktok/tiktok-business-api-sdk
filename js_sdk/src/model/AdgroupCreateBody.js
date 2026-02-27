@@ -14,7 +14,7 @@ import {AdgroupcreateSearchKeywords} from './AdgroupcreateSearchKeywords.js';
 /**
  * The AdgroupCreateBody model module.
  * @module model/AdgroupCreateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class AdgroupCreateBody {
   /**

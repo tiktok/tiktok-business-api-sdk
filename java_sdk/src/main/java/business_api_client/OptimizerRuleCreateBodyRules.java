@@ -24,7 +24,7 @@ import java.util.List;
  * OptimizerRuleCreateBodyRules
  */
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-02-27T14:19:48.489627-08:00[America/Los_Angeles]")
 public class OptimizerRuleCreateBodyRules {
   @JsonProperty("actions")
   private List<OptimizerRuleCreateBodyActions> actions = new ArrayList<OptimizerRuleCreateBodyActions>();

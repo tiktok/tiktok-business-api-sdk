@@ -96,8 +96,8 @@ Name | Type | Description  | Notes
  **advertiserId** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringAdgroupGet**](FilteringAdgroupGet.md)|  | [optional]
- **page** | **Integer**|  | [optional] [default to 1] [enum: ]
- **pageSize** | **Integer**|  | [optional] [default to 10] [enum: ]
+ **page** | **Integer**|  | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Integer**|  | [optional] [default to 10] [enum: 1, 1000]
  **fields** | [**List&lt;String&gt;**](String.md)|  | [optional]
  **excludeFieldTypesInResponse** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **filtering** | [**FilteringSmartPlusAdgroupGet**](FilteringSmartPlusAdgroupGet.md)|  | [optional]
  **page** | **Long**|  | [optional] [default to 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 1000]
  **fields** | [**List&lt;String&gt;**](String.md)|  | [optional]
 
 ### Return type

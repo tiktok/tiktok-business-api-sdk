@@ -11,7 +11,7 @@ import {DmpcustomAudiencelookalikecreateLookalikeSpec} from './DmpcustomAudience
 /**
  * The LookalikeCreateBody model module.
  * @module model/LookalikeCreateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class LookalikeCreateBody {
   /**

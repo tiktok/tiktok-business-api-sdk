@@ -12,7 +12,7 @@ import {PixelTrackBody} from '../model/PixelTrackBody.js';
 /**
 * EventCallback service.
 * @module api/EventCallbackApi
-* @version 0.1.9
+* @version 1.2.1
 */
 export class EventCallbackApi {
 

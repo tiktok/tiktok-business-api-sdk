@@ -13,7 +13,7 @@ import {TargetingSearchBody} from '../model/TargetingSearchBody.js';
 /**
 * Tool service.
 * @module api/ToolApi
-* @version 0.1.9
+* @version 1.2.1
 */
 export class ToolApi {
 
@@ -453,6 +453,60 @@ export class ToolApi {
 
       return this.apiClient.callApi(
         '/open_api/v1.3/tool/device_model/', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+    /**
+     * Callback function to receive the result of the toolDiagnosisSearchHealth operation.
+     * @callback moduleapi/ToolApi~toolDiagnosisSearchHealthCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/InlineResponse200{ data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Search Ads Campaign Health diagnoses [Tool Diagnosis Search Health](https://business-api.tiktok.com/portal/docs?id&#x3D;1848591212970082)
+     * @param {String} advertiser_id 
+     * @param {String} Access_Token Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162).
+     * @param {Object} opts Optional parameters
+     * @param {String} opts.adgroup_id 
+     * @param {Array.<String>} opts.ad_ids 
+     * @param {module:api/ToolApi~toolDiagnosisSearchHealthCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link <&vendorExtensions.x-jsdoc-type>}
+     */
+    toolDiagnosisSearchHealth(advertiser_id, Access_Token, opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+      // verify the required parameter 'advertiser_id' is set
+      if (advertiser_id === undefined || advertiser_id === null) {
+        throw new Error("Missing the required parameter 'advertiser_id' when calling toolDiagnosisSearchHealth");
+      }
+      // verify the required parameter 'Access_Token' is set
+      if (Access_Token === undefined || Access_Token === null) {
+        throw new Error("Missing the required parameter 'Access_Token' when calling toolDiagnosisSearchHealth");
+      }
+
+      let pathParams = {
+        
+      };
+      let queryParams = {
+        'advertiser_id': advertiser_id,'adgroup_id': opts['adgroup_id'],'ad_ids': this.apiClient.buildCollectionParam(opts['ad_ids'], 'multi')
+      };
+      let headerParams = {
+        'Access-Token': Access_Token
+      };
+      let formParams = {
+        
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = InlineResponse200;
+
+      return this.apiClient.callApi(
+        '/open_api/v1.3/tool/diagnosis/search/health/', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

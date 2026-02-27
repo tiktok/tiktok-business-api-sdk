@@ -11,7 +11,7 @@ import {CampaigngmvMaxcreateVideoInfo} from './CampaigngmvMaxcreateVideoInfo.js'
 /**
  * The CampaigngmvMaxcreateItemList model module.
  * @module model/CampaigngmvMaxcreateItemList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CampaigngmvMaxcreateItemList {
   /**

@@ -18,7 +18,7 @@ import {SmartPlusAdCreateBodyPageList} from './SmartPlusAdCreateBodyPageList.js'
 /**
  * The SmartPlusAdCreateBody model module.
  * @module model/SmartPlusAdCreateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class SmartPlusAdCreateBody {
   /**

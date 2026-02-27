@@ -18,6 +18,7 @@ Method | HTTP request | Description
 [**tool_contextual_tag_get**](ToolApi.md#tool_contextual_tag_get) | **GET** /open_api/v1.3/tool/contextual_tag/get/ | Get available contextual tags [Tool Contextual_tag Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1747747118654465)
 [**tool_contextual_tag_info**](ToolApi.md#tool_contextual_tag_info) | **GET** /open_api/v1.3/tool/contextual_tag/info/ | Get details of contextual tags [Tool Contextual_tag Info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1747747180830722)
 [**tool_device_model**](ToolApi.md#tool_device_model) | **GET** /open_api/v1.3/tool/device_model/ | Get device models [Tool device model](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737172880570369)
+[**tool_diagnosis_search_health**](ToolApi.md#tool_diagnosis_search_health) | **GET** /open_api/v1.3/tool/diagnosis/search/health/ | Get Search Ads Campaign Health diagnoses [Tool Diagnosis Search Health](https://business-api.tiktok.com/portal/docs?id&#x3D;1848591212970082)
 [**tool_hashtag_get**](ToolApi.md#tool_hashtag_get) | **GET** /open_api/v1.3/tool/hashtag/get/ | Get targeting hashtags by ID [Tool Hashtag Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1736280889167874)
 [**tool_hashtag_recommend**](ToolApi.md#tool_hashtag_recommend) | **GET** /open_api/v1.3/tool/hashtag/recommend/ | Search for targeting hashtags [Tool Hashtag Recommend](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1736271339521025)
 [**tool_interest_category**](ToolApi.md#tool_interest_category) | **GET** /open_api/v1.3/tool/interest_category/ | Get interest categories [Tool Interest category](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174348712961)
@@ -419,6 +420,58 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **str**| Advertiser ID | [required]
  **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **tool_diagnosis_search_health**
+> InlineResponse200 tool_diagnosis_search_health(advertiser_id, access_token, adgroup_id=adgroup_id, ad_ids=ad_ids)
+
+Get Search Ads Campaign Health diagnoses [Tool Diagnosis Search Health](https://business-api.tiktok.com/portal/docs?id=1848591212970082)
+
+### Example
+```python
+from __future__ import print_function
+import time
+import business_api_client
+from business_api_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = business_api_client.ToolApi()
+advertiser_id = 'advertiser_id_example' # str | 
+access_token = 'access_token_example' # str | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+adgroup_id = 'adgroup_id_example' # str |  (optional)
+ad_ids = ['ad_ids_example'] # list[str] |  (optional)
+
+try:
+    # Get Search Ads Campaign Health diagnoses [Tool Diagnosis Search Health](https://business-api.tiktok.com/portal/docs?id=1848591212970082)
+    api_response = api_instance.tool_diagnosis_search_health(advertiser_id, access_token, adgroup_id=adgroup_id, ad_ids=ad_ids)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ToolApi->tool_diagnosis_search_health: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **str**|  | [required]
+ **access_token** | **str**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). | [required]
+ **adgroup_id** | **str**|  | [optional] 
+ **ad_ids** | [**list[str]**](str.md)|  | [optional] 
 
 ### Return type
 

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The AdcreateUtmParams model module.
  * @module model/AdcreateUtmParams
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class AdcreateUtmParams {
   /**

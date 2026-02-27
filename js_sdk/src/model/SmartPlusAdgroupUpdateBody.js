@@ -10,7 +10,7 @@ import {SmartPlusAdgroupCreateBodyTargetingSpec} from './SmartPlusAdgroupCreateB
 /**
  * The SmartPlusAdgroupUpdateBody model module.
  * @module model/SmartPlusAdgroupUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class SmartPlusAdgroupUpdateBody {
   /**

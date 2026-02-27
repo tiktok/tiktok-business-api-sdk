@@ -14,7 +14,7 @@ import {AdcreateUtmParams} from './AdcreateUtmParams.js';
 /**
  * The AdcreateCreatives model module.
  * @module model/AdcreateCreatives
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class AdcreateCreatives {
   /**

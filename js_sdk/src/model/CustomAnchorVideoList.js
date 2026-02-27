@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CustomAnchorVideoList model module.
  * @module model/CustomAnchorVideoList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CustomAnchorVideoList extends Array {
   /**

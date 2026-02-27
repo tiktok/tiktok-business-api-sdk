@@ -16,7 +16,7 @@ import {TaskCancelBody} from '../model/TaskCancelBody.js';
 /**
 * Reporting service.
 * @module api/ReportingApi
-* @version 0.1.9
+* @version 1.2.1
 */
 export class ReportingApi {
 

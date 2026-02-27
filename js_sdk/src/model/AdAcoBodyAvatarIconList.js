@@ -10,7 +10,7 @@ import {AdAcoBodyAvatarIcon} from './AdAcoBodyAvatarIcon.js';
 /**
  * The AdAcoBodyAvatarIconList model module.
  * @module model/AdAcoBodyAvatarIconList
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class AdAcoBodyAvatarIconList {
   /**

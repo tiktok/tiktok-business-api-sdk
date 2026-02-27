@@ -19,7 +19,7 @@ import {StatusUpdateBody} from '../model/StatusUpdateBody.js';
 /**
 * Comments service.
 * @module api/CommentsApi
-* @version 0.1.9
+* @version 1.2.1
 */
 export class CommentsApi {
 

@@ -9,7 +9,7 @@ import {ApiClient} from '../ApiClient.js';
 /**
  * The CreativeportfoliocreateSlideDimension model module.
  * @module model/CreativeportfoliocreateSlideDimension
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class CreativeportfoliocreateSlideDimension {
   /**

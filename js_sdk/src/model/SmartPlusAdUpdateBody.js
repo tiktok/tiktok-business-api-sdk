@@ -17,7 +17,7 @@ import {SmartPlusAdUpdateBodyCreativeList} from './SmartPlusAdUpdateBodyCreative
 /**
  * The SmartPlusAdUpdateBody model module.
  * @module model/SmartPlusAdUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class SmartPlusAdUpdateBody {
   /**

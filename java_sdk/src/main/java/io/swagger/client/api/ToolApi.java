@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-01-08T15:25:30.628143-08:00[America/Los_Angeles]")public class ToolApi {
+@javax.annotation.Generated(value = "io.swagger.codegen.v3.generators.java.JavaClientCodegen", date = "2026-02-27T14:19:48.489627-08:00[America/Los_Angeles]")public class ToolApi {
   private ApiClient apiClient;
 
   public ToolApi() {
@@ -501,6 +501,68 @@ import java.util.Map;
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
     localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+
+    if (accessToken != null)
+      localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));
+
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<InlineResponse200> localVarReturnType = new GenericType<InlineResponse200>() {};
+    InlineResponse200 response = apiClient.invokeAPI(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      if(response.getCode() != 0)
+    {
+      if (localVarPath.startsWith("/pixel")) {
+          throw new SDKExceptionForEvent(response.getRequestId(), response.getCode(), response.getMessage(), response.getData());
+      }
+      throw new SDKException(response.getRequestId(), response.getCode(), response.getMessage());
+    }
+      Response return_response = new Response();
+    return_response.setData(response.getData());
+    return_response.setRequestId(response.getRequestId());
+
+    return return_response;
+  }
+  /**
+   * Get Search Ads Campaign Health diagnoses [Tool Diagnosis Search Health](https://business-api.tiktok.com/portal/docs?id&#x3D;1848591212970082)
+   * 
+   * @param advertiserId  (required)
+   * @param accessToken Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). (required)
+   * @param adgroupId  (optional)
+   * @param adIds  (optional)
+   * @return InlineResponse200
+   * @throws ApiException if fails to make API call
+   */
+  public Response toolDiagnosisSearchHealth(String advertiserId, String accessToken, String adgroupId, List<String> adIds) throws ApiException, SDKException, SDKExceptionForEvent {
+    Object localVarPostBody = null;
+    // verify the required parameter 'advertiserId' is set
+    if (advertiserId == null) {
+      throw new ApiException(400, "Missing the required parameter 'advertiserId' when calling toolDiagnosisSearchHealth");
+    }
+    // verify the required parameter 'accessToken' is set
+    if (accessToken == null) {
+      throw new ApiException(400, "Missing the required parameter 'accessToken' when calling toolDiagnosisSearchHealth");
+    }
+    // create path and map variables
+    String localVarPath = "/open_api/v1.3/tool/diagnosis/search/health/";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "advertiser_id", advertiserId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("", "adgroup_id", adgroupId));
+    localVarQueryParams.addAll(apiClient.parameterToPairs("multi", "ad_ids", adIds));
 
     if (accessToken != null)
       localVarHeaderParams.put("Access-Token", apiClient.parameterToString(accessToken));

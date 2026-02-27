@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**toolContextualTagGet**](ToolApi.md#toolContextualTagGet) | **GET** /open_api/v1.3/tool/contextual_tag/get/ | Get available contextual tags [Tool Contextual_tag Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1747747118654465)
 [**toolContextualTagInfo**](ToolApi.md#toolContextualTagInfo) | **GET** /open_api/v1.3/tool/contextual_tag/info/ | Get details of contextual tags [Tool Contextual_tag Info](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1747747180830722)
 [**toolDeviceModel**](ToolApi.md#toolDeviceModel) | **GET** /open_api/v1.3/tool/device_model/ | Get device models [Tool device model](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737172880570369)
+[**toolDiagnosisSearchHealth**](ToolApi.md#toolDiagnosisSearchHealth) | **GET** /open_api/v1.3/tool/diagnosis/search/health/ | Get Search Ads Campaign Health diagnoses [Tool Diagnosis Search Health](https://business-api.tiktok.com/portal/docs?id&#x3D;1848591212970082)
 [**toolHashtagGet**](ToolApi.md#toolHashtagGet) | **GET** /open_api/v1.3/tool/hashtag/get/ | Get targeting hashtags by ID [Tool Hashtag Get](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1736280889167874)
 [**toolHashtagRecommend**](ToolApi.md#toolHashtagRecommend) | **GET** /open_api/v1.3/tool/hashtag/recommend/ | Search for targeting hashtags [Tool Hashtag Recommend](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1736271339521025)
 [**toolInterestCategory**](ToolApi.md#toolInterestCategory) | **GET** /open_api/v1.3/tool/interest_category/ | Get interest categories [Tool Interest category](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1737174348712961)
@@ -379,6 +380,54 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **advertiser_id** | **String**| Advertiser ID |[required]  
  **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+
+### Return type
+
+[**InlineResponse200**](InlineResponse200.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+<a name="toolDiagnosisSearchHealth"></a>
+# **toolDiagnosisSearchHealth**
+> InlineResponse200 toolDiagnosisSearchHealth(advertiser_id, Access_Token, opts)
+
+Get Search Ads Campaign Health diagnoses [Tool Diagnosis Search Health](https://business-api.tiktok.com/portal/docs?id&#x3D;1848591212970082)
+
+### Example
+```javascript
+import {js_sdk} from 'business_api_client';
+
+let apiInstance = new js_sdk.ToolApi();
+let advertiser_id = "advertiser_id_example"; // String | 
+let Access_Token = "Access_Token_example"; // String | Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+let opts = { 
+  'adgroup_id': "adgroup_id_example", // String | 
+  'ad_ids': ["ad_ids_example"] // [String] | 
+};
+apiInstance.toolDiagnosisSearchHealth(advertiser_id, Access_Token, opts, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **advertiser_id** | **String**|  |[required]  
+ **Access_Token** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required]  
+ **adgroup_id** | **String**|  | [optional] 
+ **ad_ids** | [**[String]**](String.md)|  | [optional] 
 
 ### Return type
 

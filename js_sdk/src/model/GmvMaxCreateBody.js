@@ -13,7 +13,7 @@ import {CampaigngmvMaxcreatePromotionDays} from './CampaigngmvMaxcreatePromotion
 /**
  * The GmvMaxCreateBody model module.
  * @module model/GmvMaxCreateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class GmvMaxCreateBody {
   /**

@@ -472,8 +472,8 @@ Name | Type | Description  | Notes
  **name** | **String**|  | [optional]
  **orderBy** | **String**|  | [optional] [default to EARLIEST_CREATE]
  **filtering** | [**FilteringPixelList**](FilteringPixelList.md)|  | [optional]
- **page** | **Long**|  | [optional] [enum: ]
- **pageSize** | **Long**|  | [optional] [enum: ]
+ **page** | **Long**|  | [optional] [enum: 1]
+ **pageSize** | **Long**|  | [optional] [enum: 1, 20]
 
 ### Return type
 

@@ -12,7 +12,7 @@ import {CampaigngmvMaxupdatePromotionDays} from './CampaigngmvMaxupdatePromotion
 /**
  * The GmvMaxUpdateBody model module.
  * @module model/GmvMaxUpdateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class GmvMaxUpdateBody {
   /**

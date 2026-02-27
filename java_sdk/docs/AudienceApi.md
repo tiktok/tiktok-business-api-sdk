@@ -401,8 +401,8 @@ Name | Type | Description  | Notes
  **advertiserId** | **String**| Advertiser ID. |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **customAudienceIds** | [**List&lt;String&gt;**](String.md)| A list of Audience IDs. Length range is [1, 100]. | [optional]
- **page** | **Integer**| Current page number. Default value: 1. Value range: ≥ 1. | [optional] [default to 1] [enum: ]
- **pageSize** | **Integer**| Page size. Defaults is 10. Value range: 1-100. | [optional] [default to 10] [enum: ]
+ **page** | **Integer**| Current page number. Default value: 1. Value range: ≥ 1. | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Integer**| Page size. Defaults is 10. Value range: 1-100. | [optional] [default to 10] [enum: 1, 100]
 
 ### Return type
 
@@ -862,7 +862,7 @@ Name | Type | Description  | Notes
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
  **savedAudienceIds** | [**List&lt;String&gt;**](String.md)| IDs of Saved Audiences. Max size: 100. To create Saved Audiences and obtain the Saved Audience IDs, use /dmp/saved_audience/create/. | [optional]
  **page** | **Integer**|  | [optional] [default to 1]
- **pageSize** | **Integer**|  | [optional] [default to 10] [enum: ]
+ **pageSize** | **Integer**|  | [optional] [default to 10] [enum: 1, 100]
 
 ### Return type
 

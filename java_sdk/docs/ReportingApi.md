@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
  **sortField** | **String**|  | [optional]
  **sortType** | **String**|  | [optional] [default to DESC]
  **page** | **Long**|  | [optional] [default to 1]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1000]
  **contextInfo** | [**ContextInfoGmvMaxReportGet**](ContextInfoGmvMaxReportGet.md)|  | [optional]
 
 ### Return type
@@ -130,8 +130,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **reportType** | **String**|  |[required] 
  **accessToken** | **String**| Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id&#x3D;1738373164380162). |[required] 
- **page** | **Long**|  | [optional] [default to 1] [enum: ]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **page** | **Long**|  | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 1000]
  **enableTotalMetrics** | **Boolean**|  | [optional] [default to false]
  **multiAdvReportInUtcTime** | **Boolean**|  | [optional] [default to false]
  **queryMode** | **String**|  | [optional]
@@ -346,8 +346,8 @@ Name | Type | Description  | Notes
  **filtering** | [**FilteringSmartPlusMaterialReportBreakdown**](FilteringSmartPlusMaterialReportBreakdown.md)|  | [optional]
  **sortField** | **String**|  | [optional] [default to spend]
  **sortType** | **String**|  | [optional] [default to DESC]
- **page** | **Long**|  | [optional] [default to 1] [enum: ]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **page** | **Long**|  | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 100]
 
 ### Return type
 
@@ -411,8 +411,8 @@ Name | Type | Description  | Notes
  **filtering** | [**FilteringSmartPlusMaterialReportOverview**](FilteringSmartPlusMaterialReportOverview.md)|  | [optional]
  **sortField** | **String**|  | [optional] [default to spend]
  **sortType** | **String**|  | [optional] [default to DESC]
- **page** | **Long**|  | [optional] [default to 1] [enum: ]
- **pageSize** | **Long**|  | [optional] [default to 10] [enum: ]
+ **page** | **Long**|  | [optional] [default to 1] [enum: 1]
+ **pageSize** | **Long**|  | [optional] [default to 10] [enum: 1, 100]
 
 ### Return type
 

@@ -10,7 +10,7 @@ import {AdAcoBodyCommonMaterialTrackingInfo} from './AdAcoBodyCommonMaterialTrac
 /**
  * The AdAcoBodyCommonMaterial model module.
  * @module model/AdAcoBodyCommonMaterial
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class AdAcoBodyCommonMaterial {
   /**

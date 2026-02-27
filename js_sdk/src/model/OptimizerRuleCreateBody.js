@@ -10,7 +10,7 @@ import {OptimizerRuleCreateBodyRules} from './OptimizerRuleCreateBodyRules.js';
 /**
  * The OptimizerRuleCreateBody model module.
  * @module model/OptimizerRuleCreateBody
- * @version 0.1.9
+ * @version 1.2.1
  */
 export class OptimizerRuleCreateBody {
   /**
