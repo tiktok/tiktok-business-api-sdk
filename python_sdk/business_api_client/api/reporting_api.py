@@ -344,7 +344,6 @@ class ReportingApi(object):
             query_params.append(('order_type', params['order_type']))  # noqa: E501
         if 'filtering' in params:
             query_params.append(('filtering', params['filtering']))  # noqa: E501
-            collection_formats['filtering'] = 'multi'  # noqa: E501
 
         header_params = {}
         if 'access_token' in params:
